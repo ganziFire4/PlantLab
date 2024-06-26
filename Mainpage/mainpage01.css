@@ -1,0 +1,59 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+        
+body{
+    font-family: "Noto Sans KR", sans-serif;
+}
+
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* 헤더이미지 */
+.header_img{
+    background-size: cover;
+    background-position: center top;
+    background-repeat:no-repeat;
+}
+
+#header_img{
+    background-image:url('../images/Header\ with\ image_메인페이지.svg');
+    height: 430px;
+    margin-bottom:40px;
+}
+
+.main-nav{
+    display: flex;
+    list-style: none;
+    font-size: 1.25em; 
+    height:80px;
+}
+
+.logo{
+
+}
+
+.main-nav li {
+    margin-left:36px;
+    margin-top:25px;
+}
+
+.main-nav a {
+   color : #545454;
+   text-decoration: none;
+}
+
+.main-nav a:hover {
+    color : #23C961;
+    font-weight: bolder;
+    text-decoration: none;
+ }
+
+.wrapper{
+    max-width:1116px;
+    margin: 2px 50px;
+    padding: 0 4%;
+
+}
+

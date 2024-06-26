@@ -1,0 +1,258 @@
+
+       /* @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css); */
+       @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+        /* 네비 바 & 푸터 (고정 영역 ) */
+
+        nav{
+            /* 안움직이게 어떻게 하지 ?? 
+            상단 마진부분 백그라운드 컬러 안들어감 ㅠ 
+        */
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            /* position: relative; */
+            position:fixed;
+            margin:0 10px 10px;
+            width:100%;
+            top: 0;
+            border-bottom: 1px solid #E0E0E0;
+            padding: 15px 0;
+        }
+
+        nav .left {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .right {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        nav li {
+            display: inline;
+            list-style: none;
+            font-size: 1.3rem;
+            margin: 0 20px;
+        }
+
+        nav li a:hover{
+            color:#23C961;
+            font-weight: bolder;
+        }
+
+        nav .pic {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #d9d9d9;
+        }
+
+        nav .name {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+
+        nav .search {
+            width: 438px;
+            height: 44px;
+            background-color: #d9d9d9;
+            background-clip: border-box;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav span {
+            display: flex;
+            margin: 4px 15px 3px 10px;
+            align-items: center;
+        }
+
+        nav #search {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            color: #eee;
+            font-size: 1.2rem;
+            vertical-align: middle;
+        }
+
+        header{
+            display: block;
+        }
+
+
+        footer{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            width: 100%;
+            height: 291px;
+            background-color: #154615;
+            color: white;
+        }
+
+        footer .container {
+            display: flex;
+
+        }
+/* 고정영역 */
+      
+
+        body {
+            /* font-family:'Spoqa Han Sans Neo', 'sans-serif'; */
+            font-family:"Noto Sans KR", sans-serif;
+            /* display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; */
+            margin: 0;
+        }
+        
+        main{
+            display: flex;
+            justify-content: center;
+           
+
+        }
+
+        .container_login {
+            
+            margin-top: 150px;
+            text-align: center;
+            width: 25.625rem;
+            margin-bottom:100px;
+           
+        }
+
+       h2{
+            color:#23C961;
+            font-size: 40px;
+            margin-top: 0px;
+            margin-bottom: 1px;
+        }
+
+        p{
+             color:#23C961;
+            font-size:25px;
+            margin-bottom:50px;
+            margin-top:1px;
+        }
+
+        a{
+            margin:0px 20px 10px 20px;
+        }
+        
+
+        .logo {
+            margin-bottom: 15px;
+        }
+
+        .logo img {
+            width: 200px;
+            height: 200px;
+        }
+
+
+        .input-container {
+            margin: 10px 0;
+          
+        }
+
+        .inputbox{
+           border: 0.5px solid #228B22;
+           border-radius: 4px;
+           height: 3.125rem;
+           font-size: 1rem;
+          
+           
+        }
+        
+        input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+
+        .login{
+            margin-top:1.25rem;
+            margin-bottom: 1.5rem;
+            width: 25.625rem;
+            padding: 10px;
+            background-color: #23C961;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            height: 3.875rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+        }
+
+        .login:hover {
+            background-color: #218838;
+        }
+        .options {
+            margin: 15px 0;
+            font-size: 1.125rem;
+            /* display: flex;
+            justify-content: center; */
+        }
+
+        .options a {
+            color:  #898989;
+            text-decoration: none;
+        }
+
+        .social-login {
+            margin: 10px 0;
+            padding: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            cursor: pointer;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .kakao {
+            background-color: #FDDC3F;
+            border:0.2px solid #A89D9D  rgba(253, 220, 63, .8);
+            height: 3.875rem;
+            width: 25.625rem;
+            color:#181600;
+            font-size: 1.10rem;
+           
+        }
+
+
+
+        .google {
+            background-color: #FFFFFF;
+            border: 1px solid #DDDDDD;
+            height: 3.875rem;
+            width: 25.625rem;
+            color:#181600;
+            font-size: 1.10rem;
+            text-align: left;
+            margin-top: 1.25rem;
+            
+           
+        }
+
+     
+    
