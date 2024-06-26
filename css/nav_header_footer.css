@@ -78,8 +78,9 @@ nav #search {
 }
 
 header{
-    display: block;
-    height: 500px;
+    display: flex;
+    height: 420px;
+    justify-content: center;
 }
 
 main {
