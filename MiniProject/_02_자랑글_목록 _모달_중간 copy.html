@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티_자랑글</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+        .noto-sans-kr {
+        font-family: "Noto Sans KR", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        }
+
+        body {
+            margin: 8px 0;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 60px;
+            position: fixed;
+            top:0;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px;
+            z-index: 9999;
+        }
+
+        nav .nav_left {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .nav_right {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        nav ul {
+            margin-right: 15px;
+        }
+        nav li {
+            display: inline;
+            list-style: none;
+            font-size: 1.3rem;
+            margin: 0 20px;
+        }
+
+        .nav_menu a:hover{
+            color: #23C961;
+        }
+
+        nav .name {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+
+        nav .nav_search {
+            width: 438px;
+            height: 44px;
+            background-color: #d9d9d9;
+            background-clip: border-box;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav span {
+            display: flex;
+            margin: 4px 15px 3px 10px;
+            align-items: center;
+        }
+
+        nav #search {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            color: #eee;
+            font-size: 1.2rem;
+            vertical-align: middle;
+        }
+
+        header{
+            display: flex;
+            justify-content: center;
+        }
+
+        main {
+            height: 1000px;
+        }
+
+        .container {
+            position: relative;
+            max-width: 1200px;
+            max-height: max-content;
+            margin: 2em auto;
+            padding: 0 1em;
+        }
+
+        footer {
+
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 200px;
+        background-color: #154615;
+        }
+
+        footer .f_container {
+            display: flex;
+            align-items: center;
+            width: 1200px;
+            color: white;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        .rankingcontent {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns:repeat(2, auto);
+            gap: 10px;
+            justify-content: space-between;
+            margin: 50px;
+
+        }
+
+        .rank1nav {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+            margin-left: 50px;
+        }
+        
+        .rank2nav {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+            margin-left: 50px;
+        }
+
+        .rank1info {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+        }
+
+        .rank2info {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+        }
+
+        .card1 {
+            border: #ccc solid 1px;
+            border-radius: 5px;;
+            width: auto;
+        }
+
+        .card2 {
+            border: #ccc solid 1px;
+            border-radius: 5px;;
+            width: auto;
+        }
+
+        .dailycontent {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+        .tag1, .tag2, .tag3 {
+            display: inline-block;
+            grid-template-columns: repeat(3, auto);
+            border: #ccc solid 1px;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .tag-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .hearticon {
+            justify-content: right;
+            padding: 5px;
+            margin: 1px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+
+        .card-text {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .reportbtn {
+            padding: 5px;
+            margin: 5px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .card-writer {
+            margin-top: 15px;
+            margin-left: 60px;
+            margin-bottom: 15px;
+            padding: 5px;
+        }
+
+        .normalcon {
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        .conimg {
+            position: relative;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: repeat(3, auto);
+            padding: 5px;
+            margin: 5px;
+            justify-content: space-between;
+            gap: 48px;
+            padding: 16px;
+        }
+
+        .thumbnail {
+            border-radius: 5px;
+            border: #ccc solid 1px;
+            width: 356px;
+            height: 261px;
+        }
+
+        /* #rank1modal {
+            margin-top: 150px;
+            
+        } */
+
+        .modal-body {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(2, auto);
+            justify-content: space-between;
+            gap: 10px;
+            margin: 10px;
+            padding: 10px;
+            height: max-content;
+        }
+
+        .modalthumb {
+            display: felx;
+            flex-wrap: wrap;
+            /* grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(2, auto) ;
+            gap:10px;
+            height: fit-content; */
+
+        }
+
+        .modal-dialog {
+            margin-top: 150px;
+        }
+        
+        .modalthumbnail {
+            width: 145px;
+            height: min-content;
+            
+            border-radius: 5px;
+        }
+
+        .modalmain {
+            border-radius: 5px;
+        }
+
+        .title {
+            border: #ccc solid 1px;
+            border-radius: 5px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .titlename {
+            margin-top: 5px;
+            padding-top: 10px;
+            padding-left: 10px;
+            
+        }
+
+        .titlehearticon {
+            padding: 5px;
+            margin: 1px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .comment {
+            display: flex;
+            border: 1px #ccc solid;
+            border-radius: 5px;
+            justify-content: space-between;
+            background: #F2F2F2
+        }
+
+        .commentbox {
+            border: none;
+            width: 240px;
+            background: #F2F2F2;
+        }
+
+        .entericon {
+            width: 50px;
+            height: 50px;
+        }
+
+        .enterbtn {
+            display: none;
+        }
+
+        .confirmbox {
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            color: #23C961;
+            margin-top: 15px;
+            margin-right: 10px;
+            cursor: pointer;
+
+        }
+        
+        .contentbox {
+            width: 400px;
+            height: 100px;
+            cursor: pointer;
+            border: 1px #F2F2F2 solid;
+        }
+
+        .item {
+            width: 145px; /* 아이템의 너비를 50%로 설정하여 2x2 격자 형태로 배치합니다. */
+            height: min-content; /* 아이템의 높이를 설정합니다. */
+            box-sizing: border-box; /* 테두리를 포함한 전체 너비/높이를 설정합니다. */
+        }
+    </style>
+</head>
+<body class="noto-sans-kr">
+    <nav>
+        <div class="nav_left">
+            <div>
+                <a href="#">
+                    <img src="images/nav_logo.svg" alt="플랜트랩 로고">
+                </a>
+            </div>
+            <div>
+                <ul class="nav_menu">
+                    <li><a href="#">커뮤니티</a></li>
+                    <li><a href="#">스토어</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav_right">
+            <div class="nav_search">
+                <span>
+                    <svg width="25" height="25.5" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M28.9749 26.5226L23.9072 20.9181L20.0092 19.137C21.3071 17.0958 22.0025 14.6606 22 12.1652C22 5.45727 17.0654 0 11 0C4.93455 0 0 5.45727 0 12.1652C0 18.8731 4.93455 24.3304 11 24.3304C13.276 24.3333 15.4961 23.551 17.3511 22.0925L18.9574 26.3918L24.0249 31.9966C24.3499 32.3561 24.7358 32.6412 25.1604 32.8357C25.5851 33.0303 26.0402 33.1304 26.4998 33.1304C26.9595 33.1305 27.4146 33.0303 27.8393 32.8358C28.2639 32.6413 28.6498 32.3562 28.9748 31.9968C29.2998 31.6374 29.5576 31.2106 29.7335 30.741C29.9094 30.2714 30 29.7681 30 29.2597C30 28.7514 29.9095 28.2481 29.7336 27.7784C29.5577 27.3088 29.2999 26.8821 28.9749 26.5226ZM2 12.1652C2 6.67703 6.03749 2.21185 11 2.21185C15.9625 2.21185 20 6.67703 20 12.1652C20 17.6534 15.9625 22.1185 11 22.1185C6.03749 22.1185 2 17.6534 2 12.1652ZM27.5606 30.4326C27.2791 30.7433 26.8976 30.9177 26.4999 30.9177C26.1022 30.9177 25.7208 30.7433 25.4393 30.4326L20.6535 25.1399L19.1601 21.1424L22.7749 22.7939L27.5607 28.0866C27.8416 28.398 27.9993 28.8198 27.9993 29.2596C27.9993 29.6994 27.8415 30.1213 27.5606 30.4326Z" fill="#878787"/>
+                        </svg>                    
+                </span>
+                <input type="text" id="search" placeholder="통합검색">
+            </div>
+            <div class="member">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    |
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header id="header">
+        <img src="images/header_정보.png" alt="글쓰기 헤더"> <!--자랑글 페이지용 헤더 만들기-->
+    </header>
+    <div class="container">
+        <div class="dailycontent">
+            <div class="card1" style="width: 546px;">
+                <div class="card-header">
+                <div>   
+                    <h5 class="card-writer">홍길동</h5>
+                </div>
+                <div class="report">
+                    <img src="images/menu.png.png" alt="신고 버튼" class="reportbtn">
+                </div>
+                </div>
+                <img src="images/ranksample1.jpg" class="card-img-top" alt="..." data-bs-toggle="modal"
+                data-bs-target="#rank1modal">
+                <div class="card-body">
+                  <p class="card-text">네잎 클로버를 찾아보세요</p>
+                  <div class="tag-group">
+                    <div class="tags">
+                        <p class="tag1">#행운</p>
+                        <p class="tag2">#행복</p>
+                    </div>
+                  <img src="images/hearticon.png.png" alt="" class="hearticon">
+                  </div>
+                </div>
+              </div>
+              <div class="card2" style="width: 546px;">
+                <div class="card-header">
+                <div>   
+                    <h5 class="card-writer">장길산</h5>
+                </div>
+                <div class="report">
+                    <img src="images/menu.png.png" alt="신고 버튼" class="reportbtn">
+                </div>
+                </div>
+                <img src="images/ranksample2.jpeg" class="card-img-top" alt="..." >
+                <div class="card-body">
+                  <p class="card-text">오늘 심은 양파...^^</p>
+                  <div class="tag-group">
+                    <div class="tags">
+                        <p class="tag1">#내돈내심</p>
+                        <p class="tag2">#반찬</p>
+                    </div>
+                  <img src="images/hearticon.png.png" alt="" class="hearticon">
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+        <div class="normalcon">
+            <div class="conimg">
+                <div>
+                <img src="images/emagesample1.jpg" alt="" class="thumbnail" id="normal1">
+                </div>
+                <div>
+                <img src="images/ranksample1.jpg" alt="" class="thumbnail" id="normal2">
+                </div>
+                <div>
+                <img src="images/ranksample1.jpg" alt="" class="thumbnail" id="normal3">
+                </div>
+                <div>
+                <img src="images/ranksample1.jpg" alt="" class="thumbnail" id="normal4">
+                </div>
+                <div>
+                <img src="images/ranksample1.jpg" alt="" class="thumbnail" id="normal5">
+                </div>
+                <div>
+                <img src="images/ranksample1.jpg" alt="" class="thumbnail" id="normal6">
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="f_container">
+            <div style="margin: auto 50px;">
+                <img width="150px" height="150px" src="images/round_logo_colorBack.svg" alt="플랜트팜 로고">
+            </div>
+            <div>
+                <p>주소 :  서울특별시 강남구 강남대로2689길 20, 5층(역삼동)   TEL : 02 - 1111-2222</p>
+                <p>상호명 : (주)플랜트랩</p>
+                <p>Copyright © 2024 .All RIGHTS RSERVED.</p>
+                <p>불4조 :  정다은  김화영  김시표  송주헌  반재형</p>
+            </div>
+        </div>
+    </footer>
+    <!--modal 팝업-->
+    <div class="modal fade" id="rank1modal">
+        <div class="modal-dialog modal-xl">
+            <!--.modal-content: 모달의 콘텐츠 영역-->
+            <div class="modal-content">
+                <!--.modal-header: 모달의 헤더 영역-->
+                <!-- <div class="modal-header">
+                    <h3>슈퍼푸드</h3>
+                </div> -->
+                <!--.modal-body: 모달의 바디 영역-->
+                <div class="modal-body">
+                    <img src="images/ranksample1.jpg" alt="" class="modalmain">
+                    <div class="modalthumb">
+                    <img src="images/ranksample1.jpg" alt="" class="item" id="modalthumb1">
+                    <img src="images/ranksample1.jpg" alt="" class="item" id="modalthumb1">
+                    <img src="images/ranksample1.jpg" alt="" class="item" id="modalthumb1">
+                    <img src="images/ranksample1.jpg" alt="" class="item" id="modalthumb1">
+                    </div>
+                    <div class="title">
+                        <p class="titlename">#행운  #행복</p>
+                        <img src="images/hearticon.png.png" alt="" class="titlehearticon">
+                    </div>
+                    <div class="comment">
+                        <input action="text" class="commentbox" placeholder="댓글을 입력하세요."
+                        onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'"></input>
+                        <div type="submit" class="confirmbox">게시</div>
+                    </div>
+                </div>
+                <!--.modal-body: 모달의 푸터 영역-->
+                <!-- <div class="modal-footer"> -->
+                    <!--data-bs-dismiss="modal": 클릭 시 모달창 닫기-->
+                    <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <script>
+        $(() => {
+            $(".tags")
+        });
+    </script>
+</body>
+</html>

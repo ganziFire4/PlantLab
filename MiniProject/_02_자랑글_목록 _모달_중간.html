@@ -8,6 +8,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
         .noto-sans-kr {
         font-family: "Noto Sans KR", sans-serif;
         font-optical-sizing: auto;
@@ -29,7 +31,7 @@
             background-color: white;
             border-bottom: 1px solid #e0e0e0;
             padding: 15px;
-            z-index: 1000;
+            z-index: 9999;
         }
 
         nav .nav_left {
@@ -215,6 +217,7 @@
         .card-text {
             padding: 5px;
             margin: 5px;
+            overflow: hidden;
         }
 
         .reportbtn {
@@ -300,6 +303,8 @@
 
         .modalmain {
             border-radius: 5px;
+            width: 800px;
+            height: 533px;
         }
 
         .title {
@@ -358,6 +363,48 @@
             cursor: pointer;
 
         }
+
+        .modal-right {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .modalcontents {
+            display:flex;
+            text-align: center;
+        }
+
+        .modalmaincon {
+            margin: 5px 0 0 5px;
+        }
+
+        .modalmaindate {
+            margin: 8px 0 0 5px;
+            font-size: 13px;
+            color: #858585;
+        }
+
+        .modalcontentbox {
+            width:300px;
+            height:max-content;
+            border-bottom: #ccc solid 1px;
+            margin-top: 5px;
+        }
+
+        .modalmaincontent {
+            font-size: 12px;
+            margin: 0 0 0 49px;
+            padding: 0px;
+        }
+
+        .writerpic {
+            margin: 5px;
+        }
+
+        .modal-content {
+            align-items: center;
+            color: black;
+        }
     </style>
 </head>
 <body class="noto-sans-kr">
@@ -371,7 +418,7 @@
             <div>
                 <ul class="nav_menu">
                     <li><a href="#">커뮤니티</a></li>
-                    <li><a href="#">스토어</a></ li>
+                    <li><a href="#">스토어</a></li>
                 </ul>
             </div>
         </div>
@@ -394,32 +441,27 @@
         </div>
     </nav>
     <header id="header">
-        <img src="image/header_정보.png" alt="글쓰기 헤더">
+        <img src="images/header_정보.png" alt="글쓰기 헤더"> <!--자랑글 페이지용 헤더 만들기-->
     </header>
-    <div class="hero">
-        <img src="images/Header image.png.png" alt="">
-        <h1></h1>
-        <p></p>
-    </div>
     <div class="container">
         <div class="dailycontent">
             <div class="card1" style="width: 546px;">
                 <div class="card-header">
                 <div>   
-                    <h5 class="card-writer">홍길동</h5>
+                    <h5 class="card-writer">karina87</h5>
                 </div>
                 <div class="report">
                     <img src="images/menu.png.png" alt="신고 버튼" class="reportbtn">
                 </div>
                 </div>
-                <img src="images/ranksample1.jpg" class="card-img-top" alt="..." data-bs-toggle="modal"
+                <img src="images/rank1main.png" class="card-img-top" alt="..." data-bs-toggle="modal"
                 data-bs-target="#rank1modal">
                 <div class="card-body">
-                  <p class="card-text">네잎 클로버를 찾아보세요</p>
+                  <p class="card-text">입양한지 100일째 ~ 무럭무럭 크는 우리집 뽀짝 그린이에요>_< 벌레도 없이 튼튼하게 자라는 중이에요</p>
                   <div class="tag-group">
                     <div class="tags">
-                        <p class="tag1">#행운</p>
-                        <p class="tag2">#행복</p>
+                        <p class="tag1">#초록</p>
+                        <p class="tag2">#자랑</p>
                     </div>
                   <img src="images/hearticon.png.png" alt="" class="hearticon">
                   </div>
@@ -484,15 +526,33 @@
                 </div> -->
                 <!--.modal-body: 모달의 바디 영역-->
                 <div class="modal-body">
-                    <img src="images/ranksample1.jpg" alt="" class="modalmain">
-                    <div class="modalthumb">
-                    <img src="images/ranksample1.jpg" alt="" class="modalthumbnail" id="modalthumb1">
-                    <img src="images/ranksample1.jpg" alt="" class="modalthumbnail" id="modalthumb1">
-                    <img src="images/ranksample1.jpg" alt="" class="modalthumbnail" id="modalthumb1">
-                    <img src="images/ranksample1.jpg" alt="" class="modalthumbnail" id="modalthumb1">
+                    <img src="images/rank1main.png" alt="" class="modalmain">
+                    <div class="modal-right">
+                        <div class="modalthumb">
+                            <img src="images/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1">
+                            <img src="images/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1">
+                            <img src="images/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1">
+                            <img src="images/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1">
+                        </div>
+                        <div class="modalcontentbox">
+                            <div class="modalcontents">
+                                <div class="writerpic">
+                                    <img src="images/카리나.png" alt="">
+                                </div>
+                                <div class="modalmaincon">
+                                    karina87
+                                </div>
+                                <div class="modalmaindate">
+                                    24.06.27
+                                </div>
+                            </div>
+                            <div class="modalmaincontent">
+                                <p>입양한지 100일째 ~ 무럭무럭 크는 우리집 뽀짝<br>그린이에요>_<<br>벌레도 없이 튼튼하게 자라는 중이에요</p>
+                            </div>
+                        </div>
                     </div>
                     <div class="title">
-                        <p class="titlename">#행운  #행복</p>
+                        <p class="titlename">#초록  #자랑</p>
                         <img src="images/hearticon.png.png" alt="" class="titlehearticon">
                     </div>
                     <div class="comment">
@@ -510,9 +570,19 @@
         </div>
     </div>
     <script>
-        $(() => {
-            $(".tags")
+        document.addEventListener('DOMContentLoaded', function() {
+          const cardTexts = document.querySelectorAll('.card-text');
+        
+          cardTexts.forEach(function(cardText) {
+            const text = cardText.textContent.trim();
+            const maxLength = 30;
+        
+            if (text.length > maxLength) {
+              const trimmedText = text.slice(0, maxLength) + '...';
+              cardText.textContent = trimmedText;
+            }
+          });
         });
-    </script>
+        </script>
 </body>
 </html>
