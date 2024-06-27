@@ -6,25 +6,100 @@
     <title>커뮤니티_글작성</title>
     <script src="js/jquery-3.7.1.min.js"></script>
     <style>
+        .noto-sans-kr {
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+        }
+
         body {
-            margin: 0;
-            padding: 0;
+            margin: 8px 0;
         }
-        header {
-            background-color: #E0E0E0;
-            color: black;
-            text-align: center;
-            padding: 1em 0;
-        }
-        .header-nav {
+
+        nav{
             display: flex;
-            justify-content: left;
+            justify-content: space-between;
             align-items: center;
-            padding: 0 1em;
+            width: 100%;
+            height: 60px;
+            position: fixed;
+            top:0;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px;
+            z-index: 1000;
         }
-        .header-nav a {
+
+        nav .nav_left {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .nav_right {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
             color: black;
-            margin: 0 0.5em;
+            font-weight: bold;
+        }
+
+        nav ul {
+            margin-right: 15px;
+        }
+        nav li {
+            display: inline;
+            list-style: none;
+            font-size: 1.3rem;
+            margin: 0 20px;
+        }
+
+        .nav_menu a:hover{
+            color: #23C961;
+        }
+
+        nav .name {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+
+        nav .nav_search {
+            width: 438px;
+            height: 44px;
+            background-color: #d9d9d9;
+            background-clip: border-box;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav span {
+            display: flex;
+            margin: 4px 15px 3px 10px;
+            align-items: center;
+        }
+
+        nav #search {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            color: #eee;
+            font-size: 1.2rem;
+            vertical-align: middle;
+        }
+
+        /* header{
+            display: flex;
+            height: 500px;
+            justify-content: center;
+        } */
+
+        main {
+            height: 1000px;
         }
         /* .hero {
             background-image: url('');
@@ -39,9 +114,10 @@
         .container {
             position: relative;
             max-width: 1200px;
-            max-height: 900px;
+            max-height: 1200px;
             margin: 2em auto;
             padding: 0 1em;
+            margin-top: 100px;
         }
         .form-group {
             margin-bottom: 1em;
@@ -143,39 +219,62 @@
             justify-content: center;
         }
 
-        .footer .footercontainer {
+        footer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 200px;
+        background-color: #154615;
+        }
+
+        footer .f_container {
             display: flex;
-            justify-content: center;
-            width: 80%;
-            height: 160px;
             align-items: center;
+            width: 1200px;
+            color: white;
         }
 
-        .footer .companyname {
-            float: left;
-            font-size: 30px;
+        footer p {
+            margin: 8px 0;
         }
-
-        .footercontent {
-            text-align: left;
-            font-size: 13px;
-            margin-left: 50px;
-        }
-    </style>
+        </style>
 </head>
-<body>
-    <header>
-        <div class="header-nav">
-            <div>식물나라</div>
-            <nav>
-                <a href="#">커뮤니티</a>
-                <a href="#">스토어</a>
-            </nav>
+<body class="noto-sans-kr">
+    <nav>
+        <div class="nav_left">
             <div>
-                <a href="#">로그인</a> | <a href="#">회원가입</a>
+                <a href="#">
+                    <img src="images/nav_logo.svg" alt="플랜트랩 로고">
+                </a>
+            </div>
+            <div>
+                <ul class="nav_menu">
+                    <li><a href="#">커뮤니티</a></li>
+                    <li><a href="#">스토어</a></ li>
+                </ul>
             </div>
         </div>
-    </header>
+        <div class="nav_right">
+            <div class="nav_search">
+                <span>
+                    <svg width="25" height="25.5" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M28.9749 26.5226L23.9072 20.9181L20.0092 19.137C21.3071 17.0958 22.0025 14.6606 22 12.1652C22 5.45727 17.0654 0 11 0C4.93455 0 0 5.45727 0 12.1652C0 18.8731 4.93455 24.3304 11 24.3304C13.276 24.3333 15.4961 23.551 17.3511 22.0925L18.9574 26.3918L24.0249 31.9966C24.3499 32.3561 24.7358 32.6412 25.1604 32.8357C25.5851 33.0303 26.0402 33.1304 26.4998 33.1304C26.9595 33.1305 27.4146 33.0303 27.8393 32.8358C28.2639 32.6413 28.6498 32.3562 28.9748 31.9968C29.2998 31.6374 29.5576 31.2106 29.7335 30.741C29.9094 30.2714 30 29.7681 30 29.2597C30 28.7514 29.9095 28.2481 29.7336 27.7784C29.5577 27.3088 29.2999 26.8821 28.9749 26.5226ZM2 12.1652C2 6.67703 6.03749 2.21185 11 2.21185C15.9625 2.21185 20 6.67703 20 12.1652C20 17.6534 15.9625 22.1185 11 22.1185C6.03749 22.1185 2 17.6534 2 12.1652ZM27.5606 30.4326C27.2791 30.7433 26.8976 30.9177 26.4999 30.9177C26.1022 30.9177 25.7208 30.7433 25.4393 30.4326L20.6535 25.1399L19.1601 21.1424L22.7749 22.7939L27.5607 28.0866C27.8416 28.398 27.9993 28.8198 27.9993 29.2596C27.9993 29.6994 27.8415 30.1213 27.5606 30.4326Z" fill="#878787"/>
+                        </svg>                    
+                </span>
+                <input type="text" id="search" placeholder="통합검색">
+            </div>
+            <div class="member">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    |
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- <header id="header">
+        <img src="image/header_정보.png" alt="글쓰기 헤더">
+    </header> -->
     <!-- <div class="hero">
         <img src="images/Header image.png.png" alt="">
         <h1></h1>
@@ -184,9 +283,11 @@
     <div class="container">
         <div class="form-group">
             <label for="title"></label>
-            <input type="text" id="title" name="title" placeholder="제목을 입력하세요."
+            <!-- <input type="text" id="title" name="title" placeholder="제목을 입력하세요."
             onfocus="placeholder=''" onblur="placeholder='제목을 입력하세요.'"
-            >
+            > -->
+            <textarea name="content" id="content" placeholder="내용을 입력하세요."
+            onfocus="placeholder=''" onblur="placeholder='내용을 입력하세요.'"></textarea> <!--폰트 바꿀 것-->
         </div>
         <div class="form-group">
             <label for="tags"></label>
@@ -212,17 +313,17 @@
             <button type="submit" class="confirm">글 올리기</button>
         </div>
     </div>
-    <footer class="footer">
-        <div class="footercontainer">
-            <div class="companyname">
-                PlantLab
+    <footer>
+        <div class="f_container">
+            <div style="margin: auto 50px;">
+                <img width="150px" height="150px" src="images/round_logo_colorBack.svg" alt="플랜트팜 로고">
             </div>
-            <div class="footercontent">
-                <p style="margin-top: 5px; margin-bottom: 5px;">주소 :  서울특별시 강남구 강남대로2689길 20, 5층(역삼동)   TEL : 02 - 1111-2222 </p>
-                <p style="margin-top: 5px; margin-bottom: 5px;">상호명 : (주)식물나라</p>
-                <p style="margin-top: 5px; margin-bottom: 5px;">Copyright © 2024 .All RIGHTS RSERVED.</p>
-                <p style="margin-top: 5px; margin-bottom: 5px;">불4조 :  정다은  김화영  김시표  송주헌  반재형</p>
-            </div> <!--임시-->
+            <div>
+                <p>주소 :  서울특별시 강남구 강남대로2689길 20, 5층(역삼동)   TEL : 02 - 1111-2222</p>
+                <p>상호명 : (주)플랜트랩</p>
+                <p>Copyright © 2024 .All RIGHTS RSERVED.</p>
+                <p>불4조 :  정다은  김화영  김시표  송주헌  반재형</p>
+            </div>
         </div>
     </footer>
     <script>
@@ -237,4 +338,4 @@
         });
     </script>
 </body>
-</html>ㄱ
+</html>

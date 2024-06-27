@@ -8,26 +8,31 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <style>
-        /* body {
+        /* 기본 스타일 */
+        body, header, .hero, .container, footer, .modal-body {
             margin: 0;
             padding: 0;
-        } */
+        }
+
         header {
             background-color: #E0E0E0;
             color: black;
             text-align: center;
             padding: 1em 0;
         }
+
         .header-nav {
             display: flex;
             justify-content: left;
             align-items: center;
             padding: 0 1em;
         }
+
         .header-nav a {
             color: black;
             margin: 0 0.5em;
         }
+
         .hero {
             display: flex;
             justify-content: center;
@@ -36,9 +41,10 @@
             text-align: center;
             color: black;
         }
+
         .hero h1 {
             margin: 0;
-        } 
+        }
 
         .container {
             position: relative;
@@ -47,8 +53,9 @@
             margin: 2em auto;
             padding: 0 1em;
         }
+
         .footer {
-            background-color: #154615; 
+            background-color: #154615;
             color: white;
             padding: 20px 0;
             display: flex;
@@ -77,48 +84,22 @@
         .rankingcontent {
             margin-top: 10px;
             display: grid;
-            grid-template-columns:repeat(2, auto);
+            grid-template-columns: repeat(2, auto);
             gap: 10px;
             justify-content: space-between;
             margin: 50px;
-
         }
 
-        .rank1nav {
-            display: flex;
-            margin-top: 10px;
-            justify-content: space-between;
-            margin-left: 50px;
-        }
-        
-        .rank2nav {
+        .rank1nav, .rank2nav, .rank1info, .rank2info {
             display: flex;
             margin-top: 10px;
             justify-content: space-between;
             margin-left: 50px;
         }
 
-        .rank1info {
-            display: flex;
-            margin-top: 10px;
-            justify-content: space-between;
-        }
-
-        .rank2info {
-            display: flex;
-            margin-top: 10px;
-            justify-content: space-between;
-        }
-
-        .card1 {
+        .card1, .card2 {
             border: #ccc solid 1px;
-            border-radius: 5px;;
-            width: auto;
-        }
-
-        .card2 {
-            border: #ccc solid 1px;
-            border-radius: 5px;;
+            border-radius: 5px;
             width: auto;
         }
 
@@ -134,7 +115,6 @@
 
         .tag1, .tag2, .tag3 {
             display: inline-block;
-            grid-template-columns: repeat(3, auto);
             border: #ccc solid 1px;
             border-radius: 5px;
             padding: 5px;
@@ -145,9 +125,8 @@
             display: flex;
             justify-content: space-between;
         }
-        
+
         .hearticon {
-            justify-content: right;
             padding: 5px;
             margin: 1px;
             cursor: pointer;
@@ -171,7 +150,7 @@
             display: flex;
             justify-content: space-between;
         }
-        
+
         .card-writer {
             margin-top: 15px;
             margin-left: 60px;
@@ -182,7 +161,6 @@
         .normalcon {
             display: flex;
             justify-content: center;
-            
         }
 
         .conimg {
@@ -191,9 +169,6 @@
             display: grid;
             grid-template-columns: repeat(3, auto);
             grid-template-rows: repeat(3, auto);
-            padding: 5px;
-            margin: 5px;
-            justify-content: space-between;
             gap: 48px;
             padding: 16px;
         }
@@ -205,88 +180,90 @@
             height: 261px;
         }
 
-        /* #rank1modal {
-            margin-top: 150px;
-            
-        } */
-
         .modal-body {
-            display: grid;
-            grid-template-columns: repeat(2, auto);
-            grid-template-rows: repeat(2, auto);
-            justify-content: space-between;
-            gap: 10px;
-            margin: 5px;
-            padding: 10px;
-        }
-
-        .modalthumb {
-            display: grid;
-            grid-template-columns: repeat(2, auto);
-            grid-template-rows: repeat(2, auto) ;
-            gap:10px;
-            height: fit-content;
-
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
         }
 
         .modal-dialog {
             margin-top: 150px;
         }
-        
-        .modalthumbnail {
-            width: 145px;
-            height: min-content;
-            border-radius: 5px;
-        }
 
         .modalmain {
-            border-radius: 5px;
-            background: transparent;
+            width: 60%;
+            margin-bottom: 20px;
         }
 
-        .title {
-            border: #ccc solid 1px;
-            border-radius: 5px;
-            text-align: left;
-            display: flex;
-            justify-content: space-between;
-        }
-        
-        .titlename {
-            margin-top: 5px;
-            padding-top: 10px;
-            padding-left: 10px;
-            
+        .modalthumb {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+            align-self: flex-start; /* Align to the top */
         }
 
-        .titlehearticon {
-            padding: 5px;
-            margin: 1px;
+        .modalthumbnail {
+            width: 145px;
+            height: 100px;
             cursor: pointer;
-            width: 50px;
-            height: 50px;
         }
-        
-        .comment {
+
+        .modalmaincon {
             display: flex;
-            border: 1px #ccc solid;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-bottom: 20px; /* Add space between sections */
+        }
+
+        .comments-section {
+            width: 100%;
+            height: 200px; /* 고정된 높이 설정 */
+            margin-top: 20px;
+            border-top: 1px solid #ddd;
+            padding-top: 20px;
+            overflow-y: auto; /* 스크롤 추가 */
+        }
+
+        .comment {
+            margin-bottom: 10px;
+            padding: 10px;
+            background: #f8f8f8;
             border-radius: 5px;
-            justify-content: space-between;
         }
 
-        .commentbox {
+        .comment-input {
+            display: flex;
+            margin-top: 20px;
+        }
+
+        .comment-input input {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        .confirmbox {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 60px;
+            height: 40px;
+            background: #23C961;
+            color: white;
+            cursor: pointer;
             border: none;
-            width: 240px;
+            border-radius: 5px;
         }
 
-        .entericon {
-            width: 50px;
-            height: 50px;
-            padding-right: 5px;
+        .modalsubcon {
+            display: flex;
+            flex-direction: column;
+            margin-left: 80px;
         }
 
-        .enterbtn {
-            display: none;
+        .modalmainimage {
+            width: 800px;
+            height: 533px;
         }
     </style>
 </head>
@@ -301,7 +278,6 @@
             <div>
                 <a href="#">로그인</a> | <a href="#">회원가입</a>
             </div>
-            
         </div>
     </header>
     <div class="hero">
@@ -313,47 +289,46 @@
         <div class="dailycontent">
             <div class="card1" style="width: 546px;">
                 <div class="card-header">
-                <div>   
-                    <h5 class="card-writer">홍길동</h5>
-                </div>
-                <div class="report">
-                    <img src="images/menu.png.png" alt="신고 버튼" class="reportbtn">
-                </div>
+                    <div>
+                        <h5 class="card-writer">홍길동</h5>
+                    </div>
+                    <div class="report">
+                        <img src="images/menu.png.png" alt="신고 버튼" class="reportbtn">
+                    </div>
                 </div>
                 <img src="images/ranksample1.jpg" class="card-img-top" alt="..." data-bs-toggle="modal"
-                data-bs-target="#rank1modal">
+                    data-bs-target="#rank1modal">
                 <div class="card-body">
-                  <p class="card-text">네잎 클로버를 찾아보세요</p>
-                  <div class="tag-group">
-                    <div class="tags">
-                        <p class="tag1">#행운</p>
-                        <p class="tag2">#행복</p>
+                    <p class="card-text">네잎 클로버를 찾아보세요</p>
+                    <div class="tag-group">
+                        <div class="tags">
+                            <p class="tag1">#행운</p>
+                            <p class="tag2">#행복</p>
+                        </div>
+                        <img src="images/hearticon.png.png" alt="" class="hearticon">
                     </div>
-                  <img src="images/hearticon.png.png" alt="" class="hearticon">
-                  </div>
                 </div>
-              </div>
-              <div class="card2" style="width: 546px;">
+            </div>
+            <div class="card2" style="width: 546px;">
                 <div class="card-header">
-                <div>   
-                    <h5 class="card-writer">장길산</h5>
-                </div>
-                <div class="report">
-                    <img src="images/menu.png.png" alt="신고 버튼" class="reportbtn">
-                </div>
-                </div>
-                <img src="images/ranksample2.jpeg" class="card-img-top" alt="..." >
-                <div class="card-body">
-                  <p class="card-text">오늘 심은 양파...^^</p>
-                  <div class="tag-group">
-                    <div class="tags">
-                        <p class="tag1">#내돈내심</p>
-                        <p class="tag2">#반찬</p>
+                    <div>
+                        <h5 class="card-writer">장길산</h5>
                     </div>
-                  <img src="images/hearticon.png.png" alt="" class="hearticon">
-                  </div>
+                    <div class="report">
+                        <img src="images/menu.png.png" alt="신고 버튼" class="reportbtn">
+                    </div>
                 </div>
-              </div>
+                <img src="images/ranksample2.jpeg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <p class="card-text">오늘 심은 양파...^^</p>
+                    <div class="tag-group">
+                        <div class="tags">
+                            <p class="tag1">#내돈내심</p>
+                            <p class="tag2">#반찬</p>
+                        </div>
+                        <img src="images/hearticon.png.png" alt="" class="hearticon">
+                    </div>
+                </div>
             </div>
         </div>
         <div class="normalcon">
@@ -364,7 +339,6 @@
                 <img src="images/ranksample1.jpg" alt="" class="thumbnail" id="normal4">
                 <img src="images/ranksample1.jpg" alt="" class="thumbnail" id="normal5">
                 <img src="images/ranksample1.jpg" alt="" class="thumbnail" id="normal6">
-                
             </div>
         </div>
     </div>
@@ -374,53 +348,52 @@
                 식물나라
             </div>
             <div class="footercontent">
-                <p style="margin-top: 5px; margin-bottom: 5px;">주소 :  서울특별시 강남구 강남대로2689길 20, 5층(역삼동)   TEL : 02 - 1111-2222 </p>
+                <p style="margin-top: 5px; margin-bottom: 5px;">주소 : 서울특별시 강남구 강남대로2689길 20, 5층(역삼동) TEL : 02 - 1111-2222 </p>
                 <p style="margin-top: 5px; margin-bottom: 5px;">상호명 : (주)식물나라</p>
                 <p style="margin-top: 5px; margin-bottom: 5px;">Copyright © 2024 .All RIGHTS RSERVED.</p>
-                <p style="margin-top: 5px; margin-bottom: 5px;">불4조 :  정다은  김화영  김시표  송주헌  반재형</p>
-            </div> <!--임시-->
+                <p style="margin-top: 5px; margin-bottom: 5px;">불4조 : 정다은 김화영 김시표 송주헌 반재형</p>
+            </div>
         </div>
     </footer>
     <!--modal 팝업-->
-    <div class="modal fade" id="rank1modal">
+    <div class="modal fade" id="rank1modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-xl">
-            <!--.modal-content: 모달의 콘텐츠 영역-->
             <div class="modal-content">
-                <!--.modal-header: 모달의 헤더 영역-->
-                <!-- <div class="modal-header">
-                    <h3>슈퍼푸드</h3>
-                </div> -->
-                <!--.modal-body: 모달의 바디 영역-->
                 <div class="modal-body">
-                    <img src="images/ranksample1.jpg" alt="" class="modalmain">
-                    <div class="modalthumb">
-                    <img src="images/ranksample1.jpg" alt="" class="modalthumbnail" id="modalthumb1">
-                    <img src="images/ranksample1.jpg" alt="" class="modalthumbnail" id="modalthumb1">
-                    <img src="images/ranksample1.jpg" alt="" class="modalthumbnail" id="modalthumb1">
-                    <img src="images/ranksample1.jpg" alt="" class="modalthumbnail" id="modalthumb1">
+                    <div class="modalmain">
+                        <img src="images/ranksample1.jpg" alt="Main Image" class="img-fluid" id="modalmainimage">
                     </div>
-                    <div class="title">
-                        <p class="titlename">제목입니다.</p>
-                        <img src="images/hearticon.png.png" alt="" class="titlehearticon">
-                    </div>
-                    <div class="comment">
-                        <input action="text" class="commentbox" placeholder="댓글을 입력하세요."
-                        onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'"></input>
-                        <button type="submit" class="enterbtn"></button>
-                        <img src="images/entericon.png" alt="" class="entericon">
+                    <div class="modalsubcon">
+                        <div class="modalthumb">
+                            <img src="images/ranksample1.jpg" alt="Thumbnail 1" class="modalthumbnail">
+                            <img src="images/ranksample1.jpg" alt="Thumbnail 2" class="modalthumbnail">
+                            <img src="images/ranksample1.jpg" alt="Thumbnail 3" class="modalthumbnail">
+                            <img src="images/ranksample1.jpg" alt="Thumbnail 4" class="modalthumbnail">
+                        </div>
+                        <div class="comments-section">
+                            <div id="comments-container"></div>
+                            <div class="comment-input">
+                                <input type="text" id="comment-input" class="form-control" placeholder="댓글을 입력하세요.">
+                                <button id="submit-comment" class="confirmbox">게시</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!--.modal-body: 모달의 푸터 영역-->
-                <!-- <div class="modal-footer"> -->
-                    <!--data-bs-dismiss="modal": 클릭 시 모달창 닫기-->
-                    <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
-                </div> -->
             </div>
         </div>
     </div>
     <script>
-        $(() => {
-            $(".tags")
+        document.getElementById('submit-comment').addEventListener('click', () => {
+            const commentInput = document.getElementById('comment-input');
+            const commentText = commentInput.value.trim();
+            if (commentText) {
+                const commentContainer = document.getElementById('comments-container');
+                const newComment = document.createElement('div');
+                newComment.className = 'comment';
+                newComment.innerText = commentText;
+                commentContainer.appendChild(newComment);
+                commentInput.value = '';
+            }
         });
     </script>
 </body>
