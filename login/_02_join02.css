@@ -1,0 +1,178 @@
+ /* @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css); */
+ @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+      
+      
+        /* 네비 바 & 푸터 (고정 영역 ) */
+
+        nav{
+         
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+            position:fixed;
+            margin:0 10px 10px;
+            width:100%;
+            top: 0;
+            border-bottom: 1px solid #E0E0E0;
+            padding: 15px 0;
+        }
+
+        nav .left {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .right {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        nav li {
+            display: inline;
+            list-style: none;
+            font-size: 1.3rem;
+            margin: 0 20px;
+        }
+
+        nav li a:hover{
+            color:#23C961;
+            font-weight: bolder;
+        }
+
+        nav .pic {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: #d9d9d9;
+        }
+
+        nav .name {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+
+        nav .search {
+            width: 438px;
+            height: 44px;
+            background-color: #d9d9d9;
+            background-clip: border-box;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav span {
+            display: flex;
+            margin: 4px 15px 3px 10px;
+            align-items: center;
+        }
+
+        nav #search {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            color: #eee;
+            font-size: 1.2rem;
+            vertical-align: middle;
+        }
+
+        header{
+            display: block;
+        }
+
+
+        footer{
+            display: flex;
+            justify-content: left;
+            align-items: center;
+            width: 100%;
+            height: 291px;
+            background-color: #154615;
+            color: white;
+        }
+
+        footer .container {
+            display: flex;
+
+        }
+/* 고정영역 끝 */
+body {
+    font-family:"Noto Sans KR", sans-serif;
+    background-color: #ffffff;
+    
+    margin: 0;
+    padding: 0;
+}
+
+
+main{
+    margin-top: 160px;
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.container {
+    align-items: center;
+    text-align: center;
+}
+
+h2{
+    color:#23C961;
+    font-size: 1.875rem;
+}
+
+p{
+    color:#4E765D;
+    margin-top: 40px;
+    margin-bottom: 50px;
+}
+
+.submit-login-btn{
+    background-color: #23C961;
+    color: white;
+    font-weight: bolder;
+    width: 14.938rem;
+    height: 3.875rem;
+    border-radius: 5px;
+    border:none;
+    font-size:1.25rem;
+}
+
+.submit-login-btn:hover {
+    background-color: #264D35;
+}
+
+.submit-home-btn:hover {
+    background-color: #264D35;
+}
+
+
+
+.container img{
+    width: 250px;
+  
+}
+
+.submit-home-btn{
+    background-color: #4B8661;
+    color: white;
+    font-weight: bolder;
+    width: 14.938rem;
+    height: 3.875rem;
+    border-radius: 5px;
+    border:none;
+    font-size:1.25rem;
+}

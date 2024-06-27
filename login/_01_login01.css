@@ -1,18 +1,17 @@
 
        /* @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css); */
        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-        /* 네비 바 & 푸터 (고정 영역 ) */
+      
+      
+       /* 네비 바 & 푸터 (고정 영역 ) */
 
         nav{
-            /* 안움직이게 어떻게 하지 ?? 
-            상단 마진부분 백그라운드 컬러 안들어감 ㅠ 
-        */
+         
             background-color: white;
             display: flex;
             justify-content: space-between;
             align-items: center;
             height: 60px;
-            /* position: relative; */
             position:fixed;
             margin:0 10px 10px;
             width:100%;
@@ -108,26 +107,18 @@
             display: flex;
 
         }
-/* 고정영역 */
+/* 고정영역 끝 */
       
-
+/*메인 로그인 영역*/
         body {
-            /* font-family:'Spoqa Han Sans Neo', 'sans-serif'; */
             font-family:"Noto Sans KR", sans-serif;
-            /* display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh; */
             margin: 0;
         }
         
         main{
             display: flex;
             justify-content: center;
-           
-
-        }
+                   }
 
         .container_login {
             
@@ -228,6 +219,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: left;
         }
         .kakao {
             background-color: #FDDC3F;
