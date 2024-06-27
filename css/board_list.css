@@ -48,3 +48,24 @@ main li {
     color: #27AF5A; 
     border-bottom: 3px solid #27AF5A;
 }
+
+.title_table_area{
+    width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.title_table_area p {
+    display: inline-flex;
+    align-items: center;
+    margin: 5px;
+}
+
+.title_table_area select {
+    position: absolute;
+    right: 0;
+}
+
+#popular_list {
+    margin-bottom: 30px;
+}

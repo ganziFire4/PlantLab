@@ -21,6 +21,8 @@ nav{
     background-color: white;
     border-bottom: 1px solid #e0e0e0;
     padding: 15px;
+    box-sizing: content-box;
+    z-index: 9999;
 }
 
 nav .nav_left {
@@ -33,6 +35,13 @@ nav .nav_right {
     align-items: center;
 }
 
+nav div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 nav a {
     text-decoration: none;
     color: black;
@@ -40,7 +49,9 @@ nav a {
 }
 
 nav ul {
-    margin-right: 15px;
+    margin: 0 15px 0 0;
+    display: flex;
+    align-items: center;
 }
 nav li {
     display: inline;
@@ -89,10 +100,6 @@ header{
     display: flex;
     height: 500px;
     justify-content: center;
-}
-
-main {
-    height: 1000px;
 }
 
 footer{
