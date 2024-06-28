@@ -198,6 +198,7 @@
             border-radius: 5px;
             padding: 5px;
             margin: 5px;
+            cursor: pointer;
         }
 
         .tag-group {
@@ -206,6 +207,15 @@
         }
         
         .hearticon {
+            justify-content: right;
+            padding: 5px;
+            margin: 1px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+
+        .filledhearticon {
             justify-content: right;
             padding: 5px;
             margin: 1px;
@@ -234,9 +244,9 @@
         
         .card-writer {
             margin-top: 15px;
-            margin-left: 60px;
+            margin-left: 10px;
             margin-bottom: 15px;
-            padding: 5px;
+            font-size: 20px;
         }
 
         .normalcon {
@@ -405,6 +415,13 @@
             align-items: center;
             color: black;
         }
+
+        .modalreport {
+            margin-left: auto;
+            margin-top: 5px;
+        }
+
+        
     </style>
 </head>
 <body class="noto-sans-kr">
@@ -447,8 +464,8 @@
         <div class="dailycontent">
             <div class="card1" style="width: 546px;">
                 <div class="card-header">
-                <div>   
-                    <h5 class="card-writer">karina87</h5>
+                <div class="card-writer">
+                    <img src="images/카리나.png" alt=""> karina87
                 </div>
                 <div class="report">
                     <img src="images/menu.png.png" alt="신고 버튼" class="reportbtn">
@@ -463,20 +480,22 @@
                         <p class="tag1">#초록</p>
                         <p class="tag2">#자랑</p>
                     </div>
-                  <img src="images/hearticon.png.png" alt="" class="hearticon">
+                  <img src="images/hearticon.png" alt="" class="hearticon">
+                  <img src="images/filledhearticon.png" alt="" class="filledhearticon" style="display: none;">
                   </div>
                 </div>
               </div>
               <div class="card2" style="width: 546px;">
                 <div class="card-header">
-                <div>   
-                    <h5 class="card-writer">장길산</h5>
-                </div>
+                    <div class="card-writer">
+                        <img src="images/defaultprofile.png" alt="" style="width: 29px;">  장길산
+                    </div>
                 <div class="report">
                     <img src="images/menu.png.png" alt="신고 버튼" class="reportbtn">
                 </div>
                 </div>
-                <img src="images/ranksample2.jpeg" class="card-img-top" alt="..." >
+                <img src="images/ranksample2.jpeg" class="card-img-top" alt="..." data-bs-toggle="modal"
+                data-bs-target="#rank2modal">
                 <div class="card-body">
                   <p class="card-text">오늘 심은 양파...^^</p>
                   <div class="tag-group">
@@ -484,7 +503,8 @@
                         <p class="tag1">#내돈내심</p>
                         <p class="tag2">#반찬</p>
                     </div>
-                  <img src="images/hearticon.png.png" alt="" class="hearticon">
+                  <img src="images/hearticon.png" alt="" class="hearticon" id="heart">
+                  <img src="images/filledhearticon.png" alt="" class="filledhearticon" style="display: none;">
                   </div>
                 </div>
               </div>
@@ -545,6 +565,9 @@
                                 <div class="modalmaindate">
                                     24.06.27
                                 </div>
+                                <div class="modalreport">
+                                    <img src="images/menu.png.png" alt="" style="width: 15px;">
+                                </div>
                             </div>
                             <div class="modalmaincontent">
                                 <p>입양한지 100일째 ~ 무럭무럭 크는 우리집 뽀짝<br>그린이에요>_<<br>벌레도 없이 튼튼하게 자라는 중이에요</p>
@@ -553,7 +576,65 @@
                     </div>
                     <div class="title">
                         <p class="titlename">#초록  #자랑</p>
-                        <img src="images/hearticon.png.png" alt="" class="titlehearticon">
+                        <img src="images/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
+                        <img src="images/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
+                    </div>
+                    <div class="comment">
+                        <input action="text" class="commentbox" placeholder="댓글을 입력하세요."
+                        onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'"></input>
+                        <div type="submit" class="confirmbox">게시</div>
+                    </div>
+                </div>
+                <!--.modal-body: 모달의 푸터 영역-->
+                <!-- <div class="modal-footer"> -->
+                    <!--data-bs-dismiss="modal": 클릭 시 모달창 닫기-->
+                    <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="rank2modal">
+        <div class="modal-dialog modal-xl">
+            <!--.modal-content: 모달의 콘텐츠 영역-->
+            <div class="modal-content">
+                <!--.modal-header: 모달의 헤더 영역-->
+                <!-- <div class="modal-header">
+                    <h3>슈퍼푸드</h3>
+                </div> -->
+                <!--.modal-body: 모달의 바디 영역-->
+                <div class="modal-body">
+                    <img src="images/ranksample2.jpeg" alt="" class="modalmain">
+                    <div class="modal-right">
+                        <div class="modalthumb">
+                            <img src="images/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1">
+                            <img src="images/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1">
+                            <img src="images/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1">
+                            <img src="images/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1">
+                        </div>
+                        <div class="modalcontentbox">
+                            <div class="modalcontents">
+                                <div class="writerpic">
+                                    <img src="images/defaultprofile.png" alt="" style="width: 29px;">
+                                </div>
+                                <div class="modalmaincon">
+                                    장길산
+                                </div>
+                                <div class="modalmaindate">
+                                    24.06.28
+                                </div>
+                                <div class="modalreport">
+                                    <img src="images/menu.png.png" alt="" style="width: 15px;">
+                                </div>
+                            </div>
+                            <div class="modalmaincontent">
+                                <p>오늘 심은 양파...^^</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="title">
+                        <p class="titlename">#내돈내심  #반찬</p>
+                        <img src="images/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
+                        <img src="images/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
                     </div>
                     <div class="comment">
                         <input action="text" class="commentbox" placeholder="댓글을 입력하세요."
@@ -583,6 +664,66 @@
             }
           });
         });
+        $(document).ready(function(){
+            // 하트 아이콘 클릭 이벤트 핸들러
+            $('.hearticon, .filledhearticon').click(function() {
+                const isFilled = $(this).hasClass('filledhearticon');
+                const parent = $(this).closest('.card-body, .modal-footer');
+
+                // 토글
+                if (isFilled) {
+                    parent.find('.hearticon').show();
+                    parent.find('.filledhearticon').hide();
+                    parent.data('heart-filled', false);
+                } else {
+                    parent.find('.hearticon').hide();
+                    parent.find('.filledhearticon').show();
+                    parent.data('heart-filled', true);
+                }
+
+                // 연동된 모달이나 카드 업데이트
+                const targetModalId = parent.data('bs-target');
+                if (targetModalId) {
+                    const targetModal = $(targetModalId);
+                    if (parent.data('heart-filled')) {
+                        targetModal.find('.hearticon').hide();
+                        targetModal.find('.filledhearticon').show();
+                        targetModal.data('heart-filled', true);
+                    } else {
+                        targetModal.find('.hearticon').show();
+                        targetModal.find('.filledhearticon').hide();
+                        targetModal.data('heart-filled', false);
+                    }
+                } else {
+                    const targetCardId = parent.closest('.modal').attr('id');
+                    if (targetCardId) {
+                        const targetCard = $(`[data-bs-target="#${targetCardId}"]`);
+                        if (parent.data('heart-filled')) {
+                            targetCard.find('.hearticon').hide();
+                            targetCard.find('.filledhearticon').show();
+                            targetCard.data('heart-filled', true);
+                        } else {
+                            targetCard.find('.hearticon').show();
+                            targetCard.find('.filledhearticon').hide();
+                            targetCard.data('heart-filled', false);
+                        }
+                    }
+                }
+            });
+
+            // 모달이 열릴 때 상태를 동기화
+            $('.modal').on('show.bs.modal', function(event) {
+                const relatedCardId = $(event.relatedTarget).closest('.card-body').attr('data-bs-target');
+                const relatedCard = $(relatedCardId);
+                if (relatedCard.data('heart-filled')) {
+                    $(this).find('.hearticon').hide();
+                    $(this).find('.filledhearticon').show();
+                } else {
+                    $(this).find('.hearticon').show();
+                    $(this).find('.filledhearticon').hide();
+                }
+            });
+        });
         </script>
 </body>
-</html>
+</html> 
