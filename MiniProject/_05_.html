@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>커뮤니티_자랑글</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
+        .noto-sans-kr {
+        font-family: "Noto Sans KR", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        }
+
+        body {
+            margin: 8px 0;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 60px;
+            position: fixed;
+            top:0;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px;
+            z-index: 9999;
+        }
+
+        nav .nav_left {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .nav_right {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        nav ul {
+            margin-right: 15px;
+        }
+        nav li {
+            display: inline;
+            list-style: none;
+            font-size: 1.3rem;
+            margin: 0 20px;
+        }
+
+        .nav_menu a:hover{
+            color: #23C961;
+        }
+
+        nav .name {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+
+        nav .nav_search {
+            width: 438px;
+            height: 44px;
+            background-color: #d9d9d9;
+            background-clip: border-box;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav span {
+            display: flex;
+            margin: 4px 15px 3px 10px;
+            align-items: center;
+        }
+
+        nav #search {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            color: #eee;
+            font-size: 1.2rem;
+            vertical-align: middle;
+        }
+
+        header{
+            display: flex;
+            justify-content: center;
+        }
+
+        main {
+            height: 1000px;
+        }
+
+        .container {
+            position: relative;
+            max-width: 1200px;
+            max-height: max-content;
+            margin: 2em auto;
+            padding: 0 1em;
+        }
+
+        footer {
+
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 200px;
+        background-color: #154615;
+        }
+
+        footer .f_container {
+            display: flex;
+            align-items: center;
+            width: 1200px;
+            color: white;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        .rankingcontent {
+            margin-top: 10px;
+            display: grid;
+            grid-template-columns:repeat(2, auto);
+            gap: 10px;
+            justify-content: space-between;
+            margin: 50px;
+
+        }
+
+        .rank1nav {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+            margin-left: 50px;
+        }
+        
+        .rank2nav {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+            margin-left: 50px;
+        }
+
+        .rank1info {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+        }
+
+        .rank2info {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+        }
+
+        .card1 {
+            border: #ccc solid 1px;
+            border-radius: 5px;;
+            width: auto;
+        }
+
+        .card2 {
+            border: #ccc solid 1px;
+            border-radius: 5px;;
+            width: auto;
+        }
+
+        .dailycontent {
+            display: flex;
+            margin-top: 10px;
+            justify-content: space-between;
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+        .tag1, .tag2, .tag3 {
+            display: inline-block;
+            grid-template-columns: repeat(3, auto);
+            border: #ccc solid 1px;
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+        }
+
+        .tag-group {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .hearticon {
+            justify-content: right;
+            padding: 5px;
+            margin: 1px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+
+        .filledhearticon {
+            justify-content: right;
+            padding: 5px;
+            margin: 1px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+
+        .card-text {
+            padding: 5px;
+            margin: 5px;
+            overflow: hidden;
+        }
+
+        .reportbtn {
+            padding: 5px;
+            margin: 5px;
+            width: 50px;
+            height: 50px;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .card-writer {
+            margin-top: 15px;
+            margin-left: 10px;
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        .normalcon {
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        .conimg {
+            position: relative;
+            max-width: 1200px;
+            display: grid;
+            grid-template-columns: repeat(3, auto);
+            grid-template-rows: repeat(3, auto);
+            padding: 5px;
+            margin: 5px;
+            justify-content: space-between;
+            gap: 48px;
+            padding: 16px;
+        }
+
+        .thumbnail {
+            border-radius: 5px;
+            border: #ccc solid 1px;
+            width: 356px;
+            height: 261px;
+        }
+
+        /* #rank1modal {
+            margin-top: 150px;
+            
+        } */
+
+        .modal-body {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(2, auto);
+            justify-content: space-between;
+            gap: 10px;
+            margin: 10px;
+            padding: 10px;
+            height: max-content;
+        }
+
+        .modalthumb {
+            display: grid;
+            grid-template-columns: repeat(2, auto);
+            grid-template-rows: repeat(2, auto) ;
+            gap:10px;
+            height: fit-content;
+
+        }
+
+        .modal-dialog {
+            margin-top: 150px;
+        }
+        
+        .modalthumbnail {
+            width: 145px;
+            height: min-content;
+            
+            border-radius: 5px;
+        }
+
+        .modalmain {
+            border-radius: 5px;
+            width: 800px;
+            height: 533px;
+        }
+
+        .title {
+            border: #ccc solid 1px;
+            border-radius: 5px;
+            text-align: left;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .titlename {
+            margin-top: 5px;
+            padding-top: 10px;
+            padding-left: 10px;
+            
+        }
+
+        .titlehearticon {
+            padding: 5px;
+            margin: 1px;
+            cursor: pointer;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .comment {
+            display: flex;
+            border: 1px #ccc solid;
+            border-radius: 5px;
+            justify-content: space-between;
+            background: #F2F2F2
+        }
+
+        .commentbox {
+            border: none;
+            width: 240px;
+            background: #F2F2F2;
+        }
+
+        .entericon {
+            cursor: pointer;
+            padding-top: 15px;
+            padding-right: 10px;
+            margin: 1px;
+            width: 50px;
+            height: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <!-- 네비게이션 바 -->
+    <nav>
+        <div class="nav_left">
+            <a href="#" class="name">PICKUP</a>
+            <ul class="nav_menu noto-sans-kr">
+                <li><a href="#" id="community">커뮤니티</a></li>
+                <li><a href="#" id="pickup">픽업</a></li>
+                <li><a href="#" id="info">정보</a></li>
+                <li><a href="#" id="notice">공지</a></li>
+            </ul>
+        </div>
+        <div class="nav_right">
+            <div class="nav_search">
+                <span><img src="images/search.png" width="30px" height="30px"></span>
+                <input id="search" type="text">
+            </div>
+        </div>
+    </nav>
+
+    <!-- 메인 -->
+    <main>
+        <div class="container">
+            <!-- 자랑글 랭킹 -->
+            <div class="rankingcontent noto-sans-kr">
+                <!-- 카드 1 -->
+                <div class="card1">
+                    <div class="card-header">
+                        <span>#1</span>
+                        <span><img src="images/more.png" alt="더보기" width="50px" height="50px"></span>
+                    </div>
+                    <div class="card-writer">
+                        <span>작성자1</span>
+                    </div>
+                    <div class="card-body" data-heart-filled="false" data-bs-target="#rank1modal" data-bs-toggle="modal">
+                        <div class="card-text">
+                            <p>자랑글 내용1</p>
+                        </div>
+                        <div class="tag-group">
+                            <span class="tag1">태그1</span>
+                            <span class="tag2">태그2</span>
+                            <span class="tag3">태그3</span>
+                            <img src="images/heart.png" class="hearticon" alt="하트" style="display: inline;">
+                            <img src="images/filledheart.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+                <!-- 카드 2 -->
+                <div class="card2">
+                    <div class="card-header">
+                        <span>#2</span>
+                        <span><img src="images/more.png" alt="더보기" width="50px" height="50px"></span>
+                    </div>
+                    <div class="card-writer">
+                        <span>작성자2</span>
+                    </div>
+                    <div class="card-body" data-heart-filled="false" data-bs-target="#rank2modal" data-bs-toggle="modal">
+                        <div class="card-text">
+                            <p>자랑글 내용2</p>
+                        </div>
+                        <div class="tag-group">
+                            <span class="tag1">태그1</span>
+                            <span class="tag2">태그2</span>
+                            <span class="tag3">태그3</span>
+                            <img src="images/heart.png" class="hearticon" alt="하트" style="display: inline;">
+                            <img src="images/filledheart.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 일반 글 -->
+            <div class="normalcon noto-sans-kr">
+                <div class="conimg">
+                    <div class="card1">
+                        <div class="card-header">
+                            <span>제목</span>
+                            <span><img src="images/more.png" alt="더보기" width="50px" height="50px"></span>
+                        </div>
+                        <div class="card-body" data-heart-filled="false" data-bs-target="#exampleModal1" data-bs-toggle="modal">
+                            <div class="card-text">
+                                <p>자랑글 내용3</p>
+                            </div>
+                            <div class="tag-group">
+                                <span class="tag1">태그1</span>
+                                <span class="tag2">태그2</span>
+                                <span class="tag3">태그3</span>
+                                <img src="images/heart.png" class="hearticon" alt="하트" style="display: inline;">
+                                <img src="images/filledheart.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card2">
+                        <div class="card-header">
+                            <span>제목</span>
+                            <span><img src="images/more.png" alt="더보기" width="50px" height="50px"></span>
+                        </div>
+                        <div class="card-body" data-heart-filled="false" data-bs-target="#exampleModal2" data-bs-toggle="modal">
+                            <div class="card-text">
+                                <p>자랑글 내용4</p>
+                            </div>
+                            <div class="tag-group">
+                                <span class="tag1">태그1</span>
+                                <span class="tag2">태그2</span>
+                                <span class="tag3">태그3</span>
+                                <img src="images/heart.png" class="hearticon" alt="하트" style="display: inline;">
+                                <img src="images/filledheart.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- 모달1 -->
+        <div class="modal fade" id="rank1modal" tabindex="-1" aria-labelledby="rank1modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="rank1modalLabel">상세내용1</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modalthumb">
+                            <img src="images/thumb1.jpg" class="modalthumbnail" alt="썸네일1">
+                            <img src="images/thumb2.jpg" class="modalthumbnail" alt="썸네일2">
+                            <img src="images/thumb3.jpg" class="modalthumbnail" alt="썸네일3">
+                            <img src="images/thumb4.jpg" class="modalthumbnail" alt="썸네일4">
+                        </div>
+                        <div class="modalmain">
+                            <img src="images/main.jpg" class="modalmain" alt="메인">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="title">
+                            <div class="titlename">제목</div>
+                            <img src="images/heart.png" class="titlehearticon hearticon" alt="하트" style="display: inline;">
+                            <img src="images/filledheart.png" class="titlehearticon filledhearticon" alt="채워진 하트" style="display: none;">
+                        </div>
+                        <div class="comment">
+                            <input type="text" class="commentbox" placeholder="댓글을 입력하세요">
+                            <img src="images/enter.png" class="entericon" alt="입력">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 모달2 -->
+        <div class="modal fade" id="rank2modal" tabindex="-1" aria-labelledby="rank2modalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="rank2modalLabel">상세내용2</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="modalthumb">
+                            <img src="images/thumb1.jpg" class="modalthumbnail" alt="썸네일1">
+                            <img src="images/thumb2.jpg" class="modalthumbnail" alt="썸네일2">
+                            <img src="images/thumb3.jpg" class="modalthumbnail" alt="썸네일3">
+                            <img src="images/thumb4.jpg" class="modalthumbnail" alt="썸네일4">
+                        </div>
+                        <div class="modalmain">
+                            <img src="images/main.jpg" class="modalmain" alt="메인">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="title">
+                            <div class="titlename">제목</div>
+                            <img src="images/heart.png" class="titlehearticon hearticon" alt="하트" style="display: inline;">
+                            <img src="images/filledheart.png" class="titlehearticon filledhearticon" alt="채워진 하트" style="display: none;">
+                        </div>
+                        <div class="comment">
+                            <input type="text" class="commentbox" placeholder="댓글을 입력하세요">
+                            <img src="images/enter.png" class="entericon" alt="입력">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="f_container noto-sans-kr">
+            <p>푸터 내용</p>
+        </div>
+    </footer>
+
+    <script>
+        $(document).ready(function(){
+            // 하트 아이콘 클릭 이벤트 핸들러
+            $('.hearticon, .filledhearticon').click(function() {
+                const isFilled = $(this).hasClass('filledhearticon');
+                const parent = $(this).closest('.card-body, .modal-footer');
+
+                // 토글
+                if (isFilled) {
+                    parent.find('.hearticon').show();
+                    parent.find('.filledhearticon').hide();
+                    parent.data('heart-filled', false);
+                } else {
+                    parent.find('.hearticon').hide();
+                    parent.find('.filledhearticon').show();
+                    parent.data('heart-filled', true);
+                }
+
+                // 연동된 모달이나 카드 업데이트
+                const targetModalId = parent.data('bs-target');
+                if (targetModalId) {
+                    const targetModal = $(targetModalId);
+                    if (parent.data('heart-filled')) {
+                        targetModal.find('.hearticon').hide();
+                        targetModal.find('.filledhearticon').show();
+                        targetModal.data('heart-filled', true);
+                    } else {
+                        targetModal.find('.hearticon').show();
+                        targetModal.find('.filledhearticon').hide();
+                        targetModal.data('heart-filled', false);
+                    }
+                } else {
+                    const targetCardId = parent.closest('.modal').attr('id');
+                    if (targetCardId) {
+                        const targetCard = $(`[data-bs-target="#${targetCardId}"]`);
+                        if (parent.data('heart-filled')) {
+                            targetCard.find('.hearticon').hide();
+                            targetCard.find('.filledhearticon').show();
+                            targetCard.data('heart-filled', true);
+                        } else {
+                            targetCard.find('.hearticon').show();
+                            targetCard.find('.filledhearticon').hide();
+                            targetCard.data('heart-filled', false);
+                        }
+                    }
+                }
+            });
+
+            // 모달이 열릴 때 상태를 동기화
+            $('.modal').on('show.bs.modal', function(event) {
+                const relatedCardId = $(event.relatedTarget).closest('.card-body').attr('data-bs-target');
+                const relatedCard = $(relatedCardId);
+                if (relatedCard.data('heart-filled')) {
+                    $(this).find('.hearticon').hide();
+                    $(this).find('.filledhearticon').show();
+                } else {
+                    $(this).find('.hearticon').show();
+                    $(this).find('.filledhearticon').hide();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
