@@ -4,15 +4,36 @@
     position: relative;
 }
 
-.table_container p {
+.t_headerbar {
     display: inline-flex;
     align-items: center;
+    justify-content: space-between;
     margin: 5px;
 }
 
-.table_container select {
+#pop_condition, #dropdown {
+    display: inline-block;
     position: absolute;
     right: 0;
+}
+
+#button {
+    width: 55px;
+    height: 23px;
+    box-sizing: content-box;
+    margin: 1rem;
+    padding: 5px;
+    background: #27AF5A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#button a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
 }
 
 .table_popular {
