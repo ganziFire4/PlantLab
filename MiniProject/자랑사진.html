@@ -256,7 +256,6 @@
                         <img style="float: right;" src="images/tabler_edit.png" alt="">
                     </button>
                     <div class="profileicon">
-                        <!-- 작업중 -->
                         <img src="images/프로필사진.png" class="profile" alt="" style="width: 182.69px;">
                         <div class="profilename">
                             <p style="font-size: 25px;">카리나</p>
@@ -270,14 +269,14 @@
                         <div style="display: flex; justify-content: space-between;">
                             <div>
                                 <button id="likeBtn">
-                                    <img id="likeImg" style="width: 25px; margin-top: 20px;" src="images/hearticon.png" alt="heartIcon">
+                                    <img id="likeImg" style="width: 25px; margin-top: 23px;" src="images/greenHeart.svg" alt="heartImg">
                                 </button>
                                 <p id="liketext" style="margin-bottom: 0; font-size: 20px; font-weight: 900; color: #4ECB71;">0</p>
                                 <p>좋아요</p>
                             </div>
                             <div style="margin-left: 50px;">
                                 <button id="bookmarkBtn">
-                                    <img style="width: 30px; height: 25px; margin-top: 20px;" src="images/bookmark.png.png" alt="bookmarkIcon">
+                                    <img style="width: 30px; height: 25px; margin-top: 20px;" src="images/mingcute_bookmark-line.svg" alt="bookmarkImg">
                                 </button>
                                 <p id="bookmarktext" style="margin-bottom: 0; font-size: 20px; font-weight: 900; color: #4ECB71;">0</p>
                                 <p>스크랩북</p>
@@ -314,13 +313,13 @@
                     </button>
                 </div>
             </div>
-            <div class="contentbox" id="content-a"> <!--내가올린글 탭 선택시 나오는 메뉴-->
+            <div class="contentbox" id="content-a"> 
                 <div class="contentbox" id="content-a">
-                    <button style="width: 300px; height: 250px; border: none; background-color: #ECECEC;">
+                    <button id="createBragBtn" style="width: 300px; height: 250px; border: none; background-color: #ECECEC;">
                         <img style="margin-top: 30px;" src="images/bx_camera.png" alt="cameraLogo">
                         <p style="margin-top: 10px;">올린 자랑글이 없습니다.</p>
                     </button>
-                    <button style="margin-top: 30px; width: 800px; height: 70px; background-color: #d1eada; border: none;">
+                    <button id="moveBragBtn" style="margin-top: 30px; width: 800px; height: 70px; background-color: #d1eada; border: none;">
                         <p style="margin-top: 20px; font-weight: bold; font-size: large; color: #27AF5A;">자랑글 게시판 바로가기</p>
                     </button>
                 </div>
@@ -354,11 +353,16 @@
             const txt3 = document.querySelector(".myshopping");
             
             // profilebox 변수
+            const editProfileBtn = document.querySelector("#editProfile");
             const likeBtn = document.querySelector("#likeBtn");
             const bookmarkBtn = document.querySelector("#bookmarkBtn");
             // const likeImg = document.getElementById("#likeImg");
             let likeCnt = 0;
             let bookmarkCnt = 0;
+
+            // contentbox 변수
+            const createBragBtn = document.querySelector("#createBragBtn");
+            const moveBragBtn = document.querySelector("#moveBragBtn");
 
             // categorybox Event
             myWriteBtn.addEventListener("click", (e) => {
@@ -392,9 +396,13 @@
             });
 
             // profilebox Event
+            // 프로필 수정 버튼을 클릭했을 때 이벤트 매핑
+            bookmarkBtn.addEventListener("click", (e) => {
+
+            });
+
             likeBtn.addEventListener("click", (e) => {
-                $("#likeImg").attr("src", "iimages/vector.svg");
-                $("#likeImg").css("color", "green");
+                $("#likeImg").attr("src", "images/greenHeartFull.svg");
                 likeCnt++;
                 $("#liketext").html(`${likeCnt}`);
             });
@@ -402,6 +410,16 @@
             bookmarkBtn.addEventListener("click", (e) => {
                 bookmarkCnt++;
                 $("#bookmarktext").html(`${bookmarkCnt}`);
+            });
+
+            // 자랑글이 없는 경우 자랑글 만들기 버튼 로직
+            createBragBtn.addEventListener("click", (e) => {
+
+            });
+
+            // 자랑글 게시판으로 이동하는 버튼 로직
+            moveBragBtn.addEventListener("click", (e) => {
+
             });
         </script>
 </body>
