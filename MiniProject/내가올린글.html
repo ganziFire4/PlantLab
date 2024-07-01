@@ -286,8 +286,8 @@
         <div class="container">
             <div class="container-flex">
                 <div class="profilebox">
-                    <button type="button" style="margin-top: 10px; margin-right: 10px;">
-                        <img style="float: right;" src="images/tabler_edit.png" alt="">
+                    <button type="button" id="editProfile" style="margin-top: 10px; margin-right: 10px;">
+                        <img style="float: right;" src="images/tabler_edit.png" alt="buttonImg">
                     </button>
                     <div class="profileicon">
                         <img src="images/프로필사진.png" alt="" style="width: 182.69px;">
@@ -303,14 +303,14 @@
                         <div style="display: flex; justify-content: space-between;">
                             <div>
                                 <button id="likeBtn">
-                                    <img id="likeImg" style="width: 25px; margin-top: 20px;" src="images/hearticon.png" alt="heartIcon">
+                                    <img id="likeImg" style="width: 25px; margin-top: 23px;" src="images/greenHeart.svg" alt="heartImg">
                                 </button>
                                 <p id="liketext" style="margin-bottom: 0; font-size: 20px; font-weight: 900; color: #4ECB71;">0</p>
                                 <p>좋아요</p>
                             </div>
                             <div style="margin-left: 50px;">
                                 <button id="bookmarkBtn">
-                                    <img style="width: 30px; height: 25px; margin-top: 20px;" src="images/bookmark.png.png" alt="bookmarkIcon">
+                                    <img style="width: 30px; height: 25px; margin-top: 20px;" src="images/mingcute_bookmark-line.svg" alt="bookmarkImg">
                                 </button>
                                 <p id="bookmarktext" style="margin-bottom: 0; font-size: 20px; font-weight: 900; color: #4ECB71;">0</p>
                                 <p>스크랩북</p>
@@ -447,6 +447,7 @@
             const txt3 = document.querySelector(".myshopping");
             
             // profilebox 변수
+            const editProfileBtn = document.querySelector("#editProfile");
             const likeBtn = document.querySelector("#likeBtn");
             const bookmarkBtn = document.querySelector("#bookmarkBtn");
             // const likeImg = document.getElementById("#likeImg");
@@ -485,9 +486,13 @@
             });
 
             // profilebox Event
+            // 프로필 수정 버튼을 클릭했을 때 이벤트 매핑
+            bookmarkBtn.addEventListener("click", (e) => {
+
+            });
+
             likeBtn.addEventListener("click", (e) => {
-                $("#likeImg").attr("src", "images/vector.svg");
-                $("#likeImg").css("color", "green");
+                $("#likeImg").attr("src", "images/greenHeartFull.svg");
                 likeCnt++;
                 $("#liketext").html(`${likeCnt}`);
             });
