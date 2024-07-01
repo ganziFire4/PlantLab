@@ -49,23 +49,52 @@ main li {
     border-bottom: 3px solid #27AF5A;
 }
 
-.title_table_area{
+#title_table_area{
     width: 1200px;
     margin: 0 auto;
     position: relative;
 }
 
-.title_table_area p {
+.t_headerbar {
     display: inline-flex;
     align-items: center;
+    justify-content: space-between;
     margin: 5px;
 }
 
-.title_table_area select {
+#pop_condition, #dropdown {
+    display: inline-block;
     position: absolute;
     right: 0;
 }
 
-#popular_list {
+#button {
+    width: 55px;
+    height: 23px;
+    box-sizing: content-box;
+    margin: 1rem;
+    padding: 5px;
+    background: #27AF5A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+}
+
+#button a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.table_popular {
     margin-bottom: 30px;
+}
+
+.content_container {
+    position: relative;
+    max-width: 1200px;
+    max-height: max-content;
+    margin: 2em auto;
+    padding: 0 1em;
 }

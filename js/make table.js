@@ -41,8 +41,10 @@ function make_table(name, mode) {
 }
 
 function make_pop_row() {
+    let nn;
     let str = ``;
     for(let i = 1; i <= 5; i++) {
+        nn = Math.floor(Math.random() * 15);
         str += `
         <tr>
             <th scope="row">${i}</th>
@@ -59,13 +61,14 @@ function make_pop_row() {
 }
 
 function make_rec_row(name) {
-    let nn = Math.floor(Math.random() * 15);
-    let w = Math.round(Math.random() * 5000);
-    let g = Math.round(Math.random() * w);
-    let s = Math.round(Math.random() * g);
-
+    let nn, w, g, s; 
     let str = ``;
+
     for(let i = 1; i <= 10; i++) {
+        nn = Math.floor(Math.random() * 15);
+        w = Math.round(Math.random() * 1500);
+        g = Math.round(Math.random() * w);
+        s = Math.round(Math.random() * g);
         str += `
         <tr>
             <th scope="row">${i}</th>
