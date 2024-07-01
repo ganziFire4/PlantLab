@@ -79,6 +79,7 @@ main li {
     justify-content: center;
     align-items: center;
     border-radius: 5px;
+    margin-left: auto;
 }
 
 #button a {
@@ -89,12 +90,4 @@ main li {
 
 .table_popular {
     margin-bottom: 30px;
-}
-
-.content_container {
-    position: relative;
-    max-width: 1200px;
-    max-height: max-content;
-    margin: 2em auto;
-    padding: 0 1em;
 }
