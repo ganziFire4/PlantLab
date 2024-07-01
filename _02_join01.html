@@ -70,50 +70,34 @@
                     <input type="password" id="confirmPassword" name="confirmPassword" placeholder="비밀번호 확인" required>
                     <small id="check-message3"></small>
                 </div>
-                <button type="submit" class="submit-btn">가입하기</button>
+                <button type="button" class="submit-btn" onclick="joinComplete()">가입하기</button> <!--백연결시 type="submit"으로 변경 필요-->
             </form>
          </div>
         </main>
     </div>
     <script>
         const userId = document.querySelector("input[name='userId']");
-        const nickname = document.querySelector("input[name='nickname']");
+        const userNickname = document.querySelector("input[name='nickname']");
         const checkMessage = document.querySelector("#check-message");
         const checkMessage1 = document.querySelector("#check-message1");
         const checkMessage2 = document.querySelector("#check-message2");
         const checkMessage3 = document.querySelector("#check-message3");
-        const password = document.querySelector("input[name='password']");
+        const userPassword = document.querySelector("input[name='password']");
         const confirmPassword = document.querySelector("input[name='confirmPassword']");
-        const joinForm = document.querySelector("#join-form");
 
-        //중복확인 ##디비에서 가져오기??
-        // function checkDuplicate(){
-        //     if (userId.value !== ##저장된 값.value) {
-        //         passwordValidation = false;
-        //         checkMessage.textContent = "중복되는 아이디입니다.";
-        //         checkMessage.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
-                
-        //     } else{
-        //         checkMessage.textContent ="사용 가능한 아이디입니다.";
-        //         checkMessage.style.color = "#23C961"; // 텍스트 색상을 초록색으로 설정
-        //     }
-        // };
-
-   
+        // 회원정보
+        let id, nickname, password;
 
        //아이디 입력받을 조건 
-        let userIdValidation = false;
-
         userId.addEventListener("change", (e) => {
-            if (e.target.value.length < 9 || e.target.value.length > 21) {
-                console.log(checkMessage);
+            if (e.target.value.length < 8 || e.target.value.length > 21) {
                 checkMessage.textContent = "아이디는 8자리이상 20자이하로 지정해주세요.";
                 checkMessage.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
-                userIdValidation = false;
                 userId.focus();
             } else {
                 //바로 없어지게 가능한지??
                 checkMessage.textContent = "";
+                id = e.target.value;
                 // checkMessage.textContent ="사용 가능한 아이디입니다.";
                 // checkMessage.style.color = "#23C961"; // 텍스트 색상을 초록색으로 설정
                 // userIdValidation = true;
@@ -121,99 +105,127 @@
             }
         });
 
-         //닉네임 입력받을 조건 
-        let nicknameIdValidation = false;
+        // 아이디 중복체크
+        let userIdCheck = false;
+        function checkDuplicate(){
+            // 로컬스토리지가 비어있는 경우
+            if(localStorage.length === 0) {
+                checkMessage.textContent ="사용 가능한 아이디입니다.";
+                checkMessage.style.color = "#23C961";
+                userIdCheck = true;
+                return;
+            }
 
-        nickname.addEventListener("change", (e) => {
-            if (e.target.value.length < 9 || e.target.value.length > 21) {
-                console.log(checkMessage);
-                checkMessage1.textContent = "닉네임은 8자리이상 20자이하로 지정해주세요.";
+            // 안비어있는 경우(값 중복 체크가 필요함.)
+            for(let i = 1; i <= localStorage.length; i++){
+                if(JSON.parse(localStorage.getItem(i)).id == id){
+                    checkMessage.textContent = "중복된 아이디입니다.";
+                    checkMessage.style.color = "red";
+                    userId.focus();
+                    return;
+                }
+            }
+
+            checkMessage.textContent ="사용 가능한 아이디입니다.";
+            checkMessage.style.color = "#23C961";
+            userIdCheck = true;
+            return;
+        }
+
+        // 닉네임 중복체크
+        let userNicknameCheck = false;
+        function checkNickname(){
+            // 로컬스토리지가 비어있는 경우
+            if(localStorage.length === 0) {
+                checkMessage.textContent ="사용 가능한 닉네임입니다.";
+                checkMessage.style.color = "#23C961";
+                userNicknameCheck = true;
+                return;
+            }
+
+            // 안비어있는 경우(값 중복 체크가 필요함.)
+            for(let i = 1; i <= localStorage.length; i++){
+                if(JSON.parse(localStorage.getItem(i)).nickname == nickname){
+                    checkMessage.textContent = "중복된 닉네임입니다.";
+                    checkMessage.style.color = "red";
+                    userNickname.focus();
+                    return;
+                }
+            }
+
+            checkMessage.textContent ="사용 가능한 아이디입니다.";
+            checkMessage.style.color = "#23C961";
+            userNicknameCheck = true;
+            return;
+        }
+
+         //닉네임 입력받을 조건 
+         userNickname.addEventListener("change", (e) => {
+            if (e.target.value.length > 5) {
+                checkMessage1.textContent = "닉네임은 5자이하로 지정해주세요.";
                 checkMessage1.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
-                userIdValidation = false;
-                userId.focus();
+                userNickname.focus();
             } else {
-                checkMessage1.textContent ="";
+                nickname = e.target.value;
+                checkNickname();
             }
         });
 
-
-
-
-
-    // 패스워드 입력
-
-  
+        // 패스워드 입력
         let passwordValidation = false;
-
-        password.addEventListener("change", (e) => {
+        userPassword.addEventListener("change", (e) => {
             // e.target.style.background = "#fff";
             let reg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*+=-])(?=.*[0-9]).{8,15}$/;
 
-
             if(!reg.test(e.target.value)) {
-                passwordValidation = false;
                 checkMessage2.textContent = "비밀번호는 영문 숫자 특수기호 포함 8자리 이상으로지정해주세요.";
                 checkMessage2.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
-                password.focus();//다시 입력 칸에 포커스
-
+                userPassword.focus();//다시 입력 칸에 포커스
             } else{
                 checkMessage2.textContent = "";
+                password = e.target.value;
+                passwordValidation = true;
             }
-            passwordValidation = true;
         });
         
 
 
     // 패스워드 입력확인
-
+        let passwordConfirmValidation = false;
         confirmPassword.addEventListener("change", (e) => {
-            if (e.target.value !== password.value) {
-                passwordValidation = false;
+            if (e.target.value !== password) {
                 checkMessage3.textContent = "입력한 비밀번호와 다릅니다.";
                 checkMessage3.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
                 password.focus();//다시 입력 칸에 포커스
             } else{
                 checkMessage3.textContent="";
-            }
-
                 passwordConfirmValidation = true;
-            });
-
-
-        // 4. submit 이벤트
-        // form 태그에서 사용되며 form이 submit 되기전에 발생하는 이벤트
-
-        joinForm.addEventListener("submit", (e) => {
-            if(username.value === '') {
-                alert("아이디를 입력하세요.");
-                e.preventDefault();
-                return;
-            }
-
-            if(nickname.value === '') {
-                alert("닉네임을 입력하세요.");
-                e.preventDefault();
-                return;
-            }
-
-            if(password.value === '') {
-                alert("비밀번호를 입력하세요.");
-                e.preventDefault();
-                return;
-            }
-
-            if(!idValidation) {
-                alert("아이디는 8자리 이상 20자리 이하로 지정하세요.");
-                e.preventDefault();
-                return;
-            }
-
-            if(!passwordValidation) {
-                alert("비밀번호는 특수문자, 영문자, 숫자 조합의 8자리이상으로 지정하세요.");
-                e.preventDefault();
-                return;
             }
         });
+
+
+        // 가입하기 버튼 클릭
+        function joinComplete(){
+            if(!userIdCheck) {
+                alert("아이디를 확인하세요.");
+                return;
+            }
+
+            if(!userNicknameCheck) {
+                alert("닉네임을 확인하세요.");
+                return;
+            }
+
+            if(!(passwordValidation && passwordConfirmValidation)) {
+                alert("비밀번호를 확인하세요.");
+                return;
+            }
+
+            if(userIdCheck && userNicknameCheck && passwordValidation && passwordConfirmValidation) {
+                localStorage.setItem(localStorage.length + 1, JSON.stringify({id, nickname, password}));
+                window.location.href = "_02_join02.html";
+            }
+        }
     </script>
 </body>
 </html>

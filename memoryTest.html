@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let id = "12345";
+        let nickname = "바보";
+        let password = "asdfg";
+
+        localStorage.setItem("1", JSON.stringify({id, nickname, password}));
+        const mem = localStorage.getItem("1");
+        console.log(mem);
+        const mem2 = JSON.parse(mem); 
+        console.log(mem2);
+        console.log(mem2.id);
+    </script>
+</body>
+</html>
