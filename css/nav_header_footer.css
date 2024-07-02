@@ -64,12 +64,6 @@ nav li {
     color: #23C961;
 }
 
-nav .name {
-    display: inline-block;
-    font-size: 1.5rem;
-    font-weight: bolder;
-}
-
 nav .nav_search {
     width: 438px;
     height: 44px;

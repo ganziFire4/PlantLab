@@ -7,7 +7,7 @@
     <link rel="icon" type="img/png" href="image/round_logo_whiteBack.svg">
     <link rel="stylesheet" href="css/nav_header_footer.css">
     <link rel="stylesheet" href="css/board_list.css">
-    <link rel="stylesheet" href="css/boast.css">
+    <link rel="stylesheet" href="css/greenTalk.css">
     <script src="js/make table.js"></script>
     <script src="js/jquery-3.7.1.min.js"></script>
     <!--bootstrap-->
@@ -70,7 +70,7 @@
         </div>
     </nav>
     <header id="header">
-        <img src="image/header_정보.png" alt="글쓰기 헤더">
+        <img src="image/header_정보.png" alt="정보게시판 헤더">
     </header>
     <main>
       <!--게시판 이동-->
@@ -95,9 +95,9 @@
             </label>
           </li>
           <li class="label_underline">
-            <label for="Boast">
-              <input type="checkbox" id="Boast">
-              <span>자랑</span>
+            <label for="greenTalk">
+              <input type="checkbox" id="greenTalk">
+              <span>그린톡</span>
             </label>
           </li>
         </ul>
@@ -143,7 +143,7 @@
           </div>
         </div>
         <div id="button">
-          <a href="writing.html">글쓰기</a>
+          <a href="#" id="writing">글쓰기</a>
         </div>
       </div>
     </main>
@@ -163,13 +163,18 @@
     <script>
         const header = document.querySelector("#header");
         const underline = document.getElementsByClassName("label_underline");
+
         const content = document.getElementById("title_table_area");
         const table = document.getElementsByClassName("table_content");
+
         const info_button = document.querySelector("#info");
         const free_button = document.querySelector("#free");
         const QnA_button = document.querySelector("#QnA");
-        const boast_button = document.querySelector("#Boast");
+        const greenTalk_button = document.querySelector("#greenTalk");
+
         const tab = new URLSearchParams(window.location.search).get('tab');
+        const btn = document.querySelector("#button");
+        const link = document.querySelector("#writing");
 
         info_button.addEventListener("click", () => {
           header.innerHTML = `<img src="image/header_정보.png" alt="정보게시판 헤더">`;
@@ -213,93 +218,180 @@
 
           table[0].innerHTML = make_table(`질문글`, `pop`);
           table[1].innerHTML = make_table(`질문글`, `rec`);
+
+          <!--상세페이지용 수정-->
+          const detail = document.getElementsByClassName("pop_table")[0];
+          detail.innerHTML=`
+            <th scope="row">1</th>
+            <td>산세베리아 잘 키우는 법</td>
+            <td>winter4403</td>
+            <td>24.07.01</td>
+            <td>0000</td>
+            <td>0000</td>
+            <td>0000</td>
+          `;
+          detail.addEventListener("click", () => {
+            window.location.href="board_QnA.html";
+          })
         });
 
-        boast_button.addEventListener("click", () => {
-          header.innerHTML = `<img src="image/header_image.png" alt="질문게시판 헤더">`;
+        greenTalk_button.addEventListener("click", () => {
+          header.innerHTML = `<img src="image/header_그린톡.png" alt="질문게시판 헤더">`;
 
           underline[0].classList.remove("activeBlock");
           underline[1].classList.remove("activeBlock");
           underline[2].classList.remove("activeBlock");
           underline[3].classList.add("activeBlock");
 
-          content.innerHTML = boastcontent();
+          content.innerHTML = greenTalkcontent();
 
           document.addEventListener('DOMContentLoaded', function() {
           const cardTexts = document.querySelectorAll('.card-text');
         
-            cardTexts.forEach(function(cardText) {
-              const text = cardText.textContent.trim();
-              const maxLength = 30;
-          
-              if (text.length > maxLength) {
-                const trimmedText = text.slice(0, maxLength) + '...';
-                cardText.textContent = trimmedText;
-              }
-            });
+          cardTexts.forEach(function(cardText) {
+            const text = cardText.textContent.trim();
+            const maxLength = 30;
+        
+            if (text.length > maxLength) {
+              const trimmedText = text.slice(0, maxLength) + '...';
+              cardText.textContent = trimmedText;
+            }
           });
-          $(document).ready(function(){
+        });
+        $(document).ready(function(){
             // 하트 아이콘 클릭 이벤트 핸들러
             $('.hearticon, .filledhearticon').click(function() {
-              const isFilled = $(this).hasClass('filledhearticon');
-              const parent = $(this).closest('.card-body, .modal-footer');
+                const isFilled = $(this).hasClass('filledhearticon');
+                const parent = $(this).closest('.card-body, .modal-footer');
 
-              // 토글
-              if (isFilled) {
-                  parent.find('.hearticon').show();
-                  parent.find('.filledhearticon').hide();
-                  parent.data('heart-filled', false);
-              } else {
-                  parent.find('.hearticon').hide();
-                  parent.find('.filledhearticon').show();
-                  parent.data('heart-filled', true);
-              }
-
-              // 연동된 모달이나 카드 업데이트
-              const targetModalId = parent.data('bs-target');
-              if (targetModalId) {
-                const targetModal = $(targetModalId);
-                if (parent.data('heart-filled')) {
-                    targetModal.find('.hearticon').hide();
-                    targetModal.find('.filledhearticon').show();
-                    targetModal.data('heart-filled', true);
+                // 토글
+                if (isFilled) {
+                    parent.find('.hearticon').show();
+                    parent.find('.filledhearticon').hide();
+                    parent.data('heart-filled', false);
                 } else {
-                    targetModal.find('.hearticon').show();
-                    targetModal.find('.filledhearticon').hide();
-                    targetModal.data('heart-filled', false);
+                    parent.find('.hearticon').hide();
+                    parent.find('.filledhearticon').show();
+                    parent.data('heart-filled', true);
                 }
-              } else {
-                const targetCardId = parent.closest('.modal').attr('id');
-                if (targetCardId) {
-                  const targetCard = $(`[data-bs-target="#${targetCardId}"]`);
-                  if (parent.data('heart-filled')) {
-                    targetCard.find('.hearticon').hide();
-                    targetCard.find('.filledhearticon').show();
-                    targetCard.data('heart-filled', true);
-                  } else {
-                    targetCard.find('.hearticon').show();
-                    targetCard.find('.filledhearticon').hide();
-                    targetCard.data('heart-filled', false);
-                  }
+
+                // 연동된 모달이나 카드 업데이트
+                const targetModalId = parent.data('bs-target');
+                if (targetModalId) {
+                    const targetModal = $(targetModalId);
+                    if (parent.data('heart-filled')) {
+                        targetModal.find('.hearticon').hide();
+                        targetModal.find('.filledhearticon').show();
+                        targetModal.data('heart-filled', true);
+                    } else {
+                        targetModal.find('.hearticon').show();
+                        targetModal.find('.filledhearticon').hide();
+                        targetModal.data('heart-filled', false);
+                    }
+                } else {
+                    const targetCardId = parent.closest('.modal').attr('id');
+                    if (targetCardId) {
+                        const targetCard = $(`[data-bs-target="#${targetCardId}"]`);
+                        if (parent.data('heart-filled')) {
+                            targetCard.find('.hearticon').hide();
+                            targetCard.find('.filledhearticon').show();
+                            targetCard.data('heart-filled', true);
+                        } else {
+                            targetCard.find('.hearticon').show();
+                            targetCard.find('.filledhearticon').hide();
+                            targetCard.data('heart-filled', false);
+                        }
+                    }
                 }
-              }
             });
 
-            // 모달이 열릴 때 상태를 동기화
+            // 북마크 아이콘 클릭 이벤트 핸들러
+            $('.bookmarkicon, .filledbookmarkicon').click(function() {
+                const isFilled = $(this).hasClass('filledbookmarkicon');
+                const parent = $(this).closest('.card-body, .modal-footer');
+
+                // 토글
+                if (isFilled) {
+                    parent.find('.bookmarkicon').show();
+                    parent.find('.filledbookmarkicon').hide();
+                    parent.data('bookmark-filled', false);
+                } else {
+                    parent.find('.bookmarkicon').hide();
+                    parent.find('.filledbookmarkicon').show();
+                    parent.data('bookmark-filled', true);
+                }
+
+                // 연동된 모달이나 카드 업데이트
+                const targetModalId = parent.data('bs-target');
+                if (targetModalId) {
+                    const targetModal = $(targetModalId);
+                    if (parent.data('bookmark-filled')) {
+                        targetModal.find('.bookmarkicon').hide();
+                        targetModal.find('.filledbookmarkicon').show();
+                        targetModal.data('bookmark-filled', true);
+                    } else {
+                        targetModal.find('.bookmarkicon').show();
+                        targetModal.find('.filledbookmarkicon').hide();
+                        targetModal.data('bookmark-filled', false);
+                    }
+                } else {
+                    const targetCardId = parent.closest('.modal').attr('id');
+                    if (targetCardId) {
+                        const targetCard = $(`[data-bs-target="#${targetCardId}"]`);
+                        if (parent.data('bookmark-filled')) {
+                            targetCard.find('.bookmarkicon').hide();
+                            targetCard.find('.filledbookmarkicon').show();
+                            targetCard.data('bookmark-filled', true);
+                        } else {
+                            targetCard.find('.bookmarkicon').show();
+                            targetCard.find('.filledbookmarkicon').hide();
+                            targetCard.data('bookmark-filled', false);
+                        }
+                    }
+                }
+            });
+            
+
+            // 모달이 열릴 때 하트 상태를 동기화 (DB연동시 변경...)
             $('.modal').on('show.bs.modal', function(event) {
-              const relatedCardId = $(event.relatedTarget).closest('.card-body').attr('data-bs-target');
-              const relatedCard = $(relatedCardId);
-              if (relatedCard.data('heart-filled')) {
-                $(this).find('.hearticon').hide();
-                $(this).find('.filledhearticon').show();
-              } else {
-                $(this).find('.hearticon').show();
-                $(this).find('.filledhearticon').hide();
-              }
+                const relatedCardId = $(event.relatedTarget).closest('.card-body').attr('data-bs-target');
+                const relatedCard = $(relatedCardId);
+                if (relatedCard.data('heart-filled')) {
+                    $(this).find('.hearticon').hide();
+                    $(this).find('.filledhearticon').show();
+                } else {
+                    $(this).find('.hearticon').show();
+                    $(this).find('.filledhearticon').hide();
+                }
+            });
+
+            // 모달이 열릴 때 북마크 상태를 동기화 (DB연동시 변경...)
+            $('.modal').on('show.bs.modal', function(event) {
+                const relatedCardId = $(event.relatedTarget).closest('.card-body').attr('data-bs-target');
+                const relatedCard = $(relatedCardId);
+                if (relatedCard.data('bookmark-filled')) {
+                    $(this).find('.bookmarkicon').hide();
+                    $(this).find('.filledbookmarkicon').show();
+                } else {
+                    $(this).find('.bookmarkicon').show();
+                    $(this).find('.filledbookmarkicon').hide();
+                }
             });
           });
         });
 
+        link.addEventListener("click", () => {
+          if(sessionStorage.getItem("login") === null){
+            alert("로그인 후 이용해주세요.");
+            return;
+          }
+
+          if(greenTalk_button === document.getElementsByClassName("activeBlock")[0]){
+            link.href=`_01_자랑글_작성_최종.html`;
+            return;
+          }
+          link.href=`writing.html`;
+        })
         // 메인 더보기 버튼에 맞춰서 화면 전환
         if(tab != null){
           if(tab == 2) {
@@ -307,7 +399,7 @@
           } else if (tab == 3){
             QnA_button.click();
           } else if (tab == 4){
-            boast_button.click();
+            greenTalk_button.click();
           }
         }
     </script>
