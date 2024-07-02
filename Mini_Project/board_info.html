@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>플랜트랩_스토어</title>
-    <link rel="stylesheet" href="store.css">
-    <script src="js/_02_externalJs.js"></script>
+    <link rel="icon" type="img/png" href="image/round_logo_whiteBack.svg">
+    <link rel="stylesheet" href="css/nav_header_footer.css">
+    <link rel="stylesheet" href="css/store.css">
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body class="noto-sans-kr">
     <nav>
         <div class="nav_left">
             <div>
                 <a href="#">
-                    <img src="images/nav_logo.svg" alt="플랜트랩">
+                    <img src="images/nav_logo.svg" alt="플랜트랩 로고">
                 </a>
             </div>
             <div>
@@ -41,11 +45,55 @@
         </div>
     </nav>
     <header>
-        <img src="images/Header_image.png" alt="쇼핑몰 헤더">
+        <img src="images/쇼핑몰 헤더 이미지.png" alt="쇼핑몰 배너">
     </header>
-    <div class="overall_container">
-      
     <main>
+    <div class="right-panel" id="rightPanel">
+      <div class="toggle-button" id="toggleButton">
+        <span class="arrow arrow-left"></span>
+      </div>
+      <div class="panel-content">
+        <div class="panel-item">
+          <div class="">
+            <a href="">
+              <img src="images/카카오톡 상담.png" alt="KakaoTalk">
+                <br>
+                카카오톡 
+                <br>
+                상담문의
+              </a>
+            </div>
+          </div>
+          <div class="panel-item">
+            <a href="">
+              <img src="images/마이페이지.png" alt="My Page">
+                <br>
+                마이페이지
+                </a>
+            </div>
+          <div class="panel-item">
+            <a href="">
+              <img src="images/장바구니.png" alt="Cart">
+                <br>
+                장바구니
+            </a>
+          </div>
+            <div class="panel-item recent-items">
+              <button id="prevBtn" style="border: none; background-color: white;"><img src="images/좌측으로.png" alt=""></button>
+                <div class="recent-item-viewer" id="recentItemViewer">
+                <img src="https://via.placeholder.com/30" alt="Recent Item" id="recentItemImage">
+                </div>
+              <button id="nextBtn" style="border: none; background-color: white;"><img src="images/우측으로.png" alt=""></button>
+            </div>
+          <div class="panel-item">
+            <span id="recentItemsText">최근 열람 품목</span>
+          </div>
+            <div class="onTop_wrapper">
+            <span><button id="topBtn" style="background-color: white;"><img src="images/on top.png" alt=""></button></span>
+            </div>
+      </div>
+    </div>
+      <div class="overall_container">
         <div class="selector">
           <ul>
             <li class="item" id="item1">#식물키트</li>
@@ -56,76 +104,145 @@
             <li class="item" id="item3">#미니식물</li>
           </ul>
         </div>
-        <div class="sort_box">
-            <div>
-              <div class="sort_col" style="margin-top: 20px;">
-                  <span style="font-weight: bold; margin-right: 20px; margin-left: 20px; font-size: 20px;">색상</span>
-                  <button class="circle"></button>
-                  <button class="circle"></button>
-                  <button class="circle"></button>
-                  <button class="circle"></button>
-                  <button class="circle"></button>
-                  <button class="circle"></button>
-                  <button class="circle"></button>
-              </div>
-              <div class="sort_set">
-                <span style="font-weight: bold; margin-right: 20px;">꽃 / 열매 유무</span>
-                <label><input type="checkbox"> 꽃</label>
-                <label><input type="checkbox"> 열매</label>
-            </div>
-            <div class="sort_set">
-                <span style="font-weight: bold; margin-right: 20px;">채광 유무</span>
-                <label><input type="checkbox"> 음지(빛없는 실내)</label>
-                <label><input type="checkbox"> 반음지(빛적은 실내)</label>
-                <label><input type="checkbox"> 양지(빛이 많은곳)</label>
-            </div>
-            <div class="sort_set">
+      <div class="sort_box">
+        <div>
+          <div style="margin-top: 20px;">
+            <span style="font-weight: bold; margin-right: 20px; margin-left: 20px; font-size: 20px;">색상</span>
+              <button class="circle"></button>
+              <button class="circle"></button>
+              <button class="circle"></button>
+              <button class="circle"></button>
+              <button class="circle"></button>
+              <button class="circle"></button>
+              <button class="circle"></button>
+          </div>
+          <div class="sort_set">
+              <span style="font-weight: bold; margin-right: 20px;">꽃 / 열매 유무</span>
+                <label><input type="checkbox">꽃</label>
+                <label><input type="checkbox">열매</label>
+          </div>
+          <div class="sort_set">
+              <span style="font-weight: bold; margin-right: 20px;">채광 유무</span>
+                <label><input type="checkbox">음지(빛없는 실내)</label>
+                <label><input type="checkbox">반음지(빛적은 실내)</label>
+                <label><input type="checkbox">양지(빛이 많은곳)</label>
+          </div>
+          <div class="sort_set">
                 <span style="font-weight: bold; margin-right: 20px;">원예 형태</span>
-                <label><input type="checkbox"> 화분</label>
-                <label><input type="checkbox"> 꽃병</label>
-                <label><input type="checkbox"> 바구니</label>
-            </div>
+                <label><input type="checkbox">화분</label>
+                <label><input type="checkbox">꽃병</label>
+                <label><input type="checkbox">바구니</label>
           </div>
-
-
-          
-
-          
-          <div class="dropdown2">
-            <button class="dropdown-btn">사이즈 <i class="fa fa-caret-down"></i></button>
-            <ul class="dropdown-menu">
-              <li>마당용</li>
-              <li>실내용</li>
-              <li>탁상용(미니)</li>
-            </ul>
+          <div class="sort_set">
+              <span style="font-weight: bold; margin-right: 20px;">사이즈</span>
+              <label><input type="checkbox">마당용</label>
+              <label><input type="checkbox">실내용</label>
+              <label><input type="checkbox">탁상용(미니)</label>
           </div>
-        </div>
-        //
-        
-        <div class="category_btn">
-          <div class="category_layer">
-          <a href="#">카테고리 버튼 실험용</a>
-          </div>
-        </div>
-        
-        //
-      <div class="entire_goods">
-        <div class="dropdown1">
-          <button class="dropdown-btn">정렬기준 <i class="fa fa-caret-down"></i></button>
-          <ul class="dropdown-menu">
-            <li>평점순</li>
-            <li>가격낮은순</li>
-            <li>가격높은순</li>
-            <li>조회순</li>
-          </ul>
         </div>
       </div>
-      
+      <div class="goods_object" style="margin-bottom: 3rem;">
+        <div class="entire_goods">
+          <div class="dropdown1">
+            <button class="dropdown-btn" onclick="toggleDropdown()">정렬기준 ▼</button>
+              <ul class="dropdown-menu">
+                <li>평점순</li>
+                <li>가격낮은순</li>
+                <li>가격높은순</li>
+                <li>조회순</li>
+              </ul>
+          </div>
+        </div>
+          <h1 style="display: inline; margin-right: 5px;">식물 상품</h1>
+          <p style="display: inline; font-size: 25px;">나에게 맞는 식물친구들을 찾아보세요</p>
+      </div>
+        <div class="product_row">
+          <div class="product_item">
+            <a href="product-page.html">
+              <img src="images/베이직 키트.png" alt="Product Image">
+                <div class="goods_border">
+                  <p class="product_title">식물나라 베이직 키트</p>
+                  <p class="product_company">식물나라</p>
+                  <p class="product_price">9,900 원</p>
+                </div>
+            </a>
+          </div>
+          <div class="product_item">
+            <a href="product-page.html">
+              <img src="images/8-블루 데이지.png" alt="Product Image">
+                <p class="product_title">블루 데이지</p>
+                <p class="product_company">식물나라</p>
+                <p class="product_price">2,2000 원</p>
+            </a>
+          </div>
+          <div class="product_item">
+            <a href="product-page.html">
+              <img src="images/2-생화 카네이션 꽃바구니.jpg" alt="Product Image">
+                <p class="product_title">선물용 카네이션 & 꽃바구니</p>
+                <p class="product_company">식물나라</p>
+                <p class="product_price">30,000 원</p>
+            </a>
+          </div>
+        </div>
+        <div class="product_row">
+          <div class="product_item">
+            <a href="product-page.html">
+              <img src="images/4-노란색 구즈마니아.png" alt="Product Image">
+                <p class="product_title">구즈마니아</p>
+                <p class="product_company">식물나라</p>
+                <p class="product_price">4,8000 원</p>
+            </a>
+          </div>
+          <div class="product_item">
+            <a href="product-page.html">
+              <img src="images/5-주황장미.png" alt="Product Image">
+                <p class="product_title">주황장미</p>
+               <p class="product_company">식물나라</p>
+                <p class="product_price">15,000 원</p>
+            </a>
+          </div>
+          <div class="product_item">
+            <a href="product-page.html">
+              <img src="images/6-실내 음지 더피고사리.jpg" alt="Product Image">
+                <p class="product_title">더피고사리</p>
+                <p class="product_company">식물나라</p>
+                <p class="product_price">18,500 원</p>
+            </a>
+          </div>
+        </div>
+        <div class="product_row">
+          <div class="product_item">
+            <a href="product-page.html">
+              <img src="images/7-취설송 다육이 핑크선인장.png" alt="Product Image">
+                <p class="product_title">취설송 다육이 선인장</p>
+                <p class="product_company">식물나라</p>
+                <p class="product_price">27,000 원</p>
+            </a>
+          </div>
+          <div class="product_item">
+            <a href="product-page.html">
+              <img src="images/3-tomato.png" alt="Product Image">
+                <p class="product_title">토마토 키우기 세트</p>
+                <p class="product_company">식물나라</p>
+                <p class="product_price">14,500 원</p>
+              </a>
+          </div>
+          <div class="product_item">
+            <a href="product-page.html">
+              <img src="images/9 - 보라 마당식물 장미칼파눌라(신종보라겹꽃).jpg" alt="Product Image">
+                <p class="product_title">신종보라겹꽃</p>
+                <p class="product_company">식물나라</p>
+                <p class="product_price">38,500 원</p>
+            </a>
+          </div>
+        </div>
         <script>
             const selector = document.querySelector('.selector');
             const items = selector.querySelectorAll('.item');
+            const circles = document.querySelectorAll('.circle');
             let activeOverlay = null;
-      
+            let recentItems = [];
+            let currentIndex = 0;
             items.forEach(item => {
               let overlay = item.querySelector('.overlay');
               if (!overlay) {
@@ -133,7 +250,6 @@
                 overlay.classList.add('overlay');
                 item.appendChild(overlay);
               }
-      
               item.addEventListener('click', () => {
                 if (activeOverlay && activeOverlay !== overlay) {
                   activeOverlay.style.opacity = '0';
@@ -142,9 +258,7 @@
                 activeOverlay = overlay;
               });
             });
-
-            const circles = document.querySelectorAll('.circle');
-
+            
 circles.forEach(circle => {
   circle.addEventListener('click', () => {
 
@@ -158,41 +272,110 @@ circles.forEach(circle => {
 });
 
 
-const dropdownBtns = document.querySelectorAll('.dropdown-btn');
+document.getElementById('toggleButton').addEventListener('click', function() {
+        var panel = document.getElementById('rightPanel');
+        panel.classList.toggle('open');
+        var arrows = document.querySelectorAll('.toggle-button .arrow');
+        arrows.forEach(arrow => arrow.classList.toggle('open'));
+    });
 
-dropdownBtns.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    btn.classList.toggle('active');
-    const dropdownMenu = btn.nextElementSibling;
-    if (dropdownMenu.style.display === 'block') {
-      dropdownMenu.style.display = 'none';
-    } else {
-      dropdownMenu.style.display = 'block';
+
+
+    function updateRecentItemViewer() {
+        const viewer = document.getElementById('recentItemImage');
+        if (recentItems.length > 0) {
+            viewer.src = recentItems[currentIndex];
+        } else {
+            viewer.src = 'https://via.placeholder.com/30';
+        }
     }
-  });
-});
 
+    document.getElementById('prevBtn').addEventListener('click', function() {
+        if (recentItems.length > 0) {
+            currentIndex = (currentIndex - 1 + recentItems.length) % recentItems.length;
+            updateRecentItemViewer();
+        }
+    });
+
+    document.getElementById('nextBtn').addEventListener('click', function() {
+        if (recentItems.length > 0) {
+            currentIndex = (currentIndex + 1) % recentItems.length;
+            updateRecentItemViewer();
+        }
+    });
+
+
+
+    function toggleDropdown() {
+            var menu = document.querySelector('.dropdown1 .dropdown-menu');
+            if (menu.style.display === 'block') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'block';
+            }
+        }
+
+        // Optional: Close the dropdown if the user clicks outside of it
+        window.onclick = function(event) {
+            if (!event.target.matches('.dropdown-btn')) {
+                var dropdowns = document.getElementsByClassName("dropdown-menu");
+                for (var i = 0; i < dropdowns.length; i++) {
+                    var openDropdown = dropdowns[i];
+                    if (openDropdown.style.display === 'block') {
+                        openDropdown.style.display = 'none';
+                    }
+                }
+            }
+        }
+
+
+
+        document.getElementById('topBtn').addEventListener('click', function() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}); // 페이지 최상단으로(on top)
+
+    // 예시: 상품을 클릭했을 때 recentItems에 추가하는 함수
+    function addRecentItem(itemSrc) {
+        if (!recentItems.includes(itemSrc)) {
+            recentItems.push(itemSrc);
+            currentIndex = recentItems.length - 1;
+            updateRecentItemViewer();
+        }
+    }
+
+    // 예시: 페이지에 있는 상품을 클릭하면 recentItems에 추가
+    // 실제 구현 시 상품 리스트에 맞게 수정 필요
+    document.querySelectorAll('.product').forEach(product => {
+        product.addEventListener('click', function() {
+            addRecentItem(this.src);
+        });
+    });
+
+    updateRecentItemViewer(); // 초기 업데이트
 
     </script>
     </div>
 </main>
-    <footer>
-        <div class="f_container">
-            <div style="margin: auto 50px;">
-                <img width="150px" height="150px" src="image/round_logo_colorBack.svg" alt="플랜트랩">
-            </div>
-            <div>
-                <p>주소 :  서울특별시 강남구 강남대로2689길 20, 5층(역삼동)   TEL : 02 - 1111-2222</p>
-                <p>상호명 : (주)플랜트랩</p>
-                <p>Copyright © 2024 .All RIGHTS RSERVED.</p>
-                <p>불4조 :  정다은  김화영  김시표  송주헌  반재형</p>
-            </div>
-        </div>
-    </footer>
-    <!-- <div id="chat">
-        <svg width="80" height="80" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M40 80C17.908 80 0 62.092 0 40C0 17.908 17.908 0 40 0C62.092 0 80 17.908 80 40C80 62.092 62.092 80 40 80ZM40 72C48.4869 72 56.6263 68.6286 62.6274 62.6274C68.6286 56.6263 72 48.4869 72 40C72 31.5131 68.6286 23.3737 62.6274 17.3726C56.6263 11.3714 48.4869 8 40 8C31.5131 8 23.3737 11.3714 17.3726 17.3726C11.3714 23.3737 8 31.5131 8 40C8 48.4869 11.3714 56.6263 17.3726 62.6274C23.3737 68.6286 31.5131 72 40 72ZM36 56H44V64H36V56ZM36 48.032C36 48.032 44 48 44 48.032C44 44.024 56 40 56 32C56 23.16 48.908 16 40.036 16C37.9318 15.9953 35.8474 16.4056 33.902 17.2076C31.9566 18.0095 30.1886 19.1873 28.699 20.6735C27.2095 22.1598 26.0277 23.9252 25.2214 25.8687C24.415 27.8123 24 29.8958 24 32H32C32 27.6 35.6 24 40 24C44.4 24 48 27.6 48 32C48 35.6 36 41.468 36 48.032Z" fill="white"/>
-        </svg>        
-    </div> -->
+<footer>
+  <div class="f_container">
+      <div style="margin: auto 50px;">
+          <img width="150px" height="150px" src="images/round_logo_colorBack.svg" alt="플랜트팜 로고">
+      </div>
+      <div>
+          <p>주소 :  서울특별시 강남구 강남대로2689길 20, 5층(역삼동)   TEL : 02 - 1111-2222</p>
+          <p>상호명 : (주)플랜트랩</p>
+          <p>Copyright © 2024 .All RIGHTS RSERVED.</p>
+          <p>불4조 :  정다은  김화영  김시표  송주헌  반재형</p>
+      </div>
+  </div>
+</footer>
+<!-- <div id="chat">
+  <svg width="80" height="80" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M40 80C17.908 80 0 62.092 0 40C0 17.908 17.908 0 40 0C62.092 0 80 17.908 80 40C80 62.092 62.092 80 40 80ZM40 72C48.4869 72 56.6263 68.6286 62.6274 62.6274C68.6286 56.6263 72 48.4869 72 40C72 31.5131 68.6286 23.3737 62.6274 17.3726C56.6263 11.3714 48.4869 8 40 8C31.5131 8 23.3737 11.3714 17.3726 17.3726C11.3714 23.3737 8 31.5131 8 40C8 48.4869 11.3714 56.6263 17.3726 62.6274C23.3737 68.6286 31.5131 72 40 72ZM36 56H44V64H36V56ZM36 48.032C36 48.032 44 48 44 48.032C44 44.024 56 40 56 32C56 23.16 48.908 16 40.036 16C37.9318 15.9953 35.8474 16.4056 33.902 17.2076C31.9566 18.0095 30.1886 19.1873 28.699 20.6735C27.2095 22.1598 26.0277 23.9252 25.2214 25.8687C24.415 27.8123 24 29.8958 24 32H32C32 27.6 35.6 24 40 24C44.4 24 48 27.6 48 32C48 35.6 36 41.468 36 48.032Z" fill="white"/>
+  </svg>        
+</div> -->
 </body>
 </html>
