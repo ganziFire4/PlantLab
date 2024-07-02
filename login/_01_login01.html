@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>식물나라 로그인</title>
+    <link rel="stylesheet" href="../login/_01_login01.css">
+    <link rel="stylesheet" href="../Mainpage/nav_footer.css">
+     
+    <!-- 비밀번호 찾기 / 아이디 회원가입 간격, 로고 사진 변경 . google 버튼 변경해야함 -->
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">
+                <div>
+                    <a href="#">
+                        <img src="../images/logo_mixed.svg" alt="플랜트랩 로고">
+                    </a>
+                </div>
+                <div class="menu" style="display: inline-block;">
+                    <ul>
+                        <li><a href="#">커뮤니티</a></li>
+                        <li><a href="#">스토어</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right">
+                <div class="search">
+                    <span>
+                        <svg width="25" height="25.5" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M28.9749 26.5226L23.9072 20.9181L20.0092 19.137C21.3071 17.0958 22.0025 14.6606 22 12.1652C22 5.45727 17.0654 0 11 0C4.93455 0 0 5.45727 0 12.1652C0 18.8731 4.93455 24.3304 11 24.3304C13.276 24.3333 15.4961 23.551 17.3511 22.0925L18.9574 26.3918L24.0249 31.9966C24.3499 32.3561 24.7358 32.6412 25.1604 32.8357C25.5851 33.0303 26.0402 33.1304 26.4998 33.1304C26.9595 33.1305 27.4146 33.0303 27.8393 32.8358C28.2639 32.6413 28.6498 32.3562 28.9748 31.9968C29.2998 31.6374 29.5576 31.2106 29.7335 30.741C29.9094 30.2714 30 29.7681 30 29.2597C30 28.7514 29.9095 28.2481 29.7336 27.7784C29.5577 27.3088 29.2999 26.8821 28.9749 26.5226ZM2 12.1652C2 6.67703 6.03749 2.21185 11 2.21185C15.9625 2.21185 20 6.67703 20 12.1652C20 17.6534 15.9625 22.1185 11 22.1185C6.03749 22.1185 2 17.6534 2 12.1652ZM27.5606 30.4326C27.2791 30.7433 26.8976 30.9177 26.4999 30.9177C26.1022 30.9177 25.7208 30.7433 25.4393 30.4326L20.6535 25.1399L19.1601 21.1424L22.7749 22.7939L27.5607 28.0866C27.8416 28.398 27.9993 28.8198 27.9993 29.2596C27.9993 29.6994 27.8415 30.1213 27.5606 30.4326Z" fill="#878787"/>
+                            </svg>                    
+                    </span>
+                    <input type="text" id="search" placeholder="통합검색">
+                </div>
+                <div class="member">
+                    <ul>
+                        <li><a href="#">로그인</a></li>
+                        |
+                        <li><a href="#">회원가입</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container_login">
+            <div class="logo">
+                <img src="../images/plantlab_logo.svg" alt="식물나라 로고">
+            </div>
+            <h2>Plant Lab</h2><p>플랜트랩</p>
+            <div class="input-container">
+                <input class="inputbox" type="text" placeholder="아이디" required>
+            </div>
+            <div class="input-container">
+                <input class="inputbox" type="password" placeholder="비밀번호" required>
+            </div>
+            <button class="login">로그인</button>
+            <div class="options">
+                <a href="#">비밀번호 찾기</a> |  <a href="#">아이디 찾기</a>  |  <a href="#">회원가입</a>
+            </div>
+            <div style="font-size: 16px; color:#898989; margin-top:60px; margin-bottom:30px;">또는</div>
+            <button class="social-login kakao">
+                <img src="../images/login_kakao_logo.svg" alt="카카오톡 로고" style="height:20px; margin-right:10px;">
+                카카오로 시작하기
+            </button>
+            <button class="social-login google">
+                <img src="../images/login_google_logo.svg" alt="구글 로고" style="height:20px; margin-right:10px;">
+                Google로 시작하기
+            </button>
+        </div>
+    </main>
+    
+</body>
+</html>
