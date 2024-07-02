@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="icon" type="img/png" href="image/round_logo_whiteBack.svg">
+    <link rel="stylesheet" href="css/nav_header_footer.css">
+    <link rel="stylesheet" href="css/_02_join01.css">
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body class="noto-sans-kr">
+    <nav>
+        <div class="nav_left">
+            <div>
+                <a href="mainpage01.html">
+                    <img src="image/nav_logo.svg" alt="플랜트랩 로고">
+                </a>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="board_list.html">커뮤니티</a></li>
+                    <li><a href="쇼핑몰/board_info.html">스토어</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav_right">
+            <div class="nav_search">
+                <span>
+                    <svg width="25" height="25.5" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M28.9749 26.5226L23.9072 20.9181L20.0092 19.137C21.3071 17.0958 22.0025 14.6606 22 12.1652C22 5.45727 17.0654 0 11 0C4.93455 0 0 5.45727 0 12.1652C0 18.8731 4.93455 24.3304 11 24.3304C13.276 24.3333 15.4961 23.551 17.3511 22.0925L18.9574 26.3918L24.0249 31.9966C24.3499 32.3561 24.7358 32.6412 25.1604 32.8357C25.5851 33.0303 26.0402 33.1304 26.4998 33.1304C26.9595 33.1305 27.4146 33.0303 27.8393 32.8358C28.2639 32.6413 28.6498 32.3562 28.9748 31.9968C29.2998 31.6374 29.5576 31.2106 29.7335 30.741C29.9094 30.2714 30 29.7681 30 29.2597C30 28.7514 29.9095 28.2481 29.7336 27.7784C29.5577 27.3088 29.2999 26.8821 28.9749 26.5226ZM2 12.1652C2 6.67703 6.03749 2.21185 11 2.21185C15.9625 2.21185 20 6.67703 20 12.1652C20 17.6534 15.9625 22.1185 11 22.1185C6.03749 22.1185 2 17.6534 2 12.1652ZM27.5606 30.4326C27.2791 30.7433 26.8976 30.9177 26.4999 30.9177C26.1022 30.9177 25.7208 30.7433 25.4393 30.4326L20.6535 25.1399L19.1601 21.1424L22.7749 22.7939L27.5607 28.0866C27.8416 28.398 27.9993 28.8198 27.9993 29.2596C27.9993 29.6994 27.8415 30.1213 27.5606 30.4326Z" fill="#878787"/>
+                        </svg>                    
+                </span>
+                <input type="text" id="search" placeholder="통합검색">
+            </div>
+            <div class="member">
+                <ul>
+                    <li><a href="_01_login01.html">로그인</a></li>
+                    |
+                    <li><a href="_02_join02.html">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+        <main>
+            <div class="join-container">
+            <h2 id="join-explain">회원가입을 위해<br>정보를 입력해주세요.</h2>
+            <form id="join-form" action="#" method="post">
+                <div class="form-group">
+                    <div class="custom-input">
+                        <input type="text" id="userId" name="userId" placeholder="아이디" required>
+                        <button type="button" onclick="checkDuplicate()"></button>
+                    </div>
+                    <small id="check-message"></small>
+                </div>
+                <div class="form-group">
+                    <label for="nickname"></label>
+                    <input type="text" id="nickname" name="nickname" placeholder="닉네임" required>
+                    <small id="check-message1"></small>
+                </div>
+                <div class="form-group">
+                    <label for="password"></label>
+                    <input type="password" id="password" name="password" placeholder="비밀번호"required>
+                    <small id="check-message2"></small>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword"></label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="비밀번호 확인" required>
+                    <small id="check-message3"></small>
+                </div>
+                <button type="button" class="submit-btn" onclick="joinComplete()">가입하기</button> <!--백연결시 type="submit"으로 변경 필요-->
+            </form>
+         </div>
+        </main>
+    </div>
+    <script>
+        const userId = document.querySelector("input[name='userId']");
+        const userNickname = document.querySelector("input[name='nickname']");
+        const checkMessage = document.querySelector("#check-message");
+        const checkMessage1 = document.querySelector("#check-message1");
+        const checkMessage2 = document.querySelector("#check-message2");
+        const checkMessage3 = document.querySelector("#check-message3");
+        const userPassword = document.querySelector("input[name='password']");
+        const confirmPassword = document.querySelector("input[name='confirmPassword']");
+
+        // 회원정보
+        let id, nickname, password;
+
+       //아이디 입력받을 조건 
+        userId.addEventListener("change", (e) => {
+            if (e.target.value.length < 8 || e.target.value.length > 21) {
+                checkMessage.textContent = "아이디는 8자리이상 20자이하로 지정해주세요.";
+                checkMessage.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
+                userId.focus();
+            } else {
+                //바로 없어지게 가능한지??
+                checkMessage.textContent = "";
+                id = e.target.value;
+                // checkMessage.textContent ="사용 가능한 아이디입니다.";
+                // checkMessage.style.color = "#23C961"; // 텍스트 색상을 초록색으로 설정
+                // userIdValidation = true;
+                // userId.focus();
+            }
+        });
+
+        // 아이디 중복체크
+        let userIdCheck = false;
+        function checkDuplicate(){
+            // 로컬스토리지가 비어있는 경우
+            if(localStorage.length === 0) {
+                checkMessage.textContent ="사용 가능한 아이디입니다.";
+                checkMessage.style.color = "#23C961";
+                userIdCheck = true;
+                return;
+            }
+
+            // 안비어있는 경우(값 중복 체크가 필요함.)
+            for(let i = 1; i <= localStorage.length; i++){
+                if(JSON.parse(localStorage.getItem(i)).id == id){
+                    checkMessage.textContent = "중복된 아이디입니다.";
+                    checkMessage.style.color = "red";
+                    userId.focus();
+                    return;
+                }
+            }
+
+            checkMessage.textContent ="사용 가능한 아이디입니다.";
+            checkMessage.style.color = "#23C961";
+            userIdCheck = true;
+            return;
+        }
+
+        // 닉네임 중복체크
+        let userNicknameCheck = false;
+        function checkNickname(){
+            // 로컬스토리지가 비어있는 경우
+            if(localStorage.length === 0) {
+                checkMessage.textContent ="사용 가능한 닉네임입니다.";
+                checkMessage.style.color = "#23C961";
+                userNicknameCheck = true;
+                return;
+            }
+
+            // 안비어있는 경우(값 중복 체크가 필요함.)
+            for(let i = 1; i <= localStorage.length; i++){
+                if(JSON.parse(localStorage.getItem(i)).nickname == nickname){
+                    checkMessage.textContent = "중복된 닉네임입니다.";
+                    checkMessage.style.color = "red";
+                    userNickname.focus();
+                    return;
+                }
+            }
+
+            checkMessage.textContent ="사용 가능한 아이디입니다.";
+            checkMessage.style.color = "#23C961";
+            userNicknameCheck = true;
+            return;
+        }
+
+         //닉네임 입력받을 조건 
+         userNickname.addEventListener("change", (e) => {
+            if (e.target.value.length > 5) {
+                checkMessage1.textContent = "닉네임은 5자이하로 지정해주세요.";
+                checkMessage1.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
+                userNickname.focus();
+            } else {
+                nickname = e.target.value;
+                checkNickname();
+            }
+        });
+
+        // 패스워드 입력
+        let passwordValidation = false;
+        userPassword.addEventListener("change", (e) => {
+            // e.target.style.background = "#fff";
+            let reg = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*+=-])(?=.*[0-9]).{8,15}$/;
+
+            if(!reg.test(e.target.value)) {
+                checkMessage2.textContent = "비밀번호는 영문 숫자 특수기호 포함 8자리 이상으로지정해주세요.";
+                checkMessage2.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
+                userPassword.focus();//다시 입력 칸에 포커스
+            } else{
+                checkMessage2.textContent = "";
+                password = e.target.value;
+                passwordValidation = true;
+            }
+        });
+        
+
+
+    // 패스워드 입력확인
+        let passwordConfirmValidation = false;
+        confirmPassword.addEventListener("change", (e) => {
+            if (e.target.value !== password) {
+                checkMessage3.textContent = "입력한 비밀번호와 다릅니다.";
+                checkMessage3.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
+                password.focus();//다시 입력 칸에 포커스
+            } else{
+                checkMessage3.textContent="";
+                passwordConfirmValidation = true;
+            }
+        });
+
+
+        // 가입하기 버튼 클릭
+        function joinComplete(){
+            if(!userIdCheck) {
+                alert("아이디를 확인하세요.");
+                return;
+            }
+
+            if(!userNicknameCheck) {
+                alert("닉네임을 확인하세요.");
+                return;
+            }
+
+            if(!(passwordValidation && passwordConfirmValidation)) {
+                alert("비밀번호를 확인하세요.");
+                return;
+            }
+
+            if(userIdCheck && userNicknameCheck && passwordValidation && passwordConfirmValidation) {
+                localStorage.setItem(localStorage.length + 1, JSON.stringify({id, nickname, password}));
+                window.location.href = "_02_join02.html";
+            }
+        }
+    </script>
+</body>
+</html>
