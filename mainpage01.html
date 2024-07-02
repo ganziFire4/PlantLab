@@ -35,13 +35,35 @@
                 </span>
                 <input type="text" id="search" placeholder="통합검색">
             </div>
-            <div class="member">
-                <ul>
-                    <li><a href="_01_login01.html">로그인</a></li>
-                    |
-                    <li><a href="_02_join01.html">회원가입</a></li>
-                </ul>
-            </div>
+            <script>
+                const nickname = sessionStorage.getItem("login");
+                if(nickname === null){
+                    document.write(`
+                    <div class="member">
+                        <ul>
+                            <li><a href="_01_login01.html">로그인</a></li>
+                            |
+                            <li><a href="_02_join01.html">회원가입</a></li>
+                        </ul>
+                    </div>
+                    `);
+                } else {
+                    document.write(`
+                    <div class="member">
+                        <ul>
+                            <li style="margin:0;">
+                                <a href="#">
+                                    <img src="image/profile_empty.svg" alt="임시 프로필사진" width="40px" height="40px">
+                                </a>
+                            </li>
+                            <li style="margin-left: 10px; font-size: 1.1rem">
+                                <a href="#" style="font-weight:400">${nickname}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    `);
+                }
+            </script>
         </div>
     </nav>
     <header id="header">

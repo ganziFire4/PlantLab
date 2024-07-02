@@ -35,11 +35,6 @@
             margin-top:1px;
         }
 
-        a{
-            margin:0px 20px 10px 20px;
-        }
-        
-
         .logo {
             margin-bottom: 15px;
         }
@@ -60,8 +55,6 @@
            border-radius: 4px;
            height: 3.125rem;
            font-size: 1rem;
-          
-           
         }
         
         input {
@@ -89,6 +82,7 @@
         .login:hover {
             background-color: #218838;
         }
+
         .options {
             margin: 15px 0;
             font-size: 1.125rem;
@@ -96,9 +90,21 @@
             justify-content: center; */
         }
 
+        .options ul {
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .options li {
+            display: inline-block;
+            list-style: none;
+        }     
         .options a {
             color:  #898989;
             text-decoration: none;
+            margin:0px 20px 10px 20px;
         }
 
         .social-login {
@@ -122,8 +128,6 @@
             font-size: 1.10rem;
            
         }
-
-
 
         .google {
             background-color: #FFFFFF;

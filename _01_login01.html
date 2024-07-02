@@ -58,9 +58,21 @@
             <div class="input-container">
                 <input class="inputbox" type="password" placeholder="비밀번호" required>
             </div>
-            <button class="login">로그인</button>
+            <button class="login" type="button">로그인</button>
             <div class="options">
-                <a href="#">비밀번호 찾기</a> |  <a href="#">아이디 찾기</a>  |  <a href="#">회원가입</a>
+                <ul>
+                    <li>
+                        <a href="#">아이디 찾기</a>
+                    </li>
+                    |
+                    <li>
+                        <a href="#">비밀번호 찾기</a>
+                    </li>
+                    |
+                    <li>
+                        <a href="#">회원가입</a>
+                    </li>
+                </ul>
             </div>
             <div style="font-size: 16px; color:#898989; margin-top:60px; margin-bottom:30px;">또는</div>
             <button class="social-login kakao">
@@ -74,7 +86,29 @@
         </div>
     </main>
     <script>
+        const tryLogin = document.getElementsByClassName("inputbox");
+        const btn = document.getElementsByClassName("login")[0];
 
+        btn.addEventListener("click", () => {
+            if(localStorage.length == 0){
+                alert("아이디 또는 패스워드가 잘못되었습니다.")
+                return;
+            }
+            let i = 1;
+            for(i; i <= localStorage.length; i++){
+                const mem = JSON.parse(localStorage.getItem(i));
+                if(tryLogin[0].value == mem.id){
+                    if(tryLogin[1].value == mem.password){
+                        sessionStorage.setItem("login", mem.nickname);
+                        alert(`${mem.nickname}님 환영합니다.`);
+                        window.location.href = "mainpage01.html";
+                        return;
+                    }
+                }
+            }
+            alert("아이디 또는 패스워드가 잘못되었습니다.")
+            return;
+        });
     </script>
 </body>
 </html>
