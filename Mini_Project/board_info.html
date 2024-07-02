@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>플랜트랩_스토어</title>
-    <link rel="icon" type="img/png" href="image/round_logo_whiteBack.svg">
+    <title>플랜트랩_정보게시판</title>
+    <link rel="icon" type="img/png" href="images/round_logo_whiteBack.svg">
     <link rel="stylesheet" href="css/nav_header_footer.css">
     <link rel="stylesheet" href="css/store.css">
     <!--bootstrap-->
@@ -22,7 +22,7 @@
             <div>
                 <ul class="nav_menu">
                     <li><a href="#">커뮤니티</a></li>
-                    <li><a href="#">스토어</a></li>
+                    <li><a href="#">스토어</a></ li>
                 </ul>
             </div>
         </div>
@@ -35,17 +35,39 @@
                 </span>
                 <input type="text" id="search" placeholder="통합검색">
             </div>
-            <div class="member">
-                <ul>
-                    <li><a href="#">로그인</a></li>
-                    |
-                    <li><a href="#">회원가입</a></li>
-                </ul>
-            </div>
+            <script>
+                const nickname = sessionStorage.getItem("login");
+                if(nickname === null){
+                    document.write(`
+                    <div class="member">
+                        <ul>
+                            <li><a href="_01_login01.html">로그인</a></li>
+                            |
+                            <li><a href="_02_join01.html">회원가입</a></li>
+                        </ul>
+                    </div>
+                    `);
+                } else {
+                    document.write(`
+                    <div class="member">
+                        <ul>
+                            <li style="margin:0;">
+                                <a href="#">
+                                    <img src="imagse/profile_empty.svg" alt="임시 프로필사진" width="40px" height="40px">
+                                </a>
+                            </li>
+                            <li style="margin-left: 10px; font-size: 1.1rem">
+                                <a href="#" style="font-weight:400">${nickname}</a>
+                            </li>
+                        </ul>
+                    </div>
+                    `);
+                }
+            </script>
         </div>
     </nav>
     <header>
-        <img src="images/쇼핑몰 헤더 이미지.png" alt="쇼핑몰 배너">
+        <img src="images/쇼핑몰 헤더 이미지.png" alt="글쓰기 헤더">
     </header>
     <main>
     <div class="right-panel" id="rightPanel">
@@ -88,9 +110,7 @@
           <div class="panel-item">
             <span id="recentItemsText">최근 열람 품목</span>
           </div>
-            <div class="onTop_wrapper">
-            <span><button id="topBtn" style="background-color: white;"><img src="images/on top.png" alt=""></button></span>
-            </div>
+            <span><button id="topBtn" style="background-color: white; border: none; margin-left: 66px;"><img src="images/on top.png" alt=""></button></span>
       </div>
     </div>
       <div class="overall_container">
@@ -172,7 +192,7 @@
               <img src="images/8-블루 데이지.png" alt="Product Image">
                 <p class="product_title">블루 데이지</p>
                 <p class="product_company">식물나라</p>
-                <p class="product_price">2,2000 원</p>
+                <p class="product_price">22,000 원</p>
             </a>
           </div>
           <div class="product_item">
@@ -190,7 +210,7 @@
               <img src="images/4-노란색 구즈마니아.png" alt="Product Image">
                 <p class="product_title">구즈마니아</p>
                 <p class="product_company">식물나라</p>
-                <p class="product_price">4,8000 원</p>
+                <p class="product_price">4000 원</p>
             </a>
           </div>
           <div class="product_item">
@@ -304,8 +324,6 @@ document.getElementById('toggleButton').addEventListener('click', function() {
         }
     });
 
-
-
     function toggleDropdown() {
             var menu = document.querySelector('.dropdown1 .dropdown-menu');
             if (menu.style.display === 'block') {
@@ -327,9 +345,6 @@ document.getElementById('toggleButton').addEventListener('click', function() {
                 }
             }
         }
-
-
-
         document.getElementById('topBtn').addEventListener('click', function() {
   window.scrollTo({
     top: 0,
@@ -358,24 +373,24 @@ document.getElementById('toggleButton').addEventListener('click', function() {
 
     </script>
     </div>
-</main>
-<footer>
-  <div class="f_container">
-      <div style="margin: auto 50px;">
-          <img width="150px" height="150px" src="images/round_logo_colorBack.svg" alt="플랜트팜 로고">
+  </main>
+  <footer>
+      <div class="f_container">
+          <div style="margin: auto 50px;">
+              <img width="150px" height="150px" src="images/round_logo_colorBack.svg" alt="플랜트팜 로고">
+          </div>
+          <div>
+              <p>주소 :  서울특별시 강남구 강남대로2689길 20, 5층(역삼동)   TEL : 02 - 1111-2222</p>
+              <p>상호명 : (주)플랜트랩</p>
+              <p>Copyright © 2024 .All RIGHTS RSERVED.</p>
+              <p>불4조 :  정다은  김화영  김시표  송주헌  반재형</p>
+          </div>
       </div>
-      <div>
-          <p>주소 :  서울특별시 강남구 강남대로2689길 20, 5층(역삼동)   TEL : 02 - 1111-2222</p>
-          <p>상호명 : (주)플랜트랩</p>
-          <p>Copyright © 2024 .All RIGHTS RSERVED.</p>
-          <p>불4조 :  정다은  김화영  김시표  송주헌  반재형</p>
-      </div>
-  </div>
-</footer>
-<!-- <div id="chat">
-  <svg width="80" height="80" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M40 80C17.908 80 0 62.092 0 40C0 17.908 17.908 0 40 0C62.092 0 80 17.908 80 40C80 62.092 62.092 80 40 80ZM40 72C48.4869 72 56.6263 68.6286 62.6274 62.6274C68.6286 56.6263 72 48.4869 72 40C72 31.5131 68.6286 23.3737 62.6274 17.3726C56.6263 11.3714 48.4869 8 40 8C31.5131 8 23.3737 11.3714 17.3726 17.3726C11.3714 23.3737 8 31.5131 8 40C8 48.4869 11.3714 56.6263 17.3726 62.6274C23.3737 68.6286 31.5131 72 40 72ZM36 56H44V64H36V56ZM36 48.032C36 48.032 44 48 44 48.032C44 44.024 56 40 56 32C56 23.16 48.908 16 40.036 16C37.9318 15.9953 35.8474 16.4056 33.902 17.2076C31.9566 18.0095 30.1886 19.1873 28.699 20.6735C27.2095 22.1598 26.0277 23.9252 25.2214 25.8687C24.415 27.8123 24 29.8958 24 32H32C32 27.6 35.6 24 40 24C44.4 24 48 27.6 48 32C48 35.6 36 41.468 36 48.032Z" fill="white"/>
-  </svg>        
-</div> -->
+  </footer>
+  <!-- <div id="chat">
+      <svg width="80" height="80" viewBox="0 0 150 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M40 80C17.908 80 0 62.092 0 40C0 17.908 17.908 0 40 0C62.092 0 80 17.908 80 40C80 62.092 62.092 80 40 80ZM40 72C48.4869 72 56.6263 68.6286 62.6274 62.6274C68.6286 56.6263 72 48.4869 72 40C72 31.5131 68.6286 23.3737 62.6274 17.3726C56.6263 11.3714 48.4869 8 40 8C31.5131 8 23.3737 11.3714 17.3726 17.3726C11.3714 23.3737 8 31.5131 8 40C8 48.4869 11.3714 56.6263 17.3726 62.6274C23.3737 68.6286 31.5131 72 40 72ZM36 56H44V64H36V56ZM36 48.032C36 48.032 44 48 44 48.032C44 44.024 56 40 56 32C56 23.16 48.908 16 40.036 16C37.9318 15.9953 35.8474 16.4056 33.902 17.2076C31.9566 18.0095 30.1886 19.1873 28.699 20.6735C27.2095 22.1598 26.0277 23.9252 25.2214 25.8687C24.415 27.8123 24 29.8958 24 32H32C32 27.6 35.6 24 40 24C44.4 24 48 27.6 48 32C48 35.6 36 41.468 36 48.032Z" fill="white"/>
+      </svg>        
+  </div> -->
 </body>
 </html>

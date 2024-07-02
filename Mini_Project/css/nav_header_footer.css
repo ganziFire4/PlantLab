@@ -120,9 +120,3 @@ footer .f_container {
 footer p {
     margin: 8px 0;
 }
-
-header {
-    display: flex;
-    height: 500px;
-    justify-content: center;
-}
