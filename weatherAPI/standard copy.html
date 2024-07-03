@@ -137,19 +137,17 @@
         let rainNum = 9; // 강수량
         let quantityNum = 7; // 강수확률
 
-        // let second = now.getSeconds();
-        let minute = now.getMinutes();
-        console.log(url);
         $.getJSON(url, function(data) {
                 temperature = data.response.body.items.item[tempNum].fcstValue;
                 rain = data.response.body.items.item[rainNum].fcstValue;
                 quantity = data.response.body.items.item[quantityNum].fcstValue;
                 // console.log(url);
-                if(quantity < 10) {
+                console.log(quantity);
+                if(quantity <= 10) {
                     // 맑음 
                     $('#weatherImg').attr('src', 'image/sunny.svg');
                     $('#result').html(`<div>${temperature} ˚C<br>맑음</div>`);
-                } else if(quantity < 30){
+                } else if(quantity < 50){
                     // 흐림
                     $('#weatherImg').attr('src', "image/rainny.svg");
                     $('#result').html(`<div>${temperature} ˚C<br>흐림</div>`);
