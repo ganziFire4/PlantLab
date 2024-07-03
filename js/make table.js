@@ -70,7 +70,7 @@ function make_rec_row(name) {
         g = Math.round(Math.random() * w);
         s = Math.round(Math.random() * g);
         str += `
-        <tr class="pop_table">
+        <tr class="rec_table">
             <th scope="row">${i}</th>
             <td>${name} ${i}</td>
             <td>${nickname[nn]}</td>
@@ -174,13 +174,16 @@ function reset(){
 
 function greenTalkcontent() {
     let str = `
-        <div class="container">
+    <div id="clean">
+        <div style="max-width: 1200px; margin: 0 auto;">
             <button type="button" id="button" onclick="buttonClick(4)">글쓰기</button>
+        </div>
+        <div class="container">
             <div class="dailycontent">
             <div class="card1" style="width: 546px;">
                 <div class="card-header">
                 <div class="card-writer">
-                    <img src="image/자랑글/카리나.png" alt=""> karina87
+                    <img src="image/프로필사진.png" alt="" style="width: 30px; height: 30px;"> karina87
                 </div>
                 <div class="report">
                     <img src="image/자랑글/menu.png.png" alt="신고 버튼" class="reportbtn">
@@ -243,127 +246,131 @@ function greenTalkcontent() {
                 <img src="image/자랑글/ranksample1.jpg" alt="" class="thumbnail" id="normal6">
             </div>
         </div>
-    </div>
         <!--modal 팝업-->
-    <div class="modal fade" id="rank1modal">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <!--.modal-content: 모달의 콘텐츠 영역-->
-            <div class="modal-content">
-                <!--.modal-header: 모달의 헤더 영역-->
-                <!-- <div class="modal-header">
-                    <h3>슈퍼푸드</h3>
-                </div> -->
-                <!--.modal-body: 모달의 바디 영역-->
-                <div class="modal-body">
-                    <img src="image/자랑글/rank1main.png" alt="" class="modalmain">
-                    <div class="modal-right">
-                        <div class="modalthumb">
-                            <img src="image/자랑글/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1">
-                            <img src="image/자랑글/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1">
-                            <img src="image/자랑글/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1">
-                            <img src="image/자랑글/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1" style="height: 96.27px;">
-                        </div>
-                        <div class="modalcontentbox">
-                            <div class="modalcontents">
-                                <div class="writerpic">
-                                    <img src="image/자랑글/카리나.png" alt="">
+        <div class="modal fade" id="rank1modal">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <!--.modal-content: 모달의 콘텐츠 영역-->
+                <div class="modal-content">
+                    <!--.modal-header: 모달의 헤더 영역-->
+                    <!-- <div class="modal-header">
+                        <h3>슈퍼푸드</h3>
+                    </div> -->
+                    <!--.modal-body: 모달의 바디 영역-->
+                    <div class="modalbox">
+                        <div class="modal-body">
+                            <img src="image/자랑글/rank1main.png" alt="" class="modalmain">
+                            <div class="modal-right">
+                                <div class="modalthumb">
+                                    <img src="image/자랑글/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1">
+                                    <img src="image/자랑글/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1">
+                                    <img src="image/자랑글/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1">
+                                    <img src="image/자랑글/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1" style="height: 96.27px;">
                                 </div>
-                                <div class="modalmaincon">
-                                    karina87
-                                </div>
-                                <div class="modalmaindate">
-                                    24.06.27
-                                </div>
-                                <div class="modalreport">
-                                    <img src="image/자랑글/menu.png.png" alt="" style="width: 15px;">
+                                <div class="modalcontentbox">
+                                    <div class="modalcontents">
+                                        <div class="writerpic">
+                                            <img src="image/프로필사진.png" alt="" style="width: 30px; height: 30px;">
+                                        </div>
+                                        <div class="modalmaincon">
+                                            karina87
+                                        </div>
+                                        <div class="modalmaindate">
+                                            24.06.27
+                                        </div>
+                                        <div class="modalreport">
+                                            <img src="image/자랑글/menu.png.png" alt="" style="width: 15px;">
+                                        </div>
+                                    </div>
+                                    <div class="modalmaincontent">
+                                        <p>입양한지 100일째 ~ 무럭무럭 크는 우리집 뽀짝<br>그린이에요>_<<br>벌레도 없이 튼튼하게 자라는 중이에요</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="modalmaincontent">
-                                <p>입양한지 100일째 ~ 무럭무럭 크는 우리집 뽀짝<br>그린이에요>_<<br>벌레도 없이 튼튼하게 자라는 중이에요</p>
+                            <div class="title">
+                                <p class="titlename">#초록  #자랑</p>
+                                <div class="btnicon">
+                                    <img src="image/자랑글/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
+                                    <img src="image/자랑글/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
+                                    <img src="image/자랑글/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
+                                    <img src="image/자랑글/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <input action="text" class="commentbox" placeholder="댓글을 입력하세요."
+                                onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'"></input>
+                                <div type="submit" class="confirmbox">게시</div>
                             </div>
                         </div>
                     </div>
-                    <div class="title">
-                        <p class="titlename">#초록  #자랑</p>
-                        <div class="btnicon">
-                            <img src="image/자랑글/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
-                            <img src="image/자랑글/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
-                            <img src="image/자랑글/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
-                            <img src="image/자랑글/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <input action="text" class="commentbox" placeholder="댓글을 입력하세요."
-                        onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'"></input>
-                        <div type="submit" class="confirmbox">게시</div>
-                    </div>
+                    <!--.modal-body: 모달의 푸터 영역-->
+                    <!-- <div class="modal-footer"> -->
+                        <!--data-bs-dismiss="modal": 클릭 시 모달창 닫기-->
+                        <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div> -->
                 </div>
-                <!--.modal-body: 모달의 푸터 영역-->
-                <!-- <div class="modal-footer"> -->
-                    <!--data-bs-dismiss="modal": 클릭 시 모달창 닫기-->
-                    <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
-                </div> -->
             </div>
         </div>
-    </div>
-    <div class="modal fade" id="rank2modal">
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-            <!--.modal-content: 모달의 콘텐츠 영역-->
-            <div class="modal-content">
-                <!--.modal-header: 모달의 헤더 영역-->
-                <!-- <div class="modal-header">
-                    <h3>슈퍼푸드</h3>
-                </div> -->
-                <!--.modal-body: 모달의 바디 영역-->
-                <div class="modal-body">
-                    <img src="image/자랑글/ranksample2.jpeg" alt="" class="modalmain">
-                    <div class="modal-right">
-                        <div class="modalthumb">
-                            <img src="image/자랑글/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1">
-                            <img src="image/자랑글/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1">
-                            <img src="image/자랑글/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1">
-                            <img src="image/자랑글/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1" style="height: 96.27px;">
-                        </div>
-                        <div class="modalcontentbox">
-                            <div class="modalcontents">
-                                <div class="writerpic">
-                                    <img src="image/자랑글/defaultprofile.png" alt="" style="width: 29px;">
+        <div class="modal fade" id="rank2modal">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <!--.modal-content: 모달의 콘텐츠 영역-->
+                <div class="modal-content">
+                    <!--.modal-header: 모달의 헤더 영역-->
+                    <!-- <div class="modal-header">
+                        <h3>슈퍼푸드</h3>
+                    </div> -->
+                    <!--.modal-body: 모달의 바디 영역-->
+                    <div class="modalbox">
+                        <div class="modal-body">
+                            <img src="image/자랑글/ranksample2.jpeg" alt="" class="modalmain">
+                            <div class="modal-right">
+                                <div class="modalthumb">
+                                    <img src="image/자랑글/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1">
+                                    <img src="image/자랑글/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1">
+                                    <img src="image/자랑글/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1">
+                                    <img src="image/자랑글/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1" style="height: 96.27px;">
                                 </div>
-                                <div class="modalmaincon">
-                                    장길산
-                                </div>
-                                <div class="modalmaindate">
-                                    24.06.28
-                                </div>
-                                <div class="modalreport">
-                                    <img src="image/자랑글/menu.png.png" alt="" style="width: 15px;">
+                                <div class="modalcontentbox">
+                                    <div class="modalcontents">
+                                        <div class="writerpic">
+                                            <img src="image/자랑글/defaultprofile.png" alt="" style="width: 29px;">
+                                        </div>
+                                        <div class="modalmaincon">
+                                            장길산
+                                        </div>
+                                        <div class="modalmaindate">
+                                            24.06.28
+                                        </div>
+                                        <div class="modalreport">
+                                            <img src="image/자랑글/menu.png.png" alt="" style="width: 15px;">
+                                        </div>
+                                    </div>
+                                    <div class="modalmaincontent">
+                                        <p>오늘 심은 양파...^^</p>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="modalmaincontent">
-                                <p>오늘 심은 양파...^^</p>
+                            <div class="title">
+                                <p class="titlename">#내돈내심  #반찬</p>
+                                <div class="btnicon">
+                                    <img src="image/자랑글/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
+                                    <img src="image/자랑글/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
+                                    <img src="image/자랑글/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
+                                    <img src="image/자랑글/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <input action="text" class="commentbox" placeholder="댓글을 입력하세요."
+                                onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'"></input>
+                                <div type="submit" class="confirmbox">게시</div>
                             </div>
                         </div>
                     </div>
-                    <div class="title">
-                        <p class="titlename">#내돈내심  #반찬</p>
-                        <div class="btnicon">
-                            <img src="image/자랑글/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
-                            <img src="image/자랑글/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
-                            <img src="image/자랑글/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
-                            <img src="image/자랑글/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
-                        </div>
-                    </div>
-                    <div class="comment">
-                        <input action="text" class="commentbox" placeholder="댓글을 입력하세요."
-                        onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'"></input>
-                        <div type="submit" class="confirmbox">게시</div>
-                    </div>
+                    <!--.modal-body: 모달의 푸터 영역-->
+                    <!-- <div class="modal-footer"> -->
+                        <!--data-bs-dismiss="modal": 클릭 시 모달창 닫기-->
+                        <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
+                    </div> -->
                 </div>
-                <!--.modal-body: 모달의 푸터 영역-->
-                <!-- <div class="modal-footer"> -->
-                    <!--data-bs-dismiss="modal": 클릭 시 모달창 닫기-->
-                    <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
-                </div> -->
             </div>
         </div>
     </div>
@@ -381,5 +388,13 @@ function buttonClick(tab){
         return;
     }
     window.location.href = `writing.html?tab=${tab}`;
+    return;
+}
+
+function cleanGreentalk(){
+    const green = document.querySelector("#clean");
+        if(green !== null){
+          green.innerHTML = "";
+        }
     return;
 }

@@ -305,9 +305,42 @@ img {
 .modal-content {
    align-items: center;
    color: black;
+   background: transparent;
+}
+
+.modalbox {
+   width: 1158px;
+   height: 640px;
+   background: white;
+   border-radius: 5px;
 }
 
 .modalreport {
    margin-left: auto;
    margin-top: 5px;
 }
+
+@media screen and (max-width: 1160px) {
+   .conimg {
+       display:grid;
+       grid-template-columns: repeat(2, auto);
+   }
+}
+
+@media screen and (max-width: 800px) {
+   .dailycontent {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+   }
+   
+   .card2 {
+       margin-top: 20px;
+   }
+
+   .conimg {
+       display: flex;
+       flex-direction: column;
+   }
+}
+
