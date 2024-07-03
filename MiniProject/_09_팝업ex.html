@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    #popup-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#popup-image {
+    width: 30px;
+    height: 30px;
+}
+
+#popup-content {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    height: 2000px;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Popup Icon</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+
+    </div>
+    <div id="popup-icon">
+        <img src="path-to-your-icon.png" alt="Popup Icon" id="popup-image">
+    </div>
+
+    <div id="popup-content" class="hidden">
+        <p>This is the popup content.</p>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const popupIcon = document.getElementById('popup-icon');
+            const popupContent = document.getElementById('popup-content');
+
+            popupIcon.addEventListener('mouseover', () => {
+                popupContent.classList.remove('hidden');
+            });
+
+            popupIcon.addEventListener('mouseleave', () => {
+                popupContent.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

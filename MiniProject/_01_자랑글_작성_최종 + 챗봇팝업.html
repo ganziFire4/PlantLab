@@ -246,6 +246,51 @@
         .textarea {
             resize: none;
         }
+
+        /*--------------------------------------------------------*/
+
+        #popup-icon1 {
+            position: fixed;
+            bottom: 120px;
+            right: 45px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        #popup-content1 {
+            position: fixed;
+            bottom: 180px;
+            right: 40px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        #popup-icon2 {
+            position: fixed;
+            bottom: 60px;
+            right: 45px;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .hidden {
+            display: none;
+        }
+        
         </style>
 </head>
 <body class="noto-sans-kr">
@@ -321,6 +366,15 @@
         <div class="confirm-group">
             <button type="submit" class="confirm">글 올리기</button>
         </div>
+        <div id="popup-icon1">
+            <img src="images/챗봇아이콘.png" alt="Popup Icon" id="popup-image" style="width: 60px; height: 60px;">
+        </div>
+        <div id="popup-content1" class="hidden">
+            <p>안녕하세요! 플랜트 봇 입니다!<br>궁금한 것은 모두 플랜트 봇에게 물어보세요!</p>
+        </div>
+        <div id="popup-icon2">
+            <img src="images/top아이콘.png" alt="Popup Icon" id="popup-image" style="width: 60px; height: 60px;">
+        </div>
     </div>
     <footer>
         <div class="f_container">
@@ -344,6 +398,24 @@
             $("#vid").click((e) => {
                 $(".videoBtn").trigger("click");
             });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const popupIcon = document.getElementById('popup-icon1');
+            const popupContent = document.getElementById('popup-content1');
+            const popupIcon2 = document.getElementById('popup-icon2');
+
+            popupIcon.addEventListener('mouseover', () => {
+                popupContent.classList.remove('hidden');
+            });
+
+            popupIcon.addEventListener('mouseleave', () => {
+                popupContent.classList.add('hidden');
+            });
+
+            popupIcon2.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
         });
     </script>
 </body>
