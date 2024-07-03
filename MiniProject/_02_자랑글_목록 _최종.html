@@ -450,10 +450,24 @@
             margin-top: 5px;
         }
 
+        @media screen and (max-width: 1160px) {
+            #nav {
+                
+                min-width: 1160px;
+                max-width: 1160px;
+            }
+
+            .conimg {
+                display:grid;
+                grid-template-columns: repeat(2, auto);
+            }
+        }
+
         @media screen and (max-width: 800px) {
             .dailycontent {
                 display: flex;
                 flex-direction: column;
+                align-items: center;
             }
             
             .card2 {
@@ -465,16 +479,12 @@
                 flex-direction: column;
             }
         }
-
-        @media screen and (max-width: 1199px) {
-            
-        }
-
         
+
     </style>
 </head>
 <body class="noto-sans-kr">
-    <nav>
+    <nav id="nav">
         <div class="nav_left">
             <div>
                 <a href="#">
@@ -856,4 +866,4 @@
         });
         </script>
 </body>
-</html> 
+</html>
