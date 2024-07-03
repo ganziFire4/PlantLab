@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>임시페이지</title>
+    <link rel="stylesheet" href="css/temp.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="table_container">
+    <div class="table_popular">
+      <div class="t_headerbar">
+        <img src="image/인기글 별.svg" alt="별" style="margin-right: 7px;">
+          인기글
+        <select name="pop_condition" id="pop_condition">
+          <option value="조회수">조회수</option>
+          <option value="공감순">공감순</option>
+          <option value="스크랩">스크랩</option>
+        </select>
+      </div>
+      <table class="table table-hover" style="margin: 0;">
+        <colgroup>
+            <col width="5%">
+            <col width="45%">
+            <col width="10%">
+            <col width="15%">
+            <col width="10%">
+            <col width="10%">
+            <col width="10%">
+        </colgroup>
+        <thead>
+          <tr class="table-success">
+            <th scope="col">#</th>
+            <th scope="col">제목</th>
+            <th scope="col">작성자</th>
+            <th scope="col">작성일</th>
+            <th scope="col">조회수</th>
+            <th scope="col">스크랩</th>
+            <th scope="col">공감</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>여름철 모기가 기피하는 식물은?</td>
+            <td>관리자</td>
+            <td>24.05.31</td>
+            <td>5389</td>
+            <td>1000</td>
+            <td>2877</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>가을철 파리가 기피하는 식물은?</td>
+            <td>김개똥</td>
+            <td>23.09.23</td>
+            <td>4545</td>
+            <td>155</td>
+            <td>333</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>겨울에도 식물이 살까요?</td>
+            <td>홍멍충</td>
+            <td>24.01.31</td>
+            <td>3567</td>
+            <td>1099</td>
+            <td>2277</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>앗! 마리모 키우기 숨쉬기 보다 쉽다!</td>
+            <td>정아무개</td>
+            <td>24.06.24</td>
+            <td>3333</td>
+            <td>700</td>
+            <td>1017</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>또다시 돌아온 금파시대! 파를 자급자족하는 방법은?</td>
+            <td>김메롱</td>
+            <td>23.08.11</td>
+            <td>2855</td>
+            <td>2119</td>
+            <td>2777</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="table_recent">
+      <div class="t_headerbar">
+        0000개
+        <div id="dropdown">
+          <select name="rows-num" id="rows-num">
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+          <select name="rec_condition" id=rec_condition">
+            <option value="최신순">최신순</option>
+            <option value="조회수">조회수</option>
+            <option value="공감순">공감순</option>
+            <option value="스크랩">스크랩</option>
+          </select>
+        </div>
+      </div>
+      <table class="table table-hover" style="margin: 0;">
+        <colgroup>
+            <col width="5%">
+            <col width="45%">
+            <col width="10%">
+            <col width="15%">
+            <col width="10%">
+            <col width="10%">
+            <col width="10%">
+        </colgroup>
+        <thead>
+          <tr class="table-success">
+            <th scope="col">#</th>
+            <th scope="col">제목</th>
+            <th scope="col">작성자</th>
+            <th scope="col">작성일</th>
+            <th scope="col">조회수</th>
+            <th scope="col">스크랩</th>
+            <th scope="col">공감</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>정보글 10</td>
+            <td>관리자</td>
+            <td>10분전</td>
+            <td>5</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>정보글 9</td>
+            <td>김개똥</td>
+            <td>1시간 전</td>
+            <td>3</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>정보글 8</td>
+            <td>홍멍충</td>
+            <td>2시간전</td>
+            <td>15</td>
+            <td>1</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>정보글 7</td>
+            <td>정아무개</td>
+            <td>5시간 전</td>
+            <td>3</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <th scope="row">5</th>
+            <td>정보글 6</td>
+            <td>김메롱</td>
+            <td>하루전</td>
+            <td>17</td>
+            <td>2</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <th scope="row">6</th>
+            <td>정보글 5</td>
+            <td>관리자</td>
+            <td>하루전</td>
+            <td>5</td>
+            <td>1</td>
+            <td>2</td>
+          </tr>
+          <tr>
+            <th scope="row">7</th>
+            <td>정보글 4</td>
+            <td>김개똥</td>
+            <td>24.00.00</td>
+            <td>3</td>
+            <td>0</td>
+            <td>1</td>
+          </tr>
+          <tr>
+            <th scope="row">8</th>
+            <td>정보글 3</td>
+            <td>홍멍충</td>
+            <td>24.00.00 00:00:00</td>
+            <td>15</td>
+            <td>1</td>
+            <td>7</td>
+          </tr>
+          <tr>
+            <th scope="row">9</th>
+            <td>정보글 2</td>
+            <td>정아무개</td>
+            <td>24.00.00</td>
+            <td>3</td>
+            <td>0</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <th scope="row">10</th>
+            <td>정보글 1</td>
+            <td>김메롱</td>
+            <td>24.00.00</td>
+            <td>17</td>
+            <td>2</td>
+            <td>7</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="button">
+        <a href="#">글쓰기</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
