@@ -168,19 +168,14 @@ function reset(){
         <div class="table_content">
         </div>
     </div>
-    <div id="button">
-        <a href="writing.html">글쓰기</a>
-    </div>
     `;
     return str;
 }
 
 function greenTalkcontent() {
     let str = `
-        <div class="content_container">
-            <div id="button">
-                <a href="#" id="writing">글쓰기</a>
-            </div>
+        <div class="container">
+            <button type="button" id="button" onclick="buttonClick(4)">글쓰기</button>
             <div class="dailycontent">
             <div class="card1" style="width: 546px;">
                 <div class="card-header">
@@ -251,7 +246,7 @@ function greenTalkcontent() {
     </div>
         <!--modal 팝업-->
     <div class="modal fade" id="rank1modal">
-        <div class="modal-dialog modal-xl">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
             <!--.modal-content: 모달의 콘텐츠 영역-->
             <div class="modal-content">
                 <!--.modal-header: 모달의 헤더 영역-->
@@ -260,7 +255,7 @@ function greenTalkcontent() {
                 </div> -->
                 <!--.modal-body: 모달의 바디 영역-->
                 <div class="modal-body">
-                    <img src="images/rank1main.png" alt="" class="modalmain">
+                    <img src="image/자랑글/rank1main.png" alt="" class="modalmain">
                     <div class="modal-right">
                         <div class="modalthumb">
                             <img src="image/자랑글/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1">
@@ -312,7 +307,7 @@ function greenTalkcontent() {
         </div>
     </div>
     <div class="modal fade" id="rank2modal">
-        <div class="modal-dialog modal-xl">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
             <!--.modal-content: 모달의 콘텐츠 영역-->
             <div class="modal-content">
                 <!--.modal-header: 모달의 헤더 영역-->
@@ -374,4 +369,17 @@ function greenTalkcontent() {
     </div>
     `;
     return str;
+}
+
+function buttonClick(tab){
+    if(sessionStorage.getItem("login") === null){
+        alert("로그인 후 이용해주세요.");
+        return;
+    }
+    if(tab === 4){
+        window.location.href = "_01_자랑글_작성_최종.html";
+        return;
+    }
+    window.location.href = `writing.html?tab=${tab}`;
+    return;
 }

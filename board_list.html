@@ -25,7 +25,14 @@
             <div>
                 <ul class="nav_menu">
                     <li><a href="board_list.html">커뮤니티</a></li>
-                    <li><a href="쇼핑몰/board_info.html">스토어</a></ li>
+                    <li><a href="쇼핑몰/board_info.html">스토어</a></li>
+                    <div id="weather">
+                      <li style="display: flex;">
+                          <img id="weatherImg" src="#" alt="날씨 이미지">
+                          <img id="weatherLine" src="image/weatherLine.svg" alt="라인 이미지">
+                          <p id="result"></p>
+                      </li>
+                    </div>
                 </ul>
             </div>
         </div>
@@ -55,12 +62,12 @@
                   <div class="member">
                       <ul>
                           <li style="margin:0;">
-                              <a href="#">
+                              <a href="_03_마이페이지_최종+재형님.html">
                                   <img src="image/profile_empty.svg" alt="임시 프로필사진" width="40px" height="40px">
                               </a>
                           </li>
                           <li style="margin-left: 10px; font-size: 1.1rem">
-                              <a href="#" style="font-weight:400">${p_nickname}</a>
+                              <a href="_03_마이페이지_최종+재형님.html" style="font-weight:400">${p_nickname}</a>
                           </li>
                       </ul>
                   </div>
@@ -138,15 +145,22 @@
           </div>
           <div class="table_content">
             <script>
-              document.write(make_table(`정보`, `rec`));
+              document.write(make_table(`정보글`, `rec`));
             </script>
           </div>
         </div>
-        <div id="button">
-          <a href="#" id="writing">글쓰기</a>
-        </div>
+        <button type="button" id="button" onclick="buttonClick(1)">글쓰기</button>
       </div>
     </main>
+    <div id="popup-icon1">
+      <img src="image/챗봇아이콘.png" alt="Popup Icon" id="popup-image" style="width: 60px; height: 60px;">
+    </div>
+    <div id="popup-content1" class="hidden">
+      <p>안녕하세요! 플랜트 봇 입니다!<br>궁금한 것은 모두 플랜트 봇에게 물어보세요!</p>
+    </div>
+    <div id="popup-icon2">
+      <img src="image/top아이콘.png" alt="Popup Icon" id="popup-image" style="width: 60px; height: 60px;">
+    </div>
     <footer>
       <div class="f_container">
           <div style="margin: auto 50px;">
@@ -161,247 +175,304 @@
       </div>
     </footer>
     <script>
-        const header = document.querySelector("#header");
-        const underline = document.getElementsByClassName("label_underline");
+      const now = new Date();
+      let nowMonth = now.getMonth()+1;
+      let zeroMonth = '0' + nowMonth;
+      let zeroDate = '0' + now.getDate();
+      let year = now.getFullYear();
+      let month = zeroMonth.substr(-2);
+      let date = zeroDate.substr(-2);
+      let url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=gIQrlKBkoGwsDw%2BrhZZZ47LwsVb%2BsbXkagAhe20dhc5nBBIQUxXsw7PB38hiMm8JNRN%2FnVI23Kv6glqRx3C94Q%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=${year}${month}${date}&base_time=0500&nx=61&ny=126`;
+      
+      let temperature;
+      let rain;
+      let quantity;
+      let tempNum = 0; // 온도
+      let rainNum = 9; // 강수량
+      let quantityNum = 7; // 강수확률
 
-        const content = document.getElementById("title_table_area");
-        const table = document.getElementsByClassName("table_content");
+      let hour = now.getHours();
+      const index = [];
+      $.getJSON(url, function(data) {
+          temperature = data.response.body.items.item[tempNum].fcstValue;
+          rain = data.response.body.items.item[rainNum].fcstValue;
+          quantity = data.response.body.items.item[quantityNum].fcstValue;
+          // console.log(url);
+          // $('#result').text(`기온 : ${temperature}˚ 강수량 : ${rain}mm`);
+          if(quantity <= 10) {
+              // 맑음 
+              $('#weatherImg').attr('src', 'image/sunny.svg');
+              $('#result').html(`<div>${temperature} ˚C<br>맑음</div>`);
+          } else if(quantity < 50){
+              // 흐림
+              $('#weatherImg').attr('src', "image/rainny.svg");
+              $('#result').html(`<div>${temperature} ˚C<br>흐림</div>`);
+          } else {
+              // 비
+              $('#weatherImg').attr('src', "image/strongRainny.svg");
+              $('#result').html(`<div>${temperature} ˚C<br> 비(${rain})</div>`);
+          }
+      });
+      
+      document.addEventListener('DOMContentLoaded', () => {
+          const popupIcon = document.getElementById('popup-icon1');
+          const popupContent = document.getElementById('popup-content1');
+          const popupIcon2 = document.getElementById('popup-icon2');
 
-        const info_button = document.querySelector("#info");
-        const free_button = document.querySelector("#free");
-        const QnA_button = document.querySelector("#QnA");
-        const greenTalk_button = document.querySelector("#greenTalk");
-
-        const tab = new URLSearchParams(window.location.search).get('tab');
-        const btn = document.querySelector("#button");
-        const link = document.querySelector("#writing");
-
-        info_button.addEventListener("click", () => {
-          header.innerHTML = `<img src="image/header_정보.png" alt="정보게시판 헤더">`;
-          
-          underline[0].classList.add("activeBlock");
-          underline[1].classList.remove("activeBlock");
-          underline[2].classList.remove("activeBlock");
-          underline[3].classList.remove("activeBlock");
-
-          content.innerHTML = reset();
-
-          table[0].innerHTML = make_table(`정보글`, `info`);
-          table[1].innerHTML = make_table(`정보글`, `rec`);
-        });
-
-
-        free_button.addEventListener("click", () => {
-          header.innerHTML = `<img src="image/header_잡담.png" alt="자유게시판 헤더">`;
-
-          underline[0].classList.remove("activeBlock");
-          underline[1].classList.add("activeBlock");
-          underline[2].classList.remove("activeBlock");
-          underline[3].classList.remove("activeBlock");
-
-          content.innerHTML = reset();
-
-          table[0].innerHTML = make_table(`잡담글`, `pop`);
-          table[1].innerHTML = make_table(`잡담글`, `rec`); 
-            
-        });
-
-        QnA_button.addEventListener("click", () => {
-          header.innerHTML = `<img src="image/header_질문.png" alt="질문게시판 헤더">`;
-          
-          underline[0].classList.remove("activeBlock");
-          underline[1].classList.remove("activeBlock");
-          underline[2].classList.add("activeBlock");
-          underline[3].classList.remove("activeBlock");
-
-          content.innerHTML = reset();
-
-          table[0].innerHTML = make_table(`질문글`, `pop`);
-          table[1].innerHTML = make_table(`질문글`, `rec`);
-
-          <!--상세페이지용 수정-->
-          const detail = document.getElementsByClassName("pop_table")[0];
-          detail.innerHTML=`
-            <th scope="row">1</th>
-            <td>산세베리아 잘 키우는 법</td>
-            <td>winter4403</td>
-            <td>24.07.01</td>
-            <td>0000</td>
-            <td>0000</td>
-            <td>0000</td>
-          `;
-          detail.addEventListener("click", () => {
-            window.location.href="board_QnA.html";
-          })
-        });
-
-        greenTalk_button.addEventListener("click", () => {
-          header.innerHTML = `<img src="image/header_그린톡.png" alt="질문게시판 헤더">`;
-
-          underline[0].classList.remove("activeBlock");
-          underline[1].classList.remove("activeBlock");
-          underline[2].classList.remove("activeBlock");
-          underline[3].classList.add("activeBlock");
-
-          content.innerHTML = greenTalkcontent();
-
-          document.addEventListener('DOMContentLoaded', function() {
-          const cardTexts = document.querySelectorAll('.card-text');
-        
-          cardTexts.forEach(function(cardText) {
-            const text = cardText.textContent.trim();
-            const maxLength = 30;
-        
-            if (text.length > maxLength) {
-              const trimmedText = text.slice(0, maxLength) + '...';
-              cardText.textContent = trimmedText;
-            }
+          popupIcon.addEventListener('mouseover', () => {
+              popupContent.classList.remove('hidden');
           });
-        });
-        $(document).ready(function(){
-            // 하트 아이콘 클릭 이벤트 핸들러
-            $('.hearticon, .filledhearticon').click(function() {
-                const isFilled = $(this).hasClass('filledhearticon');
-                const parent = $(this).closest('.card-body, .modal-footer');
 
-                // 토글
-                if (isFilled) {
-                    parent.find('.hearticon').show();
-                    parent.find('.filledhearticon').hide();
-                    parent.data('heart-filled', false);
-                } else {
-                    parent.find('.hearticon').hide();
-                    parent.find('.filledhearticon').show();
-                    parent.data('heart-filled', true);
-                }
-
-                // 연동된 모달이나 카드 업데이트
-                const targetModalId = parent.data('bs-target');
-                if (targetModalId) {
-                    const targetModal = $(targetModalId);
-                    if (parent.data('heart-filled')) {
-                        targetModal.find('.hearticon').hide();
-                        targetModal.find('.filledhearticon').show();
-                        targetModal.data('heart-filled', true);
-                    } else {
-                        targetModal.find('.hearticon').show();
-                        targetModal.find('.filledhearticon').hide();
-                        targetModal.data('heart-filled', false);
-                    }
-                } else {
-                    const targetCardId = parent.closest('.modal').attr('id');
-                    if (targetCardId) {
-                        const targetCard = $(`[data-bs-target="#${targetCardId}"]`);
-                        if (parent.data('heart-filled')) {
-                            targetCard.find('.hearticon').hide();
-                            targetCard.find('.filledhearticon').show();
-                            targetCard.data('heart-filled', true);
-                        } else {
-                            targetCard.find('.hearticon').show();
-                            targetCard.find('.filledhearticon').hide();
-                            targetCard.data('heart-filled', false);
-                        }
-                    }
-                }
-            });
-
-            // 북마크 아이콘 클릭 이벤트 핸들러
-            $('.bookmarkicon, .filledbookmarkicon').click(function() {
-                const isFilled = $(this).hasClass('filledbookmarkicon');
-                const parent = $(this).closest('.card-body, .modal-footer');
-
-                // 토글
-                if (isFilled) {
-                    parent.find('.bookmarkicon').show();
-                    parent.find('.filledbookmarkicon').hide();
-                    parent.data('bookmark-filled', false);
-                } else {
-                    parent.find('.bookmarkicon').hide();
-                    parent.find('.filledbookmarkicon').show();
-                    parent.data('bookmark-filled', true);
-                }
-
-                // 연동된 모달이나 카드 업데이트
-                const targetModalId = parent.data('bs-target');
-                if (targetModalId) {
-                    const targetModal = $(targetModalId);
-                    if (parent.data('bookmark-filled')) {
-                        targetModal.find('.bookmarkicon').hide();
-                        targetModal.find('.filledbookmarkicon').show();
-                        targetModal.data('bookmark-filled', true);
-                    } else {
-                        targetModal.find('.bookmarkicon').show();
-                        targetModal.find('.filledbookmarkicon').hide();
-                        targetModal.data('bookmark-filled', false);
-                    }
-                } else {
-                    const targetCardId = parent.closest('.modal').attr('id');
-                    if (targetCardId) {
-                        const targetCard = $(`[data-bs-target="#${targetCardId}"]`);
-                        if (parent.data('bookmark-filled')) {
-                            targetCard.find('.bookmarkicon').hide();
-                            targetCard.find('.filledbookmarkicon').show();
-                            targetCard.data('bookmark-filled', true);
-                        } else {
-                            targetCard.find('.bookmarkicon').show();
-                            targetCard.find('.filledbookmarkicon').hide();
-                            targetCard.data('bookmark-filled', false);
-                        }
-                    }
-                }
-            });
-            
-
-            // 모달이 열릴 때 하트 상태를 동기화 (DB연동시 변경...)
-            $('.modal').on('show.bs.modal', function(event) {
-                const relatedCardId = $(event.relatedTarget).closest('.card-body').attr('data-bs-target');
-                const relatedCard = $(relatedCardId);
-                if (relatedCard.data('heart-filled')) {
-                    $(this).find('.hearticon').hide();
-                    $(this).find('.filledhearticon').show();
-                } else {
-                    $(this).find('.hearticon').show();
-                    $(this).find('.filledhearticon').hide();
-                }
-            });
-
-            // 모달이 열릴 때 북마크 상태를 동기화 (DB연동시 변경...)
-            $('.modal').on('show.bs.modal', function(event) {
-                const relatedCardId = $(event.relatedTarget).closest('.card-body').attr('data-bs-target');
-                const relatedCard = $(relatedCardId);
-                if (relatedCard.data('bookmark-filled')) {
-                    $(this).find('.bookmarkicon').hide();
-                    $(this).find('.filledbookmarkicon').show();
-                } else {
-                    $(this).find('.bookmarkicon').show();
-                    $(this).find('.filledbookmarkicon').hide();
-                }
-            });
+          popupIcon.addEventListener('mouseleave', () => {
+              popupContent.classList.add('hidden');
           });
-        });
 
-        link.addEventListener("click", () => {
-          if(sessionStorage.getItem("login") === null){
-            alert("로그인 후 이용해주세요.");
-            return;
-          }
+          popupIcon2.addEventListener('click', () => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+      });    
+  </script>
+  <script>
+      const header = document.querySelector("#header");
+      const underline = document.getElementsByClassName("label_underline");
 
-          if(greenTalk_button === document.getElementsByClassName("activeBlock")[0]){
-            link.href=`_01_자랑글_작성_최종.html`;
-            return;
-          }
-          link.href=`writing.html`;
-        })
-        // 메인 더보기 버튼에 맞춰서 화면 전환
-        if(tab != null){
-          if(tab == 2) {
-            free_button.click();
-          } else if (tab == 3){
-            QnA_button.click();
-          } else if (tab == 4){
-            greenTalk_button.click();
-          }
+      const content = document.getElementById("title_table_area");
+      const table = document.getElementsByClassName("table_content");
+
+      const info_button = document.querySelector("#info");
+      const free_button = document.querySelector("#free");
+      const QnA_button = document.querySelector("#QnA");
+      const greenTalk_button = document.querySelector("#greenTalk");
+
+      const tab = new URLSearchParams(window.location.search).get('tab');
+      const btn = document.querySelector("#button");
+
+      info_button.addEventListener("click", () => { 
+        header.innerHTML = `<img src="image/header_정보.png" alt="정보게시판 헤더">`;
+        
+        underline[0].classList.add("activeBlock");
+        underline[1].classList.remove("activeBlock");
+        underline[2].classList.remove("activeBlock");
+        underline[3].classList.remove("activeBlock");
+
+        content.innerHTML = reset();
+
+        table[0].innerHTML = make_table(`정보글`, `info`);
+        table[1].innerHTML = make_table(`정보글`, `rec`);
+        table[1].insertAdjacentHTML("afterend", 
+        `<button type="button" id="button" onclick="buttonClick(1)">
+          글쓰기</button>`);
+      });
+
+      free_button.addEventListener("click", () => {
+        header.innerHTML = `<img src="image/header_잡담.png" alt="자유게시판 헤더">`;
+
+        underline[0].classList.remove("activeBlock");
+        underline[1].classList.add("activeBlock");
+        underline[2].classList.remove("activeBlock");
+        underline[3].classList.remove("activeBlock");
+
+        if(sessionStorage.getItem("login") === null){
+          content.innerHTML = "";
+          content.style.height = "1000px";
+          alert("로그인 후 이용해주세요.");
+          return;
         }
-    </script>
+        content.innerHTML = reset();
+
+        table[0].innerHTML = make_table(`잡담글`, `pop`);
+        table[1].innerHTML = make_table(`잡담글`, `rec`);
+        table[1].insertAdjacentHTML("afterend", 
+        `<button type="button" id="button" onclick="buttonClick(2)">
+          글쓰기</button>`); 
+          
+      });
+
+      QnA_button.addEventListener("click", () => {
+        header.innerHTML = `<img src="image/header_질문.png" alt="질문게시판 헤더">`;
+        
+        underline[0].classList.remove("activeBlock");
+        underline[1].classList.remove("activeBlock");
+        underline[2].classList.add("activeBlock");
+        underline[3].classList.remove("activeBlock");
+
+        content.innerHTML = reset();
+
+        table[0].innerHTML = make_table(`질문글`, `pop`);
+        table[1].innerHTML = make_table(`질문글`, `rec`);
+        table[1].insertAdjacentHTML("afterend", 
+        `<button type="button" id="button" onclick="buttonClick(3)">
+          글쓰기</button>`);
+
+        <!--상세페이지용 수정-->
+        const detail = document.getElementsByClassName("pop_table")[0];
+        detail.innerHTML=`
+          <th scope="row">1</th>
+          <td>산세베리아 잘 키우는 법</td>
+          <td>winter4403</td>
+          <td>24.07.01</td>
+          <td>0000</td>
+          <td>0000</td>
+          <td>0000</td>
+        `;
+
+      });
+
+      greenTalk_button.addEventListener("click", () => {
+        header.innerHTML = `<img src="image/header_그린톡.png" alt="질문게시판 헤더">`;
+
+        underline[0].classList.remove("activeBlock");
+        underline[1].classList.remove("activeBlock");
+        underline[2].classList.remove("activeBlock");
+        underline[3].classList.add("activeBlock");
+
+        content.innerHTML = greenTalkcontent();
+
+        const cardTexts = document.querySelectorAll('.card-text');
+
+        cardTexts.forEach(function(cardText) {
+          const text = cardText.textContent.trim();
+          const maxLength = 30;
+      
+          if (text.length > maxLength) {
+            const trimmedText = text.slice(0, maxLength) + '...';
+            cardText.textContent = trimmedText;
+          }
+        });
+
+      $(document).ready(function(){
+          // 하트 아이콘 클릭 이벤트 핸들러
+          $('.hearticon, .filledhearticon').click(function() {
+              const isFilled = $(this).hasClass('filledhearticon');
+              const parent = $(this).closest('.card-body, .modal-footer');
+
+              // 토글
+              if (isFilled) {
+                  parent.find('.hearticon').show();
+                  parent.find('.filledhearticon').hide();
+                  parent.data('heart-filled', false);
+              } else {
+                  parent.find('.hearticon').hide();
+                  parent.find('.filledhearticon').show();
+                  parent.data('heart-filled', true);
+              }
+
+              // 연동된 모달이나 카드 업데이트
+              const targetModalId = parent.data('bs-target');
+              if (targetModalId) {
+                  const targetModal = $(targetModalId);
+                  if (parent.data('heart-filled')) {
+                      targetModal.find('.hearticon').hide();
+                      targetModal.find('.filledhearticon').show();
+                      targetModal.data('heart-filled', true);
+                  } else {
+                      targetModal.find('.hearticon').show();
+                      targetModal.find('.filledhearticon').hide();
+                      targetModal.data('heart-filled', false);
+                  }
+              } else {
+                  const targetCardId = parent.closest('.modal').attr('id');
+                  if (targetCardId) {
+                      const targetCard = $(`[data-bs-target="#${targetCardId}"]`);
+                      if (parent.data('heart-filled')) {
+                          targetCard.find('.hearticon').hide();
+                          targetCard.find('.filledhearticon').show();
+                          targetCard.data('heart-filled', true);
+                      } else {
+                          targetCard.find('.hearticon').show();
+                          targetCard.find('.filledhearticon').hide();
+                          targetCard.data('heart-filled', false);
+                      }
+                  }
+              }
+          });
+
+          // 북마크 아이콘 클릭 이벤트 핸들러
+          $('.bookmarkicon, .filledbookmarkicon').click(function() {
+              const isFilled = $(this).hasClass('filledbookmarkicon');
+              const parent = $(this).closest('.card-body, .modal-footer');
+
+              // 토글
+              if (isFilled) {
+                  parent.find('.bookmarkicon').show();
+                  parent.find('.filledbookmarkicon').hide();
+                  parent.data('bookmark-filled', false);
+              } else {
+                  parent.find('.bookmarkicon').hide();
+                  parent.find('.filledbookmarkicon').show();
+                  parent.data('bookmark-filled', true);
+              }
+
+              // 연동된 모달이나 카드 업데이트
+              const targetModalId = parent.data('bs-target');
+              if (targetModalId) {
+                  const targetModal = $(targetModalId);
+                  if (parent.data('bookmark-filled')) {
+                      targetModal.find('.bookmarkicon').hide();
+                      targetModal.find('.filledbookmarkicon').show();
+                      targetModal.data('bookmark-filled', true);
+                  } else {
+                      targetModal.find('.bookmarkicon').show();
+                      targetModal.find('.filledbookmarkicon').hide();
+                      targetModal.data('bookmark-filled', false);
+                  }
+              } else {
+                  const targetCardId = parent.closest('.modal').attr('id');
+                  if (targetCardId) {
+                      const targetCard = $(`[data-bs-target="#${targetCardId}"]`);
+                      if (parent.data('bookmark-filled')) {
+                          targetCard.find('.bookmarkicon').hide();
+                          targetCard.find('.filledbookmarkicon').show();
+                          targetCard.data('bookmark-filled', true);
+                      } else {
+                          targetCard.find('.bookmarkicon').show();
+                          targetCard.find('.filledbookmarkicon').hide();
+                          targetCard.data('bookmark-filled', false);
+                      }
+                  }
+              }
+          });
+          
+
+          // 모달이 열릴 때 하트 상태를 동기화 (DB연동시 변경...)
+          $('.modal').on('show.bs.modal', function(event) {
+              const relatedCardId = $(event.relatedTarget).closest('.card-body').attr('data-bs-target');
+              const relatedCard = $(relatedCardId);
+              if (relatedCard.data('heart-filled')) {
+                  $(this).find('.hearticon').hide();
+                  $(this).find('.filledhearticon').show();
+              } else {
+                  $(this).find('.hearticon').show();
+                  $(this).find('.filledhearticon').hide();
+              }
+          });
+
+          // 모달이 열릴 때 북마크 상태를 동기화 (DB연동시 변경...)
+          $('.modal').on('show.bs.modal', function(event) {
+              const relatedCardId = $(event.relatedTarget).closest('.card-body').attr('data-bs-target');
+              const relatedCard = $(relatedCardId);
+              if (relatedCard.data('bookmark-filled')) {
+                  $(this).find('.bookmarkicon').hide();
+                  $(this).find('.filledbookmarkicon').show();
+              } else {
+                  $(this).find('.bookmarkicon').show();
+                  $(this).find('.filledbookmarkicon').hide();
+              }
+          });
+        });
+
+      });
+
+      // 메인 더보기 버튼에 맞춰서 화면 전환
+      if(tab != null){
+        if(tab == 2) {
+          free_button.click();
+        } else if (tab == 3){
+          QnA_button.click();
+        } else if (tab == 4){
+          greenTalk_button.click();
+        }
+      }
+  </script>
 </body>
 </html>
