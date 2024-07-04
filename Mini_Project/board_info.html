@@ -278,16 +278,10 @@
                 activeOverlay = overlay;
               });
             });
-            
+          
 circles.forEach(circle => {
   circle.addEventListener('click', () => {
-
-    const selectedCircle = document.querySelector('.circle.selected');
-    if (selectedCircle) {
-      selectedCircle.classList.remove('selected');
-    }
-
-    circle.classList.add('selected');
+    circle.classList.toggle('selected');
   });
 });
 

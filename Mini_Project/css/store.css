@@ -241,6 +241,10 @@ a.advance_link_style {
   margin: 10px;
   position: relative;
   margin-top: 10px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
 }
   
 .circle:nth-child(2) {

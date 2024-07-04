@@ -1,122 +1,209 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
 
-.noto-sans-kr {
-  font-family: "Noto Sans KR", sans-serif;
-  font-optical-sizing: auto;
-  font-style: normal;
-}
+/* 전체 제어자 */
+.overall_container {
+    position: relative;
+    max-width: 1115px;
+    max-height: max-content;
+    margin: 2em auto;
+    padding: 0 1em;
+  }
 
-body {
-    margin: 8px 0;
-}
+/* 주화면 */
 
-nav{
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 60px;
-    position: fixed;
-    top:0;
-    background-color: white;
-    border-bottom: 1px solid #e0e0e0;
-    padding: 15px;
-    box-sizing: content-box;
-    z-index: 9999;
 }
-
-nav .nav_left {
-    display: flex;
-    align-items: center;
+.product-image {
+    flex: 1 1 40%;
+    max-width: 40%;
 }
-
-nav .nav_right {
-    display: flex;
-    align-items: center;
+.product-details {
+    flex: 1 1 55%;
+    max-width: 55%;
+    margin-left: 20px;
 }
-
-nav div {
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-nav a {
-    text-decoration: none;
-    color: black;
+.product-title {
+    font-size: 24px;
     font-weight: bold;
 }
-
-nav ul {
-    margin: 0 15px 0 0;
-    display: flex;
-    align-items: center;
+.product-rating {
+    font-size: 18px;
+    color: #555;
 }
-nav li {
-    display: inline;
-    list-style: none;
-    font-size: 1.3rem;
-    margin: 0 20px;
+.product-price, .discount {
+    font-size: 20px;
+    margin: 10px 0;
 }
-
-.nav_menu a:hover{
-    color: #23C961;
+.product-price {
+    color: #e74c3c;
 }
-
-nav .name {
-    display: inline-block;
-    font-size: 1.5rem;
-    font-weight: bolder;
+.discount {
+    color: #3498db;
 }
-
-nav .nav_search {
-    width: 438px;
-    height: 44px;
-    background-color: #d9d9d9;
-    background-clip: border-box;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
+.shipping-info, .sale-period {
+    font-size: 16px;
+    color: #777;
+    margin: 5px 0;
 }
-
-nav span {
-    display: flex;
-    margin: 4px 15px 3px 10px;
-    align-items: center;
+.purchase-info {
+    margin-top: 20px;
 }
-
-nav #search {
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    border: none;
-    color: #eee;
-    font-size: 1.2rem;
-    vertical-align: middle;
+.purchase-info label {
+    font-size: 18px;
 }
-
-header{
-    display: flex;
-    height: 500px;
-    justify-content: center;
+.purchase-info input {
+    width: 50px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 20px;
+    text-align: center;
 }
-
-footer{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 200px;
-    background-color: #154615;
+.total-price {
+    font-size: 20px;
+    color: #e74c3c;
+    margin: 10px 0;
 }
-
-footer .f_container {
-    display: flex;
-    align-items: center;
-    width: 1200px;
+.purchase-info button {
+    background-color: #3498db;
     color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+.purchase-info button:hover {
+    background-color: #2980b9;
 }
 
-footer p {
-    margin: 8px 0;
+
+
+/* 리뷰 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
 }
+
+.product-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-details {
+    margin-top: 20px;
+}
+
+.product-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.product-rating {
+    font-size: 18px;
+    color: #555;
+}
+
+.product-price, .discount {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.product-price {
+    color: #e74c3c;
+}
+
+.discount {
+    color: #3498db;
+}
+
+.shipping-info, .sale-period {
+    font-size: 16px;
+    color: #777;
+    margin: 5px 0;
+}
+
+.purchase-info {
+    margin-top: 20px;
+}
+
+.purchase-info label {
+    font-size: 18px;
+}
+
+.purchase-info input {
+    width: 50px;
+    padding: 5px;
+    margin-left: 10px;
+    margin-right: 20px;
+    text-align: center;
+}
+
+.total-price {
+    font-size: 20px;
+    color: #e74c3c;
+    margin: 10px 0;
+}
+
+.purchase-info button {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.purchase-info button:hover {
+    background-color: #2980b9;
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.tab-buttons button {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.tab-buttons button:hover {
+    background-color: #e0e0e0;
+}
+
