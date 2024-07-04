@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
-
 header{
   margin-top:91px;
 }
@@ -10,7 +8,7 @@ a {
   text-decoration: none !important;
 }
 
-a.advance_link_style {
+a .advance_link_style {
   color: #3e8e41;
   text-decoration: none
 }
@@ -126,9 +124,9 @@ a.advance_link_style {
   margin-left: 68px;
 }
 
-.topBtn:hover {
- /* 생각중 미완성 될 수도 있음 */
-}
+/* .topBtn:hover {
+ 생각중 미완성 될 수도 있음
+} */
 
 /* 정렬기준 버튼 */
 .dropdown1 {
