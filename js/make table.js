@@ -248,7 +248,7 @@ function greenTalkcontent() {
         </div>
         <!--modal 팝업-->
         <div class="modal fade" id="rank1modal">
-            <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-dialog modal-xl">
                 <!--.modal-content: 모달의 콘텐츠 영역-->
                 <div class="modal-content">
                     <!--.modal-header: 모달의 헤더 영역-->
@@ -311,7 +311,7 @@ function greenTalkcontent() {
             </div>
         </div>
         <div class="modal fade" id="rank2modal">
-            <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-dialog modal-xl">
                 <!--.modal-content: 모달의 콘텐츠 영역-->
                 <div class="modal-content">
                     <!--.modal-header: 모달의 헤더 영역-->
