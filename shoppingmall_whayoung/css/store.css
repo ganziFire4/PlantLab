@@ -318,7 +318,7 @@ a.advance_link_style {
 .sort_box input[type="checkbox"]:checked {
   background-color: #23C961; 
   border-color: #23C961; 
-  background-image: url("/Mini_Project/images/checkbox_white_check.svg");
+  background-image: url("/shoppingmall_whayoung/images/checkbox_white_check.svg");
   background-size: cover;
 }
 
@@ -368,7 +368,8 @@ a.advance_link_style {
 }
 
 .item:hover{
-  background-color: #23C961;
+  background-color: #91E1AF;
+  border-color:#91E1AF;
   color:white;
   cursor:pointer;
 }
