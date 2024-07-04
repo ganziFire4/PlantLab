@@ -24,9 +24,9 @@ if(defaultHour < 5){
 let zeroHour = '0' + defaultHour;
 
 let year = now.getFullYear();
-let month = zeroMonth.substr(-2);
-let date = zeroDate.substr(-2);
-let hour = zeroHour.substr(-2);
+let month = zeroMonth.slice(-2);
+let date = zeroDate.slice(-2);
+let hour = zeroHour.slice(-2);
 let fulldate = year + month + date;
 let url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=gIQrlKBkoGwsDw%2BrhZZZ47LwsVb%2BsbXkagAhe20dhc5nBBIQUxXsw7PB38hiMm8JNRN%2FnVI23Kv6glqRx3C94Q%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=${fulldate}&base_time=${hour}00&nx=61&ny=126`;
 

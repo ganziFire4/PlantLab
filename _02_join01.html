@@ -95,7 +95,8 @@
         const confirmPassword = document.querySelector("input[name='confirmPassword']");
 
         // 회원정보
-        let id, nickname, password;
+        let id = '0';
+        let nickname, password;
 
        //아이디 입력받을 조건 
         userId.addEventListener("change", (e) => {
@@ -117,6 +118,13 @@
         // 아이디 중복체크
         let userIdCheck = false;
         function checkDuplicate(){
+
+            if(id === '0'){
+                checkMessage.textContent = "아이디를 입력하세요.";
+                checkMessage.style.color = "red";
+                userId.focus();
+                return;
+            }
             // 로컬스토리지가 비어있는 경우
             if(localStorage.length === 0) {
                 checkMessage.textContent ="사용 가능한 아이디입니다.";
@@ -170,8 +178,8 @@
 
          //닉네임 입력받을 조건 
          userNickname.addEventListener("change", (e) => {
-            if (e.target.value.length > 5) {
-                checkMessage1.textContent = "닉네임은 5자이하로 지정해주세요.";
+            if (e.target.value.length > 8) {
+                checkMessage1.textContent = "닉네임은 8자이하로 지정해주세요.";
                 checkMessage1.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
                 userNickname.focus();
             } else {
