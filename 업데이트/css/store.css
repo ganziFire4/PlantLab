@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+
 header{
-  margin-top:89px;
+  margin-top:91px;
 }
 
 /* a태그 관리 */
@@ -8,7 +10,7 @@ a {
   text-decoration: none !important;
 }
 
-a .advance_link_style {
+a.advance_link_style {
   color: #3e8e41;
   text-decoration: none
 }
@@ -124,9 +126,9 @@ a .advance_link_style {
   margin-left: 68px;
 }
 
-/* .topBtn:hover {
- 생각중 미완성 될 수도 있음
-} */
+.topBtn:hover {
+ /* 생각중 미완성 될 수도 있음 */
+}
 
 /* 정렬기준 버튼 */
 .dropdown1 {
@@ -239,6 +241,7 @@ a .advance_link_style {
   /* margin-top: 10px; */
 }
 .circle {
+ 
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -315,7 +318,7 @@ a .advance_link_style {
 .sort_box input[type="checkbox"]:checked {
   background-color: #23C961; 
   border-color: #23C961; 
-  background-image: url("../image/checkbox_white_check.svg");
+  background-image: url("/shoppingmall_whayoung/images/checkbox_white_check.svg");
   background-size: cover;
 }
 
@@ -370,6 +373,7 @@ a .advance_link_style {
   color:white;
   cursor:pointer;
 }
+
 
 .item.act{
   background-color: #23C961;
