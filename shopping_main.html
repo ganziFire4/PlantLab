@@ -169,7 +169,7 @@
           </div>
           <div class="sort_set">
             <span style="font-weight: bold; margin-right: 40px;">할인 유무</span>
-            <label><input type="checkbox" name="sale" value="on"><span class="filter-text">할인적용 상품</span></label>
+            <label><input type="checkbox" id="sale" name="sale" value="on"><span class="filter-text">할인적용 상품</span></label>
           </div>
         </div>
       </div>
@@ -740,6 +740,12 @@ document.addEventListener('DOMContentLoaded', function() {
           popupIcon2.addEventListener('click', () => {
           window.scrollTo({ top: 0, behavior: 'smooth' });
           });
+
+          const sale = new URLSearchParams(window.location.search).get('sale');
+          const checkbox = document.querySelector("#sale");
+          if (sale == 1){
+            checkbox.checked = true;
+          }
       }); 
       
       const sale = new URLSearchParams(window.location.search).get('sale');
