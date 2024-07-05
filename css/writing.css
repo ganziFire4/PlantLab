@@ -60,3 +60,11 @@ main {
     border-bottom: 3px solid black;
     margin-bottom: 90px;
 }
+
+#save_btn {
+    background: #23C961;
+    border: 0;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}

@@ -2,6 +2,16 @@ header{
   margin-top:89px;
 }
 
+.overall_container {
+  max-width: 1115px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
 /* a태그 관리 */
 a {
   color: black !important;
@@ -130,8 +140,8 @@ a .advance_link_style {
 
 /* 정렬기준 버튼 */
 .dropdown1 {
-  display: inline-block;
-  right: 1.5rem;
+  margin-left: 955px;
+  /* margin-left: 40%; */
   position: absolute;
 }
 .dropdown-btn {
@@ -178,8 +188,8 @@ a .advance_link_style {
 }
 
 .product_item img {
-  width: 95%;
-  height: 95%;
+  width: 100%;
+  height: auto;
 }
 
 .product_title {
@@ -201,17 +211,12 @@ a .advance_link_style {
   color: #246d24;
 }
 
-.goods_border:hover {
-  box-shadow: 0 0 10px rgba(35, 29, 29, 0.3);
+.product_item.empty {
+  visibility: hidden;
 }
 
-/* 전체 제어자 */
-.overall_container {
-  position: relative;
-  max-width: 1115px;
-  max-height: max-content;
-  margin: 2em auto;
-  padding: 0 1em;
+.goods_border:hover {
+  box-shadow: 0 0 10px rgba(35, 29, 29, 0.3);
 }
 
 /* 상단 정렬박스 */
