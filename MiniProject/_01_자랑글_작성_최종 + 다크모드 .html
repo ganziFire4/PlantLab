@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그린톡 작성</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+        
+        .noto-sans-kr {
+        font-family: "Noto Sans KR", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        }
+
+        body {
+            margin: 8px 0;
+        }
+
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+
+        nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: 60px;
+            position: fixed;
+            top:0;
+            background-color: white;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 15px;
+            z-index: 9999;
+        }
+
+        nav .nav_left {
+            display: flex;
+            align-items: center;
+        }
+
+        nav .nav_right {
+            display: flex;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        nav ul {
+            margin-right: 15px;
+        }
+        nav li {
+            display: inline;
+            list-style: none;
+            font-size: 1.3rem;
+            margin: 0 20px;
+        }
+
+        .nav_menu a:hover{
+            color: #23C961;
+        }
+
+        nav .name {
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+
+        nav .nav_search {
+            width: 438px;
+            height: 44px;
+            background-color: #d9d9d9;
+            background-clip: border-box;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        nav span {
+            display: flex;
+            margin: 4px 15px 3px 10px;
+            align-items: center;
+        }
+
+        nav #search {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            color: #eee;
+            font-size: 1.2rem;
+            vertical-align: middle;
+        }
+
+        header{
+            display: flex;
+            height: 500px;
+            justify-content: center;
+        }
+
+        main {
+            height: 1000px;
+        }
+        
+        /* .hero {
+            background-image: url('');
+            background-size: contain;
+            text-align: center;
+            color: black;
+            padding: 5em 0;
+        }
+        .hero h1 {
+            margin: 0;
+        } 배너 부분 없앰 */
+        .container {
+            position: relative;
+            max-width: 1200px;
+            max-height: 1200px;
+            margin: 2em auto;
+            padding: 0 1em;
+            margin-top: 100px;
+        }
+        .form-group {
+            margin-bottom: 1em;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 0.5em;
+            margin: 0.5em 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group textarea {
+            height: 200px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+        }
+        .form-group .tag-input {
+            display: inline-block;
+            border: 1px solid #ccc;
+            padding: 0.5em;
+            border-radius: 4px;
+        }
+        .warning {
+            color:red;
+            font-size: 15px;
+        }
+
+        .uploadBox {
+            background: white;
+            display: flex;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            height: 600px;
+            padding: 0.5em;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .uploadIcons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .uploadIcons img {
+            cursor: pointer;
+        }
+        
+        .vid {
+            margin-left: -10px;
+            margin-top: 5px;
+        }
+
+        .confirm {
+            display: flex;
+            background: #27af5a;
+            color: white;
+            width: 100px;
+            height: 30px;
+            cursor: pointer;
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            font-size: 15px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .warning-group {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+            padding: 0.5em;
+        }
+        
+        .uploadBtn {
+            display: none;
+        }
+        
+        .confirm-group {
+            display: flex;
+            width: 100%;
+            justify-content: right;
+            align-items: center;
+            margin-top: 16px;
+            margin-bottom: 16px;
+            padding: 0.5em;
+        }
+
+        .footer {
+            background-color: #154615; 
+            color: white;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 200px;
+        background-color: #154615;
+        }
+
+        footer .f_container {
+            display: flex;
+            align-items: center;
+            width: 1200px;
+            color: white;
+        }
+
+        footer p {
+            margin: 8px 0;
+        }
+
+        .textarea {
+            resize: none;
+        }
+        </style>
+</head>
+<body class="noto-sans-kr">
+    <nav>
+        <div class="nav_left">
+            <div>
+                <a href="#">
+                    <img src="images/nav_logo.svg" alt="플랜트랩 로고">
+                </a>
+            </div>
+            <div>
+                <ul class="nav_menu">
+                    <li><a href="#">커뮤니티</a></li>
+                    <li><a href="#">스토어</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav_right">
+            <div class="nav_search">
+                <span>
+                    <svg width="25" height="25.5" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M28.9749 26.5226L23.9072 20.9181L20.0092 19.137C21.3071 17.0958 22.0025 14.6606 22 12.1652C22 5.45727 17.0654 0 11 0C4.93455 0 0 5.45727 0 12.1652C0 18.8731 4.93455 24.3304 11 24.3304C13.276 24.3333 15.4961 23.551 17.3511 22.0925L18.9574 26.3918L24.0249 31.9966C24.3499 32.3561 24.7358 32.6412 25.1604 32.8357C25.5851 33.0303 26.0402 33.1304 26.4998 33.1304C26.9595 33.1305 27.4146 33.0303 27.8393 32.8358C28.2639 32.6413 28.6498 32.3562 28.9748 31.9968C29.2998 31.6374 29.5576 31.2106 29.7335 30.741C29.9094 30.2714 30 29.7681 30 29.2597C30 28.7514 29.9095 28.2481 29.7336 27.7784C29.5577 27.3088 29.2999 26.8821 28.9749 26.5226ZM2 12.1652C2 6.67703 6.03749 2.21185 11 2.21185C15.9625 2.21185 20 6.67703 20 12.1652C20 17.6534 15.9625 22.1185 11 22.1185C6.03749 22.1185 2 17.6534 2 12.1652ZM27.5606 30.4326C27.2791 30.7433 26.8976 30.9177 26.4999 30.9177C26.1022 30.9177 25.7208 30.7433 25.4393 30.4326L20.6535 25.1399L19.1601 21.1424L22.7749 22.7939L27.5607 28.0866C27.8416 28.398 27.9993 28.8198 27.9993 29.2596C27.9993 29.6994 27.8415 30.1213 27.5606 30.4326Z" fill="#878787"/>
+                        </svg>                    
+                </span>
+                <input type="text" id="search" placeholder="통합검색">
+            </div>
+            <div class="member">
+                <ul>
+                    <li><a href="#">로그인</a></li>
+                    |
+                    <li><a href="#">회원가입</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- <header id="header">
+        <img src="image/header_정보.png" alt="글쓰기 헤더">
+    </header> -->
+    <!-- <div class="hero">
+        <img src="images/Header image.png.png" alt="">
+        <h1></h1>
+        <p></p>
+    </div> -->
+    <div class="container">
+        <div class="form-group">
+            <label for="title"></label>
+            <!-- <input type="text" id="title" name="title" placeholder="제목을 입력하세요."
+            onfocus="placeholder=''" onblur="placeholder='제목을 입력하세요.'"
+            > -->
+            <textarea name="content" id="content" placeholder="내용을 입력하세요."
+            onfocus="placeholder=''" onblur="placeholder='내용을 입력하세요.'" class="textarea"></textarea> <!--폰트 바꿀 것-->
+        </div>
+        <div class="form-group">
+            <label for="tags"></label>
+            <input type="text" id="tags" name="tags" class="tag-input" placeholder="#태그"
+            onfocus="placeholder=''" onblur="placeholder='#태그'"
+            >
+        </div>
+        <div class="warning-group">
+            <p class="warning">※타인을 향한 비난 또는 비방 및 게시판의 목적에 맞지 않는 글은 관리자에 의해 삭제될 수 있습니다.</p>
+                
+        </div>
+        <div class="uploadBox">
+            <div class="uploadIcons">
+                <img src="images/images.png.png" alt="이미지 업로드 아이콘" width="60px" height="60px" id="img">
+                <img src="images/video.png.png" alt="비디오 업로드 아이콘"width="45px" height="50px" class="vid" id="vid">
+            </div>
+            <div class="uploadBtn">
+                <input type="file" class="imageBtn" accept="image/*">
+                <input type="file" class="videoBtn" accept="video/*">
+            </div>
+        </div>
+        <div class="confirm-group">
+            <button type="submit" class="confirm">글 올리기</button>
+        </div>
+        <div class="darkmode-group">
+            <button id="theme-toggle">Toggle Dark Mode</button>
+        </div>
+    </div>
+    <footer>
+        <div class="f_container">
+            <div style="margin: auto 50px;">
+                <img width="150px" height="150px" src="images/round_logo_colorBack.svg" alt="플랜트팜 로고">
+            </div>
+            <div>
+                <p>주소 :  서울특별시 강남구 강남대로2689길 20, 5층(역삼동)   TEL : 02 - 1111-2222</p>
+                <p>상호명 : (주)플랜트랩</p>
+                <p>Copyright © 2024 .All RIGHTS RSERVED.</p>
+                <p>불4조 :  정다은  김화영  김시표  송주헌  반재형</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        $(() => {
+            $("#img").click((e) => {
+                $(".imageBtn").trigger("click");
+            });
+
+            $("#vid").click((e) => {
+                $(".videoBtn").trigger("click");
+            });
+
+            const themeToggleBtn = document.getElementById('theme-toggle');
+            const currentTheme = localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+
+            if (currentTheme) {
+                document.body.classList.add(currentTheme);
+            }
+
+            themeToggleBtn.addEventListener('click', () => {
+                document.body.classList.toggle('dark-mode');
+                let theme = 'light';
+                if (document.body.classList.contains('dark-mode')) {
+                    theme = 'dark';
+                }
+                localStorage.setItem('theme', theme);
+            });
+        });
+    </script>
+</body>
+</html>
