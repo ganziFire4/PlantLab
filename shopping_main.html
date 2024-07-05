@@ -124,7 +124,7 @@
     </div>
     <div class="overall_container">
       <div class="selector">
-        <ul>
+        <ul class="selector_group">
           <li class="item" id="item1" onclick="toggleAct(this)">#식물키트</li>
           <li class="item" id="item2" onclick="toggleAct(this)">#공기정화</li>
           <li class="item" id="item3" onclick="toggleAct(this)">#사무실</li>
@@ -327,7 +327,6 @@
                 }
             }
 
-        // Optional: Close the dropdown if the user clicks outside of it
         window.onclick = function(event) {
             if (!event.target.matches('.dropdown-btn')) {
                 var dropdowns = document.getElementsByClassName("dropdown-menu");
@@ -482,232 +481,238 @@
         </div>
       </div>
   </div>
-        <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const products = document.querySelectorAll('.product_item');
-  const productContainer = document.getElementById('product-container');
-  const filters = {
-    category: null,
-    color: null,
-    rating: null,
-    light_mining: [],
-    horticultural_form: [],
-    size: [],
-    sale: null,
-    flower: null,
-    fruit: null,
-    sort: null
-  };
-
-  function applyFilters() {
-    let filteredProducts = Array.from(products);
-
-    if (filters.category) {
-      filteredProducts = filteredProducts.filter(product => product.getAttribute('data-category') === filters.category);
-    }
-
-    if (filters.color) {
-      filteredProducts = filteredProducts.filter(product => product.getAttribute('data-color') === filters.color);
-    }
-
-    if (filters.rating) {
-      filteredProducts = filteredProducts.filter(product => parseFloat(product.getAttribute('data-rating')) >= filters.rating);
-    }
-
-    if (filters.light_mining.length) {
-      filteredProducts = filteredProducts.filter(product => filters.light_mining.includes(product.getAttribute('data-light_mining')));
-    }
-
-    if (filters.horticultural_form.length) {
-      filteredProducts = filteredProducts.filter(product => filters.horticultural_form.includes(product.getAttribute('data-horticultural_form')));
-    }
-
-    if (filters.size.length) {
-      filteredProducts = filteredProducts.filter(product => filters.size.includes(product.getAttribute('data-size')));
-    }
-
-    if (filters.sale) {
-      filteredProducts = filteredProducts.filter(product => product.getAttribute('data-sale') === filters.sale);
-    }
-
-    if (filters.flower) {
-      filteredProducts = filteredProducts.filter(product => product.getAttribute('data-fruit') === filters.flower);
-    }
-
-    if (filters.fruit) {
-      filteredProducts = filteredProducts.filter(product => product.getAttribute('data-fruit') === filters.fruit);
-    }
-
-    if (filters.sort) {
-      filteredProducts.sort((a, b) => {
-        if (filters.sort === 'rating') {
-          return parseFloat(b.querySelector('.product_rating').textContent.replace('평점: ', '')) - parseFloat(a.querySelector('.product_rating').textContent.replace('평점: ', ''));
-        } else if (filters.sort === 'price-asc') {
-          return parseFloat(a.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, "")) - parseFloat(b.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, ""));
-        } else if (filters.sort === 'price-desc') {
-          return parseFloat(b.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, "")) - parseFloat(a.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, ""));
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const products = document.querySelectorAll('.product_item');
+      const productContainer = document.getElementById('product-container');
+      const filters = {
+        category: null,
+        color: null,
+        rating: null,
+        light_mining: [],
+        horticultural_form: [],
+        size: [],
+        sale: null,
+        flower: null,
+        fruit: null,
+        sort: null
+      };
+    
+      function applyFilters() {
+        let filteredProducts = Array.from(products);
+    
+        if (filters.category) {
+          filteredProducts = filteredProducts.filter(product => product.getAttribute('data-category') === filters.category);
         }
-      });
-    }
-
-    productContainer.innerHTML = '';
-
-    let currentRow;
-    filteredProducts.forEach((product, index) => {
-      if (index % 3 === 0) {
-        currentRow = document.createElement('div');
-        currentRow.classList.add('product_row');
-        productContainer.appendChild(currentRow);
-      }
-      currentRow.appendChild(product);
-    });
-
-    // 빈 자리 채우기
-    const emptyItemsToAdd = (3 - (filteredProducts.length % 3)) % 3;
-    for (let i = 0; i < emptyItemsToAdd; i++) {
-      const emptyItem = document.createElement('div');
-      emptyItem.classList.add('product_item');
-      emptyItem.style.visibility = 'hidden'; // 이 부분 수정
-      currentRow.appendChild(emptyItem);
-    }
-  }
-
-  document.querySelectorAll('.selector .item').forEach(item => {
-    item.addEventListener('click', function() {
-      const category = item.textContent.replace('#', '');
-      filters.category = (filters.category === category) ? null : category;
-      document.querySelectorAll('.selector .item').forEach(i => i.classList.remove('act'));
-      if (filters.category) item.classList.add('act');
-      applyFilters();
-    });
-  });
-
-  document.querySelectorAll('.color-container .circle').forEach(circle => {
-    circle.addEventListener('click', function() {
-      filters.color = (filters.color === circle.getAttribute('data-color')) ? null : circle.getAttribute('data-color');
-      document.querySelectorAll('.color-container .circle').forEach(c => c.classList.remove('selected'));
-      if (filters.color) circle.classList.add('selected');
-      applyFilters();
-    });
-  });
-
-  document.querySelectorAll('input[name="light_mining"]').forEach(input => {
-    input.addEventListener('change', function(event) {
-      if (event.target.checked) {
-        filters.light_mining.push(event.target.value);
-      } else {
-        filters.light_mining = filters.light_mining.filter(value => value !== event.target.value);
-      }
-      applyFilters();
-    });
-  });
-
-  document.querySelectorAll('input[name="horticultural_form"]').forEach(input => {
-    input.addEventListener('change', function(event) {
-      if (event.target.checked) {
-        filters.horticultural_form.push(event.target.value);
-      } else {
-        filters.horticultural_form = filters.horticultural_form.filter(value => value !== event.target.value);
-      }
-      applyFilters();
-    });
-  });
-
-  document.querySelectorAll('input[name="size"]').forEach(input => {
-    input.addEventListener('change', function(event) {
-      if (event.target.checked) {
-        filters.size.push(event.target.value);
-      } else {
-        filters.size = filters.size.filter(value => value !== event.target.value);
-      }
-      applyFilters();
-    });
-  });
-
-  document.querySelectorAll('input[name="sale"]').forEach(input => {
-    input.addEventListener('change', function(event) {
-      filters.sale = event.target.checked ? event.target.value : null;
-      applyFilters();
-    });
-  });
-
-  document.querySelectorAll('input[name="flower"]').forEach(input => {
-    input.addEventListener('change', function(event) {
-      filters.flower = event.target.checked ? event.target.value : null;
-      applyFilters();
-    });
-  });
-
-  document.querySelectorAll('input[name="fruit"]').forEach(input => {
-    input.addEventListener('change', function(event) {
-      filters.fruit = event.target.checked ? event.target.value : null;
-      applyFilters();
-    });
-  });
-
-  document.querySelector('.dropdown1 .dropdown-btn').addEventListener('click', function() {
-    var menu = document.querySelector('.dropdown1 .dropdown-menu');
-    menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-  });
-
-  document.querySelector('.dropdown1 .dropdown-menu').addEventListener('click', function(event) {
-    filters.sort = event.target.getAttribute('data-sort');
-    applyFilters();
-    var menu = document.querySelector('.dropdown1 .dropdown-menu');
-    menu.style.display = 'none';
-  });
-
-  applyFilters();
-});
-
-
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('toggleButton').addEventListener('click', function() {
-        var panel = document.getElementById('rightPanel');
-        panel.classList.toggle('open');
-        var arrows = document.querySelectorAll('.toggle-button .arrow');
-        arrows.forEach(arrow => arrow.classList.toggle('open'));
-    });
-
-    function updateRecentItemViewer() {
-        const viewer = document.getElementById('recentItemImage');
-        if (recentItems.length > 0) {
-            viewer.src = recentItems[currentIndex];
-        } else {
-            viewer.src = 'https://via.placeholder.com/30';
+    
+        if (filters.color) {
+          filteredProducts = filteredProducts.filter(product => product.getAttribute('data-color') === filters.color);
         }
-    }
-
-    let recentItems = [];
-    let currentIndex = 0;
-
-    document.getElementById('prevBtn').addEventListener('click', function() {
-        if (recentItems.length > 0) {
-            currentIndex = (currentIndex - 1 + recentItems.length) % recentItems.length;
-            updateRecentItemViewer();
+    
+        if (filters.rating) {
+          filteredProducts = filteredProducts.filter(product => parseFloat(product.getAttribute('data-rating')) >= filters.rating);
         }
-    });
-
-    document.getElementById('nextBtn').addEventListener('click', function() {
-        if (recentItems.length > 0) {
-            currentIndex = (currentIndex + 1) % recentItems.length;
-            updateRecentItemViewer();
+    
+        if (filters.light_mining.length > 0) {
+          filteredProducts = filteredProducts.filter(product => filters.light_mining.includes(product.getAttribute('data-light_mining')));
         }
-    });
-
-    document.getElementById('topBtn').addEventListener('click', function() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    
+        if (filters.horticultural_form.length > 0) {
+          filteredProducts = filteredProducts.filter(product => filters.horticultural_form.includes(product.getAttribute('data-horticultural_form')));
+        }
+    
+        if (filters.size.length > 0) {
+          filteredProducts = filteredProducts.filter(product => filters.size.includes(product.getAttribute('data-size')));
+        }
+    
+        if (filters.sale) {
+          filteredProducts = filteredProducts.filter(product => product.getAttribute('data-sale') === filters.sale);
+        }
+    
+        if (filters.flower) {
+          filteredProducts = filteredProducts.filter(product => product.getAttribute('data-flower') === filters.flower);
+        }
+    
+        if (filters.fruit) {
+          filteredProducts = filteredProducts.filter(product => product.getAttribute('data-fruit') === filters.fruit);
+        }
+    
+        if (filters.sort) {
+          filteredProducts.sort((a, b) => {
+            if (filters.sort === 'rating') {
+              return parseFloat(b.getAttribute('data-rating')) - parseFloat(a.getAttribute('data-rating'));
+            } else if (filters.sort === 'price-asc') {
+              return parseFloat(a.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, "")) - parseFloat(b.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, ""));
+            } else if (filters.sort === 'price-desc') {
+              return parseFloat(b.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, "")) - parseFloat(a.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, ""));
+            }
+            return 0;
+          });
+        }
+    
+        productContainer.innerHTML = '';
+    
+        filteredProducts.forEach((product, index) => {
+          if (index % 3 === 0) {
+            currentRow = document.createElement('div');
+            currentRow.classList.add('product_row');
+            productContainer.appendChild(currentRow);
+          }
+          currentRow.appendChild(product);
+    
+          // 이미지 크기 재설정
+          const img = product.querySelector('img');
+          if (img) {
+            img.style.width = '100%';
+            img.style.height = 'auto';
+          }
         });
+    
+        // 빈 자리 채우기
+        const emptyItemsToAdd = (3 - (filteredProducts.length % 3)) % 3;
+        for (let i = 0; i < emptyItemsToAdd; i++) {
+          const emptyItem = document.createElement('div');
+          emptyItem.classList.add('product_item');
+          emptyItem.style.visibility = 'hidden';
+          currentRow.appendChild(emptyItem);
+        }
+      }
+    
+      // 필터 이벤트 리스너 설정
+      document.querySelectorAll('.selector .item').forEach(item => {
+        item.addEventListener('click', function() {
+          const category = item.textContent.replace('#', '');
+          filters.category = (filters.category === category) ? null : category;
+          document.querySelectorAll('.selector .item').forEach(i => i.classList.remove('act'));
+          if (filters.category) item.classList.add('act');
+          applyFilters();
+        });
+      });
+    
+      document.querySelectorAll('.color-container .circle').forEach(circle => {
+        circle.addEventListener('click', function() {
+          filters.color = (filters.color === circle.getAttribute('data-color')) ? null : circle.getAttribute('data-color');
+          document.querySelectorAll('.color-container .circle').forEach(c => c.classList.remove('selected'));
+          if (filters.color) circle.classList.add('selected');
+          applyFilters();
+        });
+      });
+    
+      document.querySelectorAll('input[name="light_mining"]').forEach(input => {
+        input.addEventListener('change', function(event) {
+          if (event.target.checked) {
+            filters.light_mining.push(event.target.value);
+          } else {
+            filters.light_mining = filters.light_mining.filter(value => value !== event.target.value);
+          }
+          applyFilters();
+        });
+      });
+    
+      document.querySelectorAll('input[name="horticultural_form"]').forEach(input => {
+        input.addEventListener('change', function(event) {
+          if (event.target.checked) {
+            filters.horticultural_form.push(event.target.value);
+          } else {
+            filters.horticultural_form = filters.horticultural_form.filter(value => value !== event.target.value);
+          }
+          applyFilters();
+        });
+      });
+    
+      document.querySelectorAll('input[name="size"]').forEach(input => {
+        input.addEventListener('change', function(event) {
+          if (event.target.checked) {
+            filters.size.push(event.target.value);
+          } else {
+            filters.size = filters.size.filter(value => value !== event.target.value);
+          }
+          applyFilters();
+        });
+      });
+    
+      document.querySelectorAll('input[name="sale"]').forEach(input => {
+        input.addEventListener('change', function(event) {
+          filters.sale = event.target.checked ? event.target.value : null;
+          applyFilters();
+        });
+      });
+    
+      document.querySelectorAll('input[name="flower"]').forEach(input => {
+        input.addEventListener('change', function(event) {
+          filters.flower = event.target.checked ? event.target.value : null;
+          applyFilters();
+        });
+      });
+    
+      document.querySelectorAll('input[name="fruit"]').forEach(input => {
+        input.addEventListener('change', function(event) {
+          filters.fruit = event.target.checked ? event.target.value : null;
+          applyFilters();
+        });
+      });
+    
+      document.querySelector('.dropdown1 .dropdown-btn').addEventListener('click', function() {
+        const menu = document.querySelector('.dropdown1 .dropdown-menu');
+        menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+      });
+    
+      document.querySelector('.dropdown1 .dropdown-menu').addEventListener('click', function(event) {
+        filters.sort = event.target.getAttribute('data-sort');
+        applyFilters();
+        const menu = document.querySelector('.dropdown1 .dropdown-menu');
+        menu.style.display = 'none';
+      });
+    
+      applyFilters();
     });
-
-    updateRecentItemViewer(); // 초기 업데이트
-});
-
-
-
-    </script>
+    
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            var panel = document.getElementById('rightPanel');
+            panel.classList.toggle('open');
+            var arrows = document.querySelectorAll('.toggle-button .arrow');
+            arrows.forEach(arrow => arrow.classList.toggle('open'));
+        });
+    
+        function updateRecentItemViewer() {
+            const viewer = document.getElementById('recentItemImage');
+            if (recentItems.length > 0) {
+                viewer.src = recentItems[currentIndex];
+            } else {
+                viewer.src = 'https://via.placeholder.com/30';
+            }
+        }
+    
+        let recentItems = [];
+        let currentIndex = 0;
+    
+        document.getElementById('prevBtn').addEventListener('click', function() {
+            if (recentItems.length > 0) {
+                currentIndex = (currentIndex - 1 + recentItems.length) % recentItems.length;
+                updateRecentItemViewer();
+            }
+        });
+    
+        document.getElementById('nextBtn').addEventListener('click', function() {
+            if (recentItems.length > 0) {
+                currentIndex = (currentIndex + 1) % recentItems.length;
+                updateRecentItemViewer();
+            }
+        });
+    
+        document.getElementById('topBtn').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    
+        updateRecentItemViewer(); // 초기 업데이트
+    });
+    
+        </script>
     </div>
   </main>
   <footer>

@@ -1,4 +1,7 @@
 /* 주화면 */
+header {
+    margin-top: 89px;
+}
 
 .main-container {
     max-width: 1115px;
