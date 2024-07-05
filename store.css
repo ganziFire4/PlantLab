@@ -221,15 +221,6 @@ a .advance_link_style {
   box-shadow: 0 0 10px rgba(35, 29, 29, 0.3);
 }
 
-/* 전체 제어자 */
-.overall_container {
-  position: relative;
-  max-width: 1115px;
-  max-height: max-content;
-  margin: 2em auto;
-  padding: 0 1em;
-}
-
 /* 상단 정렬박스 */
 .sort_box {
   width: 69rem;
