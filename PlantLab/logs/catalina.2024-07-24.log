@@ -1,0 +1,833 @@
+24-Jul-2024 11:07:45.504 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.25
+24-Jul-2024 11:07:45.508 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Jun 14 2024 19:31:59 UTC
+24-Jul-2024 11:07:45.508 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.25.0
+24-Jul-2024 11:07:45.508 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 11
+24-Jul-2024 11:07:45.509 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+24-Jul-2024 11:07:45.509 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+24-Jul-2024 11:07:45.509 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17
+24-Jul-2024 11:07:45.509 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+24-Jul-2024 11:07:45.509 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+24-Jul-2024 11:07:45.509 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Project_back\PlantLab
+24-Jul-2024 11:07:45.509 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:07:45.531 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jul-2024 11:07:45.532 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jul-2024 11:07:45.532 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jul-2024 11:07:45.532 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jul-2024 11:07:45.532 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jul-2024 11:07:45.533 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+24-Jul-2024 11:07:45.533 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:07:45.533 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Project_back\PlantLab
+24-Jul-2024 11:07:45.534 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Project_back\PlantLab\temp
+24-Jul-2024 11:07:45.534 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Project_back\PlantLab\conf\logging.properties
+24-Jul-2024 11:07:45.534 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jul-2024 11:07:45.534 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\lib\idea_rt.jar=51398:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\bin
+24-Jul-2024 11:07:45.538 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.4]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [2.0.7]을(를) 로드했습니다.
+24-Jul-2024 11:07:45.547 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 3.0.13 30 Jan 2024]
+24-Jul-2024 11:07:45.747 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+24-Jul-2024 11:07:45.778 INFO [main] org.apache.catalina.startup.Catalina.load [484] 밀리초 내에 서버가 초기화되었습니다.
+24-Jul-2024 11:07:45.839 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+24-Jul-2024 11:07:45.839 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.25]
+24-Jul-2024 11:07:45.856 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]을(를) 배치합니다.
+24-Jul-2024 11:07:47.857 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+24-Jul-2024 11:07:47.927 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Jul-2024 11:07:48.954 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 1024 ms
+24-Jul-2024 11:07:49.028 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]의 배치가 [3,170] 밀리초 내에 완료되었습니다.
+24-Jul-2024 11:07:49.040 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+24-Jul-2024 11:07:49.093 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3314] 밀리초 내에 시작되었습니다.
+24-Jul-2024 11:07:51.278 INFO [http-nio-8090-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'appServlet'
+24-Jul-2024 11:07:51.956 INFO [http-nio-8090-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 677 ms
+24-Jul-2024 11:07:53.477 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:08:24.629 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /css/nav_header_footer.css
+24-Jul-2024 11:08:24.630 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /css/mypage.css
+24-Jul-2024 11:08:24.630 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:08:24.630 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:08:24.631 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:08:24.633 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:08:24.641 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:08:24.641 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:08:24.641 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:08:24.641 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:08:24.642 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:08:24.643 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:08:24.647 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:08:24.647 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:08:24.647 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:08:24.647 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:08:24.647 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:08:24.647 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:08:24.653 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:08:24.653 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:08:24.656 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:08:24.656 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:08:24.658 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:10:56.997 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /css/mypage.css
+24-Jul-2024 11:10:56.997 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /css/nav_header_footer.css
+24-Jul-2024 11:10:57.000 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:10:57.000 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:10:57.013 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:10:57.013 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:10:57.013 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:10:57.014 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:10:57.015 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:10:57.018 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:10:57.018 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:10:57.019 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:10:57.019 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:10:57.019 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:10:57.019 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:10:57.025 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:10:57.025 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:10:57.025 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:10:57.026 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:10:57.026 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:10:57.026 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:10:57.032 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:10:57.032 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:10:57.042 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:10:57.042 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:10:57.044 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:10:57.972 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:11:42.605 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+24-Jul-2024 11:11:42.678 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+24-Jul-2024 11:11:42.693 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+24-Jul-2024 11:11:42.709 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
+24-Jul-2024 11:15:11.361 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.25
+24-Jul-2024 11:15:11.365 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Jun 14 2024 19:31:59 UTC
+24-Jul-2024 11:15:11.365 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.25.0
+24-Jul-2024 11:15:11.365 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 11
+24-Jul-2024 11:15:11.365 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+24-Jul-2024 11:15:11.365 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+24-Jul-2024 11:15:11.366 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17
+24-Jul-2024 11:15:11.366 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+24-Jul-2024 11:15:11.366 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+24-Jul-2024 11:15:11.366 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Project_back\PlantLab
+24-Jul-2024 11:15:11.366 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:15:11.374 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jul-2024 11:15:11.374 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jul-2024 11:15:11.374 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jul-2024 11:15:11.374 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jul-2024 11:15:11.374 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jul-2024 11:15:11.374 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UFT-8
+24-Jul-2024 11:15:11.375 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:15:11.375 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Project_back\PlantLab
+24-Jul-2024 11:15:11.375 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Project_back\PlantLab\temp
+24-Jul-2024 11:15:11.375 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Project_back\PlantLab\conf\logging.properties
+24-Jul-2024 11:15:11.375 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jul-2024 11:15:11.375 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\lib\idea_rt.jar=51557:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\bin
+24-Jul-2024 11:15:11.377 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.4]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [2.0.7]을(를) 로드했습니다.
+24-Jul-2024 11:15:11.381 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 3.0.13 30 Jan 2024]
+24-Jul-2024 11:15:11.565 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+24-Jul-2024 11:15:11.582 INFO [main] org.apache.catalina.startup.Catalina.load [418] 밀리초 내에 서버가 초기화되었습니다.
+24-Jul-2024 11:15:11.645 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+24-Jul-2024 11:15:11.645 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.25]
+24-Jul-2024 11:15:11.660 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]을(를) 배치합니다.
+24-Jul-2024 11:15:13.828 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+24-Jul-2024 11:15:13.926 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Jul-2024 11:15:14.958 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 1030 ms
+24-Jul-2024 11:15:15.020 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]의 배치가 [3,358] 밀리초 내에 완료되었습니다.
+24-Jul-2024 11:15:15.031 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+24-Jul-2024 11:15:15.074 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3492] 밀리초 내에 시작되었습니다.
+24-Jul-2024 11:16:10.311 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+24-Jul-2024 11:16:10.377 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+24-Jul-2024 11:16:10.391 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+24-Jul-2024 11:16:10.416 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
+24-Jul-2024 11:16:12.927 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.25
+24-Jul-2024 11:16:12.929 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Jun 14 2024 19:31:59 UTC
+24-Jul-2024 11:16:12.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.25.0
+24-Jul-2024 11:16:12.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 11
+24-Jul-2024 11:16:12.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+24-Jul-2024 11:16:12.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+24-Jul-2024 11:16:12.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17
+24-Jul-2024 11:16:12.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+24-Jul-2024 11:16:12.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+24-Jul-2024 11:16:12.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Project_back\PlantLab
+24-Jul-2024 11:16:12.930 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:16:12.937 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jul-2024 11:16:12.937 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jul-2024 11:16:12.937 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jul-2024 11:16:12.937 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jul-2024 11:16:12.937 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jul-2024 11:16:12.937 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+24-Jul-2024 11:16:12.937 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:16:12.937 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Project_back\PlantLab
+24-Jul-2024 11:16:12.938 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Project_back\PlantLab\temp
+24-Jul-2024 11:16:12.938 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Project_back\PlantLab\conf\logging.properties
+24-Jul-2024 11:16:12.938 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jul-2024 11:16:12.938 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\lib\idea_rt.jar=51565:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\bin
+24-Jul-2024 11:16:12.941 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.4]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [2.0.7]을(를) 로드했습니다.
+24-Jul-2024 11:16:12.944 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 3.0.13 30 Jan 2024]
+24-Jul-2024 11:16:13.160 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+24-Jul-2024 11:16:13.184 INFO [main] org.apache.catalina.startup.Catalina.load [453] 밀리초 내에 서버가 초기화되었습니다.
+24-Jul-2024 11:16:13.256 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+24-Jul-2024 11:16:13.256 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.25]
+24-Jul-2024 11:16:13.274 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]을(를) 배치합니다.
+24-Jul-2024 11:16:15.267 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+24-Jul-2024 11:16:15.332 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Jul-2024 11:16:16.298 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 964 ms
+24-Jul-2024 11:16:16.355 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]의 배치가 [3,080] 밀리초 내에 완료되었습니다.
+24-Jul-2024 11:16:16.365 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+24-Jul-2024 11:16:16.403 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3219] 밀리초 내에 시작되었습니다.
+24-Jul-2024 11:16:18.308 INFO [http-nio-8090-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'appServlet'
+24-Jul-2024 11:16:19.008 INFO [http-nio-8090-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 700 ms
+24-Jul-2024 11:16:20.065 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:16:20.833 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:16:20.833 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:16:20.833 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:16:20.833 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:16:20.840 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:16:20.844 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:16:20.848 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:16:20.852 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:16:20.853 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:16:20.853 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:16:20.853 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:16:20.853 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:16:20.853 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:16:20.859 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:16:20.860 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:16:20.860 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:16:20.860 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:16:20.860 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:16:20.861 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:16:20.865 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:16:20.866 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:16:20.876 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:16:20.877 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:16:20.877 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:16:21.748 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:17:20.924 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:17:20.924 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:17:20.924 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:17:20.924 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:17:20.929 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:17:20.930 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:17:20.931 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:17:20.931 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:17:20.931 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:17:20.932 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:17:20.932 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:17:20.934 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:17:20.934 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:17:20.934 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:17:20.934 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:17:20.935 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:17:20.935 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:17:20.938 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:17:20.938 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:17:20.938 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:17:20.938 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:17:27.727 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:18:03.410 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:03.410 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:03.418 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:18:03.418 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:03.418 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:03.421 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:03.421 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:03.423 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:03.424 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:03.424 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:03.425 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:03.426 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:03.426 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:03.427 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:03.430 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:03.430 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:03.432 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:03.435 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:03.435 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:03.435 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:03.435 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:03.436 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:04.565 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:18:05.908 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:05.908 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:18:05.908 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:05.910 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:05.914 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:05.915 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:05.915 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:05.915 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:05.915 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:05.916 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:05.919 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:05.919 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:05.919 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:05.919 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:05.923 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:05.924 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:05.927 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:05.927 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:05.927 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:05.928 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:05.927 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:05.938 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:05.938 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:06.301 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:06.301 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:06.301 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:06.301 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:18:06.310 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:06.310 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:06.310 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:06.310 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:06.310 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:06.311 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:06.315 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:06.315 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:06.315 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:06.315 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:06.315 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:06.316 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:06.323 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:06.323 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:06.323 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:06.323 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:06.323 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:06.534 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:06.534 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:06.534 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:18:06.537 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:06.540 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:06.541 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:06.541 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:06.541 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:06.541 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:06.541 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:06.545 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:06.545 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:06.545 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:06.545 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:06.545 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:06.546 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:06.552 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:06.552 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:06.552 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:06.552 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:06.553 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:06.563 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:06.563 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:06.563 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:06.724 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:18:06.724 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:06.724 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:06.724 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:06.731 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:06.731 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:06.731 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:06.731 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:06.731 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:06.732 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:06.735 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:06.735 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:06.736 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:06.736 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:06.736 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:06.736 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:06.740 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:06.741 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:06.741 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:06.741 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:06.741 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:06.757 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:06.757 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:06.915 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:18:06.915 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:06.915 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:06.915 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:06.920 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:06.920 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:06.920 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:06.921 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:06.921 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:06.921 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:06.925 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:06.926 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:06.926 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:06.927 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:06.927 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:06.928 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:06.931 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:06.931 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:06.931 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:06.932 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:06.932 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:06.950 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:06.950 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:07.111 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:18:07.111 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:07.111 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:07.112 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:07.116 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:07.116 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:07.117 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:07.116 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:07.117 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:07.118 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:07.120 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:07.121 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:07.122 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:07.122 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:07.122 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:07.124 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:07.127 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:07.127 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:07.127 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:07.127 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:07.127 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:07.621 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:07.621 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:07.622 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:18:07.622 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:07.627 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:07.627 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:07.627 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:07.627 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:07.627 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:07.627 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:07.636 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:07.637 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:07.637 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:07.637 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:07.639 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:07.639 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:07.639 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:07.639 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:07.639 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:07.640 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:07.643 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:07.858 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:07.860 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:18:07.861 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:07.861 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:07.865 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:07.867 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:07.867 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:07.867 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:07.868 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:07.868 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:07.868 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:07.874 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:07.874 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:07.874 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:07.874 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:07.874 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:07.874 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:07.879 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:07.879 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:07.879 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:07.879 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:08.056 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:08.056 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:08.056 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:08.056 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:18:08.068 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:08.068 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:08.068 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:08.068 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:08.068 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:08.069 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:08.070 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:08.071 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:08.071 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:08.073 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:08.073 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:08.074 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:08.075 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:08.075 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:08.075 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:08.077 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:08.077 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:08.279 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:08.279 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:08.279 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:18:08.280 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:08.284 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:08.285 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:08.285 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:08.286 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:08.286 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:08.287 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:08.287 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:08.287 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:08.288 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:08.289 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:08.289 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:08.292 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:08.292 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:08.293 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:08.293 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:08.293 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:08.293 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:08.489 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:08.489 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:18:08.490 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:08.491 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:08.494 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:08.494 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:08.495 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:08.495 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:08.496 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:08.498 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:08.498 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:08.498 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:08.500 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:08.500 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:08.500 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:08.503 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:08.503 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:08.503 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:08.505 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:08.505 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:08.505 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:08.685 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/nav_logo.svg
+24-Jul-2024 11:18:08.685 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:08.685 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:08.685 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:08.691 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:08.691 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:08.691 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:08.691 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:08.691 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:08.691 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:08.696 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:08.698 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:08.698 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:08.699 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:08.699 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:08.699 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:08.699 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:08.700 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:08.701 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:08.703 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:08.704 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:09.577 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:18:33.016 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:33.016 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/nav_logo.svg
+24-Jul-2024 11:18:33.016 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:33.018 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:33.025 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:33.026 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:33.031 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:33.031 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:33.032 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:33.032 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:33.033 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:33.034 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:33.038 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:33.038 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:33.038 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:33.038 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:33.039 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:33.039 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:33.045 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:33.046 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:33.047 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:33.047 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:34.640 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:34.640 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:34.640 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/nav_logo.svg
+24-Jul-2024 11:18:34.642 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:34.647 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:34.647 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:34.647 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:34.647 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:34.648 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:34.648 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:34.653 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:34.653 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:34.653 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:34.654 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:34.654 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:34.653 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:34.657 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:34.658 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:34.658 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:34.658 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:34.658 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:35.278 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:35.278 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:35.278 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/nav_logo.svg
+24-Jul-2024 11:18:35.278 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:35.283 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:35.283 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:35.283 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:35.285 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:35.285 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:35.285 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:35.290 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:35.291 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:35.291 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:35.292 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:35.292 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:35.292 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:35.296 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:35.296 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:35.296 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:35.296 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:35.297 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:35.484 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:35.484 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:35.485 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/nav_logo.svg
+24-Jul-2024 11:18:35.485 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:35.494 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:35.494 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:35.494 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:35.495 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:35.495 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:35.496 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:35.500 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:35.500 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:35.501 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:35.501 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:35.501 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:35.501 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:35.507 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:35.507 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:35.507 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:35.507 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:35.508 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:35.680 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:35.680 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:35.680 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:35.680 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/nav_logo.svg
+24-Jul-2024 11:18:35.687 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:35.687 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:35.687 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:35.687 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:35.688 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:35.688 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:35.694 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:35.694 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:35.695 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:35.695 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:35.695 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:35.695 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:35.700 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:35.701 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:35.701 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:35.701 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:35.702 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:35.861 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:35.861 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:35.861 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/nav_logo.svg
+24-Jul-2024 11:18:35.861 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:35.865 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:35.865 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:35.867 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:35.867 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:35.867 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:35.868 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:35.876 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:35.876 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:35.876 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:35.877 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:35.877 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:35.878 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:35.882 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:35.882 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:35.883 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:35.883 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:35.883 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:36.040 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:36.041 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/nav_logo.svg
+24-Jul-2024 11:18:36.041 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:36.041 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:36.047 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:36.047 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:36.047 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:36.047 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:36.047 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:36.047 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:36.054 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:36.054 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:36.054 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:36.056 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:36.056 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:36.056 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:36.061 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:36.061 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:36.061 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:36.062 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:36.062 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:36.215 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:18:36.215 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/nav_logo.svg
+24-Jul-2024 11:18:36.215 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:18:36.216 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/weatherLine.svg
+24-Jul-2024 11:18:36.219 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Header%20with%20image_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:18:36.222 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:36.223 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/shareicon.png
+24-Jul-2024 11:18:36.224 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:18:36.225 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/filledgreenheart.png
+24-Jul-2024 11:18:36.225 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/littlefilledbookmarkicon.png
+24-Jul-2024 11:18:36.226 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:18:36.227 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:18:36.227 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:18:36.228 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:18:36.229 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:18:36.229 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/Ellipse%2016.svg
+24-Jul-2024 11:18:36.230 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX01.svg
+24-Jul-2024 11:18:36.231 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/purchaseEX02.svg
+24-Jul-2024 11:18:36.231 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:36.231 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:18:36.232 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/round_logo_colorBack.svg
+24-Jul-2024 11:18:37.926 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:18:50.468 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+24-Jul-2024 11:18:50.534 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+24-Jul-2024 11:18:50.548 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+24-Jul-2024 11:18:50.573 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
+24-Jul-2024 11:18:52.022 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.25
+24-Jul-2024 11:18:52.031 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Jun 14 2024 19:31:59 UTC
+24-Jul-2024 11:18:52.032 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.25.0
+24-Jul-2024 11:18:52.032 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 11
+24-Jul-2024 11:18:52.032 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+24-Jul-2024 11:18:52.033 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+24-Jul-2024 11:18:52.033 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17
+24-Jul-2024 11:18:52.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+24-Jul-2024 11:18:52.035 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+24-Jul-2024 11:18:52.035 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Project_back\PlantLab
+24-Jul-2024 11:18:52.035 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:18:52.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jul-2024 11:18:52.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jul-2024 11:18:52.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jul-2024 11:18:52.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jul-2024 11:18:52.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jul-2024 11:18:52.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+24-Jul-2024 11:18:52.044 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:18:52.045 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Project_back\PlantLab
+24-Jul-2024 11:18:52.045 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Project_back\PlantLab\temp
+24-Jul-2024 11:18:52.045 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Project_back\PlantLab\conf\logging.properties
+24-Jul-2024 11:18:52.045 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jul-2024 11:18:52.045 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\lib\idea_rt.jar=51656:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\bin
+24-Jul-2024 11:18:52.050 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.4]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [2.0.7]을(를) 로드했습니다.
+24-Jul-2024 11:18:52.060 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 3.0.13 30 Jan 2024]
+24-Jul-2024 11:18:52.469 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+24-Jul-2024 11:18:52.488 INFO [main] org.apache.catalina.startup.Catalina.load [744] 밀리초 내에 서버가 초기화되었습니다.
+24-Jul-2024 11:18:52.544 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+24-Jul-2024 11:18:52.544 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.25]
+24-Jul-2024 11:18:52.561 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]을(를) 배치합니다.
+24-Jul-2024 11:18:54.584 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+24-Jul-2024 11:18:54.686 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Jul-2024 11:18:56.099 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 1410 ms
+24-Jul-2024 11:18:56.175 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]의 배치가 [3,612] 밀리초 내에 완료되었습니다.
+24-Jul-2024 11:18:56.181 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+24-Jul-2024 11:18:56.229 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3740] 밀리초 내에 시작되었습니다.
+24-Jul-2024 11:19:00.318 INFO [http-nio-8090-exec-6] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'appServlet'
+24-Jul-2024 11:19:01.000 INFO [http-nio-8090-exec-6] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 682 ms
+24-Jul-2024 11:19:01.017 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:20:00.251 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:20:39.423 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+24-Jul-2024 11:20:39.503 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+24-Jul-2024 11:20:39.515 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+24-Jul-2024 11:20:39.534 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
+24-Jul-2024 11:20:40.946 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.25
+24-Jul-2024 11:20:40.951 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Jun 14 2024 19:31:59 UTC
+24-Jul-2024 11:20:40.952 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.25.0
+24-Jul-2024 11:20:40.952 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 11
+24-Jul-2024 11:20:40.952 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+24-Jul-2024 11:20:40.953 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+24-Jul-2024 11:20:40.953 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17
+24-Jul-2024 11:20:40.953 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+24-Jul-2024 11:20:40.954 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+24-Jul-2024 11:20:40.954 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Project_back\PlantLab
+24-Jul-2024 11:20:40.954 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:20:40.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jul-2024 11:20:40.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jul-2024 11:20:40.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jul-2024 11:20:40.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jul-2024 11:20:40.968 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jul-2024 11:20:40.969 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+24-Jul-2024 11:20:40.969 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:20:40.969 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Project_back\PlantLab
+24-Jul-2024 11:20:40.969 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Project_back\PlantLab\temp
+24-Jul-2024 11:20:40.969 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Project_back\PlantLab\conf\logging.properties
+24-Jul-2024 11:20:40.969 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jul-2024 11:20:40.969 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\lib\idea_rt.jar=51683:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\bin
+24-Jul-2024 11:20:40.972 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.4]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [2.0.7]을(를) 로드했습니다.
+24-Jul-2024 11:20:40.977 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 3.0.13 30 Jan 2024]
+24-Jul-2024 11:20:41.321 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+24-Jul-2024 11:20:41.343 INFO [main] org.apache.catalina.startup.Catalina.load [682] 밀리초 내에 서버가 초기화되었습니다.
+24-Jul-2024 11:20:41.394 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+24-Jul-2024 11:20:41.395 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.25]
+24-Jul-2024 11:20:41.410 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]을(를) 배치합니다.
+24-Jul-2024 11:20:43.398 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+24-Jul-2024 11:20:43.483 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Jul-2024 11:20:44.483 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 998 ms
+24-Jul-2024 11:20:44.551 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]의 배치가 [3,139] 밀리초 내에 완료되었습니다.
+24-Jul-2024 11:20:44.555 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+24-Jul-2024 11:20:44.592 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3248] 밀리초 내에 시작되었습니다.
+24-Jul-2024 11:20:48.982 INFO [http-nio-8090-exec-4] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'appServlet'
+24-Jul-2024 11:20:49.687 INFO [http-nio-8090-exec-4] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 705 ms
+24-Jul-2024 11:20:49.704 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:20:50.305 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:20:52.529 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/weatherLine.svg
+24-Jul-2024 11:20:52.530 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:20:52.530 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:20:52.530 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/nav_logo.svg
+24-Jul-2024 11:20:52.537 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/shareicon.png
+24-Jul-2024 11:20:52.539 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/filledgreenheart.png
+24-Jul-2024 11:20:52.540 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/littlefilledbookmarkicon.png
+24-Jul-2024 11:20:52.543 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Header%20with%20images_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:20:52.544 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:20:52.544 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:20:52.544 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:20:52.544 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:20:52.544 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:20:52.548 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:20:52.548 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:20:52.548 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX01.svg
+24-Jul-2024 11:20:52.549 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Ellipse%2016.svg
+24-Jul-2024 11:20:52.549 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX02.svg
+24-Jul-2024 11:20:52.549 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:20:52.552 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:20:52.552 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/round_logo_colorBack.svg
+24-Jul-2024 11:20:53.476 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:21:26.567 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:21:26.567 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:21:26.567 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/weatherLine.svg
+24-Jul-2024 11:21:26.567 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/nav_logo.svg
+24-Jul-2024 11:21:26.573 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Header%20with%20images_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:21:26.573 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:21:26.573 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:21:26.573 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/shareicon.png
+24-Jul-2024 11:21:26.573 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/filledgreenheart.png
+24-Jul-2024 11:21:26.573 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/littlefilledbookmarkicon.png
+24-Jul-2024 11:21:26.580 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:21:26.579 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:21:26.580 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:21:26.580 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:21:26.580 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:21:26.580 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Ellipse%2016.svg
+24-Jul-2024 11:21:26.585 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX01.svg
+24-Jul-2024 11:21:26.585 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:21:26.585 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX02.svg
+24-Jul-2024 11:21:26.585 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:21:27.421 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:22:26.607 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:22:26.608 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:22:26.616 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/nav_logo.svg
+24-Jul-2024 11:22:26.616 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/weatherLine.svg
+24-Jul-2024 11:22:26.617 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:22:26.617 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Header%20with%20images_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:22:26.617 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/shareicon.png
+24-Jul-2024 11:22:26.618 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:22:26.620 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/filledgreenheart.png
+24-Jul-2024 11:22:26.623 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:22:26.624 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/littlefilledbookmarkicon.png
+24-Jul-2024 11:22:26.624 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:22:26.624 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:22:26.624 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:22:26.624 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:22:26.628 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Ellipse%2016.svg
+24-Jul-2024 11:22:26.629 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX02.svg
+24-Jul-2024 11:22:26.629 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX01.svg
+24-Jul-2024 11:22:26.629 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:22:26.629 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:22:26.635 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:22:26.635 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:22:26.638 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Ellipse%2016.svg
+24-Jul-2024 11:22:27.501 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:23:11.405 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+24-Jul-2024 11:23:11.518 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+24-Jul-2024 11:23:11.563 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+24-Jul-2024 11:23:11.576 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
