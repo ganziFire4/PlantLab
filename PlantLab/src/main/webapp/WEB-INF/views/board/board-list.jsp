@@ -68,6 +68,7 @@
             </ul>
         </div>
     </main>
+    <jsp:include page="${pageContext.request.contextPath}/chatboot.jsp"/>
     <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
     <script>
         const underline = document.getElementsByClassName("label_underline");

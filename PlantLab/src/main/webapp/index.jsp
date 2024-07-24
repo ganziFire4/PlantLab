@@ -11,13 +11,14 @@
     <title>Title</title>
 </head>
 <body>
-    <jsp:include page="nav.jsp"/>
+    <jsp:include page="${pageContext.request.contextPath}/nav.jsp"/>
     <header>
 
     </header>
     <main>
-        <a href="mypage.jsp">a</a>
+        <a href="WEB-INF/views/member/mypage.jsp">a</a>
     </main>
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="${pageContext.request.contextPath}/chatboot.jsp"/>
+    <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
 </body>
 </html>

@@ -17,4 +17,9 @@ public class BoardController {
         return "/board/board-list";
     }
 
+    @GetMapping("/post.do")
+    public String post() {
+        return "/board/post";
+    }
+
 }
