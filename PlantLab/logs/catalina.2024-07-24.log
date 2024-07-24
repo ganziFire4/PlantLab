@@ -831,3 +831,539 @@
 24-Jul-2024 11:23:11.518 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
 24-Jul-2024 11:23:11.563 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
 24-Jul-2024 11:23:11.576 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
+24-Jul-2024 11:36:39.563 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.25
+24-Jul-2024 11:36:39.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Jun 14 2024 19:31:59 UTC
+24-Jul-2024 11:36:39.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.25.0
+24-Jul-2024 11:36:39.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 11
+24-Jul-2024 11:36:39.567 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+24-Jul-2024 11:36:39.568 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+24-Jul-2024 11:36:39.568 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17
+24-Jul-2024 11:36:39.568 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+24-Jul-2024 11:36:39.568 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+24-Jul-2024 11:36:39.568 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Project_back\PlantLab
+24-Jul-2024 11:36:39.568 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:36:39.575 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jul-2024 11:36:39.575 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jul-2024 11:36:39.576 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jul-2024 11:36:39.576 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jul-2024 11:36:39.576 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jul-2024 11:36:39.576 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+24-Jul-2024 11:36:39.576 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:36:39.576 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Project_back\PlantLab
+24-Jul-2024 11:36:39.578 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Project_back\PlantLab\temp
+24-Jul-2024 11:36:39.578 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Project_back\PlantLab\conf\logging.properties
+24-Jul-2024 11:36:39.578 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jul-2024 11:36:39.578 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\lib\idea_rt.jar=51969:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\bin
+24-Jul-2024 11:36:39.625 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.4]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [2.0.7]을(를) 로드했습니다.
+24-Jul-2024 11:36:39.629 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 3.0.13 30 Jan 2024]
+24-Jul-2024 11:36:39.866 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+24-Jul-2024 11:36:39.890 INFO [main] org.apache.catalina.startup.Catalina.load [518] 밀리초 내에 서버가 초기화되었습니다.
+24-Jul-2024 11:36:39.936 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+24-Jul-2024 11:36:39.936 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.25]
+24-Jul-2024 11:36:39.949 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]을(를) 배치합니다.
+24-Jul-2024 11:36:41.858 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+24-Jul-2024 11:36:41.932 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Jul-2024 11:36:42.998 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 1063 ms
+24-Jul-2024 11:36:43.073 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]의 배치가 [3,120] 밀리초 내에 완료되었습니다.
+24-Jul-2024 11:36:43.086 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+24-Jul-2024 11:36:43.142 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3251] 밀리초 내에 시작되었습니다.
+24-Jul-2024 11:36:45.668 INFO [http-nio-8090-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'appServlet'
+24-Jul-2024 11:36:46.375 INFO [http-nio-8090-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 707 ms
+24-Jul-2024 11:36:47.559 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:36:56.307 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:36:56.307 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/nav_logo.svg
+24-Jul-2024 11:36:56.307 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:36:56.307 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/weatherLine.svg
+24-Jul-2024 11:36:56.315 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Header%20with%20images_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:36:56.316 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:36:56.318 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/filledgreenheart.png
+24-Jul-2024 11:36:56.318 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:36:56.318 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/shareicon.png
+24-Jul-2024 11:36:56.320 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:36:56.320 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/littlefilledbookmarkicon.png
+24-Jul-2024 11:36:56.321 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:36:56.322 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:36:56.323 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:36:56.323 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:36:56.324 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX01.svg
+24-Jul-2024 11:36:56.324 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Ellipse%2016.svg
+24-Jul-2024 11:36:56.326 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX02.svg
+24-Jul-2024 11:36:56.326 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:36:56.328 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:36:56.330 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:36:56.331 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:36:57.244 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:37:56.591 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:37:56.591 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:37:56.593 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/nav_logo.svg
+24-Jul-2024 11:37:56.593 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/weatherLine.svg
+24-Jul-2024 11:37:56.600 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Header%20with%20images_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:37:56.600 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:37:56.600 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/shareicon.png
+24-Jul-2024 11:37:56.613 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:37:56.613 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/littlefilledbookmarkicon.png
+24-Jul-2024 11:37:56.613 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/filledgreenheart.png
+24-Jul-2024 11:37:56.649 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:37:56.649 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:37:56.654 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:37:56.654 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:37:56.654 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:37:56.657 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:37:56.658 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:37:56.658 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:37:56.663 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX01.svg
+24-Jul-2024 11:37:56.663 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Ellipse%2016.svg
+24-Jul-2024 11:37:56.664 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX02.svg
+24-Jul-2024 11:37:57.488 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:38:10.328 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+24-Jul-2024 11:38:10.403 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+24-Jul-2024 11:38:10.418 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+24-Jul-2024 11:38:10.439 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
+24-Jul-2024 11:38:11.812 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.25
+24-Jul-2024 11:38:11.819 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Jun 14 2024 19:31:59 UTC
+24-Jul-2024 11:38:11.820 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.25.0
+24-Jul-2024 11:38:11.820 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 11
+24-Jul-2024 11:38:11.820 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+24-Jul-2024 11:38:11.820 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+24-Jul-2024 11:38:11.821 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17
+24-Jul-2024 11:38:11.821 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+24-Jul-2024 11:38:11.821 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+24-Jul-2024 11:38:11.821 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Project_back\PlantLab
+24-Jul-2024 11:38:11.821 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:38:11.833 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jul-2024 11:38:11.834 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jul-2024 11:38:11.834 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jul-2024 11:38:11.834 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jul-2024 11:38:11.834 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jul-2024 11:38:11.834 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+24-Jul-2024 11:38:11.835 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:38:11.835 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Project_back\PlantLab
+24-Jul-2024 11:38:11.835 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Project_back\PlantLab\temp
+24-Jul-2024 11:38:11.835 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Project_back\PlantLab\conf\logging.properties
+24-Jul-2024 11:38:11.835 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jul-2024 11:38:11.835 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\lib\idea_rt.jar=52029:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\bin
+24-Jul-2024 11:38:11.840 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.4]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [2.0.7]을(를) 로드했습니다.
+24-Jul-2024 11:38:11.848 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 3.0.13 30 Jan 2024]
+24-Jul-2024 11:38:12.144 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+24-Jul-2024 11:38:12.172 INFO [main] org.apache.catalina.startup.Catalina.load [588] 밀리초 내에 서버가 초기화되었습니다.
+24-Jul-2024 11:38:12.247 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+24-Jul-2024 11:38:12.247 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.25]
+24-Jul-2024 11:38:12.267 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]을(를) 배치합니다.
+24-Jul-2024 11:38:14.561 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+24-Jul-2024 11:38:14.668 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Jul-2024 11:38:16.184 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 1513 ms
+24-Jul-2024 11:38:16.249 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]의 배치가 [3,979] 밀리초 내에 완료되었습니다.
+24-Jul-2024 11:38:16.255 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+24-Jul-2024 11:38:16.308 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [4134] 밀리초 내에 시작되었습니다.
+24-Jul-2024 11:38:19.297 INFO [http-nio-8090-exec-3] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'appServlet'
+24-Jul-2024 11:38:20.108 INFO [http-nio-8090-exec-3] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 810 ms
+24-Jul-2024 11:38:20.127 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/nav_logo.svg
+24-Jul-2024 11:38:20.127 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:38:20.127 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:38:20.127 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/weatherLine.svg
+24-Jul-2024 11:38:20.127 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:38:20.141 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/shareicon.png
+24-Jul-2024 11:38:20.141 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/filledgreenheart.png
+24-Jul-2024 11:38:20.143 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/littlefilledbookmarkicon.png
+24-Jul-2024 11:38:20.146 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:38:20.146 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Header%20with%20images_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:38:20.146 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:38:20.148 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:38:20.149 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:38:20.149 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:38:20.154 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:38:20.154 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:38:20.155 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX01.svg
+24-Jul-2024 11:38:20.155 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Ellipse%2016.svg
+24-Jul-2024 11:38:20.155 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX02.svg
+24-Jul-2024 11:38:20.155 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:38:20.160 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:38:21.031 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:39:20.694 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:39:20.695 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:39:20.697 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Header%20with%20images_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:39:20.699 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:39:20.701 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/shareicon.png
+24-Jul-2024 11:39:20.715 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:39:20.715 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/filledgreenheart.png
+24-Jul-2024 11:39:20.715 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/littlefilledbookmarkicon.png
+24-Jul-2024 11:39:20.721 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:39:20.721 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:39:20.721 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:39:20.756 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:39:20.756 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:39:20.760 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:39:20.761 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:39:20.761 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:39:20.764 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Ellipse%2016.svg
+24-Jul-2024 11:39:20.765 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX01.svg
+24-Jul-2024 11:39:20.765 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX02.svg
+24-Jul-2024 11:39:26.635 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:40:21.699 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:40:21.704 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:40:21.756 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Header%20with%20images_%EB%A7%88%EC%9D%B4%ED%8E%98%EC%9D%B4%EC%A7%80.png
+24-Jul-2024 11:40:21.772 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/shareicon.png
+24-Jul-2024 11:40:21.772 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%ED%94%84%EB%A1%9C%ED%95%84%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:40:21.779 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/filledgreenheart.png
+24-Jul-2024 11:40:21.779 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%83%88%EC%8B%B9%EB%A0%88%EB%B2%A8.png
+24-Jul-2024 11:40:21.819 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%B1%97%EB%B4%87%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:40:21.819 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/top%EC%95%84%EC%9D%B4%EC%BD%98.png
+24-Jul-2024 11:40:21.824 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/littlefilledbookmarkicon.png
+24-Jul-2024 11:40:21.824 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%82%B4%EA%B0%80%EC%98%AC%EB%A6%B0%EA%B8%80.png
+24-Jul-2024 11:40:21.824 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%20%EC%82%AC%EC%A7%84.png
+24-Jul-2024 11:40:21.828 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EB%A7%88%EC%9D%B4%20%EC%87%BC%ED%95%91.png
+24-Jul-2024 11:40:21.829 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/%EC%9E%90%EB%9E%91%EA%B8%80/rank1main.png
+24-Jul-2024 11:40:21.829 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/fluent_ios-arrow-24-filled.svg
+24-Jul-2024 11:40:21.833 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/Ellipse%2016.svg
+24-Jul-2024 11:40:21.834 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX02.svg
+24-Jul-2024 11:40:21.834 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /images/purchaseEX01.svg
+24-Jul-2024 11:40:22.657 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:41:22.727 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:41:22.727 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:41:23.704 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:41:24.114 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+24-Jul-2024 11:41:24.205 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+24-Jul-2024 11:41:24.219 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+24-Jul-2024 11:41:24.244 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
+24-Jul-2024 11:41:25.727 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.25
+24-Jul-2024 11:41:25.732 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Jun 14 2024 19:31:59 UTC
+24-Jul-2024 11:41:25.732 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.25.0
+24-Jul-2024 11:41:25.732 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 11
+24-Jul-2024 11:41:25.732 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+24-Jul-2024 11:41:25.732 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+24-Jul-2024 11:41:25.733 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17
+24-Jul-2024 11:41:25.733 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+24-Jul-2024 11:41:25.733 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+24-Jul-2024 11:41:25.733 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Project_back\PlantLab
+24-Jul-2024 11:41:25.733 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:41:25.740 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jul-2024 11:41:25.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jul-2024 11:41:25.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jul-2024 11:41:25.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jul-2024 11:41:25.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jul-2024 11:41:25.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+24-Jul-2024 11:41:25.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:41:25.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Project_back\PlantLab
+24-Jul-2024 11:41:25.741 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Project_back\PlantLab\temp
+24-Jul-2024 11:41:25.742 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Project_back\PlantLab\conf\logging.properties
+24-Jul-2024 11:41:25.742 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jul-2024 11:41:25.742 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\lib\idea_rt.jar=52088:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\bin
+24-Jul-2024 11:41:25.744 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.4]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [2.0.7]을(를) 로드했습니다.
+24-Jul-2024 11:41:25.754 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 3.0.13 30 Jan 2024]
+24-Jul-2024 11:41:26.168 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+24-Jul-2024 11:41:26.192 INFO [main] org.apache.catalina.startup.Catalina.load [750] 밀리초 내에 서버가 초기화되었습니다.
+24-Jul-2024 11:41:26.252 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+24-Jul-2024 11:41:26.253 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.25]
+24-Jul-2024 11:41:26.269 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]을(를) 배치합니다.
+24-Jul-2024 11:41:28.261 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+24-Jul-2024 11:41:28.350 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Jul-2024 11:41:29.413 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 1060 ms
+24-Jul-2024 11:41:29.487 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]의 배치가 [3,214] 밀리초 내에 완료되었습니다.
+24-Jul-2024 11:41:29.498 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+24-Jul-2024 11:41:29.551 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3358] 밀리초 내에 시작되었습니다.
+24-Jul-2024 11:41:33.184 INFO [http-nio-8090-exec-3] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'appServlet'
+24-Jul-2024 11:41:33.847 INFO [http-nio-8090-exec-3] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 663 ms
+24-Jul-2024 11:41:33.860 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:41:41.739 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:41:41.741 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:41:42.612 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:42:23.581 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:42:23.581 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:42:25.688 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:42:41.802 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:42:41.803 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:42:42.730 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:43:24.593 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:43:24.595 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:43:25.249 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+24-Jul-2024 11:43:25.327 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+24-Jul-2024 11:43:25.341 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+24-Jul-2024 11:43:25.363 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
+24-Jul-2024 11:43:26.746 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.25
+24-Jul-2024 11:43:26.750 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Jun 14 2024 19:31:59 UTC
+24-Jul-2024 11:43:26.751 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.25.0
+24-Jul-2024 11:43:26.751 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 11
+24-Jul-2024 11:43:26.751 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+24-Jul-2024 11:43:26.751 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+24-Jul-2024 11:43:26.752 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17
+24-Jul-2024 11:43:26.752 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+24-Jul-2024 11:43:26.752 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+24-Jul-2024 11:43:26.752 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Project_back\PlantLab
+24-Jul-2024 11:43:26.752 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:43:26.760 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jul-2024 11:43:26.760 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jul-2024 11:43:26.761 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jul-2024 11:43:26.761 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jul-2024 11:43:26.761 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jul-2024 11:43:26.761 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+24-Jul-2024 11:43:26.761 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:43:26.761 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Project_back\PlantLab
+24-Jul-2024 11:43:26.761 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Project_back\PlantLab\temp
+24-Jul-2024 11:43:26.761 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Project_back\PlantLab\conf\logging.properties
+24-Jul-2024 11:43:26.761 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jul-2024 11:43:26.761 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\lib\idea_rt.jar=52151:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\bin
+24-Jul-2024 11:43:26.764 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.4]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [2.0.7]을(를) 로드했습니다.
+24-Jul-2024 11:43:26.768 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 3.0.13 30 Jan 2024]
+24-Jul-2024 11:43:26.960 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+24-Jul-2024 11:43:26.984 INFO [main] org.apache.catalina.startup.Catalina.load [494] 밀리초 내에 서버가 초기화되었습니다.
+24-Jul-2024 11:43:27.048 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+24-Jul-2024 11:43:27.049 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.25]
+24-Jul-2024 11:43:27.065 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]을(를) 배치합니다.
+24-Jul-2024 11:43:29.083 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+24-Jul-2024 11:43:29.153 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Jul-2024 11:43:30.139 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 984 ms
+24-Jul-2024 11:43:30.199 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]의 배치가 [3,132] 밀리초 내에 완료되었습니다.
+24-Jul-2024 11:43:30.204 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+24-Jul-2024 11:43:30.244 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3259] 밀리초 내에 시작되었습니다.
+24-Jul-2024 11:43:30.311 INFO [http-nio-8090-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'appServlet'
+24-Jul-2024 11:43:30.995 INFO [http-nio-8090-exec-1] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 683 ms
+24-Jul-2024 11:43:31.014 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:43:43.623 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:43:43.624 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:43:44.494 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /image/rainny.svg
+24-Jul-2024 11:44:07.353 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:44:07.353 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:45:07.411 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:45:07.411 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:46:07.673 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:46:07.673 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:46:50.494 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+24-Jul-2024 11:46:50.572 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+24-Jul-2024 11:46:50.586 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+24-Jul-2024 11:46:50.598 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
+24-Jul-2024 11:46:52.007 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.25
+24-Jul-2024 11:46:52.011 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Jun 14 2024 19:31:59 UTC
+24-Jul-2024 11:46:52.012 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.25.0
+24-Jul-2024 11:46:52.012 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 11
+24-Jul-2024 11:46:52.012 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+24-Jul-2024 11:46:52.012 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+24-Jul-2024 11:46:52.012 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17
+24-Jul-2024 11:46:52.013 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+24-Jul-2024 11:46:52.013 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+24-Jul-2024 11:46:52.013 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Project_back\PlantLab
+24-Jul-2024 11:46:52.015 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:46:52.033 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jul-2024 11:46:52.033 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jul-2024 11:46:52.033 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jul-2024 11:46:52.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jul-2024 11:46:52.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jul-2024 11:46:52.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+24-Jul-2024 11:46:52.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 11:46:52.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Project_back\PlantLab
+24-Jul-2024 11:46:52.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Project_back\PlantLab\temp
+24-Jul-2024 11:46:52.034 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Project_back\PlantLab\conf\logging.properties
+24-Jul-2024 11:46:52.035 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jul-2024 11:46:52.035 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\lib\idea_rt.jar=52239:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\bin
+24-Jul-2024 11:46:52.037 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.4]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [2.0.7]을(를) 로드했습니다.
+24-Jul-2024 11:46:52.042 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 3.0.13 30 Jan 2024]
+24-Jul-2024 11:46:52.444 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+24-Jul-2024 11:46:52.466 INFO [main] org.apache.catalina.startup.Catalina.load [734] 밀리초 내에 서버가 초기화되었습니다.
+24-Jul-2024 11:46:52.535 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+24-Jul-2024 11:46:52.535 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.25]
+24-Jul-2024 11:46:52.563 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]을(를) 배치합니다.
+24-Jul-2024 11:46:54.614 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+24-Jul-2024 11:46:54.681 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Jul-2024 11:46:55.658 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 975 ms
+24-Jul-2024 11:46:55.724 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]의 배치가 [3,158] 밀리초 내에 완료되었습니다.
+24-Jul-2024 11:46:55.730 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+24-Jul-2024 11:46:55.784 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3318] 밀리초 내에 시작되었습니다.
+24-Jul-2024 11:47:02.880 INFO [http-nio-8090-exec-3] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'appServlet'
+24-Jul-2024 11:47:03.567 INFO [http-nio-8090-exec-3] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 687 ms
+24-Jul-2024 11:47:06.183 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:47:06.183 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:48:06.606 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:48:06.608 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:49:07.595 WARNING [http-nio-8090-exec-9] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:49:07.596 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:50:08.598 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:50:08.598 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:51:09.600 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:51:09.600 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:52:10.601 WARNING [http-nio-8090-exec-6] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:52:10.602 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:53:11.597 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:53:11.597 WARNING [http-nio-8090-exec-4] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:54:12.598 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:54:12.600 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:55:13.607 WARNING [http-nio-8090-exec-5] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:55:13.607 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:56:14.594 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 11:56:14.594 WARNING [http-nio-8090-exec-3] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:57:15.607 WARNING [http-nio-8090-exec-8] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 11:57:15.607 WARNING [http-nio-8090-exec-7] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 12:00:30.178 WARNING [http-nio-8090-exec-1] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 12:00:30.183 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 12:01:38.914 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+24-Jul-2024 12:01:38.982 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+24-Jul-2024 12:01:38.998 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+24-Jul-2024 12:01:39.019 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
+24-Jul-2024 12:01:40.888 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.25
+24-Jul-2024 12:01:40.892 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Jun 14 2024 19:31:59 UTC
+24-Jul-2024 12:01:40.892 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.25.0
+24-Jul-2024 12:01:40.892 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 11
+24-Jul-2024 12:01:40.892 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+24-Jul-2024 12:01:40.892 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+24-Jul-2024 12:01:40.892 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17
+24-Jul-2024 12:01:40.892 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+24-Jul-2024 12:01:40.892 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+24-Jul-2024 12:01:40.892 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Project_back\PlantLab
+24-Jul-2024 12:01:40.893 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 12:01:40.901 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jul-2024 12:01:40.901 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jul-2024 12:01:40.901 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jul-2024 12:01:40.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jul-2024 12:01:40.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jul-2024 12:01:40.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+24-Jul-2024 12:01:40.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 12:01:40.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Project_back\PlantLab
+24-Jul-2024 12:01:40.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Project_back\PlantLab\temp
+24-Jul-2024 12:01:40.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Project_back\PlantLab\conf\logging.properties
+24-Jul-2024 12:01:40.902 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jul-2024 12:01:40.903 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\lib\idea_rt.jar=52513:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\bin
+24-Jul-2024 12:01:40.906 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.4]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [2.0.7]을(를) 로드했습니다.
+24-Jul-2024 12:01:40.910 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 3.0.13 30 Jan 2024]
+24-Jul-2024 12:01:41.171 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+24-Jul-2024 12:01:41.192 INFO [main] org.apache.catalina.startup.Catalina.load [522] 밀리초 내에 서버가 초기화되었습니다.
+24-Jul-2024 12:01:41.246 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+24-Jul-2024 12:01:41.246 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.25]
+24-Jul-2024 12:01:41.263 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]을(를) 배치합니다.
+24-Jul-2024 12:01:43.178 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+24-Jul-2024 12:01:43.257 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Jul-2024 12:01:44.279 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 1019 ms
+24-Jul-2024 12:01:44.365 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]의 배치가 [3,093] 밀리초 내에 완료되었습니다.
+24-Jul-2024 12:01:44.375 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+24-Jul-2024 12:01:44.427 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3235] 밀리초 내에 시작되었습니다.
+24-Jul-2024 12:02:07.321 INFO [http-nio-8090-exec-7] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'appServlet'
+24-Jul-2024 12:02:09.110 INFO [http-nio-8090-exec-7] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 1789 ms
+24-Jul-2024 12:02:09.150 WARNING [http-nio-8090-exec-2] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/jquery-3.7.1.min.js
+24-Jul-2024 12:02:09.168 WARNING [http-nio-8090-exec-10] org.springframework.web.servlet.DispatcherServlet.noHandlerFound No mapping for GET /js/weather.js
+24-Jul-2024 12:04:29.996 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+24-Jul-2024 12:04:30.066 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+24-Jul-2024 12:04:30.080 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+24-Jul-2024 12:04:30.105 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
+24-Jul-2024 12:04:31.486 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.25
+24-Jul-2024 12:04:31.498 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Jun 14 2024 19:31:59 UTC
+24-Jul-2024 12:04:31.499 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.25.0
+24-Jul-2024 12:04:31.500 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 11
+24-Jul-2024 12:04:31.500 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+24-Jul-2024 12:04:31.501 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+24-Jul-2024 12:04:31.501 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17
+24-Jul-2024 12:04:31.501 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+24-Jul-2024 12:04:31.501 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+24-Jul-2024 12:04:31.501 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Project_back\PlantLab
+24-Jul-2024 12:04:31.501 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 12:04:31.517 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jul-2024 12:04:31.517 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jul-2024 12:04:31.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jul-2024 12:04:31.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jul-2024 12:04:31.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jul-2024 12:04:31.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+24-Jul-2024 12:04:31.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 12:04:31.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Project_back\PlantLab
+24-Jul-2024 12:04:31.518 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Project_back\PlantLab\temp
+24-Jul-2024 12:04:31.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Project_back\PlantLab\conf\logging.properties
+24-Jul-2024 12:04:31.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jul-2024 12:04:31.519 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\lib\idea_rt.jar=52549:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\bin
+24-Jul-2024 12:04:31.521 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.4]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [2.0.7]을(를) 로드했습니다.
+24-Jul-2024 12:04:31.528 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 3.0.13 30 Jan 2024]
+24-Jul-2024 12:04:31.931 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+24-Jul-2024 12:04:31.958 INFO [main] org.apache.catalina.startup.Catalina.load [739] 밀리초 내에 서버가 초기화되었습니다.
+24-Jul-2024 12:04:32.029 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+24-Jul-2024 12:04:32.030 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.25]
+24-Jul-2024 12:04:32.052 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]을(를) 배치합니다.
+24-Jul-2024 12:04:34.148 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+24-Jul-2024 12:04:34.264 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Jul-2024 12:04:35.645 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 1379 ms
+24-Jul-2024 12:04:35.712 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]의 배치가 [3,657] 밀리초 내에 완료되었습니다.
+24-Jul-2024 12:04:35.723 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+24-Jul-2024 12:04:35.778 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3819] 밀리초 내에 시작되었습니다.
+24-Jul-2024 12:04:38.576 INFO [http-nio-8090-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'appServlet'
+24-Jul-2024 12:04:39.592 INFO [http-nio-8090-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 1015 ms
+24-Jul-2024 12:09:32.574 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+24-Jul-2024 12:09:32.650 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+24-Jul-2024 12:09:32.662 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+24-Jul-2024 12:09:32.681 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
+24-Jul-2024 12:09:34.067 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.25
+24-Jul-2024 12:09:34.070 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Jun 14 2024 19:31:59 UTC
+24-Jul-2024 12:09:34.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.25.0
+24-Jul-2024 12:09:34.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 11
+24-Jul-2024 12:09:34.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+24-Jul-2024 12:09:34.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+24-Jul-2024 12:09:34.071 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17
+24-Jul-2024 12:09:34.072 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+24-Jul-2024 12:09:34.072 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+24-Jul-2024 12:09:34.072 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Project_back\PlantLab
+24-Jul-2024 12:09:34.072 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 12:09:34.081 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jul-2024 12:09:34.082 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jul-2024 12:09:34.082 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jul-2024 12:09:34.082 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jul-2024 12:09:34.082 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jul-2024 12:09:34.083 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+24-Jul-2024 12:09:34.083 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 12:09:34.083 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Project_back\PlantLab
+24-Jul-2024 12:09:34.083 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Project_back\PlantLab\temp
+24-Jul-2024 12:09:34.083 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Project_back\PlantLab\conf\logging.properties
+24-Jul-2024 12:09:34.084 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jul-2024 12:09:34.084 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\lib\idea_rt.jar=52681:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\bin
+24-Jul-2024 12:09:34.086 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.4]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [2.0.7]을(를) 로드했습니다.
+24-Jul-2024 12:09:34.090 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 3.0.13 30 Jan 2024]
+24-Jul-2024 12:09:34.292 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+24-Jul-2024 12:09:34.313 INFO [main] org.apache.catalina.startup.Catalina.load [494] 밀리초 내에 서버가 초기화되었습니다.
+24-Jul-2024 12:09:34.385 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+24-Jul-2024 12:09:34.385 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.25]
+24-Jul-2024 12:09:34.401 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]을(를) 배치합니다.
+24-Jul-2024 12:09:36.358 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+24-Jul-2024 12:09:36.442 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Jul-2024 12:09:37.453 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 1009 ms
+24-Jul-2024 12:09:37.506 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]의 배치가 [3,103] 밀리초 내에 완료되었습니다.
+24-Jul-2024 12:09:37.515 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+24-Jul-2024 12:09:37.557 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3244] 밀리초 내에 시작되었습니다.
+24-Jul-2024 12:09:39.622 INFO [http-nio-8090-exec-3] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'appServlet'
+24-Jul-2024 12:09:40.316 INFO [http-nio-8090-exec-3] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 694 ms
+24-Jul-2024 12:11:56.401 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+24-Jul-2024 12:11:56.473 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+24-Jul-2024 12:11:56.489 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+24-Jul-2024 12:11:56.498 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
+24-Jul-2024 12:12:36.504 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 서버 버전 이름:    Apache Tomcat/10.1.25
+24-Jul-2024 12:12:36.507 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 빌드 시각:  Jun 14 2024 19:31:59 UTC
+24-Jul-2024 12:12:36.507 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server 버전 번호:  10.1.25.0
+24-Jul-2024 12:12:36.507 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 이름:     Windows 11
+24-Jul-2024 12:12:36.507 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 운영체제 버전:     10.0
+24-Jul-2024 12:12:36.507 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 아키텍처:          amd64
+24-Jul-2024 12:12:36.507 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 자바 홈:           C:\Program Files\Java\jdk-17
+24-Jul-2024 12:12:36.507 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 버전:          17.0.10+11-LTS-240
+24-Jul-2024 12:12:36.507 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM 벤더:          Oracle Corporation
+24-Jul-2024 12:12:36.508 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:     C:\Project_back\PlantLab
+24-Jul-2024 12:12:36.508 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:     C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 12:12:36.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.lang=ALL-UNNAMED
+24-Jul-2024 12:12:36.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.io=ALL-UNNAMED
+24-Jul-2024 12:12:36.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util=ALL-UNNAMED
+24-Jul-2024 12:12:36.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+24-Jul-2024 12:12:36.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+24-Jul-2024 12:12:36.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dfile.encoding=UTF-8
+24-Jul-2024 12:12:36.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.home=C:\devTools\apache-tomcat-10.1.25
+24-Jul-2024 12:12:36.514 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Dcatalina.base=C:\Project_back\PlantLab
+24-Jul-2024 12:12:36.515 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.io.tmpdir=C:\Project_back\PlantLab\temp
+24-Jul-2024 12:12:36.515 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.config.file=C:\Project_back\PlantLab\conf\logging.properties
+24-Jul-2024 12:12:36.515 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+24-Jul-2024 12:12:36.515 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log 명령 행 아규먼트:  -javaagent:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\lib\idea_rt.jar=52742:C:\Program Files\JetBrains\IntelliJ IDEA 2024.1\bin
+24-Jul-2024 12:12:36.517 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent APR 버전 [1.7.4]을(를) 사용한, APR 기반 Apache Tomcat Native 라이브러리 [2.0.7]을(를) 로드했습니다.
+24-Jul-2024 12:12:36.520 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL이 성공적으로 초기화되었습니다: [OpenSSL 3.0.13 30 Jan 2024]
+24-Jul-2024 12:12:36.717 INFO [main] org.apache.coyote.AbstractProtocol.init 프로토콜 핸들러 ["http-nio-8090"]을(를) 초기화합니다.
+24-Jul-2024 12:12:36.740 INFO [main] org.apache.catalina.startup.Catalina.load [423] 밀리초 내에 서버가 초기화되었습니다.
+24-Jul-2024 12:12:36.806 INFO [main] org.apache.catalina.core.StandardService.startInternal 서비스 [Catalina]을(를) 시작합니다.
+24-Jul-2024 12:12:36.806 INFO [main] org.apache.catalina.core.StandardEngine.startInternal 서버 엔진을 시작합니다: [Apache Tomcat/10.1.25]
+24-Jul-2024 12:12:36.819 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]을(를) 배치합니다.
+24-Jul-2024 12:12:38.829 INFO [main] org.apache.jasper.servlet.TldScanner.scanJars 적어도 하나의 JAR가 TLD들을 찾기 위해 스캔되었으나 아무 것도 찾지 못했습니다. 스캔했으나 TLD가 없는 JAR들의 전체 목록을 보시려면, 로그 레벨을 디버그 레벨로 설정하십시오. 스캔 과정에서 불필요한 JAR들을 건너뛰면, 시스템 시작 시간과 JSP 컴파일 시간을 단축시킬 수 있습니다.
+24-Jul-2024 12:12:38.908 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext: initialization started
+24-Jul-2024 12:12:39.830 INFO [main] org.springframework.web.context.ContextLoader.initWebApplicationContext Root WebApplicationContext initialized in 921 ms
+24-Jul-2024 12:12:39.884 INFO [main] org.apache.catalina.startup.HostConfig.deployDescriptor 배치 descriptor [C:\Project_back\PlantLab\conf\Catalina\localhost\ROOT.xml]의 배치가 [3,062] 밀리초 내에 완료되었습니다.
+24-Jul-2024 12:12:39.893 INFO [main] org.apache.coyote.AbstractProtocol.start 프로토콜 핸들러 ["http-nio-8090"]을(를) 시작합니다.
+24-Jul-2024 12:12:39.933 INFO [main] org.apache.catalina.startup.Catalina.start 서버가 [3192] 밀리초 내에 시작되었습니다.
+24-Jul-2024 12:12:43.380 INFO [http-nio-8090-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean Initializing Servlet 'appServlet'
+24-Jul-2024 12:12:44.058 INFO [http-nio-8090-exec-2] org.springframework.web.servlet.FrameworkServlet.initServletBean Completed initialization in 678 ms
+24-Jul-2024 12:18:32.751 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause 프로토콜 핸들러 ["http-nio-8090"]을(를) 일시 정지 중
+24-Jul-2024 12:18:32.877 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal 서비스 [Catalina]을(를) 중지시킵니다.
+24-Jul-2024 12:18:32.895 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop 프로토콜 핸들러 ["http-nio-8090"]을(를) 중지시킵니다.
+24-Jul-2024 12:18:32.904 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy 프로토콜 핸들러 ["http-nio-8090"]을(를) 소멸시킵니다.
