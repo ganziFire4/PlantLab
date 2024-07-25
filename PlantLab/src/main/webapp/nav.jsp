@@ -35,7 +35,7 @@
             </div>
             <div>
                 <ul class="nav_menu">
-                    <li><a href="/board/board-list.do?tab=1">커뮤니티</a></li>
+                    <li><a href="/board/board-main.do?tab=1">커뮤니티</a></li>
                     <li><a href="#">스토어</a></li>
                     <div id="weather">
                         <li id="weatherList">

@@ -11,10 +11,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/board")
 public class BoardController {
 
-    @GetMapping("/board-list.do")
+    @GetMapping("/board-main.do")
     public String boardList(Model model, @RequestParam("tab") int tab) {
         model.addAttribute("tab", tab);
-        return "/board/board-list";
+        return "/board/board-main";
     }
 
     @GetMapping("/post.do")

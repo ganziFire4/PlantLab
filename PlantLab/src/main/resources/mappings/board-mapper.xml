@@ -5,7 +5,78 @@
 <mapper namespace="BoardDao">
     <insert id="post" parameterType="board">
         INSERT INTO BOARD (
-
+              MEM_ID
+            , BOARD_TYPE
+            , BOARD_TITLE
+            , BOARD_CONTENT
+        ) VALUES (
+              #{mem_id}
+            , #{board_type}
+            , #{board_title}
+            , #{board_content}
         )
     </insert>
+
+    <update id="modify" parameterType="board">
+        UPDATE SET BOARD
+              BOARD_TYPE = #{board_type}
+            , BOARD_TITLE = #{board_title}
+            , BOARD_CONTENT = #{board_content}
+            , BOARD_MOD = #{board_mod}
+            WHERE BOARD_ID = #{board_id}
+    </update>
+
+    <delete id="delete" parameterType="int">
+        DELETE BOARD WHERE BOARD_ID = #{ID}
+    </delete>
+
+    <select id="view_popular" parameterType="map" resultType="board">
+        SELECT A.row_num
+             , A.BOARD_TITLE
+             , A.MEM_NICKNAME
+             , A.BOARD_REG
+             , A.BOARD_VIEW_CNT
+             , A.BOARD_LIKE_CNT
+             , A.BOARD_BOOKMARK_CNT
+        FROM (
+            SELECT ROW_NUMBER() OVER (
+                    <choose>
+                        <when test="num == 1">
+                            ORDER BY B.BOARD_VIEW_CNT DESC
+                        </when>
+                        <when test="num == 2">
+                            ORDER BY B.BOARD_LIKE_CNT DESC
+                        </when>
+                        <otherwise>
+                            ORDER BY B.BOARD_BOOKMARK_CNT DESC
+                        </otherwise>
+                    </choose>
+                ) AS row_num
+                , B.BOARD_TITLE
+                , M.MEM_NICKNAME
+                , B.BOARD_REG
+                , B.BOARD_VIEW_CNT
+                , B.BOARD_LIKE_CNT
+                , B.BOARD_BOOKMARK_CNT
+                FROM BOARD B
+                JOIN MEMBER M
+                  ON B.MEM_ID = M.MEM_ID
+            ) A
+        WHERE A.row_num <= 5
+    </select>
+
+
+    <select id="view_all" resultType="board">
+        SELECT B.BOARD_ID
+             , B.BOARD_TITLE
+             , M.MEM_NICKNAME
+             , B.BOARD_REG
+             , B.BOARD_VIEW_CNT
+             , B.BOARD_LIKE_CNT
+             , B.BOARD_BOOKMARK_CNT
+        FROM BOARD B
+        JOIN MEMBER M
+          ON B.MEM_ID = M.MEM_ID
+        ORDER BY B.BOARD_REG DESC
+    </select>
 </mapper>
