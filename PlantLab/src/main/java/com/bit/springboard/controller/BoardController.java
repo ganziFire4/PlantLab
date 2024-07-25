@@ -17,4 +17,8 @@ public class BoardController {
         return "/board/board-list";
     }
 
+    @GetMapping("/greentalk.do")
+    public String greentalk() {
+        return "/board/greentalk";
+    }
 }
