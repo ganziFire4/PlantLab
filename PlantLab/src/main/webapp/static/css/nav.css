@@ -85,20 +85,6 @@ nav #search {
     vertical-align: middle;
 }
 
-#logout {
-    background-color: #CEECD9;
-    border-radius: 7px;
-    padding: 3px 13px;
-}
-
-#logout a {
-    font-size: 0.8rem;
-    font-weight: 500;
-    color: #1A5E34;
-    display: block;
-    text-align: center;
-}
-
 header{
     display: flex;
     height: 500px;

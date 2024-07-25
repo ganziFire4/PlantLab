@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <!--로고-->
-    <link rel="icon" type="img/png" href="${pageContext.request.contextPath}/static/images/round_logo_whiteBack.svg">
+    <link rel="icon" type="img/png" href="static/images/round_logo_whiteBack.svg">
     <!--jquery-->
     <script src="${pageContext.request.contextPath}/static/js/jquery-3.7.1.min.js"></script>
     <!--bootstrap-->
@@ -25,22 +25,22 @@
     <!--외부 js-->
     <script src="${pageContext.request.contextPath}/static/js/weather.js"></script>
 </head>
-<body class="noto-sans-kr">
+<body>
     <nav>
         <div class="nav_left">
             <div>
-                <a href="/">
-                    <img src="${pageContext.request.contextPath}/static/images/nav_logo.svg" alt="플랜트랩 로고">
+                <a href="#">
+                    <img src="static/images/nav_logo.svg" alt="플랜트랩 로고">
                 </a>
             </div>
             <div>
                 <ul class="nav_menu">
-                    <li><a href="/board/board-list.do?tab=1">커뮤니티</a></li>
+                    <li><a href="#">커뮤니티</a></li>
                     <li><a href="#">스토어</a></li>
                     <div id="weather">
                         <li id="weatherList">
                             <img id="weatherImg" src="#" alt="날씨 이미지">
-                            <img id="weatherLine" src="${pageContext.request.contextPath}/static/images/weatherLine.svg" alt="라인 이미지">
+                            <img id="weatherLine" src="static/images/weatherLine.svg" alt="라인 이미지">
                             <p id="result"></p>
                         </li>
                     </div>
@@ -60,9 +60,9 @@
                 <c:when test="${loginMember eq null}">
                     <div class="member">
                         <ul>
-                            <li><a href="#">로그인</a></li>
+                            <li><a href="/member/login.do">로그인</a></li>
                             |
-                            <li><a href="#">회원가입</a></li>
+                            <li><a href="/member/join.do">회원가입</a></li>
                         </ul>
                     </div>
                 </c:when>
@@ -76,9 +76,6 @@
                             </li>
                             <li style="margin-left: 10px; font-size: 1.1rem">
                                 <a href="#" style="font-weight:400">${loginMember.nickname}</a>
-                            </li>
-                            <li id="logout">
-                                <a href="#">로그아웃</a>
                             </li>
                         </ul>
                     </div>

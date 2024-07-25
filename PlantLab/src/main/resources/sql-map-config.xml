@@ -11,8 +11,6 @@
 <!--    <typeAliases>-->
 <!--        <typeAlias type="com.bit.springboard.dto.BoardDto"-->
 <!--                   alias="board"/>-->
-<!--        <typeAlias type="com.bit.springboard.dto.MemberDto"-->
-<!--                   alias="member"/>-->
 <!--        <typeAlias type="com.bit.springboard.dto.BoardFileDto"-->
 <!--                   alias="boardFile"/>-->
 <!--    </typeAliases>-->
