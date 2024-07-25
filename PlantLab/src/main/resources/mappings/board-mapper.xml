@@ -79,4 +79,18 @@
           ON B.MEM_ID = M.MEM_ID
         ORDER BY B.BOARD_REG DESC
     </select>
+
+    <select id="view_one" resultType="board">
+        SELECT
+             , B.BOARD_TITLE
+             , M.MEM_NICKNAME
+             , B.BOARD_REG
+             , B.BOARD_MOD
+             , B.BOARD_LIKE_CNT
+             , B.BOARD_BOOKMARK_CNT
+        FROM BOARD B
+        JOIN MEMBER M
+          ON B.MEM_ID = M.MEM_ID
+        WHERE B.BOARD_ID = ${id}
+    </select>
 </mapper>
