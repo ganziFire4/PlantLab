@@ -46,5 +46,27 @@
         </div>
     </main>
     <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
+    <script>
+        const board_name = document.getElementById("boardtype");
+        const text = document.getElementById("w_rule");
+
+        switch(${tab}){
+            case '1':
+                board_name.value = 'info';
+                break;
+            case '2':
+                board_name.value = 'free';
+                break;
+            case '3':
+                board_name.value = 'QnA';
+                break;
+        }
+
+        text.innerHTML = insertRule(board_name.value);
+
+        board_name.addEventListener("change", () => {
+            insertRule(board_name.value);
+        });
+    </script>
 </body>
 </html>

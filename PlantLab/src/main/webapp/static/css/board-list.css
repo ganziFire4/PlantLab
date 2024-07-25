@@ -48,3 +48,48 @@ main li {
     color: #27AF5A;
     border-bottom: 3px solid #27AF5A;
 }
+
+#title_table_area{
+    width: 1115px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.t_headerbar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+#pop_condition, #dropdown {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+}
+
+#button {
+    width: 55px;
+    height: 23px;
+    box-sizing: content-box;
+    margin: 1rem;
+    padding: 5px;
+    background: #27AF5A;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    margin-left: auto;
+    border: 0;
+    color: white;
+    font-weight: bold;
+}
+
+#button a {
+    text-decoration: none;
+
+}
+
+.table_popular {
+    margin-bottom: 30px;
+}
