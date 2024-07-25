@@ -18,9 +18,8 @@
 <body class="noto-sans-kr">
     <jsp:include page="../../../nav.jsp"/>
     <header id="header">
-    <!-- <img src="images/header_정보.png" alt="글쓰기 헤더"> 자랑글 페이지용 헤더 만들기 -->
     </header>
-    <div class="container">
+    <div class="container_green">
         <div class="dailycontent">
             <div class="card1" style="width: 546px;">
                 <div class="card-header">
@@ -90,13 +89,7 @@
     <!--modal 팝업-->
     <div class="modal fade" id="rank1modal">
         <div class="modal-dialog modal-xl">
-            <!--.modal-content: 모달의 콘텐츠 영역-->
             <div class="modal-content">
-                <!--.modal-header: 모달의 헤더 영역-->
-                <!-- <div class="modal-header">
-                    <h3>슈퍼푸드</h3>
-                </div> -->
-                <!--.modal-body: 모달의 바디 영역-->
                 <div class="modalbox">
                     <div class="modal-body">
                         <img src="images/rank1main.png" alt="" class="modalmain">
@@ -143,23 +136,12 @@
                         </div>
                     </div>
                 </div>
-                <!--.modal-body: 모달의 푸터 영역-->
-                <!-- <div class="modal-footer"> -->
-                <!--data-bs-dismiss="modal": 클릭 시 모달창 닫기-->
-                <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
-            </div> -->
             </div>
         </div>
     </div>
     <div class="modal fade" id="rank2modal">
         <div class="modal-dialog modal-xl">
-            <!--.modal-content: 모달의 콘텐츠 영역-->
             <div class="modal-content">
-                <!--.modal-header: 모달의 헤더 영역-->
-                <!-- <div class="modal-header">
-                    <h3>슈퍼푸드</h3>
-                </div> -->
-                <!--.modal-body: 모달의 바디 영역-->
                 <div class="modalbox">
                     <div class="modal-body">
                         <img src="images/ranksample2.jpeg" alt="" class="modalmain">
@@ -206,11 +188,6 @@
                         </div>
                     </div>
                 </div>
-                <!--.modal-body: 모달의 푸터 영역-->
-                <!-- <div class="modal-footer"> -->
-                <!--data-bs-dismiss="modal": 클릭 시 모달창 닫기-->
-                <!-- <button type="button" class="btn btn-primary" data-bs-dismiss="modal">닫기</button>
-            </div> -->
             </div>
         </div>
     </div>
