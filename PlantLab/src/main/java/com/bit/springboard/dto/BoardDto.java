@@ -13,6 +13,8 @@ public class BoardDto {
     private LocalDateTime board_reg;
     private LocalDateTime board_mod;
     private int board_view_cnt;
+    private int board_like_cnt;
+    private int board_bookmark_cnt;
 
     public int getBoard_id() {
         return board_id;
@@ -76,6 +78,22 @@ public class BoardDto {
 
     public void setBoard_view_cnt(int board_view_cnt) {
         this.board_view_cnt = board_view_cnt;
+    }
+
+    public int getBoard_like_cnt() {
+        return board_like_cnt;
+    }
+
+    public void setBoard_like_cnt(int board_like_cnt) {
+        this.board_like_cnt = board_like_cnt;
+    }
+
+    public int getBoard_bookmark_cnt() {
+        return board_bookmark_cnt;
+    }
+
+    public void setBoard_bookmark_cnt(int board_bookmark_cnt) {
+        this.board_bookmark_cnt = board_bookmark_cnt;
     }
 
     @Override

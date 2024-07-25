@@ -2,14 +2,14 @@ package com.bit.springboard.service.impl;
 
 import com.bit.springboard.dao.BoardDao;
 import com.bit.springboard.dto.BoardDto;
-import com.bit.springboard.service.BoardSevice;
+import com.bit.springboard.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class BoardSevieImpl implements BoardSevice {
+public class BoardSevieImpl implements BoardService {
     private BoardDao boardDao;
 
     @Autowired

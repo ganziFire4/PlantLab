@@ -4,7 +4,7 @@ import com.bit.springboard.dto.BoardDto;
 
 import java.util.List;
 
-public interface BoardSevice {
+public interface BoardService {
     void post(BoardDto boardDto);
     void modify(BoardDto boardDto);
     void delete(int id);

@@ -21,20 +21,22 @@ public class BoardDao {
     }
 
     public void modify(BoardDto boardDto) {
+        mybatis.update("BoardDao.modify", boardDto);
     }
 
     public void delete(int id) {
+        mybatis.delete("BoardDao.delete", id);
     }
 
     public List<BoardDto> view_popular() {
-        return List.of();
+        return mybatis.selectList("BoardDao.view_popular");
     }
 
     public List<BoardDto> view_all() {
-        return List.of();
+        return mybatis.selectList("BoardDao.view_all");
     }
 
     public BoardDto view_one(int id) {
-        return null;
+        return mybatis.selectOne("BoardDao.view_one", id);
     }
 }

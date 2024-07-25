@@ -30,7 +30,7 @@
         DELETE BOARD WHERE BOARD_ID = #{ID}
     </delete>
 
-    <select id="view_popular" parameterType="map" resultType="board">
+    <select id="view_popular" resultType="board">
         SELECT A.row_num
              , A.BOARD_TITLE
              , A.MEM_NICKNAME
@@ -40,17 +40,18 @@
              , A.BOARD_BOOKMARK_CNT
         FROM (
             SELECT ROW_NUMBER() OVER (
-                    <choose>
-                        <when test="num == 1">
-                            ORDER BY B.BOARD_VIEW_CNT DESC
-                        </when>
-                        <when test="num == 2">
-                            ORDER BY B.BOARD_LIKE_CNT DESC
-                        </when>
-                        <otherwise>
-                            ORDER BY B.BOARD_BOOKMARK_CNT DESC
-                        </otherwise>
-                    </choose>
+                        ORDER BY B.BOARD_VIEW_CNT DESC
+<!--                    <choose>-->
+<!--                        <when test="num == 1">-->
+<!--                            ORDER BY B.BOARD_VIEW_CNT DESC-->
+<!--                        </when>-->
+<!--                        <when test="num == 2">-->
+<!--                            ORDER BY B.BOARD_LIKE_CNT DESC-->
+<!--                        </when>-->
+<!--                        <otherwise>-->
+<!--                            ORDER BY B.BOARD_BOOKMARK_CNT DESC-->
+<!--                        </otherwise>-->
+<!--                    </choose>-->
                 ) AS row_num
                 , B.BOARD_TITLE
                 , M.MEM_NICKNAME
@@ -62,7 +63,7 @@
                 JOIN MEMBER M
                   ON B.MEM_ID = M.MEM_ID
             ) A
-        WHERE A.row_num <= 5
+        LIMIT 5
     </select>
 
 
