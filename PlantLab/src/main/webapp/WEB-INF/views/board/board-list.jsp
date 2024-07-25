@@ -49,19 +49,19 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <c:forEach items="${popList}" var="popBoard">
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>${popBoard.board_title}</td>
-                            <td>${popBoard.writer_nickname}</td>
-                            <td>
-                                <javatime:format value="${popBoard.board_reg}" pattern="yyyy-MM-dd"/>
-                            </td>
-                            <td>${popBoard.board_view_cnt}</td>
-                            <td>${popBoard.board_like_cnt}</td>
-                            <td>${popBoard.board_bookmark_cnt}0</td>
-                        </tr>
-                    </c:forEach>
+                        <c:forEach items="${popList}" var="popBoard">
+                            <tr onclick="location.href='board/board-detail.do?id=${popBoard.board_id}'">
+                                <td scope="row">${popBoard.row_num}</td>
+                                <td>${popBoard.board_title}</td>
+                                <td>${popBoard.mem_nickname}</td>
+                                <td>
+                                    <javatime:format value="${popBoard.board_reg}" pattern="yyyy-MM-dd"/>
+                                </td>
+                                <td>${popBoard.board_view_cnt}</td>
+                                <td>${popBoard.board_like_cnt}</td>
+                                <td>${popBoard.board_bookmark_cnt}0</td>
+                            </tr>
+                        </c:forEach>
                     </tbody>
                 </table>
             </div>
@@ -107,10 +107,10 @@
                     </thead>
                     <tbody>
                     <c:forEach items="${boardList}" var="board">
-                        <tr>
-                            <th scope="row">1</th>
+                        <tr onclick="location.href='board/board-detail.do?id=${board.board_id}'">
+                            <td scope="row">${board.row_num}</td>
                             <td>${board.board_title}</td>
-                            <td>${board.writer_nickname}</td>
+                            <td>${board.mem_nickname}</td>
                             <td>
                                 <javatime:format value="${board.board_reg}" pattern="yyyy-MM-dd"/>
                             </td>
@@ -123,7 +123,11 @@
                 </table>
             </div>
         </div>
-        <button type="button" id="button">글쓰기</button>
+        <button type="button" id="button" onclick="location.href='/board/post.do'">글쓰기</button>
     </div>
+    <script>
+        console.log(${popBoard.writer_nickname});
+    </script>
 </body>
+
 </html>

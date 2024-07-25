@@ -28,12 +28,12 @@ public class BoardDao {
         mybatis.delete("BoardDao.delete", id);
     }
 
-    public List<BoardDto> view_popular() {
-        return mybatis.selectList("BoardDao.view_popular");
+    public List<BoardDto> view_popular(int tab) {
+        return mybatis.selectList("BoardDao.view_popular", tab);
     }
 
-    public List<BoardDto> view_all() {
-        return mybatis.selectList("BoardDao.view_all");
+    public List<BoardDto> view_all(int tab) {
+        return mybatis.selectList("BoardDao.view_all", tab);
     }
 
     public BoardDto view_one(int id) {

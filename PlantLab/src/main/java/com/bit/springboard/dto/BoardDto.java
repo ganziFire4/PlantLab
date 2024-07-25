@@ -1,10 +1,9 @@
 package com.bit.springboard.dto;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import java.time.LocalDateTime;
 
 public class BoardDto {
+    private int row_num;
     private int board_id;
     private int mem_id;
     private int board_type;
@@ -15,6 +14,15 @@ public class BoardDto {
     private int board_view_cnt;
     private int board_like_cnt;
     private int board_bookmark_cnt;
+    private String mem_nickname;
+
+    public int getRow_num() {
+        return row_num;
+    }
+
+    public void setRow_num(int row_num) {
+        this.row_num = row_num;
+    }
 
     public int getBoard_id() {
         return board_id;
@@ -96,10 +104,19 @@ public class BoardDto {
         this.board_bookmark_cnt = board_bookmark_cnt;
     }
 
+    public String getMem_nickname() {
+        return mem_nickname;
+    }
+
+    public void setMem_nickname(String mem_nickname) {
+        this.mem_nickname = mem_nickname;
+    }
+
     @Override
     public String toString() {
         return "BoardDto{" +
-                "board_id=" + board_id +
+                "row_num=" + row_num +
+                ", board_id=" + board_id +
                 ", mem_id=" + mem_id +
                 ", board_type=" + board_type +
                 ", board_title='" + board_title + '\'' +
@@ -107,6 +124,9 @@ public class BoardDto {
                 ", board_reg=" + board_reg +
                 ", board_mod=" + board_mod +
                 ", board_view_cnt=" + board_view_cnt +
+                ", board_like_cnt=" + board_like_cnt +
+                ", board_bookmark_cnt=" + board_bookmark_cnt +
+                ", mem_nickname='" + mem_nickname + '\'' +
                 '}';
     }
 }

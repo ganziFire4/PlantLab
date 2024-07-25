@@ -9,11 +9,11 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class BoardSevieImpl implements BoardService {
+public class BoardServiceImpl implements BoardService {
     private BoardDao boardDao;
 
     @Autowired
-    public BoardSevieImpl(BoardDao boardDao){
+    public BoardServiceImpl(BoardDao boardDao){
         this.boardDao = boardDao;
     }
 
@@ -33,13 +33,13 @@ public class BoardSevieImpl implements BoardService {
     }
 
     @Override
-    public List<BoardDto> view_popular() {
-        return boardDao.view_popular();
+    public List<BoardDto> view_popular(int tab) {
+        return boardDao.view_popular(tab);
     }
 
     @Override
-    public List<BoardDto> view_all() {
-        return boardDao.view_all();
+    public List<BoardDto> view_all(int tab) {
+        return boardDao.view_all(tab);
     }
 
     @Override

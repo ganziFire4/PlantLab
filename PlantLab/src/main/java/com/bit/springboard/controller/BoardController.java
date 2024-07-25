@@ -1,7 +1,6 @@
 package com.bit.springboard.controller;
 
 import com.bit.springboard.service.BoardService;
-import com.bit.springboard.service.impl.BoardSevieImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
@@ -15,20 +14,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/board")
 public class BoardController {
     private BoardService boardService;
-    private ApplicationContext applicationContext;
 
     @Autowired
-    public BoardController(ApplicationContext applicationContext) {
-        this.applicationContext = applicationContext;
+    public BoardController(BoardService boardService) {
+        this.boardService = boardService;
     }
 
     @GetMapping("/board-main.do")
     public String boardList(Model model, @RequestParam("tab") int tab) {
-        boardService = applicationContext.getBean("BoardServiceImpl", BoardService.class);
-
         model.addAttribute("tab", tab);
-        model.addAttribute("popList", boardService.view_popular());
-        model.addAttribute("boardList", boardService.view_all());
+        model.addAttribute("popList", boardService.view_popular(tab));
+        model.addAttribute("boardList", boardService.view_all(tab));
         return "/board/board-main";
     }
 

@@ -8,7 +8,7 @@ public interface BoardService {
     void post(BoardDto boardDto);
     void modify(BoardDto boardDto);
     void delete(int id);
-    List<BoardDto> view_popular();
-    List<BoardDto> view_all();
+    List<BoardDto> view_popular(int tab);
+    List<BoardDto> view_all(int tab);
     BoardDto view_one(int id);
 }

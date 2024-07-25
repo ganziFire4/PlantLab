@@ -30,17 +30,9 @@
         DELETE BOARD WHERE BOARD_ID = #{ID}
     </delete>
 
-    <select id="view_popular" resultType="board">
-        SELECT A.row_num
-             , A.BOARD_TITLE
-             , A.MEM_NICKNAME
-             , A.BOARD_REG
-             , A.BOARD_VIEW_CNT
-             , A.BOARD_LIKE_CNT
-             , A.BOARD_BOOKMARK_CNT
-        FROM (
-            SELECT ROW_NUMBER() OVER (
-                        ORDER BY B.BOARD_VIEW_CNT DESC
+    <select id="view_popular" parameterType="int" resultType="board">
+        SELECT ROW_NUMBER() OVER (
+                    ORDER BY SUB.BOARD_VIEW_CNT DESC
 <!--                    <choose>-->
 <!--                        <when test="num == 1">-->
 <!--                            ORDER BY B.BOARD_VIEW_CNT DESC-->
@@ -52,33 +44,42 @@
 <!--                            ORDER BY B.BOARD_BOOKMARK_CNT DESC-->
 <!--                        </otherwise>-->
 <!--                    </choose>-->
-                ) AS row_num
-                , B.BOARD_TITLE
-                , M.MEM_NICKNAME
-                , B.BOARD_REG
-                , B.BOARD_VIEW_CNT
-                , B.BOARD_LIKE_CNT
-                , B.BOARD_BOOKMARK_CNT
-                FROM BOARD B
-                JOIN MEMBER M
-                  ON B.MEM_ID = M.MEM_ID
-            ) A
-        LIMIT 5
+            ) AS ROW_NUM
+            , SUB.*
+            FROM (
+                SELECT B.BOARD_TITLE
+                     , M.MEM_NICKNAME
+                     , B.BOARD_REG
+                     , B.BOARD_VIEW_CNT
+                     , B.BOARD_LIKE_CNT
+                     , B.BOARD_BOOKMARK_CNT
+                    FROM BOARD B
+                    JOIN MEMBER M
+                      ON B.MEM_ID = M.MEM_ID
+                    WHERE BOARD_TYPE = #{tab}
+            ) SUB
+            LIMIT 5
     </select>
 
-
-    <select id="view_all" resultType="board">
-        SELECT B.BOARD_ID
-             , B.BOARD_TITLE
-             , M.MEM_NICKNAME
-             , B.BOARD_REG
-             , B.BOARD_VIEW_CNT
-             , B.BOARD_LIKE_CNT
-             , B.BOARD_BOOKMARK_CNT
-        FROM BOARD B
-        JOIN MEMBER M
-          ON B.MEM_ID = M.MEM_ID
-        ORDER BY B.BOARD_REG DESC
+    <select id="view_all" parameterType="int" resultType="board">
+        SELECT ROW_NUMBER() OVER (
+                    ORDER BY SUB.BOARD_REG DESC
+            ) AS ROW_NUM
+            , SUB.*
+            FROM (
+                SELECT B.BOARD_ID
+                     , B.BOARD_TITLE
+                     , M.MEM_NICKNAME
+                     , B.BOARD_REG
+                     , B.BOARD_VIEW_CNT
+                     , B.BOARD_LIKE_CNT
+                     , B.BOARD_BOOKMARK_CNT
+                    FROM BOARD B
+                    JOIN MEMBER M
+                      ON B.MEM_ID = M.MEM_ID
+                    WHERE BOARD_TYPE = #{tab}
+            ) SUB
+        LIMIT 10
     </select>
 
     <select id="view_one" resultType="board">
