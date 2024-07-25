@@ -37,4 +37,8 @@ public class BoardController {
         return "/board/post";
     }
 
+    @GetMapping("/greentalk.do")
+    public String greentalk() {
+        return "/board/greentalk";
+    }
 }
