@@ -9,8 +9,7 @@
 <html>
     <head>
         <title>마이페이지</title>
-        <link rel="stylesheet" href="../../../static/css/mypage.css">
-        <script src="../../../static/js/jquery-3.7.1.min.js"></script>
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/mypage.css">
     </head>
     <body class="noto-sans-kr">
         <jsp:include page="../../../nav.jsp"/>
@@ -22,7 +21,7 @@
                 <div class="profilebox">
                     <div class="profileicon">
                         <div class="shareicon">
-                            <img src="../../../static/images/shareicon.png" alt="">
+                            <img src="../../../static/images/shareicon.png" alt="프로필수정아이콘" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         </div>
                         <img src="../../../static/images/프로필사진.png" class="profile" alt="" style="width: 182.69px;">
                         <div class="profilename">
@@ -287,8 +286,53 @@
         <div id="popup-icon2">
             <img src="../../../static/images/top아이콘.png" alt="Popup Icon" style="width: 60px; height: 60px;">
         </div>
+        <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div id="modal-close-btn">
+                        <button type="button" class="btn-close" id="modal-close-btn-detail" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="profilebox-header">
+                        <div style="margin-top: 4vh">
+                            <div id="modify-profile-image" style="position: relative; display: inline-block;">
+                                <img src="../../../static/images/프로필사진.png" class="profile" alt="프로필사진" style="width: 8vw; height: auto">
+                                <button type="button" style="position: absolute; bottom: 0; right: 0;"><img src="../../../static/images/modify_profile.svg"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" style="align-items: center; font-size: 0.8rem; color: #CCCCCC; margin-top: 1vh">이미지 삭제</button>
+                    <div class="profilebox-body">
+                        <div>
+                            <p class="profile-modal-p">닉네임</p>
+                            <input id="profile-nickname" placeholder="안녕하세요"></input>
+                        </div>
+                        <div style="margin-top: 3vh;">
+                            <p class="profile-modal-p">휴대폰 번호</p>
+                            <input id="profile-phone" placeholder="010-1234-5678"></input>
+                        </div>
+                        <div style="margin-top: 3vh;">
+                            <p class="profile-modal-p">현재 비밀번호</p>
+                            <input id="origin-password" placeholder="사용 중인 비밀번호를 입력해주세요."></input>
+                        </div>
+                        <div style="margin-top: 3vh;">
+                            <p class="profile-modal-p">새 비밀번호</p>
+                            <input id="newpassword" placeholder="새로운 비밀번호를 입력해주세요."></input>
+                        </div>
+                        <div style="margin-top: 3vh;">
+                            <p class="profile-modal-p">새 비밀번호 확인</p>
+                            <input id="newpassword-check" placeholder="한 번 더 입력해주세요."></input>
+                        </div>
+                    </div>
+                    <div class="profilebox-footer" style="margin-top: 5vh; background: #23C961; width: 20vw; height: 7vh; border-radius: 5px; display: flex; justify-content: center">
+                        <button type="button" id="save-modify-btn" style="color: white; font-size: 1.3em">변경사항 저장</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         <jsp:include page="../../../footer.jsp"/>
         <script>
+            const originPassword = $("#origin-password").val();
+
             document.addEventListener('DOMContentLoaded', () => {
                 const popupIcon = document.getElementById('popup-icon1');
                 const popupContent = document.getElementById('popup-content1');
@@ -347,6 +391,12 @@
                     $("#content-a").hide();
                     $("#content-b").hide();
                     $("#content-c").show();
+                });
+
+                $("#save-modify-btn").click((e) => {
+                    if($("#origin-password").val() != "12345678"){
+                        alert("비밀번호가 다릅니다");
+                    }
                 });
             });
         </script>

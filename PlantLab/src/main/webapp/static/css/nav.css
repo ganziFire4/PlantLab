@@ -22,7 +22,7 @@ nav{
     border-bottom: 1px solid #e0e0e0;
     padding: 15px;
     box-sizing: content-box;
-    z-index: 9999;
+    z-index: 1;
 }
 
 nav .nav_left, nav .nav_right {
