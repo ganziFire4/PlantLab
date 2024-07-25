@@ -25,7 +25,7 @@
             <div class="card1" style="width: 546px;">
                 <div class="card-header">
                     <div class="card-writer">
-                        <img src="images/프로필사진.png" alt="" style="width: 30px; height: 30px;"> karina87
+                        <img src="images/프로필사진.png" alt="" style="width: 30px; height: 30px;"> 더미데이터
                     </div>
                     <div class="report">
                         <img src="images/menu.png.png" alt="신고 버튼" class="reportbtn">
