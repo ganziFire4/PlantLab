@@ -12,13 +12,13 @@
 <html>
 <head>
     <title>플랜트랩:그린톡</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/greentalk.css">
 </head>
-<body class="noto-sans-kr">
+<body>
     <jsp:include page="../../../nav.jsp"/>
     <header id="header">
     </header>
+    <div class="greenbody">
     <div class="container_green">
         <div class="dailycontent">
             <div class="card1" style="width: 546px;">
@@ -76,6 +76,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <div class="normalcon">
         <div class="conimg">
