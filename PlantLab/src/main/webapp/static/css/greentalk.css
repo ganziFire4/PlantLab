@@ -10,7 +10,7 @@ main {
     height: 1000px;
 }
 
-.container {
+.container_green {
     display: flex;
     justify-content: center;
     position: relative;
