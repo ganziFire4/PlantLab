@@ -9,27 +9,27 @@
 <html>
     <head>
         <title>마이페이지</title>
-        <link rel="stylesheet" href="static/css/mypage.css">
-        <script src="static/js/jquery-3.7.1.min.js"></script>
+        <link rel="stylesheet" href="../../../static/css/mypage.css">
+        <script src="../../../static/js/jquery-3.7.1.min.js"></script>
     </head>
     <body class="noto-sans-kr">
-        <jsp:include page="nav.jsp"/>
+        <jsp:include page="../../../nav.jsp"/>
         <header>
-            <img src="static/images/Header with image_마이페이지.png" alt="마이페이지 헤더">
+            <img src="../../../static/images/Header%20with%20image_마이페이지.png" alt="마이페이지 헤더">
         </header>
         <div class="container">
             <div class="container-flex">
                 <div class="profilebox">
                     <div class="profileicon">
                         <div class="shareicon">
-                            <img src="static/images/shareicon.png" alt="">
+                            <img src="../../../static/images/shareicon.png" alt="">
                         </div>
-                        <img src="static/images/프로필사진.png" class="profile" alt="" style="width: 182.69px;">
+                        <img src="../../../static/images/프로필사진.png" class="profile" alt="" style="width: 182.69px;">
                         <div class="profilename">
                             <p style="font-size: 25px;">카리나</p>
                         </div>
                         <div class="profilemedal">
-                            <img src="static/images/새싹레벨.png" alt="">
+                            <img src="../../../static/images/새싹레벨.png" alt="">
                         </div>
                         <div class="profilelevev">
                             <p style="font-size: 13px;">lv.1 새싹</p>
@@ -38,12 +38,12 @@
                     <div style="margin-top: 20px;">
                         <div class="heartbookmark">
                             <div class="heartpart">
-                                <img src="static/images/filledgreenheart.png" alt="">
+                                <img src="../../../static/images/filledgreenheart.png" alt="">
                                 <p style="color: #0DA446; font-size: 20px; margin-bottom: 5px;">3</p>
                                 <p>좋아요</p>
                             </div>
                             <div class="bookmarkpart">
-                                <img src="static/images/littlefilledbookmarkicon.png" alt="">
+                                <img src="../../../static/images/littlefilledbookmarkicon.png" alt="">
                                 <p style="color: #0DA446; font-size: 20px; margin-bottom: 5px;">25</p>
                                 <p>스크랩북</p>
                             </div>
@@ -54,7 +54,7 @@
                     <div class="mycontent" style="border-bottom: #B5B5B5 1px solid;"
                          id="mycontentbtn">
                         <div class="mycontenticon">
-                            <img src="static/images/내가올린글.png" alt="">
+                            <img src="../../../static/images/내가올린글.png" alt="">
                         </div>
                         <div class="mycontenttxt">
                             내가올린글
@@ -63,7 +63,7 @@
                     <div class="snscontent"  style="border-bottom: #B5B5B5 1px solid;"
                          id="snscontentbtn">
                         <div class="snscontenticon">
-                            <img src="static/images/자랑 사진.png" alt="">
+                            <img src="../../../static/images/자랑%20사진.png" alt="">
                         </div>
                         <div class="snspic">
                             그린톡
@@ -73,7 +73,7 @@
                          id="shopcontentbtn">
                         <div class="iconplace">
                             <div class="myshoppingicon">
-                                <img src="static/images/마이 쇼핑.png" alt="" style="margin-left: -10px;">
+                                <img src="../../../static/images/마이%20쇼핑.png" alt="" style="margin-left: -10px;">
                             </div>
                         </div>
                         <div class="myshopping">
@@ -163,7 +163,7 @@
                 <!-- <img style="margin-top: 30px;" src="images/bx_camera.png" alt="cameraLogo">
                 <p style="margin-top: 10px;">올린 자랑글이 없습니다.</p> -->
                 <div>
-                    <img src="static/images/자랑글/rank1main.png" alt="" style="width: 300px; height: 250px; border: none;">
+                    <img src="../../../static/images/자랑글/rank1main.png" alt="" style="width: 300px; height: 250px; border: none;">
                 </div>
                 </button>
                 <button id="moveBragBtn" onclick="window.location.href='board_list.html?tab=4'"
@@ -178,27 +178,27 @@
                             <br>
                             <span>0</span>
                         </li>
-                        <img src="static/images/fluent_ios-arrow-24-filled.svg" alt="arrowImg">
+                        <img src="../../../static/images/fluent_ios-arrow-24-filled.svg" alt="arrowImg">
                         <li>결제완료
                             <br>
                             <span>0</span>
                         </li>
-                        <img src="static/images/fluent_ios-arrow-24-filled.svg" alt="arrowImg">
+                        <img src="../../../static/images/fluent_ios-arrow-24-filled.svg" alt="arrowImg">
                         <li>배송준비
                             <br>
                             <span>0</span>
                         </li>
-                        <img src="static/images/fluent_ios-arrow-24-filled.svg" alt="arrowImg">
+                        <img src="../../../static/images/fluent_ios-arrow-24-filled.svg" alt="arrowImg">
                         <li>배송중
                             <br>
                             <span>0</span>
                         </li>
-                        <img src="static/images/fluent_ios-arrow-24-filled.svg" alt="arrowImg">
+                        <img src="../../../static/images/fluent_ios-arrow-24-filled.svg" alt="arrowImg">
                         <li>배송완료
                             <br>
                             <span>0</span>
                         </li>
-                        <img src="static/images/fluent_ios-arrow-24-filled.svg" alt="arrowImg">
+                        <img src="../../../static/images/fluent_ios-arrow-24-filled.svg" alt="arrowImg">
                         <li style="color: #27AF5A; font-weight: bold;">구매확정
                             <br>
                             <span>2</span>
@@ -226,7 +226,7 @@
                         <div>
                             <span style="font-weight: bold; font-size: 15px; margin: 5px;">구매확정
                             </span>
-                            <img src="static/images/Ellipse 16.svg" alt="EllipseImg">
+                            <img src="../../../static/images/Ellipse%2016.svg" alt="EllipseImg">
                             <span style="font-size: 15px; margin: 5px; ">6/13(목) 도착완료</span>
                         </div>
                         <button type="button" style="margin-right: 20px; color: #23C961;">배송 조회 ></button>
@@ -235,7 +235,7 @@
                         <span style="margin: 10px; margin-top: 0px;">
                             <button type="button" style="width: 170px; height: 130px; background-color: rgb(164, 161, 161); padding: 0%; border: none; border-radius: 7px;">
                                 <!-- 나중에 쇼핑목록 이미지를 연결하기 -->
-                                <img style="width: 100%; height: auto; object-fit: cover; border-radius: 7px;" src="static/images/purchaseEX01.svg" alt="purchaseEXImg">
+                                <img style="width: 100%; height: auto; object-fit: cover; border-radius: 7px;" src="../../../static/images/purchaseEX01.svg" alt="purchaseEXImg">
                             </button>
                         </span>
                         <div style="width: 100%; height: 100%;">
@@ -253,7 +253,7 @@
                         <div>
                             <span id="purchaseConfirm" style="font-weight: bold; font-size: 15px; margin: 5px;">구매확정
                             </span>
-                            <img src="static/images/Ellipse 16.svg" alt="EllipseImg">
+                            <img src="../../../static/images/Ellipse%2016.svg" alt="EllipseImg">
                             <span style="font-size: 15px; margin: 5px; ">6/13(목) 도착완료</span>
                         </div>
                         <button type="button" style="margin-right: 20px; color: #23C961;">배송 조회 ></button>
@@ -262,7 +262,7 @@
                         <span style="margin: 10px; margin-top: 0px;">
                             <button type="button" style="width: 170px; height: 130px; background-color: rgb(164, 161, 161); padding: 0%; border: none; border-radius: 7px;">
                                 <!-- 나중에 쇼핑목록 이미지를 연결하기 -->
-                                <img style="width: 100%; height: auto; object-fit: cover; border-radius: 7px;" src="static/images/purchaseEX02.svg" alt="purchaseEXImg">
+                                <img style="width: 100%; height: auto; object-fit: cover; border-radius: 7px;" src="../../../static/images/purchaseEX02.svg" alt="purchaseEXImg">
                             </button>
                         </span>
                         <div style="width: 100%; height: 100%;">
@@ -279,15 +279,15 @@
             </div>
         </div>
         <div id="popup-icon1">
-            <img src="static/images/챗봇아이콘.png" alt="Popup Icon" style="width: 60px; height: 60px;">
+            <img src="../../../static/images/챗봇아이콘.png" alt="Popup Icon" style="width: 60px; height: 60px;">
         </div>
         <div id="popup-content1" class="hidden">
             <p>안녕하세요! 플랜트 봇 입니다!<br>궁금한 것은 모두 플랜트 봇에게 물어보세요!</p>
         </div>
         <div id="popup-icon2">
-            <img src="static/images/top아이콘.png" alt="Popup Icon" style="width: 60px; height: 60px;">
+            <img src="../../../static/images/top아이콘.png" alt="Popup Icon" style="width: 60px; height: 60px;">
         </div>
-        <jsp:include page="footer.jsp"/>
+        <jsp:include page="../../../footer.jsp"/>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
                 const popupIcon = document.getElementById('popup-icon1');

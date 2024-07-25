@@ -48,15 +48,15 @@ $.getJSON(url, function(data) {
     // console.log(url);
     if(quantity <= 10) {
         // 맑음
-        $('#weatherImg').attr('src', 'static/images/sunny.svg');
+        $('#weatherImg').attr('src', `/static/images/sunny.svg`);
         $('#result').html(`<div>${temperature} ˚C<br>맑음</div>`);
     } else if(quantity <= 60){
         // 흐림
-        $('#weatherImg').attr('src', "static/images/rainny.svg");
+        $('#weatherImg').attr('src', `/static/images/rainny.svg`);
         $('#result').html(`<div>${temperature} ˚C<br>흐림</div>`);
     } else {
         // 비
-        $('#weatherImg').attr('src', "static/images/strongRainny.svg");
+        $('#weatherImg').attr('src', `/static/images/strongRainny.svg`);
         $('#result').html(`<div>${temperature} ˚C<br> 비(${rain})</div>`);
     }
 });

@@ -13,7 +13,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <!--로고-->
-    <link rel="icon" type="img/png" href="${pageContext.request.contextPath}/static/images/round_logo_whiteBack.svg">
+    <link rel="shortcut icon" href="<c:url value="/favicon.ico"/>" type="image/x-icon">
     <!--jquery-->
     <script src="${pageContext.request.contextPath}/static/js/jquery-3.7.1.min.js"></script>
     <!--외부 css-->
@@ -35,7 +35,7 @@
             </div>
             <div>
                 <ul class="nav_menu">
-                    <li><a href="/board/board-list.do?tab=1">커뮤니티</a></li>
+                    <li><a href="/board/board-main.do?tab=1">커뮤니티</a></li>
                     <li><a href="#">스토어</a></li>
                     <div id="weather">
                         <li id="weatherList">
