@@ -48,7 +48,7 @@ $.getJSON(url, function(data) {
     // console.log(url);
     if(quantity <= 10) {
         // 맑음
-        $('#weatherImg').attr('src', 'static/images/sunny.svg');
+        $('#weatherImg').attr('src', `${pageContext.request.contextPath}/static/images/sunny.svg`);
         $('#result').html(`<div>${temperature} ˚C<br>맑음</div>`);
     } else if(quantity <= 60){
         // 흐림

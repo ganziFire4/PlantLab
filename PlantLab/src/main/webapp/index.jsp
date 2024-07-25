@@ -16,7 +16,7 @@
 
     </header>
     <main>
-        <a href="mypage.jsp">a</a>
+        <a href="WEB-INF/views/member/mypage.jsp">a</a>
     </main>
     <jsp:include page="footer.jsp"/>
 </body>

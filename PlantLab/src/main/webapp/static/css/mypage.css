@@ -1,8 +1,8 @@
 .container {
     display: flex;
     width: 1115px;
-    margin-left: 42.5;
-    margin-right: 42.5;
+    margin-left: 42.5px;
+    margin-right: 42.5px;
     margin-top: 60px;
     margin-bottom: 60px;
     max-width: 1115px;
@@ -214,4 +214,52 @@ button {
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+}
+
+
+
+/*modal 설정*/
+.modal-content {
+    width: 40vw !important;
+    height: 95vh !important;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed !important;
+    top: 50% !important; /* 화면의 세로 중앙으로 이동 */
+    left: 50% !important; /* 화면의 가로 중앙으로 이동 */
+    transform: translate(-50%, -50%) !important; /* 중앙 정렬 보정 */
+    border-radius: 15px !important;
+    z-index: 2;
+}
+
+#modal-close-btn {
+    background: #0DA446;
+    width: 100%;
+}
+
+#modal-close-btn-detail {
+    position: absolute; /* 부모 요소에 대해 절대 위치 지정 */
+    top: 0; /* 부모의 상단에 맞추기 */
+    right: 0; /* 부모의 오른쪽 끝에 맞추기 */
+    margin-top: 0.8rem;
+    margin-right: 1.3rem;
+}
+
+.profilebox-body input{
+    white-space: nowrap; /* 줄 바꿈 비활성화 */
+    border: 1px solid #CCCCCC;
+    width: 20vw;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 5vh;
+    padding-left: 0.5vw;
+    font-size: 1.2rem;
+}
+
+.profile-modal-p {
+    margin: 0.1vh; !important;
 }
