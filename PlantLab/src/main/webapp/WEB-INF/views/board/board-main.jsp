@@ -81,35 +81,42 @@
         const greenTalk_button = document.querySelector("#greenTalk");
 
         info_button.addEventListener("click", () => {
-
-            underline[0].classList.add("activeBlock");
-            underline[1].classList.remove("activeBlock");
-            underline[2].classList.remove("activeBlock");
-            underline[3].classList.remove("activeBlock");
-
+            changeTab(1);
         });
 
         free_button.addEventListener("click", () => {
-            underline[0].classList.remove("activeBlock");
-            underline[1].classList.add("activeBlock");
-            underline[2].classList.remove("activeBlock");
-            underline[3].classList.remove("activeBlock");
+            changeTab(2);
         });
 
         QnA_button.addEventListener("click", () => {
-            underline[0].classList.remove("activeBlock");
-            underline[1].classList.remove("activeBlock");
-            underline[2].classList.add("activeBlock");
-            underline[3].classList.remove("activeBlock");
+            changeTab(3);
         });
 
 
         greenTalk_button.addEventListener("click", () => {
-            underline[0].classList.remove("activeBlock");
-            underline[1].classList.remove("activeBlock");
-            underline[2].classList.remove("activeBlock");
-            underline[3].classList.add("activeBlock");
+            changeTab(4);
         });
+
+        const changeTab = (tab) => {
+
+            // 탭 눌렀을 때 색상 변경
+            for(let l = 0; i < 4; i++){
+                if(i === tab - 1){
+                    underline[i].classList.add("activeBlock");
+                } else {
+                    underline[i].classList.remove("activeBlock");
+                }
+            }
+
+            // model에 있는 tab값 변경
+            $.ajax({
+                url: "/board/changeTab.do",
+                type: "get",
+                contentType: "x-www-form-urlencoded",
+                data: {"tab": tab}
+            })
+        }
+
     </script>
 </body>
 </html>

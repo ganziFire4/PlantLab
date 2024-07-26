@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 
 @Controller
@@ -30,6 +31,14 @@ public class BoardController {
         model.addAttribute("popList", boardService.view_popular());
         model.addAttribute("boardList", boardService.view_all());
         return "/board/board-main";
+    }
+
+    @GetMapping("/changeTab.do")
+    @ResponseBody
+    public String changeTab(Model model, int tab){
+        boardService = applicationContext.getBean("BoardServiceImpl", BoardService.class);
+
+        model.addAttribute("tab", tab);
     }
 
     @GetMapping("/post.do")
