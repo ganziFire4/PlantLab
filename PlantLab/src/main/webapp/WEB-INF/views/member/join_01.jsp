@@ -19,14 +19,14 @@
             <form id="join-form" action="/member/join.do" method="post">
                 <div class="form-group">
                     <div class="custom-input">
-                        <input type="text" id="veri_btn" name="userId" placeholder="아이디" required>
+                        <input type="text" id="veri_btn" name="loginId" placeholder="아이디" required>
                         <button type="button" onclick="checkDuplicate()"></button>
                     </div>
                     <small id="check-message"></small>
                 </div>
                 <div class="form-group">
                     <label for="nickname"></label>
-                    <input type="text" id="nickname" name="Nickname" placeholder="닉네임" required>
+                    <input type="text" id="nickname" name="memNickname" placeholder="닉네임" required>
                     <small id="check-message1"></small>
                 </div>
                 <div class="form-group">
@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group">
                     <label for="userName"></label>
-                    <input type="text" id="userName" name="userName" placeholder="이름" required>
+                    <input type="text" id="userName" name="memName" placeholder="이름" required>
                     <small id="check-message4"></small>
                 </div>
                 <div class="form-group">
@@ -53,7 +53,7 @@
                 </div>
                 <div class="form-group">
                     <div class="custom-input3">
-                        <input type="text" id="veri_btn" name="phoneNum_veri" placeholder="인증번호" required>
+                        <input type="text" id="veri_btn" name="memTel" placeholder="인증번호" required>
                         <button type="button" onclick="checkDuplicate()"></button>
                     </div>
                     <small id="check-message6"></small>
@@ -229,8 +229,6 @@
     //이름 입력 확인
     let userNameInput = '';
     userName.addEventListener("change", (e) => {
-        console.log(e.target.value);
-        console.log(e.target.value.length);
         if (e.target.value.length === 0) {
             checkMessage4.textContent = "이름을 입력하세요.";
             checkMessage4.style.color = "red";
@@ -276,43 +274,44 @@
 
 
     // 가입하기 버튼 클릭
-    document.getElementById('join-form').addEventListener('submit', function(event) {
-        event.preventDefault();
-        if (!userIdCheck) {
+    function joinComplete(){
+        if(!userIdCheck) {
             alert("아이디를 입력해주세요.");
             return;
         }
 
-        if (!userNicknameCheck) {
+        if(!userNicknameCheck) {
             alert("닉네임을 입력해주세요.");
             return;
         }
 
-        if (!(passwordValidation && passwordConfirmValidation)) {
+        if(!(passwordValidation && passwordConfirmValidation)) {
             alert("비밀번호를 입력해주세요.");
             return;
         }
 
-        if (userNameInput === '') {
+        if(userNameInput === '') {
             alert("이름을 입력해주세요.");
             return;
         }
 
-        if (addrInput === '') {
+        if(addrInput === '') {
             alert("주소를 입력해주세요.");
             return;
         }
 
-        if (addr_detailInput === '') {
+        if(addr_detailInput === '') {
             alert("상세주소를 입력해주세요.");
             return;
         }
 
-        this.submit();
 
 
-
-    });
+        if(userIdCheck && userNicknameCheck && passwordValidation && passwordConfirmValidation) {
+            localStorage.setItem(localStorage.length + 1, JSON.stringify({id, nickname, password}));
+            window.location.href = "_02_join02.html";
+        }
+    }
         </script>
     </body>
 </html>
