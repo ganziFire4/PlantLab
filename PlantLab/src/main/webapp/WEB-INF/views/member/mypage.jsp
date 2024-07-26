@@ -293,7 +293,7 @@
                         <button type="button" class="btn-close" id="modal-close-btn-detail" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="profilebox-header">
-                        <div style="margin-top: 4vh">
+                        <div style="margin-top: 7vh">
                             <div id="modify-profile-image" style="position: relative; display: inline-block;">
                                 <img src="../../../static/images/프로필사진.png" class="profile" alt="프로필사진" style="width: 8vw; height: auto">
                                 <button type="button" style="position: absolute; bottom: 0; right: 0;"><img src="../../../static/images/modify_profile.svg"></button>
@@ -302,36 +302,45 @@
                     </div>
                     <button type="button" style="align-items: center; font-size: 0.8rem; color: #CCCCCC; margin-top: 1vh">이미지 삭제</button>
                     <div class="profilebox-body">
-                        <div>
-                            <p class="profile-modal-p">닉네임</p>
-                            <input id="profile-nickname" placeholder="안녕하세요"></input>
-                        </div>
-                        <div style="margin-top: 3vh;">
-                            <p class="profile-modal-p">휴대폰 번호</p>
-                            <input id="profile-phone" placeholder="010-1234-5678"></input>
-                        </div>
-                        <div style="margin-top: 3vh;">
-                            <p class="profile-modal-p">현재 비밀번호</p>
-                            <input id="origin-password" placeholder="사용 중인 비밀번호를 입력해주세요."></input>
-                        </div>
-                        <div style="margin-top: 3vh;">
-                            <p class="profile-modal-p">새 비밀번호</p>
-                            <input id="newpassword" placeholder="새로운 비밀번호를 입력해주세요."></input>
-                        </div>
-                        <div style="margin-top: 3vh;">
-                            <p class="profile-modal-p">새 비밀번호 확인</p>
-                            <input id="newpassword-check" placeholder="한 번 더 입력해주세요."></input>
-                        </div>
-                    </div>
-                    <div class="profilebox-footer" style="margin-top: 5vh; background: #23C961; width: 20vw; height: 7vh; border-radius: 5px; display: flex; justify-content: center">
-                        <button type="button" id="save-modify-btn" style="color: white; font-size: 1.3em">변경사항 저장</button>
+                        <form action="/member/join.do" method="post">
+                            <div>
+                                <p class="profile-modal-p">닉네임</p>
+                                <input id="profile-nickname" name="memName" placeholder="안녕하세요">
+                                <p class="profile-message" id="nickname-message">default</p>
+                            </div>
+                            <div style="margin-top: 1vh;">
+                                <p class="profile-modal-p">현재 비밀번호</p>
+                                <input id="origin-password" name="password" type="password" placeholder="사용 중인 비밀번호를 입력해주세요.">
+                                <p class="profile-message" id="password-message">default</p>
+                            </div>
+                            <div style="margin-top: 1vh;">
+                                <p class="profile-modal-p">새 비밀번호</p>
+                                <input id="newpassword" type="password" placeholder="새로운 비밀번호를 입력해주세요.">
+                                <p class="profile-message" id="newpassword-message">default</p>
+                            </div>
+                            <div style="margin-top: 1vh;">
+                                <p class="profile-modal-p">새 비밀번호 확인</p>
+                                <input id="newpassword-check" type="password" placeholder="한 번 더 입력해주세요.">
+                                <p class="profile-message" id="newpassword-check-message">default</p>
+                            </div>
+                            <div style="margin-top: 2vh; background: #23C961; width: 20vw; height: 7vh; border-radius: 5px; display: flex; justify-content: center">
+                                <button type="submit" id="save-modify-btn" style="color: white; font-size: 1.3em">변경사항 저장</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
         <jsp:include page="../../../footer.jsp"/>
         <script>
-            const originPassword = $("#origin-password").val();
+            let originNickname = "카리나";
+            let nickname = "";
+            let originPassword = "";
+            let newPassword = "";
+            let newPasswordCheck = "";
+            // 정규표현식
+            const regex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*+=-])(?=.*[0-9]).{8,15}$/;
+
 
             document.addEventListener('DOMContentLoaded', () => {
                 const popupIcon = document.getElementById('popup-icon1');
@@ -393,9 +402,89 @@
                     $("#content-c").show();
                 });
 
+                $("#profile-nickname").on("change", (e) => {
+                    nickname = e.target.value;
+                });
+
+                $("#profile-nickname").on("blur", (e) => {
+                    if(nickname !== ""){
+                        if(nickname === originNickname) {
+                            $("#nickname-message").css({
+                                "visibility": "visible", "color": "red"
+                            }).text("중복된 닉네임입니다.");
+                        } else {
+                            $("#nickname-message").css({
+                                "visibility": "visible", "color": "green"
+                            }).text("사용 가능한 닉네임입니다.");
+                        }
+                    } else {
+                        $("#nickname-message").css({"visibility": "hidden"});
+                    }
+                });
+
+                $("#origin-password").on("change", (e) => {
+                    originPassword = e.target.value;
+                });
+
+                $("#origin-password").on("blur", (e) => {
+                    if(originPassword === "") {
+                        $("#password-message").css({"visibility": "hidden"});
+                    } else {
+                        if(originPassword !== "12345678"){
+                            $("#password-message").css({
+                                "visibility": "visible", "color": "red"
+                            }).text("이전 비밀번호와 일치하지 않습니다.");
+                        } else {
+                            $("#password-message").css({
+                                "visibility": "visible", "color": "green"
+                            }).text("이전 비밀번호와 일치합니다.");
+                        }
+                    }
+                });
+
+                $("#newpassword").on("change", (e) => {
+                    newPassword = e.target.value;
+                });
+
+                $("#newpassword").on("blur", (e) => {
+                    if(newPassword === "") {
+                        $("#newpassword-message").css({"visibility": "hidden"});
+                    } else {
+                        if(!regex.test(newPassword)) {
+                            $("#newpassword-message").css({
+                                "visibility": "visible", "color": "red"
+                            }).text("비밀번호는 영문 숫자 특수기호 포함 8자리 이상으로 지정해주세요.");
+                        } else {
+                            $("#newpassword-message").css({
+                                "visibility": "hidden"});
+                        }
+                    }
+                });
+
+                $("#newpassword-check").on("change", (e) => {
+                    newPasswordCheck = e.target.value;
+                });
+
+                $("#newpassword-check").on("blur", (e) => {
+                    if(newPasswordCheck === "") {
+                        $("#newpassword-check-message").css({"visibility": "hidden"});
+                    } else {
+                        if(newPassword !== newPasswordCheck) {
+                            $("#newpassword-check-message").css({
+                                "visibility": "visible", "color": "red"
+                            }).text("입력한 비밀번호와 다릅니다.");
+                        } else {
+                            $("#newpassword-check-message").css({
+                                "visibility": "hidden"});
+                        }
+                    }
+                });
                 $("#save-modify-btn").click((e) => {
-                    if($("#origin-password").val() != "12345678"){
-                        alert("비밀번호가 다릅니다");
+                    if(nickname !== originNickname && originPassword === "12345678" &&
+                        regex.test(newPassword) === true && newPassword === newPasswordCheck) {
+                        alert("전송 성공");
+                    } else {
+                        alert("전송 실패");
                     }
                 });
             });

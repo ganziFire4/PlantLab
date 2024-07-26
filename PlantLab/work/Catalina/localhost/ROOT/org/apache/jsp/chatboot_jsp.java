@@ -12,7 +12,7 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.jsp.*;
 
-public final class footer_jsp extends org.apache.jasper.runtime.HttpJspBase
+public final class chatboot_jsp extends org.apache.jasper.runtime.HttpJspBase
     implements org.apache.jasper.runtime.JspSourceDependent,
                  org.apache.jasper.runtime.JspSourceImports,
                  org.apache.jasper.runtime.JspSourceDirectives {
@@ -125,25 +125,41 @@ public final class footer_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <title></title>\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (jakarta.servlet.jsp.PageContext)_jspx_page_context, null));
-      out.write("/static/css/footer.css\">\r\n");
+      out.write("/static/css/chatboot.css\">\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
-      out.write("\r\n");
-      out.write("    <footer>\r\n");
-      out.write("        <div class=\"f_container\">\r\n");
-      out.write("            <div style=\"margin: auto 50px;\">\r\n");
-      out.write("                <img width=\"150px\" height=\"150px\" src=\"");
+      out.write("    <div id=\"popup-icon1\">\r\n");
+      out.write("        <img src=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (jakarta.servlet.jsp.PageContext)_jspx_page_context, null));
-      out.write("/static/images/round_logo_colorBack.svg\" alt=\"플랜트랩 로고\">\r\n");
-      out.write("            </div>\r\n");
-      out.write("            <div>\r\n");
-      out.write("                <p>주소 :  서울특별시 강남구 강남대로2689길 20, 5층(역삼동)   TEL : 02 - 1111-2222</p>\r\n");
-      out.write("                <p>상호명 : (주)플랜트랩</p>\r\n");
-      out.write("                <p>Copyright © 2024 .All RIGHTS RSERVED.</p>\r\n");
-      out.write("                <p>불4조 :  정다은  김화영  김시표  송주헌  반재형</p>\r\n");
-      out.write("            </div>\r\n");
-      out.write("        </div>\r\n");
-      out.write("    </footer>\r\n");
+      out.write("/static/images/챗봇아이콘.png\" alt=\"Popup Icon\" id=\"chat-bot-image\" style=\"width: 60px; height: 60px;\">\r\n");
+      out.write("    </div>\r\n");
+      out.write("    <div id=\"popup-content1\" class=\"hidden\">\r\n");
+      out.write("        <p>안녕하세요! 플랜트 봇 입니다!<br>궁금한 것은 모두 플랜트 봇에게 물어보세요!</p>\r\n");
+      out.write("    </div>\r\n");
+      out.write("    <div id=\"popup-icon2\">\r\n");
+      out.write("        <img src=\"");
+      out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (jakarta.servlet.jsp.PageContext)_jspx_page_context, null));
+      out.write("/static/images/top아이콘.png\" alt=\"Popup Icon\" id=\"top-image\" style=\"width: 60px; height: 60px;\">\r\n");
+      out.write("    </div>\r\n");
+      out.write("    <script>\r\n");
+      out.write("        document.addEventListener('DOMContentLoaded', () => {\r\n");
+      out.write("            const popupIcon = document.getElementById('popup-icon1');\r\n");
+      out.write("            const popupContent = document.getElementById('popup-content1');\r\n");
+      out.write("            const popupIcon2 = document.getElementById('popup-icon2');\r\n");
+      out.write("\r\n");
+      out.write("            popupIcon.addEventListener('mouseover', () => {\r\n");
+      out.write("                popupContent.classList.remove('hidden');\r\n");
+      out.write("            });\r\n");
+      out.write("\r\n");
+      out.write("            popupIcon.addEventListener('mouseleave', () => {\r\n");
+      out.write("                popupContent.classList.add('hidden');\r\n");
+      out.write("            });\r\n");
+      out.write("\r\n");
+      out.write("            popupIcon2.addEventListener('click', () => {\r\n");
+      out.write("                window.scrollTo({ top: 0, behavior: 'smooth' });\r\n");
+      out.write("            });\r\n");
+      out.write("        });\r\n");
+      out.write("    </script>\r\n");
       out.write("</body>\r\n");
       out.write("</html>\r\n");
     } catch (java.lang.Throwable t) {

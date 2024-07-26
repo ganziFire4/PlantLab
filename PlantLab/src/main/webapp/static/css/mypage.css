@@ -263,3 +263,8 @@ button {
 .profile-modal-p {
     margin: 0.1vh; !important;
 }
+
+.profile-message {
+    padding-top: 0.5vh !important;
+    visibility: hidden;
+}
