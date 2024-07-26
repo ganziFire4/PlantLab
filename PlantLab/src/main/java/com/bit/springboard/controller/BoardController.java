@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 @Controller
 @RequestMapping("/board")
@@ -31,11 +34,12 @@ public class BoardController {
 
     @GetMapping("/changeTab.do")
     @ResponseBody
-    public String changeTab(Model model, int tab){
-        model.addAttribute("tab", tab);
-        model.addAttribute("popList", boardService.view_popular(tab));
-        model.addAttribute("boardList", boardService.view_all(tab));
-        return "redirect:/board/board-main.do?tab=" + tab;
+    public Map<String, Object> changeTab(int tab){
+        Map<String, Object> map = new HashMap<>();
+        map.put("tab", tab);
+        map.put("popList", boardService.view_popular(tab));
+        map.put("boardList", boardService.view_all(tab));
+        return map;
     }
 
     @GetMapping("/post.do")

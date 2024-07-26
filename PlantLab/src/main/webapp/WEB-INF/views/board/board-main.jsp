@@ -12,13 +12,16 @@
 <head>
     <c:choose>
         <c:when test="${tab eq 1}">
-            <title>정보게시판</title>
+            <title>플랜트랩: 정보게시판</title>
         </c:when>
         <c:when test="${tab eq 2}">
-            <title>잡담게시판</title>
+            <title>플랜트랩: 잡담게시판</title>
         </c:when>
         <c:when test="${tab eq 3}">
-            <title>질문게시판</title>
+            <title>플랜트랩: 질문게시판</title>
+        </c:when>
+        <c:when test="${tab eq 4}">
+            <title>플랜트랩: 그린톡</title>
         </c:when>
     </c:choose>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/board-main.css">
@@ -35,6 +38,9 @@
             </c:when>
             <c:when test="${tab eq 3}">
                 <img src="${pageContext.request.contextPath}/static/images/header_질문.png" alt="질문게시판 헤더">
+            </c:when>
+            <c:when test="${tab eq 4}">
+                <img src="${pageContext.request.contextPath}/static/images/header_그린톡.png" alt="그린톡 헤더">
             </c:when>
         </c:choose>
     </header>
@@ -68,7 +74,12 @@
                 </li>
             </ul>
         </div>
-        <jsp:include page="board-list.jsp"/>
+        <c:if test="${tab == 1 || tab == 2 || tab == 3}">
+            <jsp:include page="board-list.jsp"/>
+        </c:if>
+        <c:if test="${tab == 4}">
+            <jsp:include page="greentalk.jsp"/>
+        </c:if>
     </main>
     <jsp:include page="${pageContext.request.contextPath}/chatboot.jsp"/>
     <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
@@ -92,7 +103,6 @@
             changeTab(3);
         });
 
-
         greenTalk_button.addEventListener("click", () => {
             changeTab(4);
         });
@@ -100,7 +110,7 @@
         const changeTab = (tab) => {
 
             // 탭 눌렀을 때 색상 변경
-            for(let l = 0; i < 4; i++){
+            for(let i = 0; i < 4; i++){
                 if(i === tab - 1){
                     underline[i].classList.add("activeBlock");
                 } else {
@@ -113,7 +123,13 @@
                 url: "/board/changeTab.do",
                 type: "get",
                 contentType: "x-www-form-urlencoded",
-                data: {"tab": tab}
+                data: {"tab": tab},
+                success: (obj) => {
+
+                },
+                error: (err) => {
+                    alert("잘못된 접근입니다.");
+                }
             })
         }
 

@@ -11,23 +11,20 @@
 <%@ taglib prefix="javatime" uri="http://sargue.net/jsptags/time" %>
 <html>
 <head>
-    <title>플랜트랩:그린톡</title>
+    <title></title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/greentalk.css">
 </head>
 <body>
-    <jsp:include page="../../../nav.jsp"/>
-    <header id="header">
-    </header>
     <div class="greenbody">
     <div class="container_green">
         <div class="dailycontent">
             <div class="card1" style="width: 546px;">
                 <div class="card-header">
                     <div class="card-writer">
-                        <img src="images/프로필사진.png" alt="" style="width: 30px; height: 30px;"> 더미데이터
+                        <img src="${pageContext.request.contextPath}/static/images/프로필사진.png" alt="" style="width: 30px; height: 30px;"> 더미데이터
                     </div>
                     <div class="report">
-                        <img src="images/menu.png.png" alt="신고 버튼" class="reportbtn">
+                        <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="신고 버튼" class="reportbtn">
                     </div>
                 </div>
                 <img src="" class="card-img-top" alt="..." data-bs-toggle="modal"
@@ -40,10 +37,10 @@
                             <p class="tag2">#자랑</p>
                         </div>
                         <div class="btnicon">
-                            <img src="images/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
-                            <img src="images/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
-                            <img src="images/hearticon.png" alt="" class="hearticon">
-                            <img src="images/filledhearticon.png" alt="" class="filledhearticon" style="display: none;">
+                            <img src="${pageContext.request.contextPath}/static/images/그린톡/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
+                            <img src="${pageContext.request.contextPath}/static/images/그린톡/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
+                            <img src="${pageContext.request.contextPath}/static/images/그린톡/hearticon.png" alt="" class="hearticon">
+                            <img src="${pageContext.request.contextPath}/static/images/그린톡/filledhearticon.png" alt="" class="filledhearticon" style="display: none;">
                         </div>
                     </div>
                 </div>
@@ -51,13 +48,13 @@
             <div class="card2" style="width: 546px;">
                 <div class="card-header">
                     <div class="card-writer">
-                        <img src="images/defaultprofile.png" alt="" style="width: 29px;">  장길산
+                        <img src="${pageContext.request.contextPath}/static/images/그린톡/defaultprofile.png" alt="" style="width: 29px;">  장길산
                     </div>
                     <div class="report">
-                        <img src="images/menu.png.png" alt="신고 버튼" class="reportbtn">
+                        <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="신고 버튼" class="reportbtn">
                     </div>
                 </div>
-                <img src="images/ranksample2.jpeg" class="card-img-top" alt="..." data-bs-toggle="modal"
+                <img src="${pageContext.request.contextPath}/static/images/그린톡/ranksample2.jpeg" class="card-img-top" alt="..." data-bs-toggle="modal"
                      data-bs-target="#rank2modal">
                 <div class="card-body">
                     <p class="card-text">오늘 심은 양파...^^</p>
@@ -67,10 +64,10 @@
                             <p class="tag2">#반찬</p>
                         </div>
                         <div class="btnicon">
-                            <img src="images/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
-                            <img src="images/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
-                            <img src="images/hearticon.png" alt="" class="hearticon" id="heart">
-                            <img src="images/filledhearticon.png" alt="" class="filledhearticon" style="display: none;">
+                            <img src="${pageContext.request.contextPath}/static/images/그린톡/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
+                            <img src="${pageContext.request.contextPath}/static/images/그린톡/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
+                            <img src="${pageContext.request.contextPath}/static/images/그린톡/hearticon.png" alt="" class="hearticon" id="heart">
+                            <img src="${pageContext.request.contextPath}/static/images/그린톡/filledhearticon.png" alt="" class="filledhearticon" style="display: none;">
                         </div>
                     </div>
                 </div>
@@ -80,31 +77,30 @@
     </div>
     <div class="normalcon">
         <div class="conimg">
-            <img src="images/emagesample1.jpg" alt="" class="thumbnail" id="normal1">
-            <img src="images/ranksample1.jpg" alt="" class="thumbnail" id="normal2">
-            <img src="images/ranksample1.jpg" alt="" class="thumbnail" id="normal3">
+            <img src="${pageContext.request.contextPath}/static/images/그린톡/emagesample1.jpg" alt="" class="thumbnail" id="normal1">
+            <img src="${pageContext.request.contextPath}/static/images/그린톡/ranksample1.jpg" alt="" class="thumbnail" id="normal2">
+            <img src="${pageContext.request.contextPath}/static/images/그린톡/ranksample1.jpg" alt="" class="thumbnail" id="normal3">
         </div>
     </div>
     </div>
-        <jsp:include page="../../../footer.jsp"/>
     <!--modal 팝업-->
     <div class="modal fade" id="rank1modal">
         <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modalbox">
                     <div class="modal-body">
-                        <img src="images/rank1main.png" alt="" class="modalmain">
+                        <img src="${pageContext.request.contextPath}/static/images/그린톡/rank1main.png" alt="" class="modalmain">
                         <div class="modal-right">
                             <div class="modalthumb">
-                                <img src="images/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1">
-                                <img src="images/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1">
-                                <img src="images/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1">
-                                <img src="images/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1" style="height: 96.27px;">
+                                <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">
+                                <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1_2">
+                                <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1_3">
+                                <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4" style="height: 96.27px;">
                             </div>
                             <div class="modalcontentbox">
                                 <div class="modalcontents">
                                     <div class="writerpic">
-                                        <img src="images/프로필사진.png" alt="" style="width: 30px; height: 30px;">
+                                        <img src="${pageContext.request.contextPath}/static/images/프로필사진.png" alt="" style="width: 30px; height: 30px;">
                                     </div>
                                     <div class="modalmaincon">
                                         karina87
@@ -113,7 +109,7 @@
                                         24.06.27
                                     </div>
                                     <div class="modalreport">
-                                        <img src="images/menu.png.png" alt="" style="width: 15px;">
+                                        <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
                                     </div>
                                 </div>
                                 <div class="modalmaincontent">
@@ -124,10 +120,10 @@
                         <div class="title">
                             <p class="titlename">#초록  #자랑</p>
                             <div class="btnicon">
-                                <img src="images/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
-                                <img src="images/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
-                                <img src="images/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
-                                <img src="images/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
+                                <img src="${pageContext.request.contextPath}/static/images/그린톡/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
+                                <img src="${pageContext.request.contextPath}/static/images/그린톡/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
+                                <img src="${pageContext.request.contextPath}/static/images/그린톡/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
+                                <img src="${pageContext.request.contextPath}/static/images/그린톡/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
                             </div>
                         </div>
                         <div class="comment">
@@ -145,18 +141,18 @@
             <div class="modal-content">
                 <div class="modalbox">
                     <div class="modal-body">
-                        <img src="images/ranksample2.jpeg" alt="" class="modalmain">
+                        <img src="${pageContext.request.contextPath}/static/images/ranksample2.jpeg" alt="" class="modalmain">
                         <div class="modal-right">
                             <div class="modalthumb">
-                                <img src="images/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1">
-                                <img src="images/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1">
-                                <img src="images/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1">
-                                <img src="images/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1" style="height: 96.27px;">
+                                <img src="${pageContext.request.contextPath}/static/images/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb2_1">
+                                <img src="${pageContext.request.contextPath}/static/images/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb2_2">
+                                <img src="${pageContext.request.contextPath}/static/images/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb2_3">
+                                <img src="${pageContext.request.contextPath}/static/images/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb2_4" style="height: 96.27px;">
                             </div>
                             <div class="modalcontentbox">
                                 <div class="modalcontents">
                                     <div class="writerpic">
-                                        <img src="images/defaultprofile.png" alt="" style="width: 30px;">
+                                        <img src="${pageContext.request.contextPath}/static/images/defaultprofile.png" alt="" style="width: 30px;">
                                     </div>
                                     <div class="modalmaincon">
                                         장길산
@@ -165,7 +161,7 @@
                                         24.06.28
                                     </div>
                                     <div class="modalreport">
-                                        <img src="images/menu.png.png" alt="" style="width: 15px;">
+                                        <img src="${pageContext.request.contextPath}/static/images/menu.png.png" alt="" style="width: 15px;">
                                     </div>
                                 </div>
                                 <div class="modalmaincontent">
@@ -176,10 +172,10 @@
                         <div class="title">
                             <p class="titlename">#내돈내심  #반찬</p>
                             <div class="btnicon">
-                                <img src="images/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
-                                <img src="images/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
-                                <img src="images/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
-                                <img src="images/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
+                                <img src="${pageContext.request.contextPath}/static/images/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
+                                <img src="${pageContext.request.contextPath}/static/images/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
+                                <img src="${pageContext.request.contextPath}/static/images/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
+                                <img src="${pageContext.request.contextPath}/static/images/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
                             </div>
                         </div>
                         <div class="comment">

@@ -24,8 +24,8 @@
     -->
 <!--    <mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>-->
     <mvc:resources mapping="/upload/**" location="file:///C:/tmp/upload/"/>
-    <mvc:resources mapping="/static/**" location="/static/"></mvc:resources>
-    <mvc:resources mapping="/favicon.ico" location="/favicon.ico"></mvc:resources>
+    <mvc:resources mapping="/static/**" location="/static/"/>
+    <mvc:resources mapping="/favicon.ico" location="favicon.ico"/>
 
     <!--DispatcherServlet에서 사용할 ViewResolver 객체 설정-->
     <!--Controller에서 String이나 ModelAndView 객체를 리턴해주면 ViewResolver가 동작하여 리턴된 문자열이나 ModelAndView객체에
