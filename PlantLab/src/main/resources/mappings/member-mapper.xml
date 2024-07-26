@@ -9,7 +9,7 @@
             , PASSWORD
             , MEM_NAME
             , MEM_NICKNAME
-            , MEM_TEL
+            , MEM_EMAIL
             , MEM_ADDR
             , MEM_PIC
         ) VALUES (
@@ -17,7 +17,7 @@
             , #{password}
             , #{memName}
             , #{memNickname}
-            , #{memTel}
+            , #{memEmail}
             , #{address}
             , #{picture}
         )

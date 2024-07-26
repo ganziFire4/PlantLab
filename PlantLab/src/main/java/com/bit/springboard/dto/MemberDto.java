@@ -6,7 +6,7 @@ public class MemberDto {
     private String password;
     private String memName;
     private String memNickname;
-    private String memTel;
+    private String email;
     private String address;
     private String picture;
     private int checkCnt;
@@ -52,11 +52,11 @@ public class MemberDto {
     }
 
     public String getMemTel() {
-        return memTel;
+        return email;
     }
 
     public void setMemTel(String memTel) {
-        this.memTel = memTel;
+        this.email = email;
     }
 
     public String getAddress() {
@@ -91,7 +91,7 @@ public class MemberDto {
                 ", password='" + password + '\'' +
                 ", memName='" + memName + '\'' +
                 ", memNickname='" + memNickname + '\'' +
-                ", memTel='" + memTel + '\'' +
+                ", memTel='" + email + '\'' +
                 ", address='" + address + '\'' +
                 ", picture='" + picture + '\'' +
                 ", checkCnt=" + checkCnt +
