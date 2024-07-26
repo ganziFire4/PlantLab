@@ -32,9 +32,10 @@ public class BoardController {
     @GetMapping("/changeTab.do")
     @ResponseBody
     public String changeTab(Model model, int tab){
-        boardService = applicationContext.getBean("BoardServiceImpl", BoardService.class);
-
         model.addAttribute("tab", tab);
+        model.addAttribute("popList", boardService.view_popular(tab));
+        model.addAttribute("boardList", boardService.view_all(tab));
+        return "redirect:/board/board-main.do?tab=" + tab;
     }
 
     @GetMapping("/post.do")

@@ -125,9 +125,6 @@
         </div>
         <button type="button" id="button" onclick="location.href='/board/post.do'">글쓰기</button>
     </div>
-    <script>
-        console.log(${popBoard.writer_nickname});
-    </script>
 </body>
 
 </html>
