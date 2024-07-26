@@ -21,17 +21,20 @@ public class MemberController {
 
     @GetMapping("/login.do")
     public String loginView(){
+        System.out.println(1);
         return "member/login_01";
     }
 
     @GetMapping("/join.do")
     public String joinView(){
+        System.out.println(2);
         return "member/join_01";
     }
 
 
     @PostMapping("/join.do")
     public String join(MemberDto memberDto) {
+        System.out.println(3);
         memberService.join(memberDto);
         return "member/login";
     }

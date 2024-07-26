@@ -16,17 +16,17 @@
     <main>
         <div class="join-container">
             <h2 id="join-explain">회원가입을 위해<br>정보를 입력해주세요.</h2>
-            <form id="join-form" action="#" method="post">
+            <form id="join-form" action="/member/join.do" method="post">
                 <div class="form-group">
                     <div class="custom-input">
-                        <input type="text" id="veri_btn" name="userId" placeholder="아이디" required>
+                        <input type="text" id="veri_btn" name="loginId" placeholder="아이디" required>
                         <button type="button" onclick="checkDuplicate()"></button>
                     </div>
                     <small id="check-message"></small>
                 </div>
                 <div class="form-group">
                     <label for="nickname"></label>
-                    <input type="text" id="nickname" name="nickname" placeholder="닉네임" required>
+                    <input type="text" id="nickname" name="memNickname" placeholder="닉네임" required>
                     <small id="check-message1"></small>
                 </div>
                 <div class="form-group">
@@ -41,7 +41,7 @@
                 </div>
                 <div class="form-group">
                     <label for="userName"></label>
-                    <input type="text" id="userName" name="userName" placeholder="이름" required>
+                    <input type="text" id="userName" name="memName" placeholder="이름" required>
                     <small id="check-message4"></small>
                 </div>
                 <div class="form-group">
@@ -53,7 +53,7 @@
                 </div>
                 <div class="form-group">
                     <div class="custom-input3">
-                        <input type="text" id="veri_btn" name="phoneNum_veri" placeholder="인증번호" required>
+                        <input type="text" id="veri_btn" name="memTel" placeholder="인증번호" required>
                         <button type="button" onclick="checkDuplicate()"></button>
                     </div>
                     <small id="check-message6"></small>
@@ -67,7 +67,7 @@
                 </div>
                 <div class="form-group">
                     <label for="addr"></label>
-                    <input type="text" id="addr" name="addr" placeholder="주소" required>
+                    <input type="text" id="addr" name="address" placeholder="주소" required>
                     <small id="check-message8"></small>
                 </div>
                 <div class="form-group">
@@ -75,7 +75,7 @@
                     <input type="text" id="addr_detail" name="addr_detail" placeholder="상세 주소" required>
                     <small id="check-message9"></small>
                 </div>
-                <button type="button" class="submit-btn" onclick="joinComplete()">가입하기</button> <!--백연결시 type="submit"으로 변경 필요-->
+                <button type="submit" class="submit-btn" onclick="joinComplete()">가입하기</button> <!--백연결시 type="submit"으로 변경 필요-->
             </form>
         </div>
     </main>

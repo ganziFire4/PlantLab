@@ -6,7 +6,7 @@ public class MemberDto {
     private String password;
     private String memName;
     private String memNickname;
-    private String memTel;
+    private String memEmail;
     private String address;
     private String picture;
     private int checkCnt;
@@ -28,11 +28,13 @@ public class MemberDto {
     }
 
     public String getPassword() {
+        System.out.println(password);
         return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
+        System.out.println(password);
     }
 
     public String getMemName() {
@@ -51,12 +53,12 @@ public class MemberDto {
         this.memNickname = memNickname;
     }
 
-    public String getMemTel() {
-        return memTel;
+    public String getMemEmail() {
+        return memEmail;
     }
 
-    public void setMemTel(String memTel) {
-        this.memTel = memTel;
+    public void setMemEmail(String memEmail) {
+        this.memEmail = memEmail;
     }
 
     public String getAddress() {
@@ -91,7 +93,7 @@ public class MemberDto {
                 ", password='" + password + '\'' +
                 ", memName='" + memName + '\'' +
                 ", memNickname='" + memNickname + '\'' +
-                ", memTel='" + memTel + '\'' +
+                ", memEmail='" + memEmail + '\'' +
                 ", address='" + address + '\'' +
                 ", picture='" + picture + '\'' +
                 ", checkCnt=" + checkCnt +

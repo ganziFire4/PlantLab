@@ -15,6 +15,7 @@ public class MemberDao {
     }
 
     public void join(MemberDto memberDto) {
+        System.out.println("실행");
         mybatis.insert("MemberDao.join", memberDto);
     }
 }
