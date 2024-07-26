@@ -13,6 +13,7 @@ main {
 .container_green {
     display: flex;
     justify-content: center;
+    align-items: center;
     position: relative;
     width: 1200px;
     height: max-content;
@@ -71,7 +72,6 @@ main {
 
 .dailycontent {
     display: flex;
-    margin-top: 100px !important;
     justify-content: space-between;
     align-content: space-between;
     width: 1200px;
@@ -315,9 +315,13 @@ img {
 }
 
 .modal-content {
+    display: flex;
+    width: 10px;
+    height: 10px;
     align-items: center;
     color: black;
     background-color: transparent !important;
+    border:none !important;
 }
 
 .modalbox {
@@ -369,4 +373,10 @@ img {
 
 .card-img-top {
     height: 362px;
+}
+
+.greenbody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
