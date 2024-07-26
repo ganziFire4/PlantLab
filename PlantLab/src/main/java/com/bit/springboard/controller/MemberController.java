@@ -17,6 +17,8 @@ public class MemberController {
     @Autowired
     public MemberController(MemberService memberService) {
         this.memberService = memberService;
+    }
+
     @GetMapping("/login.do")
     public String loginView(){
         return "member/login_01";
