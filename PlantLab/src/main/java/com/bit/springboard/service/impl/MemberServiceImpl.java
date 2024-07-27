@@ -19,4 +19,9 @@ public class MemberServiceImpl implements MemberService {
     public void join(MemberDto memberDto) {
         memberDao.join(memberDto);
     }
+
+    @Override
+    public void modify(MemberDto memberDto) {
+        memberDao.modify(memberDto);
+    }
 }

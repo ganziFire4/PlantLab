@@ -20,4 +20,8 @@ public class MemberDao {
         mybatis.insert("MemberDao.join", memberDto);
         System.out.println("MemberDao의 join메소드 종료");
     }
+
+    public void modify(MemberDto memberDto) {
+        mybatis.update("MemberDao.modify", memberDto);
+    }
 }

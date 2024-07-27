@@ -162,7 +162,7 @@
                 <!-- <img style="margin-top: 30px;" src="images/bx_camera.png" alt="cameraLogo">
                 <p style="margin-top: 10px;">올린 자랑글이 없습니다.</p> -->
                 <div>
-                    <img src="../../../static/images/자랑글/rank1main.png" alt="" style="width: 300px; height: 250px; border: none;">
+                    <img src="/static/images/자랑글/rank1main.png" alt="" style="width: 300px; height: 250px; border: none;">
                 </div>
                 </button>
                 <button id="moveBragBtn" onclick="window.location.href='board_list.html?tab=4'"
@@ -289,45 +289,48 @@
         <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div id="modal-close-btn">
-                        <button type="button" class="btn-close" id="modal-close-btn-detail" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="profilebox-header">
-                        <div style="margin-top: 7vh">
-                            <div id="modify-profile-image" style="position: relative; display: inline-block;">
-                                <img src="../../../static/images/프로필사진.png" class="profile" alt="프로필사진" style="width: 8vw; height: auto">
-                                <button type="button" style="position: absolute; bottom: 0; right: 0;"><img src="../../../static/images/modify_profile.svg"></button>
+                    <form action="/member/modify.do" method="post" enctype="multipart/form-data">
+                        <div id="modal-close-btn">
+                            <button type="button" class="btn-close" id="modal-close-btn-detail" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="profilebox-header">
+                            <div style="margin-top: 7vh">
+                                <div id="modify-profile-image" style="position: relative; display: inline-block;">
+                                    <img src="../../../static/images/profile_default.svg" id="profile-img" class="profile" alt="프로필사진" style="width: 8vw; height: auto">
+                                    <button type="button" id="upload-btn" style="position: absolute; bottom: 0; right: 0;">
+                                        <img src="../../../static/images/modify_profile.svg">
+                                    </button>
+                                    <input type="file" name="imgFile" id="img-file-upload" style="display: none">
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <button type="button" style="align-items: center; font-size: 0.8rem; color: #CCCCCC; margin-top: 1vh">이미지 삭제</button>
-                    <div class="profilebox-body">
-                        <form action="/member/join.do" method="post">
-                            <div>
-                                <p class="profile-modal-p">닉네임</p>
-                                <input id="profile-nickname" name="memName" placeholder="안녕하세요">
-                                <p class="profile-message" id="nickname-message">default</p>
-                            </div>
-                            <div style="margin-top: 1vh;">
-                                <p class="profile-modal-p">현재 비밀번호</p>
-                                <input id="origin-password" name="password" type="password" placeholder="사용 중인 비밀번호를 입력해주세요.">
-                                <p class="profile-message" id="password-message">default</p>
-                            </div>
-                            <div style="margin-top: 1vh;">
-                                <p class="profile-modal-p">새 비밀번호</p>
-                                <input id="newpassword" type="password" placeholder="새로운 비밀번호를 입력해주세요.">
-                                <p class="profile-message" id="newpassword-message">default</p>
-                            </div>
-                            <div style="margin-top: 1vh;">
-                                <p class="profile-modal-p">새 비밀번호 확인</p>
-                                <input id="newpassword-check" type="password" placeholder="한 번 더 입력해주세요.">
-                                <p class="profile-message" id="newpassword-check-message">default</p>
-                            </div>
-                            <div style="margin-top: 2vh; background: #23C961; width: 20vw; height: 7vh; border-radius: 5px; display: flex; justify-content: center">
-                                <button type="submit" id="save-modify-btn" style="color: white; font-size: 1.3em">변경사항 저장</button>
-                            </div>
-                        </form>
-                    </div>
+                        <button type="button" id="del-profile-img" style="align-items: center; font-size: 0.8rem; color: #CCCCCC; margin-top: 1vh">이미지 삭제</button>
+                        <div class="profilebox-body">
+                                <div>
+                                    <p class="profile-modal-p">닉네임</p>
+                                    <input id="profile-nickname" name="memNickname" placeholder="안녕하세요" autocomplete="username">
+                                    <p class="profile-message" id="nickname-message">default</p>
+                                </div>
+                                <div style="margin-top: 1vh;">
+                                    <p class="profile-modal-p">현재 비밀번호</p>
+                                    <input id="origin-password" type="password" placeholder="사용 중인 비밀번호를 입력해주세요." autocomplete="password">
+                                    <p class="profile-message" id="password-message">default</p>
+                                </div>
+                                <div style="margin-top: 1vh;">
+                                    <p class="profile-modal-p">새 비밀번호</p>
+                                    <input id="newpassword" type="password" name="password" placeholder="새로운 비밀번호를 입력해주세요." autocomplete="new-password">
+                                    <p class="profile-message" id="newpassword-message">default</p>
+                                </div>
+                                <div style="margin-top: 1vh;">
+                                    <p class="profile-modal-p">새 비밀번호 확인</p>
+                                    <input id="newpassword-check" type="password" placeholder="한 번 더 입력해주세요." autocomplete="new-password">
+                                    <p class="profile-message" id="newpassword-check-message">default</p>
+                                </div>
+                                <div style="margin-top: 2vh; background: #23C961; width: 20vw; height: 7vh; border-radius: 5px; display: flex; justify-content: center">
+                                    <button type="submit" id="save-modify-btn" style="color: white; font-size: 1.3em; width: 100%; height: 100%;">변경사항 저장</button>
+                                </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -400,6 +403,26 @@
                     $("#content-a").hide();
                     $("#content-b").hide();
                     $("#content-c").show();
+                });
+
+                $("#upload-btn").on("click", (e) => {
+                    document.getElementById('img-file-upload').click();
+                });
+
+                document.getElementById('img-file-upload').addEventListener('change', function(event) {
+                    const file = event.target.files[0];
+                    if (file) {
+                        const reader = new FileReader();
+                        reader.onload = function(e) {
+                            const imgPreview = document.getElementById('profile-img');
+                            imgPreview.src = e.target.result;
+                        };
+                        reader.readAsDataURL(file);
+                    }
+                });
+
+                $("#del-profile-img").on("click", (e) => {
+                    $("#profile-img").attr("src", "static/images/profile_default.svg");
                 });
 
                 $("#profile-nickname").on("change", (e) => {

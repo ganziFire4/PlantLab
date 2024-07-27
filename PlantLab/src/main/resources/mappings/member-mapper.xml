@@ -22,4 +22,12 @@
             , #{picture}
         )
     </insert>
+    <update id="modify" parameterType="member">
+        UPDATE MEMBER
+            SET
+                MEM_NICKNAME = #{memNickname},
+                PASSWORD = #{password},
+                MEM_PIC = #{picture}
+            WHERE MEM_ID = #{memId}
+    </update>
 </mapper>

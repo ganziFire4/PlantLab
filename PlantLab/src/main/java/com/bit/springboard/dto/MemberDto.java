@@ -1,7 +1,7 @@
 package com.bit.springboard.dto;
 
 public class MemberDto {
-    private int memId;
+    private int memId = 2;
     private String loginId;
     private String password;
     private String memName;

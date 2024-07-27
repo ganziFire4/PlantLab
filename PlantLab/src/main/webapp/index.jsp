@@ -17,6 +17,7 @@
     <header id="header">
         <img src="/static/images/Header with image_메인페이지.svg" alt="메인 헤더">
     </header>
+    <a href="WEB-INF/views/member/mypage.jsp">1234</a>
     <main>
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
