@@ -10,7 +10,9 @@
             , MEM_NAME
             , MEM_NICKNAME
             , MEM_EMAIL
+            , MEM_ZIPCODE
             , MEM_ADDR
+            , MEM_ADDR_DETAIL
             , MEM_PIC
         ) VALUES (
               #{loginId}
@@ -18,7 +20,9 @@
             , #{memName}
             , #{memNickname}
             , #{memEmail}
+            , #{zipcode}
             , #{address}
+            , #{addressDetail}
             , #{picture}
         )
     </insert>

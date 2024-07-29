@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 @RequestMapping("/member")
@@ -39,4 +39,21 @@ public class MemberController {
         return "member/login";
     }
 
+    @Controller
+    public class AddressController {
+        private final MemberService memberService;
+
+        @Autowired
+        public AddressController(MemberService memberService) {
+            this.memberService = memberService;
+        }
+
+
+        @PostMapping("/address/save")
+        @ResponseBody
+        public String saveAddress(MemberDto memberDto) {
+            memberService.saveAddress(memberDto);
+            return "주소가 성공적으로 저장되었습니다.";
+        }
+    }
 }

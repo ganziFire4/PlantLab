@@ -10,6 +10,9 @@ public class MemberDto {
     private String address;
     private String picture;
     private int checkCnt;
+    private String zipcode;
+    private String addr;
+    private String addrDetail;
 
     public int getMemId() {
         return memId;
@@ -83,6 +86,30 @@ public class MemberDto {
         this.checkCnt = checkCnt;
     }
 
+    public String getZipcode() {
+        return zipcode;
+    }
+
+    public void setZipcode(String zipcode) {
+        this.zipcode = zipcode;
+    }
+
+    public String getAddr() {
+        return addr;
+    }
+
+    public void setAddr(String addr) {
+        this.addr = addr;
+    }
+
+    public String getAddrDetail() {
+        return addrDetail;
+    }
+
+    public void setAddrDetail(String addrDetail) {
+        this.addrDetail = addrDetail;
+    }
+
     @Override
     public String toString() {
         return "MemberDto{" +
@@ -95,6 +122,10 @@ public class MemberDto {
                 ", address='" + address + '\'' +
                 ", picture='" + picture + '\'' +
                 ", checkCnt=" + checkCnt +
+                ", zipcode='" + zipcode + '\'' +
+                ", addr='" + addr + '\'' +
+                ", addrDetail='" + addrDetail + '\'' +
                 '}';
     }
 }
+
