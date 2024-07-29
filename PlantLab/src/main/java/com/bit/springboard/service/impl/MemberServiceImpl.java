@@ -21,12 +21,11 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-<<<<<<< HEAD
     public void saveAddress(MemberDto memberDto) {
         memberDao.saveAddress(memberDto);
-=======
+    }
+
     public void modify(MemberDto memberDto) {
         memberDao.modify(memberDto);
->>>>>>> 1bb0ca8a6ce113579ea170d3bbcd624163ad93ff
     }
 }
