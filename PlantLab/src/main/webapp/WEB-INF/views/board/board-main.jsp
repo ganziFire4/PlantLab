@@ -8,6 +8,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="javatime" uri="http://sargue.net/jsptags/time" %>
+
+<%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
+<%@ page import="com.bit.springboard.service.BoardService" %>
+
 <html>
 <head>
     <c:choose>
@@ -74,73 +78,125 @@
                 </li>
             </ul>
         </div>
-        <script>
-            colorOfTab(${tab});
-        </script>
-        <c:if test="${tab == 1 || tab == 2 || tab == 3}">
+<%--        <c:if test="${tab == 1 || tab == 2 || tab == 3}">--%>
+<%--            <jsp:include page="board-list.jsp"/>--%>
+<%--        </c:if>--%>
+<%--        <c:if test="${tab == 4}">--%>
+<%--            <jsp:include page="greentalk.jsp"/>--%>
+<%--        </c:if>--%>
+        <div class="tabContent">
+            <%
+                // Spring 애플리케이션 컨텍스트 가져오기
+                org.springframework.web.context.WebApplicationContext context =
+                        WebApplicationContextUtils.getWebApplicationContext(application);
+
+                // BoardService 빈 가져오기
+                BoardService boardService = context.getBean("boardServiceImpl", BoardService.class);
+            %>
+            <%
+                request.setAttribute("popList", boardService.view_popular(1));
+                request.setAttribute("boardList", boardService.view_all(1));
+            %>
             <jsp:include page="board-list.jsp"/>
-        </c:if>
-        <c:if test="${tab == 4}">
+        </div>
+        <div class="tabContent">
+            <%
+                request.setAttribute("popList", boardService.view_popular(2));
+                request.setAttribute("boardList", boardService.view_all(2));
+            %>
+            <jsp:include page="board-list.jsp"/>
+        </div>
+        <div class="tabContent">
+            <%
+                request.setAttribute("popList", boardService.view_popular(3));
+                request.setAttribute("boardList", boardService.view_all(3));;
+            %>
+            <jsp:include page="board-list.jsp"/>
+        </div>
+        <div class="tabContent">
             <jsp:include page="greentalk.jsp"/>
-        </c:if>
+        </div>
     </main>
     <jsp:include page="${pageContext.request.contextPath}/chatboot.jsp"/>
     <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
     <script>
+
+        const changeTab = (tab) => {
+            // 탭 눌렀을 때 색상 변경
+            for(let i = 0; i < 4; i++){
+                if(i === tab - 1){
+                    underline[i].classList.add("activeBlock");
+                    tabContent[i].style.display = "block";
+                } else {
+                    underline[i].classList.remove("activeBlock");
+                    tabContent[i].style.display = "none";
+                }
+            }
+        }
+
+        // const colorOfTab = (tab) => {
+        //     // 탭 눌렀을 때 색상 변경
+        //     for(let i = 0; i < 4; i++){
+        //         if(i === tab - 1){
+        //             underline[i].classList.add("activeBlock");
+        //         } else {
+        //             underline[i].classList.remove("activeBlock");
+        //         }
+        //     }
+        // }
+        //
+        // const changeTab = (tab) => {
+        //
+        //     // model에 있는 tab값 변경
+        //     $.ajax({
+        //         url: "/board/changeTab.do",
+        //         type: "get",
+        //         contentType: "x-www-form-urlencoded",
+        //         data: {"tab": tab},
+        //         success: (obj) => {
+        //             colorOfTab(obj.tab);
+        //             // 페이지 내용 업데이트
+        //             $('#header').html(obj.header);
+        //             $('#content').html(obj.boardContent);
+        //         },
+        //         error: (err) => {
+        //             alert("잘못된 접근입니다.");
+        //             console.log(err);
+        //         }
+        //     })
+        // }
+
         const underline = document.getElementsByClassName("label_underline");
+        const tabContent = document.getElementsByClassName("tabContent");
 
         const info_button = document.querySelector("#info");
         const free_button = document.querySelector("#free");
         const QnA_button = document.querySelector("#QnA");
         const greenTalk_button = document.querySelector("#greenTalk");
 
+        changeTab(${tab});
+
         info_button.addEventListener("click", () => {
-            colorOfTab(1);
+            // colorOfTab(1);
             changeTab(1);
         });
 
         free_button.addEventListener("click", () => {
-            colorOfTab(2);
+            // colorOfTab(2);
             changeTab(2);
         });
 
         QnA_button.addEventListener("click", () => {
-            colorOfTab(3);
+            // colorOfTab(3);
             changeTab(3);
         });
 
         greenTalk_button.addEventListener("click", () => {
-            colorOfTab(4);
+            // colorOfTab(4);
             changeTab(4);
         });
 
-        const colorOfTab = (tab) => {
-            // 탭 눌렀을 때 색상 변경
-            for(let i = 0; i < 4; i++){
-                if(i === tab - 1){
-                    underline[i].classList.add("activeBlock");
-                } else {
-                    underline[i].classList.remove("activeBlock");
-                }
-            }
-        }
 
-        const changeTab = (tab) => {
-
-            // model에 있는 tab값 변경
-            $.ajax({
-                url: "/board/changeTab.do",
-                type: "get",
-                contentType: "x-www-form-urlencoded",
-                data: {"tab": tab},
-                success: (obj) => {
-
-                },
-                error: (err) => {
-                    alert("잘못된 접근입니다.");
-                }
-            })
-        }
 
     </script>
 </body>

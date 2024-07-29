@@ -3,13 +3,6 @@ header {
     justify-content: center;
 }
 
-#header {
-    height: 50px;
-}
-main {
-    height: 1000px;
-}
-
 .container_green {
     display: flex;
     justify-content: center;
@@ -338,19 +331,9 @@ img {
 }
 
 @media screen and (max-width: 1160px) {
-    #nav {
-
-        min-width: 1160px;
-        max-width: 1160px;
-    }
-
     .conimg {
         display:grid;
         grid-template-columns: repeat(2, auto);
-    }
-
-    footer {
-        width: 1160px;
     }
 }
 
