@@ -56,7 +56,9 @@ public class MemberController {
             }
 
             File uploadFile = new File(attachPath + imgFile.getOriginalFilename());
-            System.out.println(imgFile.getOriginalFilename());
+
+            memberDto.setPicture(imgFile.getOriginalFilename());
+
             try{
                 imgFile.transferTo(uploadFile);
             } catch (IOException ie) {
@@ -66,4 +68,6 @@ public class MemberController {
         memberService.modify(memberDto);
         return "member/login_01";
     }
+
+
 }
