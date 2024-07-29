@@ -10,7 +10,9 @@
             , MEM_NAME
             , MEM_NICKNAME
             , MEM_EMAIL
+            , MEM_ZIPCODE
             , MEM_ADDR
+            , MEM_ADDR_DETAIL
             , MEM_PIC
         ) VALUES (
               #{loginId}
@@ -18,8 +20,18 @@
             , #{memName}
             , #{memNickname}
             , #{memEmail}
+            , #{zipcode}
             , #{address}
+            , #{addressDetail}
             , #{picture}
         )
     </insert>
+    <update id="modify" parameterType="member">
+        UPDATE MEMBER
+            SET
+                MEM_NICKNAME = #{memNickname},
+                PASSWORD = #{password},
+                MEM_PIC = #{picture}
+            WHERE MEM_ID = #{memId}
+    </update>
 </mapper>
