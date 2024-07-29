@@ -1,11 +1,17 @@
 package com.bit.springboard.service.impl;
 
+import com.bit.springboard.common.FileUtils;
 import com.bit.springboard.dao.GreentalkDao;
 import com.bit.springboard.dto.GreentalkDto;
+import com.bit.springboard.dto.GreentalkFileDto;
 import com.bit.springboard.service.GreentalkService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -18,8 +24,28 @@ public class GreentalkServiceImpl implements GreentalkService {
     }
 
     @Override
-    public void green_post(GreentalkDto greentalkDto) {
-        greentalkDao.green_post(greentalkDto);
+    public void green_post(GreentalkDto greentalkDto, MultipartFile[] uploadFiles) {
+        List<GreentalkFileDto> greentalkFileDtoList = new ArrayList<>();
+
+        if(uploadFiles != null && uploadFiles.length > 0) {
+            String attachPath ="../../../uploaded";
+
+            File directory = new File(attachPath);
+
+            if(!directory.exists()) {
+                directory.mkdirs();
+            }
+
+            Arrays.stream(uploadFiles).forEach(file -> {
+                if(file.getOriginalFilename() != null && !file.getOriginalFilename().equals("")) {
+                    GreentalkFileDto greentalkFileDto = FileUtils.parserFileInfo(file, attachPath);
+
+                    greentalkFileDtoList.add(greentalkFileDto);
+                }
+            });
+        }
+
+        greentalkDao.green_post(greentalkDto, greentalkFileDtoList);
     }
 
     @Override

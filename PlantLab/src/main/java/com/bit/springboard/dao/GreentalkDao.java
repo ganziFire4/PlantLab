@@ -1,9 +1,12 @@
 package com.bit.springboard.dao;
 
 import com.bit.springboard.dto.GreentalkDto;
+import com.bit.springboard.dto.GreentalkFileDto;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class GreentalkDao {
@@ -14,7 +17,7 @@ public class GreentalkDao {
         this.mybatis = sqlSessionTemplate;
     }
 
-    public void green_post(GreentalkDto greentalkDto) {
+    public void green_post(GreentalkDto greentalkDto, List<GreentalkFileDto> greentalkFileDtoList) {
         mybatis.insert("GreentalkDao.post", greentalkDto);
     }
 
