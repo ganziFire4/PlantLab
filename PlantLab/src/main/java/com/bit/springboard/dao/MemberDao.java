@@ -21,10 +21,16 @@ public class MemberDao {
         System.out.println("MemberDao의 join메소드 종료");
     }
 
+<<<<<<< HEAD
     // Address 관련 메소드
     public void saveAddress(MemberDto memberDto) {
         mybatis.insert("AddressMapper.saveAddress", memberDto);
     }
 
 
+=======
+    public void modify(MemberDto memberDto) {
+        mybatis.update("MemberDao.modify", memberDto);
+    }
+>>>>>>> 1bb0ca8a6ce113579ea170d3bbcd624163ad93ff
 }
