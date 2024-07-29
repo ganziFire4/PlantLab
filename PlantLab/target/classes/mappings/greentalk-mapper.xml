@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="GreentalkDao">
+    <insert id="green_post" parameterType="greentalk">
+        INSERT INTO GREENTALK (
+              MEM_ID
+            , GREEN_CONTENT
+            , GREEN_REG
+            , GREEN_TAG
+        ) VALUES (
+              #{mem_id}
+            , #{green_content}
+            , #{green_reg}
+            , #{green_tag}
+        )
+    </insert>
+
+    <update id="green_modify" parameterType="greentalk">
+        UPDATE SET GREENTALK
+              GREEN_CONTENT = #{green_content}
+            , GREEN_TAG = #{green_tag}
+            , GREEN_MOD = #{green_mod}
+            WHERE GREEN_ID = #{green_id}
+    </update>
+
+    <delete id="green_delete" parameterType="int">
+        DELETE GREENTALK WHERE GREEN_ID = #{ID}
+    </delete>
+    <select id="green_getGreenList" resultType="com.bit.springboard.model.Greentalk">
+        SELECT * FROM greentalk
+    </select>
+
+</mapper>
