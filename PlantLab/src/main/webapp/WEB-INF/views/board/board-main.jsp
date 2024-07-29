@@ -74,6 +74,9 @@
                 </li>
             </ul>
         </div>
+        <script>
+            colorOfTab(${tab});
+        </script>
         <c:if test="${tab == 1 || tab == 2 || tab == 3}">
             <jsp:include page="board-list.jsp"/>
         </c:if>
@@ -92,23 +95,26 @@
         const greenTalk_button = document.querySelector("#greenTalk");
 
         info_button.addEventListener("click", () => {
+            colorOfTab(1);
             changeTab(1);
         });
 
         free_button.addEventListener("click", () => {
+            colorOfTab(2);
             changeTab(2);
         });
 
         QnA_button.addEventListener("click", () => {
+            colorOfTab(3);
             changeTab(3);
         });
 
         greenTalk_button.addEventListener("click", () => {
+            colorOfTab(4);
             changeTab(4);
         });
 
-        const changeTab = (tab) => {
-
+        const colorOfTab = (tab) => {
             // 탭 눌렀을 때 색상 변경
             for(let i = 0; i < 4; i++){
                 if(i === tab - 1){
@@ -117,6 +123,9 @@
                     underline[i].classList.remove("activeBlock");
                 }
             }
+        }
+
+        const changeTab = (tab) => {
 
             // model에 있는 tab값 변경
             $.ajax({
