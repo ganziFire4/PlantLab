@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.bit.springboard.dto.BoardDto" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: bitcamp
   Date: 2024-07-25
@@ -8,12 +9,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="javatime" uri="http://sargue.net/jsptags/time" %>
+
 <html>
 <head>
     <title></title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/board-list.css">
 </head>
 <body>
+    <%
+        Object popList = request.getAttribute("popList");
+        Object boardList = request.getAttribute("boardList");
+    %>
     <!--게시판 내용-->
     <div id="title_table_area">
         <div class="table_popular">
@@ -75,7 +81,7 @@
                         <option value="15">15</option>
                         <option value="20">20</option>
                     </select>
-                    <select name="rec_condition" id=rec_condition">
+                    <select name="rec_condition" id="rec_condition">
                         <option value="최신순">최신순</option>
                         <option value="조회수">조회수</option>
                         <option value="공감순">좋아요</option>
