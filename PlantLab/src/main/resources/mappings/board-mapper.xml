@@ -47,7 +47,8 @@
             ) AS ROW_NUM
             , SUB.*
             FROM (
-                SELECT B.BOARD_TITLE
+                SELECT B.BOARD_ID
+                     , B.BOARD_TITLE
                      , M.MEM_NICKNAME
                      , B.BOARD_REG
                      , B.BOARD_VIEW_CNT
@@ -82,14 +83,15 @@
         LIMIT 10
     </select>
 
-    <select id="view_one" resultType="board">
-        SELECT
-             , B.BOARD_TITLE
+    <select id="view_one" parameterType="int" resultType="board">
+        SELECT B.BOARD_TITLE
              , M.MEM_NICKNAME
              , B.BOARD_REG
              , B.BOARD_MOD
              , B.BOARD_LIKE_CNT
              , B.BOARD_BOOKMARK_CNT
+             , B.BOARD_CONTENT
+             , B.BOARD_TYPE
         FROM BOARD B
         JOIN MEMBER M
           ON B.MEM_ID = M.MEM_ID

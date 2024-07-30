@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.bit.springboard.dto.MemberDto" %><%--
   Created by IntelliJ IDEA.
   User: bitcamp
   Date: 2024-07-24
@@ -7,6 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
+
 <html>
 <head>
     <meta charset="UTF-8">

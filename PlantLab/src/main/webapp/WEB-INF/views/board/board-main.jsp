@@ -78,12 +78,6 @@
                 </li>
             </ul>
         </div>
-<%--        <c:if test="${tab == 1 || tab == 2 || tab == 3}">--%>
-<%--            <jsp:include page="board-list.jsp"/>--%>
-<%--        </c:if>--%>
-<%--        <c:if test="${tab == 4}">--%>
-<%--            <jsp:include page="greentalk.jsp"/>--%>
-<%--        </c:if>--%>
         <div class="tabContent">
             <%
                 // Spring 애플리케이션 컨텍스트 가져오기
@@ -101,6 +95,7 @@
         </div>
         <div class="tabContent">
             <%
+                request.setAttribute("type", 2);
                 request.setAttribute("popList", boardService.view_popular(2));
                 request.setAttribute("boardList", boardService.view_all(2));
             %>
@@ -108,6 +103,7 @@
         </div>
         <div class="tabContent">
             <%
+                request.setAttribute("type", 3);
                 request.setAttribute("popList", boardService.view_popular(3));
                 request.setAttribute("boardList", boardService.view_all(3));;
             %>
@@ -117,7 +113,7 @@
             <jsp:include page="greentalk.jsp"/>
         </div>
     </main>
-    <jsp:include page="${pageContext.request.contextPath}/chatboot.jsp"/>
+    <jsp:include page="${pageContext.request.contextPath}/chatbot.jsp"/>
     <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
     <script>
 
@@ -134,38 +130,7 @@
             }
         }
 
-        // const colorOfTab = (tab) => {
-        //     // 탭 눌렀을 때 색상 변경
-        //     for(let i = 0; i < 4; i++){
-        //         if(i === tab - 1){
-        //             underline[i].classList.add("activeBlock");
-        //         } else {
-        //             underline[i].classList.remove("activeBlock");
-        //         }
-        //     }
-        // }
-        //
-        // const changeTab = (tab) => {
-        //
-        //     // model에 있는 tab값 변경
-        //     $.ajax({
-        //         url: "/board/changeTab.do",
-        //         type: "get",
-        //         contentType: "x-www-form-urlencoded",
-        //         data: {"tab": tab},
-        //         success: (obj) => {
-        //             colorOfTab(obj.tab);
-        //             // 페이지 내용 업데이트
-        //             $('#header').html(obj.header);
-        //             $('#content').html(obj.boardContent);
-        //         },
-        //         error: (err) => {
-        //             alert("잘못된 접근입니다.");
-        //             console.log(err);
-        //         }
-        //     })
-        // }
-
+        const header = document.getElementById("header");
         const underline = document.getElementsByClassName("label_underline");
         const tabContent = document.getElementsByClassName("tabContent");
 
@@ -177,22 +142,22 @@
         changeTab(${tab});
 
         info_button.addEventListener("click", () => {
-            // colorOfTab(1);
+            header.innerHTML = `<img src="${pageContext.request.contextPath}/static/images/header_정보.png" alt="정보게시판 헤더">`;
             changeTab(1);
         });
 
         free_button.addEventListener("click", () => {
-            // colorOfTab(2);
+            header.innerHTML = `<img src="${pageContext.request.contextPath}/static/images/header_잡담.png" alt="잡담게시판 헤더">`;
             changeTab(2);
         });
 
         QnA_button.addEventListener("click", () => {
-            // colorOfTab(3);
+            header.innerHTML = `<img src="${pageContext.request.contextPath}/static/images/header_질문.png" alt="질문게시판 헤더">`;
             changeTab(3);
         });
 
         greenTalk_button.addEventListener("click", () => {
-            // colorOfTab(4);
+            header.innerHTML = `<img src="${pageContext.request.contextPath}/static/images/header_그린톡.png" alt="그린톡 헤더">`;
             changeTab(4);
         });
 

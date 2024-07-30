@@ -9,7 +9,7 @@
 <html>
 <head>
     <title></title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/chatboot.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/chatbot.css">
 </head>
 <body>
     <div id="popup-icon1">

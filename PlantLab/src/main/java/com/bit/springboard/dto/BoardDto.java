@@ -15,6 +15,7 @@ public class BoardDto {
     private int board_like_cnt;
     private int board_bookmark_cnt;
     private String mem_nickname;
+    private String mem_pic;
 
     public int getRow_num() {
         return row_num;
@@ -110,6 +111,14 @@ public class BoardDto {
 
     public void setMem_nickname(String mem_nickname) {
         this.mem_nickname = mem_nickname;
+    }
+
+    public String getMem_pic() {
+        return mem_pic;
+    }
+
+    public void setMem_pic(String mem_pic) {
+        this.mem_pic = mem_pic;
     }
 
     @Override

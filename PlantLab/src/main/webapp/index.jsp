@@ -202,16 +202,7 @@
             </div>
         </section>
     </main>
-    <div id="popup-icon1">
-        <img src="/static/images/챗봇아이콘.png" alt="Popup Icon" id="popup-image" style="width: 60px; height: 60px;">
-    </div>
-    <div id="popup-content1" class="hidden">
-        <p>안녕하세요! 플랜트 봇 입니다!<br>궁금한 것은 모두 플랜트 봇에게 물어보세요!</p>
-    </div>
-    <div id="popup-icon2">
-        <img src="/static/images/top아이콘.png" alt="Popup Icon" id="popup-image" style="width: 60px; height: 60px;">
-    </div>
-    <jsp:include page="${pageContext.request.contextPath}/chatboot.jsp"/>
+    <jsp:include page="${pageContext.request.contextPath}/chatbot.jsp"/>
     <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
 </body>
 </html>
