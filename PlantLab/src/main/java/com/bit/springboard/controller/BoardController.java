@@ -1,22 +1,25 @@
 package com.bit.springboard.controller;
 
+import com.bit.springboard.dto.Criteria;
+import com.bit.springboard.dto.GreentalkDto;
+import com.bit.springboard.dto.GreentalkFileDto;
 import com.bit.springboard.service.BoardService;
+import com.bit.springboard.service.GreentalkService;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 //import org.springframework.mock.web.MockHttpServletResponse;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 
@@ -24,11 +27,15 @@ import java.util.Map;
 @RequestMapping("/board")
 public class BoardController {
     private BoardService boardService;
+    private GreentalkService greentalkService;
+    private ApplicationContext applicationContext;
 
     @Autowired
-    public BoardController(BoardService boardService) {
+    public BoardController(BoardService boardService, ApplicationContext applicationContext) {
         this.boardService = boardService;
+        this.applicationContext = applicationContext;
     }
+
 
     @GetMapping("/board-main.do")
     public String boardList(Model model, @RequestParam("tab") int tab) {
@@ -53,5 +60,36 @@ public class BoardController {
     }
 
     @GetMapping("/greentalk_post")
-    public String greentalk_post(){return"/board/greentalk_post";}
+    public String greentalk_post() {
+        return "/board/greentalk_post";
+    }
+
+    @PostMapping("/greentalk-list-ajax.do")
+    @ResponseBody
+    public Map<String, Object> greentalkListAjax(@RequestParam Map<String, String> searchMap, Criteria cri) {
+        greentalkService = applicationContext.getBean("greentalkServiceImpl", GreentalkService.class);
+
+//        cri.setAmount(9);
+
+        List<Map<String, Object>> greentalkList = new ArrayList<>();
+
+        greentalkService.getGreenList(searchMap, cri).forEach(greentalkDto -> {
+            List<GreentalkDto> greentalkFileDtoList = greentalkService.getGreenFileList(greentalkDto.getId());
+
+            Map<String, Object> map = new HashMap<>();
+
+            map.put("greentalkDto", greentalkDto);
+
+            if (greentalkFileDtoList.size() > 0)
+                map.put("file", greentalkFileDtoList.get(0));
+
+            greentalkList.add(map);
+        });
+
+        Map<String, Object> returnMap = new HashMap<>();
+
+        returnMap.put("greentalkList", greentalkList);
+
+        return returnMap;
+    }
 }

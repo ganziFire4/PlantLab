@@ -2,6 +2,7 @@ package com.bit.springboard.service.impl;
 
 import com.bit.springboard.common.FileUtils;
 import com.bit.springboard.dao.GreentalkDao;
+import com.bit.springboard.dto.Criteria;
 import com.bit.springboard.dto.GreentalkDto;
 import com.bit.springboard.dto.GreentalkFileDto;
 import com.bit.springboard.service.GreentalkService;
@@ -10,9 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class GreentalkServiceImpl implements GreentalkService {
@@ -64,12 +63,18 @@ public class GreentalkServiceImpl implements GreentalkService {
     }
 
     @Override
-    public List<GreentalkDto> green_getGreenList() {
-        return List.of();
+    public List<GreentalkDto> getGreenList(Map<String, String> searchMap, Criteria cri) {
+        cri.setStartNum((cri.getPageNum() - 1) * cri.getAmount());
+
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("search", searchMap);
+        paramMap.put("cri", cri);
+
+        return greentalkDao.getGreentalkList(paramMap);
     }
 
     @Override
-    public List<GreentalkDto> green_getGreenFileList(int id) {
+    public List<GreentalkDto> getGreenFileList(int id) {
         return List.of();
     }
 

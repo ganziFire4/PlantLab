@@ -29,6 +29,20 @@
         DELETE GREENTALK WHERE GREEN_ID = #{ID}
     </delete>
 
+    <select id="getGreenList" parameterType="map" resultType="GreentalkDto">
+        SELECT G.GREEN_ID
+             , G.GREEN_TITLE
+             , G.GREEN_CONTENT
+             , M.MEM_ID
+             , G.GREEN_REG
+             , G.GREEN_MOD
+             , G.GREEN_TAG
+             , G.GREEN_LIKE_CNT
+             , G.GREEN_BOOKMARK_CNT
+        FROM GREENTALK G
+        JOIN MEMBER M ON G.MEM_ID = M.MEM_ID
+        WHERE
+    </select>
 
     
 </mapper>
