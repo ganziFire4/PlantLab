@@ -26,7 +26,7 @@
         <div class="input-container">
             <input class="inputbox" type="password" placeholder="비밀번호" required>
         </div>
-        <button class="login" type="button">로그인</button>
+        <button class="login" type="button" >로그인</button>
         <div class="options">
             <ul>
                 <li>
@@ -69,7 +69,7 @@
                 if(tryLogin[1].value == mem.password){
                     sessionStorage.setItem("login", mem.nickname);
                     alert(`${mem.nickname}님 환영합니다.`);
-                    window.location.href = "mainpage01.html";
+                    window.location.href = "../../../index.jsp";
                     return;
                 }
             }

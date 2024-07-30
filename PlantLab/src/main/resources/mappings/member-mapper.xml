@@ -21,8 +21,8 @@
             , #{memNickname}
             , #{memEmail}
             , #{zipcode}
-            , #{address}
-            , #{addressDetail}
+            , #{addr}
+            , #{addrDetail}
             , #{picture}
         )
     </insert>
