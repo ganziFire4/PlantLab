@@ -153,6 +153,7 @@ img {
 .normalcon {
     display: flex;
     justify-content: center;
+    height: 400px;
 
 }
 
@@ -362,4 +363,34 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.greentalksearchmenu {
+    width: 95px;
+    height: 36px;
+    text-align: center;
+    border: #B9B9B9 solid 1px;
+}
+
+.greentalksearch {
+    width: 691px;
+    height: 36px;
+    background-color: #F8F8F8;
+    border: #BEBEBE solid 1px
+}
+
+.greentalksearchbtn {
+    width: 82px;
+    height: 36px;
+    background-color: white;
+    border: #B9B9B9 solid 1px;
+}
+
+.greentalksearchcontainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 900px;
+    margin: 50px auto;
+    gap: 10px;
 }

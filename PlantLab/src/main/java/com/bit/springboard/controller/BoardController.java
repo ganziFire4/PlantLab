@@ -51,4 +51,7 @@ public class BoardController {
         model.addAttribute("board", boardService.view_one(id));
         return "/board/board-detail";
     }
+
+    @GetMapping("/greentalk_post")
+    public String greentalk_post(){return"/board/greentalk_post";}
 }
