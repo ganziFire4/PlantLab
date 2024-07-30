@@ -56,7 +56,7 @@
                     </thead>
                     <tbody>
                         <c:forEach items="${popList}" var="popBoard">
-                            <tr onclick="location.href='board/board-detail.do?id=${popBoard.board_id}'">
+                            <tr onclick="location.href='/board/board-detail.do?id=${popBoard.board_id}'">
                                 <td scope="row">${popBoard.row_num}</td>
                                 <td>${popBoard.board_title}</td>
                                 <td>${popBoard.mem_nickname}</td>
@@ -113,7 +113,7 @@
                     </thead>
                     <tbody>
                     <c:forEach items="${boardList}" var="board">
-                        <tr onclick="location.href='board/board-detail.do?id=${board.board_id}'">
+                        <tr onclick="location.href='/board/board-detail.do?id=${board.board_id}'">
                             <td scope="row">${board.row_num}</td>
                             <td>${board.board_title}</td>
                             <td>${board.mem_nickname}</td>

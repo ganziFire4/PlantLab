@@ -125,7 +125,7 @@ public final class chatboot_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("    <title></title>\r\n");
       out.write("    <link rel=\"stylesheet\" href=\"");
       out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}", java.lang.String.class, (jakarta.servlet.jsp.PageContext)_jspx_page_context, null));
-      out.write("/static/css/chatboot.css\">\r\n");
+      out.write("/static/css/chatbot.css\">\r\n");
       out.write("</head>\r\n");
       out.write("<body>\r\n");
       out.write("    <div id=\"popup-icon1\">\r\n");

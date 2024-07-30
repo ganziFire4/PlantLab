@@ -329,7 +329,7 @@ public final class index_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("        <img src=\"/static/images/top아이콘.png\" alt=\"Popup Icon\" id=\"popup-image\" style=\"width: 60px; height: 60px;\">\r\n");
       out.write("    </div>\r\n");
       out.write("    ");
-      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, (java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}/chatboot.jsp", java.lang.String.class, (jakarta.servlet.jsp.PageContext)_jspx_page_context, null), out, false);
+      org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, (java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}/chatbot.jsp", java.lang.String.class, (jakarta.servlet.jsp.PageContext)_jspx_page_context, null), out, false);
       out.write("\r\n");
       out.write("    ");
       org.apache.jasper.runtime.JspRuntimeLibrary.include(request, response, (java.lang.String) org.apache.jasper.runtime.PageContextImpl.proprietaryEvaluate("${pageContext.request.contextPath}/footer.jsp", java.lang.String.class, (jakarta.servlet.jsp.PageContext)_jspx_page_context, null), out, false);
