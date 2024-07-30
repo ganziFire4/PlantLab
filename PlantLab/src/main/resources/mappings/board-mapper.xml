@@ -95,4 +95,15 @@
           ON B.MEM_ID = M.MEM_ID
         WHERE B.BOARD_ID = ${id}
     </select>
+
+    <select id="getBoard" parameterType="int" resultType="board">
+        SELECT B.BOARD_TITLE
+             , B.BOARD_REG
+             , M.MEM_NICKNAME
+        FROM BOARD B
+        JOIN MEMBER M
+          ON B.MEM_ID = M.MEM_ID
+        WHERE B.MEM_ID = ${id}
+        LIMIT 3
+    </select>
 </mapper>
