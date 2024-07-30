@@ -102,4 +102,7 @@ public class BoardController {
     public String greentalk() {
         return "/board/greentalk";
     }
+
+    @GetMapping("/greentalk_post")
+    public String greentalk_post(){return"/board/greentalk_post";}
 }
