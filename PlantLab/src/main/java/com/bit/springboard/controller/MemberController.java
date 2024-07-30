@@ -1,16 +1,13 @@
 package com.bit.springboard.controller;
 
 import com.bit.springboard.dto.MemberDto;
+import com.bit.springboard.service.BoardService;
 import com.bit.springboard.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.ResponseBody;
-
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -25,10 +22,12 @@ import java.nio.file.Paths;
 @RequestMapping("/member")
 public class MemberController {
     private MemberService memberService;
+    private BoardService boardService;
 
     @Autowired
-    public MemberController(MemberService memberService) {
+    public MemberController(MemberService memberService, BoardService boardService) {
         this.memberService = memberService;
+        this.boardService = boardService;
     }
 
     @GetMapping("/login.do")
@@ -92,5 +91,10 @@ public class MemberController {
         return "member/login_01";
     }
 
+    @GetMapping("/mypage.do")
+    public String boardView(Model model, @RequestParam("mem_id") int mem_id) {
+        model.addAttribute("myWrite", boardService.getBoard(mem_id));
+        return "/member/mypage";
+    }
 
 }

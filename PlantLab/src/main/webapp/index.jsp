@@ -17,7 +17,7 @@
     <header id="header">
         <img src="/static/images/Header with image_메인페이지.svg" alt="메인 헤더">
     </header>
-    <a href="WEB-INF/views/member/mypage.jsp">1234</a>
+    <a href="member/mypage.do?mem_id=1">숨겨진 마이페이지 버튼..</a>
     <main>
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">

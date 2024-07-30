@@ -46,4 +46,10 @@ public class BoardServiceImpl implements BoardService {
     public BoardDto view_one(int id) {
         return boardDao.view_one(id);
     }
+
+    @Override
+    public List<BoardDto> getBoard(int id) {
+        List<BoardDto> boardDtos = boardDao.getBoard(id);
+        return boardDao.getBoard(id);
+    }
 }

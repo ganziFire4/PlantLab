@@ -6,6 +6,10 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<%@ taglib prefix="javatime" uri="http://sargue.net/jsptags/time" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
 <html>
     <head>
         <title>마이페이지</title>
@@ -27,6 +31,7 @@
                         <div class="profilename">
                             <p style="font-size: 25px;">카리나</p>
                         </div>
+                        <a href="/weather/weaher-api.do">123</a>
                         <div class="profilemedal">
                             <img src="../../../static/images/새싹레벨.png" alt="">
                         </div>
@@ -49,17 +54,17 @@
                         </div>
                     </div>
                 </div>
+<%--                작업중--%>
                 <div class="categorybox">
-                    <div class="mycontent" style="border-bottom: #B5B5B5 1px solid;"
-                         id="mycontentbtn">
+                    <div class="mycontent" style="border-bottom: #B5B5B5 1px solid;" id="mycontentbtn">
                         <div class="mycontenticon">
-                            <img src="../../../static/images/내가올린글.png" alt="">
+                            <img src="../../../static/images/내가올린글.png" alt="내가올린글image">
                         </div>
                         <div class="mycontenttxt">
                             내가올린글
                         </div>
                     </div>
-                    <div class="snscontent"  style="border-bottom: #B5B5B5 1px solid;"
+                    <div class="snscontent" style="border-bottom: #B5B5B5 1px solid;"
                          id="snscontentbtn">
                         <div class="snscontenticon">
                             <img src="../../../static/images/자랑%20사진.png" alt="">
@@ -86,40 +91,42 @@
                     <input type="radio" id="shoptype" name="content">
                 </div>
             </div>
-            <div class="contentbox-board" id="content-a">
-                <div class="cover-table">
-                    <div class="table-cover-div" style="margin-top: 0">
-                        <div class="board-name-div">
-                            <p style="align-self: start; margin-bottom: 0">정보글</p>
-                            <button style="align-self: end;">더보기</button>
+                <div class="contentbox-board" id="content-a">
+                    <div class="cover-table">
+                        <div class="table-cover-div" style="margin-top: 0">
+                            <div class="board-name-div">
+                                <p style="align-self: start; margin-bottom: 0">정보글</p>
+                                <button style="align-self: end; font-size: 1rem;">더보기+</button>
+                            </div>
+                            <table class="defaluttext">
+                                <tr class="firstRow">
+                                    <td>제목</td>
+                                    <td>작성자</td>
+                                    <td>작성일</td>
+                                </tr>
+                                <c:forEach items="${myWrite}" var="writeList">
+                                    <c:if test="${fn:startsWith(writeList.board_title, '정보_')}">
+                                        <tr class="nextRow">
+                                            <td>
+                                                <button>${writeList.board_title}</button>
+                                            </td>
+                                            <td>
+                                                <button>${writeList.mem_nickname}</button>
+                                            </td>
+                                            <td>
+                                                <button>
+                                                    <javatime:format value="${writeList.board_reg}" pattern="yyyy-MM-dd"/>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </c:if>
+                                </c:forEach>
+                            </table>
                         </div>
-                        <table class="defaluttext">
-                            <tr class="firstRow">
-                                <td>제목</td>
-                                <td>작성자</td>
-                                <td>작성일</td>
-                            </tr>
-                            <tr>
-                                <td><button>Project Name</button></td>
-                                <td><button>Name</button></td>
-                                <td><button>2022.00.00</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>Project Name</button></td>
-                                <td><button>Name</button></td>
-                                <td><button>2022.00.00</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>Project Name</button></td>
-                                <td><button>Name</button></td>
-                                <td><button>2022.00.00</button></td>
-                            </tr>
-                        </table>
-                    </div>
                     <div class="table-cover-div" style="margin-top: 5vh">
                         <div class="board-name-div">
                             <p style="align-self: start; margin-bottom: 0">잡담</p>
-                            <button style="align-self: end">더보기</button>
+                            <button style="align-self: end; font-size: 1rem;">더보기</button>
                         </div>
                         <table class="defaluttext">
                             <tr class="firstRow">
@@ -127,27 +134,29 @@
                                 <td>작성자</td>
                                 <td>작성일</td>
                             </tr>
-                            <tr>
-                                <td><button>Project Name</button></td>
-                                <td><button>Name</button></td>
-                                <td><button>2022.00.00</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>Project Name</button></td>
-                                <td><button>Name</button></td>
-                                <td><button>2022.00.00</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>Project Name</button></td>
-                                <td><button>Name</button></td>
-                                <td><button>2022.00.00</button></td>
-                            </tr>
+                            <c:forEach items="${myWrite}" var="writeList">
+                                <c:if test="${fn:startsWith(writeList.board_title, '잡담_')}">
+                                    <tr class="nextRow">
+                                        <td>
+                                            <button>${writeList.board_title}</button>
+                                        </td>
+                                        <td>
+                                            <button>${writeList.mem_nickname}</button>
+                                        </td>
+                                        <td>
+                                            <button>
+                                                <javatime:format value="${writeList.board_reg}" pattern="yyyy-MM-dd"/>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </c:if>
+                            </c:forEach>
                         </table>
                     </div>
                     <div class="table-cover-div" style="margin-top: 5vh">
                         <div class="board-name-div">
                             <p style="align-self: start; margin-bottom: 0">Q&A</p>
-                            <button style="align-self: end">더보기</button>
+                            <button style="align-self: end; font-size: 1rem;">더보기</button>
                         </div>
                         <table class="defaluttext">
                             <tr class="firstRow">
@@ -155,21 +164,23 @@
                                 <td>작성자</td>
                                 <td>작성일</td>
                             </tr>
-                            <tr>
-                                <td><button>Project Name</button></td>
-                                <td><button>Name</button></td>
-                                <td><button>2022.00.00</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>Project Name</button></td>
-                                <td><button>Name</button></td>
-                                <td><button>2022.00.00</button></td>
-                            </tr>
-                            <tr>
-                                <td><button>Project Name</button></td>
-                                <td><button>Name</button></td>
-                                <td><button>2022.00.00</button></td>
-                            </tr>
+                            <c:forEach items="${myWrite}" var="writeList">
+                                <c:if test="${fn:startsWith(writeList.board_title, '질문_')}">
+                                    <tr class="nextRow">
+                                        <td>
+                                            <button>${writeList.board_title}</button>
+                                        </td>
+                                        <td>
+                                            <button>${writeList.mem_nickname}</button>
+                                        </td>
+                                        <td>
+                                            <button>
+                                                <javatime:format value="${writeList.board_reg}" pattern="yyyy-MM-dd"/>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </c:if>
+                            </c:forEach>
                         </table>
                     </div>
                 </div>
@@ -384,6 +395,8 @@
                 $("#mycontentbtn").addClass("active");
                 $(".mycontenttxt").css("color", "white");
                 $("#mycontentbtn").click((e) => {
+                    $("#testform").submit();
+
                     $("#mycontentbtn").addClass("active");
                     $("#snscontentbtn").removeClass("active");
                     $("#shopcontentbtn").removeClass("active");

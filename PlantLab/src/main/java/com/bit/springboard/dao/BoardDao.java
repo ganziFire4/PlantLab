@@ -39,4 +39,8 @@ public class BoardDao {
     public BoardDto view_one(int id) {
         return mybatis.selectOne("BoardDao.view_one", id);
     }
+
+    public List<BoardDto> getBoard(int id) {
+        return mybatis.selectList("BoardDao.getBoard", id);
+    }
 }
