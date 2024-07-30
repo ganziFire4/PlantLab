@@ -12,6 +12,7 @@
     <title>Title</title>
 </head>
 <body class="noto-sans-kr">
+    <jsp:include page="${pageContext.request.contextPath}/nav.jsp"/>
 
 <!-- <header id="header">
     <img src="image/header_정보.png" alt="글쓰기 헤더">
@@ -42,8 +43,8 @@
     </div>
     <div class="uploadBox">
         <div class="uploadIcons">
-            <img src="images/images.png.png" alt="이미지 업로드 아이콘" width="60px" height="60px" id="img">
-            <img src="images/video.png.png" alt="비디오 업로드 아이콘"width="45px" height="50px" class="vid" id="vid">
+            <img src="/static/images/images.png.png" alt="이미지 업로드 아이콘" width="60px" height="60px" id="img">
+            <img src="/static/images/video.png.png" alt="비디오 업로드 아이콘"width="45px" height="50px" class="vid" id="vid">
         </div>
         <div class="uploadBtn">
             <input type="file" class="imageBtn" accept="image/*">
@@ -54,6 +55,7 @@
         <button type="submit" class="confirm">글 올리기</button>
     </div>
 </div>
+    <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
 
 <script>
     $(() => {
