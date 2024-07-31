@@ -39,9 +39,10 @@ public class MemberController {
 
     @PostMapping("/login.do")
     public String login(MemberDto memberDto, Model model, HttpSession session) {
+        System.out.println(memberService.login(memberDto));
         try {
             System.out.println("로그인 시도: " + memberDto.getLoginId());
-            System.out.println(memberService.login(memberDto));
+
             MemberDto loggedInMember = memberService.login(memberDto);
 
             System.out.println("로그인 성공: " + loggedInMember.getLoginId());

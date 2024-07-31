@@ -323,7 +323,7 @@
                         <div class="profilebox-header">
                             <div style="display: flex; align-items: center; flex-direction: column; margin-top: 7vh">
                                 <div id="modify-profile-image" style="position: relative; display: inline-block;">
-                                    <img src="../../../static/images/profile_default.svg" id="profile-img" class="profile" alt="프로필사진" style="height: 15vh; width: auto">
+                                    <img style="width: 6vw; height: 13vh; border-radius: 100%;" src="../../../static/images/profile_default.svg" id="profile-img" class="profile" alt="프로필사진" style="height: 15vh; width: auto">
                                     <button type="button" id="upload-btn" style="position: absolute; bottom: 0; right: 0;">
                                         <img src="../../../static/images/modify_profile.svg">
                                     </button>
@@ -451,7 +451,7 @@
                 });
 
                 $("#del-profile-img").on("click", (e) => {
-                    $("#profile-img").attr("src", "static/images/profile_default.svg");
+                    $("#profile-img").attr("src", "../../../static/images/profile_default.svg");
                 });
 
                 $("#profile-nickname").on("change", (e) => {
