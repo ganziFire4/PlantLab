@@ -92,4 +92,13 @@
         </if>
     </select>
 
+    <select id="getNorGreenList" resultType="greentalk">
+        SELECT G.GREEN_ID
+             , GP.GREEN_PIC
+            FROM GREENTALK G
+            JOIN GREENTALK_PIC GP
+              ON G.GREEN_ID = GP.GREEN_ID
+            ORDER BY G.GREEN_REG DESC
+            LIMIT 3
+    </select>
 </mapper>

@@ -70,7 +70,7 @@ public class GreentalkServiceImpl implements GreentalkService {
         paramMap.put("search", searchMap);
         paramMap.put("cri", cri);
 
-        return greentalkDao.getGreentalkList(paramMap);
+        return greentalkDao.getGreenList(paramMap);
     }
 
     @Override
@@ -91,5 +91,10 @@ public class GreentalkServiceImpl implements GreentalkService {
     @Override
     public int getTotalCnt(Map<String, String> searchMap) {
         return greentalkDao.getTotalCnt(searchMap);
+    }
+
+    @Override
+    public List<GreentalkDto> getNorGreenList() {
+        return greentalkDao.getNorGreenList();
     }
 }

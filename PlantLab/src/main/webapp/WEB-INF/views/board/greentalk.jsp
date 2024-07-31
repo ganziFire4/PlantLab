@@ -100,8 +100,7 @@
                             <p class="card-text">${greentalk.greentalkDto.green_content}</p>
                             <div class="tag-group">
                                 <div class="tags">
-                                    <p class="tag1">#초록</p>
-                                    <p class="tag2">#자랑</p>
+                                    <p class="tag1">#${greentalk.greentalkDto.green_tag}</p>
                                 </div>
                                 <div class="btnicon">
                                     <img src="${pageContext.request.contextPath}/static/images/그린톡/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
@@ -113,41 +112,41 @@
                         </div>
                     </div>
                                 </c:forEach>
-                    <div class="card2" style="width: 546px;">
-                        <div class="card-header">
-                            <div class="card-writer">
-                                <img src="${pageContext.request.contextPath}/static/images/그린톡/defaultprofile.png" alt="" style="width: 29px;">  장길산
-                            </div>
-                            <div class="report">
-                                <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="신고 버튼" class="reportbtn">
-                            </div>
-                        </div>
-                        <img src="${pageContext.request.contextPath}/static/images/그린톡/ranksample2.jpeg" class="card-img-top" alt="..." data-bs-toggle="modal"
-                             data-bs-target="#rank2modal">
-                        <div class="card-body">
-                            <p class="card-text">오늘 심은 양파...^^</p>
-                            <div class="tag-group">
-                                <div class="tags">
-                                    <p class="tag1">#내돈내심</p>
-                                    <p class="tag2">#반찬</p>
-                                </div>
-                                <div class="btnicon">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/hearticon.png" alt="" class="hearticon" id="heart">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/filledhearticon.png" alt="" class="filledhearticon" style="display: none;">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<%--                    <div class="card2" style="width: 546px;">--%>
+<%--                        <div class="card-header">--%>
+<%--                            <div class="card-writer">--%>
+<%--                                <img src="${pageContext.request.contextPath}/static/images/그린톡/defaultprofile.png" alt="" style="width: 29px;">  장길산--%>
+<%--                            </div>--%>
+<%--                            <div class="report">--%>
+<%--                                <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="신고 버튼" class="reportbtn">--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                        <img src="${pageContext.request.contextPath}/static/images/그린톡/ranksample2.jpeg" class="card-img-top" alt="..." data-bs-toggle="modal"--%>
+<%--                             data-bs-target="#rank2modal">--%>
+<%--                        <div class="card-body">--%>
+<%--                            <p class="card-text">오늘 심은 양파...^^</p>--%>
+<%--                            <div class="tag-group">--%>
+<%--                                <div class="tags">--%>
+<%--                                    <p class="tag1">#내돈내심</p>--%>
+<%--                                    <p class="tag2">#반찬</p>--%>
+<%--                                </div>--%>
+<%--                                <div class="btnicon">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/hearticon.png" alt="" class="hearticon" id="heart">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/filledhearticon.png" alt="" class="filledhearticon" style="display: none;">--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
                 </div>
             </div>
         </div>
         <div class="normalcon">
             <div class="conimg">
-                <img src="${pageContext.request.contextPath}/static/images/그린톡/emagesample1.jpg" alt="" class="thumbnail" id="normal1">
-                <img src="${pageContext.request.contextPath}/static/images/그린톡/ranksample1.jpg" alt="" class="thumbnail" id="normal2">
-                <img src="${pageContext.request.contextPath}/static/images/그린톡/ranksample1.jpg" alt="" class="thumbnail" id="normal3">
+                <img src="/static/images/storage/${greentalk.greentalkDto.green_pic}" alt="" class="thumbnail" id="normal1">
+                <img src="/static/images/storage/${greentalk.greentalkDto.green_pic}" alt="" class="thumbnail" id="normal2">
+                <img src="/static/images/storage/${greentalk.greentalkDto.green_pic}" alt="" class="thumbnail" id="normal3">
             </div>
         </div>
         </div>

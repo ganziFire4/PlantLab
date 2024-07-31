@@ -35,7 +35,7 @@ public class GreentalkDao {
         mybatis.update("GreentalkDao.updateCnt", id);
     }
 
-    public List<GreentalkDto> getGreentalkList(Map<String, Object> paramMap) {
+    public List<GreentalkDto> getGreenList(Map<String, Object> paramMap) {
         System.out.println("getGreentalkList실행됨");
         return mybatis.selectList("GreentalkDao.getGreenList", paramMap);
     }
@@ -50,5 +50,10 @@ public class GreentalkDao {
 
     public int getTotalCnt(Map<String, String> searchMap) {
         return mybatis.selectOne("GreentalkDao.getTotalCnt", searchMap);
+    }
+
+    public List<GreentalkDto> getNorGreenList() {
+        List<GreentalkDto> test = mybatis.selectList("GreentalkDao.getNorGreenList");
+        return mybatis.selectList("GreentalkDao.getNorGreenList");
     }
 }

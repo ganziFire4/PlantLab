@@ -115,4 +115,5 @@
                 BOARD_VIEW_CNT = BOARD_VIEW_CNT + 1
             WHERE BOARD_ID = ${id}
     </update>
+
 </mapper>

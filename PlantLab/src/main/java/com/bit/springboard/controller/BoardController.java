@@ -49,11 +49,12 @@ public class BoardController {
     @RequestMapping("/greentalk.do")
     public String greentalk(Model model, Criteria cri, Map<String, String> searchMap) {
 
-
         List<Map<String, Object>> mapList = new ArrayList<>();
 
         List<GreentalkDto> greentalkDtoList = greentalkService.getPopGreenList();
         System.out.println("getPopGreenList실행");
+
+        List<GreentalkDto> greentalkDtoList1 = greentalkService.getNorGreenList();
 
         greentalkDtoList.forEach(greentalkDto -> {
             List<GreentalkDto> greentalkPicDtoList = greentalkService.getGreenFileList(greentalkDto.getGreen_id());
@@ -63,7 +64,7 @@ public class BoardController {
                 map.put("file", greentalkPicDtoList.get(0));
 
             mapList.add(map);
-        });
+        }); // 강사님찬스
 
         model.addAttribute("greentalkList" , mapList);
 
