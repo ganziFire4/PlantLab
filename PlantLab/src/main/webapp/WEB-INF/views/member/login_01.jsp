@@ -11,6 +11,7 @@
     <title>플랜트랩: 로그인</title>
     <link rel="icon" type="img/png" href="/static/images/round_logo_whiteBack.svg">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/login_01.css">
+    <script src="${pageContext.request.contextPath}/static/js/jquery-3.7.1.min.js"></script>
 </head>
 <body>
 <main>
@@ -22,7 +23,7 @@
         <p id="login_kor_name">플랜트랩</p>
         <form action="/member/login.do" method="post">
         <div class="input-container">
-            <input class="inputbox" type="text" name="loginId" placeholder="아이디" required>
+            <input class="inputbox" type="text" name="login_id" placeholder="아이디" required>
         </div>
         <div class="input-container">
             <input class="inputbox" type="password" name="password" placeholder="비밀번호" required>

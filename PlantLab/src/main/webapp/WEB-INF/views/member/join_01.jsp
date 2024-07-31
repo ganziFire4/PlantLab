@@ -19,14 +19,14 @@
             <form id="join-form" action="/member/join.do" method="post">
                 <div class="form-group">
                     <div class="custom-input">
-                        <input type="text" id="veri_btn" name="loginId" placeholder="아이디" required>
+                        <input type="text" id="veri_btn" name="login_id" placeholder="아이디" required>
                         <button type="button" onclick="checkDuplicate()"></button>
                     </div>
                     <small id="check-message"></small>
                 </div>
                 <div class="form-group">
                     <label for="nickname"></label>
-                    <input type="text" id="nickname" name="memNickname" placeholder="닉네임" required>
+                    <input type="text" id="nickname" name="mem_nickname" placeholder="닉네임" required>
                     <small id="check-message1"></small>
                 </div>
                 <div class="form-group">
@@ -41,12 +41,12 @@
                 </div>
                 <div class="form-group">
                     <label for="userName"></label>
-                    <input type="text" id="userName" name="memName" placeholder="이름" required>
+                    <input type="text" id="userName" name="mem_name" placeholder="이름" required>
                     <small id="check-message4"></small>
                 </div>
                 <div class="form-group">
                     <div class="custom-input2">
-                        <input type="email" id="memEmail" name="memEmail" placeholder="이메일" required>
+                        <input type="email" id="mem_email" name="mem_email" placeholder="이메일" required>
                         <button type="button" onclick="checkDuplicate()" id="emailAuth"></button>
                     </div>
                     <small id="check-message5"></small>
@@ -67,12 +67,12 @@
                 </div>
                 <div class="form-group">
                     <label for="addr"></label>
-                    <input type="text" id="addr" name="addr" placeholder="주소" required>
+                    <input type="text" id="addr" name="mem_addr" placeholder="주소" required>
                     <small id="check-message8"></small>
                 </div>
                 <div class="form-group">
                     <label for="addr_detail"></label>
-                    <input type="text" id="addr_detail" name="addr_detail" placeholder="상세 주소" required>
+                    <input type="text" id="addr_detail" name="mem_addr_detail" placeholder="상세 주소" required>
                     <small id="check-message9"></small>
                 </div>
                 <button type="submit" class="submit-btn" onclick="joinComplete()">가입하기</button> <!--백연결시 type="submit"으로 변경 필요-->
@@ -81,9 +81,9 @@
     </main>
     </div>
     <script>
-        const userId = document.querySelector("input[name='loginId']");
-        const userNickname = document.querySelector("input[name='memNickname']");
-        const userName = document.querySelector("input[name='memName']");
+        const userId = document.querySelector("input[name='login_id']");
+        const userNickname = document.querySelector("input[name='mem_nickname']");
+        const userName = document.querySelector("input[name='mem_name']");
         const checkMessage = document.querySelector("#check-message");
         const checkMessage1 = document.querySelector("#check-message1");
         const checkMessage2 = document.querySelector("#check-message2");
@@ -96,8 +96,8 @@
         const checkMessage9 = document.querySelector("#check-message9");
         const userPassword = document.querySelector("input[name='password']");
         const confirmPassword = document.querySelector("input[name='confirmPassword']");
-        const addr = document.querySelector("input[name='addr']");
-        const addr_detail = document.querySelector("input[name='addr_detail']");
+        const addr = document.querySelector("input[name='mem_addr']");
+        const addr_detail = document.querySelector("input[name='mem_addr_detail']");
 
 
         // 회원정보

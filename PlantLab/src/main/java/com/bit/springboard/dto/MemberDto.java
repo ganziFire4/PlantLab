@@ -2,17 +2,16 @@ package com.bit.springboard.dto;
 
 public class MemberDto {
     private int memId;
-    private String loginId;
+    private String login_id;
     private String password;
-    private String memName;
-    private String memNickname;
-    private String memEmail;
-    private String address;
-    private String picture;
+    private String mem_name;
+    private String mem_nickname;
+    private String mem_email;
+    private String mem_addr;
+    private String mem_pic;
     private int checkCnt;
-    private String zipcode;
-    private String addr;
-    private String addrDetail;
+    private String mem_zipcode;
+    private String mem_addr_detail;
 
     public int getMemId() {
         return memId;
@@ -22,12 +21,12 @@ public class MemberDto {
         this.memId = memId;
     }
 
-    public String getLoginId() {
-        return loginId;
+    public String getLogin_id() {
+        return login_id;
     }
 
-    public void setLoginId(String loginId) {
-        this.loginId = loginId;
+    public void setLogin_id(String login_id) {
+        this.login_id = login_id;
     }
 
     public String getPassword() {
@@ -38,44 +37,44 @@ public class MemberDto {
         this.password = password;
     }
 
-    public String getMemName() {
-        return memName;
+    public String getMem_name() {
+        return mem_name;
     }
 
-    public void setMemName(String memName) {
-        this.memName = memName;
+    public void setMem_name(String mem_name) {
+        this.mem_name = mem_name;
     }
 
-    public String getMemNickname() {
-        return memNickname;
+    public String getMem_nickname() {
+        return mem_nickname;
     }
 
-    public void setMemNickname(String memNickname) {
-        this.memNickname = memNickname;
+    public void setMem_nickname(String mem_nickname) {
+        this.mem_nickname = mem_nickname;
     }
 
-    public String getMemEmail() {
-        return memEmail;
+    public String getMem_email() {
+        return mem_email;
     }
 
-    public void setMemEmail(String memEmail) {
-        this.memEmail = memEmail;
+    public void setMem_email(String mem_email) {
+        this.mem_email = mem_email;
     }
 
-    public String getAddress() {
-        return address;
+    public String getMem_addr() {
+        return mem_addr;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setMem_addr(String mem_addr) {
+        this.mem_addr = mem_addr;
     }
 
-    public String getPicture() {
-        return picture;
+    public String getMem_pic() {
+        return mem_pic;
     }
 
-    public void setPicture(String picture) {
-        this.picture = picture;
+    public void setMem_pic(String mem_pic) {
+        this.mem_pic = mem_pic;
     }
 
     public int getCheckCnt() {
@@ -86,45 +85,36 @@ public class MemberDto {
         this.checkCnt = checkCnt;
     }
 
-    public String getZipcode() {
-        return zipcode;
+    public String getMem_zipcode() {
+        return mem_zipcode;
     }
 
-    public void setZipcode(String zipcode) {
-        this.zipcode = zipcode;
+    public void setMem_zipcode(String mem_zipcode) {
+        this.mem_zipcode = mem_zipcode;
     }
 
-    public String getAddr() {
-        return addr;
+    public String getMem_addr_detail() {
+        return mem_addr_detail;
     }
 
-    public void setAddr(String addr) {
-        this.addr = addr;
-    }
-
-    public String getAddrDetail() {
-        return addrDetail;
-    }
-
-    public void setAddrDetail(String addrDetail) {
-        this.addrDetail = addrDetail;
+    public void setMem_addr_detail(String mem_addr_detail) {
+        this.mem_addr_detail = mem_addr_detail;
     }
 
     @Override
     public String toString() {
         return "MemberDto{" +
                 "memId=" + memId +
-                ", loginId='" + loginId + '\'' +
+                ", login_id='" + login_id + '\'' +
                 ", password='" + password + '\'' +
-                ", memName='" + memName + '\'' +
-                ", memNickname='" + memNickname + '\'' +
-                ", memEmail='" + memEmail + '\'' +
-                ", address='" + address + '\'' +
-                ", picture='" + picture + '\'' +
+                ", mem_name='" + mem_name + '\'' +
+                ", mem_nickname='" + mem_nickname + '\'' +
+                ", mem_email='" + mem_email + '\'' +
+                ", mem_addr='" + mem_addr + '\'' +
+                ", mem_pic='" + mem_pic + '\'' +
                 ", checkCnt=" + checkCnt +
-                ", zipcode='" + zipcode + '\'' +
-                ", addr='" + addr + '\'' +
-                ", addrDetail='" + addrDetail + '\'' +
+                ", mem_zipcode='" + mem_zipcode + '\'' +
+                ", mem_addr_detail='" + mem_addr_detail + '\'' +
                 '}';
     }
 }
