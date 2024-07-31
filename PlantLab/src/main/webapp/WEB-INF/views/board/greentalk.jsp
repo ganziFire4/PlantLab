@@ -42,7 +42,7 @@
     <div class="greenbody">
         <div class="container_green">
         <div class="dailycontent">
-            <c:forEach items="${greentalkList}" var="greentalk">
+<%--            <c:forEach items="${greentalkList}" var="greentalk">--%>
             <div class="card1" style="width: 546px;">
 <%--                <c:choose>--%>
 <%--                    <c:when test="${greentalk.file != null and greentalk.file.filetype eq 'image'}">--%>
@@ -62,7 +62,7 @@
                 <img src="" class="card-img-top" alt="..." data-bs-toggle="modal"
                      data-bs-target="#rank1modal">
                 <div class="card-body">
-                    <p class="card-text">${greentalk.greentalkDto.green_content}</p>
+                    <p class="card-text">${greentalk.content}</p>
                     <div class="tag-group">
                         <div class="tags">
                             <p class="tag1">#초록</p>
@@ -77,7 +77,7 @@
                     </div>
                 </div>
             </div>
-            </c:forEach>
+<%--            </c:forEach>--%>
             <div class="card2" style="width: 546px;">
                 <div class="card-header">
                     <div class="card-writer">
@@ -270,16 +270,11 @@
                             let htmlStr = "";
                             for(let i = 0; i < obj.greentalkList.length; i++) {
                                 htmlStr += `
-                                        <img
-                                        class="bd-placeholder-img"
-                                        width="356px"
-                                        height="261px"
-                                        src="/static/images/storage/${obj.greentalkList[i].file.filename}"
-                                        alt="${obj.greentalkList[i].file.fileoriginname}">
+
                                         `;
                             }
                             // console.log(htmlStr);
-                            $(".normalcon").append(htmlStr);
+                            $(".conimg").append(htmlStr);
                         },
                         error: (err) => {
                             console.log(err);

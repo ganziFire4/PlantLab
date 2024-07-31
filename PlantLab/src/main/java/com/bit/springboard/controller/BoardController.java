@@ -31,7 +31,7 @@ public class BoardController {
     private ApplicationContext applicationContext;
 
     @Autowired
-    public BoardController(BoardService boardService, ApplicationContext applicationContext) {
+    public BoardController(BoardService boardService, ApplicationContext applicationContext, GreentalkService greentalkService) {
         this.boardService = boardService;
         this.applicationContext = applicationContext;
         this.greentalkService = greentalkService;
@@ -49,7 +49,8 @@ public class BoardController {
     }
 
     @GetMapping("/greentalk.do")
-    public String greentalk() {
+    public String greentalk(Model model) {
+        model.addAttribute("greentalkList" , greentalkService.getPopGreenList());
         return "/board/greentalk";
     }
 
@@ -67,29 +68,36 @@ public class BoardController {
     @PostMapping("/greentalk-list-ajax.do")
     @ResponseBody
     public Map<String, Object> greentalkListAjax(@RequestParam Map<String, String> searchMap, Criteria cri) {
-        greentalkService = applicationContext.getBean("greentalkServiceImpl", GreentalkService.class);
+        try {
+            greentalkService = applicationContext.getBean("greentalkServiceImpl", GreentalkService.class);
 
-        cri.setAmount(3);
+            cri.setAmount(3);
 
-        List<Map<String, Object>> greentalkList = new ArrayList<>();
+            List<Map<String, Object>> greentalkList = new ArrayList<>();
 
-        greentalkService.getGreenList(searchMap, cri).forEach(greentalkDto -> {
-            List<GreentalkDto> greentalkFileDtoList = greentalkService.getGreenFileList(greentalkDto.getId());
+            greentalkService.getGreenList(searchMap, cri).forEach(greentalkDto -> {
+                List<GreentalkDto> greentalkFileDtoList = greentalkService.getGreenFileList(greentalkDto.getGreen_id());
 
-            Map<String, Object> map = new HashMap<>();
+                Map<String, Object> map = new HashMap<>();
 
-            map.put("greentalkDto", greentalkDto);
+                map.put("greentalkDto", greentalkDto);
 
-            if (greentalkFileDtoList.size() > 0)
-                map.put("file", greentalkFileDtoList.get(0));
+                if (greentalkFileDtoList.size() > 0)
+                    map.put("file", greentalkFileDtoList.get(0));
 
-            greentalkList.add(map);
-        });
+                greentalkList.add(map);
+            });
 
-        Map<String, Object> returnMap = new HashMap<>();
+            Map<String, Object> returnMap = new HashMap<>();
 
-        returnMap.put("greentalkList", greentalkList);
+            returnMap.put("greentalkList", greentalkList);
 
-        return returnMap;
+            return returnMap;
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return null;
+        }
     }
+
+
 }

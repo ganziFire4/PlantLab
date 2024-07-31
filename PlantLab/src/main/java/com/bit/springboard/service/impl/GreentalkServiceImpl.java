@@ -74,6 +74,11 @@ public class GreentalkServiceImpl implements GreentalkService {
     }
 
     @Override
+    public List<GreentalkDto> getPopGreenList() {
+        return greentalkDao.getPopGreenList();
+    }
+
+    @Override
     public List<GreentalkDto> getGreenFileList(int id) {
         return List.of();
     }

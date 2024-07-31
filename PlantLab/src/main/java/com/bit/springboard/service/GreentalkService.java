@@ -15,4 +15,5 @@ public interface GreentalkService {
     List<GreentalkDto> getGreenList(Map<String, String> searchMap, Criteria cri);
     List<GreentalkDto> getGreenFileList(int id);
     GreentalkDto getGreen(int id);
+    List<GreentalkDto> getPopGreenList();
 }

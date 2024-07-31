@@ -21,5 +21,6 @@
     <mappers>
         <mapper resource="mappings/board-mapper.xml"/>
         <mapper resource="mappings/member-mapper.xml"/>
+        <mapper resource="mappings/greentalk-mapper.xml"/>
     </mappers>
 </configuration>

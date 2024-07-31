@@ -39,4 +39,12 @@ public class GreentalkDao {
         System.out.println("getGreentalkList실행됨");
         return mybatis.selectList("GreentalkDao.getGreenList", paramMap);
     }
+
+    public List<GreentalkDto> getPopGreenList() {
+        List<GreentalkDto> test = mybatis.selectList("GreentalkDao.getPopGreenList");
+        for(GreentalkDto g:test) {
+            System.out.println(g);
+        }
+        return mybatis.selectList("GreentalkDao.getPopGreenList");
+    }
 }
