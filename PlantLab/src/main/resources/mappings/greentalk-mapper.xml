@@ -78,4 +78,18 @@
         LIMIT 2
     </select>
 
+    <select id="getTotalCnt" parameterType="map" resultType="int">
+        SELECT COUNT(*)
+            FROM GREENTALK G
+            JOIN MEMBER M
+            ON G.MEM_ID = M.MEM_ID
+            WHERE 1=1
+            <if test="searchKeyword != null and searchKeyword != ''">
+                AND (
+                   G.GREEN_CONTENT LIKE CONCAT('%', #{searchKeyword}, '%')
+                OR M.MEM_NICKNAME LIKE CONCAT('%', #{searchKeyword}, '%')
+                )
+        </if>
+    </select>
+
 </mapper>

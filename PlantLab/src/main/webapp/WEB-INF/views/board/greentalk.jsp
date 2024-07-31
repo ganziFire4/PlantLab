@@ -77,18 +77,18 @@
         <div class="greenbody">
             <div class="container_green">
                 <div class="dailycontent">
-                    <%--            <c:forEach items="${greentalkList}" var="greentalk">--%>
+                                <c:forEach items="${greentalkList}" var="greentalk">
                     <div class="card1" style="width: 546px;">
-                        <%--                <c:choose>--%>
-                        <%--                    <c:when test="${greentalk.file != null and greentalk.file.filetype eq 'image'}">--%>
-                        <%--                        <img class="gt-placeholder-img card-img-top" width="100%" height="261px"--%>
-                        <%--                             src="/static/images/storage/${greentalk.file.filename}"--%>
-                        <%--                             alt="${greentalk.file.fileoriginname}">--%>
-                        <%--                    </c:when>--%>
-                        <%--                </c:choose>--%>
+                                        <c:choose>
+                                            <c:when test="${greentalk.file != null and greentalk.file.filetype eq 'image'}">
+                                                <img class="gt-placeholder-img card-img-top" width="100%" height="261px"
+                                                     src="/static/images/storage/${greentalk.file.filename}"
+                                                     alt="${greentalk.file.fileoriginname}">
+                                            </c:when>
+                                        </c:choose>
                         <div class="card-header">
                             <div class="card-writer">
-                                <img src="${pageContext.request.contextPath}/static/images/프로필사진.png" alt="" style="width: 30px; height: 30px;"> ${greentalk.id}
+                                <img src="${pageContext.request.contextPath}/static/images/프로필사진.png" alt="" style="width: 30px; height: 30px;"> ${greentalk.greentalkDto.mem_nickname}
                             </div>
                             <div class="report">
                                 <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="신고 버튼" class="reportbtn">
@@ -97,7 +97,7 @@
                         <img src="" class="card-img-top" alt="..." data-bs-toggle="modal"
                              data-bs-target="#rank1modal">
                         <div class="card-body">
-                            <p class="card-text">${greentalk.content}</p>
+                            <p class="card-text">${greentalk.greentalkDto.green_content}</p>
                             <div class="tag-group">
                                 <div class="tags">
                                     <p class="tag1">#초록</p>
@@ -112,7 +112,7 @@
                             </div>
                         </div>
                     </div>
-                    <%--            </c:forEach>--%>
+                                </c:forEach>
                     <div class="card2" style="width: 546px;">
                         <div class="card-header">
                             <div class="card-writer">

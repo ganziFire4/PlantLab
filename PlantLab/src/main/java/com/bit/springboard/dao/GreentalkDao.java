@@ -47,4 +47,8 @@ public class GreentalkDao {
         }
         return mybatis.selectList("GreentalkDao.getPopGreenList");
     }
+
+    public int getTotalCnt(Map<String, String> searchMap) {
+        return mybatis.selectOne("GreentalkDao.getTotalCnt", searchMap);
+    }
 }

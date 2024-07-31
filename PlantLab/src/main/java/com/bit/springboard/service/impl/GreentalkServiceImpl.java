@@ -87,4 +87,9 @@ public class GreentalkServiceImpl implements GreentalkService {
     public GreentalkDto getGreen(int id) {
         return null;
     }
+
+    @Override
+    public int getTotalCnt(Map<String, String> searchMap) {
+        return greentalkDao.getTotalCnt(searchMap);
+    }
 }

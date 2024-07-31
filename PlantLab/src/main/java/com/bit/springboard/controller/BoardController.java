@@ -1,9 +1,6 @@
 package com.bit.springboard.controller;
 
-import com.bit.springboard.dto.BoardDto;
-import com.bit.springboard.dto.Criteria;
-import com.bit.springboard.dto.GreentalkDto;
-import com.bit.springboard.dto.GreentalkFileDto;
+import com.bit.springboard.dto.*;
 import com.bit.springboard.service.BoardService;
 import com.bit.springboard.service.GreentalkService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -49,9 +46,29 @@ public class BoardController {
         return "/board/post";
     }
 
-    @GetMapping("/greentalk.do")
-    public String greentalk(Model model) {
-        model.addAttribute("greentalkList" , greentalkService.getPopGreenList());
+    @RequestMapping("/greentalk.do")
+    public String greentalk(Model model, Criteria cri, Map<String, String> searchMap) {
+
+
+        List<Map<String, Object>> mapList = new ArrayList<>();
+
+        List<GreentalkDto> greentalkDtoList = greentalkService.getPopGreenList();
+
+        greentalkDtoList.forEach(greentalkDto -> {
+            List<GreentalkDto> greentalkPicDtoList = greentalkService.getGreenFileList(greentalkDto.getGreen_id());
+            Map<String, Object> map = new HashMap<>();
+            map.put("greentalkDto", greentalkDto);
+            if(greentalkPicDtoList.size() > 0)
+                map.put("file", greentalkPicDtoList.get(0));
+
+            mapList.add(map);
+        });
+
+        model.addAttribute("greentalkList" , mapList);
+
+        int total = greentalkService.getTotalCnt(searchMap);
+
+        model.addAttribute("page", new GreentalkPageDto(cri, total));
         return "/board/greentalk";
     }
 
