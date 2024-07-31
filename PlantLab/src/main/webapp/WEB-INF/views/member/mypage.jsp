@@ -31,7 +31,6 @@
                         <div class="profilename">
                             <p style="font-size: 25px;">카리나</p>
                         </div>
-                        <a href="/weather/weaher-api.do">123</a>
                         <div class="profilemedal">
                             <img src="../../../static/images/새싹레벨.png" alt="">
                         </div>
@@ -96,16 +95,16 @@
                         <div class="table-cover-div" style="margin-top: 0">
                             <div class="board-name-div">
                                 <p style="align-self: start; margin-bottom: 0">정보글</p>
-                                <button style="align-self: end; font-size: 1rem;">더보기+</button>
+                                <button style="align-self: end; font-size: 1rem;">더보기</button>
                             </div>
-                            <table class="defaluttext">
+                            <table style="margin-top: 1vh">
                                 <tr class="firstRow">
                                     <td>제목</td>
                                     <td>작성자</td>
                                     <td>작성일</td>
                                 </tr>
                                 <c:forEach items="${myWrite}" var="writeList">
-                                    <c:if test="${fn:startsWith(writeList.board_title, '정보_')}">
+                                    <c:if test="${fn:startsWith(writeList.board_title, '정보')}">
                                         <tr class="nextRow">
                                             <td>
                                                 <button>${writeList.board_title}</button>
@@ -128,14 +127,14 @@
                             <p style="align-self: start; margin-bottom: 0">잡담</p>
                             <button style="align-self: end; font-size: 1rem;">더보기</button>
                         </div>
-                        <table class="defaluttext">
+                        <table style="margin-top: 1vh">
                             <tr class="firstRow">
                                 <td>제목</td>
                                 <td>작성자</td>
                                 <td>작성일</td>
                             </tr>
                             <c:forEach items="${myWrite}" var="writeList">
-                                <c:if test="${fn:startsWith(writeList.board_title, '잡담_')}">
+                                <c:if test="${fn:startsWith(writeList.board_title, '잡담')}">
                                     <tr class="nextRow">
                                         <td>
                                             <button>${writeList.board_title}</button>
@@ -158,14 +157,14 @@
                             <p style="align-self: start; margin-bottom: 0">Q&A</p>
                             <button style="align-self: end; font-size: 1rem;">더보기</button>
                         </div>
-                        <table class="defaluttext">
+                        <table style="margin-top: 1vh">
                             <tr class="firstRow">
                                 <td>제목</td>
                                 <td>작성자</td>
                                 <td>작성일</td>
                             </tr>
                             <c:forEach items="${myWrite}" var="writeList">
-                                <c:if test="${fn:startsWith(writeList.board_title, '질문_')}">
+                                <c:if test="${fn:startsWith(writeList.board_title, '질문')}">
                                     <tr class="nextRow">
                                         <td>
                                             <button>${writeList.board_title}</button>
