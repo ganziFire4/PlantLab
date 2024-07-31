@@ -1,0 +1,2 @@
+git pull
+git checkout 작업할 브랜치명

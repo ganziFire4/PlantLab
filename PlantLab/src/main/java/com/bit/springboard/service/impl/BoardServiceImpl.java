@@ -53,4 +53,10 @@ public class BoardServiceImpl implements BoardService {
         List<BoardDto> boardDtos = boardDao.getBoard(id);
         return boardDao.getBoard(id);
     }
+
+    @Override
+    public void update_view_cnt(int id) {
+        boardDao.update_view_cnt(id);
+        System.out.println(boardDao.view_one(id));
+    }
 }

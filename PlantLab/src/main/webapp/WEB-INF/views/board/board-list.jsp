@@ -22,10 +22,23 @@
     %>
     <!--게시판 내용-->
     <div id="title_table_area">
+        <div class="search_bar">
+            <form id="search_form" action="/board/board-list.do" method="post">
+                <select name="search_condition" id="search_condition">
+                    <option value="all">전체</option>
+                    <option value="title">제목</option>
+                    <option value="writer">작성자</option>
+                </select>
+                <input type="text" id="search_keyword" name="search_keyword" value="">
+                <button type="submit" id="search_btn">검색</button>
+            </form>
+        </div>
         <div class="table_popular">
             <div class="t_headerbar">
-                <img src="${pageContext.request.contextPath}/static/images/인기글 별.svg" alt="별" style="margin-right: 7px;">
-                인기글
+                <div>
+                    <img src="${pageContext.request.contextPath}/static/images/인기글 별.svg" alt="별" style="margin-right: 7px;">
+                    인기글
+                </div>
                 <select name="pop_condition" id="pop_condition">
                     <option value="조회수">조회수</option>
                     <option value="공감순">공감순</option>
@@ -56,7 +69,7 @@
                     </thead>
                     <tbody>
                         <c:forEach items="${popList}" var="popBoard">
-                            <tr onclick="location.href='/board/board-detail.do?id=${popBoard.board_id}'">
+                            <tr onclick="location.href='/board/update-cnt.do?id=${popBoard.board_id}'">
                                 <td scope="row">${popBoard.row_num}</td>
                                 <td>${popBoard.board_title}</td>
                                 <td>${popBoard.mem_nickname}</td>
@@ -109,11 +122,13 @@
                         <th scope="col">조회수</th>
                         <th scope="col">좋아요</th>
                         <th scope="col">스크랩</th>
+                        <!--스파이-->
                     </tr>
                     </thead>
                     <tbody>
                     <c:forEach items="${boardList}" var="board">
-                        <tr onclick="location.href='/board/board-detail.do?id=${board.board_id}'">
+                        <tr onclick="location.href='/board/update-cnt.do?id=${board.board_id}'">
+                            <!--스파이-->
                             <td scope="row">${board.row_num}</td>
                             <td>${board.board_title}</td>
                             <td>${board.mem_nickname}</td>
@@ -129,7 +144,32 @@
                 </table>
             </div>
         </div>
-        <button type="button" id="button" onclick="location.href='/board/post.do'">글쓰기</button>
+        <div class="under_bar">
+            <ul class="t_pagination">
+                <li class="page-item">
+                    <a class="pageBtn" aria-label="Previous" href=""><<</a>
+                </li>
+                <li class="page-item">
+                    <a class="pageBtn" href="">1</a>
+                </li>
+                <li class="page-item">
+                    <a class="pageBtn" href="">2</a>
+                </li>
+                <li class="page-item">
+                    <a class="pageBtn" href="">3</a>
+                </li>
+                <li class="page-item">
+                    <a class="pageBtn" href="">4</a>
+                </li>
+                <li class="page-item">
+                    <a class="pageBtn" href="">5</a>
+                </li>
+                <li class="page-item">
+                    <a class="pageBtn" aria-label="Next" href="">>></a>
+                </li>
+            </ul>
+            <button type="button" id="button" onclick="location.href='/board/post.do'">글쓰기</button>
+        </div>
     </div>
 </body>
 
