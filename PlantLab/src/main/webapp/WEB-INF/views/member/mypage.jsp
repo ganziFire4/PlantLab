@@ -16,7 +16,7 @@
         <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/mypage.css">
     </head>
     <body class="noto-sans-kr">
-        <jsp:include page="../../../nav.jsp"/>
+        <jsp:include page="/nav.jsp"/>
         <header>
             <img src="../../../static/images/Header%20with%20image_마이페이지.png" alt="마이페이지 헤더">
         </header>

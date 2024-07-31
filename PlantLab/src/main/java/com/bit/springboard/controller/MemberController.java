@@ -119,8 +119,8 @@ public class MemberController {
     }
 
     @GetMapping("/mypage.do")
-    public String boardView(Model model, @RequestParam("mem_id") int mem_id) {
-        model.addAttribute("myWrite", boardService.getBoard(mem_id));
+    public String boardView(Model model, MemberDto memberDto) {
+        model.addAttribute("myWrite", boardService.getBoard(memberDto.getMemId()));
         return "/member/mypage";
     }
 
