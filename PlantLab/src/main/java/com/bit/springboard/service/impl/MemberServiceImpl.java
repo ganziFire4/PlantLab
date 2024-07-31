@@ -28,4 +28,19 @@ public class MemberServiceImpl implements MemberService {
     public void modify(MemberDto memberDto) {
         memberDao.modify(memberDto);
     }
+
+    @Override
+    public MemberDto login(MemberDto memberDto) {
+        System.out.println(memberDto);
+        int loginIdCheck = memberDao.loginIdCheck(memberDto.getLogin_id());
+
+        if(loginIdCheck == 0)
+            throw new RuntimeException("idNotExist");
+
+        MemberDto loginMember = memberDao.login(memberDto);
+
+        if(loginMember == null)
+            throw new RuntimeException("wrongPassword");
+        return loginMember;
+    }
 }

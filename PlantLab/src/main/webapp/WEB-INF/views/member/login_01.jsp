@@ -11,6 +11,7 @@
     <title>플랜트랩: 로그인</title>
     <link rel="icon" type="img/png" href="/static/images/round_logo_whiteBack.svg">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/login_01.css">
+    <script src="${pageContext.request.contextPath}/static/js/jquery-3.7.1.min.js"></script>
 </head>
 <body>
 <main>
@@ -20,13 +21,14 @@
         </div>
         <h2 id="login_eng_name">Plant Lab</h2>
         <p id="login_kor_name">플랜트랩</p>
+        <form action="/member/login.do" method="post">
         <div class="input-container">
-            <input class="inputbox" type="text" placeholder="아이디" required>
+            <input class="inputbox" type="text" name="login_id" placeholder="아이디" required>
         </div>
         <div class="input-container">
-            <input class="inputbox" type="password" placeholder="비밀번호" required>
+            <input class="inputbox" type="password" name="password" placeholder="비밀번호" required>
         </div>
-        <button class="login" type="button" >로그인</button>
+        <button class="login" type="submit" >로그인</button>
         <div class="options">
             <ul>
                 <li>
@@ -51,34 +53,21 @@
             <img src="/static/images/login_google_logo.svg" alt="구글 로고" style="height:20px; margin-right:10px;">
             Google로 시작하기
         </button>
+        </form>
     </div>
 </main>
 <script>
-    const tryLogin = document.getElementsByClassName("inputbox");
-    const btn = document.getElementsByClassName("login")[0];
+    $(() => {
+        //model, session , request 에 담겨있는 데이터 javascript에서 꺼내서 사용하기
+        const loginFailMsg = '${loginFailMsg}';
+        console.log("Login Fail Message: " + loginFailMsg);
 
-    btn.addEventListener("click", () => {
-        if(localStorage.length == 0){
-            alert("아이디 또는 비밀번호가 잘못되었습니다.")
-            return;
+        if(loginFailMsg === 'idNotExist') {
+            alert("존재하지 않는 아이디 입니다.");
+        }else if(loginFailMsg === 'wrongPassword'){
+            alert("잘못된 비밀번호 입니다.");
         }
-        let i = 1;
-        for(i; i <= localStorage.length; i++){
-            const mem = JSON.parse(localStorage.getItem(i));
-            if(tryLogin[0].value == mem.id){
-                if(tryLogin[1].value == mem.password){
-                    sessionStorage.setItem("login", mem.nickname);
-                    alert(`${mem.nickname}님 환영합니다.`);
-                    window.location.href = "../../../index.jsp";
-                    return;
-                }
-            }
-        }
-        alert("아이디 또는 비밀번호가 입력되지 않았습니다.")
-        return;
     });
 </script>
-</body>
-</html>
 </body>
 </html>

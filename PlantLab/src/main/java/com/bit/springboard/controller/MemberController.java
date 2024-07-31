@@ -3,19 +3,18 @@ package com.bit.springboard.controller;
 import com.bit.springboard.dto.MemberDto;
 import com.bit.springboard.service.BoardService;
 import com.bit.springboard.service.MemberService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
 
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 
 @Controller
@@ -34,6 +33,33 @@ public class MemberController {
     public String loginView(){
         return "member/login_01";
     }
+
+    @PostMapping("/login.do")
+    public String login(MemberDto memberDto, Model model, HttpSession session) {
+        try {
+            System.out.println("로그인 시도: " + memberDto.getLogin_id());
+            MemberDto loggedInMember = memberService.login(memberDto);
+
+            System.out.println("로그인 성공: " + loggedInMember.getLogin_id());
+            loggedInMember.setPassword("");
+
+            session.setAttribute("loggedInMember", loggedInMember);
+
+            return "redirect:/";
+
+        }catch (Exception e) {
+            System.out.println("로그인 실패: " + e.getMessage());
+            model.addAttribute("loginFailMsg", e.getMessage());
+            return "member/login_01";
+        }
+    }
+
+    @GetMapping("/logout.do")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/";
+    }
+
 
     @GetMapping("/join.do")
     public String joinView(){
@@ -79,7 +105,7 @@ public class MemberController {
 
             File uploadFile = new File(attachPath + imgFile.getOriginalFilename());
 
-            memberDto.setPicture(imgFile.getOriginalFilename());
+            memberDto.setMem_pic(imgFile.getOriginalFilename());
 
             try{
                 imgFile.transferTo(uploadFile);
