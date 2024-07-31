@@ -162,7 +162,7 @@ img {
     max-width: 1200px;
     display: grid;
     grid-template-columns: repeat(3, auto);
-    grid-template-rows: repeat(3, auto);
+    grid-template-rows: repeat(2, auto);
     padding: 5px;
     margin: 5px;
     justify-content: space-between;

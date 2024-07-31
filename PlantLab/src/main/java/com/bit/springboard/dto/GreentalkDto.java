@@ -11,6 +11,9 @@ public class GreentalkDto {
     private String green_tag;
     private int green_like_cnt;
     private int green_bookmark_cnt;
+    private String green_pic;
+    private String mem_nickname;
+    private String mem_pic;
 
     public int getGreen_id() {
         return green_id;
@@ -76,6 +79,30 @@ public class GreentalkDto {
         this.green_bookmark_cnt = green_bookmark_cnt;
     }
 
+    public String getGreen_pic() {
+        return green_pic;
+    }
+
+    public void setGreen_pic(String green_pic) {
+        this.green_pic = green_pic;
+    }
+
+    public String getMem_nickname() {
+        return mem_nickname;
+    }
+
+    public void setMem_nickname(String mem_nickname) {
+        this.mem_nickname = mem_nickname;
+    }
+
+    public String getMem_pic() {
+        return mem_pic;
+    }
+
+    public void setMem_pic(String mem_pic) {
+        this.mem_pic = mem_pic;
+    }
+
     @Override
     public String toString() {
         return "GreentalkDto{" +
@@ -87,6 +114,9 @@ public class GreentalkDto {
                 ", green_tag='" + green_tag + '\'' +
                 ", green_like_cnt=" + green_like_cnt +
                 ", green_bookmark_cnt=" + green_bookmark_cnt +
+                ", green_pic='" + green_pic + '\'' +
+                ", mem_nickname='" + mem_nickname + '\'' +
+                ", mem_pic='" + mem_pic + '\'' +
                 '}';
     }
 }
