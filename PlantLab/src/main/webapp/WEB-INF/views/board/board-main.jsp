@@ -24,9 +24,6 @@
         <c:when test="${tab eq 3}">
             <title>플랜트랩: 질문게시판</title>
         </c:when>
-        <c:when test="${tab eq 4}">
-            <title>플랜트랩: 그린톡</title>
-        </c:when>
     </c:choose>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/board-main.css">
 </head>
@@ -42,9 +39,6 @@
             </c:when>
             <c:when test="${tab eq 3}">
                 <img src="${pageContext.request.contextPath}/static/images/header_질문.png" alt="질문게시판 헤더">
-            </c:when>
-            <c:when test="${tab eq 4}">
-                <img src="${pageContext.request.contextPath}/static/images/header_그린톡.png" alt="그린톡 헤더">
             </c:when>
         </c:choose>
     </header>
@@ -109,9 +103,6 @@
             %>
             <jsp:include page="board-list.jsp"/>
         </div>
-        <div class="tabContent">
-            <jsp:include page="greentalk.jsp"/>
-        </div>
     </main>
     <jsp:include page="${pageContext.request.contextPath}/chatbot.jsp"/>
     <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
@@ -119,7 +110,7 @@
 
         const changeTab = (tab) => {
             // 탭 눌렀을 때 색상 변경
-            for(let i = 0; i < 4; i++){
+            for(let i = 0; i < 3; i++){
                 if(i === tab - 1){
                     underline[i].classList.add("activeBlock");
                     tabContent[i].style.display = "block";
@@ -157,8 +148,7 @@
         });
 
         greenTalk_button.addEventListener("click", () => {
-            header.innerHTML = `<img src="${pageContext.request.contextPath}/static/images/header_그린톡.png" alt="그린톡 헤더">`;
-            changeTab(4);
+            window.location.href = "/board/greentalk.do";
         });
 
 
