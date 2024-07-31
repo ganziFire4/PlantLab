@@ -27,8 +27,6 @@ public class MemberDao {
         mybatis.insert("AddressMapper.saveAddress", memberDto);
     }
 
-
-
     public void modify(MemberDto memberDto) {
         mybatis.update("MemberDao.modify", memberDto);
     }
