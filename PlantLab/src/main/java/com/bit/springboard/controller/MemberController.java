@@ -15,9 +15,6 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 
 @Controller
@@ -40,11 +37,10 @@ public class MemberController {
     @PostMapping("/login.do")
     public String login(MemberDto memberDto, Model model, HttpSession session) {
         try {
-            System.out.println("로그인 시도: " + memberDto.getLoginId());
-            System.out.println(memberService.login(memberDto));
+            System.out.println("로그인 시도: " + memberDto.getLogin_id());
             MemberDto loggedInMember = memberService.login(memberDto);
 
-            System.out.println("로그인 성공: " + loggedInMember.getLoginId());
+            System.out.println("로그인 성공: " + loggedInMember.getLogin_id());
             loggedInMember.setPassword("");
 
             session.setAttribute("loggedInMember", loggedInMember);
@@ -56,6 +52,12 @@ public class MemberController {
             model.addAttribute("loginFailMsg", e.getMessage());
             return "member/login_01";
         }
+    }
+
+    @GetMapping("/logout.do")
+    public String logout(HttpSession session) {
+        session.invalidate();
+        return "redirect:/";
     }
 
 
@@ -103,7 +105,7 @@ public class MemberController {
 
             File uploadFile = new File(attachPath + imgFile.getOriginalFilename());
 
-            memberDto.setPicture(imgFile.getOriginalFilename());
+            memberDto.setMem_pic(imgFile.getOriginalFilename());
 
             try{
                 imgFile.transferTo(uploadFile);

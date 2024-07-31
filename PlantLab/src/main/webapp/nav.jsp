@@ -58,7 +58,7 @@
                 <input type="text" id="search" placeholder="통합검색">
             </div>
             <c:choose>
-                <c:when test="${loginMember eq null}">
+                <c:when test="${loggedInMember eq null}">
                     <div class="member">
                         <ul>
                             <li><a href="/member/login.do">로그인</a></li>
@@ -72,14 +72,14 @@
                         <ul>
                             <li style="margin:0;">
                                 <a href="#">
-                                    <img src="#" alt="프로필사진" width="40px" height="40px">
+                                    <img src="/static/images/profile_default.svg" alt="프로필사진" width="40px" height="40px">
                                 </a>
                             </li>
                             <li style="margin-left: 10px; font-size: 1.1rem">
-                                <a href="#" style="font-weight:400">${loginMember.nickname}</a>
+                                <a href="#" style="font-weight:400">${loggedInMember.mem_nickname}</a>
                             </li>
                             <li id="logout">
-                                <a href="#">로그아웃</a>
+                                <a href="/member/logout.do">로그아웃</a>
                             </li>
                         </ul>
                     </div>
