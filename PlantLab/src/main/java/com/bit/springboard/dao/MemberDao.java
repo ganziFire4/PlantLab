@@ -33,4 +33,12 @@ public class MemberDao {
         mybatis.update("MemberDao.modify", memberDto);
     }
 
+    public int loginIdCheck(String loginId) {
+        return mybatis.selectOne("MemberDao.loginIdCheck", loginId);
+    }
+
+
+    public MemberDto login(MemberDto memberDto) {
+        return mybatis.selectOne("MemberDao.login", memberDto);
+    }
 }
