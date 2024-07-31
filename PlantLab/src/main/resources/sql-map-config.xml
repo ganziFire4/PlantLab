@@ -13,11 +13,14 @@
                    alias="board"/>
         <typeAlias type="com.bit.springboard.dto.MemberDto"
                    alias="member"/>
+        <typeAlias type="com.bit.springboard.dto.GreentalkDto"
+                   alias="greentalk"/>
     </typeAliases>
 
     <!--사용할 Sql Mapper 등록-->
     <mappers>
         <mapper resource="mappings/board-mapper.xml"/>
         <mapper resource="mappings/member-mapper.xml"/>
+        <mapper resource="mappings/greentalk-mapper.xml"/>
     </mappers>
 </configuration>

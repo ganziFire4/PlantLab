@@ -4,6 +4,7 @@ public class BoardPageDto {
     private int startPage;
     private int endPage;
     private int total;
+    private boolean prev, next;
     private Criteria cri;
 
     public BoardPageDto(Criteria cri, int total){
@@ -20,7 +21,12 @@ public class BoardPageDto {
             this.endPage = realEndPage;
         }
 
+        // 이전, 다음 버튼 표출 여부
+        this.prev = this.cri.getPageNum() > 1;
+        this.next = this.cri.getPageNum() < realEndPage;
+
     }
+
     public int getStartPage() {
         return startPage;
     }

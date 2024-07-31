@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class GreentalkDao {
@@ -32,5 +33,18 @@ public class GreentalkDao {
 
     public void updateCnt(int id) {
         mybatis.update("GreentalkDao.updateCnt", id);
+    }
+
+    public List<GreentalkDto> getGreentalkList(Map<String, Object> paramMap) {
+        System.out.println("getGreentalkList실행됨");
+        return mybatis.selectList("GreentalkDao.getGreenList", paramMap);
+    }
+
+    public List<GreentalkDto> getPopGreenList() {
+        List<GreentalkDto> test = mybatis.selectList("GreentalkDao.getPopGreenList");
+        for(GreentalkDto g:test) {
+            System.out.println(g);
+        }
+        return mybatis.selectList("GreentalkDao.getPopGreenList");
     }
 }

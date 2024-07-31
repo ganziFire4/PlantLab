@@ -105,7 +105,7 @@
                 </div>
                 <hr>
                 <div id="button">
-                    <a href="board_list.html?tab=${board.board_type}">목록</a>
+                    <a href="/board/board-main.do?tab=${board.board_type}">목록</a>
                 </div>
             </div>
         </div>
