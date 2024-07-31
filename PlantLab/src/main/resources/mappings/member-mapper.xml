@@ -34,4 +34,15 @@
                 MEM_PIC = #{picture}
             WHERE MEM_ID = #{memId}
     </update>
+    <select id="login" parameterType="member" resultType="com.bit.springboard.dto.MemberDto">
+        SELECT *
+        FROM MEMBER
+        WHERE LOGIN_ID = #{loginId}
+          AND PASSWORD = #{password}
+    </select>
+    <select id="loginIdCheck" parameterType="string" resultType="int">
+        SELECT COUNT(*)
+        FROM MEMBER
+        WHERE LOGIN_ID = #{loginId}
+    </select>
 </mapper>
