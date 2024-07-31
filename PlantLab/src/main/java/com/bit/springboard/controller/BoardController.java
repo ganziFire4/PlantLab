@@ -53,6 +53,7 @@ public class BoardController {
         List<Map<String, Object>> mapList = new ArrayList<>();
 
         List<GreentalkDto> greentalkDtoList = greentalkService.getPopGreenList();
+        System.out.println("getPopGreenList실행");
 
         greentalkDtoList.forEach(greentalkDto -> {
             List<GreentalkDto> greentalkPicDtoList = greentalkService.getGreenFileList(greentalkDto.getGreen_id());

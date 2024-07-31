@@ -94,7 +94,7 @@
                                 <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="신고 버튼" class="reportbtn">
                             </div>
                         </div>
-                        <img src="" class="card-img-top" alt="..." data-bs-toggle="modal"
+                        <img src="/static/images/storage/${greentalk.greentalkDto.green_pic}" class="card-img-top" alt="..." data-bs-toggle="modal"
                              data-bs-target="#rank1modal">
                         <div class="card-body">
                             <p class="card-text">${greentalk.greentalkDto.green_content}</p>
@@ -256,6 +256,8 @@
                 </div>
             </div>
         </div>
+        <jsp:include page="${pageContext.request.contextPath}/chatbot.jsp"/>
+        <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
     </main>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
