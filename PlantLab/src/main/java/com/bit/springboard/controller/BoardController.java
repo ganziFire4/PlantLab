@@ -34,8 +34,8 @@ public class BoardController {
     public BoardController(BoardService boardService, ApplicationContext applicationContext) {
         this.boardService = boardService;
         this.applicationContext = applicationContext;
+        this.greentalkService = greentalkService;
     }
-
 
     @GetMapping("/board-main.do")
     public String boardList(Model model, @RequestParam("tab") int tab) {
@@ -69,7 +69,7 @@ public class BoardController {
     public Map<String, Object> greentalkListAjax(@RequestParam Map<String, String> searchMap, Criteria cri) {
         greentalkService = applicationContext.getBean("greentalkServiceImpl", GreentalkService.class);
 
-//        cri.setAmount(9);
+        cri.setAmount(3);
 
         List<Map<String, Object>> greentalkList = new ArrayList<>();
 

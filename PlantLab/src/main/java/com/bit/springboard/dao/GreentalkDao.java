@@ -36,6 +36,7 @@ public class GreentalkDao {
     }
 
     public List<GreentalkDto> getGreentalkList(Map<String, Object> paramMap) {
+        System.out.println("getGreentalkList실행됨");
         return mybatis.selectList("GreentalkDao.getGreenList", paramMap);
     }
 }

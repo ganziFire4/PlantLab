@@ -29,7 +29,7 @@
         DELETE GREENTALK WHERE GREEN_ID = #{ID}
     </delete>
 
-    <select id="getGreenList" parameterType="map" resultType="GreentalkDto">
+    <select id="getGreenList" parameterType="map" resultType="greentalk">
         SELECT G.GREEN_ID
              , G.GREEN_TITLE
              , G.GREEN_CONTENT
@@ -41,7 +41,25 @@
              , G.GREEN_BOOKMARK_CNT
         FROM GREENTALK G
         JOIN MEMBER M ON G.MEM_ID = M.MEM_ID
-        WHERE
+        WHERE 1=1
+        <if test="search.searchKeyword != null and search.searchKeyword != ''">
+            <if test="search.searchCondition == 'all'">
+                AND (G.CONTENT LIKE CONCAT('%', #{search.searchKeyword}, '%')
+                OR M.NICKNAME LIKE CONCAT('%', #{search.searchKeyword}, '%'))
+            </if>
+            <if test="search.searchCondition == 'content'">
+                AND G.CONTENT LIKE CONCAT('%', #{search.searchKeyword}, '%')
+            </if>
+            <if test="search.searchCondition == 'writer'">
+                AND M.NICKNAME LIKE CONCAT('%', #{search.searchKeyword}, '%')
+            </if>
+        </if>
+        ORDER BY G.GREEN_ID DESC
+        LIMIT #{cri.amount} OFFSET #{cri.startNum}
+    </select>
+
+    <select id="getGreen" parameterType="int" resultType="greentalk">
+
     </select>
 
     
