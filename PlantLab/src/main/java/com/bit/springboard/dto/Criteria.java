@@ -13,6 +13,11 @@ public class Criteria {
         this(1, 10);
     }
 
+    public Criteria(int amount) {
+        this.pageNum = 1;
+        this.amount = amount;
+    }
+
     // 매개변수로 들어오는 값을 이용해 조정
     public Criteria(int pageNum, int amount) {
         this.pageNum = pageNum;

@@ -39,4 +39,8 @@ public class BoardDao {
     public BoardDto view_one(int id) {
         return mybatis.selectOne("BoardDao.view_one", id);
     }
+
+    public void update_view_cnt(int id) {
+        mybatis.update("BoardDao.update_view_cnt", id);
+    }
 }

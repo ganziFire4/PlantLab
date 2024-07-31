@@ -97,4 +97,11 @@
           ON B.MEM_ID = M.MEM_ID
         WHERE B.BOARD_ID = ${id}
     </select>
+
+    <update id="update_view_cnt" parameterType="int">
+        UPDATE BOARD
+            SET
+                BOARD_VIEW_CNT = BOARD_VIEW_CNT + 1
+            WHERE BOARD_ID = ${id}
+    </update>
 </mapper>
