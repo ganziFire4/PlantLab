@@ -41,8 +41,8 @@ public class MemberController {
 
             MemberDto loggedInMember = memberService.login(memberDto);
 
-            System.out.println("로그인 성공: " + loggedInMember.getLogin_id());
-            loggedInMember.setPassword("");
+            System.out.println("로그인 성공: " + loggedInMember);
+//            loggedInMember.setPassword("");
 
             session.setAttribute("loggedInMember", loggedInMember);
 
@@ -92,10 +92,16 @@ public class MemberController {
         }
     }
 
-    @PostMapping("/modify.do")
-    public String modify(MemberDto memberDto, MultipartFile imgFile, RedirectAttributes redirectAttributes) {
+    @GetMapping("/modify.do")
+    public String modifyView(){
+        return "member/mypage";
+    }
 
-        if(imgFile != null) {
+    @PostMapping("/modify.do")
+    public String modify(MemberDto memberDto, HttpSession session, MultipartFile modify_pic, RedirectAttributes redirectAttributes) {
+        // session과 같은 정보의 Dto 만들기
+        MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
+        if(modify_pic != null) {
             String attachPath = "C:/Project/PlantLab/src/main/webapp/static/images/storage/";
 
             File directory = new File(attachPath);
@@ -104,23 +110,29 @@ public class MemberController {
                 directory.mkdirs();
             }
 
-            File uploadFile = new File(attachPath + imgFile.getOriginalFilename());
+            File uploadFile = new File(attachPath + modify_pic.getOriginalFilename());
 
-            memberDto.setMem_pic(imgFile.getOriginalFilename());
+            loggedInMember.setMem_pic(modify_pic.getOriginalFilename());
+            loggedInMember.setMem_nickname(memberDto.getMem_nickname());
+            loggedInMember.setPassword(memberDto.getPassword());
 
             try{
-                imgFile.transferTo(uploadFile);
+                modify_pic.transferTo(uploadFile);
             } catch (IOException ie) {
                 System.out.println(ie.getMessage());
             }
         }
-        memberService.modify(memberDto);
-        return "member/login_01";
+        memberService.modify(loggedInMember);
+
+        session.setAttribute("loggedInMember", loggedInMember);
+        return "member/mypage";
     }
 
     @GetMapping("/mypage.do")
-    public String boardView(Model model, MemberDto memberDto) {
-        model.addAttribute("myWrite", boardService.getBoard(memberDto.getMemId()));
+    public String boardView(Model model, MemberDto memberDto, HttpSession session) {
+        MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
+        model.addAttribute("myWrite", boardService.getBoard(loggedInMember.getMemId()));
+//        session.setAttribute("myWrite", boardService.getBoard(memberDto.getMemId()));
         return "/member/mypage";
     }
 

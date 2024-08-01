@@ -27,9 +27,9 @@
                         <div class="shareicon">
                             <img src="../../../static/images/shareicon.png" alt="프로필수정아이콘" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         </div>
-                        <img src="../../../static/images/프로필사진.png" class="profile" alt="" style="width: 182.69px;">
+                        <img src="${pageContext.request.contextPath}/static/images/storage/${loggedInMember.mem_pic}" class="profile" alt="" style="width: 182.69px;">
                         <div class="profilename">
-                            <p style="font-size: 25px;">카리나</p>
+                            <p style="font-size: 25px;">${loggedInMember.mem_nickname}</p>
                         </div>
                         <div class="profilemedal">
                             <img src="../../../static/images/새싹레벨.png" alt="">
@@ -304,15 +304,7 @@
                 </div>
             </div>
         </div>
-        <div id="popup-icon1">
-            <img src="../../../static/images/챗봇아이콘.png" alt="Popup Icon" style="width: 60px; height: 60px;">
-        </div>
-        <div id="popup-content1" class="hidden">
-            <p>안녕하세요! 플랜트 봇 입니다!<br>궁금한 것은 모두 플랜트 봇에게 물어보세요!</p>
-        </div>
-        <div id="popup-icon2">
-            <img src="../../../static/images/top아이콘.png" alt="Popup Icon" style="width: 60px; height: 60px;">
-        </div>
+        <jsp:include page="${pageContext.request.contextPath}/chatbot.jsp"/>
         <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -323,11 +315,11 @@
                         <div class="profilebox-header">
                             <div style="display: flex; align-items: center; flex-direction: column; margin-top: 7vh">
                                 <div id="modify-profile-image" style="position: relative; display: inline-block;">
-                                    <img style="width: 6vw; height: 13vh; border-radius: 100%;" src="../../../static/images/profile_default.svg" id="profile-img" class="profile" alt="프로필사진">
+                                    <img style="width: 6vw; height: 13vh; border-radius: 100%;" src="${pageContext.request.contextPath}/static/images/storage/${loggedInMember.mem_pic}" id="profile-img" class="profile" alt="프로필사진">
                                     <button type="button" id="upload-btn" style="position: absolute; bottom: 0; right: 0;">
                                         <img src="../../../static/images/modify_profile.svg">
                                     </button>
-                                    <input type="file" name="imgFile" id="img-file-upload" style="display: none">
+                                    <input type="file" name="modify_pic" id="img-file-upload" style="display: none">
                                 </div>
                                 <button type="button" id="del-profile-img" style="font-size: 0.8rem; color: #CCCCCC; margin-top: 1vh">이미지 삭제</button>
                             </div>
@@ -335,12 +327,12 @@
                         <div class="profilebox-body">
                             <div class="profile-div">
                                 <p class="profile-modal-p">닉네임</p>
-                                <input id="profile-nickname" name="memNickname" placeholder="안녕하세요" autocomplete="username">
+                                <input id="profile-nickname" name="mem_nickname" placeholder="${loggedInMember.mem_nickname}" autocomplete="username">
                                 <p class="profile-message" id="nickname-message">default</p>
                             </div>
                             <div class="profile-div">
-                                <p class="profile-modal-p">현재 비밀번호</p>
-                                <input id="origin-password" type="password" placeholder="사용 중인 비밀번호를 입력해주세요." autocomplete="password">
+                                <p class="profile-modal-p">비밀번호</p>
+                                <input id="origin-password" type="password" name="${loggedInMember.password}" placeholder="사용 중인 비밀번호를 입력해주세요." autocomplete="password">
                                 <p class="profile-message" id="password-message">default</p>
                             </div>
                             <div class="profile-div">
@@ -363,8 +355,9 @@
         </div>
         <jsp:include page="../../../footer.jsp"/>
         <script>
-            let originNickname = "카리나";
+            let originNickname = "";
             let nickname = "";
+            let originPasswordVal = document.getElementById("origin-password").name;
             let originPassword = "";
             let newPassword = "";
             let newPasswordCheck = "";
@@ -482,7 +475,7 @@
                     if(originPassword === "") {
                         $("#password-message").css({"visibility": "hidden"});
                     } else {
-                        if(originPassword !== "12345678"){
+                        if(originPassword !== originPasswordVal){
                             $("#password-message").css({
                                 "visibility": "visible", "color": "red"
                             }).text("이전 비밀번호와 일치하지 않습니다.");
@@ -532,8 +525,7 @@
                     }
                 });
                 $("#save-modify-btn").click((e) => {
-                    if(nickname !== originNickname && originPassword === "12345678" &&
-                        regex.test(newPassword) === true && newPassword === newPasswordCheck) {
+                    if(originPassword === originPasswordVal && regex.test(newPassword) === true && newPassword === newPasswordCheck) {
                         alert("전송 성공");
                     } else {
                         alert("전송 실패");
@@ -543,8 +535,7 @@
                 $("#modify-form").on("submit", function(event) {
                     event.preventDefault();
 
-                    if(nickname !== originNickname && originPassword === "12345678" &&
-                        regex.test(newPassword) === true && newPassword === newPasswordCheck){
+                    if(originPassword === originPasswordVal && regex.test(newPassword) === true && newPassword === newPasswordCheck){
                         this.submit();
                     }
                 });

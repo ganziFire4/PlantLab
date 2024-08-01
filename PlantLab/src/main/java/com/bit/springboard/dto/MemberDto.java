@@ -1,7 +1,7 @@
 package com.bit.springboard.dto;
 
 public class MemberDto {
-    private int memId;
+    private int mem_id;
     private String login_id;
     private String password;
     private String mem_name;
@@ -14,11 +14,11 @@ public class MemberDto {
     private String mem_addr_detail;
 
     public int getMemId() {
-        return memId;
+        return mem_id;
     }
 
-    public void setMemId(int memId) {
-        this.memId = memId;
+    public void setMemId(int mem_id) {
+        this.mem_id = mem_id;
     }
 
     public String getLogin_id() {
@@ -104,7 +104,7 @@ public class MemberDto {
     @Override
     public String toString() {
         return "MemberDto{" +
-                "memId=" + memId +
+                "mem_id=" + mem_id +
                 ", login_id='" + login_id + '\'' +
                 ", password='" + password + '\'' +
                 ", mem_name='" + mem_name + '\'' +

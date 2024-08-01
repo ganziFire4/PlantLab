@@ -32,7 +32,7 @@
                 MEM_NICKNAME = #{mem_nickname},
                 PASSWORD = #{password},
                 MEM_PIC = #{mem_pic}
-            WHERE MEM_ID = #{memId}
+            WHERE MEM_ID = #{mem_id}
     </update>
     <select id="login" parameterType="member" resultType="member">
         SELECT *
