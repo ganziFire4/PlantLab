@@ -15,8 +15,8 @@
                    alias="member"/>
         <typeAlias type="com.bit.springboard.dto.GreentalkDto"
                    alias="greentalk"/>
-<!--        <typeAlias type="com.bit.springboard.dto.ProductDto"-->
-<!--                   alias="ProductDto"/> &lt;!&ndash;스토어 김시표&ndash;&gt;-->
+        <typeAlias type="com.bit.springboard.dto.ProductDto"
+                   alias="ProductDto"/>
     </typeAliases>
 
     <!--사용할 Sql Mapper 등록-->
@@ -24,6 +24,6 @@
         <mapper resource="mappings/board-mapper.xml"/>
         <mapper resource="mappings/member-mapper.xml"/>
         <mapper resource="mappings/greentalk-mapper.xml"/>
-<!--        <mapper resource="mappings/ProductMapper.xml"/> &lt;!&ndash;스토어 김시표&ndash;&gt;-->
+        <mapper resource="mappings/product-mapper.xml"/>
     </mappers>
 </configuration>

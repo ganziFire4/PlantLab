@@ -38,15 +38,14 @@ public class BoardController {
     @RequestMapping("/board-main.do")
     public String boardList(Model model, @RequestParam("tab") int tab, @RequestParam Map<String, Object> searchMap, Criteria cri) {
         model.addAttribute("tab", tab);
-<<<<<<< HEAD
-        return "/WEB-INF/views/board/board-main";
-=======
+
+
         model.addAttribute("search", searchMap);
 
         int total = boardService.getBoardTotal(tab);
         model.addAttribute("page", new BoardPageDto(cri, total));
-        return "/board/board-main";
->>>>>>> origin/feature_board
+        return "/WEB-INF/views/board/board-main";
+
     }
 
     @GetMapping("/post.do")
@@ -54,12 +53,13 @@ public class BoardController {
         return "/WEB-INF/views/board/post";
     }
 
-<<<<<<< HEAD
+
     @GetMapping("/greentalk.do")
     public String greentalk(Model model) {
-        model.addAttribute("greentalkList" , greentalkService.getPopGreenList());
+        model.addAttribute("greentalkList", greentalkService.getPopGreenList());
         return "/WEB-INF/views/board/greentalk";
-=======
+    }
+
     @RequestMapping("/greentalk.do")
     public String greentalk(Model model, Criteria cri, Map<String, String> searchMap) {
 
@@ -73,19 +73,19 @@ public class BoardController {
             List<GreentalkDto> greentalkPicDtoList = greentalkService.getGreenFileList(greentalkDto.getGreen_id());
             Map<String, Object> map = new HashMap<>();
             map.put("greentalkDto", greentalkDto);
-            if(greentalkPicDtoList.size() > 0)
+            if (greentalkPicDtoList.size() > 0)
                 map.put("file", greentalkPicDtoList.get(0));
 
             mapList.add(map);
         }); // 강사님찬스
 
-        model.addAttribute("greentalkList" , mapList);
+        model.addAttribute("greentalkList", mapList);
 
         int total = greentalkService.getTotalCnt(searchMap);
 
         model.addAttribute("page", new GreentalkPageDto(cri, total));
-        return "/board/greentalk";
->>>>>>> origin/feature_board
+        return "/WEB-INF/views/board/greentalk";
+
     }
 
     @GetMapping("/board-detail.do")
@@ -95,7 +95,9 @@ public class BoardController {
     }
 
     @GetMapping("/greentalk_post")
-    public String greentalk_post(){return"/WEB-INF/views/board/greentalk_post";}
+    public String greentalk_post() {
+        return "/WEB-INF/views/board/greentalk_post";
+    }
 
     @PostMapping("/greentalk-list-ajax.do")
     @ResponseBody
@@ -153,21 +155,18 @@ public class BoardController {
     }
 
 
-
     @PostMapping("/board-list.do")
-<<<<<<< HEAD
-    public String search_board(){
-        return "/WEB-INF/views/board/board-main";
-=======
-    public String search_board(@RequestParam Map<String, Object> searchMap){
+    public String search_board (@RequestParam Map < String, Object > searchMap){
 
-        return "/board/board-main";
->>>>>>> origin/feature_board
+        return "/WEB-INF/views/board/board-main";
+
     }
 
     @GetMapping("/update-cnt.do")
-    public String board_view_cnt(@RequestParam("id") int id){
+    public String board_view_cnt ( @RequestParam("id") int id){
         boardService.update_view_cnt(id);
         return "redirect:/WEB-INF/views/board/board-detail.do?id=" + id;
     }
 }
+
+
