@@ -315,7 +315,7 @@
                                 for(let i = 0; i < obj.greentalkList.length; i++) {
                                     htmlStr += `
                                               <img class="thumbnail" width="100%" height="261px"
-                                                         src="/static/images/storage/${greentalk.file.filename}"
+                                                         src="/static/images/storage/\${obj.greentalkList[i].greentalkDto.green_pic}"
                                                          alt="${greentalk.file.fileoriginname}">
                                             `;
                                 }
