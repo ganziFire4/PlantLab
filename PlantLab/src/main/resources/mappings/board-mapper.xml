@@ -116,4 +116,11 @@
             WHERE BOARD_ID = ${id}
     </update>
 
+    <select id="getBoardTotal" parameterType="int" resultType="int">
+        SELECT COUNT(*)
+            FROM BOARD B
+            JOIN MEMBER M
+              ON B.MEM_ID = M.MEM_ID
+            WHERE BOARD_TYPE = #{tab}
+    </select>
 </mapper>

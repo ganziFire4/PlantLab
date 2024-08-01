@@ -71,12 +71,19 @@
                     <div class="member">
                         <ul>
                             <li style="margin:0;">
-                                <a href="#">
-                                    <img src="/static/images/profile_default.svg" alt="프로필사진" width="40px" height="40px">
+                                <a href="${pageContext.request.contextPath}/member/mypage.do">
+                                    <c:choose>
+                                        <c:when test="${loggedInMember.mem_pic == null}">
+                                            <img src="/static/images/profile_default.svg" alt="기본프로필 사진">
+                                        </c:when>
+                                        <c:otherwise>
+                                            <img src="/static/images/storage/${loggedInMember.mem_pic}" alt="프로필사진" width="40px" height="40px">
+                                        </c:otherwise>
+                                    </c:choose>
                                 </a>
                             </li>
                             <li style="margin-left: 10px; font-size: 1.1rem">
-                                <a href="#" style="font-weight:400">${loggedInMember.mem_nickname}</a>
+                                <a href="${pageContext.request.contextPath}/member/mypage.do" style="font-weight:400">${loggedInMember.mem_nickname}</a>
                             </li>
                             <li id="logout">
                                 <a href="/member/logout.do">로그아웃</a>

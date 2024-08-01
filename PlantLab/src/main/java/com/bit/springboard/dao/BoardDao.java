@@ -48,4 +48,7 @@ public class BoardDao {
         return mybatis.selectList("BoardDao.getBoard", id);
     }
 
+    public int getBoardTotal(int tab) {
+        return mybatis.selectOne("BoardDao.getBoardTotal", tab);
+    }
 }

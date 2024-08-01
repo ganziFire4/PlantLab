@@ -38,6 +38,7 @@ public class MemberController {
     public String login(MemberDto memberDto, Model model, HttpSession session) {
         try {
             System.out.println("로그인 시도: " + memberDto.getLogin_id());
+
             MemberDto loggedInMember = memberService.login(memberDto);
 
             System.out.println("로그인 성공: " + loggedInMember.getLogin_id());
@@ -118,8 +119,8 @@ public class MemberController {
     }
 
     @GetMapping("/mypage.do")
-    public String boardView(Model model, @RequestParam("mem_id") int mem_id) {
-        model.addAttribute("myWrite", boardService.getBoard(mem_id));
+    public String boardView(Model model, MemberDto memberDto) {
+        model.addAttribute("myWrite", boardService.getBoard(memberDto.getMemId()));
         return "/member/mypage";
     }
 

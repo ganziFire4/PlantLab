@@ -35,9 +35,13 @@ public class BoardController {
         this.greentalkService = greentalkService;
     }
 
-    @GetMapping("/board-main.do")
-    public String boardList(Model model, @RequestParam("tab") int tab) {
+    @RequestMapping("/board-main.do")
+    public String boardList(Model model, @RequestParam("tab") int tab, @RequestParam Map<String, Object> searchMap, Criteria cri) {
         model.addAttribute("tab", tab);
+        model.addAttribute("search", searchMap);
+
+        int total = boardService.getBoardTotal(tab);
+        model.addAttribute("page", new BoardPageDto(cri, total));
         return "/board/board-main";
     }
 
@@ -140,7 +144,8 @@ public class BoardController {
 
 
     @PostMapping("/board-list.do")
-    public String search_board(){
+    public String search_board(@RequestParam Map<String, Object> searchMap){
+
         return "/board/board-main";
     }
 

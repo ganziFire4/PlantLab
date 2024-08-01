@@ -13,4 +13,5 @@ public interface BoardService {
     BoardDto view_one(int id);
     List<BoardDto> getBoard(int id);
     void update_view_cnt(int id);
+    int getBoardTotal(int tab);
 }
