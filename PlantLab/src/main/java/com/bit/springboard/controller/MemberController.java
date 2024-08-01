@@ -8,11 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import java.io.File;
 import java.io.IOException;
 
@@ -31,7 +28,7 @@ public class MemberController {
 
     @GetMapping("/login.do")
     public String loginView(){
-        return "member/login_01";
+        return "/WEB-INF/views/member/login_01";
     }
 
     @PostMapping("/login.do")
@@ -51,7 +48,7 @@ public class MemberController {
         }catch (Exception e) {
             System.out.println("로그인 실패: " + e.getMessage());
             model.addAttribute("loginFailMsg", e.getMessage());
-            return "member/login_01";
+            return "/WEB-INF/views/member/login_01";
         }
     }
 
@@ -64,13 +61,13 @@ public class MemberController {
 
     @GetMapping("/join.do")
     public String joinView(){
-        return "member/join_01";
+        return "/WEB-INF/views/member/join_01";
     }
 
     @PostMapping("/join.do")
     public String join(MemberDto memberDto) {
         memberService.join(memberDto);
-        return "member/login_01";
+        return "/WEB-INF/views/member/login_01";
     }
 
 
@@ -94,7 +91,7 @@ public class MemberController {
 
     @GetMapping("/modify.do")
     public String modifyView(){
-        return "member/mypage";
+        return "/WEB-INF/views/member/mypage";
     }
 
     @PostMapping("/modify.do")
