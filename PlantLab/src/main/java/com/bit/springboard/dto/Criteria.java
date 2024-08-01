@@ -10,11 +10,11 @@ public class Criteria {
 
     // 1페이지에 n개씩
     public Criteria() {
-        this(1, 10);
+        this(1, 3);
     }
 
     public Criteria(int amount) {
-        this.pageNum = 1;
+        this.pageNum = 2;
         this.amount = amount;
     }
 

@@ -273,54 +273,66 @@
             });
         });
 
+
+        let pageNum = 1;
+        const amount = 3;
+
+        let timer;
+
         $(window).on("scroll", (e) => {
-            // 현재 스크롤의 위치
-            const scrollTop = $(window).scrollTop();
-            // 브라우저의 세로길이(스크롤 길이는 포함되지 않음)
-            const windowHeight = window.innerHeight;
-            // 웹 문서의 세로 길이(스크롤 길이 포함됨)
-            const documentHeight = document.documentElement.scrollHeight;
-
-            // 스크롤이 바닥에 닿았는지 여부
-            const isBottom = documentHeight <= scrollTop + windowHeight;
-
-            /*console.log(`scrollTop: \${scrollTop}`);
-            console.log(`windowHeight: \${windowHeight}`);
-            console.log(`documentHeight: \${documentHeight}`);
-            console.log(`isBottom: \${isBottom}`);*/
-
-            if(isBottom) {
-                // 현재 페이지의 번호가 마지막 페이지의 번호와 같으면 함수 종료
-                if($("input[name='pageNum']").val() >= $("input[name='endPage']").val()) {
-                    return;
-                } else {
-                    // 스크롤이 바닥에 닿으면 현재 페이지 번호 + 1
-                    $("input[name='pageNum']").val(parseInt($("input[name='pageNum']").val()) + 1);
-                    console.log("123");
-
-                    $.ajax({
-                        url: '/board/greentalk-list-ajax.do',
-                        type: 'POST',
-                        data: $("#search-form").serialize(),
-                        success: (obj) => {
-                            console.log(obj);
-                            let htmlStr = "";
-                            for(let i = 0; i < obj.greentalkList.length; i++) {
-                                htmlStr += `
-
-                                        `;
-                            }
-                            // console.log(htmlStr);
-                            $(".conimg").append(htmlStr);
-                        },
-                        error: (err) => {
-                            console.log(err);
-                        }
-                    });
-                }
+            if (timer) {
+                clearTimeout(timer);
             }
+            timer = setTimeout(() => {
+
+                // 현재 스크롤의 위치
+                const scrollTop = $(window).scrollTop();
+                // 브라우저의 세로길이(스크롤 길이는 포함되지 않음)
+                const windowHeight = window.innerHeight;
+                // 웹 문서의 세로 길이(스크롤 길이 포함됨)
+                const documentHeight = document.documentElement.scrollHeight;
+
+                // 스크롤이 바닥에 닿았는지 여부
+                const isBottom = documentHeight <= scrollTop + windowHeight;
+
+                if(isBottom) {
+                    // 현재 페이지의 번호가 마지막 페이지의 번호와 같으면 함수 종료
+                    if($("input[name='pageNum']").val() >= $("input[name='endPage']").val()) {
+                        return;
+                    } else {
+                        // 스크롤이 바닥에 닿으면 현재 페이지 번호 + 1
+                        $("input[name='pageNum']").val(parseInt($("input[name='pageNum']").val()) + 1);
+                        console.log("바닥에 닿음");
+
+
+                        $.ajax({
+                            url: '/board/greentalk-list-ajax.do',
+                            type: 'POST',
+                            data: $("#search-form").serialize(),
+                            success: (obj) => {
+                                console.log(obj);
+                                let htmlStr = "";
+                                for(let i = 0; i < obj.greentalkList.length; i++) {
+                                    htmlStr += `
+                                              <img class="thumbnail" width="100%" height="261px"
+                                                         src="/static/images/storage/${greentalk.file.filename}"
+                                                         alt="${greentalk.file.fileoriginname}">
+                                            `;
+                                }
+                                // console.log(htmlStr);
+                                $(".conimg").append(htmlStr);
+                            },
+                            error: (err) => {
+                                console.log(err);
+                            }
+                        });
+                    }
+                }
+
+            }, 50);
         });
 
+        // 커뮤니티 탭 이동
         const info_button = document.querySelector("#info");
         const free_button = document.querySelector("#free");
         const QnA_button = document.querySelector("#QnA");

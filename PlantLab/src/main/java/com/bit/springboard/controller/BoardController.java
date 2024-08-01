@@ -54,7 +54,6 @@ public class BoardController {
         List<GreentalkDto> greentalkDtoList = greentalkService.getPopGreenList();
         System.out.println("getPopGreenList실행");
 
-        List<GreentalkDto> greentalkDtoList1 = greentalkService.getNorGreenList();
 
         greentalkDtoList.forEach(greentalkDto -> {
             List<GreentalkDto> greentalkPicDtoList = greentalkService.getGreenFileList(greentalkDto.getGreen_id());
@@ -86,10 +85,17 @@ public class BoardController {
     @PostMapping("/greentalk-list-ajax.do")
     @ResponseBody
     public Map<String, Object> greentalkListAjax(@RequestParam Map<String, String> searchMap, Criteria cri) {
+        System.out.println(cri.getPageNum());
+        System.out.println(cri.getAmount());
         try {
             greentalkService = applicationContext.getBean("greentalkServiceImpl", GreentalkService.class);
 
-            cri.setAmount(3);
+//            cri.setAmount(3);
+//            int pageNum = Integer.parseInt(searchMap.getOrDefault("pageNum", "1"));
+//            int amount = Integer.parseInt(searchMap.getOrDefault("amount", "3"));
+//            cri.setPageNum(pageNum);
+//            cri.setAmount(amount);
+
 
             List<Map<String, Object>> greentalkList = new ArrayList<>();
 

@@ -55,7 +55,7 @@
                 AND M.NICKNAME LIKE CONCAT('%', #{search.searchKeyword}, '%')
             </if>
         </if>
-        ORDER BY G.GREEN_ID DESC
+        ORDER BY G.GREEN_MOD DESC
         LIMIT #{cri.amount} OFFSET #{cri.startNum}
     </select>
 
