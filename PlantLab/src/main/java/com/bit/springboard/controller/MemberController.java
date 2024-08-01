@@ -42,7 +42,7 @@ public class MemberController {
             MemberDto loggedInMember = memberService.login(memberDto);
 
             System.out.println("로그인 성공: " + loggedInMember);
-//            loggedInMember.setPassword("");
+            loggedInMember.setPassword("");
 
             session.setAttribute("loggedInMember", loggedInMember);
 
@@ -133,7 +133,7 @@ public class MemberController {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
         model.addAttribute("myWrite", boardService.getBoard(loggedInMember.getMemId()));
 //        session.setAttribute("myWrite", boardService.getBoard(memberDto.getMemId()));
-        return "/member/mypage";
+        return "/WEB-INF/views/member/mypage";
     }
 
 }

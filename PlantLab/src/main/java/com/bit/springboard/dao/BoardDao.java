@@ -40,6 +40,10 @@ public class BoardDao {
         return mybatis.selectOne("BoardDao.view_one", id);
     }
 
+    public void update_view_cnt(int id) {
+        mybatis.update("BoardDao.update_view_cnt", id);
+    }
+
     public List<BoardDto> getBoard(int id) {
         return mybatis.selectList("BoardDao.getBoard", id);
     }
