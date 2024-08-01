@@ -180,7 +180,7 @@
                                         </div>
                                     </div>
                                     <div class="modalmaincontent">
-                                        <p>입양한지 100일째 ~ 무럭무럭 크는 우리집 뽀짝<br>그린이에요>_<<br>벌레도 없이 튼튼하게 자라는 중이에요</p>
+                                        <p>123</p>
                                     </div>
                                 </div>
                             </div>
@@ -380,25 +380,25 @@
                                 <div class="modalcontentbox">
                                     <div class="modalcontents">
                                         <div class="writerpic">
-                                            <img src="${pageContext.request.contextPath}/static/images/프로필사진.png" alt="" style="width: 30px; height: 30px;">
+                                            <img src="/static/images/storage/\${obj.greentalk.mem_pic}" alt="" style="width: 30px; height: 30px;">
                                         </div>
                                         <div class="modalmaincon">
-                                            karina87
+                                            \${obj.greentalk.mem_nickname}
                                         </div>
                                         <div class="modalmaindate">
-                                            24.06.27
+                                            \${obj.greentalk.green_mod}
                                         </div>
                                         <div class="modalreport">
                                             <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
                                         </div>
                                     </div>
                                     <div class="modalmaincontent">
-                                        <p>입양한지 100일째 ~ 무럭무럭 크는 우리집 뽀짝<br>그린이에요>_<<br>벌레도 없이 튼튼하게 자라는 중이에요</p>
+                                        <p>\${obj.greentalk.green_content}</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="title">
-                                <p class="titlename">#초록  #자랑</p>
+                                <p class="titlename">#\${obj.greentalk.green_tag}</p>
                                 <div class="btnicon">
                                     <img src="${pageContext.request.contextPath}/static/images/그린톡/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
                                     <img src="${pageContext.request.contextPath}/static/images/그린톡/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
