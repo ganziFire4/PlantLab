@@ -36,11 +36,11 @@ public class BoardController {
     }
 
     @RequestMapping("/board-main.do")
-    public String boardList(Model model, @RequestParam("tab") int tab, @RequestParam Map<String, Object> searchMap, Criteria cri) {
+    public String boardList(Model model, @RequestParam(value = "tab", required = false) Integer tab, @RequestParam Map<String, Object> search, Criteria cri) {
         model.addAttribute("tab", tab);
 
 
-        model.addAttribute("search", searchMap);
+        model.addAttribute("search", search);
 
         int total = boardService.getBoardTotal(tab);
         model.addAttribute("page", new BoardPageDto(cri, total));
@@ -51,13 +51,6 @@ public class BoardController {
     @GetMapping("/post.do")
     public String post() {
         return "/WEB-INF/views/board/post";
-    }
-
-
-    @GetMapping("/greentalk.do")
-    public String greentalk(Model model) {
-        model.addAttribute("greentalkList", greentalkService.getPopGreenList());
-        return "/WEB-INF/views/board/greentalk";
     }
 
     @RequestMapping("/greentalk.do")
@@ -155,12 +148,12 @@ public class BoardController {
     }
 
 
-    @PostMapping("/board-list.do")
-    public String search_board (@RequestParam Map < String, Object > searchMap){
-
-        return "/WEB-INF/views/board/board-main";
-
-    }
+//    @PostMapping("/board-list.do")
+//    public String search_board (@RequestParam Map < String, Object > searchMap){
+//
+//        return "/WEB-INF/views/board/board-main";
+//
+//    }
 
     @GetMapping("/update-cnt.do")
     public String board_view_cnt ( @RequestParam("id") int id){

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -39,8 +40,8 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public List<BoardDto> view_all(int tab) {
-        return boardDao.view_all(tab);
+    public List<BoardDto> view_all(int tab, Map<String, Object> searchMap) {
+        return boardDao.view_all(tab, searchMap);
     }
 
     @Override

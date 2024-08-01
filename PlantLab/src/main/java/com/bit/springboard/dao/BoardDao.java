@@ -5,7 +5,9 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Repository
 public class BoardDao {
@@ -32,8 +34,12 @@ public class BoardDao {
         return mybatis.selectList("BoardDao.view_popular", tab);
     }
 
-    public List<BoardDto> view_all(int tab) {
-        return mybatis.selectList("BoardDao.view_all", tab);
+    public List<BoardDto> view_all(int tab, Map<String, Object> searchMap) {
+        Map<String, Object> paramMap = new HashMap<>();
+
+        paramMap.put("tab", tab);
+        paramMap.put("searchMap", searchMap);
+        return mybatis.selectList("BoardDao.view_all", paramMap);
     }
 
     public BoardDto view_one(int id) {
