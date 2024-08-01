@@ -1,31 +1,40 @@
 package com.bit.springboard.controller;
 
 import com.bit.springboard.dto.ProductDto;
+import com.bit.springboard.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
-@RestController
-@RequestMapping("/api/products")
+@Controller
+@RequestMapping("/products")
 public class ProductController {
+
     @Autowired
     private ProductService productService;
 
-    @PostMapping(consumes = "multipart/form-data")
-    public ResponseEntity<ProductDto> addProduct(
-            @ModelAttribute ProductDto productDto,
-            @RequestParam("file") MultipartFile file) {
-
-        ProductDto savedProduct = productService.saveProduct(productDto, file);
-        return ResponseEntity.ok(savedProduct);
+    @PostMapping("/save")
+    @ResponseBody
+    public ProductDto saveProduct(@RequestBody ProductDto productDto, @RequestParam("file") MultipartFile file) {
+        return productService.saveProduct(productDto, file);
     }
 
-    @GetMapping
-    public ResponseEntity<List<ProductDto>> getAllProducts() {
-        List<ProductDto> products = productService.getAllProducts();
-        return ResponseEntity.ok(products);
+    @GetMapping("/all")
+    @ResponseBody
+    public List<ProductDto> getAllProducts() {
+        return productService.getAllProducts();
+    }
+
+    @GetMapping("/shopping_main.do")
+    public String shoppingMain() {
+        return "store/shopping_main"; // store/shopping_main.jsp를 반환
+    }
+
+    @GetMapping("/purchase.do")
+    public String purchase() {
+        return "store/purchase";
     }
 }

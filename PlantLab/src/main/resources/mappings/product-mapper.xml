@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.bit.springboard.mapper.ProductMapper">
+<mapper namespace="com.bit.springboard.dao.ProductDao">
 
-    <resultMap id="ProductMap" type="ProductDto">
+    <resultMap id="ProductMap" type="com.bit.springboard.dto.ProductDto">
         <id property="product_id" column="product_id"/>
         <result property="pic_id" column="pic_id"/>
         <result property="brand" column="brand"/>
@@ -27,14 +27,13 @@
         <result property="is_main" column="is_main"/>
     </resultMap>
 
-    <insert id="saveProduct" parameterType="ProductDto">
-        INSERT INTO store_product
-        (pic_id, brand, product_name, price, discount, rate, color, is_light, base_type, size, tag, view_count, sell_start, sell_end, product_status, created_at, updated_at, file_name, is_main)
-        VALUES
-            (#{pic_id}, #{brand}, #{product_name}, #{price}, #{discount}, #{rate}, #{color}, #{is_light}, #{base_type}, #{size}, #{tag}, #{view_count}, #{sell_start}, #{sell_end}, #{product_status}, #{created_at}, #{updated_at}, #{file_name}, #{is_main})
+    <insert id="saveProduct" parameterType="com.bit.springboard.dto.ProductDto">
+        INSERT INTO product (product_id, pic_id, brand, product_name, price, discount, rate, color, is_light, base_type, size, tag, view_count, sell_start, sell_end, product_status, created_at, updated_at, file_name, is_main)
+        VALUES (#{product_id}, #{pic_id}, #{brand}, #{product_name}, #{price}, #{discount}, #{rate}, #{color}, #{is_light}, #{base_type}, #{size}, #{tag}, #{view_count}, #{sell_start}, #{sell_end}, #{product_status}, #{created_at}, #{updated_at}, #{file_name}, #{is_main})
     </insert>
 
     <select id="getAllProducts" resultMap="ProductMap">
-        SELECT * FROM store_product
+        SELECT product_id, pic_id, brand, product_name, price, discount, rate, color, is_light, base_type, size, tag, view_count, sell_start, sell_end, product_status, created_at, updated_at, file_name, is_main
+        FROM product
     </select>
 </mapper>

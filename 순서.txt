@@ -1,2 +1,4 @@
+시작전에 인텔리제이 미리 끄기
+
 git pull
 git checkout 작업할 브랜치명
