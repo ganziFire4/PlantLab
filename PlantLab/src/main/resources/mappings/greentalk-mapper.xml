@@ -55,7 +55,7 @@
                 AND M.NICKNAME LIKE CONCAT('%', #{search.searchKeyword}, '%')
             </if>
         </if>
-        ORDER BY G.GREEN_ID DESC
+        ORDER BY G.GREEN_MOD DESC
         LIMIT #{cri.amount} OFFSET #{cri.startNum}
     </select>
 
@@ -78,4 +78,45 @@
         LIMIT 2
     </select>
 
+    <select id="getTotalCnt" parameterType="map" resultType="int">
+        SELECT COUNT(*)
+            FROM GREENTALK G
+            JOIN MEMBER M
+            ON G.MEM_ID = M.MEM_ID
+            WHERE 1=1
+            <if test="searchKeyword != null and searchKeyword != ''">
+                AND (
+                   G.GREEN_CONTENT LIKE CONCAT('%', #{searchKeyword}, '%')
+                OR M.MEM_NICKNAME LIKE CONCAT('%', #{searchKeyword}, '%')
+                )
+        </if>
+    </select>
+
+    <select id="getNorGreenList" resultType="greentalk">
+        SELECT G.GREEN_ID
+             , GP.GREEN_PIC
+            FROM GREENTALK G
+            JOIN GREENTALK_PIC GP
+              ON G.GREEN_ID = GP.GREEN_ID
+            ORDER BY G.GREEN_REG DESC
+            LIMIT 3
+    </select>
+
+    <select id="getGreenOne" parameterType="int" resultType="greentalk">
+        SELECT G.GREEN_ID
+             , G.GREEN_CONTENT
+             , M.MEM_ID
+             , G.GREEN_REG
+             , G.GREEN_MOD
+             , G.GREEN_TAG
+             , G.GREEN_LIKE_CNT
+             , G.GREEN_BOOKMARK_CNT
+             , GP.GREEN_PIC
+             , M.MEM_PIC
+             , M.MEM_NICKNAME
+        FROM GREENTALK G
+                 JOIN MEMBER M ON G.MEM_ID = M.MEM_ID
+                 JOIN GREENTALK_PIC GP ON G.GREEN_ID = GP.GREEN_ID
+        WHERE G.GREEN_ID = #{green_id}
+    </select>
 </mapper>

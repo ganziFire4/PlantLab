@@ -23,11 +23,20 @@
     <!--게시판 내용-->
     <div id="title_table_area">
         <div class="search_bar">
-            <form id="search_form" action="/board/board-list.do" method="post">
+            <form id="search_form" action="/board/board-main.do" method="post">
                 <select name="search_condition" id="search_condition">
-                    <option value="all">전체</option>
-                    <option value="title">제목</option>
-                    <option value="writer">작성자</option>
+                    <option value="all"
+                        <c:if test="${search == null || search.search_condition == 'all'}">
+                            selected
+                        </c:if>>전체</option>
+                    <option value="title"
+                        <c:if test="${search.search_condition == 'title'}">
+                            selected
+                        </c:if>>제목</option>
+                    <option value="writer"
+                        <c:if test="${search.search_condition == 'writer'}">
+                            selected
+                        </c:if>>작성자</option>
                 </select>
                 <input type="text" id="search_keyword" name="search_keyword" value="">
                 <button type="submit" id="search_btn">검색</button>
@@ -122,13 +131,11 @@
                         <th scope="col">조회수</th>
                         <th scope="col">좋아요</th>
                         <th scope="col">스크랩</th>
-                        <!--스파이-->
                     </tr>
                     </thead>
                     <tbody>
                     <c:forEach items="${boardList}" var="board">
                         <tr onclick="location.href='/board/update-cnt.do?id=${board.board_id}'">
-                            <!--스파이-->
                             <td scope="row">${board.row_num}</td>
                             <td>${board.board_title}</td>
                             <td>${board.mem_nickname}</td>

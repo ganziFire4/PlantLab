@@ -99,17 +99,20 @@
     </select>
 
     <select id="getBoard" parameterType="int" resultType="board">
-        SELECT AA.*
-        FROM (SELECT B.BOARD_TITLE
-        , B.BOARD_REG
-        , M.MEM_NICKNAME
-        , B.BOARD_TYPE
-        , ROW_NUMBER() over (PARTITION BY B.BOARD_TYPE ORDER BY BOARD_TYPE ASC, BOARD_ID ASC) AS num
+        SELECT B.BOARD_TITLE
+             , B.BOARD_REG
+             , M.MEM_NICKNAME
         FROM BOARD B
         JOIN MEMBER M
+<<<<<<< HEAD
         ON B.MEM_ID = M.MEM_ID
         WHERE B.MEM_ID = #{mem_id}) AA
         WHERE AA.NUM &lt;= 3;
+=======
+          ON B.MEM_ID = M.MEM_ID
+        WHERE B.MEM_ID = ${id}
+        LIMIT 3
+>>>>>>> origin/feature_board
     </select>
 
     <update id="update_view_cnt" parameterType="int">
@@ -118,4 +121,12 @@
                 BOARD_VIEW_CNT = BOARD_VIEW_CNT + 1
             WHERE BOARD_ID = ${id}
     </update>
+
+    <select id="getBoardTotal" parameterType="int" resultType="int">
+        SELECT COUNT(*)
+            FROM BOARD B
+            JOIN MEMBER M
+              ON B.MEM_ID = M.MEM_ID
+            WHERE BOARD_TYPE = #{tab}
+    </select>
 </mapper>

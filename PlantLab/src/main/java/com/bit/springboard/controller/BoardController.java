@@ -1,9 +1,6 @@
 package com.bit.springboard.controller;
 
-import com.bit.springboard.dto.BoardDto;
-import com.bit.springboard.dto.Criteria;
-import com.bit.springboard.dto.GreentalkDto;
-import com.bit.springboard.dto.GreentalkFileDto;
+import com.bit.springboard.dto.*;
 import com.bit.springboard.service.BoardService;
 import com.bit.springboard.service.GreentalkService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -38,10 +35,18 @@ public class BoardController {
         this.greentalkService = greentalkService;
     }
 
-    @GetMapping("/board-main.do")
-    public String boardList(Model model, @RequestParam("tab") int tab) {
+    @RequestMapping("/board-main.do")
+    public String boardList(Model model, @RequestParam("tab") int tab, @RequestParam Map<String, Object> searchMap, Criteria cri) {
         model.addAttribute("tab", tab);
+<<<<<<< HEAD
         return "/WEB-INF/views/board/board-main";
+=======
+        model.addAttribute("search", searchMap);
+
+        int total = boardService.getBoardTotal(tab);
+        model.addAttribute("page", new BoardPageDto(cri, total));
+        return "/board/board-main";
+>>>>>>> origin/feature_board
     }
 
     @GetMapping("/post.do")
@@ -49,10 +54,38 @@ public class BoardController {
         return "/WEB-INF/views/board/post";
     }
 
+<<<<<<< HEAD
     @GetMapping("/greentalk.do")
     public String greentalk(Model model) {
         model.addAttribute("greentalkList" , greentalkService.getPopGreenList());
         return "/WEB-INF/views/board/greentalk";
+=======
+    @RequestMapping("/greentalk.do")
+    public String greentalk(Model model, Criteria cri, Map<String, String> searchMap) {
+
+        List<Map<String, Object>> mapList = new ArrayList<>();
+
+        List<GreentalkDto> greentalkDtoList = greentalkService.getPopGreenList();
+        System.out.println("getPopGreenList실행");
+
+
+        greentalkDtoList.forEach(greentalkDto -> {
+            List<GreentalkDto> greentalkPicDtoList = greentalkService.getGreenFileList(greentalkDto.getGreen_id());
+            Map<String, Object> map = new HashMap<>();
+            map.put("greentalkDto", greentalkDto);
+            if(greentalkPicDtoList.size() > 0)
+                map.put("file", greentalkPicDtoList.get(0));
+
+            mapList.add(map);
+        }); // 강사님찬스
+
+        model.addAttribute("greentalkList" , mapList);
+
+        int total = greentalkService.getTotalCnt(searchMap);
+
+        model.addAttribute("page", new GreentalkPageDto(cri, total));
+        return "/board/greentalk";
+>>>>>>> origin/feature_board
     }
 
     @GetMapping("/board-detail.do")
@@ -67,10 +100,17 @@ public class BoardController {
     @PostMapping("/greentalk-list-ajax.do")
     @ResponseBody
     public Map<String, Object> greentalkListAjax(@RequestParam Map<String, String> searchMap, Criteria cri) {
+        System.out.println(cri.getPageNum());
+        System.out.println(cri.getAmount());
         try {
             greentalkService = applicationContext.getBean("greentalkServiceImpl", GreentalkService.class);
 
-            cri.setAmount(3);
+//            cri.setAmount(3);
+//            int pageNum = Integer.parseInt(searchMap.getOrDefault("pageNum", "1"));
+//            int amount = Integer.parseInt(searchMap.getOrDefault("amount", "3"));
+//            cri.setPageNum(pageNum);
+//            cri.setAmount(amount);
+
 
             List<Map<String, Object>> greentalkList = new ArrayList<>();
 
@@ -98,9 +138,31 @@ public class BoardController {
         }
     }
 
+    @PostMapping("/modal-ajax.do")
+    @ResponseBody
+    public Map<String, Object> modalAjax(GreentalkDto greentalkDto) {
+//        System.out.println(greentalkDto);
+        Map<String, Object> map = new HashMap<>();
+        try {
+            GreentalkDto greentalk = greentalkService.getGreenOne(greentalkDto.getGreen_id());
+            map.put("greentalk", greentalk);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return map;
+    }
+
+
+
     @PostMapping("/board-list.do")
+<<<<<<< HEAD
     public String search_board(){
         return "/WEB-INF/views/board/board-main";
+=======
+    public String search_board(@RequestParam Map<String, Object> searchMap){
+
+        return "/board/board-main";
+>>>>>>> origin/feature_board
     }
 
     @GetMapping("/update-cnt.do")
