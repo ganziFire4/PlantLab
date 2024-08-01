@@ -125,7 +125,7 @@ public class MemberController {
         memberService.modify(loggedInMember);
 
         session.setAttribute("loggedInMember", loggedInMember);
-        return "member/mypage";
+        return "WEB-INF/views/member/mypage";
     }
 
     @GetMapping("/mypage.do")

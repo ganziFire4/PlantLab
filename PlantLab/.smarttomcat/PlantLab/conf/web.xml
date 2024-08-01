@@ -4623,7 +4623,7 @@
     <mime-mapping>
         <extension>xpx</extension>
         <mime-type>application/vnd.intercon.formnet</mime-type>
-    </mime-mapping>
+    </mime-mapping>gi
     <mime-mapping>
         <extension>xsl</extension>
         <mime-type>application/xml</mime-type>
