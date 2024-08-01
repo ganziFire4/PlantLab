@@ -41,7 +41,7 @@ public class MemberController {
 
             MemberDto loggedInMember = memberService.login(memberDto);
 
-            System.out.println("로그인 성공: " + loggedInMember.getLogin_id());
+            System.out.println("로그인 성공: " + loggedInMember);
             loggedInMember.setPassword("");
 
             session.setAttribute("loggedInMember", loggedInMember);
@@ -115,13 +115,13 @@ public class MemberController {
             }
         }
         memberService.modify(memberDto);
-        return "member/login_01";
+        return "/WEB-INF/views/member/login_01";
     }
 
     @GetMapping("/mypage.do")
     public String boardView(Model model, @RequestParam("mem_id") int mem_id) {
         model.addAttribute("myWrite", boardService.getBoard(mem_id));
-        return "/member/mypage";
+        return "/WEB-INF/views/member/mypage";
     }
 
 }

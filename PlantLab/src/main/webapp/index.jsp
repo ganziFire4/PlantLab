@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: bitcamp
@@ -15,7 +16,7 @@
 <body>
     <jsp:include page="${pageContext.request.contextPath}/nav.jsp"/>
     <header id="header">
-        <img src="/static/images/Header with image_메인페이지.svg" alt="메인 헤더">
+        <img src="/static/images/Header%20with%20image_메인페이지.svg" alt="메인 헤더">
     </header>
     <a href="member/mypage.do?mem_id=1">숨겨진 마이페이지 버튼..</a>
     <main>
@@ -59,31 +60,33 @@
                             <th class="table-title">작성자</th>
                             <th class="table-title">작성일</th>
                         </tr>
+                        <c:forEach var="post" items="${infoPosts}">
                         <tr>
-                            <td>Project Name</td>
-                            <td>Name</td>
-                            <td>2022.00.00</td>
+                            <td>${post.board_title}</td>
+                            <td>${post.mem_nickname}</td>
+                            <td><fmt:formatDate value="${post.board_reg}" pattern="yyyy.MM.dd"/></td>
                         </tr>
-                        <tr>
-                            <td>Project Name</td>
-                            <td>Name</td>
-                            <td>2022.00.00</td>
-                        </tr>
-                        <tr>
-                            <td>Project Name</td>
-                            <td>Name</td>
-                            <td>2022.00.00</td>
-                        </tr>
-                        <tr>
-                            <td>Project Name</td>
-                            <td>Name</td>
-                            <td>2022.00.00</td>
-                        </tr>
-                        <tr>
-                            <td>Project Name</td>
-                            <td>Name</td>
-                            <td>2022.00.00</td>
-                        </tr>
+                        </c:forEach>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
                     </table>
                 </div>
                 <div class="table2">
@@ -97,31 +100,33 @@
                             <th class="table-title">작성자</th>
                             <th class="table-title">작성일</th>
                         </tr>
+                        <c:forEach var="post" items="${qaPosts}">
                         <tr>
-                            <td>Project Name</td>
-                            <td>Name</td>
-                            <td>2022.00.00</td>
+                            <td>${post.board_title}</td>
+                            <td>${post.mem_nickname}</td>
+                            <td><fmt:formatDate value="${post.board_reg}" pattern="yyyy.MM.dd"/></td>
                         </tr>
-                        <tr>
-                            <td>Project Name</td>
-                            <td>Name</td>
-                            <td>2022.00.00</td>
-                        </tr>
-                        <tr>
-                            <td>Project Name</td>
-                            <td>Name</td>
-                            <td>2022.00.00</td>
-                        </tr>
-                        <tr>
-                            <td>Project Name</td>
-                            <td>Name</td>
-                            <td>2022.00.00</td>
-                        </tr>
-                        <tr>
-                            <td>Project Name</td>
-                            <td>Name</td>
-                            <td>2022.00.00</td>
-                        </tr>
+                        </c:forEach>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
                     </table>
                 </div>
             </div>

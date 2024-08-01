@@ -16,7 +16,7 @@
     <main>
         <div class="join-container">
             <h2 id="join-explain">회원가입을 위해<br>정보를 입력해주세요.</h2>
-            <form id="join-form" action="/member/join.do" method="post">
+            <form id="join-form" action="/member/join.do" method="post"  onsubmit="return joinComplete()">
                 <div class="form-group">
                     <div class="custom-input">
                         <input type="text" id="veri_btn" name="login_id" placeholder="아이디" required>
@@ -75,7 +75,7 @@
                     <input type="text" id="addr_detail" name="mem_addr_detail" placeholder="상세 주소" required>
                     <small id="check-message9"></small>
                 </div>
-                <button type="submit" class="submit-btn" onclick="joinComplete()">가입하기</button> <!--백연결시 type="submit"으로 변경 필요-->
+                <button type="submit" class="submit-btn" >가입하기</button> <!--백연결시 type="submit"으로 변경 필요-->
             </form>
         </div>
     </main>

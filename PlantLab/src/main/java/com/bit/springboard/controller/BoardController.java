@@ -41,28 +41,28 @@ public class BoardController {
     @GetMapping("/board-main.do")
     public String boardList(Model model, @RequestParam("tab") int tab) {
         model.addAttribute("tab", tab);
-        return "/board/board-main";
+        return "/WEB-INF/views/board/board-main";
     }
 
     @GetMapping("/post.do")
     public String post() {
-        return "/board/post";
+        return "/WEB-INF/views/board/post";
     }
 
     @GetMapping("/greentalk.do")
     public String greentalk(Model model) {
         model.addAttribute("greentalkList" , greentalkService.getPopGreenList());
-        return "/board/greentalk";
+        return "/WEB-INF/views/board/greentalk";
     }
 
     @GetMapping("/board-detail.do")
     public String board(Model model, @RequestParam("id") int id) {
         model.addAttribute("board", boardService.view_one(id));
-        return "/board/board-detail";
+        return "/WEB-INF/views/board/board-detail";
     }
 
     @GetMapping("/greentalk_post")
-    public String greentalk_post(){return"/board/greentalk_post";}
+    public String greentalk_post(){return"/WEB-INF/views/board/greentalk_post";}
 
     @PostMapping("/greentalk-list-ajax.do")
     @ResponseBody
@@ -100,12 +100,12 @@ public class BoardController {
 
     @PostMapping("/board-list.do")
     public String search_board(){
-        return "/board/board-main";
+        return "/WEB-INF/views/board/board-main";
     }
 
     @GetMapping("/update-cnt.do")
     public String board_view_cnt(@RequestParam("id") int id){
         boardService.update_view_cnt(id);
-        return "redirect:/board/board-detail.do?id=" + id;
+        return "redirect:/WEB-INF/views/board/board-detail.do?id=" + id;
     }
 }

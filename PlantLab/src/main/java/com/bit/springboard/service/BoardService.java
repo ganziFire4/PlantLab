@@ -14,3 +14,5 @@ public interface BoardService {
     List<BoardDto> getBoard(int id);
     void update_view_cnt(int id);
 }
+
+

@@ -35,7 +35,7 @@
     리턴된 문자열이 board/post => /WEB-INF/views/board/post.jsp 파일을 찾아서 리턴한다.-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!--setter 메소드를 이용한 의존성 주입-->
-        <property name="prefix" value="/WEB-INF/views/"></property>
+        <property name="prefix" value="/"></property>
         <property name="suffix" value=".jsp"></property>
     </bean>
 
