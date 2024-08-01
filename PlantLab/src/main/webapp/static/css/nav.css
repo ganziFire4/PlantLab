@@ -112,3 +112,7 @@ header{
         max-width: 1400px;
     }
 }
+
+.modal-open {
+    overflow: scroll;
+}

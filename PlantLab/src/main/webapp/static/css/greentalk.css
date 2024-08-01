@@ -392,3 +392,7 @@ img {
     margin: 50px auto;
     gap: 10px;
 }
+
+.modal-open {
+    overflow: scroll;
+}

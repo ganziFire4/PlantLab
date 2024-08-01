@@ -54,20 +54,20 @@ public class BoardController {
     }
 
 
-    @GetMapping("/greentalk.do")
-    public String greentalk(Model model) {
-        model.addAttribute("greentalkList", greentalkService.getPopGreenList());
-        return "/WEB-INF/views/board/greentalk";
-    }
+//    @GetMapping("/greentalk.do")
+//    public String greentalk(Model model) {
+//        model.addAttribute("greentalkList", greentalkService.getPopGreenList());
+//        return "/WEB-INF/views/board/greentalk";
+//    }
 
     @RequestMapping("/greentalk.do")
     public String greentalk(Model model, Criteria cri, Map<String, String> searchMap) {
 
         List<Map<String, Object>> mapList = new ArrayList<>();
 
-        List<GreentalkDto> greentalkDtoList = greentalkService.getPopGreenList();
-        System.out.println("getPopGreenList실행");
+        List<GreentalkDto> greentalkPopList = greentalkService.getPopGreenList();
 
+        List<GreentalkDto> greentalkDtoList = greentalkService.getGreenList(searchMap, cri);
 
         greentalkDtoList.forEach(greentalkDto -> {
             List<GreentalkDto> greentalkPicDtoList = greentalkService.getGreenFileList(greentalkDto.getGreen_id());
@@ -78,7 +78,11 @@ public class BoardController {
 
             mapList.add(map);
         }); // 강사님찬스
+        
+        // 인기글 두개 가져오는 거 구현
+        model.addAttribute("popList", greentalkPopList);
 
+        //밑에 세개
         model.addAttribute("greentalkList", mapList);
 
         int total = greentalkService.getTotalCnt(searchMap);

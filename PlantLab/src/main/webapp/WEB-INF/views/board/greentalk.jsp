@@ -13,9 +13,9 @@
 <head>
     <title>플랜트랩: 그린톡</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/board-main.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/greentalk.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/greentalk.css">
 </head>
 <body>
     <jsp:include page="${pageContext.request.contextPath}/nav.jsp"/>
@@ -77,30 +77,23 @@
         <div class="greenbody">
             <div class="container_green">
                 <div class="dailycontent">
-                                <c:forEach items="${greentalkList}" var="greentalk">
+                                <c:forEach items="${popList}" var="popgreentalk">
                     <div class="card" style="width: 546px;">
-                                        <c:choose>
-                                            <c:when test="${greentalk.file != null and greentalk.file.filetype eq 'image'}">
-                                                <img class="gt-placeholder-img card-img-top" width="100%" height="261px"
-                                                     src="/static/images/storage/${greentalk.file.filename}"
-                                                     alt="${greentalk.file.fileoriginname}">
-                                            </c:when>
-                                        </c:choose>
                         <div class="card-header">
                             <div class="card-writer">
-                                <img src="/static/images/storage/${greentalk.greentlakDto.mem_pic}" alt="" style="width: 30px; height: 30px;"> ${greentalk.greentalkDto.mem_nickname}
+                                <img src="/static/images/storage/${popgreentalk.mem_pic}" alt="" style="width: 30px; height: 30px;"> ${popgreentalk.mem_nickname}
                             </div>
                             <div class="report">
                                 <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="신고 버튼" class="reportbtn">
                             </div>
                         </div>
-                        <img src="/static/images/storage/${greentalk.greentalkDto.green_pic}" class="card-img-top" alt="..."
-                             onclick="openModal(${greentalk.greentalkDto.green_id});">
+                        <img src="/static/images/storage/${popgreentalk.green_pic}" class="card-img-top" alt="..."
+                             onclick="openModal(${popgreentalk.green_id});">
                         <div class="card-body">
-                            <p class="card-text">${greentalk.greentalkDto.green_content}</p>
+                            <p class="card-text">${popgreentalk.green_content}</p>
                             <div class="tag-group">
                                 <div class="tags">
-                                    <p class="tag1">#${greentalk.greentalkDto.green_tag}</p>
+                                    <p class="tag1">#${popgreentalk.green_tag}</p>
                                 </div>
                                 <div class="btnicon">
                                     <img src="${pageContext.request.contextPath}/static/images/그린톡/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
@@ -144,9 +137,9 @@
         </div>
         <div class="normalcon">
             <div class="conimg">
-                <img src="/static/images/storage/${greentalk.greentalkDto.green_pic}" alt="" class="thumbnail" id="normal1">
-                <img src="/static/images/storage/${greentalk.greentalkDto.green_pic}" alt="" class="thumbnail" id="normal2">
-                <img src="/static/images/storage/${greentalk.greentalkDto.green_pic}" alt="" class="thumbnail" id="normal3">
+                <c:forEach items="${greentalkList}" var="greentalk" varStatus="status">
+                    <img src="/static/images/storage/${greentalk.file.green_pic}" alt="" class="thumbnail" id="normal${status.count}">
+                </c:forEach>
             </div>
         </div>
         </div>
@@ -313,11 +306,19 @@
                                 console.log(obj);
                                 let htmlStr = "";
                                 for(let i = 0; i < obj.greentalkList.length; i++) {
-                                    htmlStr += `
+                                    if("file" in obj.greentalkList[i]) {
+                                        htmlStr += `
+                                              <img class="thumbnail" width="100%" height="261px"
+                                                         src="/static/images/storage/\${obj.greentalkList[i].file.green_pic}"
+                                                         alt="">
+                                            `;
+                                    } else {
+                                        htmlStr += `
                                               <img class="thumbnail" width="100%" height="261px"
                                                          src="/static/images/storage/\${obj.greentalkList[i].greentalkDto.green_pic}"
-                                                         alt="${greentalk.file.fileoriginname}">
+                                                         alt="">
                                             `;
+                                    }
                                 }
                                 // console.log(htmlStr);
                                 $(".conimg").append(htmlStr);
