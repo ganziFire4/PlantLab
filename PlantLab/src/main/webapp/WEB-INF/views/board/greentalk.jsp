@@ -138,7 +138,8 @@
         <div class="normalcon">
             <div class="conimg">
                 <c:forEach items="${greentalkList}" var="greentalk" varStatus="status">
-                    <img src="/static/images/storage/${greentalk.file.green_pic}" alt="" class="thumbnail" id="normal${status.count}">
+                    <img src="/static/images/storage/${greentalk.file.green_pic}" alt="" class="thumbnail" id="normal${status.count}"
+                         onclick="openModal(${greentalk.greentalkDto.green_id});">
                 </c:forEach>
             </div>
         </div>
