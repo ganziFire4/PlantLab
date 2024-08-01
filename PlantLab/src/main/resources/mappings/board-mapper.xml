@@ -119,7 +119,7 @@
             WHERE BOARD_ID = ${id}
     </update>
 
-    <select id="getBoardTotal" parameterType="int">
+    <select id="getBoardTotal" parameterType="int" resultType="int">
         SELECT COUNT(*)
             FROM BOARD B
             JOIN MEMBER M
