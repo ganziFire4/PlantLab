@@ -97,4 +97,11 @@ public class GreentalkServiceImpl implements GreentalkService {
     public List<GreentalkDto> getNorGreenList() {
         return greentalkDao.getNorGreenList();
     }
+
+    @Override
+    public GreentalkDto getGreenOne(int id) {
+        System.out.println(id);
+        System.out.println(greentalkDao.getGreenOne(id));
+        return greentalkDao.getGreenOne(id);
+    }
 }

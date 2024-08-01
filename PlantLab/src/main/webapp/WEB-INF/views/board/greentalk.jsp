@@ -78,7 +78,7 @@
             <div class="container_green">
                 <div class="dailycontent">
                                 <c:forEach items="${greentalkList}" var="greentalk">
-                    <div class="card1" style="width: 546px;">
+                    <div class="card" style="width: 546px;">
                                         <c:choose>
                                             <c:when test="${greentalk.file != null and greentalk.file.filetype eq 'image'}">
                                                 <img class="gt-placeholder-img card-img-top" width="100%" height="261px"
@@ -88,14 +88,14 @@
                                         </c:choose>
                         <div class="card-header">
                             <div class="card-writer">
-                                <img src="${pageContext.request.contextPath}/static/images/프로필사진.png" alt="" style="width: 30px; height: 30px;"> ${greentalk.greentalkDto.mem_nickname}
+                                <img src="/static/images/storage/${greentalk.greentlakDto.mem_pic}" alt="" style="width: 30px; height: 30px;"> ${greentalk.greentalkDto.mem_nickname}
                             </div>
                             <div class="report">
                                 <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="신고 버튼" class="reportbtn">
                             </div>
                         </div>
-                        <img src="/static/images/storage/${greentalk.greentalkDto.green_pic}" class="card-img-top" alt="..." data-bs-toggle="modal"
-                             data-bs-target="#rank1modal">
+                        <img src="/static/images/storage/${greentalk.greentalkDto.green_pic}" class="card-img-top" alt="..."
+                             onclick="openModal(${greentalk.greentalkDto.green_id});">
                         <div class="card-body">
                             <p class="card-text">${greentalk.greentalkDto.green_content}</p>
                             <div class="tag-group">
@@ -156,7 +156,7 @@
                 <div class="modal-content">
                     <div class="modalbox">
                         <div class="modal-body">
-                            <img src="${pageContext.request.contextPath}/static/images/그린톡/rank1main.png" alt="" class="modalmain">
+                            <img src="/static/images/storage/${greentalk.file.filename}" alt="" class="modalmain">
                             <div class="modal-right">
                                 <div class="modalthumb">
                                     <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">
@@ -203,58 +203,58 @@
                 </div>
             </div>
         </div>
-        <div class="modal fade" id="rank2modal">
-            <div class="modal-dialog modal-xl">
-                <div class="modal-content">
-                    <div class="modalbox">
-                        <div class="modal-body">
-                            <img src="${pageContext.request.contextPath}/static/images/ranksample2.jpeg" alt="" class="modalmain">
-                            <div class="modal-right">
-                                <div class="modalthumb">
-                                    <img src="${pageContext.request.contextPath}/static/images/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb2_1">
-                                    <img src="${pageContext.request.contextPath}/static/images/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb2_2">
-                                    <img src="${pageContext.request.contextPath}/static/images/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb2_3">
-                                    <img src="${pageContext.request.contextPath}/static/images/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb2_4" style="height: 96.27px;">
-                                </div>
-                                <div class="modalcontentbox">
-                                    <div class="modalcontents">
-                                        <div class="writerpic">
-                                            <img src="${pageContext.request.contextPath}/static/images/defaultprofile.png" alt="" style="width: 30px;">
-                                        </div>
-                                        <div class="modalmaincon">
-                                            장길산
-                                        </div>
-                                        <div class="modalmaindate">
-                                            24.06.28
-                                        </div>
-                                        <div class="modalreport">
-                                            <img src="${pageContext.request.contextPath}/static/images/menu.png.png" alt="" style="width: 15px;">
-                                        </div>
-                                    </div>
-                                    <div class="modalmaincontent">
-                                        <p>오늘 심은 양파...^^</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="title">
-                                <p class="titlename">#내돈내심  #반찬</p>
-                                <div class="btnicon">
-                                    <img src="${pageContext.request.contextPath}/static/images/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
-                                    <img src="${pageContext.request.contextPath}/static/images/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
-                                    <img src="${pageContext.request.contextPath}/static/images/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
-                                    <img src="${pageContext.request.contextPath}/static/images/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
-                                </div>
-                            </div>
-                            <div class="comment">
-                                <input action="text" class="commentbox" placeholder="댓글을 입력하세요."
-                                       onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'"></input>
-                                <div type="submit" class="confirmbox">게시</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<%--        <div class="modal fade" id="rank2modal">--%>
+<%--            <div class="modal-dialog modal-xl">--%>
+<%--                <div class="modal-content">--%>
+<%--                    <div class="modalbox">--%>
+<%--                        <div class="modal-body">--%>
+<%--                            <img src="${pageContext.request.contextPath}/static/images/ranksample2.jpeg" alt="" class="modalmain">--%>
+<%--                            <div class="modal-right">--%>
+<%--                                <div class="modalthumb">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb2_1">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb2_2">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb2_3">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb2_4" style="height: 96.27px;">--%>
+<%--                                </div>--%>
+<%--                                <div class="modalcontentbox">--%>
+<%--                                    <div class="modalcontents">--%>
+<%--                                        <div class="writerpic">--%>
+<%--                                            <img src="${pageContext.request.contextPath}/static/images/defaultprofile.png" alt="" style="width: 30px;">--%>
+<%--                                        </div>--%>
+<%--                                        <div class="modalmaincon">--%>
+<%--                                            장길산--%>
+<%--                                        </div>--%>
+<%--                                        <div class="modalmaindate">--%>
+<%--                                            24.06.28--%>
+<%--                                        </div>--%>
+<%--                                        <div class="modalreport">--%>
+<%--                                            <img src="${pageContext.request.contextPath}/static/images/menu.png.png" alt="" style="width: 15px;">--%>
+<%--                                        </div>--%>
+<%--                                    </div>--%>
+<%--                                    <div class="modalmaincontent">--%>
+<%--                                        <p>오늘 심은 양파...^^</p>--%>
+<%--                                    </div>--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="title">--%>
+<%--                                <p class="titlename">#내돈내심  #반찬</p>--%>
+<%--                                <div class="btnicon">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/hearticon.png" class="hearticon" alt="하트" style="display: inline;">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">--%>
+<%--                                </div>--%>
+<%--                            </div>--%>
+<%--                            <div class="comment">--%>
+<%--                                <input action="text" class="commentbox" placeholder="댓글을 입력하세요."--%>
+<%--                                       onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'"></input>--%>
+<%--                                <div type="submit" class="confirmbox">게시</div>--%>
+<%--                            </div>--%>
+<%--                        </div>--%>
+<%--                    </div>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
         <jsp:include page="${pageContext.request.contextPath}/chatbot.jsp"/>
         <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
     </main>
@@ -348,6 +348,86 @@
         QnA_button.addEventListener("click", () => {
             window.location.href = "/board/board-main.do?tab=3";
         });
+
+        // const viewModal = document.getElementsByClassName("card");
+
+        const openModal = (greenId) => {
+            // console.log(greenId);
+            //greenId로 ajax를 보내서
+            // modal 구성 후 modal 표출
+            let htmlStr = '';
+
+            $.ajax({
+                url: '/board/modal-ajax.do',
+                type: 'POST',
+                data: {"green_id": greenId},
+                success: (obj) => {
+                    console.log(obj);
+                    // let htmlStr = "";
+                        htmlStr += `
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modalbox">
+                        <div class="modal-body">
+                            <img src="/static/images/storage/\${obj.greentalk.green_pic}" alt="" class="modalmain">
+                            <div class="modal-right">
+                                <div class="modalthumb">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1_2">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1_3">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4" style="height: 96.27px;">
+                                </div>
+                                <div class="modalcontentbox">
+                                    <div class="modalcontents">
+                                        <div class="writerpic">
+                                            <img src="${pageContext.request.contextPath}/static/images/프로필사진.png" alt="" style="width: 30px; height: 30px;">
+                                        </div>
+                                        <div class="modalmaincon">
+                                            karina87
+                                        </div>
+                                        <div class="modalmaindate">
+                                            24.06.27
+                                        </div>
+                                        <div class="modalreport">
+                                            <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
+                                        </div>
+                                    </div>
+                                    <div class="modalmaincontent">
+                                        <p>입양한지 100일째 ~ 무럭무럭 크는 우리집 뽀짝<br>그린이에요>_<<br>벌레도 없이 튼튼하게 자라는 중이에요</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title">
+                                <p class="titlename">#초록  #자랑</p>
+                                <div class="btnicon">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <input action="text" class="commentbox" placeholder="댓글을 입력하세요."
+                                       onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'"></input>
+                                <div type="submit" class="confirmbox">게시</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                            `;
+                    $('#rank1modal').html(htmlStr);
+
+                    // $("#rank1modal").modal('show');
+
+                },
+                error: (err) => {
+                    console.log(err);
+                }
+            });
+
+            $("#rank1modal").modal('show');
+        }
     </script>
 </body>
 </html>

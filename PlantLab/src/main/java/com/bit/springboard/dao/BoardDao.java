@@ -47,4 +47,5 @@ public class BoardDao {
     public List<BoardDto> getBoard(int id) {
         return mybatis.selectList("BoardDao.getBoard", id);
     }
+
 }

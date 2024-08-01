@@ -51,11 +51,11 @@ header {
     justify-content: space-between;
 }
 
-.card1 {
-    border: #ccc solid 1px;
-    border-radius: 5px;;
-    width: auto;
-}
+/*.card1 {*/
+/*    border: #ccc solid 1px;*/
+/*    border-radius: 5px;;*/
+/*    width: auto;*/
+/*}*/
 
 .card2 {
     border: #ccc solid 1px;

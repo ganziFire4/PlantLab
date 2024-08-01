@@ -101,4 +101,22 @@
             ORDER BY G.GREEN_REG DESC
             LIMIT 3
     </select>
+
+    <select id="getGreenOne" parameterType="int" resultType="greentalk">
+        SELECT G.GREEN_ID
+             , G.GREEN_CONTENT
+             , M.MEM_ID
+             , G.GREEN_REG
+             , G.GREEN_MOD
+             , G.GREEN_TAG
+             , G.GREEN_LIKE_CNT
+             , G.GREEN_BOOKMARK_CNT
+             , GP.GREEN_PIC
+             , M.MEM_PIC
+             , M.MEM_NICKNAME
+        FROM GREENTALK G
+                 JOIN MEMBER M ON G.MEM_ID = M.MEM_ID
+                 JOIN GREENTALK_PIC GP ON G.GREEN_ID = GP.GREEN_ID
+        WHERE G.GREEN_ID = #{green_id}
+    </select>
 </mapper>

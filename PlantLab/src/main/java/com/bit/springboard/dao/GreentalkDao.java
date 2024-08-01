@@ -56,4 +56,8 @@ public class GreentalkDao {
         List<GreentalkDto> test = mybatis.selectList("GreentalkDao.getNorGreenList");
         return mybatis.selectList("GreentalkDao.getNorGreenList");
     }
+
+    public GreentalkDto getGreenOne(int id) {
+        return mybatis.selectOne("GreentalkDao.getGreenOne", id);
+    }
 }

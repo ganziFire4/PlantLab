@@ -123,6 +123,22 @@ public class BoardController {
         }
     }
 
+    @PostMapping("/modal-ajax.do")
+    @ResponseBody
+    public Map<String, Object> modalAjax(GreentalkDto greentalkDto) {
+//        System.out.println(greentalkDto);
+        Map<String, Object> map = new HashMap<>();
+        try {
+            GreentalkDto greentalk = greentalkService.getGreenOne(greentalkDto.getGreen_id());
+            map.put("greentalk", greentalk);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return map;
+    }
+
+
+
     @PostMapping("/board-list.do")
     public String search_board(){
         return "/board/board-main";
