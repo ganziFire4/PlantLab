@@ -30,11 +30,11 @@ public class ProductController {
 
     @GetMapping("/shopping_main.do")
     public String shoppingMain() {
-        return "store/shopping_main"; // store/shopping_main.jsp를 반환
+        return "/WEB-INF/views/store/shopping_main"; // store/shopping_main.jsp를 반환
     }
 
     @GetMapping("/purchase.do")
     public String purchase() {
-        return "store/purchase";
+        return "/WEB-INF/views/store/purchase";
     }
 }

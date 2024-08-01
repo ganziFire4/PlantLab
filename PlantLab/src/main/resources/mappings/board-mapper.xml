@@ -104,15 +104,12 @@
              , M.MEM_NICKNAME
         FROM BOARD B
         JOIN MEMBER M
-<<<<<<< HEAD
         ON B.MEM_ID = M.MEM_ID
         WHERE B.MEM_ID = #{mem_id}) AA
         WHERE AA.NUM &lt;= 3;
-=======
           ON B.MEM_ID = M.MEM_ID
         WHERE B.MEM_ID = ${id}
         LIMIT 3
->>>>>>> origin/feature_board
     </select>
 
     <update id="update_view_cnt" parameterType="int">
