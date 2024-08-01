@@ -99,7 +99,7 @@
             <%
                 request.setAttribute("type", 3);
                 request.setAttribute("popList", boardService.view_popular(3));
-                request.setAttribute("boardList", boardService.view_all(3));;
+                request.setAttribute("boardList", boardService.view_all(3));
             %>
             <jsp:include page="board-list.jsp"/>
         </div>

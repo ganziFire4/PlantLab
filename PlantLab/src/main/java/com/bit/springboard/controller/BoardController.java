@@ -1,9 +1,6 @@
 package com.bit.springboard.controller;
 
-import com.bit.springboard.dto.BoardDto;
-import com.bit.springboard.dto.Criteria;
-import com.bit.springboard.dto.GreentalkDto;
-import com.bit.springboard.dto.GreentalkFileDto;
+import com.bit.springboard.dto.*;
 import com.bit.springboard.service.BoardService;
 import com.bit.springboard.service.GreentalkService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -38,9 +35,13 @@ public class BoardController {
         this.greentalkService = greentalkService;
     }
 
-    @GetMapping("/board-main.do")
-    public String boardList(Model model, @RequestParam("tab") int tab) {
+    @RequestMapping("/board-main.do")
+    public String boardList(Model model, @RequestParam("tab") int tab, @RequestParam Map<String, Object> searchMap, Criteria cri) {
         model.addAttribute("tab", tab);
+        model.addAttribute("search", searchMap);
+
+        int total = boardService.getBoardTotal(tab);
+        model.addAttribute("page", new BoardPageDto(cri, total));
         return "/board/board-main";
     }
 
@@ -99,7 +100,8 @@ public class BoardController {
     }
 
     @PostMapping("/board-list.do")
-    public String search_board(){
+    public String search_board(@RequestParam Map<String, Object> searchMap){
+
         return "/board/board-main";
     }
 
