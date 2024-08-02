@@ -27,12 +27,12 @@
                         <div class="shareicon">
                             <img src="../../../static/images/shareicon.png" alt="프로필수정아이콘" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         </div>
-                        <img src="${pageContext.request.contextPath}/static/images/storage/${loggedInMember.mem_pic}" class="profile" alt="" style="width: 182.69px;">
+                        <img src="${pageContext.request.contextPath}/static/images/storage/${loggedInMember.mem_pic}" class="profile" alt="" style="width: 20vh; height: 20vh; border-radius: 50%; margin-top: 3vh">
                         <div class="profilename">
                             <p style="font-size: 25px;">${loggedInMember.mem_nickname}</p>
                         </div>
                         <div class="profilemedal">
-                            <img src="../../../static/images/새싹레벨.png" alt="">
+                            <img src="../../../static/images/새싹레벨.png" alt="메달이미지">
                         </div>
                         <div class="profilelevev">
                             <p style="font-size: 13px;">lv.1 새싹</p>
@@ -41,12 +41,12 @@
                     <div style="margin-top: 20px;">
                         <div class="heartbookmark">
                             <div class="heartpart">
-                                <img src="../../../static/images/filledgreenheart.png" alt="">
+                                <img src="../../../static/images/filledgreenheart.png" alt="좋아요이미지">
                                 <p style="color: #0DA446; font-size: 20px; margin-bottom: 5px;">3</p>
                                 <p>좋아요</p>
                             </div>
                             <div class="bookmarkpart">
-                                <img src="../../../static/images/littlefilledbookmarkicon.png" alt="">
+                                <img src="../../../static/images/littlefilledbookmarkicon.png" alt="북마크이미지">
                                 <p style="color: #0DA446; font-size: 20px; margin-bottom: 5px;">25</p>
                                 <p>스크랩북</p>
                             </div>
@@ -313,9 +313,10 @@
                             <button type="button" class="btn-close" id="modal-close-btn-detail" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="profilebox-header">
-                            <div style="display: flex; align-items: center; flex-direction: column; margin-top: 7vh">
+                            <div style="display: flex; align-items: center; flex-direction: column; margin-top: 4vh">
                                 <div id="modify-profile-image" style="position: relative; display: inline-block;">
-                                    <img style="width: 6vw; height: 13vh; border-radius: 100%;" src="${pageContext.request.contextPath}/static/images/storage/${loggedInMember.mem_pic}" id="profile-img" class="profile" alt="프로필사진">
+                                    <img src="${pageContext.request.contextPath}/static/images/storage/${loggedInMember.mem_pic}"
+                                         id="profile-img" class="profile" alt="프로필사진"style="width: 20vh; height: 20vh; border-radius: 50%;">
                                     <button type="button" id="upload-btn" style="position: absolute; bottom: 0; right: 0;">
                                         <img src="../../../static/images/modify_profile.svg">
                                     </button>
@@ -356,11 +357,13 @@
         <jsp:include page="../../../footer.jsp"/>
         <script>
             let originNickname = "";
+            let nicknameVal = document.getElementById("profile-nickname").placeholder;
             let nickname = "";
             let originPasswordVal = document.getElementById("origin-password").name;
             let originPassword = "";
             let newPassword = "";
             let newPasswordCheck = "";
+
             // 정규표현식
             const regex = /^(?=.*[a-zA-Z])(?=.*[!@#$%^&*+=-])(?=.*[0-9]).{8,15}$/;
 
@@ -444,7 +447,29 @@
                 });
 
                 $("#del-profile-img").on("click", (e) => {
-                    $("#profile-img").attr("src", "../../../static/images/profile_default.svg");
+                    const defaultImageSrc = "/static/images/profile_default.svg"; // 기본 이미지 경로
+
+                    fetch(defaultImageSrc)
+                        .then(response => response.blob())
+                        .then(blob => {
+                            const defaultFile = new File([blob], "profile_default.svg", { type: "image/svg+xml" });
+
+                            const dataTransfer = new DataTransfer();
+                            dataTransfer.items.add(defaultFile);
+
+                            const inputElement = document.getElementById('img-file-upload');
+                            inputElement.files = dataTransfer.files;
+
+                            const reader = new FileReader();
+                            reader.onload = function(e) {
+                                const imgPreview = document.getElementById('profile-img');
+                                imgPreview.src = e.target.result;
+                            };
+                            reader.readAsDataURL(defaultFile);
+                        })
+                        .catch(error => {
+                            console.error('Error fetching the default image:', error);
+                        });
                 });
 
                 $("#profile-nickname").on("change", (e) => {
@@ -452,6 +477,7 @@
                 });
 
                 $("#profile-nickname").on("blur", (e) => {
+                    originNickname = nick.placeholder;
                     if(nickname !== ""){
                         if(nickname === originNickname) {
                             $("#nickname-message").css({
@@ -524,20 +550,36 @@
                         }
                     }
                 });
-                $("#save-modify-btn").click((e) => {
-                    if(originPassword === originPasswordVal && regex.test(newPassword) === true && newPassword === newPasswordCheck) {
-                        alert("전송 성공");
-                    } else {
-                        alert("전송 실패");
-                    }
-                });
+                // $("#save-modify-btn").click((e) => {
+                //     if(originPassword === originPasswordVal && regex.test(newPassword) === true && newPassword === newPasswordCheck) {
+                //         alert("전송 성공");
+                //     } else {
+                //         alert("전송 실패");
+                //     }
+                // });
 
                 $("#modify-form").on("submit", function(event) {
                     event.preventDefault();
 
-                    if(originPassword === originPasswordVal && regex.test(newPassword) === true && newPassword === newPasswordCheck){
-                        this.submit();
+                    if(nickname === "") {
+                       nickname = nicknameVal;
+                       $("#profile-nickname").val(nickname);
                     }
+                    const newPasswordVal = document.getElementById('newpassword').value;
+
+                    if(newPasswordVal !== '') {
+                        if(originPassword === originPasswordVal && regex.test(newPassword) === true && newPassword === newPasswordCheck){
+                            this.submit();
+                        }
+                    }
+
+                    if(newPasswordVal === '') {
+                        document.getElementById('newpassword').value = originPasswordVal;
+                        if(originPassword === originPasswordVal){
+                            this.submit();
+                        }
+                    }
+
                 });
             });
         </script>

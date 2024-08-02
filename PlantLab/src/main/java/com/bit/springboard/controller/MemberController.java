@@ -39,7 +39,7 @@ public class MemberController {
             MemberDto loggedInMember = memberService.login(memberDto);
 
             System.out.println("로그인 성공: " + loggedInMember);
-            loggedInMember.setPassword("");
+//            loggedInMember.setPassword("");
 
             session.setAttribute("loggedInMember", loggedInMember);
 
@@ -109,7 +109,9 @@ public class MemberController {
 
             File uploadFile = new File(attachPath + modify_pic.getOriginalFilename());
 
-            loggedInMember.setMem_pic(modify_pic.getOriginalFilename());
+            if(!modify_pic.getOriginalFilename().equals("")) {
+                loggedInMember.setMem_pic(modify_pic.getOriginalFilename());
+            }
             loggedInMember.setMem_nickname(memberDto.getMem_nickname());
             loggedInMember.setPassword(memberDto.getPassword());
 
@@ -122,7 +124,7 @@ public class MemberController {
         memberService.modify(loggedInMember);
 
         session.setAttribute("loggedInMember", loggedInMember);
-        return "WEB-INF/views/member/mypage";
+        return "redirect:/member/mypage.do";
     }
 
     @GetMapping("/mypage.do")
@@ -130,6 +132,8 @@ public class MemberController {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
         model.addAttribute("myWrite", boardService.getBoard(loggedInMember.getMemId()));
 //        session.setAttribute("myWrite", boardService.getBoard(memberDto.getMemId()));
+
+        session.setAttribute("loggedInMember", loggedInMember);
         return "/WEB-INF/views/member/mypage";
     }
 
