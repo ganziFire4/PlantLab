@@ -354,6 +354,12 @@
 
         // const viewModal = document.getElementsByClassName("card");
 
+        const formatDate = (dateStr) => {
+            const [year, month, day] = dateStr.split(',').map(Number);
+            const shortYear = year.toString().slice(-2); // 마지막 두 자리 숫자만 사용
+            return `${shortYear}.${month.toString().padStart(2, '0')}.${day.toString().padStart(2, '0')}`;
+        };
+
         const openModal = (greenId) => {
             // console.log(greenId);
             //greenId로 ajax를 보내서
@@ -366,6 +372,8 @@
                 data: {"green_id": greenId},
                 success: (obj) => {
                     console.log(obj);
+
+                    const formattedDate = formatDate(obj.greentalk.green_mod);
                     // let htmlStr = "";
                         htmlStr += `
             <div class="modal-dialog modal-xl">
