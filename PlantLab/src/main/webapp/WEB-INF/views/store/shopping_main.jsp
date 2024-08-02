@@ -7,6 +7,7 @@
 --%>
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -70,9 +71,9 @@
                 <li class="item" id="item1" onclick="toggleAct(this)">#식물키트</li>
                 <li class="item" id="item2" onclick="toggleAct(this)">#공기정화</li>
                 <li class="item" id="item3" onclick="toggleAct(this)">#사무실</li>
-                <li class="item" id="item3" onclick="toggleAct(this)">#인테리어</li>
-                <li class="item" id="item3" onclick="toggleAct(this)">#간단식용</li>
-                <li class="item" id="item3" onclick="toggleAct(this)">#미니식물</li>
+                <li class="item" id="item4" onclick="toggleAct(this)">#인테리어</li>
+                <li class="item" id="item5" onclick="toggleAct(this)">#간단식용</li>
+                <li class="item" id="item6" onclick="toggleAct(this)">#미니식물</li>
             </ul>
         </div>
         <div class="sort_box">
@@ -130,257 +131,28 @@
             <h1 style="display: inline; margin-right: 5px;">식물 상품</h1>
             <p style="display: inline; font-size: 25px;">나에게 맞는 식물친구들을 찾아보세요</p>
         </div>
+
+        <!-- 상품 목록 시작 -->
         <div id="product-container" class="product_container">
-            <div class="product_row">
-                <div class="product_item" data-category="식물키트" data-color="초록" data-rating="4.8" data-light_mining="on" data-horticultural_form="화분" data-size="탁상용" data-sale="on" data-fruit="">
-                    <a href="/products/purchase.do">
-                        <img src="image/베이직 키트.png" alt="물품 이미지">
-                        <div class="goods_border">
-                            <p class="product_title">식물나라 베이직 키트</p>
-                            <p class="product_company">식물나라</p>
-                            <p class="product_price">9,900 원</p>
-                            <p class="product_rating">평점: 4.8</p>
-                        </div>
-                    </a>
+            <c:forEach var="product" items="${products}">
+                <div class="product_row">
+                    <div class="product_item">
+                        <a href="/products/purchase.do">
+                            <img src="${product.file_name}" alt="물품 이미지">
+                            <div class="goods_border">
+                                <p class="product_title">${product.product_name}</p>
+                                <p class="product_company">${product.brand}</p>
+                                <p class="product_price">${product.price} 원</p>
+                                <p class="product_rating">평점: ${product.rate}</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="product_item" data-category="공기정화" data-color="초록" data-rating="4.9" data-light_mining="off" data-horticultural_form="화분" data-size="실내용" data-sale="on" data-fruit="꽃">
-                    <a href="product-page.html">
-                        <img src="image/11.몬스테라.jpg" alt="물품 이미지">
-                        <div class="goods_border">
-                            <p class="product_title">몬스테라</p>
-                            <p class="product_company">식물나라</p>
-                            <p class="product_price">122,000 원</p>
-                            <p class="product_rating">평점: 4.9</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="product_item" data-category="사무실" data-color="보라" data-rating="4.9" data-light_mining="on" data-horticultural_form="바구니" data-size="화분" data-sale="on" data-fruit="꽃">
-                    <a href="product-page.html">
-                        <img src="image/12.샤프란.jpg" alt="물품 이미지">
-                        <div class="goods_border">
-                            <p class="product_title">샤프란</p>
-                            <p class="product_company">식물나라</p>
-                            <p class="product_price">130,000 원</p>
-                            <p class="product_rating">평점: 4.9</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="product_row">
-                <div class="product_item" data-category="인테리어" data-color="" data-rating="5.0" data-light_mining="on" data-horticultural_form="화분" data-size="마당용" data-sale="on" data-fruit="꽃">
-                    <a href="purchase.html">
-                        <img src="image/10.카두풀 꽃.jpg" alt="물품 이미지">
-                        <div class="goods_border">
-                            <p class="product_title">카두풀 꽃</p>
-                            <p class="product_company">식물나라</p>
-                            <p class="product_price">59,900 원</p>
-                            <p class="product_rating">평점: 5.0</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="product_item" data-category="식물키트" data-color="초록" data-rating="4.8" data-light_mining="on" data-horticultural_form="화분" data-size="탁상용" data-sale="on" data-fruit="">
-                    <a href="purchase.html">
-                        <img src="image/베이직 키트.png" alt="물품 이미지">
-                        <div class="goods_border">
-                            <p class="product_title">식물나라 베이직 키트</p>
-                            <p class="product_company">식물나라</p>
-                            <p class="product_price">9,900 원</p>
-                            <p class="product_rating">평점: 4.8</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="product_item" data-category="인테리어" data-color="파랑" data-rating="4.7" data-light_mining="on" data-horticultural_form="꽃병" data-size="실내용" data-sale="off" data-fruit="꽃">
-                    <a href="product-page.html">
-                        <img src="image/8-블루 데이지.png" alt="물품 이미지">
-                        <div class="goods_border">
-                            <p class="product_title">블루 데이지</p>
-                            <p class="product_company">식물나라</p>
-                            <p class="product_price">22,000 원</p>
-                            <p class="product_rating">평점: 4.7</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="product_item" data-category="사무실" data-color="빨강" data-rating="4.0" data-light_mining="on" data-horticultural_form="바구니" data-size="탁상용" data-sale="on" data-fruit="꽃">
-                    <a href="product-page.html">
-                        <img src="image/2-생화 카네이션 꽃바구니.jpg" alt="물품 이미지">
-                        <div class="goods_border">
-                            <p class="product_title">선물용 카네이션 & 꽃바구니</p>
-                            <p class="product_company">식물나라</p>
-                            <p class="product_price">30,000 원</p>
-                            <p class="product_rating">평점: 4.0</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="product_row">
-                <div class="product_item" data-category="공기정화" data-color="노랑" data-rating="4.6" data-light_mining="off" data-horticultural_form="꽃병" data-size="실내용" data-sale="off" data-fruit="꽃">
-                    <a href="product-page.html">
-                        <img src="image/4-노란색 구즈마니아.png" alt="물품 이미지">
-                        <div class="goods_border">
-                            <p class="product_title">구즈마니아</p>
-                            <p class="product_company">식물나라</p>
-                            <p class="product_price">27,000 원</p>
-                            <p class="product_rating">평점: 4.6</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="product_item" data-category="사무실" data-color="주황" data-rating="4.1" data-light_mining="on" data-horticultural_form="꽃병" data-size="탁상용" data-sale="off" data-fruit="꽃">
-                    <a href="product-page.html">
-                        <img src="image/5-주황장미.png" alt="물품 이미지">
-                        <div class="goods_border">
-                            <p class="product_title">주황장미</p>
-                            <p class="product_company">식물나라</p>
-                            <p class="product_price">14,500 원</p>
-                            <p class="product_rating">평점: 4.1</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="product_item" data-category="공기정화" data-color="초록" data-rating="4.5" data-light_mining="off" data-horticultural_form="화분" data-size="실내용" data-sale="off" data-fruit="">
-                    <a href="product-page.html">
-                        <img src="image/6-실내 음지 더피고사리.jpg" alt="물품 이미지">
-                        <div class="goods_border">
-                            <p class="product_title">더피고사리</p>
-                            <p class="product_company">식물나라</p>
-                            <p class="product_price">22,500 원</p>
-                            <p class="product_rating">평점: 4.5</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-
-            <div class="product_row">
-                <div class="product_item" data-category="미니식물" data-color="분홍" data-rating="4.4" data-light_mining="on" data-horticultural_form="꽃병" data-size="탁상용" data-sale="off" data-fruit="꽃">
-                    <a href="product-page.html">
-                        <img src="image/7-취설송 다육이 핑크선인장.png" alt="물품 이미지">
-                        <div class="goods_border">
-                            <p class="product_title">취설송 다육이 핑크선인장</p>
-                            <p class="product_company">식물나라</p>
-                            <p class="product_price">24,000 원</p>
-                            <p class="product_rating">평점: 4.4</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="product_item" data-category="간단식용" data-color="빨강" data-rating="3.8" data-light_mining="on" data-horticultural_form="화분" data-size="마당용" data-sale="off" data-fruit="열매">
-                    <a href="product-page.html">
-                        <img src="image/3-tomato.png" alt="물품 이미지">
-                        <div class="goods_border">
-                            <p class="product_title">토마토 키우기 세트</p>
-                            <p class="product_company">식물나라</p>
-                            <p class="product_price">12,000 원</p>
-                            <p class="product_rating">평점: 3.8</p>
-                        </div>
-                    </a>
-                </div>
-                <div class="product_item" data-category="인테리어" data-color="보라" data-rating="4.0" data-light_mining="on" data-horticultural_form="화분" data-size="마당용" data-sale="off" data-fruit="꽃">
-                    <a href="product-page.html">
-                        <img src="image/9 - 보라 마당식물 장미칼파눌라(신종보라겹꽃).jpg" alt="물품 이미지">
-                        <div class="goods_border">
-                            <p class="product_title">신종보라겹꽃</p>
-                            <p class="product_company">식물나라</p>
-                            <p class="product_price">38,500 원</p>
-                            <p class="product_rating">평점: 4.0</p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <jsp:include page="../../../footer.jsp"/>
-            <script>
-                const selector = document.querySelector('.selector');
-                const items = selector.querySelectorAll('.item');
-                const circles = document.querySelectorAll('.circle');
-                let recentItems = [];
-                let currentIndex = 0;
-
-                function toggleAct(item){
-                    item.classList.toggle('act');
-
-                }
-
-                circles.forEach(circle => {
-                    circle.addEventListener('click', () => {
-                        circle.classList.toggle("selected");
-                    });
-                });
-
-
-                // document.getElementById('toggleButton').addEventListener('click', function() {
-                //       var panel = document.getElementById('rightPanel');
-                //       panel.classList.toggle('open');
-                //       var arrows = document.querySelectorAll('.toggle-button .arrow');
-                //       arrows.forEach(arrow => arrow.classList.toggle('open'));
-                //   });
-
-                function updateRecentItemViewer() {
-                    const viewer = document.getElementById('recentItemImage');
-                    if (recentItems.length > 0) {
-                        viewer.src = recentItems[currentIndex];
-                    } else {
-                        viewer.src = 'https://via.placeholder.com/30';
-                    }
-                }
-
-                document.getElementById('prevBtn').addEventListener('click', function() {
-                    if (recentItems.length > 0) {
-                        currentIndex = (currentIndex - 1 + recentItems.length) % recentItems.length;
-                        updateRecentItemViewer();
-                    }
-                });
-
-                document.getElementById('nextBtn').addEventListener('click', function() {
-                    if (recentItems.length > 0) {
-                        currentIndex = (currentIndex + 1) % recentItems.length;
-                        updateRecentItemViewer();
-                    }
-                });
-
-                function toggleDropdown() {
-                    var menu = document.querySelector('.dropdown1 .dropdown-menu');
-                    if (menu.style.display === 'block') {
-                        menu.style.display = 'none';
-                    } else {
-                        menu.style.display = 'block';
-                    }
-                }
-
-                window.onclick = function(event) {
-                    if (!event.target.matches('.dropdown-btn')) {
-                        var dropdowns = document.getElementsByClassName("dropdown-menu");
-                        for (var i = 0; i < dropdowns.length; i++) {
-                            var openDropdown = dropdowns[i];
-                            if (openDropdown.style.display === 'block') {
-                                openDropdown.style.display = 'none';
-                            }
-                        }
-                    }
-                }
-
-                document.getElementById('topBtn').addEventListener('click', function() {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
-                }); // 페이지 최상단으로(on top)
-
-                // 예시: 상품을 클릭했을 때 recentItems에 추가하는 함수
-                function addRecentItem(itemSrc) {
-                    if (!recentItems.includes(itemSrc)) {
-                        recentItems.push(itemSrc);
-                        currentIndex = recentItems.length - 1;
-                        updateRecentItemViewer();
-                    }
-                }
-
-                // 예시: 페이지에 있는 상품을 클릭하면 recentItems에 추가
-                // 실제 구현 시 상품 리스트에 맞게 수정 필요
-                document.querySelectorAll('.product').forEach(product => {
-                    product.addEventListener('click', function() {
-                        addRecentItem(this.src);
-                    });
-                });
-
-                updateRecentItemViewer(); // 초기 업데이트
-            </script>
+            </c:forEach>
         </div>
+        <!-- 상품 목록 끝 -->
+
+    </div>
 </main>
 <div id="popup-icon1">
     <img src="image/챗봇아이콘.png" alt="Popup Icon" id="popup-image" style="width: 60px; height: 60px;">
@@ -391,280 +163,244 @@
 <div id="popup-icon2">
     <img src="image/top아이콘.png" alt="Popup Icon" id="popup-image" style="width: 60px; height: 60px;">
 </div>
-    <div class="f_container">
-        <div style="margin: auto 50px;">
-            <!-- <img width="150px" height="150px" src="image/round_logo_colorBack.svg" alt="플랜트팜 로고"> -->
-
-        </div>
-        </a>
-    </div>
+<div class="f_container">
+    <div style="margin: auto 50px;">
+        <!-- <img width="150px" height="150px" src="image/round_logo_colorBack.svg" alt="플랜트팜 로고"> -->
 
     </div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const products = document.querySelectorAll('.product_item');
-            const productContainer = document.getElementById('product-container');
-            const filters = {
-                category: null,
-                color: null,
-                rating: null,
-                light_mining: [],
-                horticultural_form: [],
-                size: [],
-                sale: null,
-                flower: null,
-                fruit: null,
-                sort: null
-            };
+</div>
 
-            function applyFilters() {
-                let filteredProducts = Array.from(products);
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const products = document.querySelectorAll('.product_item');
+        const productContainer = document.getElementById('product-container');
+        const filters = {
+            category: null,
+            color: null,
+            rating: null,
+            light_mining: [],
+            horticultural_form: [],
+            size: [],
+            sale: null,
+            flower: null,
+            fruit: null,
+            sort: null
+        };
 
-                if (filters.category) {
-                    filteredProducts = filteredProducts.filter(product => product.getAttribute('data-category') === filters.category);
-                }
+        function applyFilters() {
+            let filteredProducts = Array.from(products);
 
-                if (filters.color) {
-                    filteredProducts = filteredProducts.filter(product => product.getAttribute('data-color') === filters.color);
-                }
-
-                if (filters.rating) {
-                    filteredProducts = filteredProducts.filter(product => parseFloat(product.getAttribute('data-rating')) >= filters.rating);
-                }
-
-                if (filters.light_mining.length > 0) {
-                    filteredProducts = filteredProducts.filter(product => filters.light_mining.includes(product.getAttribute('data-light_mining')));
-                }
-
-                if (filters.horticultural_form.length > 0) {
-                    filteredProducts = filteredProducts.filter(product => filters.horticultural_form.includes(product.getAttribute('data-horticultural_form')));
-                }
-
-                if (filters.size.length > 0) {
-                    filteredProducts = filteredProducts.filter(product => filters.size.includes(product.getAttribute('data-size')));
-                }
-
-                if (filters.sale) {
-                    filteredProducts = filteredProducts.filter(product => product.getAttribute('data-sale') === filters.sale);
-                }
-
-                if (filters.flower) {
-                    filteredProducts = filteredProducts.filter(product => product.getAttribute('data-flower') === filters.flower);
-                }
-
-                if (filters.fruit) {
-                    filteredProducts = filteredProducts.filter(product => product.getAttribute('data-fruit') === filters.fruit);
-                }
-
-                if (filters.sort) {
-                    filteredProducts.sort((a, b) => {
-                        if (filters.sort === 'rating') {
-                            return parseFloat(b.getAttribute('data-rating')) - parseFloat(a.getAttribute('data-rating'));
-                        } else if (filters.sort === 'price-asc') {
-                            return parseFloat(a.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, "")) - parseFloat(b.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, ""));
-                        } else if (filters.sort === 'price-desc') {
-                            return parseFloat(b.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, "")) - parseFloat(a.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, ""));
-                        }
-                        return 0;
-                    });
-                }
-
-                productContainer.innerHTML = '';
-
-                filteredProducts.forEach((product, index) => {
-                    if (index % 3 === 0) {
-                        currentRow = document.createElement('div');
-                        currentRow.classList.add('product_row');
-                        productContainer.appendChild(currentRow);
-                    }
-                    currentRow.appendChild(product);
-
-                    // 이미지 크기 재설정
-                    const img = product.querySelector('img');
-                    if (img) {
-                        img.style.width = '100%';
-                        img.style.height = 'auto';
-                    }
-                });
-
-                // 빈 자리 채우기
-                const emptyItemsToAdd = (3 - (filteredProducts.length % 3)) % 3;
-                for (let i = 0; i < emptyItemsToAdd; i++) {
-                    const emptyItem = document.createElement('div');
-                    emptyItem.classList.add('product_item');
-                    emptyItem.style.visibility = 'hidden';
-                    currentRow.appendChild(emptyItem);
-                }
+            if (filters.category) {
+                filteredProducts = filteredProducts.filter(product => product.getAttribute('data-category') === filters.category);
             }
 
-            // 필터 이벤트 리스너 설정
-            document.querySelectorAll('.selector .item').forEach(item => {
-                item.addEventListener('click', function() {
-                    const category = item.textContent.replace('#', '');
-                    filters.category = (filters.category === category) ? null : category;
-                    document.querySelectorAll('.selector .item').forEach(i => i.classList.remove('act'));
-                    if (filters.category) item.classList.add('act');
-                    applyFilters();
-                });
-            });
-
-            document.querySelectorAll('.color-container .circle').forEach(circle => {
-                circle.addEventListener('click', function() {
-                    filters.color = (filters.color === circle.getAttribute('data-color')) ? null : circle.getAttribute('data-color');
-                    document.querySelectorAll('.color-container .circle').forEach(c => c.classList.remove('selected'));
-                    if (filters.color) circle.classList.add('selected');
-                    applyFilters();
-                });
-            });
-
-            document.querySelectorAll('input[name="light_mining"]').forEach(input => {
-                input.addEventListener('change', function(event) {
-                    if (event.target.checked) {
-                        filters.light_mining.push(event.target.value);
-                    } else {
-                        filters.light_mining = filters.light_mining.filter(value => value !== event.target.value);
-                    }
-                    applyFilters();
-                });
-            });
-
-            document.querySelectorAll('input[name="horticultural_form"]').forEach(input => {
-                input.addEventListener('change', function(event) {
-                    if (event.target.checked) {
-                        filters.horticultural_form.push(event.target.value);
-                    } else {
-                        filters.horticultural_form = filters.horticultural_form.filter(value => value !== event.target.value);
-                    }
-                    applyFilters();
-                });
-            });
-
-            document.querySelectorAll('input[name="size"]').forEach(input => {
-                input.addEventListener('change', function(event) {
-                    if (event.target.checked) {
-                        filters.size.push(event.target.value);
-                    } else {
-                        filters.size = filters.size.filter(value => value !== event.target.value);
-                    }
-                    applyFilters();
-                });
-            });
-
-            document.querySelectorAll('input[name="sale"]').forEach(input => {
-                input.addEventListener('change', function(event) {
-                    filters.sale = event.target.checked ? event.target.value : null;
-                    applyFilters();
-                });
-            });
-
-            document.querySelectorAll('input[name="flower"]').forEach(input => {
-                input.addEventListener('change', function(event) {
-                    filters.flower = event.target.checked ? event.target.value : null;
-                    applyFilters();
-                });
-            });
-
-            document.querySelectorAll('input[name="fruit"]').forEach(input => {
-                input.addEventListener('change', function(event) {
-                    filters.fruit = event.target.checked ? event.target.value : null;
-                    applyFilters();
-                });
-            });
-
-            // document.querySelector('.dropdown1 .dropdown-btn').addEventListener('click', function() {
-            //   const menu = document.querySelector('.dropdown1 .dropdown-menu');
-            //   menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-            // });
-
-            document.querySelector('.dropdown1 .dropdown-menu').addEventListener('click', function(event) {
-                filters.sort = event.target.getAttribute('data-sort');
-                applyFilters();
-                const menu = document.querySelector('.dropdown1 .dropdown-menu');
-                menu.style.display = 'none';
-            });
-
-            applyFilters();
-        });
-
-
-        document.addEventListener('DOMContentLoaded', function() {
-            document.getElementById('toggleButton').addEventListener('click', function() {
-                var panel = document.getElementById('rightPanel');
-                panel.classList.toggle('open');
-                var arrows = document.querySelectorAll('.toggle-button .arrow');
-                arrows.forEach(arrow => arrow.classList.toggle('open'));
-            });
-
-            function updateRecentItemViewer() {
-                const viewer = document.getElementById('recentItemImage');
-                if (recentItems.length > 0) {
-                    viewer.src = recentItems[currentIndex];
-                } else {
-                    viewer.src = 'https://via.placeholder.com/30';
-                }
+            if (filters.color) {
+                filteredProducts = filteredProducts.filter(product => product.getAttribute('data-color') === filters.color);
             }
 
-            let recentItems = [];
-            let currentIndex = 0;
-
-            document.getElementById('prevBtn').addEventListener('click', function() {
-                if (recentItems.length > 0) {
-                    currentIndex = (currentIndex - 1 + recentItems.length) % recentItems.length;
-                    updateRecentItemViewer();
-                }
-            });
-
-            document.getElementById('nextBtn').addEventListener('click', function() {
-                if (recentItems.length > 0) {
-                    currentIndex = (currentIndex + 1) % recentItems.length;
-                    updateRecentItemViewer();
-                }
-            });
-
-            document.getElementById('topBtn').addEventListener('click', function() {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-
-            updateRecentItemViewer(); // 초기 업데이트
-        });
-
-    </script>
-    </div>
-    </main>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const popupIcon = document.getElementById('popup-icon1');
-            const popupContent = document.getElementById('popup-content1');
-            const popupIcon2 = document.getElementById('popup-icon2');
-
-            popupIcon.addEventListener('mouseover', () => {
-                popupContent.classList.remove('hidden');
-            });
-
-            popupIcon.addEventListener('mouseleave', () => {
-                popupContent.classList.add('hidden');
-            });
-
-            popupIcon2.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-            const sale = new URLSearchParams(window.location.search).get('sale');
-            const checkbox = document.querySelector("#sale");
-            if (sale == 1){
-                checkbox.checked = true;
+            if (filters.rating) {
+                filteredProducts = filteredProducts.filter(product => parseFloat(product.getAttribute('data-rating')) >= filters.rating);
             }
-        });
 
-        const sale = new URLSearchParams(window.location.search).get('sale');
-        const checkbox = document.querySelector("#sale");
-        if (sale == 1){
-            checkbox.checked = true;
+            if (filters.light_mining.length > 0) {
+                filteredProducts = filteredProducts.filter(product => filters.light_mining.includes(product.getAttribute('data-light_mining')));
+            }
+
+            if (filters.horticultural_form.length > 0) {
+                filteredProducts = filteredProducts.filter(product => filters.horticultural_form.includes(product.getAttribute('data-horticultural_form')));
+            }
+
+            if (filters.size.length > 0) {
+                filteredProducts = filteredProducts.filter(product => filters.size.includes(product.getAttribute('data-size')));
+            }
+
+            if (filters.sale) {
+                filteredProducts = filteredProducts.filter(product => product.getAttribute('data-sale') === filters.sale);
+            }
+
+            if (filters.flower) {
+                filteredProducts = filteredProducts.filter(product => product.getAttribute('data-flower') === filters.flower);
+            }
+
+            if (filters.fruit) {
+                filteredProducts = filteredProducts.filter(product => product.getAttribute('data-fruit') === filters.fruit);
+            }
+
+            if (filters.sort) {
+                filteredProducts.sort((a, b) => {
+                    if (filters.sort === 'rating') {
+                        return parseFloat(b.getAttribute('data-rating')) - parseFloat(a.getAttribute('data-rating'));
+                    } else if (filters.sort === 'price-asc') {
+                        return parseFloat(a.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, "")) - parseFloat(b.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, ""));
+                    } else if (filters.sort === 'price-desc') {
+                        return parseFloat(b.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, "")) - parseFloat(a.querySelector('.product_price').textContent.replace(/[^0-9.-]+/g, ""));
+                    }
+                    return 0;
+                });
+            }
+
+            productContainer.innerHTML = '';
+
+            filteredProducts.forEach((product, index) => {
+                if (index % 3 === 0) {
+                    currentRow = document.createElement('div');
+                    currentRow.classList.add('product_row');
+                    productContainer.appendChild(currentRow);
+                }
+                currentRow.appendChild(product);
+
+                // 이미지 크기 재설정
+                const img = product.querySelector('img');
+                if (img) {
+                    img.style.width = '100%';
+                    img.style.height = 'auto';
+                }
+            });
+
+            // 빈 자리 채우기
+            const emptyItemsToAdd = (3 - (filteredProducts.length % 3)) % 3;
+            for (let i = 0; i < emptyItemsToAdd; i++) {
+                const emptyItem = document.createElement('div');
+                emptyItem.classList.add('product_item');
+                emptyItem.style.visibility = 'hidden';
+                currentRow.appendChild(emptyItem);
+            }
         }
-    </script>
+
+        // 필터 이벤트 리스너 설정
+        document.querySelectorAll('.selector .item').forEach(item => {
+            item.addEventListener('click', function() {
+                const category = item.textContent.replace('#', '');
+                filters.category = (filters.category === category) ? null : category;
+                document.querySelectorAll('.selector .item').forEach(i => i.classList.remove('act'));
+                if (filters.category) item.classList.add('act');
+                applyFilters();
+            });
+        });
+
+        document.querySelectorAll('.color-container .circle').forEach(circle => {
+            circle.addEventListener('click', function() {
+                filters.color = (filters.color === circle.getAttribute('data-color')) ? null : circle.getAttribute('data-color');
+                document.querySelectorAll('.color-container .circle').forEach(c => c.classList.remove('selected'));
+                if (filters.color) circle.classList.add('selected');
+                applyFilters();
+            });
+        });
+
+        document.querySelectorAll('input[name="light_mining"]').forEach(input => {
+            input.addEventListener('change', function(event) {
+                if (event.target.checked) {
+                    filters.light_mining.push(event.target.value);
+                } else {
+                    filters.light_mining = filters.light_mining.filter(value => value !== event.target.value);
+                }
+                applyFilters();
+            });
+        });
+
+        document.querySelectorAll('input[name="horticultural_form"]').forEach(input => {
+            input.addEventListener('change', function(event) {
+                if (event.target.checked) {
+                    filters.horticultural_form.push(event.target.value);
+                } else {
+                    filters.horticultural_form = filters.horticultural_form.filter(value => value !== event.target.value);
+                }
+                applyFilters();
+            });
+        });
+
+        document.querySelectorAll('input[name="size"]').forEach(input => {
+            input.addEventListener('change', function(event) {
+                if (event.target.checked) {
+                    filters.size.push(event.target.value);
+                } else {
+                    filters.size = filters.size.filter(value => value !== event.target.value);
+                }
+                applyFilters();
+            });
+        });
+
+        document.querySelectorAll('input[name="sale"]').forEach(input => {
+            input.addEventListener('change', function(event) {
+                filters.sale = event.target.checked ? event.target.value : null;
+                applyFilters();
+            });
+        });
+
+        document.querySelectorAll('input[name="flower"]').forEach(input => {
+            input.addEventListener('change', function(event) {
+                filters.flower = event.target.checked ? event.target.value : null;
+                applyFilters();
+            });
+        });
+
+        document.querySelectorAll('input[name="fruit"]').forEach(input => {
+            input.addEventListener('change', function(event) {
+                filters.fruit = event.target.checked ? event.target.value : null;
+                applyFilters();
+            });
+        });
+
+        // document.querySelector('.dropdown1 .dropdown-btn').addEventListener('click', function() {
+        //   const menu = document.querySelector('.dropdown1 .dropdown-menu');
+        //   menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        // });
+
+        document.querySelector('.dropdown1 .dropdown-menu').addEventListener('click', function(event) {
+            filters.sort = event.target.getAttribute('data-sort');
+            applyFilters();
+            const menu = document.querySelector('.dropdown1 .dropdown-menu');
+            menu.style.display = 'none';
+        });
+
+        applyFilters();
+    });
+
+
+    document.addEventListener('DOMContentLoaded', function() {
+        document.getElementById('toggleButton').addEventListener('click', function() {
+            var panel = document.getElementById('rightPanel');
+            panel.classList.toggle('open');
+            var arrows = document.querySelectorAll('.toggle-button .arrow');
+            arrows.forEach(arrow => arrow.classList.toggle('open'));
+        });
+
+        function updateRecentItemViewer() {
+            const viewer = document.getElementById('recentItemImage');
+            if (recentItems.length > 0) {
+                viewer.src = recentItems[currentIndex];
+            } else {
+                viewer.src = 'https://via.placeholder.com/30';
+            }
+        }
+
+        let recentItems = [];
+        let currentIndex = 0;
+
+        document.getElementById('prevBtn').addEventListener('click', function() {
+            if (recentItems.length > 0) {
+                currentIndex = (currentIndex - 1 + recentItems.length) % recentItems.length;
+                updateRecentItemViewer();
+            }
+        });
+
+        document.getElementById('nextBtn').addEventListener('click', function() {
+            if (recentItems.length > 0) {
+                currentIndex = (currentIndex + 1) % recentItems.length;
+                updateRecentItemViewer();
+            }
+        });
+
+        document.getElementById('topBtn').addEventListener('click', function() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        updateRecentItemViewer(); // 초기 업데이트
+    });
+
+</script>
 </body>
 </html>

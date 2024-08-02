@@ -4,37 +4,30 @@ import com.bit.springboard.dto.ProductDto;
 import com.bit.springboard.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/products")
 public class ProductController {
 
+    private final ProductService productService;
+
     @Autowired
-    private ProductService productService;
-
-    @PostMapping("/save")
-    @ResponseBody
-    public ProductDto saveProduct(@RequestBody ProductDto productDto, @RequestParam("file") MultipartFile file) {
-        return productService.saveProduct(productDto, file);
+    public ProductController(ProductService productService) {
+        this.productService = productService;
     }
 
-    @GetMapping("/all")
-    @ResponseBody
-    public List<ProductDto> getAllProducts() {
-        return productService.getAllProducts();
-    }
-
-    @GetMapping("/shopping_main.do")
-    public String shoppingMain() {
-        return "/WEB-INF/views/store/shopping_main"; // store/shopping_main.jsp를 반환
+    @GetMapping("/shoppingMain.do")
+    public String shoppingMain(Model model) {
+        List<ProductDto> products = productService.getAllProducts();
+        model.addAttribute("products", products);
+        return "WEB-INF/views/store/shopping_main";
     }
 
     @GetMapping("/purchase.do")
-    public String purchase() {
-        return "/WEB-INF/views/store/purchase";
+    public String purchaseProduct(Model model) {
+        return "WEB-INF/views/store/purchase";
     }
 }
