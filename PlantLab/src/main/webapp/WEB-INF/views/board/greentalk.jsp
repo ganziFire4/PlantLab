@@ -162,12 +162,12 @@
                         <div class="modal-body">
                             <img src="/static/images/storage/${greentalk.file.filename}" alt="" class="modalmain">
                             <div class="modal-right">
-                                <div class="modalthumb">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1_2">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1_3">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4" style="height: 96.27px;">
-                                </div>
+<%--                                <div class="modalthumb">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1_2">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1_3">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4" style="height: 96.27px;">--%>
+<%--                                </div>--%>
                                 <div class="modalcontentbox">
                                     <div class="modalcontents">
                                         <div class="writerpic">
@@ -373,6 +373,7 @@
             // console.log(greenId);
             //greenId로 ajax를 보내서
             // modal 구성 후 modal 표출
+
             let htmlStr = '';
 
             $.ajax({
@@ -380,6 +381,8 @@
                 type: 'POST',
                 data: {"green_id": greenId},
                 success: (obj) => {
+
+
                     console.log(obj);
 
                     // let htmlStr = "";
@@ -399,7 +402,7 @@
                                 <div class="modalcontentbox">
                                     <div class="modalcontents">
                                         <div class="writerpic">
-                                            <img src="/static/images/storage/\${obj.greentalk.mem_pic}" alt="" style="width: 30px; height: 30px;">
+                                            <img src="/static/images/storage/\${obj.greentalk.mem_pic}" alt="" style="width: 30px; height: 30px; border-radius: 50%; outline: solid 1px #ccc;">
                                         </div>
                                         <div class="modalmaincon">
                                             \${obj.greentalk.mem_nickname}

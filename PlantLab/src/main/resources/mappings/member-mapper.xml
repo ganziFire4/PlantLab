@@ -23,7 +23,7 @@
             , #{mem_zipcode}
             , #{mem_addr}
             , #{mem_addr_detail}
-            , #{mem_pic}
+            , 'profile_default.svg'
         )
     </insert>
     <update id="modify" parameterType="member">
