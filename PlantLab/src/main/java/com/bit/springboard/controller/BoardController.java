@@ -36,11 +36,14 @@ public class BoardController {
     }
 
     @RequestMapping("/board-main.do")
-    public String boardList(Model model, @RequestParam(value = "tab", required = false) Integer tab, @RequestParam Map<String, Object> search, Criteria cri) {
+    public String boardList(Model model, @RequestParam("tab") int tab, @RequestParam Map<String, Object> search,
+                            Criteria cri, @RequestParam(value = "pop_condition", required = false) String pop_condition, @RequestParam Map<String, String> tableForm) {
         model.addAttribute("tab", tab);
-
-
         model.addAttribute("search", search);
+        model.addAttribute("pop_condition", pop_condition);
+        System.out.println(tableForm.get("rows-num"));
+        System.out.println(tableForm.get("rec_condition"));
+        model.addAttribute("table", tableForm);
 
         int total = boardService.getBoardTotal(tab);
         model.addAttribute("page", new BoardPageDto(cri, total));

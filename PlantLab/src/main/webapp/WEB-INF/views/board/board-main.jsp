@@ -83,22 +83,31 @@
                 BoardService boardService = context.getBean("boardServiceImpl", BoardService.class);
             %>
             <%
-                request.setAttribute("popList", boardService.view_popular(1));
-                request.setAttribute("boardList", boardService.view_all(1, (Map<String, Object>)request.getAttribute("search")));
+                request.setAttribute("type", 1);
+                request.setAttribute("total", boardService.getBoardTotal(1));
+                request.setAttribute("popList", boardService.view_popular(1, (String)request.getAttribute("pop_condition")));
+                request.setAttribute("boardList", boardService.view_all(1,
+                        (Map<String, Object>)request.getAttribute("search"), (Map<String, Object>)request.getAttribute("table")));
             %>
             <jsp:include page="/WEB-INF/views/board/board-list.jsp"/>
         </div>
         <div class="tabContent">
             <%
-                request.setAttribute("popList", boardService.view_popular(2));
-                request.setAttribute("boardList", boardService.view_all(2, (Map<String, Object>)request.getAttribute("search")));
+                request.setAttribute("type", 2);
+                request.setAttribute("total", boardService.getBoardTotal(2));
+                request.setAttribute("popList", boardService.view_popular(2, (String)request.getAttribute("pop_condition")));
+                request.setAttribute("boardList", boardService.view_all(2,
+                        (Map<String, Object>)request.getAttribute("search"), (Map<String, Object>)request.getAttribute("table")));
             %>
             <jsp:include page="/WEB-INF/views/board/board-list.jsp"/>
         </div>
         <div class="tabContent">
             <%
-                request.setAttribute("popList", boardService.view_popular(3));
-                request.setAttribute("boardList", boardService.view_all(3, (Map<String, Object>)request.getAttribute("search")));
+                request.setAttribute("type", 3);
+                request.setAttribute("total", boardService.getBoardTotal(3));
+                request.setAttribute("popList", boardService.view_popular(3, (String)request.getAttribute("pop_condition")));
+                request.setAttribute("boardList", boardService.view_all(3,
+                        (Map<String, Object>)request.getAttribute("search"), (Map<String, Object>)request.getAttribute("table")));
             %>
             <jsp:include page="/WEB-INF/views/board/board-list.jsp"/>
         </div>

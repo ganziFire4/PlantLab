@@ -6,7 +6,6 @@ import com.bit.springboard.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -35,13 +34,13 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public List<BoardDto> view_popular(int tab) {
-        return boardDao.view_popular(tab);
+    public List<BoardDto> view_popular(int tab, String popCondition) {
+        return boardDao.view_popular(tab, popCondition);
     }
 
     @Override
-    public List<BoardDto> view_all(int tab, Map<String, Object> searchMap) {
-        return boardDao.view_all(tab, searchMap);
+    public List<BoardDto> view_all(int tab, Map<String, Object> search, Map<String, Object> table) {
+        return boardDao.view_all(tab, search, table);
     }
 
     @Override
