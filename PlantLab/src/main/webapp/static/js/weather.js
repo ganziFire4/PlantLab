@@ -73,6 +73,4 @@ const interval = setInterval(() => {
     ) {
         location.reload();
     }
-    console.log(checkMinute);
-    console.log(checkHour);
 }, 60000);
