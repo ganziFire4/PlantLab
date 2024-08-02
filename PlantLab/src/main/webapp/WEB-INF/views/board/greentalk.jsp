@@ -88,7 +88,8 @@
                             </div>
                         </div>
                         <img src="/static/images/storage/${popgreentalk.green_pic}" class="card-img-top" alt="..."
-                             onclick="openModal(${popgreentalk.green_id});">
+                             onclick="openModal(${popgreentalk.green_id});"
+                             style="border-radius: 0%">
                         <div class="card-body">
                             <p class="card-text">${popgreentalk.green_content}</p>
                             <div class="tag-group">
