@@ -17,13 +17,15 @@
 </head>
 <body>
     <%
+        int type = (int)request.getAttribute("type");
+        int total = (int)request.getAttribute("total");
         Object popList = request.getAttribute("popList");
         Object boardList = request.getAttribute("boardList");
     %>
     <!--게시판 내용-->
     <div id="title_table_area">
         <div class="search_bar">
-            <form id="search_form" action="/board/board-main.do" method="post">
+            <form id="search_form" action="/board/board-main.do?tab=${type}" method="post">
                 <select name="search_condition" id="search_condition">
                     <option value="all"
                         <c:if test="${search == null || search.search_condition == 'all'}">
@@ -48,11 +50,22 @@
                     <img src="${pageContext.request.contextPath}/static/images/인기글 별.svg" alt="별" style="margin-right: 7px;">
                     인기글
                 </div>
-                <select name="pop_condition" id="pop_condition">
-                    <option value="조회수">조회수</option>
-                    <option value="공감순">공감순</option>
-                    <option value="스크랩">스크랩</option>
-                </select>
+                <form id="popTableForm" action="/board/board-main.do?tab=${type}" method="post">
+                    <select name="pop_condition" id="pop_condition">
+                        <option value="view"
+                            <c:if test="${pop_condition == 'view'}">
+                                selected
+                            </c:if>>조회수</option>
+                        <option value="like"
+                            <c:if test="${pop_condition == 'like'}">
+                                selected
+                            </c:if>>좋아요</option>
+                        <option value="bookmark"
+                            <c:if test="${pop_condition == 'bookmark'}">
+                                selected
+                            </c:if>>스크랩</option>
+                    </select>
+                </form>
             </div>
             <div class="table_content">
                 <table class="table table-hover" style="margin: 0;">
@@ -96,19 +109,42 @@
         </div>
         <div class="table_recent">
             <div class="t_headerbar">
-                0000개
+                ${total}개
                 <div id="t_dropdown">
-                    <select name="rows-num" id="rows-num">
-                        <option value="10">10</option>
-                        <option value="15">15</option>
-                        <option value="20">20</option>
-                    </select>
-                    <select name="rec_condition" id="rec_condition">
-                        <option value="최신순">최신순</option>
-                        <option value="조회수">조회수</option>
-                        <option value="공감순">좋아요</option>
-                        <option value="스크랩">스크랩</option>
-                    </select>
+                    <form id="tableForm" action="/board/board-main.do?tab=${type}" method="post">
+                        <select name="rows-num" id="rows-num">
+                            <option value="10"
+                                <c:if test="${table.rows-num == '10'}">
+                                    selected
+                                </c:if>>10</option>
+                            <option value="15"
+                                <c:if test="${table.rows-num == '15'}">
+                                    selected
+                                </c:if>>15</option>
+                            <option value="20"
+                                <c:if test="${table.rows-num == '20'}">
+                                    selected
+                                </c:if>>20</option>
+                        </select>
+                        <select name="rec_condition" id="rec_condition">
+                            <option value="rec"
+                                <c:if test="${table == null || table.rec_condition == null || table.rec_condition == 'rec'}">
+                                    selected
+                                </c:if>>최신순</option>
+                            <option value="view"
+                                <c:if test="${table.rec_condition == 'view'}">
+                                    selected
+                                </c:if>>조회수</option>
+                            <option value="like"
+                                <c:if test="${table.rec_condition == 'like'}">
+                                    selected
+                                </c:if>>좋아요</option>
+                            <option value="bookmark"
+                                <c:if test="${table.rec_condition == 'bookmark'}">
+                                    selected
+                                </c:if>>스크랩</option>
+                        </select>
+                    </form>
                 </div>
             </div>
             <div class="table_content">
@@ -178,6 +214,20 @@
             <button type="button" id="button" onclick="location.href='/board/post.do'">글쓰기</button>
         </div>
     </div>
+    <script>
+        $("#pop_condition").on("change",() => {
+            $("#popTableForm").submit();
+        });
+
+        $("#rows-num").on("change",() => {
+            $("#tableForm").submit();
+        });
+
+        $("#rec_condition").on("change",() => {
+            console.log($("#rec_condition").val());
+            $("#tableForm").submit();
+        });
+    </script>
 </body>
 
 </html>

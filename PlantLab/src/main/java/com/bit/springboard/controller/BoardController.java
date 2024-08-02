@@ -36,11 +36,14 @@ public class BoardController {
     }
 
     @RequestMapping("/board-main.do")
-    public String boardList(Model model, @RequestParam("tab") int tab, @RequestParam Map<String, Object> searchMap, Criteria cri) {
+    public String boardList(Model model, @RequestParam("tab") int tab, @RequestParam Map<String, Object> search,
+                            Criteria cri, @RequestParam(value = "pop_condition", required = false) String pop_condition, @RequestParam Map<String, String> tableForm) {
         model.addAttribute("tab", tab);
-
-
-        model.addAttribute("search", searchMap);
+        model.addAttribute("search", search);
+        model.addAttribute("pop_condition", pop_condition);
+        System.out.println(tableForm.get("rows-num"));
+        System.out.println(tableForm.get("rec_condition"));
+        model.addAttribute("table", tableForm);
 
         int total = boardService.getBoardTotal(tab);
         model.addAttribute("page", new BoardPageDto(cri, total));
@@ -52,13 +55,6 @@ public class BoardController {
     public String post() {
         return "/WEB-INF/views/board/post";
     }
-
-
-//    @GetMapping("/greentalk.do")
-//    public String greentalk(Model model) {
-//        model.addAttribute("greentalkList", greentalkService.getPopGreenList());
-//        return "/WEB-INF/views/board/greentalk";
-//    }
 
     @RequestMapping("/greentalk.do")
     public String greentalk(Model model, Criteria cri, Map<String, String> searchMap) {
@@ -78,7 +74,7 @@ public class BoardController {
 
             mapList.add(map);
         }); // 강사님찬스
-        
+
         // 인기글 두개 가져오는 거 구현
         model.addAttribute("popList", greentalkPopList);
 
@@ -159,12 +155,12 @@ public class BoardController {
     }
 
 
-    @PostMapping("/board-list.do")
-    public String search_board (@RequestParam Map < String, Object > searchMap){
-
-        return "/WEB-INF/views/board/board-main";
-
-    }
+//    @PostMapping("/board-list.do")
+//    public String search_board (@RequestParam Map < String, Object > searchMap){
+//
+//        return "/WEB-INF/views/board/board-main";
+//
+//    }
 
     @GetMapping("/update-cnt.do")
     public String board_view_cnt ( @RequestParam("id") int id){
