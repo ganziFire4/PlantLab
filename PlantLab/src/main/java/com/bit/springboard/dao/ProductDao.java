@@ -9,6 +9,7 @@ import java.util.List;
 
 @Repository
 public class ProductDao {
+
     private final SqlSessionTemplate sqlSessionTemplate;
 
     @Autowired
@@ -16,11 +17,11 @@ public class ProductDao {
         this.sqlSessionTemplate = sqlSessionTemplate;
     }
 
-    public void saveProduct(ProductDto productDto) {
-        sqlSessionTemplate.insert("ProductDao.saveProduct", productDto);
-    }
-
     public List<ProductDto> getAllProducts() {
         return sqlSessionTemplate.selectList("ProductDao.getAllProducts");
+    }
+
+    public void saveProduct(ProductDto productDto) {
+        sqlSessionTemplate.insert("ProductDao.saveProduct", productDto);
     }
 }
