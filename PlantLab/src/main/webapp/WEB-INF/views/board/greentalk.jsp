@@ -311,7 +311,7 @@
                                         htmlStr += `
                                               <img class="thumbnail" width="100%" height="261px"
                                                          src="/static/images/storage/\${obj.greentalkList[i].file.green_pic}"
-                                                         alt="">
+                                                         alt="" onclick="openModal(\${obj.greentalkList[i].greentalkDto.green_id})">
                                             `;
                                     } else {
                                         htmlStr += `
