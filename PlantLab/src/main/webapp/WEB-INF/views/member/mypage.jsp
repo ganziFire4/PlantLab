@@ -27,7 +27,7 @@
                         <div class="shareicon">
                             <img src="../../../static/images/shareicon.png" alt="프로필수정아이콘" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         </div>
-                        <img src="${pageContext.request.contextPath}/static/images/storage/${loggedInMember.mem_pic}" class="profile" alt="" style="width: 20vh; height: 20vh; border-radius: 50%; margin-top: 3vh">
+                        <img src="${pageContext.request.contextPath}/static/images/storage/${loggedInMember.mem_pic}" class="profile" alt="" style="width: 20vh; height: 20vh; border-radius: 50%;">
                         <div class="profilename">
                             <p style="font-size: 25px;">${loggedInMember.mem_nickname}</p>
                         </div>
