@@ -41,10 +41,10 @@ public class GreentalkDao {
     }
 
     public List<GreentalkDto> getPopGreenList() {
-        List<GreentalkDto> test = mybatis.selectList("GreentalkDao.getPopGreenList");
-        for(GreentalkDto g:test) {
-            System.out.println(g);
-        }
+//        List<GreentalkDto> test = mybatis.selectList("GreentalkDao.getPopGreenList");
+//        for(GreentalkDto g:test) {
+//            System.out.println(g);
+//        }
         return mybatis.selectList("GreentalkDao.getPopGreenList");
     }
 
@@ -59,5 +59,9 @@ public class GreentalkDao {
 
     public GreentalkDto getGreenOne(int id) {
         return mybatis.selectOne("GreentalkDao.getGreenOne", id);
+    }
+
+    public List<GreentalkDto> getGreenFileList(int id) {
+        return mybatis.selectList("GreentalkDao.getGreenFileList", id);
     }
 }

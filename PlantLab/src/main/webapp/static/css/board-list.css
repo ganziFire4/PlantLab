@@ -55,7 +55,7 @@
     margin: 2rem 0 1.2rem;
 }
 
-form {
+.search_bar form {
     width: 85%;
     height: 36px;
     display: flex;
@@ -98,4 +98,8 @@ form {
     color: #898989;
     margin: 0 3px;
     font-weight: bold;
+}
+
+form {
+    margin: 0;
 }

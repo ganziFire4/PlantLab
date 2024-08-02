@@ -62,10 +62,10 @@
             LIMIT 5
     </select>
 
-    <select id="view_all" parameterType="int" resultType="board">
+    <select id="view_all" parameterType="map" resultType="board">
         SELECT ROW_NUMBER() OVER (
-                    ORDER BY SUB.BOARD_REG DESC
-            ) AS ROW_NUM
+            ORDER BY SUB.BOARD_REG DESC
+        ) AS ROW_NUM
             , SUB.*
             FROM (
                 SELECT B.BOARD_ID
@@ -80,6 +80,19 @@
                       ON B.MEM_ID = M.MEM_ID
                     WHERE BOARD_TYPE = #{tab}
             ) SUB
+        WHERE 1 = 1
+        <if test="searchMap.search_keyword != null and searchMap.search_keyword != ''">
+            <if test="searchMap.search_condition == 'all'">
+                AND (SUB.BOARD_TITLE LIKE CONCAT('%', #{searchMap.search_keyword}, '%')
+                OR SUB.MEM_NICKNAME LIKE CONCAT('%', #{searchMap.search_keyword}, '%'))
+            </if>
+            <if test="searchMap.search_condition == 'title'">
+                AND SUB.BOARD_TITLE LIKE CONCAT('%', #{searchMap.search_keyword}, '%'
+            </if>
+            <if test="searchMap.search_condition == 'writer'">
+                AND SUB.MEM_NICKNAME LIKE CONCAT('%', #{searchMap.search_keyword}, '%')
+            </if>
+        </if>
         LIMIT 10
     </select>
 
@@ -124,6 +137,6 @@
             FROM BOARD B
             JOIN MEMBER M
               ON B.MEM_ID = M.MEM_ID
-            WHERE BOARD_TYPE = #{tab}
+            WHERE B.BOARD_TYPE = #{tab}
     </select>
 </mapper>

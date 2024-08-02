@@ -119,4 +119,14 @@
                  JOIN GREENTALK_PIC GP ON G.GREEN_ID = GP.GREEN_ID
         WHERE G.GREEN_ID = #{green_id}
     </select>
+
+    <select id="getGreenFileList" parameterType="int" resultType="greentalk">
+        SELECT G.GREEN_ID
+             , GP.GREEN_PIC
+            FROM GREENTALK G
+            JOIN GREENTALK_PIC GP
+              ON G.GREEN_ID = GP.GREEN_ID
+            WHERE GP.GREEN_ID = #{id}
+            ORDER BY G.GREEN_MOD DESC
+    </select>
 </mapper>

@@ -23,10 +23,10 @@ public class MainController {
     @GetMapping("/")
     public String mainPage(Model model) {
         // 인기 정보글과 Q&A 게시글가져오기
-        List<BoardDto> infoPosts = boardService.view_popular(1); // tab:1 정보글
-        List<BoardDto> qaPosts = boardService.view_popular(2);   // tab:2 Q&A
-//        System.out.println(infoPosts);
-//        System.out.println(qaPosts);
+        List<BoardDto> infoPosts = boardService.view_popular(1, null); // tab:1 정보글
+        List<BoardDto> qaPosts = boardService.view_popular(2, null);   // tab:2 Q&A
+        System.out.println(infoPosts);
+        System.out.println(qaPosts);
         model.addAttribute("infoPosts", infoPosts);
         model.addAttribute("qaPosts", qaPosts);
 

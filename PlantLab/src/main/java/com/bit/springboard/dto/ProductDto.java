@@ -3,8 +3,8 @@ package com.bit.springboard.dto;
 import java.time.LocalDateTime;
 
 public class ProductDto {
-    private int product_id;  // store_product의 pk, 오토인크리먼트, 유니크
-    private int pic_id; // store_pic의 pk, 오토인크리먼트, 유니크 store_pic은 product_id를 받아서 씀(외래키)
+    private int product_id;
+    // private int pic_id;
     private String brand;
     private String product_name;
     private int price;
@@ -21,8 +21,8 @@ public class ProductDto {
     private boolean product_status;
     private LocalDateTime created_at;
     private LocalDateTime updated_at;
-    private String file_name;
-    private Boolean is_main;
+    // private String file_name;
+    // private Boolean is_main;
 
     // Getters and setters
     public int getProduct_id() {
@@ -33,13 +33,13 @@ public class ProductDto {
         this.product_id = product_id;
     }
 
-    public int getPic_id() {
-        return pic_id;
-    }
+    // public int getPic_id() {
+    //     return pic_id;
+    // }
 
-    public void setPic_id(int pic_id) {
-        this.pic_id = pic_id;
-    }
+    // public void setPic_id(int pic_id) {
+    //     this.pic_id = pic_id;
+    // }
 
     public String getBrand() {
         return brand;
@@ -169,19 +169,19 @@ public class ProductDto {
         this.updated_at = updated_at;
     }
 
-    public String getFile_name() {
-        return file_name;
-    }
+    // public String getFile_name() {
+    //     return file_name;
+    // }
 
-    public void setFile_name(String file_name) {
-        this.file_name = file_name;
-    }
+    // public void setFile_name(String file_name) {
+    //     this.file_name = file_name;
+    // }
 
-    public Boolean getIs_main() {
-        return is_main;
-    }
+    // public Boolean getIs_main() {
+    //     return is_main;
+    // }
 
-    public void setIs_main(Boolean is_main) {
-        this.is_main = is_main;
-    }
+    // public void setIs_main(Boolean is_main) {
+    //     this.is_main = is_main;
+    // }
 }
