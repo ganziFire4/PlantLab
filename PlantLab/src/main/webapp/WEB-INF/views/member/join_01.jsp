@@ -253,7 +253,22 @@
 
         //휴대폰번호 입력 확인
 
-        //인증번호
+        //메일 인증번호
+        function snedNumber(){
+            $("#mail_number").css("display", "block");
+            $.ajax({
+                url: "/mail",
+                type: "post",
+                dataType: "json",
+                data: {"mail": $("#mail").val()},
+                success: function (data) {
+                    alert("인증번호 발송");
+                    $("#Confirm").attr("value", data);
+                },
+             });
+            }
+
+
 
 
         //우편번호 검색기능
@@ -412,5 +427,6 @@
 
     </script>
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </body>
 </html>

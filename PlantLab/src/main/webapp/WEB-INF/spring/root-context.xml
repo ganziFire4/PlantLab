@@ -133,5 +133,22 @@ xsi:schemaLocation에서 namespace를 사용하기 위한 설정파일인 xsd파
     </aop:config>
 
     <!-- 이메일 인증 관련 등록 -->
-<!--    -->
+<!--    <bean id="mail_veri" class="org.springframework.mail.javamail.JavaMailSenderImpl">-->
+<!--        <property name="host" value="smtp.gmail.com"/>-->
+<!--        <property name="port" value="587"/>-->
+<!--        <property name="username" value="cross.jane.kim@gmail.com"/>-->
+<!--        <property name="password" value="rqkj eidk yukj rcf"/>-->
+<!--        <property name="javaMailProperties">-->
+<!--            <props>-->
+<!--                <prop key="mail.transport.protocol">smtp</prop>-->
+<!--                <prop key="mail.smtp.auth">true</prop>-->
+<!--                <prop key="mail.stmp.starttls.enable">true</prop>-->
+<!--                <prop key="mail.stmp.starttls.enable">true</prop>-->
+<!--                <prop key="mail.debug">true</prop>-->
+<!--            </props>-->
+<!--      </property>-->
+
+
+<!--    </bean>-->
+
 </beans>

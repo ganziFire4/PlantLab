@@ -7,6 +7,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="javatime" uri="http://sargue.net/jsptags/time" %>
 <html>
 <head>
     <title>플랜트랩</title>
@@ -52,7 +53,7 @@
                     <div class="tablecaption-container">
                         <h2>정보글</h2>
                         <!-- <caption align="top">Q&A</caption> -->
-                        <button type="button" class="morebtn" onclick="window.location.href='board_list.html'">더 보기</button>
+                        <button type="button" class="morebtn" onclick="window.location.href='/board/board-main.do?tab=1'">더 보기</button>
                     </div>
                     <table>
                         <tr>
@@ -64,7 +65,7 @@
                         <tr>
                             <td>${post.board_title}</td>
                             <td>${post.mem_nickname}</td>
-                            <td><fmt:formatDate value="${post.board_reg}" pattern="yyyy.MM.dd"/></td>
+                            <td><javatime:format value="${post.board_reg}" pattern="yyyy-MM-dd"/></td>
                         </tr>
                         </c:forEach>
 <%--                        <tr>--%>
@@ -93,7 +94,7 @@
                     <table>
                         <div class="tablecaption-container">
                             <h2>Q&A</h2>
-                            <button type="button" class="morebtn" onclick="window.location.href='board_list.html?tab=3'">더 보기</button>
+                            <button type="button" class="morebtn" onclick="window.location.href='/board/board-main.do?tab=3'">더 보기</button>
                         </div>
                         <tr>
                             <th class="table-title">제목</th>
@@ -104,7 +105,7 @@
                         <tr>
                             <td>${post.board_title}</td>
                             <td>${post.mem_nickname}</td>
-                            <td><fmt:formatDate value="${post.board_reg}" pattern="yyyy.MM.dd"/></td>
+                            <td><javatime:format value="${post.board_reg}" pattern="yyyy-MM-dd"/></td>
                         </tr>
                         </c:forEach>
 <%--                        <tr>--%>

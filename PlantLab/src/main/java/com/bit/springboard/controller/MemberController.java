@@ -133,4 +133,14 @@ public class MemberController {
         return "/WEB-INF/views/member/mypage";
     }
 
+
+//    @ResponseBody
+//    @PostMapping("/mail")
+//    public String Mail_Verify(){
+////        int number=mailService.sendMail(mail);
+////
+////        String num ="" + number;
+////        return num;
+////    }
+
 }

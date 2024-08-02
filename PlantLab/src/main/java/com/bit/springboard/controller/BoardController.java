@@ -54,12 +54,6 @@ public class BoardController {
     }
 
 
-    @GetMapping("/greentalk.do")
-    public String greentalk(Model model) {
-        model.addAttribute("greentalkList", greentalkService.getPopGreenList());
-        return "/WEB-INF/views/board/greentalk";
-    }
-
     @RequestMapping("/greentalk.do")
     public String greentalk(Model model, Criteria cri, Map<String, String> searchMap) {
 

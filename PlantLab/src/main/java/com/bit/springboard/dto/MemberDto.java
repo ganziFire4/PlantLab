@@ -1,5 +1,7 @@
 package com.bit.springboard.dto;
 
+import org.springframework.mail.javamail.JavaMailSender;
+
 public class MemberDto {
     private int mem_id;
     private String login_id;
@@ -12,6 +14,7 @@ public class MemberDto {
     private int checkCnt;
     private String mem_zipcode;
     private String mem_addr_detail;
+
 
     public int getMemId() {
         return mem_id;
@@ -116,6 +119,7 @@ public class MemberDto {
                 ", mem_zipcode='" + mem_zipcode + '\'' +
                 ", mem_addr_detail='" + mem_addr_detail + '\'' +
                 '}';
+        }
     }
-}
+
 
