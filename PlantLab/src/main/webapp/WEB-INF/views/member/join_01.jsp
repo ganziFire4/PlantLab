@@ -254,19 +254,63 @@
         //휴대폰번호 입력 확인
 
         //메일 인증번호
-        function snedNumber(){
-            $("#mail_number").css("display", "block");
+        // function snedNumber(){
+        //     $("#emailAuth").css("display", "block");
+        //     $.ajax({
+        //         url: "/mail",
+        //         type: "post",
+        //         dataType: "json",
+        //         data: {"mail": $("#mail").val()},
+        //         success: function (data) {
+        //             alert("인증번호 발송");
+        //             $("#Confirm").attr("value", data);
+        //         },
+        //      });
+        //     }
+
+        //인증하기 버튼을 눌렀을 때 동작
+        $("#emailAuth").click(function () {
+            const email = $("#memEmail").val(); //사용자가 입력한 이메일 값 얻어오기
+
+            //Ajax로 전송
             $.ajax({
-                url: "/mail",
-                type: "post",
-                dataType: "json",
-                data: {"mail": $("#mail").val()},
-                success: function (data) {
-                    alert("인증번호 발송");
-                    $("#Confirm").attr("value", data);
+                url: './EmailAuth',
+                data: {
+                    email: email
                 },
-             });
-            }
+                type: 'POST',
+                dataType: 'json',
+                success: function (result) {
+                    console.log("result : " + result);
+
+                    $("#authCode").attr("disabled", false);
+                    code = result;
+                    alert("인증 코드가 입력하신 이메일로 전송 되었습니다.");
+                }
+            }); //End Ajax
+        });
+        //
+        //
+        // //인증 코드 비교
+        // $("#authCode").on("focusout", function () {
+        //     const inputCode = $("#authCode").val(); //인증번호 입력 칸에 작성한 내용 가져오기
+        //
+        //     console.log("입력코드 : " + inputCode);
+        //     console.log("인증코드 : " + code);
+        //
+        //     if (Number(inputCode) === code) {
+        //         $("#emailAuthWarn").html('인증번호가 일치합니다.');
+        //         $("#emailAuthWarn").css('color', 'green');
+        //         $('#emailAuth').attr('disabled', true);
+        //         $('#email').attr('readonly', true);
+        //         $("#registerBtn").attr("disabled", false);
+        //     } else {
+        //         $("#emailAuthWarn").html('인증번호가 불일치 합니다. 다시 확인해주세요!');
+        //         $("#emailAuthWarn").css('color', 'red');
+        //         $("#registerBtn").attr("disabled", true);
+        //     }
+        // })
+        // ;
 
 
 
@@ -380,49 +424,7 @@
         }
 
 
-        //인증하기 버튼을 눌렀을 때 동작
-        // $("#emailAuth").click(function () {
-        //     const email = $("#memEmail").val(); //사용자가 입력한 이메일 값 얻어오기
-        //
-        //     //Ajax로 전송
-        //     $.ajax({
-        //         url: './EmailAuth',
-        //         data: {
-        //             email: email
-        //         },
-        //         type: 'POST',
-        //         dataType: 'json',
-        //         success: function (result) {
-        //             console.log("result : " + result);
-        //
-        //             $("#authCode").attr("disabled", false);
-        //             code = result;
-        //             alert("인증 코드가 입력하신 이메일로 전송 되었습니다.");
-        //         }
-        //     }); //End Ajax
-        // });
-        //
-        //
-        // //인증 코드 비교
-        // $("#authCode").on("focusout", function () {
-        //     const inputCode = $("#authCode").val(); //인증번호 입력 칸에 작성한 내용 가져오기
-        //
-        //     console.log("입력코드 : " + inputCode);
-        //     console.log("인증코드 : " + code);
-        //
-        //     if (Number(inputCode) === code) {
-        //         $("#emailAuthWarn").html('인증번호가 일치합니다.');
-        //         $("#emailAuthWarn").css('color', 'green');
-        //         $('#emailAuth').attr('disabled', true);
-        //         $('#email').attr('readonly', true);
-        //         $("#registerBtn").attr("disabled", false);
-        //     } else {
-        //         $("#emailAuthWarn").html('인증번호가 불일치 합니다. 다시 확인해주세요!');
-        //         $("#emailAuthWarn").css('color', 'red');
-        //         $("#registerBtn").attr("disabled", true);
-        //     }
-        // })
-        // ;
+
 
 
     </script>

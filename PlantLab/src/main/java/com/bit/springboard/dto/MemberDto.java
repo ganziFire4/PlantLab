@@ -1,7 +1,5 @@
 package com.bit.springboard.dto;
 
-import org.springframework.mail.javamail.JavaMailSender;
-
 public class MemberDto {
     private int mem_id;
     private String login_id;

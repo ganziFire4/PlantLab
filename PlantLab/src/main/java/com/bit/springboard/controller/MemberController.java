@@ -4,6 +4,7 @@ import com.bit.springboard.dto.MemberDto;
 import com.bit.springboard.service.BoardService;
 import com.bit.springboard.service.GreentalkService;
 import com.bit.springboard.service.MemberService;
+import com.bit.springboard.service.impl.MemberServiceImpl;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import java.io.File;
 import java.io.IOException;
+
+
 
 
 @Controller
@@ -149,14 +152,21 @@ public class MemberController {
         return "/WEB-INF/views/member/mypage";
     }
 
+    // 이메일 인증번호 발송
+    @PostMapping("/sendEmailVerification")
+    @ResponseBody
+    public String sendEmailVerification(@RequestParam("email") String email) {
+        try {
+            MemberDto memberDto = new MemberDto();
+            memberDto.setMem_email(email);
+            String verificationCode = memberService.sendSimpleMessage(email);
+            return "인증번호가 발송되었습니다. 이메일을 확인하세요.";
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "인증번호 발송에 실패했습니다.";
+        }
+    }
 
-//    @ResponseBody
-//    @PostMapping("/mail")
-//    public String Mail_Verify(){
-////        int number=mailService.sendMail(mail);
-////
-////        String num ="" + number;
-////        return num;
-////    }
+
 
 }
