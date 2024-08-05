@@ -387,17 +387,22 @@
 
                     const formatDate = (dateString) => {
 
+                        let year = `\${dateString[0]}`;
+                        if (year > 1) {
+                            year = year.slice(-2);
+                        }
+
                         let month = `\${dateString[1]}`;
                         if (month < 10) {
                             month = '0' + month;
                         }
 
-                        let date = '\${dateString[2]}';
+                        let date = `\${dateString[2]}`;
                         if (date < 10) {
                             date = '0' + date;
                         }
 
-                        return `\${dateString[0]}-\${month}-\${date}`; // 배열에 저장된 날짜
+                        return `\${year}-\${month}-\${date}`; // 배열에 저장된 날짜
                     };
 
                     const formattedDate = formatDate(obj.greentalk.green_mod); // 날짜 변환
