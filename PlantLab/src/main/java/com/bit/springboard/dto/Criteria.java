@@ -14,7 +14,7 @@ public class Criteria {
     }
 
     public Criteria(int amount) {
-        this.pageNum = 2;
+        this.pageNum = 1;
         this.amount = amount;
     }
 

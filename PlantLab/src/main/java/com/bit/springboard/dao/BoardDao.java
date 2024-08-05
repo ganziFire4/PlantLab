@@ -1,6 +1,7 @@
 package com.bit.springboard.dao;
 
 import com.bit.springboard.dto.BoardDto;
+import com.bit.springboard.dto.Criteria;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -38,12 +39,13 @@ public class BoardDao {
         return mybatis.selectList("BoardDao.view_popular", paramMap);
     }
 
-    public List<BoardDto> view_all(int tab, Map<String, String> searchMap, Map<String, String> table) {
+    public List<BoardDto> view_all(int tab, Map<String, String> searchMap, Map<String, String> table, Criteria cri) {
         Map<String, Object> paramMap = new HashMap<>();
 
         paramMap.put("tab", tab);
         paramMap.put("searchMap", searchMap);
         paramMap.put("table", table);
+        paramMap.put("cri", cri);
         return mybatis.selectList("BoardDao.view_all", paramMap);
     }
 

@@ -2,6 +2,7 @@ package com.bit.springboard.service.impl;
 
 import com.bit.springboard.dao.BoardDao;
 import com.bit.springboard.dto.BoardDto;
+import com.bit.springboard.dto.Criteria;
 import com.bit.springboard.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,8 +40,9 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public List<BoardDto> view_all(int tab, Map<String, String> search, Map<String, String> table) {
-        return boardDao.view_all(tab, search, table);
+    public List<BoardDto> view_all(int tab, Map<String, String> search, Map<String, String> table, Criteria cri) {
+        cri.setStartNum((cri.getPageNum() - 1) * cri.getAmount());
+        return boardDao.view_all(tab, search, table, cri);
     }
 
     @Override

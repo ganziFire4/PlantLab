@@ -183,27 +183,21 @@
         </div>
         <div class="under_bar">
             <ul class="t_pagination">
-                <li class="page-item">
-                    <a class="pageBtn" aria-label="Previous" href=""><<</a>
-                </li>
-                <li class="page-item">
-                    <a class="pageBtn" href="">1</a>
-                </li>
-                <li class="page-item">
-                    <a class="pageBtn" href="">2</a>
-                </li>
-                <li class="page-item">
-                    <a class="pageBtn" href="">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="pageBtn" href="">4</a>
-                </li>
-                <li class="page-item">
-                    <a class="pageBtn" href="">5</a>
-                </li>
-                <li class="page-item">
-                    <a class="pageBtn" aria-label="Next" href="">>></a>
-                </li>
+                <c:if test="${page.prev}">
+                    <li class="page-item">
+                        <a class="pageBtn" aria-label="Previous" href="/board/board-main.do?tab=${tab}&page=${page.cri.pageNum - 1}"><<</a>
+                    </li>
+                </c:if>
+                <c:forEach begin="${page.startPage}" end="${page.endPage}" var="number">
+                    <li class="page-item">
+                        <a class="pageBtn" href="/board/board-main.do?tab=${tab}&page=${number}">${number}</a>
+                    </li>
+                </c:forEach>
+                <c:if test="${page.next}">
+                    <li class="page-item">
+                        <a class="pageBtn" aria-label="Next" href="/board/board-main.do?tab=${tab}&page=${page.cri.pageNum + 1}">>></a>
+                    </li>
+                </c:if>
             </ul>
             <button type="button" id="button" onclick="location.href='/board/post.do'">글쓰기</button>
         </div>

@@ -1,6 +1,7 @@
 package com.bit.springboard.service;
 
 import com.bit.springboard.dto.BoardDto;
+import com.bit.springboard.dto.Criteria;
 
 import java.util.List;
 import java.util.Map;
@@ -10,7 +11,7 @@ public interface BoardService {
     void modify(BoardDto boardDto);
     void delete(int id);
     List<BoardDto> view_popular(int tab, String popCondition);
-    List<BoardDto> view_all(int tab, Map<String, String> search, Map<String, String> table);
+    List<BoardDto> view_all(int tab, Map<String, String> search, Map<String, String> table, Criteria cri);
     BoardDto view_one(int id);
     List<BoardDto> getBoard(int id);
     void update_view_cnt(int id);

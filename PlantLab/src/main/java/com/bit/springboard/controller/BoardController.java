@@ -40,8 +40,9 @@ public class BoardController {
     public String boardList(Model model, @RequestParam("tab") int tab,
                             @RequestParam(value = "search_condition", required = false) String search_condition,
                             @RequestParam(value = "search_keyword", required = false) String search_keyword,
-                            Criteria cri, @RequestParam(value = "pop_condition", required = false) String pop_condition,
-                            @RequestParam (value = "rec_condition", required = false) String rec_condition, @RequestParam(value = "row-num", required = false) String row_num) {
+                            @RequestParam(value = "pop_condition", required = false) String pop_condition,
+                            @RequestParam (value = "rec_condition", required = false) String rec_condition,
+                            @RequestParam(value = "row-num", required = false) String row_num) {
 
         Map<String, String> search = new HashMap<>();
         search.put("search_condition", search_condition);
@@ -51,12 +52,19 @@ public class BoardController {
         table.put("rec_condition", rec_condition);
         table.put("row_num", row_num);
 
+        if(table.get("row_num") == null) {
+            table.put("row_num", "10");
+        }
+
+        Criteria cri = new Criteria(1, Integer.parseInt(table.get("row_num")));
+
         model.addAttribute("tab", tab);
         model.addAttribute("popList", boardService.view_popular(tab, pop_condition));
-        model.addAttribute("boardList", boardService.view_all(tab, search, table));
+        model.addAttribute("boardList", boardService.view_all(tab, search, table, cri));
         model.addAttribute("search", search);
         model.addAttribute("pop_condition", pop_condition);
         model.addAttribute("table", table);
+
 
         int total = boardService.getBoardTotal(tab, search);
         model.addAttribute("total", total);

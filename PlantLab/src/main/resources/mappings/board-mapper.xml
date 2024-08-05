@@ -62,36 +62,38 @@
     </select>
 
     <select id="view_all" parameterType="map" resultType="board">
+SELECT A.*
+    FROM(
         SELECT ROW_NUMBER() OVER (
-            <choose>
-                <when test="table.rec_condition == null or table.rec_condition == 'rec'">
-                    ORDER BY SUB.BOARD_REG DESC
-                </when>
-                <when test="table.rec_condition == 'view'">
-                    ORDER BY SUB.BOARD_VIEW_CNT DESC
-                </when>
-                <when test="table.rec_condition == 'like'">
-                    ORDER BY SUB.BOARD_LIKE_CNT DESC
-                </when>
-                <otherwise>
-                    ORDER BY SUB.BOARD_BOOKMARK_CNT DESC
-                </otherwise>
-            </choose>
+        <choose>
+            <when test="table.rec_condition == null or table.rec_condition == 'rec'">
+                ORDER BY SUB.BOARD_REG DESC
+            </when>
+            <when test="table.rec_condition == 'view'">
+                ORDER BY SUB.BOARD_VIEW_CNT DESC
+            </when>
+            <when test="table.rec_condition == 'like'">
+                ORDER BY SUB.BOARD_LIKE_CNT DESC
+            </when>
+            <otherwise>
+                ORDER BY SUB.BOARD_BOOKMARK_CNT DESC
+            </otherwise>
+        </choose>
         ) AS ROW_NUM
-            , SUB.*
-            FROM (
-                SELECT B.BOARD_ID
-                     , B.BOARD_TITLE
-                     , M.MEM_NICKNAME
-                     , B.BOARD_REG
-                     , B.BOARD_VIEW_CNT
-                     , B.BOARD_LIKE_CNT
-                     , B.BOARD_BOOKMARK_CNT
-                    FROM BOARD B
-                    JOIN MEMBER M
-                      ON B.MEM_ID = M.MEM_ID
-                    WHERE BOARD_TYPE = #{tab}
-            ) SUB
+        , SUB.*
+        FROM (
+        SELECT B.BOARD_ID
+        , B.BOARD_TITLE
+        , M.MEM_NICKNAME
+        , B.BOARD_REG
+        , B.BOARD_VIEW_CNT
+        , B.BOARD_LIKE_CNT
+        , B.BOARD_BOOKMARK_CNT
+        FROM BOARD B
+        JOIN MEMBER M
+        ON B.MEM_ID = M.MEM_ID
+        WHERE BOARD_TYPE = #{tab}
+        ) SUB
         WHERE 1 = 1
         <if test="searchMap.search_keyword != null and searchMap.search_keyword != ''">
             <if test="searchMap.search_condition == 'all'">
@@ -105,7 +107,8 @@
                 AND SUB.MEM_NICKNAME LIKE CONCAT('%', #{searchMap.search_keyword}, '%')
             </if>
         </if>
-        LIMIT 10
+        )A
+        WHERE A.ROW_NUM &gt;= #{cri.startNum} AND A.ROW_NUM &lt; #{cri.startNum} + #{cri.amount}
     </select>
 
     <select id="view_one" parameterType="int" resultType="board">
@@ -158,7 +161,7 @@
                 OR M.MEM_NICKNAME LIKE CONCAT('%', #{searchMap.search_keyword}, '%'))
             </if>
             <if test="searchMap.search_condition == 'title'">
-                AND B.BOARD_TITLE LIKE CONCAT('%', #{searchMap.search_keyword}, '%'
+                AND B.BOARD_TITLE LIKE CONCAT('%', #{searchMap.search_keyword}, '%')
             </if>
             <if test="searchMap.search_condition == 'writer'">
                 AND M.MEM_NICKNAME LIKE CONCAT('%', #{searchMap.search_keyword}, '%')
