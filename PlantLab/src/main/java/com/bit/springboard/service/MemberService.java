@@ -17,11 +17,11 @@ public interface MemberService {
 
     MemberDto login(MemberDto memberDto);
 
-//    void createMessage(MemberDto memberDto) throws MessagingException, UnsupportedEncodingException;
-//
-//    String createKey();
-//
-//    String sendSimpleMessage(MemberDto memberDto) throws Exception;
+    MimeMessage createMessage(String email) throws MessagingException, UnsupportedEncodingException;
+
+    String createKey();
+
+    String sendSimpleMessage(String email) throws Exception;
 
 
 }
