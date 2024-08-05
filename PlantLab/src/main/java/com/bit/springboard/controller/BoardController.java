@@ -4,6 +4,7 @@ import com.bit.springboard.dto.*;
 import com.bit.springboard.service.BoardService;
 import com.bit.springboard.service.GreentalkService;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 //import org.springframework.mock.web.MockHttpServletResponse;
@@ -94,8 +95,12 @@ public class BoardController {
         return "/WEB-INF/views/board/board-detail";
     }
 
-    @GetMapping("/greentalk_post")
-    public String greentalk_post() {
+    @GetMapping("/greentalk_post.do")
+    public String greentalk_post(HttpSession session) {
+        MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
+        if(loggedInMember == null) {
+            return "redirect:/member/login.do";
+        }
         return "/WEB-INF/views/board/greentalk_post";
     }
 

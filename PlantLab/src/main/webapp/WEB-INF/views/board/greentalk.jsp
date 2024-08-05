@@ -74,7 +74,10 @@
                 <button type="submit" class="greentalksearchbtn">검색</button>
             </form>
         </div>
-        <div class="greenbody">
+        <div class="postbtnbox">
+            <button type="button" onclick="location.href='/board/greentalk_post'">글 작성</button>
+        </div>
+        <div class="greenbody" style="height: 600px;">
             <div class="container_green">
                 <div class="dailycontent">
                                 <c:forEach items="${popList}" var="popgreentalk">
@@ -456,7 +459,7 @@
                                 <input type="hidden" name="mem_id" value="\${obj.greentalk.mem_id}">
                                 <div class="commenttab">
                                 <input type="text" name="comment_content" class="commentbox" placeholder="댓글을 입력하세요."
-                                       onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'" style="margin-top:15px">
+                                       onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'" style="margin-top:15px;">
                                 </input>
                                     <div style="text-align: right;">
                                         <button type="submit" class="confirmbox" style="border:none;">게시</button>

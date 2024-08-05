@@ -398,3 +398,9 @@ img {
 .modal-open {
     overflow: scroll;
 }
+
+.postbtnbox {
+    display: flex;
+    justify-content: right;
+    width: 1200px;
+}
