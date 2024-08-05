@@ -40,7 +40,7 @@
                     <li><a href="/products/shopping_main.do">스토어</a></li>
                     <div id="weather">
                         <li id="weatherList">
-                            <img id="weatherImg" src="#" alt="날씨 이미지">
+                            <img id="weatherImg" scr="" alt="날씨 이미지">
                             <img id="weatherLine" src="${pageContext.request.contextPath}/static/images/weatherLine.svg" alt="라인 이미지">
                             <p id="result"></p>
                         </li>
