@@ -12,7 +12,10 @@ public class MemberDto {
     private int checkCnt;
     private String mem_zipcode;
     private String mem_addr_detail;
-
+    private int board_like_cnt;
+    private int board_bookmark_cnt;
+    private int green_like_cnt;
+    private int green_bookmark_cnt;
 
     public int getMemId() {
         return mem_id;
@@ -102,6 +105,38 @@ public class MemberDto {
         this.mem_addr_detail = mem_addr_detail;
     }
 
+    public int getBoard_like_cnt() {
+        return board_like_cnt;
+    }
+
+    public void setBoard_like_cnt(int board_like_cnt) {
+        this.board_like_cnt = board_like_cnt;
+    }
+
+    public int getBoard_bookmark_cnt() {
+        return board_bookmark_cnt;
+    }
+
+    public void setBoard_bookmark_cnt(int board_bookmark_cnt) {
+        this.board_bookmark_cnt = board_bookmark_cnt;
+    }
+
+    public int getGreen_like_cnt() {
+        return green_like_cnt;
+    }
+
+    public void setGreen_like_cnt(int green_like_cnt) {
+        this.green_like_cnt = green_like_cnt;
+    }
+
+    public int getGreen_bookmark_cnt() {
+        return green_bookmark_cnt;
+    }
+
+    public void setGreen_bookmark_cnt(int green_bookmark_cnt) {
+        this.green_bookmark_cnt = green_bookmark_cnt;
+    }
+
     @Override
     public String toString() {
         return "MemberDto{" +
@@ -116,8 +151,12 @@ public class MemberDto {
                 ", checkCnt=" + checkCnt +
                 ", mem_zipcode='" + mem_zipcode + '\'' +
                 ", mem_addr_detail='" + mem_addr_detail + '\'' +
+                ", board_like_cnt=" + board_like_cnt +
+                ", board_bookmark_cnt=" + board_bookmark_cnt +
+                ", green_like_cnt=" + green_like_cnt +
+                ", green_bookmark_cnt=" + green_bookmark_cnt +
                 '}';
-        }
     }
+}
 
 

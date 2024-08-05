@@ -174,7 +174,7 @@ td {
     margin-top: 150px;
 }
 
-.modal-content {
+.modal-greentalk {
     display: flex;
     width: 10px;
     height: 10px;
@@ -394,27 +394,24 @@ button {
     margin-bottom: 15px;
 }
 
-
-
-/*modal 설정*/
-/*.modal-content {*/
-/*    width: 40vw !important;*/
-/*    height: 95vh !important;*/
-/*    margin-top: 0;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*    align-items: center;*/
-/*    position: fixed !important;*/
-/*    top: 50% !important; !* 화면의 세로 중앙으로 이동 *!*/
-/*    left: 50% !important; !* 화면의 가로 중앙으로 이동 *!*/
-/*    transform: translate(-50%, -50%) !important; !* 중앙 정렬 보정 *!*/
-/*    border-radius: 15px !important;*/
-/*    z-index: 2;*/
-/*}*/
+/*정보수정modal 설정*/
+#modal-modify {
+    width: 40vw !important;
+    height: 95vh !important;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed !important;
+    top: 50% !important; /* 화면의 세로 중앙으로 이동 */
+    left: 50% !important; /* 화면의 가로 중앙으로 이동 */
+    transform: translate(-50%, -50%) !important; /* 중앙 정렬 보정 */
+    border-radius: 15px !important;
+    z-index: 2;
+}
 
 #modal-close-btn {
     background: #0DA446;
-    /*width: 100%;*/
 }
 
 #modal-close-btn-detail {
@@ -453,4 +450,17 @@ button {
 
 .profile-div {
     margin-top: 1vh;
+}
+
+#move-green-div{
+    display: flex;
+    justify-content: center;
+}
+
+#move-green-btn {
+    margin-top: 1vh;
+    width: 800px;
+    height: 70px;
+    background-color: #d1eada;
+    border: #B8E2C8 solid 2px;
 }

@@ -45,4 +45,22 @@
         FROM MEMBER
         WHERE LOGIN_ID = #{login_id}
     </select>
+
+    <select id="getBoardLikeBookCnt" parameterType="int" resultType="member">
+        SELECT BOARD_LIKE_CNT
+             , BOARD_BOOKMARK_CNT
+            FROM MEMBER M
+            JOIN BOARD B
+              ON M.MEM_ID = B.MEM_ID
+            WHERE M.MEM_ID = #{mem_id}
+    </select>
+
+    <select id="getGreenLikeBookCnt" parameterType="int" resultType="member">
+        SELECT GREEN_LIKE_CNT
+             , GREEN_BOOKMARK_CNT
+            FROM MEMBER M
+            JOIN GREENTALK G
+              ON M.MEM_ID = G.MEM_ID
+            WHERE M.MEM_ID = #{mem_id}
+    </select>
 </mapper>

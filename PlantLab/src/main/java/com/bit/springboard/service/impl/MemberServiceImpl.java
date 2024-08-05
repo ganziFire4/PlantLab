@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.UnsupportedEncodingException;
 import java.security.SecureRandom;
+import java.util.List;
 import java.util.Random;
 
 @Service
@@ -128,4 +129,13 @@ public class MemberServiceImpl implements MemberService {
 
     }
 
+    @Override
+    public List<MemberDto> getBoardLikeBookCnt(int memId) {
+      return memberDao.getBoardLikeBookCnt(memId);
+    }
+
+    @Override
+    public MemberDto getGreenLikeBookCnt(int memId) {
+        return memberDao.getGreenLikeBookCnt(memId);
+    }
 }

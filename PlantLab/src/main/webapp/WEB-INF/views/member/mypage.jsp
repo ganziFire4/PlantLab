@@ -42,12 +42,21 @@
                         <div class="heartbookmark">
                             <div class="heartpart">
                                 <img src="../../../static/images/filledgreenheart.png" alt="좋아요이미지">
-                                <p style="color: #0DA446; font-size: 20px; margin-bottom: 5px;">3</p>
+                                <%-- 리스트의 각 항목을 반복하면서 합산합니다 --%>
+                                <c:set var="likeCount" value="${greenLikeBookmarkCnt.green_like_cnt}"/>
+                                <c:forEach items="${boardLikeBookmarkCnt}" var="boardlikeCnt">
+                                    <c:set var="likeCount" value="${likeCount + boardlikeCnt.board_like_cnt}"/>
+                                </c:forEach>
+                                <p style="color: #0DA446; font-size: 20px; margin-bottom: 5px;">${likeCount}</p>
                                 <p>좋아요</p>
                             </div>
                             <div class="bookmarkpart">
                                 <img src="../../../static/images/littlefilledbookmarkicon.png" alt="북마크이미지">
-                                <p style="color: #0DA446; font-size: 20px; margin-bottom: 5px;">25</p>
+                                <c:set var="bookCount" value="${greenLikeBookmarkCnt.green_bookmark_cnt}"/>
+                                <c:forEach items="${boardLikeBookmarkCnt}" var="boardBookCnt">
+                                    <c:set var="bookCount" value="${bookCount + boardBookCnt.board_bookmark_cnt}"/>
+                                </c:forEach>
+                                <p style="color: #0DA446; font-size: 20px; margin-bottom: 5px;">${bookCount}</p>
                                 <p>스크랩북</p>
                             </div>
                         </div>
@@ -229,17 +238,18 @@
                                 <div class="grid-div">
                                     <%--OPEN MODAL--%>
                                     <button type="button" onclick="openModal(${greentalkList.green_id});">
-                                        <img src="/static/images/그린톡/${greentalkList.green_pic}" alt="previewImg" class="grid-item">
+                                        <img src="/static/images/storage/${greentalkList.green_pic}" alt="previewImg" class="grid-item">
                                     </button>
                                 </div>
                             </c:forEach>
                         </c:otherwise>
                     </c:choose>
                 </div>
-                <button id="moveBragBtn" onclick="window.location.href='${pageContext.request.contextPath}/board/greentalk.do'"
-                        style="margin-top: 1vh; width: 800px; height: 70px; background-color: #d1eada; border: #B8E2C8 solid 2px;">
-                    <p style="margin-top: 20px; font-weight: bold; font-size: large; color: #27AF5A;">그린톡 바로가기</p>
-                </button>
+                <div id="move-green-div">
+                    <button id="move-green-btn" onclick="window.location.href='${pageContext.request.contextPath}/board/greentalk.do'">
+                        <p style="margin-top: 20px; font-weight: bold; font-size: large; color: #27AF5A;">그린톡 바로가기</p>
+                    </button>
+                </div>
             </div>
             <div class="contentbox--shopping" id="content-c" style="display: none;">
                 <div id="purchaseProcess">
@@ -351,7 +361,7 @@
         <jsp:include page="${pageContext.request.contextPath}/chatbot.jsp"/>
         <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content">
+                <div class="modal-content" id="modal-modify">
                     <form id="modify-form" action="${pageContext.request.contextPath}/member/modify.do" method="post" enctype="multipart/form-data">
                         <div id="modal-close-btn">
                             <button type="button" class="btn-close" id="modal-close-btn-detail" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -401,7 +411,7 @@
         </div>
         <div class="modal fade" id="rank1modal">
             <div class="modal-dialog modal-xl">
-                <div class="modal-content">
+                <div class="modal-content modal-greentalk">
                     <div class="modalbox">
                         <div class="modal-body">
                             <img src="/static/images/storage/${greentalk.file.filename}" alt="" class="modalmain">
@@ -692,9 +702,32 @@
                     type: 'POST',
                     data: {"green_id": greenId},
                     success: (obj) => {
+
+                        const formatDate = (dateString) => {
+
+                            let year = `\${dateString[0]}`;
+                            if (year > 1) {
+                                year = year.slice(-2);
+                            }
+
+                            let month = `\${dateString[1]}`;
+                            if (month < 10) {
+                                month = '0' + month;
+                            }
+
+                            let date = `\${dateString[2]}`;
+                            if (date < 10) {
+                                date = '0' + date;
+                            }
+
+                            return `\${year}-\${month}-\${date}`; // 배열에 저장된 날짜
+                        };
+
+                        const formattedDate = formatDate(obj.greentalk.green_mod); // 날짜 변환
+
                         htmlStr += `
             <div class="modal-dialog modal-xl">
-                <div class="modal-content">
+                <div class="modal-content modal-greentalk">
                     <div class="modalbox">
                         <div class="modal-body">
                             <img src="/static/images/storage/\${obj.greentalk.green_pic}" alt="" class="modalmain">
@@ -714,7 +747,7 @@
                                             \${obj.greentalk.mem_nickname}
                                         </div>
                                         <div class="modalmaindate">
-                                            \${obj.greentalk.green_mod}
+                                            \${formattedDate}
                                         </div>
                                         <div class="modalreport">
                                             <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">

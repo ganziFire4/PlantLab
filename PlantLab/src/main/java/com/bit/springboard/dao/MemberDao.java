@@ -5,6 +5,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class MemberDao {
     private final SqlSessionTemplate mybatis;
@@ -38,5 +40,13 @@ public class MemberDao {
 
     public MemberDto login(MemberDto memberDto) {
         return mybatis.selectOne("MemberDao.login", memberDto);
+    }
+
+    public List<MemberDto> getBoardLikeBookCnt(int memId) {
+        return mybatis.selectList("MemberDao.getBoardLikeBookCnt", memId);
+    }
+
+    public MemberDto getGreenLikeBookCnt(int memId) {
+        return mybatis.selectOne("MemberDao.getGreenLikeBookCnt", memId);
     }
 }
