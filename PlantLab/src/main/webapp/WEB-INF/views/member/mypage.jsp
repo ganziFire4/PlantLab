@@ -53,7 +53,6 @@
                         </div>
                     </div>
                 </div>
-<%--                작업중--%>
                 <div class="categorybox">
                     <div class="mycontent" style="border-bottom: #B5B5B5 1px solid;" id="mycontentbtn">
                         <div class="mycontenticon">
@@ -90,110 +89,155 @@
                     <input type="radio" id="shoptype" name="content">
                 </div>
             </div>
-                <div class="contentbox-board" id="content-a">
-                    <div class="cover-table">
-                        <div class="table-cover-div" style="margin-top: 0">
-                            <div class="board-name-div">
-                                <p style="align-self: start; margin-bottom: 0">정보글</p>
-                                <button style="align-self: end; font-size: 1rem;">더보기</button>
-                            </div>
-                            <table style="margin-top: 1vh">
-                                <tr class="firstRow">
-                                    <td>제목</td>
-                                    <td>작성자</td>
-                                    <td>작성일</td>
-                                </tr>
-                                <c:forEach items="${myWrite}" var="writeList">
-                                    <c:if test="${fn:startsWith(writeList.board_title, '정보')}">
-                                        <tr class="nextRow">
-                                            <td>
-                                                <button>${writeList.board_title}</button>
-                                            </td>
-                                            <td>
-                                                <button>${writeList.mem_nickname}</button>
-                                            </td>
-                                            <td>
-                                                <button>
-                                                    <javatime:format value="${writeList.board_reg}" pattern="yyyy-MM-dd"/>
-                                                </button>
-                                            </td>
+            <div class="contentbox-board" id="content-a">
+                <c:choose>
+                    <c:when test="${empty myWrite}">
+                        <tr>
+                            <td colspan="3">데이터가 없습니다.</td>
+                        </tr>
+                    </c:when>
+                    <c:otherwise>
+                        <div class="cover-table">
+                            <div class="table-cover-div" style="margin-top: 0">
+                                <div class="board-name-div">
+                                    <p style="align-self: start; margin-bottom: 0">정보글</p>
+                                    <button style="align-self: end; font-size: 1rem;" onclick="window.location.href='${pageContext.request.contextPath}/board/board-main.do?tab=1'">더보기</button>
+                                </div>
+                                <table style="margin-top: 1vh">
+                                    <tr class="firstRow">
+                                        <td>제목</td>
+                                        <td>작성자</td>
+                                        <td>작성일</td>
+                                    </tr>
+                                    <c:set var="hasInfo" value="false"/>
+                                    <c:forEach items="${myWrite}" var="writeList">
+                                        <c:if test="${fn:startsWith(writeList.board_title, '정보')}">
+                                            <c:set var="hasInfo" value="true"/>
+                                            <tr class="nextRow">
+                                                <td>
+                                                    <button>${writeList.board_title}</button>
+                                                </td>
+                                                <td>
+                                                    <button>${writeList.mem_nickname}</button>
+                                                </td>
+                                                <td>
+                                                    <button>
+                                                        <javatime:format value="${writeList.board_reg}" pattern="yyyy-MM-dd"/>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </c:if>
+                                    </c:forEach>
+                                    <c:if test="${not hasInfo}">
+                                        <tr>
+                                            <td colspan="3">게시글이 없습니다.</td>
                                         </tr>
                                     </c:if>
-                                </c:forEach>
-                            </table>
-                        </div>
-                    <div class="table-cover-div" style="margin-top: 5vh">
-                        <div class="board-name-div">
-                            <p style="align-self: start; margin-bottom: 0">잡담</p>
-                            <button style="align-self: end; font-size: 1rem;">더보기</button>
-                        </div>
-                        <table style="margin-top: 1vh">
-                            <tr class="firstRow">
-                                <td>제목</td>
-                                <td>작성자</td>
-                                <td>작성일</td>
-                            </tr>
-                            <c:forEach items="${myWrite}" var="writeList">
-                                <c:if test="${fn:startsWith(writeList.board_title, '잡담')}">
-                                    <tr class="nextRow">
-                                        <td>
-                                            <button>${writeList.board_title}</button>
-                                        </td>
-                                        <td>
-                                            <button>${writeList.mem_nickname}</button>
-                                        </td>
-                                        <td>
-                                            <button>
-                                                <javatime:format value="${writeList.board_reg}" pattern="yyyy-MM-dd"/>
-                                            </button>
-                                        </td>
+                                </table>
+                            </div>
+                            <div class="table-cover-div" style="margin-top: 5vh">
+                                <div class="board-name-div">
+                                    <p style="align-self: start; margin-bottom: 0">잡담</p>
+                                    <button style="align-self: end; font-size: 1rem;" onclick="window.location.href='${pageContext.request.contextPath}/board/board-main.do?tab=2'">더보기</button>
+                                </div>
+                                <table style="margin-top: 1vh">
+                                    <tr class="firstRow">
+                                        <td>제목</td>
+                                        <td>작성자</td>
+                                        <td>작성일</td>
                                     </tr>
-                                </c:if>
-                            </c:forEach>
-                        </table>
-                    </div>
-                    <div class="table-cover-div" style="margin-top: 5vh">
-                        <div class="board-name-div">
-                            <p style="align-self: start; margin-bottom: 0">Q&A</p>
-                            <button style="align-self: end; font-size: 1rem;">더보기</button>
-                        </div>
-                        <table style="margin-top: 1vh">
-                            <tr class="firstRow">
-                                <td>제목</td>
-                                <td>작성자</td>
-                                <td>작성일</td>
-                            </tr>
-                            <c:forEach items="${myWrite}" var="writeList">
-                                <c:if test="${fn:startsWith(writeList.board_title, '질문')}">
-                                    <tr class="nextRow">
-                                        <td>
-                                            <button>${writeList.board_title}</button>
-                                        </td>
-                                        <td>
-                                            <button>${writeList.mem_nickname}</button>
-                                        </td>
-                                        <td>
-                                            <button>
-                                                <javatime:format value="${writeList.board_reg}" pattern="yyyy-MM-dd"/>
-                                            </button>
-                                        </td>
+                                    <c:set var="hasInfo" value="false"/>
+                                    <c:forEach items="${myWrite}" var="writeList">
+                                        <c:if test="${fn:startsWith(writeList.board_title, '잡담')}">
+                                            <c:set var="hasInfo" value="true"/>
+                                            <tr class="nextRow">
+                                                <td>
+                                                    <button>${writeList.board_title}</button>
+                                                </td>
+                                                <td>
+                                                    <button>${writeList.mem_nickname}</button>
+                                                </td>
+                                                <td>
+                                                    <button>
+                                                        <javatime:format value="${writeList.board_reg}" pattern="yyyy-MM-dd"/>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </c:if>
+                                    </c:forEach>
+                                    <c:if test="${not hasInfo}">
+                                        <tr>
+                                            <td colspan="3">게시글이 없습니다.</td>
+                                        </tr>
+                                    </c:if>
+                                </table>
+                            </div>
+                            <div class="table-cover-div" style="margin-top: 5vh">
+                                <div class="board-name-div">
+                                    <p style="align-self: start; margin-bottom: 0">Q&A</p>
+                                    <button style="align-self: end; font-size: 1rem;" onclick="window.location.href='${pageContext.request.contextPath}/board/board-main.do?tab=3'">더보기</button>
+                                </div>
+                                <table style="margin-top: 1vh">
+                                    <tr class="firstRow">
+                                        <td>제목</td>
+                                        <td>작성자</td>
+                                        <td>작성일</td>
                                     </tr>
-                                </c:if>
-                            </c:forEach>
-                        </table>
-                    </div>
-                </div>
+                                    <c:set var="hasInfo" value="false"/>
+                                    <c:forEach items="${myWrite}" var="writeList">
+                                        <c:if test="${fn:startsWith(writeList.board_title, '질문')}">
+                                            <c:set var="hasInfo" value="true"/>
+                                            <tr class="nextRow">
+                                                <td>
+                                                    <button>${writeList.board_title}</button>
+                                                </td>
+                                                <td>
+                                                    <button>${writeList.mem_nickname}</button>
+                                                </td>
+                                                <td>
+                                                    <button>
+                                                        <javatime:format value="${writeList.board_reg}" pattern="yyyy-MM-dd"/>
+                                                    </button>
+                                                </td>
+                                            </tr>
+                                        </c:if>
+                                    </c:forEach>
+                                    <c:if test="${not hasInfo}">
+                                        <tr>
+                                            <td colspan="3">게시글이 없습니다.</td>
+                                        </tr>
+                                    </c:if>
+                                </table>
+                            </div>
+                        </div>
+                    </c:otherwise>
+                </c:choose>
             </div>
             <div class="contentbox-sns" id="content-b" style="display: none;"> <!--클릭시 자랑글 모달 띄우게 가능할까요?-->
-                <!-- <button id="createBragBtn" style="width: 300px; height: 250px; border: none; background-color: #ECECEC;"> -->
-                <!-- <img style="margin-top: 30px;" src="images/bx_camera.png" alt="cameraLogo">
-                <p style="margin-top: 10px;">올린 자랑글이 없습니다.</p> -->
-                <div>
-                    <img src="/static/images/자랑글/rank1main.png" alt="" style="width: 300px; height: 250px; border: none;">
+                <div id="grid-div">
+                    <c:choose>
+                        <c:when test="${empty myGreentalk}">
+                            <div>
+                                <button class="grid-item" id="createBragBtn" style="border: none; background-color: #ECECEC;">
+                                    <img src="/static/images/camera_Icon.svg" alt="cameraIcon">
+                                    <p style="margin-top: 10px;">올린 자랑글이 없습니다.</p>
+                                </button>
+                            </div>
+                        </c:when>
+                        <c:otherwise>
+                            <c:forEach items="${myGreentalk}" var="greentalkList">
+                                <div class="grid-div">
+                                    <%--OPEN MODAL--%>
+                                    <button type="button" onclick="openModal(${greentalkList.green_id});">
+                                        <img src="/static/images/그린톡/${greentalkList.green_pic}" alt="previewImg" class="grid-item">
+                                    </button>
+                                </div>
+                            </c:forEach>
+                        </c:otherwise>
+                    </c:choose>
                 </div>
-                </button>
-                <button id="moveBragBtn" onclick="window.location.href='board_list.html?tab=4'"
-                        style="margin-top: 30px; width: 800px; height: 70px; background-color: #d1eada; border: #B8E2C8 solid 2px;">
+                <button id="moveBragBtn" onclick="window.location.href='${pageContext.request.contextPath}/board/greentalk.do'"
+                        style="margin-top: 1vh; width: 800px; height: 70px; background-color: #d1eada; border: #B8E2C8 solid 2px;">
                     <p style="margin-top: 20px; font-weight: bold; font-size: large; color: #27AF5A;">그린톡 바로가기</p>
                 </button>
             </div>
@@ -308,7 +352,7 @@
         <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <form id="modify-form" action="/member/modify.do" method="post" enctype="multipart/form-data">
+                    <form id="modify-form" action="${pageContext.request.contextPath}/member/modify.do" method="post" enctype="multipart/form-data">
                         <div id="modal-close-btn">
                             <button type="button" class="btn-close" id="modal-close-btn-detail" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
@@ -333,8 +377,9 @@
                             </div>
                             <div class="profile-div">
                                 <p class="profile-modal-p">비밀번호</p>
-                                <input id="origin-password" type="password" name="${loggedInMember.password}" placeholder="사용 중인 비밀번호를 입력해주세요." autocomplete="password">
+                                <input id="origin-password" type="password" placeholder="사용 중인 비밀번호를 입력해주세요." autocomplete="password">
                                 <p class="profile-message" id="password-message">default</p>
+                                <input type="hidden" id="origin-password-val" value="${loggedInMember.password}">
                             </div>
                             <div class="profile-div">
                                 <p class="profile-modal-p">새 비밀번호</p>
@@ -354,12 +399,63 @@
                 </div>
             </div>
         </div>
+        <div class="modal fade" id="rank1modal">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modalbox">
+                        <div class="modal-body">
+                            <img src="/static/images/storage/${greentalk.file.filename}" alt="" class="modalmain">
+                            <div class="modal-right">
+                                <div class="modalthumb">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1_2">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1_3">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4" style="height: 96.27px;">
+                                </div>
+                                <div class="modalcontentbox">
+                                    <div class="modalcontents">
+                                        <div class="writerpic">
+                                            <img src="${pageContext.request.contextPath}/static/images/프로필사진.png" alt="" style="width: 30px; height: 30px;">
+                                        </div>
+                                        <div class="modalmaincon">
+                                            karina87
+                                        </div>
+                                        <div class="modalmaindate">
+                                            24.06.27
+                                        </div>
+                                        <div class="modalreport">
+                                            <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
+                                        </div>
+                                    </div>
+                                    <div class="modalmaincontent">
+                                        <p>123</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title">
+                                <p class="titlename">#초록  #자랑</p>
+                                <div class="btnicon">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <input action="text" class="commentbox" placeholder="댓글을 입력하세요."
+                                       onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'"></input>
+                                <div type="submit" class="confirmbox">게시</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <jsp:include page="../../../footer.jsp"/>
         <script>
             let originNickname = "";
-            let nicknameVal = document.getElementById("profile-nickname").placeholder;
             let nickname = "";
-            let originPasswordVal = document.getElementById("origin-password").name;
+            let originPasswordVal = document.getElementById("origin-password-val").value;
             let originPassword = "";
             let newPassword = "";
             let newPasswordCheck = "";
@@ -550,38 +646,114 @@
                         }
                     }
                 });
-                // $("#save-modify-btn").click((e) => {
-                //     if(originPassword === originPasswordVal && regex.test(newPassword) === true && newPassword === newPasswordCheck) {
-                //         alert("전송 성공");
-                //     } else {
-                //         alert("전송 실패");
-                //     }
-                // });
 
                 $("#modify-form").on("submit", function(event) {
                     event.preventDefault();
 
-                    if(nickname === "") {
-                       nickname = nicknameVal;
-                       $("#profile-nickname").val(nickname);
-                    }
-                    const newPasswordVal = document.getElementById('newpassword').value;
+                    // 제출값 확인을 위한 변수 선언
+                    const fileInput = document.getElementById('img-file-upload');
 
-                    if(newPasswordVal !== '') {
-                        if(originPassword === originPasswordVal && regex.test(newPassword) === true && newPassword === newPasswordCheck){
-                            this.submit();
+                    // 아무 값도 입력이 없거나 기존 비밀번호만 입력한 경우
+                    if((originPassword === "" && nickname === "" && newPassword === "" && !fileInput.files.length) ||
+                        (originPassword !== "" && nickname === "" && newPassword === "" && !fileInput.files.length)){
+                        alert("값을 입력하세요.");
+                    }
+
+                    // 무언가 수정사항이 생겼을 때
+                    if(nickname !== "" || newPassword !== "" || fileInput.files.length){
+                        // 기존비밀번호 값이 빈칸이면
+                        if(originPassword === ""){
+                            alert("비밀번호를 입력해주세요.");
+                            return;
+                        }
+
+                        // 패스워드 변경
+                        if(newPassword !== ""){
+                            if(originPassword === originPasswordVal && regex.test(newPassword) === true && newPassword === newPasswordCheck){
+                                this.submit();
+                            }
+                        } else {
+                            // 닉네임 변경, 이미지 변경
+                            if(originPassword === originPasswordVal){
+                                this.submit();
+                            }
                         }
                     }
-
-                    if(newPasswordVal === '') {
-                        document.getElementById('newpassword').value = originPasswordVal;
-                        if(originPassword === originPasswordVal){
-                            this.submit();
-                        }
-                    }
-
                 });
             });
+            <%--OPEN MODAL--%>
+            const openModal = (greenId) => {
+                //greenId로 ajax를 보내서
+                // modal 구성 후 modal 표출
+                let htmlStr = '';
+
+                $.ajax({
+                    url: '/board/modal-ajax.do',
+                    type: 'POST',
+                    data: {"green_id": greenId},
+                    success: (obj) => {
+                        htmlStr += `
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modalbox">
+                        <div class="modal-body">
+                            <img src="/static/images/storage/\${obj.greentalk.green_pic}" alt="" class="modalmain">
+                            <div class="modal-right">
+                                <div class="modalthumb">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1_2">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1_3">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4" style="height: 96.27px;">
+                                </div>
+                                <div class="modalcontentbox">
+                                    <div class="modalcontents">
+                                        <div class="writerpic">
+                                            <img src="/static/images/storage/\${obj.greentalk.mem_pic}" alt="" style="width: 30px; height: 30px;">
+                                        </div>
+                                        <div class="modalmaincon">
+                                            \${obj.greentalk.mem_nickname}
+                                        </div>
+                                        <div class="modalmaindate">
+                                            \${obj.greentalk.green_mod}
+                                        </div>
+                                        <div class="modalreport">
+                                            <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
+                                        </div>
+                                    </div>
+                                    <div class="modalmaincontent">
+                                        <p>\${obj.greentalk.green_content}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="title">
+                                <p class="titlename">#\${obj.greentalk.green_tag}</p>
+                                <div class="btnicon">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
+                                </div>
+                            </div>
+                            <div class="comment">
+                                <input action="text" class="commentbox" placeholder="댓글을 입력하세요."
+                                       onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'"></input>
+                                <div type="submit" class="confirmbox">게시</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                                            `;
+                    $('#rank1modal').html(htmlStr);
+
+                    },
+                    error: (err) => {
+                        console.log(err);
+                    }
+                });
+
+                $("#rank1modal").modal('show');
+            }
         </script>
     </body>
 </html>

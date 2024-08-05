@@ -129,4 +129,18 @@
             WHERE GP.GREEN_ID = #{id}
             ORDER BY G.GREEN_MOD DESC
     </select>
+
+    <select id="getMyGreenList" parameterType="int" resultType="greentalk">
+        SELECT M.MEM_NICKNAME
+             , GP.GREEN_PIC
+             , G.GREEN_ID
+            FROM GREENTALK G
+            JOIN MEMBER M
+              ON G.MEM_ID = M.MEM_ID
+            JOIN GREENTALK_PIC GP
+              ON G.GREEN_ID = GP.GREEN_ID
+            WHERE M.MEM_ID = #{mem_id}
+            ORDER BY G.GREEN_REG DESC
+            LIMIT 9
+    </select>
 </mapper>

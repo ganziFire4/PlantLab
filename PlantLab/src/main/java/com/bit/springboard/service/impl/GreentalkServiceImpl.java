@@ -104,4 +104,9 @@ public class GreentalkServiceImpl implements GreentalkService {
         System.out.println(greentalkDao.getGreenOne(id));
         return greentalkDao.getGreenOne(id);
     }
+
+    @Override
+    public List<GreentalkDto> getMyGreenList(int memId) {
+        return greentalkDao.getMyGreenList(memId);
+    }
 }

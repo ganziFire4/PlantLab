@@ -113,7 +113,7 @@ td {
 
 .contentbox-board {
     width: 831px;
-    height: 720px;
+    height: 671px;
     margin-left: 19px;
     border: #B5B5B5 solid 1px;
     background-color: #F5F7F6;
@@ -135,6 +135,20 @@ td {
     margin-left: 19px;
 }
 
+#grid-div {
+    width: 100%;
+    height: 90%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr) ;
+}
+
+.grid-item {
+    width: 95%;
+    height: 95%;
+    /*padding: 1vh;*/
+}
+
 .heartbookmark {
     display: flex;
     flex-direction: row;
@@ -153,6 +167,176 @@ td {
     left: 110px;
     top: 5px;
     cursor: pointer;
+}
+
+/*greentalk 모달 관련*/
+.modal-dialog {
+    margin-top: 150px;
+}
+
+.modal-content {
+    display: flex;
+    width: 10px;
+    height: 10px;
+    align-items: center;
+    color: black;
+    background-color: transparent !important;
+    border:none !important;
+}
+
+.modalbox {
+    width: 1158px;
+    height: 640px;
+    background: white;
+    border-radius: 5px;
+    margin-top: 600px;
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px;
+    padding: 10px;
+    height: max-content;
+}
+
+.modalmain {
+    border-radius: 5px;
+    width: 800px;
+    height: 533px;
+}
+
+.modal-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.modalthumb {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto) ;
+    gap:10px;
+    height: fit-content;
+}
+
+.modalthumbnail {
+    width: 145px;
+    height: min-content;
+    border-radius: 5px;
+}
+
+.modalcontentbox {
+    width:300px;
+    height:max-content;
+    border-bottom: #ccc solid 1px;
+    margin-top: 5px;
+}
+
+.modalcontents {
+    display:flex;
+    text-align: center;
+}
+
+.writerpic {
+    margin: 5px;
+}
+
+.modalmaincon {
+    margin: 5px 0 0 5px;
+}
+
+.modalmaindate {
+    margin: 8px 0 0 5px;
+    font-size: 13px;
+    color: #858585;
+}
+
+.modalreport {
+    margin-left: auto;
+    margin-top: 5px;
+}
+
+.modalmaincontent {
+    font-size: 12px;
+    margin: 0 0 0 49px;
+    padding: 0px;
+}
+
+.title {
+    border: #ccc solid 1px;
+    border-radius: 5px;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+}
+
+.titlename {
+    margin-top: 5px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.comment {
+    display: flex;
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    justify-content: space-between;
+    background: #F2F2F2
+}
+
+.commentbox {
+    border: none;
+    width: 240px;
+    background: #F2F2F2;
+}
+
+.confirmbox {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    color: #23C961;
+    margin-top: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.bookmarkicon {
+    justify-content: right;
+    padding: 5px;
+    margin: 1px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.filledbookmarkicon {
+    justify-content: right;
+    padding: 5px;
+    margin: 1px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.hearticon {
+    justify-content: right;
+    padding: 5px;
+    margin: 1px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+}
+
+.filledhearticon {
+    justify-content: right;
+    padding: 5px;
+    margin: 1px;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
 }
 
 /*---------------------------------------*/
@@ -213,24 +397,24 @@ button {
 
 
 /*modal 설정*/
-.modal-content {
-    width: 40vw !important;
-    height: 95vh !important;
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: fixed !important;
-    top: 50% !important; /* 화면의 세로 중앙으로 이동 */
-    left: 50% !important; /* 화면의 가로 중앙으로 이동 */
-    transform: translate(-50%, -50%) !important; /* 중앙 정렬 보정 */
-    border-radius: 15px !important;
-    z-index: 2;
-}
+/*.modal-content {*/
+/*    width: 40vw !important;*/
+/*    height: 95vh !important;*/
+/*    margin-top: 0;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    align-items: center;*/
+/*    position: fixed !important;*/
+/*    top: 50% !important; !* 화면의 세로 중앙으로 이동 *!*/
+/*    left: 50% !important; !* 화면의 가로 중앙으로 이동 *!*/
+/*    transform: translate(-50%, -50%) !important; !* 중앙 정렬 보정 *!*/
+/*    border-radius: 15px !important;*/
+/*    z-index: 2;*/
+/*}*/
 
 #modal-close-btn {
     background: #0DA446;
-    width: 100%;
+    /*width: 100%;*/
 }
 
 #modal-close-btn-detail {
