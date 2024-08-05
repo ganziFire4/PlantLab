@@ -35,10 +35,12 @@ public class BoardController {
         this.greentalkService = greentalkService;
     }
 
-    @RequestMapping("/board-main.do")
+    @GetMapping("/board-main.do")
     public String boardList(Model model, @RequestParam("tab") int tab, @RequestParam Map<String, Object> search,
                             Criteria cri, @RequestParam(value = "pop_condition", required = false) String pop_condition,
                             @RequestParam (value = "rec_condition", required = false) String rec_condition, @RequestParam(value = "row-num", required = false) String row_num) {
+        System.out.println("111111111111111111111");
+        System.out.println(tab);
         Map<String, Object> table = new HashMap<>();
         table.put("rec_condition", rec_condition);
         table.put("row_num", row_num);
@@ -59,6 +61,7 @@ public class BoardController {
         return "/WEB-INF/views/board/board-main";
 
     }
+
 
     @GetMapping("/post.do")
     public String post() {

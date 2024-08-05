@@ -209,18 +209,18 @@
         </div>
     </div>
     <script>
-        $("#pop_condition").on("change",() => {
-            $("#popTableForm").submit();
-        });
-
-        $("#rows-num").on("change",() => {
-            $("#tableForm").submit();
-        });
-
-        $("#rec_condition").on("change",() => {
-            console.log($("#rec_condition").val());
-            $("#tableForm").submit();
-        });
+        // $("#pop_condition").on("change",() => {
+        //     $("#popTableForm").submit();
+        // });
+        //
+        // $("#rows-num").on("change",() => {
+        //     $("#tableForm").submit();
+        // });
+        //
+        // $("#rec_condition").on("change",() => {
+        //     console.log($("#rec_condition").val());
+        //     $("#tableForm").submit();
+        // });
     </script>
 </body>
 
