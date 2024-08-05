@@ -16,15 +16,13 @@ import java.io.File;
 import java.io.IOException;
 
 
-
-
 @Controller
 @RequestMapping("/member")
 public class MemberController {
     private MemberService memberService;
     private BoardService boardService;
     private GreentalkService greentalkService;
-
+    
     @Autowired
     public MemberController(MemberService memberService, BoardService boardService, GreentalkService greentalkService) {
         this.memberService = memberService;
@@ -115,8 +113,6 @@ public class MemberController {
 
             File uploadFile = new File(attachPath + modify_pic.getOriginalFilename());
 
-            System.out.println(loggedInMember.getMem_nickname());
-            System.out.println(memberDto.getMem_nickname());
             if(!modify_pic.getOriginalFilename().equals("")) {
                 loggedInMember.setMem_pic(modify_pic.getOriginalFilename());
             }
@@ -144,9 +140,16 @@ public class MemberController {
     @GetMapping("/mypage.do")
     public String boardView(Model model, HttpSession session) {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
+
+        if(loggedInMember == null) {
+            return "redirect:/member/login.do";
+        }
+
         model.addAttribute("myWrite", boardService.getBoard(loggedInMember.getMemId()));
 //        session.setAttribute("myWrite", boardService.getBoard(memberDto.getMemId()));
         model.addAttribute("myGreentalk", greentalkService.getMyGreenList(loggedInMember.getMemId()));
+        model.addAttribute("boardLikeBookmarkCnt", memberService.getBoardLikeBookCnt(loggedInMember.getMemId()));
+        model.addAttribute("greenLikeBookmarkCnt", memberService.getGreenLikeBookCnt(loggedInMember.getMemId()));
 
         session.setAttribute("loggedInMember", loggedInMember);
         return "/WEB-INF/views/member/mypage";

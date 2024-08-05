@@ -5,6 +5,7 @@ import jakarta.mail.MessagingException;
 import jakarta.mail.internet.MimeMessage;
 
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 
 public interface MemberService {
     void join(MemberDto memberDto);
@@ -23,6 +24,8 @@ public interface MemberService {
 
     String sendSimpleMessage(String email) throws Exception;
 
+    List<MemberDto> getBoardLikeBookCnt(int memId);
 
+    MemberDto getGreenLikeBookCnt(int memId);
 }
 
