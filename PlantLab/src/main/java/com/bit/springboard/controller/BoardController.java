@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 //import org.springframework.mock.web.MockHttpServletResponse;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -108,13 +109,23 @@ public class BoardController {
         return "/WEB-INF/views/board/board-detail";
     }
 
-    @GetMapping("/greentalk_post.do")
+    @GetMapping("/greentalk_post")
     public String greentalk_post(HttpSession session) {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
         if(loggedInMember == null) {
             return "redirect:/member/login.do";
         }
         return "/WEB-INF/views/board/greentalk_post";
+    }
+
+    @GetMapping("/api/check-login")
+    @ResponseBody
+    public Map<String, Boolean> checkLogin(HttpSession session) {
+        MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
+        boolean loggedIn = (loggedInMember != null);
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("loggedIn", loggedIn);
+        return response;
     }
 
     @PostMapping("/greentalk-list-ajax.do")

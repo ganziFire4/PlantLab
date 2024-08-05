@@ -75,9 +75,73 @@
             </form>
         </div>
         <div class="postbtnbox">
-            <button type="button" onclick="location.href='/board/greentalk_post'">글 작성</button>
+            <button id="postButton" type="button">글 작성</button>
         </div>
-        <div class="greenbody" style="height: 600px;">
+<%--        <script>--%>
+<%--            $(document).ready(function() {--%>
+<%--                $('#postButton').click(function() {--%>
+<%--                    alert("로그인이 필요한 기능입니다. 로그인 페이지로 이동합니다.");--%>
+<%--                    window.location.href = '/board/greentalk_post';--%>
+<%--                });--%>
+<%--            });--%>
+<%--        </script>--%>
+        <div class="modalAlert">
+        <div class="modal fade" id="customAlertModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+             style="background-color: transparent; border-radius: 5px; border:none;">
+            <div class="modal-dialog modal-xl" role="document" style="display: flex; justify-content: center; align-items: center; align-content: center; width: 500px; height: 300px; background-color: white; border-radius: 5px;">
+                <div class="modal-content" style="display: flex; justify-content: center; ">
+                    <div class="modal-header">
+                        <h5 class="modal-title">알림</h5>
+                        <div class="btnLocation" style="display: flex;">
+                        <button id="modal-close-btn" type="button" class="close" data-dismiss="modal" aria-label="Close" style="width: 20px; height: 20px; border: none; border-radius: 5px; background-color: #CCCCCC;">
+                            <img src="">
+                        </button>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        로그인이 필요한 기능입니다. 로그인 페이지로 이동합니다.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="confirmBtn">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <!-- jQuery and Bootstrap JS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+        <script>
+            $(document).ready(function() {
+                $('#postButton').click(function() {
+                    $.ajax({
+                        url: '/board/api/check-login',
+                        type: 'GET',
+                        success: function(response) {
+                            if (response.loggedIn) {
+                                window.location.href = '/board/greentalk_post';
+                            } else {
+                                $('#customAlertModal').modal('show');
+                            }
+                        },
+                        error: function(err) {
+                            console.error('Error checking login status:', err);
+                        }
+                    });
+                });
+
+                $('#confirmBtn').click(function() {
+                    $('#customAlertModal').modal('hide');
+                    window.location.href = '/board/greentalk_post';
+                });
+
+                $('#modal-close-btn').click(function () {
+                    $('#customAlertModal').modal('hide');
+                });
+            });
+        </script>
+        <div class="greenbody" style="height: 700px;">
             <div class="container_green">
                 <div class="dailycontent">
                                 <c:forEach items="${popList}" var="popgreentalk">
