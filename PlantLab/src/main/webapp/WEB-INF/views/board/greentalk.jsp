@@ -385,6 +385,13 @@
 
                     console.log(obj);
 
+                    const formatDate = (dateString) => {
+
+                        return `\${dateString[0]}-\${dateString[1]}-\${dateString[2]}`; // 배열에 저장된 날짜
+                    };
+
+                    const formattedDate = formatDate(obj.greentalk.green_mod); // 날짜 변환
+
                     // let htmlStr = "";
                         htmlStr += `
             <div class="modal-dialog modal-xl">
@@ -408,7 +415,7 @@
                                             \${obj.greentalk.mem_nickname}
                                         </div>
                                         <div class="modalmaindate">
-                                            \${obj.greentalk.green_mod}
+                                            \${formattedDate}
                                         </div>
                                         <div class="modalreport">
                                             <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
