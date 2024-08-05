@@ -59,7 +59,10 @@ public class BoardDao {
         return mybatis.selectList("BoardDao.getBoard", id);
     }
 
-    public int getBoardTotal(int tab) {
-        return mybatis.selectOne("BoardDao.getBoardTotal", tab);
+    public int getBoardTotal(int tab, Map<String, Object> search) {
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("tab", tab);
+        paramMap.put("searchMap", search);
+        return mybatis.selectOne("BoardDao.getBoardTotal", paramMap);
     }
 }

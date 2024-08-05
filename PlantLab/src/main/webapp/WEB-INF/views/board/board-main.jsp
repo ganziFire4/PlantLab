@@ -102,18 +102,22 @@
         changeTab(${tab});
 
         info_button.addEventListener("click", () => {
-            window.location.href = "/board/board-main.do?id=1";
+            underline[0].classList.add("activeBlock");
+            window.location.href = "/board/board-main.do?tab=1";
         });
 
         free_button.addEventListener("click", () => {
-            window.location.href = "/board/board-main.do?id=2";
+            underline[1].classList.add("activeBlock");
+            window.location.href = "/board/board-main.do?tab=2";
         });
 
         QnA_button.addEventListener("click", () => {
-            window.location.href = "/board/board-main.do?id=3";
+            underline[2].classList.add("activeBlock");
+            window.location.href = "/board/board-main.do?tab=3";
         });
 
         greenTalk_button.addEventListener("click", () => {
+            underline[3].classList.add("activeBlock");
             window.location.href = "/board/greentalk.do";
         });
     </script>

@@ -37,15 +37,25 @@ public class BoardController {
 
     @RequestMapping("/board-main.do")
     public String boardList(Model model, @RequestParam("tab") int tab, @RequestParam Map<String, Object> search,
-                            Criteria cri, @RequestParam(value = "pop_condition", required = false) String pop_condition, @RequestParam Map<String, Object> tableForm) {
-        model.addAttribute("tab", tab);
-        model.addAttribute("popList", boardService.view_popular(1, pop_condition));
-        model.addAttribute("boardList", boardService.view_all(1, search, tableForm));
-//        model.addAttribute("search", search);
+                            Criteria cri, @RequestParam(value = "pop_condition", required = false) String pop_condition,
+                            @RequestParam (value = "rec_condition", required = false) String rec_condition, @RequestParam(value = "row-num", required = false) String row_num) {
+        Map<String, Object> table = new HashMap<>();
+        table.put("rec_condition", rec_condition);
+        table.put("row_num", row_num);
 
-        int total = boardService.getBoardTotal(tab);
+        model.addAttribute("tab", tab);
+        model.addAttribute("popList", boardService.view_popular(tab, pop_condition));
+        model.addAttribute("boardList", boardService.view_all(tab, search, table));
+        model.addAttribute("search", search);
+        model.addAttribute("pop_condition", pop_condition);
+        model.addAttribute("table", table);
+
+        int total = boardService.getBoardTotal(tab, search);
         model.addAttribute("total", total);
         model.addAttribute("page", new BoardPageDto(cri, total));
+
+        System.out.println(pop_condition);
+        System.out.println(table);
         return "/WEB-INF/views/board/board-main";
 
     }
