@@ -25,6 +25,10 @@
             WHERE GREEN_ID = #{green_id}
     </update>
 
+<!--    <insert id="postGreenComment" parameterType="">-->
+<!--        -->
+<!--    </insert>-->
+
     <delete id="green_delete" parameterType="int">
         DELETE GREENTALK WHERE GREEN_ID = #{ID}
     </delete>

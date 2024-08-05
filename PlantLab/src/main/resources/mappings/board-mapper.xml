@@ -134,11 +134,23 @@
             WHERE BOARD_ID = ${id}
     </update>
 
-    <select id="getBoardTotal" parameterType="int" resultType="int">
+    <select id="getBoardTotal" parameterType="map" resultType="int">
         SELECT COUNT(*)
             FROM BOARD B
             JOIN MEMBER M
               ON B.MEM_ID = M.MEM_ID
             WHERE B.BOARD_TYPE = #{tab}
+        <if test="searchMap.search_keyword != null and searchMap.search_keyword != ''">
+            <if test="searchMap.search_condition == 'all'">
+                AND (B.BOARD_TITLE LIKE CONCAT('%', #{searchMap.search_keyword}, '%')
+                OR M.MEM_NICKNAME LIKE CONCAT('%', #{searchMap.search_keyword}, '%'))
+            </if>
+            <if test="searchMap.search_condition == 'title'">
+                AND B.BOARD_TITLE LIKE CONCAT('%', #{searchMap.search_keyword}, '%'
+            </if>
+            <if test="searchMap.search_condition == 'writer'">
+                AND M.MEM_NICKNAME LIKE CONCAT('%', #{searchMap.search_keyword}, '%')
+            </if>
+        </if>
     </select>
 </mapper>

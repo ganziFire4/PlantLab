@@ -61,7 +61,7 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public int getBoardTotal(int tab) {
-        return boardDao.getBoardTotal(tab);
+    public int getBoardTotal(int tab, Map<String, Object> search) {
+        return boardDao.getBoardTotal(tab, search);
     }
 }
