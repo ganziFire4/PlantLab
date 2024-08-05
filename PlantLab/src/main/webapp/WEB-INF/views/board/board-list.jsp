@@ -19,7 +19,7 @@
     <!--게시판 내용-->
     <div id="title_table_area">
         <div class="search_bar">
-            <form id="search_form" action="/board/board-main.do?tab=${type}" method="post">
+            <form id="search_form" action="/board/board-main.do?tab=${tab}" method="post">
                 <select name="search_condition" id="search_condition">
                     <option value="all"
                         <c:if test="${search == null || search.search_condition == 'all'}">
@@ -44,7 +44,7 @@
                     <img src="${pageContext.request.contextPath}/static/images/인기글 별.svg" alt="별" style="margin-right: 7px;">
                     인기글
                 </div>
-                <form id="popTableForm" action="/board/board-main.do?tab=${type}" method="post">
+                <form id="popTableForm" action="/board/board-main.do?tab=${tab}" method="post">
                     <select name="pop_condition" id="pop_condition">
                         <option value="view"
                             <c:if test="${pop_condition == 'view'}">
@@ -105,7 +105,7 @@
             <div class="t_headerbar">
                 ${total}개
                 <div id="t_dropdown">
-                    <form id="tableForm" action="/board/board-main.do?tab=${type}" method="post">
+                    <form id="tableForm" action="/board/board-main.do?tab=${tab}" method="post">
                         <select name="rows-num" id="rows-num">
                             <option value="10"
                                 <c:if test="${table.rows-num == '10'}">
