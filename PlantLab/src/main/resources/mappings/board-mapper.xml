@@ -30,20 +30,19 @@
         DELETE BOARD WHERE BOARD_ID = #{ID}
     </delete>
 
-    <select id="view_popular" parameterType="int" resultType="board">
+    <select id="view_popular" parameterType="map" resultType="board">
         SELECT ROW_NUMBER() OVER (
-                    ORDER BY SUB.BOARD_VIEW_CNT DESC
-<!--                    <choose>-->
-<!--                        <when test="num == 1">-->
-<!--                            ORDER BY B.BOARD_VIEW_CNT DESC-->
-<!--                        </when>-->
-<!--                        <when test="num == 2">-->
-<!--                            ORDER BY B.BOARD_LIKE_CNT DESC-->
-<!--                        </when>-->
-<!--                        <otherwise>-->
-<!--                            ORDER BY B.BOARD_BOOKMARK_CNT DESC-->
-<!--                        </otherwise>-->
-<!--                    </choose>-->
+                <choose>
+                    <when test="popCondition == null or popCondition == 'view'">
+                        ORDER BY B.BOARD_VIEW_CNT DESC
+                    </when>
+                    <when test="popCondition == 'like'">
+                        ORDER BY B.BOARD_LIKE_CNT DESC
+                    </when>
+                    <otherwise>
+                        ORDER BY B.BOARD_BOOKMARK_CNT DESC
+                    </otherwise>
+                </choose>
             ) AS ROW_NUM
             , SUB.*
             FROM (
@@ -64,7 +63,20 @@
 
     <select id="view_all" parameterType="map" resultType="board">
         SELECT ROW_NUMBER() OVER (
-            ORDER BY SUB.BOARD_REG DESC
+            <choose>
+                <when test="table.rec_condition == null or table.rec_condition == 'rec'">
+                    ORDER BY SUB.BOARD_REG DESC
+                </when>
+                <when test="table.rec_condition == 'view'">
+                    ORDER BY SUB.BOARD_VIEW_CNT DESC
+                </when>
+                <when test="table.rec_condition == 'like'">
+                    ORDER BY SUB.BOARD_LIKE_CNT DESC
+                </when>
+                <otherwise>
+                    ORDER BY SUB.BOARD_BOOKMARK_CNT DESC
+                </otherwise>
+            </choose>
         ) AS ROW_NUM
             , SUB.*
             FROM (

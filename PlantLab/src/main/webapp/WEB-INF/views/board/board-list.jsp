@@ -34,7 +34,7 @@
                             selected
                         </c:if>>작성자</option>
                 </select>
-                <input type="text" id="search_keyword" name="search_keyword" value="">
+                <input type="text" id="search_keyword" name="search_keyword" value="${search.search_keyword}">
                 <button type="submit" id="search_btn">검색</button>
             </form>
         </div>
@@ -47,7 +47,7 @@
                 <form id="popTableForm" action="/board/board-main.do?tab=${tab}" method="post">
                     <select name="pop_condition" id="pop_condition">
                         <option value="view"
-                            <c:if test="${pop_condition == 'view'}">
+                            <c:if test="${pop_condition == null || pop_condition == 'view'}">
                                 selected
                             </c:if>>조회수</option>
                         <option value="like"
@@ -108,15 +108,15 @@
                     <form id="tableForm" action="/board/board-main.do?tab=${tab}" method="post">
                         <select name="rows-num" id="rows-num">
                             <option value="10"
-                                <c:if test="${table.rows-num == '10'}">
+                                <c:if test="${table.rows_num == '10'}">
                                     selected
                                 </c:if>>10</option>
                             <option value="15"
-                                <c:if test="${table.rows-num == '15'}">
+                                <c:if test="${table.rows_num == '15'}">
                                     selected
                                 </c:if>>15</option>
                             <option value="20"
-                                <c:if test="${table.rows-num == '20'}">
+                                <c:if test="${table.rows_num == '20'}">
                                     selected
                                 </c:if>>20</option>
                         </select>
@@ -209,18 +209,18 @@
         </div>
     </div>
     <script>
-        // $("#pop_condition").on("change",() => {
-        //     $("#popTableForm").submit();
-        // });
-        //
-        // $("#rows-num").on("change",() => {
-        //     $("#tableForm").submit();
-        // });
-        //
-        // $("#rec_condition").on("change",() => {
-        //     console.log($("#rec_condition").val());
-        //     $("#tableForm").submit();
-        // });
+        $("#pop_condition").on("change",() => {
+            $("#popTableForm").submit();
+        });
+
+        $("#rows-num").on("change",() => {
+            $("#tableForm").submit();
+        });
+
+        $("#rec_condition").on("change",() => {
+            console.log($("#rec_condition").val());
+            $("#tableForm").submit();
+        });
     </script>
 </body>
 

@@ -36,13 +36,18 @@ public class BoardController {
         this.greentalkService = greentalkService;
     }
 
-    @GetMapping("/board-main.do")
-    public String boardList(Model model, @RequestParam("tab") int tab, @RequestParam Map<String, Object> search,
+    @RequestMapping("/board-main.do")
+    public String boardList(Model model, @RequestParam("tab") int tab,
+                            @RequestParam(value = "search_condition", required = false) String search_condition,
+                            @RequestParam(value = "search_keyword", required = false) String search_keyword,
                             Criteria cri, @RequestParam(value = "pop_condition", required = false) String pop_condition,
                             @RequestParam (value = "rec_condition", required = false) String rec_condition, @RequestParam(value = "row-num", required = false) String row_num) {
-        System.out.println("111111111111111111111");
-        System.out.println(tab);
-        Map<String, Object> table = new HashMap<>();
+
+        Map<String, String> search = new HashMap<>();
+        search.put("search_condition", search_condition);
+        search.put("search_keyword", search_keyword);
+
+        Map<String, String> table = new HashMap<>();
         table.put("rec_condition", rec_condition);
         table.put("row_num", row_num);
 

@@ -39,7 +39,7 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public List<BoardDto> view_all(int tab, Map<String, Object> search, Map<String, Object> table) {
+    public List<BoardDto> view_all(int tab, Map<String, String> search, Map<String, String> table) {
         return boardDao.view_all(tab, search, table);
     }
 
@@ -61,7 +61,7 @@ public class BoardServiceImpl implements BoardService {
     }
 
     @Override
-    public int getBoardTotal(int tab, Map<String, Object> search) {
+    public int getBoardTotal(int tab, Map<String, String> search) {
         return boardDao.getBoardTotal(tab, search);
     }
 }

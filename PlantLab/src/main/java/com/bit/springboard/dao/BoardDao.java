@@ -35,10 +35,10 @@ public class BoardDao {
 
         paramMap.put("tab", tab);
         paramMap.put("popCondition", popCondition);
-        return mybatis.selectList("BoardDao.view_popular", tab);
+        return mybatis.selectList("BoardDao.view_popular", paramMap);
     }
 
-    public List<BoardDto> view_all(int tab, Map<String, Object> searchMap, Map<String, Object> table) {
+    public List<BoardDto> view_all(int tab, Map<String, String> searchMap, Map<String, String> table) {
         Map<String, Object> paramMap = new HashMap<>();
 
         paramMap.put("tab", tab);
@@ -59,7 +59,7 @@ public class BoardDao {
         return mybatis.selectList("BoardDao.getBoard", id);
     }
 
-    public int getBoardTotal(int tab, Map<String, Object> search) {
+    public int getBoardTotal(int tab, Map<String, String> search) {
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("tab", tab);
         paramMap.put("searchMap", search);
