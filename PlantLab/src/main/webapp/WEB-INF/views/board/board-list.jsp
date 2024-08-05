@@ -16,12 +16,6 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/board-list.css">
 </head>
 <body>
-    <%
-        int type = (int)request.getAttribute("type");
-        int total = (int)request.getAttribute("total");
-        Object popList = request.getAttribute("popList");
-        Object boardList = request.getAttribute("boardList");
-    %>
     <!--게시판 내용-->
     <div id="title_table_area">
         <div class="search_bar">

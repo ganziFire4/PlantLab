@@ -73,44 +73,7 @@
                 </li>
             </ul>
         </div>
-        <div class="tabContent">
-            <%
-                // Spring 애플리케이션 컨텍스트 가져오기
-                org.springframework.web.context.WebApplicationContext context =
-                        WebApplicationContextUtils.getWebApplicationContext(application);
-
-                // BoardService 빈 가져오기
-                BoardService boardService = context.getBean("boardServiceImpl", BoardService.class);
-            %>
-            <%
-                request.setAttribute("type", 1);
-                request.setAttribute("total", boardService.getBoardTotal(1));
-                request.setAttribute("popList", boardService.view_popular(1, (String)request.getAttribute("pop_condition")));
-                request.setAttribute("boardList", boardService.view_all(1,
-                        (Map<String, Object>)request.getAttribute("search"), (Map<String, Object>)request.getAttribute("table")));
-            %>
-            <jsp:include page="/WEB-INF/views/board/board-list.jsp"/>
-        </div>
-        <div class="tabContent">
-            <%
-                request.setAttribute("type", 2);
-                request.setAttribute("total", boardService.getBoardTotal(2));
-                request.setAttribute("popList", boardService.view_popular(2, (String)request.getAttribute("pop_condition")));
-                request.setAttribute("boardList", boardService.view_all(2,
-                        (Map<String, Object>)request.getAttribute("search"), (Map<String, Object>)request.getAttribute("table")));
-            %>
-            <jsp:include page="/WEB-INF/views/board/board-list.jsp"/>
-        </div>
-        <div class="tabContent">
-            <%
-                request.setAttribute("type", 3);
-                request.setAttribute("total", boardService.getBoardTotal(3));
-                request.setAttribute("popList", boardService.view_popular(3, (String)request.getAttribute("pop_condition")));
-                request.setAttribute("boardList", boardService.view_all(3,
-                        (Map<String, Object>)request.getAttribute("search"), (Map<String, Object>)request.getAttribute("table")));
-            %>
-            <jsp:include page="/WEB-INF/views/board/board-list.jsp"/>
-        </div>
+        <jsp:include page="/WEB-INF/views/board/board-list.jsp"/>
     </main>
     <jsp:include page="${pageContext.request.contextPath}/chatbot.jsp"/>
     <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
@@ -121,10 +84,8 @@
             for(let i = 0; i < 3; i++){
                 if(i === tab - 1){
                     underline[i].classList.add("activeBlock");
-                    tabContent[i].style.display = "block";
                 } else {
                     underline[i].classList.remove("activeBlock");
-                    tabContent[i].style.display = "none";
                 }
             }
         }
@@ -141,26 +102,20 @@
         changeTab(${tab});
 
         info_button.addEventListener("click", () => {
-            header.innerHTML = `<img src="${pageContext.request.contextPath}/static/images/header_정보.png" alt="정보게시판 헤더">`;
-            changeTab(1);
+            window.location.href = "/board/board-main.do?id=1";
         });
 
         free_button.addEventListener("click", () => {
-            header.innerHTML = `<img src="${pageContext.request.contextPath}/static/images/header_잡담.png" alt="잡담게시판 헤더">`;
-            changeTab(2);
+            window.location.href = "/board/board-main.do?id=2";
         });
 
         QnA_button.addEventListener("click", () => {
-            header.innerHTML = `<img src="${pageContext.request.contextPath}/static/images/header_질문.png" alt="질문게시판 헤더">`;
-            changeTab(3);
+            window.location.href = "/board/board-main.do?id=3";
         });
 
         greenTalk_button.addEventListener("click", () => {
             window.location.href = "/board/greentalk.do";
         });
-
-
-
     </script>
 </body>
 </html>

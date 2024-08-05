@@ -19,8 +19,8 @@
 </head>
 <body>
     <jsp:include page="${pageContext.request.contextPath}/nav.jsp"/>
-    <header id="header">
-        <img src="${pageContext.request.contextPath}/static/images/header_그린톡.png" alt="그린톡 헤더">
+    <header id="header" style="border-radius: 0%">
+        <img src="${pageContext.request.contextPath}/static/images/header_그린톡.png" alt="그린톡 헤더" style="border-radius: 0%; width: 1903px;">
     </header>
     <main>
         <!--게시판 이동 탭-->
@@ -79,21 +79,31 @@
                 <div class="dailycontent">
                                 <c:forEach items="${popList}" var="popgreentalk">
                     <div class="card" style="width: 546px;">
-                        <div class="card-header">
+                        <div class="card-header" style="background-color: white;">
                             <div class="card-writer">
-                                <img src="/static/images/storage/${popgreentalk.mem_pic}" alt="" style="width: 30px; height: 30px;"> ${popgreentalk.mem_nickname}
+<%--                                <img src="/static/images/storage/${popgreentalk.mem_pic}" alt="" style="width: 30px; height: 30px;">--%>
+                            <img src="<c:choose>
+                            <c:when test="${empty popgreentalk.mem_pic}">
+                                ${pageContext.request.contextPath}/static/images/profile_default.svg
+                            </c:when>
+                            <c:otherwise>
+                                ${pageContext.request.contextPath}/static/images/storage/${popgreentalk.mem_pic}
+                            </c:otherwise>
+                        </c:choose>" alt="" style="width: 30px; height: 30px; border-radius: 50%; outline: solid 1px #ccc;">
+                                    ${popgreentalk.mem_nickname}
                             </div>
                             <div class="report">
                                 <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="신고 버튼" class="reportbtn">
                             </div>
                         </div>
                         <img src="/static/images/storage/${popgreentalk.green_pic}" class="card-img-top" alt="..."
-                             onclick="openModal(${popgreentalk.green_id});">
+                             onclick="openModal(${popgreentalk.green_id});"
+                             style="border-radius: 0%">
                         <div class="card-body">
                             <p class="card-text">${popgreentalk.green_content}</p>
                             <div class="tag-group">
                                 <div class="tags">
-                                    <p class="tag1">#${popgreentalk.green_tag}</p>
+                                    <p class="tag1"># ${popgreentalk.green_tag}</p>
                                 </div>
                                 <div class="btnicon">
                                     <img src="${pageContext.request.contextPath}/static/images/그린톡/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
@@ -152,29 +162,29 @@
                         <div class="modal-body">
                             <img src="/static/images/storage/${greentalk.file.filename}" alt="" class="modalmain">
                             <div class="modal-right">
-                                <div class="modalthumb">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1_2">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1_3">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4" style="height: 96.27px;">
-                                </div>
+<%--                                <div class="modalthumb">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1_2">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1_3">--%>
+<%--                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4" style="height: 96.27px;">--%>
+<%--                                </div>--%>
                                 <div class="modalcontentbox">
                                     <div class="modalcontents">
                                         <div class="writerpic">
-                                            <img src="${pageContext.request.contextPath}/static/images/프로필사진.png" alt="" style="width: 30px; height: 30px;">
+                                            <img src="${pageContext.request.contextPath}/static/images/profile_default.svg" alt="" style="width: 30px; height: 30px;">
                                         </div>
                                         <div class="modalmaincon">
-                                            karina87
+                                            서버 상태를 확인해주세요.
                                         </div>
                                         <div class="modalmaindate">
-                                            24.06.27
+                                            서버 상태를 확인해주세요.
                                         </div>
                                         <div class="modalreport">
                                             <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
                                         </div>
                                     </div>
                                     <div class="modalmaincontent">
-                                        <p>123</p>
+                                        <p>서버 상태를 확인해주세요.</p>
                                     </div>
                                 </div>
                             </div>
@@ -353,10 +363,17 @@
 
         // const viewModal = document.getElementsByClassName("card");
 
+        <%--const formatDate = (dateStr) => {--%>
+        <%--    const [year, month, day] = dateStr.split(',').map(Number);--%>
+        <%--    const shortYear = year.toString().slice(-2); // 마지막 두 자리 숫자만 사용--%>
+        <%--    return `${shortYear}.${month.toString().padStart(2, '0')}.${day.toString().padStart(2, '0')}`;--%>
+        <%--};--%>
+
         const openModal = (greenId) => {
             // console.log(greenId);
             //greenId로 ajax를 보내서
             // modal 구성 후 modal 표출
+
             let htmlStr = '';
 
             $.ajax({
@@ -364,7 +381,32 @@
                 type: 'POST',
                 data: {"green_id": greenId},
                 success: (obj) => {
+
+
                     console.log(obj);
+
+                    const formatDate = (dateString) => {
+
+                        let year = `\${dateString[0]}`;
+                        if (year > 1) {
+                            year = year.slice(-2);
+                        }
+
+                        let month = `\${dateString[1]}`;
+                        if (month < 10) {
+                            month = '0' + month;
+                        }
+
+                        let date = `\${dateString[2]}`;
+                        if (date < 10) {
+                            date = '0' + date;
+                        }
+
+                        return `\${year}-\${month}-\${date}`; // 배열에 저장된 날짜
+                    };
+
+                    const formattedDate = formatDate(obj.greentalk.green_mod); // 날짜 변환
+
                     // let htmlStr = "";
                         htmlStr += `
             <div class="modal-dialog modal-xl">
@@ -382,13 +424,13 @@
                                 <div class="modalcontentbox">
                                     <div class="modalcontents">
                                         <div class="writerpic">
-                                            <img src="/static/images/storage/\${obj.greentalk.mem_pic}" alt="" style="width: 30px; height: 30px;">
+                                            <img src="/static/images/storage/\${obj.greentalk.mem_pic}" alt="" style="width: 30px; height: 30px; border-radius: 50%; outline: solid 1px #ccc;">
                                         </div>
                                         <div class="modalmaincon">
                                             \${obj.greentalk.mem_nickname}
                                         </div>
                                         <div class="modalmaindate">
-                                            \${obj.greentalk.green_mod}
+                                            \${formattedDate}
                                         </div>
                                         <div class="modalreport">
                                             <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
@@ -400,7 +442,7 @@
                                 </div>
                             </div>
                             <div class="title">
-                                <p class="titlename">#\${obj.greentalk.green_tag}</p>
+                                <p class="titlename"># \${obj.greentalk.green_tag}</p>
                                 <div class="btnicon">
                                     <img src="${pageContext.request.contextPath}/static/images/그린톡/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
                                     <img src="${pageContext.request.contextPath}/static/images/그린톡/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">

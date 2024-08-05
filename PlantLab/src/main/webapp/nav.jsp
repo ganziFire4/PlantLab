@@ -77,7 +77,7 @@
                                             <img src="/static/images/profile_default.svg" alt="기본프로필 사진">
                                         </c:when>
                                         <c:otherwise>
-                                            <img src="/static/images/storage/${loggedInMember.mem_pic}" alt="프로필사진" width="40px" height="40px">
+                                            <img src="/static/images/storage/${loggedInMember.mem_pic}" alt="프로필사진" width="40px" height="40px" style="outline: solid 3px #23C961; border-radius: 50%;">
                                         </c:otherwise>
                                     </c:choose>
                                 </a>
