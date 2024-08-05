@@ -137,15 +137,15 @@ xsi:schemaLocation에서 namespace를 사용하기 위한 설정파일인 xsd파
         <property name="host" value="smtp.gmail.com" />
         <property name="port" value="587" />
         <property name="username" value="plantlab.ganzi4@gmail.com" />
-        <property name="password" value="dkdlxl1234!" />
+        <property name="password" value="k x l p f l v l s n p g h v n r" />
 
 
         <!-- email 요청시는 SMTP -->
         <property name="javaMailProperties">
             <props>
-                <prop key="mail.transport.protocol">smtp</prop>
-                <prop key="mail.smtp.auth">true</prop>
                 <prop key="mail.smtp.starttls.enable">true</prop>
+                <prop key="mail.smtp.auth">true</prop>
+                <prop key="mail.transport.protocol">smtp</prop>
                 <prop key="mail.debug">true</prop>
             </props>
         </property>

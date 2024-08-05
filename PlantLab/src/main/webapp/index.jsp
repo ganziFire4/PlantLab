@@ -136,9 +136,10 @@
                 <button type="button" class="morebtn" onclick="window.location.href='board_list.html?tab=4'">더 보기</button>
             </div>
             <div class="popular-container">
+<%--                <c:forEach var="pop_green" items="${pop_greentalk}"> --%>
                 <div class="popular-post">
                     <img src="/static/images/mainpage/01.svg" alt="grid_item">
-                    <h5 class="contents">책상에 놨더니 너무 뽀짝해요 </h5>
+                    <h5 class="contents">이쁜저희</h5>
                     <p><img src="/static/images/profile_photo.svg" alt="">Karina  | 2024.06.28</p>
                 </div>
                 <div class="popular-post">

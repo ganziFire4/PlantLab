@@ -17,7 +17,7 @@ public interface MemberService {
 
     MemberDto login(MemberDto memberDto);
 
-    MimeMessage createMessage(String email) throws MessagingException, UnsupportedEncodingException;
+//    MimeMessage createMessage(String email) throws MessagingException, UnsupportedEncodingException;
 
     String createKey();
 
