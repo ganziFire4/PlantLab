@@ -451,9 +451,18 @@
                                 </div>
                             </div>
                             <div class="comment">
-                                <input action="text" class="commentbox" placeholder="댓글을 입력하세요."
-                                       onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'"></input>
-                                <div type="submit" class="confirmbox">게시</div>
+                                <form id="comment-form" action="/postGreenComment" method="post">
+                                <input type="hidden" name="green_id" value="\${obj.greentalk.green_id}">
+                                <input type="hidden" name="mem_id" value="\${obj.greentalk.mem_id}">
+                                <div class="commenttab">
+                                <input type="text" name="comment_content" class="commentbox" placeholder="댓글을 입력하세요."
+                                       onfocus="placeholder=''" onblur="placeholder='댓글을 입력하세요.'" style="margin-top:15px">
+                                </input>
+                                    <div style="text-align: right;">
+                                        <button type="submit" class="confirmbox" style="border:none;">게시</button>
+                                    </div>
+                                </div>
+                                </form>
                             </div>
                         </div>
                     </div>
