@@ -64,4 +64,8 @@ public class GreentalkDao {
     public List<GreentalkDto> getGreenFileList(int id) {
         return mybatis.selectList("GreentalkDao.getGreenFileList", id);
     }
+
+    public List<GreentalkDto> getMyGreenList(int memId) {
+        return mybatis.selectList("GreentalkDao.getMyGreenList", memId);
+    }
 }

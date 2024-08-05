@@ -19,4 +19,6 @@ public interface GreentalkService {
     int getTotalCnt(Map<String, String> searchMap);
     List<GreentalkDto> getNorGreenList();
     GreentalkDto getGreenOne(int id);
+
+    List<GreentalkDto> getMyGreenList(int memId);
 }

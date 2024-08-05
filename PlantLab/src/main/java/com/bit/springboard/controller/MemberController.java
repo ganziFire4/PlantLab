@@ -2,6 +2,7 @@ package com.bit.springboard.controller;
 
 import com.bit.springboard.dto.MemberDto;
 import com.bit.springboard.service.BoardService;
+import com.bit.springboard.service.GreentalkService;
 import com.bit.springboard.service.MemberService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,11 +20,13 @@ import java.io.IOException;
 public class MemberController {
     private MemberService memberService;
     private BoardService boardService;
+    private GreentalkService greentalkService;
 
     @Autowired
-    public MemberController(MemberService memberService, BoardService boardService) {
+    public MemberController(MemberService memberService, BoardService boardService, GreentalkService greentalkService) {
         this.memberService = memberService;
         this.boardService = boardService;
+        this.greentalkService = greentalkService;
     }
 
     @GetMapping("/login.do")
@@ -109,11 +112,19 @@ public class MemberController {
 
             File uploadFile = new File(attachPath + modify_pic.getOriginalFilename());
 
+            System.out.println(loggedInMember.getMem_nickname());
+            System.out.println(memberDto.getMem_nickname());
             if(!modify_pic.getOriginalFilename().equals("")) {
                 loggedInMember.setMem_pic(modify_pic.getOriginalFilename());
             }
-            loggedInMember.setMem_nickname(memberDto.getMem_nickname());
-            loggedInMember.setPassword(memberDto.getPassword());
+
+            if(!memberDto.getMem_nickname().equals("")){
+                loggedInMember.setMem_nickname(memberDto.getMem_nickname());
+            }
+
+            if(!memberDto.getPassword().equals("")){
+                loggedInMember.setPassword(memberDto.getPassword());
+            }
 
             try{
                 modify_pic.transferTo(uploadFile);
@@ -128,10 +139,11 @@ public class MemberController {
     }
 
     @GetMapping("/mypage.do")
-    public String boardView(Model model, MemberDto memberDto, HttpSession session) {
+    public String boardView(Model model, HttpSession session) {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
         model.addAttribute("myWrite", boardService.getBoard(loggedInMember.getMemId()));
 //        session.setAttribute("myWrite", boardService.getBoard(memberDto.getMemId()));
+        model.addAttribute("myGreentalk", greentalkService.getMyGreenList(loggedInMember.getMemId()));
 
         session.setAttribute("loggedInMember", loggedInMember);
         return "/WEB-INF/views/member/mypage";
