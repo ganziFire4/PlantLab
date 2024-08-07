@@ -131,7 +131,7 @@ public class BoardController {
     public String greentalk_post(HttpSession session) {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
         if(loggedInMember == null) {
-            return "redirect:/member/login.do";
+            return "redirect:/member/greenpost_login.do";
         }
         return "/WEB-INF/views/board/greentalk_post";
     }

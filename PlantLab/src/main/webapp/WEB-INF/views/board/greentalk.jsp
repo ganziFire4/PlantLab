@@ -75,7 +75,7 @@
             </form>
         </div>
         <div class="postbtnbox">
-            <button id="postButton" type="button">글 작성</button>
+            <button id="postButton" type="button" style="border: none; ">글 작성</button>
         </div>
 <%--        <script>--%>
 <%--            $(document).ready(function() {--%>
@@ -93,8 +93,12 @@
                     <div class="modal-header">
                         <h5 class="modal-title">알림</h5>
                         <div class="btnLocation" style="display: flex;">
-                        <button id="modal-close-btn" type="button" class="close" data-dismiss="modal" aria-label="Close" style="width: 20px; height: 20px; border: none; border-radius: 5px; background-color: #CCCCCC;">
-                            <img src="">
+                        <button id="modal-close-btn" type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="width: 20px; height: 20px; border: none; border-radius: 5px; background-color: white;
+                                position:absolute; top: 10px; right: 10px;">
+                            <img src="${pageContext.request.contextPath}/static/images/storage/x-icon.png"
+                                 style="width: 20px; height: 20px; border: none; border-radius: 5px; background-color: white;
+                                position:absolute; top: -145px; right: 1px;">
                         </button>
                         </div>
                     </div>
