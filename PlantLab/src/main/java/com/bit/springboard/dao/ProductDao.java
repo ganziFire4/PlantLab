@@ -1,6 +1,7 @@
 package com.bit.springboard.dao;
 
 import com.bit.springboard.dto.ProductDto;
+import com.bit.springboard.dto.PicDto;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -23,5 +24,9 @@ public class ProductDao {
 
     public void saveProduct(ProductDto productDto) {
         sqlSessionTemplate.insert("ProductDao.saveProduct", productDto);
+    }
+
+    public void savePic(PicDto picDto) {
+        sqlSessionTemplate.insert("ProductDao.savePic", picDto);
     }
 }

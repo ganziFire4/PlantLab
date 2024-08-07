@@ -4,25 +4,22 @@ import java.time.LocalDateTime;
 
 public class ProductDto {
     private int product_id;
-    // private int pic_id;
-    private String brand;
-    private String product_name;
-    private int price;
-    private double discount;
-    private double rate;
-    private String color;
-    private boolean is_light;
-    private String base_type;
-    private String size;
-    private String tag;
-    private int view_count;
+    private String brand = ""; // 기본값 설정
+    private String product_name = ""; // 기본값 설정
+    private int price = 0; // 기본값 설정
+    private double discount = 0.0; // 기본값 설정
+    private double rate = 0.0; // 기본값 설정
+    private String color = ""; // 기본값 설정
+    private boolean is_light = false; // 기본값 설정
+    private String base_type = ""; // 기본값 설정
+    private String size = ""; // 기본값 설정
+    private String tag = ""; // 기본값 설정
+    private int view_count = 0; // 기본값 설정
     private LocalDateTime sell_start;
     private LocalDateTime sell_end;
-    private boolean product_status;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
-    // private String file_name;
-    // private Boolean is_main;
+    private boolean product_status = true; // 기본값 설정
+    private LocalDateTime created_at = LocalDateTime.now(); // 기본값 설정
+    private LocalDateTime updated_at = LocalDateTime.now(); // 기본값 설정
 
     // Getters and setters
     public int getProduct_id() {
@@ -32,14 +29,6 @@ public class ProductDto {
     public void setProduct_id(int product_id) {
         this.product_id = product_id;
     }
-
-    // public int getPic_id() {
-    //     return pic_id;
-    // }
-
-    // public void setPic_id(int pic_id) {
-    //     this.pic_id = pic_id;
-    // }
 
     public String getBrand() {
         return brand;
@@ -169,19 +158,4 @@ public class ProductDto {
         this.updated_at = updated_at;
     }
 
-    // public String getFile_name() {
-    //     return file_name;
-    // }
-
-    // public void setFile_name(String file_name) {
-    //     this.file_name = file_name;
-    // }
-
-    // public Boolean getIs_main() {
-    //     return is_main;
-    // }
-
-    // public void setIs_main(Boolean is_main) {
-    //     this.is_main = is_main;
-    // }
 }
