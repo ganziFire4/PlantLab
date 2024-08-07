@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/greentalk.css">
 </head>
 <body>
-    <jsp:include page="${pageContext.request.contextPath}/nav.jsp"/>
+    <jsp:include page="${pageContext.request.contextPath}/green_nav.jsp"/>
     <header id="header" style="border-radius: 0%">
         <img src="${pageContext.request.contextPath}/static/images/header_그린톡.png" alt="그린톡 헤더" style="border-radius: 0%; width: 1903px;">
     </header>
@@ -227,7 +227,8 @@
                 <div class="modal-content">
                     <div class="modalbox">
                         <div class="modal-body">
-                            <img src="/static/images/storage/${greentalk.file.filename}" alt="" class="modalmain">
+<%--                            <img src="/static/images/storage/${greentalk.file.filename}" alt="" class="modalmain">--%>
+                            <img src="${pageContext.request.contextPath}/static/images/storage/network_error.png" alt="" class="modalmain">
                             <div class="modal-right">
 <%--                                <div class="modalthumb">--%>
 <%--                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">--%>
@@ -238,7 +239,7 @@
                                 <div class="modalcontentbox">
                                     <div class="modalcontents">
                                         <div class="writerpic">
-                                            <img src="${pageContext.request.contextPath}/static/images/profile_default.svg" alt="" style="width: 30px; height: 30px;">
+                                            <img src="${pageContext.request.contextPath}/static/images/storage/network_error.png" alt="" style="width: 30px; height: 30px;">
                                         </div>
                                         <div class="modalmaincon">
                                             서버 상태를 확인해주세요.
@@ -247,7 +248,7 @@
                                             서버 상태를 확인해주세요.
                                         </div>
                                         <div class="modalreport">
-                                            <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
+                                            <img src="${pageContext.request.contextPath}/static/images/storage/network_error.png" alt="" style="width: 15px;">
                                         </div>
                                     </div>
                                     <div class="modalmaincontent">
@@ -256,12 +257,12 @@
                                 </div>
                             </div>
                             <div class="title">
-                                <p class="titlename">#초록  #자랑</p>
+                                <p class="titlename">#서버 상태를 확인해주세요.</p>
                                 <div class="btnicon">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/bookmark_black.png" class="bookmarkicon" alt="북마크" style="display: inline;">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/filledbookmarkicon.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/hearticon.png" class="hearticon" alt="하트" style="display: inline;">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/filledhearticon.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
+                                    <img src="${pageContext.request.contextPath}/static/images/storage/network_error.png" class="bookmarkicon" alt="북마크" style="display: inline;">
+                                    <img src="${pageContext.request.contextPath}/static/images/storage/network_error.png" class="filledbookmarkicon" alt="북마크" style="display: none;">
+                                    <img src="${pageContext.request.contextPath}/static/images/storage/network_error.png" class="hearticon" alt="하트" style="display: inline;">
+                                    <img src="${pageContext.request.contextPath}/static/images/storage/network_error.png" class="filledhearticon" alt="채워진 하트" style="display: none;">
                                 </div>
                             </div>
                             <div class="comment">
