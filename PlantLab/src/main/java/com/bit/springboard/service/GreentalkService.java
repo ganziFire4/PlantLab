@@ -1,6 +1,7 @@
 package com.bit.springboard.service;
 
 import com.bit.springboard.dto.Criteria;
+import com.bit.springboard.dto.GreentalkCommentDto;
 import com.bit.springboard.dto.GreentalkDto;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,4 +25,6 @@ public interface GreentalkService {
 
     int writePost(GreentalkDto greentalkDto);
     void filePost(GreentalkDto loggedInMember);
+
+    GreentalkCommentDto getComment(int id);
 }

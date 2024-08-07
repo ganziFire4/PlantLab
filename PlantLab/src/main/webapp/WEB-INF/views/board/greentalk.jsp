@@ -435,13 +435,17 @@
             window.location.href = "/board/board-main.do?tab=3";
         });
 
-        // const viewModal = document.getElementsByClassName("card");
-
-        <%--const formatDate = (dateStr) => {--%>
-        <%--    const [year, month, day] = dateStr.split(',').map(Number);--%>
-        <%--    const shortYear = year.toString().slice(-2); // 마지막 두 자리 숫자만 사용--%>
-        <%--    return `${shortYear}.${month.toString().padStart(2, '0')}.${day.toString().padStart(2, '0')}`;--%>
-        <%--};--%>
+        // $.ajax({
+        //     url:'/board/comment-ajax.do',
+        //     type: 'POST',
+        //     data: {"green_id": greenId},
+        //     success: (obj) => {
+        //         console.log(obj);
+        //
+        //         htmlStr +=`
+        //         `
+        //     }
+        // })
 
         const openModal = (greenId) => {
             // console.log(greenId);
@@ -489,12 +493,12 @@
                         <div class="modal-body">
                             <img src="/static/images/storage/\${obj.greentalk.green_pic}" alt="" class="modalmain">
                             <div class="modal-right">
-                                <div class="modalthumb">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1_2">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1_3">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4">
-                                </div>
+                                <%--<div class="modalthumb">--%>
+                                <%--    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">--%>
+                                <%--    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1_2">--%>
+                                <%--    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1_3">--%>
+                                <%--    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4">--%>
+                                <%--</div>--%>
                                 <div class="modalcontentbox">
                                     <div class="modalcontents">
                                         <div class="writerpic">
@@ -510,13 +514,13 @@
                                             <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
                                         </div>
                                     </div>
-                                    <div class="modalcommentbox">
-                                        <div style="">test</div>
-                                    </div>
                                     <div class="modalmaincontent">
                                         <p>\${obj.greentalk.green_content}</p>
                                     </div>
                                 </div>
+                                    <div class="modalcommentbox">
+                                        <div>12345</div>
+                                    </div>
                             </div>
                             <div class="title">
                                 <p class="titlename"># \${obj.greentalk.green_tag}</p>
@@ -528,7 +532,7 @@
                                 </div>
                             </div>
                             <div class="comment">
-                                <form id="comment-form" action="/postGreenComment" method="post">
+                                <form id="comment-form" onsubmit="submitComment(event)">
                                 <input type="hidden" name="green_id" value="\${obj.greentalk.green_id}">
                                 <input type="hidden" name="mem_id" value="\${obj.greentalk.mem_id}">
                                 <div class="commenttab">
@@ -547,6 +551,7 @@
             </div>
                                             `;
                     $('#rank1modal').html(htmlStr);
+                    $("#rank1modal").modal('show');
 
                     // $("#rank1modal").modal('show');
 
@@ -555,8 +560,6 @@
                     console.log(err);
                 }
             });
-
-            $("#rank1modal").modal('show');
         }
     </script>
 </body>
