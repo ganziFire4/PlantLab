@@ -26,6 +26,6 @@ public interface MemberService {
 
     List<MemberDto> getBoardLikeBookCnt(int memId);
 
-    MemberDto getGreenLikeBookCnt(int memId);
+    List<MemberDto> getGreenLikeBookCnt(int memId);
 }
 

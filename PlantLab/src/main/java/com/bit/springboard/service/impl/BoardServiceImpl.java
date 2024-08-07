@@ -1,11 +1,18 @@
 package com.bit.springboard.service.impl;
 
+import com.bit.springboard.common.FileUtils;
 import com.bit.springboard.dao.BoardDao;
 import com.bit.springboard.dto.BoardDto;
+import com.bit.springboard.dto.GreentalkDto;
+import com.bit.springboard.dto.GreentalkFileDto;
 import com.bit.springboard.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
@@ -64,4 +71,16 @@ public class BoardServiceImpl implements BoardService {
     public int getBoardTotal(int tab, Map<String, Object> search) {
         return boardDao.getBoardTotal(tab, search);
     }
+
+    @Override
+    public int writePost(GreentalkDto greentalkDto) {
+        boardDao.writePost(greentalkDto);
+        return greentalkDto.getGreen_id();
+    }
+
+    @Override
+    public void filePost(GreentalkDto greentalkDto) {
+        boardDao.filePost(greentalkDto);
+    }
+
 }

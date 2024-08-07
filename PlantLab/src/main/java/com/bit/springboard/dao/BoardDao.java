@@ -1,9 +1,12 @@
 package com.bit.springboard.dao;
 
 import com.bit.springboard.dto.BoardDto;
+import com.bit.springboard.dto.GreentalkDto;
+import com.bit.springboard.dto.GreentalkFileDto;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.HashMap;
 import java.util.List;
@@ -64,5 +67,13 @@ public class BoardDao {
         paramMap.put("tab", tab);
         paramMap.put("searchMap", search);
         return mybatis.selectOne("BoardDao.getBoardTotal", paramMap);
+    }
+
+    public void writePost(GreentalkDto greentalkDto) {
+        mybatis.insert("BoardDao.writePost", greentalkDto);
+    }
+
+    public void filePost(GreentalkDto greentalkDto) {
+        mybatis.insert("BoardDao.filePost", greentalkDto);
     }
 }
