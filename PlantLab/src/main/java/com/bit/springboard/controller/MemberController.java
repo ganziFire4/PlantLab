@@ -22,7 +22,8 @@ public class MemberController {
     private MemberService memberService;
     private BoardService boardService;
     private GreentalkService greentalkService;
-    
+
+
     @Autowired
     public MemberController(MemberService memberService, BoardService boardService, GreentalkService greentalkService) {
         this.memberService = memberService;
@@ -162,14 +163,14 @@ public class MemberController {
         try {
             MemberDto memberDto = new MemberDto();
             memberDto.setMem_email(email);
+            //
             String verificationCode = memberService.sendSimpleMessage(email);
-            return "인증번호가 발송되었습니다. 이메일을 확인하세요.";
+            return verificationCode;
         } catch (Exception e) {
             e.printStackTrace();
-            return "인증번호 발송에 실패했습니다.";
+            return "error";
         }
     }
-
 
 
 }

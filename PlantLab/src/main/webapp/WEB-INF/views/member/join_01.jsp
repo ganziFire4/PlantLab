@@ -48,14 +48,14 @@
                 <div class="form-group">
                     <div class="custom-input2">
                         <input type="email" id="mem_email" name="mem_email" placeholder="이메일" required>
-                        <button type="button" onclick="checkDuplicate()" id="emailAuth"></button>
+                        <button type="button" id="emailAuth"></button>
                     </div>
                     <small id="check-message5"></small>
                 </div>
                 <div class="form-group">
                     <div class="custom-input3">
                         <input type="text" id="veriNum" name="veriNum" placeholder="인증번호" required>
-                        <button type="button" onclick="checkVeri()"  id="authCode"></button>
+                        <button type="button" id="authCode" disabled></button>
                     </div>
                     <small id="check-message6"></small>
                 </div>
@@ -104,6 +104,8 @@
         // 회원정보
         let id = '0';
         let nickname, password;
+
+        let verificationCode = '';
 
         //아이디 입력받을 조건
         userId.addEventListener("change", (e) => {
@@ -259,8 +261,6 @@
 
 
         //인증하기 버튼을 눌렀을 때 동작
-
-        let code = null;
         $("#emailAuth").click(function () {
             const email = $("#mem_email").val(); //사용자가 입력한 이메일 값 얻어오기
 
@@ -273,42 +273,68 @@
                 type: 'POST',
                 dataType: 'json',
                 success: function (result) {
-                    console.log("result : " + result);
-                    if (result.code) {
-                        code = result.code;  // 서버에서 받은 인증 코드 저장
-                        $("#authCode").attr("disabled", false);
+                    verificationCode = result;
+
+                    if (result !== null) {
+                        $("#emailAuth").attr("disabled", false);
                         alert("인증 코드가 입력하신 이메일로 전송 되었습니다.");
                     } else {
                         alert("인증 코드 생성에 실패했습니다.");
                     }
+
+                    $("#authCode").attr("disabled", false);
                 },
-                error: function (xhr, status, error){
+                error: function (xhr, status, error) {
                     alert("인증 코드 전송에 실패했습니다. 다시 시도해주세요.");
                 }
             });
         });
 
-        function checkVeri() {
-            const inputCode = $("#veriNum").val();
 
-            if (inputCode === '') {
-                $("#check-message6").text("인증확인을 해주세요.");
-                $("#check-message6").css("color", "red");
+        // function checkVeri() {
+        //     $("#authCode").click(function () {
+        //     const email = $("#mem_email").val();
+        //     const inputCode = $("#veriNum").val();
+        //
+        //     $.ajax({
+        //         url: '/member/verifyCode',
+        //         data: {
+        //             email: email,
+        //             code: inputCode
+        //         },
+        //         type: 'POST',
+        //         success: function (result) {
+        //             if (result === "success") {
+        //                 checkMessage6.textContent = "인증번호가 일치합니다.";
+        //                 checkMessage6.style.color = "#23C961";
+        //                 $("#veriNum").focus();
+        //             } else {
+        //                 checkMessage6.textContent = "인증번호가 일치하지 않습니다.";
+        //                 checkMessage6.style.color = "red";
+        //                 $("#veriNum").focus();
+        //             }
+        //         },
+        //         error: function (xhr, status, error) {
+        //             checkMessage6.textContent = "인증번호 확인에 실패했습니다.";
+        //             checkMessage6.style.color = "red";
+        //         }
+        //       });
+        //     });
+        // }
+
+        $("#authCode").on("click", (e) => {
+            if($("#veriNum").val() == verificationCode) {
+                checkMessage6.textContent = "인증번호가 일치합니다.";
+                checkMessage6.style.color = "#23C961";
                 $("#veriNum").focus();
-                return;
-            }
-
-            // 안비어있는 경우(값일치가 되는지 )
-            if (inputCode == code) {
-                $("#check-message6").text("인증번호가 일치합니다.");
-                $("#check-message6").css("color", "#23C961");
             } else {
-                $("#check-message6").text("인증번호가 일치하지 않습니다.");
-                $("#check-message6").css("color", "red");
+                checkMessage6.textContent = "인증번호가 일치하지 않습니다.";
+                checkMessage6.style.color = "red";
                 $("#veriNum").focus();
             }
+        });
 
-        }
+
 
 
 

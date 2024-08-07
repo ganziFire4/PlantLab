@@ -135,13 +135,15 @@
                 <p>다른 유저들의 반려식물들을 구경하세요.</p>
                 <button type="button" class="morebtn" onclick="window.location.href='board_list.html?tab=4'">더 보기</button>
             </div>
-            <div class="popular-container">
-<%--                <c:forEach var="pop_green" items="${pop_greentalk}"> --%>
+            < class="popular-container">
+                <c:forEach var="pop_green" items="${greentaglkPopList}">
                 <div class="popular-post">
                     <img src="/static/images/mainpage/01.svg" alt="grid_item">
-                    <h5 class="contents">이쁜저희</h5>
-                    <p><img src="/static/images/profile_photo.svg" alt="">Karina  | 2024.06.28</p>
+<%--                    // 경로 고치기--%>
+                    <h5 class="contents">${pop_green.greentalk_title}</h5>
+                    <p><img src="/static/images/profile_photo.svg" alt="">${pop_green.greentalk_memId}  | <javatime:format value="${pop_green.greentalk_reg}" pattern="yyyy.MM.dd"/></p>
                 </div>
+                </c:forEach>
                 <div class="popular-post">
                     <img src="/static/images/mainpage/02.svg" alt="grid_item">
                     <h5 class="contents">이쁜 저희 초록이좀 보고 가세요~!!</h5>

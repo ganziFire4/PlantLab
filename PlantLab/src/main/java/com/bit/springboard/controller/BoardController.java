@@ -102,13 +102,16 @@ public class BoardController {
 
     }
 
+
+
+
     @GetMapping("/board-detail.do")
     public String board(Model model, @RequestParam("id") int id) {
         model.addAttribute("board", boardService.view_one(id));
         return "/WEB-INF/views/board/board-detail";
     }
 
-    @GetMapping("/greentalk_post.do")
+    @GetMapping("/greentalk_post")
     public String greentalk_post(HttpSession session) {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
         if(loggedInMember == null) {

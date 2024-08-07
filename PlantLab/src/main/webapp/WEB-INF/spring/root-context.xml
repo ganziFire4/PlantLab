@@ -136,7 +136,7 @@ xsi:schemaLocation에서 namespace를 사용하기 위한 설정파일인 xsd파
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
         <property name="host" value="smtp.gmail.com" />
         <property name="port" value="587" />
-        <property name="username" value="plantlab.ganzi4@gmail.com" />
+        <property name="username" value="plantlab.ganzi4@gmail.com"/>
         <property name="password" value="k x l p f l v l s n p g h v n r" />
 
 
