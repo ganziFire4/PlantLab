@@ -136,6 +136,13 @@ public class BoardController {
         return "/WEB-INF/views/board/board-detail";
     }
 
+    @GetMapping("/update-cnt.do")
+    public String board_view_cnt (@RequestParam("id") int id){
+        System.out.println("update: " + id);
+        boardService.update_view_cnt(id);
+        return "redirect:/board/board-detail.do?id=" + id;
+    }
+
     @GetMapping("/greentalk_post")
     public String greentalk_post(HttpSession session) {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
@@ -230,12 +237,6 @@ public class BoardController {
 //        return "/WEB-INF/views/board/board-main";
 //
 //    }
-
-    @GetMapping("/update-cnt.do")
-    public String board_view_cnt (@RequestParam("id") int id){
-        boardService.update_view_cnt(id);
-        return "redirect:/WEB-INF/views/board/board-detail.do?id=" + id;
-    }
 
     @PostMapping("/greentalk-post.do")
     public String greentalk_post(GreentalkDto greentalkDto, HttpSession session, MultipartFile upload_pic, HttpServletRequest request) {

@@ -19,7 +19,7 @@
                 <img width="150px" height="150px" src="${pageContext.request.contextPath}/static/images/round_logo_colorBack.svg" alt="플랜트랩 로고">
             </div>
             <div>
-                <p>주소 :  서울특별시 강남구 강남대로2689길 20, 5층(역삼동)   TEL : 02 - 1111-2222</p>
+                <p>주소 :  서울특별시 강남구 강남대로94길 20, 5층(역삼동)   TEL : 02 - 1111-2222</p>
                 <p>상호명 : (주)플랜트랩</p>
                 <p>Copyright © 2024 .All RIGHTS RSERVED.</p>
                 <p>불4조 :  정다은  김화영  김시표  송주헌  반재형</p>

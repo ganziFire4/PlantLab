@@ -23,12 +23,12 @@
             <c:when test="${board.board_type eq 2}">
                 <img src="${pageContext.request.contextPath}/static/images/header_잡담.png" alt="잡담게시판 헤더">
             </c:when>
-            <c:when test="${type eq 3}">
+            <c:when test="${board.board_type eq 3}">
                 <img src="${pageContext.request.contextPath}/static/images/header_질문.png" alt="질문게시판 헤더">
             </c:when>
-            <c:when test="${type eq 4}">
+            <c:otherwise>
                 <img src="${pageContext.request.contextPath}/static/images/header_그린톡.png" alt="그린톡 헤더">
-            </c:when>
+            </c:otherwise>
         </c:choose>
     </header>
     <main>
@@ -76,7 +76,7 @@
         <div class="page_container">
             <h5>${board.board_title}</h5>
             <div class="userInfo">
-                <img src="${pageContext.request.contextPath}/static/images/profile.svg" alt="profile_photo" style="width:40px;">
+                <img src="/static/images/storage/${board.mem_pic}" alt="프로필사진" style="width:40px;">
                 ${board.mem_nickname}
                 <p>
                     작성일: <javatime:format value="${board.board_reg}" pattern="yyyy-MM-dd"/>
@@ -99,8 +99,18 @@
                 </div>
                 <div class="comment-input">
                     <div class="input-container">
-                        <textarea type="text" id="comment-input" placeholder="댓글을 입력하세요"></textarea>
-                        <button onclick="addComment()">댓글 쓰기</button>
+                          <c:choose>
+                              <c:when test="${loggedInMember == null}">
+                                  <textarea type="text" name="comment-input" placeholder="로그인 후 이용하실 수 있습니다."></textarea>
+                              </c:when>
+                              <c:otherwise>
+                                  <textarea type="text" name="comment-input" placeholder="댓글을 입력하세요."></textarea>
+                              </c:otherwise>
+                          </c:choose>
+                        <script>
+                            console.log("${loggedInMember}");
+                        </script>
+                        <button type="submit" id="commentBtn">댓글 쓰기</button>
                     </div>
                 </div>
                 <hr>
