@@ -121,8 +121,6 @@
             window.location.href = "/board/greentalk.do";
         });
 
-        console.log(${page});
-        console.log(${page.cri});
     </script>
 </body>
 </html>

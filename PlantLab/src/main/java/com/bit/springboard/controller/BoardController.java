@@ -42,7 +42,7 @@ public class BoardController {
                             @RequestParam(value = "search_keyword", required = false) String search_keyword,
                             @RequestParam(value = "pop_condition", required = false) String pop_condition,
                             @RequestParam (value = "rec_condition", required = false) String rec_condition,
-                            @RequestParam(value = "row-num", required = false) String row_num) {
+                            @RequestParam(value = "row-num", required = false) String row_num, Criteria cri){
 
         Map<String, String> search = new HashMap<>();
         search.put("search_condition", search_condition);
@@ -56,7 +56,12 @@ public class BoardController {
             table.put("row_num", "10");
         }
 
-        Criteria cri = new Criteria(1, Integer.parseInt(table.get("row_num")));
+//        Criteria cri = new Criteria(1, Integer.parseInt(table.get("row_num")));
+        if(Integer.parseInt(table.get("row_num")) != cri.getAmount()) {
+            cri.setAmount(Integer.parseInt(table.get("row_num")));
+        }
+
+        System.out.println(cri);
 
         model.addAttribute("tab", tab);
         model.addAttribute("popList", boardService.view_popular(tab, pop_condition));
