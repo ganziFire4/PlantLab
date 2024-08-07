@@ -70,11 +70,11 @@ public class GreentalkDao {
     }
 
     public void writePost(GreentalkDto greentalkDto) {
-        mybatis.insert("BoardDao.writePost", greentalkDto);
+        mybatis.insert("GreentalkDao.writePost", greentalkDto);
     }
 
     public void filePost(GreentalkDto greentalkDto) {
-        mybatis.insert("BoardDao.filePost", greentalkDto);
+        mybatis.insert("GreentalkDao.filePost", greentalkDto);
     }
 
     public List<GreentalkDto> getPopGreenLists() {

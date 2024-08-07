@@ -96,7 +96,15 @@
         </if>
     </select>
 
-
+    <select id="getNorGreenList" resultType="greentalk">
+        SELECT G.GREEN_ID
+             , GP.GREEN_PIC
+            FROM GREENTALK G
+            JOIN GREENTALK_PIC GP
+              ON G.GREEN_ID = GP.GREEN_ID
+            ORDER BY G.GREEN_REG DESC
+            LIMIT 3
+    </select>
 
     <select id="getGreenOne" parameterType="int" resultType="greentalk">
         SELECT G.GREEN_ID
@@ -156,4 +164,26 @@
         ORDER BY G.GREEN_LIKE_CNT DESC
             LIMIT 6
     </select>
+
+    <insert id="writePost" parameterType="greentalk" useGeneratedKeys="true" keyProperty="green_id">
+        INSERT INTO GREENTALK(
+                   MEM_ID
+                 , GREEN_CONTENT
+                 , GREEN_TAG
+        ) VALUES (
+                   #{mem_id}
+                 , #{green_content}
+                 , #{green_tag}
+        )
+    </insert>
+
+    <insert id="filePost" parameterType="greentalk">
+        INSERT INTO GREENTALK_PIC(
+                   GREEN_ID
+                 , GREEN_PIC
+        ) VALUES (
+                   #{green_id}
+                 , #{green_pic}
+        )
+    </insert>
 </mapper>
