@@ -207,7 +207,7 @@
          FROM GREENTALK_COMMENT GC
          JOIN MEMBER M
            ON M.MEM_ID = GC.MEM_ID
-        WHERE GC.GREEN_ID = #{id}
+        WHERE GC.GREEN_ID = #{green_id}
         ORDER BY GC.COMMENT_MOD DESC
     </select>
 </mapper>

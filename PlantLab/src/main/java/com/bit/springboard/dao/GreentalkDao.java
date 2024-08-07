@@ -82,7 +82,7 @@ public class GreentalkDao {
         return mybatis.selectList("GreentalkDao.getPopGreenLists_main");
     }
 
-    public List<GreentalkCommentDto> getComment(int id) {
-        return mybatis.selectList("GreentalkDao.getComment", id);
+    public List<GreentalkCommentDto> getComment(int commentId) {
+        return mybatis.selectList("GreentalkDao.getComment", commentId);
     }
 }

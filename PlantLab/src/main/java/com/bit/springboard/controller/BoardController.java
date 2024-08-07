@@ -198,14 +198,17 @@ public class BoardController {
 
     @PostMapping("/modal-ajax.do")
     @ResponseBody
-    public Map<String, Object> modalAjax(GreentalkDto greentalkDto) {
+    public Map<String, Object> modalAjax(GreentalkDto greentalkDto, Model model) {
 //        System.out.println(greentalkDto);
         Map<String, Object> map = new HashMap<>();
         try {
+
             GreentalkDto greentalk = greentalkService.getGreenOne(greentalkDto.getGreen_id());
             map.put("greentalk", greentalk);
-            List<GreentalkCommentDto> greentalkCommentDtoList = greentalkService.getComment(greentalkDto.getGreen_id());
-            map.put("greenComment", greentalkCommentDtoList);
+
+            List<GreentalkCommentDto> greenComment = greentalkService.getComment(greentalkDto.getGreen_id());
+            map.put("greenComment", greenComment);
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
