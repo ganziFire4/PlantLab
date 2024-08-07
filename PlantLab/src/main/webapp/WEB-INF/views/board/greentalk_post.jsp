@@ -23,9 +23,9 @@
     <p></p>
 </div> -->
 <div class="container">
-    <form action="/board/greentalk-post.do" method="post">
+    <form action="${pageContext.request.contextPath}/board/greentalk-post.do" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="title"></label>
+<%--            <label for="title"></label>--%>
             <!-- <input type="text" id="title" name="title" placeholder="제목을 입력하세요."
             onfocus="placeholder=''" onblur="placeholder='제목을 입력하세요.'"
             > -->
@@ -43,13 +43,19 @@
 
         </div>
         <div class="uploadBox">
+            <div class="flex-div">
+                <p>preview</p>
+                <div class="img-preview">
+                    <img id="preview-img" src="">
+                </div>
+            </div>
             <div class="uploadIcons">
                 <img src="/static/images/images.png.png" alt="이미지 업로드 아이콘" width="60px" height="60px" id="img">
                 <img src="/static/images/video.png.png" alt="비디오 업로드 아이콘"width="45px" height="50px" class="vid" id="vid">
             </div>
             <div class="uploadBtn">
-                <input type="file" name="green_pic" class="imageBtn" accept="image/*" id="uploadFiles" multiple>
-                <input type="file" name="green_pic" class="videoBtn" accept="video/*" multiple>
+                <input type="file" name="upload_pic" class="imageBtn" accept="image/*" id="upload-file-btn">
+                <input type="file" class="videoBtn" accept="video/*">
             </div>
         </div>
         <div class="confirm-group">
@@ -60,7 +66,6 @@
     <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
 
 <script>
-    const uploadFiles =[];
     $(() => {
         $("#img").click((e) => {
             $(".imageBtn").trigger("click");
@@ -70,37 +75,18 @@
             $(".videoBtn").trigger("click");
         });
 
-        $("#uploadFiles").on("change", (e) => {
-           const files = e.target.files;
+        document.getElementById('upload-file-btn').addEventListener('change', function(e){
+            const file = e.target.files[0];
 
-           const fileArr = Array.prototype.slice().call(files);
-
-           for(file of fileArr) {
-               imageLoader(file);
-           }
-        });
-
-        const imageLoader = (file) => {
-            uploadFiles.push(file);
-
-            let reader = new FileReader();
-
-            reader.onload = (e) => {
-                let img = document.createElement("img");
-
-                img.classList.add("upload-file");
-
-                if(file.name.toLowerCase().match(/(.*?)\.(jpg|jpeg|png|gif|svg|bmp)$/)) {
-                    img.src = e.target.result;
-                } else {
-                    alert("이미지파일만 가능합니다.");
+            if(file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const imgPreview = document.getElementById('preview-img');
+                    imgPreview.src = e.target.result;
                 }
-
-                $("#").append(makeDiv(img, file));
+                reader.readAsDataURL(file);
             }
-
-            reader.readAsDataURL(file);
-        }
+        });
     });
 </script>
 </body>

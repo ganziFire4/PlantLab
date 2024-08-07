@@ -5,6 +5,7 @@ import com.bit.springboard.service.BoardService;
 import com.bit.springboard.service.GreentalkService;
 import com.bit.springboard.service.MemberService;
 import com.bit.springboard.service.impl.MemberServiceImpl;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -106,11 +107,11 @@ public class MemberController {
     }
 
     @PostMapping("/modify.do")
-    public String modify(MemberDto memberDto, HttpSession session, MultipartFile modify_pic, RedirectAttributes redirectAttributes) {
+    public String modify(MemberDto memberDto, HttpSession session, MultipartFile modify_pic, HttpServletRequest request, RedirectAttributes redirectAttributes) {
         // session과 같은 정보의 Dto 만들기
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
         if(modify_pic != null) {
-            String attachPath = "C:/Project/PlantLab/src/main/webapp/static/images/storage/";
+            String attachPath = request.getServletContext().getRealPath("\\") + "\\static\\images\\storage\\";
 
             File directory = new File(attachPath);
 
