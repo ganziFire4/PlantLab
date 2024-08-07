@@ -198,4 +198,16 @@
                 , #{comment_content}
                  )
     </insert>
+
+    <select id="getComment" parameterType="int" resultType="greentalkCommentDto">
+        SELECT GC.MEM_ID
+             , GC.COMMENT_CONTENT
+             , M.MEM_PIC
+             , M.MEM_NICKNAME
+         FROM GREENTALK_COMMENT GC
+         JOIN MEMBER M
+           ON M.MEM_ID = GC.MEM_ID
+        WHERE GC.GREEN_ID = #{id}
+        ORDER BY GC.COMMENT_MOD DESC
+    </select>
 </mapper>

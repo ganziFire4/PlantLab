@@ -62,10 +62,6 @@ public class GreentalkDao {
         return mybatis.selectOne("GreentalkDao.getGreenOne", id);
     }
 
-    public GreentalkCommentDto getComment(int id) {
-        return mybatis.selectOne("GreentalkDao.getComment", id);
-    }
-
     public List<GreentalkDto> getGreenFileList(int id) {
         return mybatis.selectList("GreentalkDao.getGreenFileList", id);
     }
@@ -86,7 +82,7 @@ public class GreentalkDao {
         return mybatis.selectList("GreentalkDao.getPopGreenLists_main");
     }
 
-    public int getComment(Map<String, String> searchMap) {
-        return mybatis.selectOne("GreentalkDao.getGreenComment", searchMap);
+    public List<GreentalkCommentDto> getComment(int id) {
+        return mybatis.selectList("GreentalkDao.getComment", id);
     }
 }

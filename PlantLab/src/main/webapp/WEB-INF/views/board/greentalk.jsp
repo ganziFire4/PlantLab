@@ -486,7 +486,7 @@
                     const formattedDate = formatDate(obj.greentalk.green_mod); // 날짜 변환
 
                     // let htmlStr = "";
-                        htmlStr += `
+                       let htmlStr = `
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modalbox">
@@ -513,6 +513,38 @@
                                         <div class="modalreport">
                                             <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
                                         </div>
+                                        <c:forEach items="${obj.greenComment}" var="comment">
+                                            <div class="modalcommentbox">
+                                                <div class="writerpic">
+                                                    <img src="/static/images/storage/\${comment.mem_pic}" alt="" style="width: 30px; height: 30px; border-radius: 50%; outline: solid 1px #ccc;">
+                                                </div>
+                                                <div class="modalmaincon">
+                                                    \${comment.mem_nickname}
+                                                </div>
+                                                <div class="modalmaindate">
+                                                    \${comment.comment_mod}
+                                                </div>
+                                                <div class="modalreport">
+                                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
+                                                </div>
+                                            </div>
+                                        </c:forEach>
+<%--                                             ${obj.greenComment.map(comment => `--%>
+<%--                                                <div class="modalcommentbox">--%>
+<%--                                                    <div class="writerpic">--%>
+<%--                                                        <img src="/static/images/storage/${comment.mem_pic}" alt="" style="width: 30px; height: 30px; border-radius: 50%; outline: solid 1px #ccc;">--%>
+<%--                                                    </div>--%>
+<%--                                                    <div class="modalmaincon">--%>
+<%--                                                        ${comment.mem_nickname}--%>
+<%--                                                    </div>--%>
+<%--                                                    <div class="modalmaindate">--%>
+<%--                                                        ${comment.comment_mod}--%>
+<%--                                                    </div>--%>
+<%--                                                    <div class="modalreport">--%>
+<%--                                                        <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">--%>
+<%--                                                    </div>--%>
+<%--                                                </div>--%>
+<%--                                            `).join('')}--%>
                                     </div>
                                     <div class="modalmaincontent">
                                         <p>\${obj.greentalk.green_content}</p>

@@ -204,24 +204,26 @@ public class BoardController {
         try {
             GreentalkDto greentalk = greentalkService.getGreenOne(greentalkDto.getGreen_id());
             map.put("greentalk", greentalk);
+            List<GreentalkCommentDto> greentalkCommentDtoList = greentalkService.getComment(greentalkDto.getGreen_id());
+            map.put("greenComment", greentalkCommentDtoList);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return map;
     }
 
-    @PostMapping("/comment-ajax.do")
-    @ResponseBody
-    public Map<String, Object> commentAjax(GreentalkCommentDto greentalkCommentDto) {
-        Map<String, Object> map = new HashMap<>();
-        try {
-            GreentalkCommentDto greentalkComment = greentalkService.getComment(greentalkCommentDto.getGreen_comment_id());
-            map.put("greentalkComment", greentalkComment);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return map;
-    }
+//    @PostMapping("/comment-ajax.do")
+//    @ResponseBody
+//    public Map<String, Object> commentAjax(GreentalkCommentDto greentalkCommentDto) {
+//        Map<String, Object> map = new HashMap<>();
+//        try {
+//            GreentalkCommentDto greentalkComment = greentalkService.getComment(greentalkCommentDto.getGreen_comment_id());
+//            map.put("greentalkComment", greentalkComment);
+//        } catch (Exception e) {
+//            System.out.println(e.getMessage());
+//        }
+//        return map;
+//    }
 
 
 //    @PostMapping("/board-list.do")

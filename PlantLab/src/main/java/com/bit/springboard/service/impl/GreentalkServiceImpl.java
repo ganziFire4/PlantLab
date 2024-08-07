@@ -107,7 +107,7 @@ public class GreentalkServiceImpl implements GreentalkService {
     }
 
     @Override
-    public GreentalkCommentDto getComment(int id) {
+    public List<GreentalkCommentDto> getComment(int id) {
         return greentalkDao.getComment(id);
     }
 

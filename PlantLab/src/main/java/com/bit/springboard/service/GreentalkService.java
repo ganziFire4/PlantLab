@@ -29,5 +29,5 @@ public interface GreentalkService {
 
     void filePost(GreentalkDto greentalkDto);
 
-    GreentalkCommentDto getComment(int id);
+    List<GreentalkCommentDto> getComment(int id);
 }
