@@ -63,6 +63,32 @@ public class MemberController {
         return "redirect:/";
     }
 
+    @GetMapping("/green_login.do")
+    public String green_loginView(){
+        return "/WEB-INF/views/member/green_login_01";
+    }
+
+    @PostMapping("/green_login.do")
+    public String green_login(MemberDto memberDto, Model model, HttpSession session) {
+        try {
+//            System.out.println("로그인 시도: " + memberDto.getLogin_id());
+
+            MemberDto loggedInMember = memberService.login(memberDto);
+
+//            System.out.println("로그인 성공: " + loggedInMember);
+//            loggedInMember.setPassword("");
+
+            session.setAttribute("loggedInMember", loggedInMember);
+
+            return "redirect:/board/greentalk.do";
+
+        }catch (Exception e) {
+//            System.out.println("로그인 실패: " + e.getMessage());
+            model.addAttribute("loginFailMsg", e.getMessage());
+            return "/WEB-INF/views/member/green_login_01";
+        }
+    }
+
     @GetMapping("/green_logout.do")
     public String green_logout(HttpSession session) {
         session.invalidate();
