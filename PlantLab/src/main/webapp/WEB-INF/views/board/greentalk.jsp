@@ -74,8 +74,10 @@
                 <button type="submit" class="greentalksearchbtn">검색</button>
             </form>
         </div>
-        <div class="postbtnbox">
-            <button id="postButton" type="button" style="border: none; ">글 작성</button>
+        <div class="postbtncontainer" style="display: flex; justify-content: center">
+        <div class="postbtnbox" style="width: 1168px;">
+            <button id="postButton" type="button" style="border: none; background-color: #27af5a; color: white; border-radius: 5px; width: 100px; height: 30px;">글 작성</button>
+        </div>
         </div>
 <%--        <script>--%>
 <%--            $(document).ready(function() {--%>
