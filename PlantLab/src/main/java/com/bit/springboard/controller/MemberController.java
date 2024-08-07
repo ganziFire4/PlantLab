@@ -22,7 +22,8 @@ public class MemberController {
     private MemberService memberService;
     private BoardService boardService;
     private GreentalkService greentalkService;
-    
+
+
     @Autowired
     public MemberController(MemberService memberService, BoardService boardService, GreentalkService greentalkService) {
         this.memberService = memberService;
@@ -38,11 +39,11 @@ public class MemberController {
     @PostMapping("/login.do")
     public String login(MemberDto memberDto, Model model, HttpSession session) {
         try {
-            System.out.println("로그인 시도: " + memberDto.getLogin_id());
+//            System.out.println("로그인 시도: " + memberDto.getLogin_id());
 
             MemberDto loggedInMember = memberService.login(memberDto);
 
-            System.out.println("로그인 성공: " + loggedInMember);
+//            System.out.println("로그인 성공: " + loggedInMember);
 //            loggedInMember.setPassword("");
 
             session.setAttribute("loggedInMember", loggedInMember);
@@ -50,7 +51,7 @@ public class MemberController {
             return "redirect:/";
 
         }catch (Exception e) {
-            System.out.println("로그인 실패: " + e.getMessage());
+//            System.out.println("로그인 실패: " + e.getMessage());
             model.addAttribute("loginFailMsg", e.getMessage());
             return "/WEB-INF/views/member/login_01";
         }
@@ -123,19 +124,18 @@ public class MemberController {
                 loggedInMember.setMem_pic(modify_pic.getOriginalFilename());
             }
 
-            if(!memberDto.getMem_nickname().equals("")){
-                loggedInMember.setMem_nickname(memberDto.getMem_nickname());
-            }
-
-            if(!memberDto.getPassword().equals("")){
-                loggedInMember.setPassword(memberDto.getPassword());
-            }
-
             try{
                 modify_pic.transferTo(uploadFile);
             } catch (IOException ie) {
                 System.out.println(ie.getMessage());
             }
+        }
+        if(!memberDto.getMem_nickname().isEmpty()){
+            loggedInMember.setMem_nickname(memberDto.getMem_nickname());
+        }
+
+        if(!memberDto.getPassword().isEmpty()){
+            loggedInMember.setPassword(memberDto.getPassword());
         }
         memberService.modify(loggedInMember);
 
@@ -168,14 +168,14 @@ public class MemberController {
         try {
             MemberDto memberDto = new MemberDto();
             memberDto.setMem_email(email);
+            //
             String verificationCode = memberService.sendSimpleMessage(email);
-            return "인증번호가 발송되었습니다. 이메일을 확인하세요.";
+            return verificationCode;
         } catch (Exception e) {
             e.printStackTrace();
-            return "인증번호 발송에 실패했습니다.";
+            return "error";
         }
     }
-
 
 
 }

@@ -21,4 +21,7 @@ public interface GreentalkService {
     GreentalkDto getGreenOne(int id);
 
     List<GreentalkDto> getMyGreenList(int memId);
+
+    int writePost(GreentalkDto greentalkDto);
+    void filePost(GreentalkDto loggedInMember);
 }

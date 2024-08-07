@@ -68,4 +68,12 @@ public class GreentalkDao {
     public List<GreentalkDto> getMyGreenList(int memId) {
         return mybatis.selectList("GreentalkDao.getMyGreenList", memId);
     }
+
+    public void writePost(GreentalkDto greentalkDto) {
+        mybatis.insert("BoardDao.writePost", greentalkDto);
+    }
+
+    public void filePost(GreentalkDto greentalkDto) {
+        mybatis.insert("BoardDao.filePost", greentalkDto);
+    }
 }

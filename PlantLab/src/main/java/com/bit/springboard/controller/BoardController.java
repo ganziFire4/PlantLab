@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 
@@ -71,13 +72,12 @@ public class BoardController {
         model.addAttribute("pop_condition", pop_condition);
         model.addAttribute("table", table);
 
-
         int total = boardService.getBoardTotal(tab, search);
         model.addAttribute("total", total);
         model.addAttribute("page", new BoardPageDto(cri, total));
 
-        System.out.println(pop_condition);
-        System.out.println(table);
+//        System.out.println(pop_condition);
+//        System.out.println(table);
         return "/WEB-INF/views/board/board-main";
 
     }
@@ -149,8 +149,8 @@ public class BoardController {
     @PostMapping("/greentalk-list-ajax.do")
     @ResponseBody
     public Map<String, Object> greentalkListAjax(@RequestParam Map<String, String> searchMap, Criteria cri) {
-        System.out.println(cri.getPageNum());
-        System.out.println(cri.getAmount());
+//        System.out.println(cri.getPageNum());
+//        System.out.println(cri.getAmount());
         try {
             greentalkService = applicationContext.getBean("greentalkServiceImpl", GreentalkService.class);
 
@@ -213,6 +213,16 @@ public class BoardController {
     public String board_view_cnt ( @RequestParam("id") int id){
         boardService.update_view_cnt(id);
         return "redirect:/WEB-INF/views/board/board-detail.do?id=" + id;
+    }
+
+    @PostMapping("/greentalk-post.do")
+    public String greentalk_post(GreentalkDto greentalkDto,GreentalkFileDto greentalkFileDto, HttpSession session, MultipartFile[] uploadFiles) {
+        MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
+        greentalkDto.setMem_id(loggedInMember.getMemId());
+
+        greentalkService.writePost(greentalkDto);
+        greentalkService.filePost(greentalkDto);
+        return "redirect:/board/greentalk.do";
     }
 }
 

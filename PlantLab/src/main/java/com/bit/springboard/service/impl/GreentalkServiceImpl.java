@@ -109,4 +109,15 @@ public class GreentalkServiceImpl implements GreentalkService {
     public List<GreentalkDto> getMyGreenList(int memId) {
         return greentalkDao.getMyGreenList(memId);
     }
+
+    @Override
+    public int writePost(GreentalkDto greentalkDto) {
+        greentalkDao.writePost(greentalkDto);
+        return greentalkDto.getGreen_id();
+    }
+
+    @Override
+    public void filePost(GreentalkDto greentalkDto) {
+        greentalkDao.filePost(greentalkDto);
+    }
 }
