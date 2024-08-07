@@ -16,7 +16,7 @@
 <main>
     <div class="product_form">
         <h2>상품 등록</h2>
-        <form id="productForm" enctype="multipart/form-data">
+        <form id="productForm" action="/save" method="post" enctype="multipart/form-data">
             <label for="brand">브랜드:</label>
             <input type="text" id="brand" name="brand" required><br>
 
@@ -174,7 +174,7 @@
                 <div class="product_row">
                     <div class="product_item">
                         <a href="/purchase.do">
-                            <img src="${product.file_name}" alt="물품 이미지">
+                            <img src="${pageContext.request.contextPath}/static/images/product_img/${product.file_name}">
                             <div class="goods_border">
                                 <p class="product_title">${product.product_name}</p>
                                 <p class="product_company">${product.brand}</p>
@@ -208,7 +208,6 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const productForm = document.getElementById('productForm');
-        const previewImage = document.getElementById('previewImage');
         const productContainer = document.getElementById('product-container');
 
         productForm.addEventListener('submit', function(event) {
@@ -217,20 +216,20 @@
             const formData = new FormData(productForm);
 
             const productDto = {
-                brand: document.getElementById('brand').value || "", // 기본값으로 빈 문자열 설정
-                product_name: document.getElementById('product_name').value || "",
-                price: document.getElementById('price').value || 0,
-                discount: document.getElementById('discount').value || 0.0,
-                rate: document.getElementById('rate').value || 0.0,
-                color: document.getElementById('color').value || "",
-                is_light: document.getElementById('is_light').value === "true",
-                base_type: document.getElementById('base_type').value || "",
-                size: document.getElementById('size').value || "",
-                tag: document.getElementById('tag').value || "",
+                brand: document.getElementById('brand').value,
+                product_name: document.getElementById('product_name').value,
+                price: document.getElementById('price').value,
+                discount: document.getElementById('discount').value,
+                rate: document.getElementById('rate').value,
+                color: document.getElementById('color').value,
+                is_light: document.getElementById('is_light').value,
+                base_type: document.getElementById('base_type').value,
+                size: document.getElementById('size').value,
+                tag: document.getElementById('tag').value,
             };
             formData.append('productDto', new Blob([JSON.stringify(productDto)], { type: 'application/json' }));
 
-            fetch('http://localhost:8090/save', {
+            fetch('/save', {
                 method: 'POST',
                 body: formData
             })
@@ -244,16 +243,29 @@
                     if (data) {
                         addProductToContainer(data);
                         productForm.reset();
-                        previewImage.style.display = 'none';
                     }
                 })
                 .catch(error => {
                     console.error('Error:', error);
-                    alert('An error occurred: ' + error.message); // 에러 알림 추가
+                    alert('An error occurred: ' + error.message);
                 });
         });
 
+        fetch('/all')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(product => {
+                    addProductToContainer(product);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('An error occurred while loading products: ' + error.message);
+            });
+
         const fileInput = document.getElementById('file');
+        const previewImage = document.getElementById('previewImage');
+
         fileInput.addEventListener('change', function(event) {
             const file = event.target.files[0];
             if (file) {
@@ -276,7 +288,7 @@
             productLink.href = '/purchase.do';
 
             const productImage = document.createElement('img');
-            productImage.src = product.file_name;
+            productImage.src = 'static/images/product_img/' + product.file_name;
             productImage.alt = '물품 이미지';
 
             const goodsBorder = document.createElement('div');

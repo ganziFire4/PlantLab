@@ -2,6 +2,7 @@ package com.bit.springboard.controller;
 
 import com.bit.springboard.dto.ProductDto;
 import com.bit.springboard.service.ProductService;
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -14,18 +15,17 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
-    @PostMapping(value = "/save", consumes = "multipart/form-data")
+    @PostMapping(value = "/save")
     @ResponseBody
     public ProductDto saveProduct(
-            @RequestPart(value = "productDto", required = false) ProductDto productDto,
-            @RequestPart(value = "file", required = false) MultipartFile file) {
+            @RequestPart("productDto") ProductDto productDto,
+            @RequestPart("file") MultipartFile file,
+            HttpServletRequest request) {
         try {
-            if (productDto == null) {
-                productDto = new ProductDto(); // 기본값으로 초기화된 DTO 생성
-            }
-            return productService.saveProduct(productDto, file);
+            String attachPath = request.getSession().getServletContext().getRealPath("/") + "/static/images/product_img/";
+            return productService.saveProduct(productDto, file, attachPath);
         } catch (Exception e) {
-            e.printStackTrace();  // 서버 콘솔에 예외 로그 출력
+            e.printStackTrace();
             throw new RuntimeException("Product save failed", e);
         }
     }

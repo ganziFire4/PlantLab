@@ -24,10 +24,10 @@ public class PicDto {
     }
 
     public String getFile_name() {
-        return file_name;
+        return null;
     }
 
-    public void setFile_name(String file_name) {
+    public void set(String file_name) {
         this.file_name = file_name;
     }
 
@@ -37,5 +37,8 @@ public class PicDto {
 
     public void setIs_main(boolean is_main) {
         this.is_main = is_main;
+    }
+
+    public void setFile_name(String savedFileName) {
     }
 }

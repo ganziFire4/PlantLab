@@ -22,8 +22,9 @@ public class ProductDao {
         return sqlSessionTemplate.selectList("ProductDao.getAllProducts");
     }
 
-    public void saveProduct(ProductDto productDto) {
+    public ProductDto saveProduct(ProductDto productDto) {
         sqlSessionTemplate.insert("ProductDao.saveProduct", productDto);
+        return productDto;
     }
 
     public void savePic(PicDto picDto) {
