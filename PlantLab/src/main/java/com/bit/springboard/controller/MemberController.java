@@ -63,6 +63,12 @@ public class MemberController {
         return "redirect:/";
     }
 
+    @GetMapping("/green_logout.do")
+    public String green_logout(HttpSession session) {
+        session.invalidate();
+        return"redirect:/board/greentalk.do";
+    }
+
 
     @GetMapping("/join.do")
     public String joinView(){
