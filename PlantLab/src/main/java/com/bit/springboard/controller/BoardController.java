@@ -138,7 +138,7 @@ public class BoardController {
     public String greentalk_post(HttpSession session) {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
         if(loggedInMember == null) {
-            return "redirect:/member/login.do";
+            return "redirect:/member/greenpost_login.do";
         }
         return "/WEB-INF/views/board/greentalk_post";
     }
@@ -208,6 +208,19 @@ public class BoardController {
         return map;
     }
 
+    @PostMapping("/comment-ajax.do")
+    @ResponseBody
+    public Map<String, Object> commentAjax(GreentalkCommentDto greentalkCommentDto) {
+        Map<String, Object> map = new HashMap<>();
+        try {
+            GreentalkCommentDto greentalkComment = greentalkService.getComment(greentalkCommentDto.getGreen_comment_id());
+            map.put("greentalkComment", greentalkComment);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        return map;
+    }
+
 
 //    @PostMapping("/board-list.do")
 //    public String search_board (@RequestParam Map < String, Object > searchMap){
@@ -231,6 +244,7 @@ public class BoardController {
         greentalkService.filePost(greentalkDto);
         return "redirect:/board/greentalk.do";
     }
+
 }
 
 

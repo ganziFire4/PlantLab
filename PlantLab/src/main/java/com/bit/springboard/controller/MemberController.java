@@ -5,6 +5,7 @@ import com.bit.springboard.service.BoardService;
 import com.bit.springboard.service.GreentalkService;
 import com.bit.springboard.service.MemberService;
 import com.bit.springboard.service.impl.MemberServiceImpl;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -63,6 +64,58 @@ public class MemberController {
         return "redirect:/";
     }
 
+    @GetMapping("/green_login.do")
+    public String green_loginView(){
+        return "/WEB-INF/views/member/green_login_01";
+    }
+
+    @PostMapping("/green_login.do")
+    public String green_login(MemberDto memberDto, Model model, HttpSession session) {
+        try {
+//            System.out.println("로그인 시도: " + memberDto.getLogin_id());
+
+            MemberDto loggedInMember = memberService.login(memberDto);
+
+//            System.out.println("로그인 성공: " + loggedInMember);
+//            loggedInMember.setPassword("");
+
+            session.setAttribute("loggedInMember", loggedInMember);
+
+            return "redirect:/board/greentalk.do";
+
+        }catch (Exception e) {
+//            System.out.println("로그인 실패: " + e.getMessage());
+            model.addAttribute("loginFailMsg", e.getMessage());
+            return "/WEB-INF/views/member/green_login_01";
+        }
+    }
+
+    @GetMapping("/greenpost_login.do")
+    public String greenpost_loginView(){
+        return "/WEB-INF/views/member/greenpost_login_01";
+    }
+
+    @PostMapping("/greenpost_login.do")
+    public String greenpost_login(MemberDto memberDto, Model model, HttpSession session) {
+        try {
+//            System.out.println("로그인 시도: " + memberDto.getLogin_id());
+
+            MemberDto loggedInMember = memberService.login(memberDto);
+
+//            System.out.println("로그인 성공: " + loggedInMember);
+//            loggedInMember.setPassword("");
+
+            session.setAttribute("loggedInMember", loggedInMember);
+
+            return "redirect:/board/greentalk_post";
+
+        }catch (Exception e) {
+//            System.out.println("로그인 실패: " + e.getMessage());
+            model.addAttribute("loginFailMsg", e.getMessage());
+            return "/WEB-INF/views/member/greenpost_login_01";
+        }
+    }
+
     @GetMapping("/green_logout.do")
     public String green_logout(HttpSession session) {
         session.invalidate();
@@ -106,11 +159,13 @@ public class MemberController {
     }
 
     @PostMapping("/modify.do")
-    public String modify(MemberDto memberDto, HttpSession session, MultipartFile modify_pic, RedirectAttributes redirectAttributes) {
+    public String modify(MemberDto memberDto, HttpSession session, MultipartFile modify_pic, RedirectAttributes redirectAttributes, HttpServletRequest request) {
         // session과 같은 정보의 Dto 만들기
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
         if(modify_pic != null) {
-            String attachPath = "C:\\Users\\bitcamp\\Desktop\\플랜트랩 작업/PlantLab/src/main/webapp/static/images/storage/";
+            String attachPath = request.getServletContext().getRealPath("\\") + "\\static\\images\\storage\\";
+
+            System.out.println(attachPath);
 
             File directory = new File(attachPath);
 

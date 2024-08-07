@@ -74,8 +74,10 @@
                 <button type="submit" class="greentalksearchbtn">검색</button>
             </form>
         </div>
-        <div class="postbtnbox">
-            <button id="postButton" type="button">글 작성</button>
+        <div class="postbtncontainer" style="display: flex; justify-content: center">
+        <div class="postbtnbox" style="width: 1168px;">
+            <button id="postButton" type="button" style="border: none; background-color: #27af5a; color: white; border-radius: 5px; width: 100px; height: 30px;">글 작성</button>
+        </div>
         </div>
 <%--        <script>--%>
 <%--            $(document).ready(function() {--%>
@@ -93,8 +95,12 @@
                     <div class="modal-header">
                         <h5 class="modal-title">알림</h5>
                         <div class="btnLocation" style="display: flex;">
-                        <button id="modal-close-btn" type="button" class="close" data-dismiss="modal" aria-label="Close" style="width: 20px; height: 20px; border: none; border-radius: 5px; background-color: #CCCCCC;">
-                            <img src="">
+                        <button id="modal-close-btn" type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                style="width: 20px; height: 20px; border: none; border-radius: 5px; background-color: white;
+                                position:absolute; top: 10px; right: 10px;">
+                            <img src="${pageContext.request.contextPath}/static/images/storage/x-icon.png"
+                                 style="width: 20px; height: 20px; border: none; border-radius: 5px; background-color: white;
+                                position:absolute; top: -145px; right: 1px;">
                         </button>
                         </div>
                     </div>
@@ -429,13 +435,17 @@
             window.location.href = "/board/board-main.do?tab=3";
         });
 
-        // const viewModal = document.getElementsByClassName("card");
-
-        <%--const formatDate = (dateStr) => {--%>
-        <%--    const [year, month, day] = dateStr.split(',').map(Number);--%>
-        <%--    const shortYear = year.toString().slice(-2); // 마지막 두 자리 숫자만 사용--%>
-        <%--    return `${shortYear}.${month.toString().padStart(2, '0')}.${day.toString().padStart(2, '0')}`;--%>
-        <%--};--%>
+        // $.ajax({
+        //     url:'/board/comment-ajax.do',
+        //     type: 'POST',
+        //     data: {"green_id": greenId},
+        //     success: (obj) => {
+        //         console.log(obj);
+        //
+        //         htmlStr +=`
+        //         `
+        //     }
+        // })
 
         const openModal = (greenId) => {
             // console.log(greenId);
@@ -483,12 +493,12 @@
                         <div class="modal-body">
                             <img src="/static/images/storage/\${obj.greentalk.green_pic}" alt="" class="modalmain">
                             <div class="modal-right">
-                                <div class="modalthumb">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1_2">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1_3">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4" style="height: 96.27px;">
-                                </div>
+                                <%--<div class="modalthumb">--%>
+                                <%--    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">--%>
+                                <%--    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1_2">--%>
+                                <%--    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1_3">--%>
+                                <%--    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4">--%>
+                                <%--</div>--%>
                                 <div class="modalcontentbox">
                                     <div class="modalcontents">
                                         <div class="writerpic">
@@ -508,6 +518,9 @@
                                         <p>\${obj.greentalk.green_content}</p>
                                     </div>
                                 </div>
+                                    <div class="modalcommentbox">
+                                        <div>12345</div>
+                                    </div>
                             </div>
                             <div class="title">
                                 <p class="titlename"># \${obj.greentalk.green_tag}</p>
@@ -519,7 +532,7 @@
                                 </div>
                             </div>
                             <div class="comment">
-                                <form id="comment-form" action="/postGreenComment" method="post">
+                                <form id="comment-form" onsubmit="submitComment(event)">
                                 <input type="hidden" name="green_id" value="\${obj.greentalk.green_id}">
                                 <input type="hidden" name="mem_id" value="\${obj.greentalk.mem_id}">
                                 <div class="commenttab">
@@ -538,6 +551,7 @@
             </div>
                                             `;
                     $('#rank1modal').html(htmlStr);
+                    $("#rank1modal").modal('show');
 
                     // $("#rank1modal").modal('show');
 
@@ -546,8 +560,6 @@
                     console.log(err);
                 }
             });
-
-            $("#rank1modal").modal('show');
         }
     </script>
 </body>

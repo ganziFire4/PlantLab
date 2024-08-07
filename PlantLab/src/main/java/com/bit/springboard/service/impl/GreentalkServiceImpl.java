@@ -3,6 +3,7 @@ package com.bit.springboard.service.impl;
 import com.bit.springboard.common.FileUtils;
 import com.bit.springboard.dao.GreentalkDao;
 import com.bit.springboard.dto.Criteria;
+import com.bit.springboard.dto.GreentalkCommentDto;
 import com.bit.springboard.dto.GreentalkDto;
 import com.bit.springboard.dto.GreentalkFileDto;
 import com.bit.springboard.service.GreentalkService;
@@ -103,6 +104,11 @@ public class GreentalkServiceImpl implements GreentalkService {
         System.out.println(id);
         System.out.println(greentalkDao.getGreenOne(id));
         return greentalkDao.getGreenOne(id);
+    }
+
+    @Override
+    public GreentalkCommentDto getComment(int id) {
+        return greentalkDao.getComment(id);
     }
 
     @Override
