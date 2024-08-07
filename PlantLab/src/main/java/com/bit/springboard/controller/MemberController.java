@@ -134,6 +134,12 @@ public class MemberController {
         return "/WEB-INF/views/member/login_01";
     }
 
+    @GetMapping("/checkDuplicate.do")
+    @ResponseBody
+    public String checkDuplicate(@RequestParam("login_id") String loginId) {
+        return memberService.loginIdCheck(loginId);
+    }
+
 
     @Controller
     public class AddressController {

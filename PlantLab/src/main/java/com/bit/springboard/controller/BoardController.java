@@ -18,6 +18,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -74,8 +76,8 @@ public class BoardController {
         model.addAttribute("total", total);
         model.addAttribute("page", new BoardPageDto(cri, total));
 
-        System.out.println(pop_condition);
-        System.out.println(table);
+//        System.out.println(pop_condition);
+//        System.out.println(table);
         return "/WEB-INF/views/board/board-main";
 
     }
@@ -236,15 +238,35 @@ public class BoardController {
     }
 
     @PostMapping("/greentalk-post.do")
-    public String greentalk_post(GreentalkDto greentalkDto,GreentalkFileDto greentalkFileDto, HttpSession session, MultipartFile[] uploadFiles) {
+    public String greentalk_post(GreentalkDto greentalkDto, HttpSession session, MultipartFile upload_pic, HttpServletRequest request) {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
         greentalkDto.setMem_id(loggedInMember.getMem_id());
+        if(upload_pic != null) {
+            String attachPath = request.getServletContext().getRealPath("\\") + "\\static\\images\\storage\\";
 
+            File directory = new File(attachPath);
+
+            if(!directory.exists()) {
+                directory.mkdirs();
+            }
+
+            File uploadFile = new File(attachPath + upload_pic.getOriginalFilename());
+
+            if(!upload_pic.getOriginalFilename().equals("")){
+                greentalkDto.setGreen_pic(upload_pic.getOriginalFilename());
+            }
+
+            try{
+                upload_pic.transferTo(uploadFile);
+            } catch (IOException ie) {
+                System.out.println(ie.getMessage());
+            }
+        }
         greentalkService.writePost(greentalkDto);
         greentalkService.filePost(greentalkDto);
+
         return "redirect:/board/greentalk.do";
     }
-
 }
 
 

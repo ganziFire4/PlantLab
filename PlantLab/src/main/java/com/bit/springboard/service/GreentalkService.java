@@ -24,7 +24,10 @@ public interface GreentalkService {
     List<GreentalkDto> getMyGreenList(int memId);
 
     int writePost(GreentalkDto greentalkDto);
-    void filePost(GreentalkDto loggedInMember);
+
+    List<GreentalkDto> getPopGreenLists_main();
+
+    void filePost(GreentalkDto greentalkDto);
 
     GreentalkCommentDto getComment(int id);
 }

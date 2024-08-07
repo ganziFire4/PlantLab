@@ -168,26 +168,4 @@ SELECT A.*
             </if>
         </if>
     </select>
-
-    <insert id="writePost" parameterType="greentalk" useGeneratedKeys="true" keyProperty="green_id">
-        INSERT INTO GREENTALK(
-              MEM_ID
-            , GREEN_CONTENT
-            , GREEN_TAG
-        ) VALUES (
-              #{mem_id}
-            , #{green_content}
-            , #{green_tag}
-        )
-    </insert>
-
-    <insert id="filePost" parameterType="greentalk">
-        INSERT INTO GREENTALK_PIC(
-               GREEN_ID
-             , GREEN_PIC
-        ) VALUES (
-               #{green_id}
-             , #{green_pic}
-        )
-    </insert>
 </mapper>

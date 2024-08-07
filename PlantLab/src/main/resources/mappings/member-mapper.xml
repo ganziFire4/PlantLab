@@ -40,11 +40,14 @@
         WHERE LOGIN_ID = #{login_id}
           AND PASSWORD = #{password}
     </select>
+
     <select id="loginIdCheck" parameterType="string" resultType="int">
         SELECT COUNT(*)
         FROM MEMBER
         WHERE LOGIN_ID = #{login_id}
     </select>
+
+
 
     <select id="getBoardLikeBookCnt" parameterType="int" resultType="member">
         SELECT BOARD_LIKE_CNT

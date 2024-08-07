@@ -126,4 +126,9 @@ public class GreentalkServiceImpl implements GreentalkService {
     public void filePost(GreentalkDto greentalkDto) {
         greentalkDao.filePost(greentalkDto);
     }
+
+    @Override
+    public List<GreentalkDto> getPopGreenLists_main() {
+        return greentalkDao.getPopGreenLists();
+    }
 }
