@@ -41,8 +41,8 @@ public class BoardController {
     public String boardList(Model model, @RequestParam("tab") int tab, @RequestParam Map<String, Object> search,
                             Criteria cri, @RequestParam(value = "pop_condition", required = false) String pop_condition,
                             @RequestParam (value = "rec_condition", required = false) String rec_condition, @RequestParam(value = "row-num", required = false) String row_num) {
-        System.out.println("111111111111111111111");
-        System.out.println(tab);
+//        System.out.println("111111111111111111111");
+//        System.out.println(tab);
         Map<String, Object> table = new HashMap<>();
         table.put("rec_condition", rec_condition);
         table.put("row_num", row_num);
@@ -58,8 +58,8 @@ public class BoardController {
         model.addAttribute("total", total);
         model.addAttribute("page", new BoardPageDto(cri, total));
 
-        System.out.println(pop_condition);
-        System.out.println(table);
+//        System.out.println(pop_condition);
+//        System.out.println(table);
         return "/WEB-INF/views/board/board-main";
 
     }
@@ -134,8 +134,8 @@ public class BoardController {
     @PostMapping("/greentalk-list-ajax.do")
     @ResponseBody
     public Map<String, Object> greentalkListAjax(@RequestParam Map<String, String> searchMap, Criteria cri) {
-        System.out.println(cri.getPageNum());
-        System.out.println(cri.getAmount());
+//        System.out.println(cri.getPageNum());
+//        System.out.println(cri.getAmount());
         try {
             greentalkService = applicationContext.getBean("greentalkServiceImpl", GreentalkService.class);
 

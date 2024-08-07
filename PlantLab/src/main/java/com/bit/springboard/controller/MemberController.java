@@ -39,11 +39,11 @@ public class MemberController {
     @PostMapping("/login.do")
     public String login(MemberDto memberDto, Model model, HttpSession session) {
         try {
-            System.out.println("로그인 시도: " + memberDto.getLogin_id());
+//            System.out.println("로그인 시도: " + memberDto.getLogin_id());
 
             MemberDto loggedInMember = memberService.login(memberDto);
 
-            System.out.println("로그인 성공: " + loggedInMember);
+//            System.out.println("로그인 성공: " + loggedInMember);
 //            loggedInMember.setPassword("");
 
             session.setAttribute("loggedInMember", loggedInMember);
@@ -51,7 +51,7 @@ public class MemberController {
             return "redirect:/";
 
         }catch (Exception e) {
-            System.out.println("로그인 실패: " + e.getMessage());
+//            System.out.println("로그인 실패: " + e.getMessage());
             model.addAttribute("loginFailMsg", e.getMessage());
             return "/WEB-INF/views/member/login_01";
         }
