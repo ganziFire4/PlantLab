@@ -39,12 +39,13 @@ public class BoardController {
     }
 
     @RequestMapping("/board-main.do")
-    public String boardList(Model model, @RequestParam("tab") int tab,
+    public String boardList(Model model, HttpSession session,
+                            @RequestParam("tab") int tab,
                             @RequestParam(value = "search_condition", required = false) String search_condition,
                             @RequestParam(value = "search_keyword", required = false) String search_keyword,
                             @RequestParam(value = "pop_condition", required = false) String pop_condition,
                             @RequestParam (value = "rec_condition", required = false) String rec_condition,
-                            @RequestParam(value = "row-num", required = false) String row_num, Criteria cri){
+                            @RequestParam(value = "rowsNum", required = false) String rowsNum, Criteria cri){
 
         Map<String, String> search = new HashMap<>();
         search.put("search_condition", search_condition);
@@ -52,15 +53,12 @@ public class BoardController {
 
         Map<String, String> table = new HashMap<>();
         table.put("rec_condition", rec_condition);
-        table.put("row_num", row_num);
+        table.put("rowsNum", rowsNum);
 
-        if(table.get("row_num") == null) {
-            table.put("row_num", "10");
-        }
-
-//        Criteria cri = new Criteria(1, Integer.parseInt(table.get("row_num")));
-        if(Integer.parseInt(table.get("row_num")) != cri.getAmount()) {
+        if(table.get("row_num") != null) {
             cri.setAmount(Integer.parseInt(table.get("row_num")));
+        } else {
+            cri.setAmount(10);
         }
 
         System.out.println(cri);
@@ -69,23 +67,32 @@ public class BoardController {
         model.addAttribute("popList", boardService.view_popular(tab, pop_condition));
         model.addAttribute("boardList", boardService.view_all(tab, search, table, cri));
         model.addAttribute("search", search);
-        model.addAttribute("pop_condition", pop_condition);
-        model.addAttribute("table", table);
+        session.setAttribute("pop_condition", pop_condition);
+        session.setAttribute("table", table);
 
         int total = boardService.getBoardTotal(tab, search);
         model.addAttribute("total", total);
         model.addAttribute("page", new BoardPageDto(cri, total));
 
-//        System.out.println(pop_condition);
-//        System.out.println(table);
+        System.out.println(pop_condition);
+        System.out.println(table);
         return "/WEB-INF/views/board/board-main";
 
     }
 
 
     @GetMapping("/post.do")
-    public String post() {
+    public String post(Model model, @RequestParam("tab") int tab) {
+        model.addAttribute("tab", tab);
         return "/WEB-INF/views/board/post";
+    }
+
+    @PostMapping("/post.do")
+    public String uploadPost(BoardDto boardDto){
+        boardService.post(boardDto);
+//        System.out.println(boardDto);
+//        model.addAttribute("board", boardService.getBoard(boardDto.getBoard_id()));
+        return "redirect:/board/board-main.do?tab=" + boardDto.getBoard_type();
     }
 
 
@@ -210,7 +217,7 @@ public class BoardController {
 //    }
 
     @GetMapping("/update-cnt.do")
-    public String board_view_cnt ( @RequestParam("id") int id){
+    public String board_view_cnt (@RequestParam("id") int id){
         boardService.update_view_cnt(id);
         return "redirect:/WEB-INF/views/board/board-detail.do?id=" + id;
     }
@@ -218,7 +225,7 @@ public class BoardController {
     @PostMapping("/greentalk-post.do")
     public String greentalk_post(GreentalkDto greentalkDto,GreentalkFileDto greentalkFileDto, HttpSession session, MultipartFile[] uploadFiles) {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
-        greentalkDto.setMem_id(loggedInMember.getMemId());
+        greentalkDto.setMem_id(loggedInMember.getMem_id());
 
         greentalkService.writePost(greentalkDto);
         greentalkService.filePost(greentalkDto);

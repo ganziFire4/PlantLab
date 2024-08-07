@@ -9,10 +9,6 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="javatime" uri="http://sargue.net/jsptags/time" %>
 
-<%@ page import="org.springframework.web.context.support.WebApplicationContextUtils" %>
-<%@ page import="com.bit.springboard.service.BoardService" %>
-<%@ page import="java.util.Map" %>
-
 <html>
 <head>
     <c:choose>
@@ -121,6 +117,7 @@
             window.location.href = "/board/greentalk.do";
         });
 
+        console.log("${loggedInMember}");
     </script>
 </body>
 </html>

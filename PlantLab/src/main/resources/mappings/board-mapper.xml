@@ -108,7 +108,7 @@ SELECT A.*
             </if>
         </if>
         )A
-        WHERE A.ROW_NUM &gt;= #{cri.startNum} + 1       AND A.ROW_NUM &lt; #{cri.startNum} + #{cri.amount}
+        WHERE A.ROW_NUM &gt;= #{cri.startNum} + 1 AND A.ROW_NUM &lt; #{cri.startNum} + #{cri.amount} + 1
     </select>
 
     <select id="view_one" parameterType="int" resultType="board">

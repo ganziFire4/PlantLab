@@ -110,7 +110,7 @@ public class MemberController {
         // session과 같은 정보의 Dto 만들기
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
         if(modify_pic != null) {
-            String attachPath = "C:/Project/PlantLab/src/main/webapp/static/images/storage/";
+            String attachPath = "C:\\Users\\bitcamp\\Desktop\\플랜트랩 작업/PlantLab/src/main/webapp/static/images/storage/";
 
             File directory = new File(attachPath);
 
@@ -151,11 +151,11 @@ public class MemberController {
             return "redirect:/member/login.do";
         }
 
-        model.addAttribute("myWrite", boardService.getBoard(loggedInMember.getMemId()));
+        model.addAttribute("myWrite", boardService.getBoard(loggedInMember.getMem_id()));
 //        session.setAttribute("myWrite", boardService.getBoard(memberDto.getMemId()));
-        model.addAttribute("myGreentalk", greentalkService.getMyGreenList(loggedInMember.getMemId()));
-        model.addAttribute("boardLikeBookmarkCnt", memberService.getBoardLikeBookCnt(loggedInMember.getMemId()));
-        model.addAttribute("greenLikeBookmarkCnt", memberService.getGreenLikeBookCnt(loggedInMember.getMemId()));
+        model.addAttribute("myGreentalk", greentalkService.getMyGreenList(loggedInMember.getMem_id()));
+        model.addAttribute("boardLikeBookmarkCnt", memberService.getBoardLikeBookCnt(loggedInMember.getMem_id()));
+        model.addAttribute("greenLikeBookmarkCnt", memberService.getGreenLikeBookCnt(loggedInMember.getMem_id()));
 
         session.setAttribute("loggedInMember", loggedInMember);
         return "/WEB-INF/views/member/mypage";

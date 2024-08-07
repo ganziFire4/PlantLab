@@ -20,8 +20,6 @@
     <div id="title_table_area">
         <div class="search_bar">
             <form id="search_form" action="/board/board-main.do?tab=${tab}" method="post">
-                <input type="hidden" name="pageNum" value="${page.cri.pageNum}">
-                <input type="hidden" name="amount" value="${page.cri.amount}">
                 <select name="search_condition" id="search_condition">
                     <option value="all"
                         <c:if test="${search == null || search.search_condition == 'all'}">
@@ -108,17 +106,19 @@
                 ${total}개
                 <div id="t_dropdown">
                     <form id="tableForm" action="/board/board-main.do?tab=${tab}" method="post">
-                        <select name="rows-num" id="rows-num">
+                        <input type="hidden" name="pageNum" value="${page.cri.pageNum}">
+                        <input type="hidden" name="amount" value="${page.cri.amount}">
+                        <select name="rowsNum" id="rows-num">
                             <option value="10"
-                                <c:if test="${table.rows_num == '10'}">
+                                <c:if test="${table.rowsNum == null || table.rowsNum == '10'}">
                                     selected
                                 </c:if>>10</option>
                             <option value="15"
-                                <c:if test="${table.rows_num == '15'}">
+                                <c:if test="${table.rowsNum == '15'}">
                                     selected
                                 </c:if>>15</option>
                             <option value="20"
-                                <c:if test="${table.rows_num == '20'}">
+                                <c:if test="${table.rowsNum == '20'}">
                                     selected
                                 </c:if>>20</option>
                         </select>
@@ -183,33 +183,32 @@
                 </table>
             </div>
         </div>
-<%--        <div class="under_bar">--%>
-<%--            <ul class="t_pagination">--%>
-<%--                <c:if test="${page.prev}">--%>
-<%--                    <li class="page-item">--%>
-<%--                        <a class="pageBtn" aria-label="Previous" href="${page.cri.pageNum - 1}">--%>
-<%--                            &laquo;--%>
-<%--                        </a>--%>
-<%--                    </li>--%>
-<%--                </c:if>--%>
-<%--                <c:forEach begin="${page.startPage}" end="${page.endPage}" var="number">--%>
-<%--                    <li class="page-item">--%>
-<%--                        <a class="pageBtn" href="${number}">${number}</a>--%>
-<%--                    </li>--%>
-<%--                </c:forEach>--%>
-<%--                <c:if test="${page.next}">--%>
-<%--                    <li class="page-item">--%>
-<%--                        <a class="pageBtn" aria-label="Next" href="${page.cri.pageNum + 1}">--%>
-<%--                            &raquo;--%>
-<%--                        </a>--%>
-<%--                    </li>--%>
-<%--                </c:if>--%>
-<%--            </ul>--%>
-<%--            <button type="button" id="button" onclick="location.href='/board/post.do'">글쓰기</button>--%>
-<%--        </div>--%>
+        <div class="under_bar">
+            <ul class="t_pagination">
+                <c:if test="${page.prev}">
+                    <li class="page-item">
+                        <a class="pageBtn" aria-label="Previous" href="${page.cri.pageNum - 1}">
+                            &lt;
+                        </a>
+                    </li>
+                </c:if>
+                <c:forEach begin="${page.startPage}" end="${page.endPage}" var="number">
+                    <li class="page-item">
+                        <a class="pageBtn" href="${number}">${number}</a>
+                    </li>
+                </c:forEach>
+                <c:if test="${page.next}">
+                    <li class="page-item">
+                        <a class="pageBtn" aria-label="Next" href="${page.cri.pageNum + 1}">
+                            &gt;
+                        </a>
+                    </li>
+                </c:if>
+            </ul>
+            <button type="button" id="button" onclick="location.href='/board/post.do?tab=${tab}'">글쓰기</button>
+        </div>
     </div>
     <script>
-        console.log("${page}");
 
         $("#pop_condition").on("change",() => {
             $("#popTableForm").submit();
@@ -224,14 +223,12 @@
             $("#tableForm").submit();
         });
 
-        $(".pagination a").on("click", (e) => {
+        $(".t_pagination a").on("click", (e) => {
             e.preventDefault();
-
-            // console.log($(e.target).attr("href"));
 
             $("input[name='pageNum']").val($(e.target).attr("href"));
 
-            $("#search-form").submit();
+            $("#tableForm").submit();
         });
     </script>
 </body>

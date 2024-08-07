@@ -66,7 +66,6 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public void update_view_cnt(int id) {
         boardDao.update_view_cnt(id);
-        System.out.println(boardDao.view_one(id));
     }
 
     @Override
