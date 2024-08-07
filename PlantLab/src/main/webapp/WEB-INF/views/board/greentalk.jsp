@@ -518,9 +518,6 @@
                                         <p>\${obj.greentalk.green_content}</p>
                                     </div>
                                 </div>
-                                    <div class="modalcommentbox">
-                                        <div>12345</div>
-                                    </div>
                             </div>
                             <div class="title">
                                 <p class="titlename"># \${obj.greentalk.green_tag}</p>
