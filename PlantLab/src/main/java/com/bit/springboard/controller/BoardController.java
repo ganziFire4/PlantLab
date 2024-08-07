@@ -13,13 +13,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.View;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
 
 
 @Controller
@@ -187,6 +187,16 @@ public class BoardController {
     public String board_view_cnt ( @RequestParam("id") int id){
         boardService.update_view_cnt(id);
         return "redirect:/WEB-INF/views/board/board-detail.do?id=" + id;
+    }
+
+    @PostMapping("/greentalk-post.do")
+    public String greentalk_post(GreentalkDto greentalkDto,GreentalkFileDto greentalkFileDto, HttpSession session, MultipartFile[] uploadFiles) {
+        MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
+        greentalkDto.setMem_id(loggedInMember.getMemId());
+
+        boardService.writePost(greentalkDto);
+        boardService.filePost(greentalkDto);
+        return "redirect:/board/greentalk.do";
     }
 }
 

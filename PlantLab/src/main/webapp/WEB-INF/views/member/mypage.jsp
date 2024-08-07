@@ -43,16 +43,22 @@
                             <div class="heartpart">
                                 <img src="../../../static/images/filledgreenheart.png" alt="좋아요이미지">
                                 <%-- 리스트의 각 항목을 반복하면서 합산합니다 --%>
-                                <c:set var="likeCount" value="${greenLikeBookmarkCnt.green_like_cnt}"/>
-                                <c:forEach items="${boardLikeBookmarkCnt}" var="boardlikeCnt">
-                                    <c:set var="likeCount" value="${likeCount + boardlikeCnt.board_like_cnt}"/>
+                                <c:set var="likeCount" value="0"/>
+                                <c:forEach items="${greenLikeBookmarkCnt}" var="greenLikeCnt">
+                                    <c:set var="likeCount" value="${likeCount + greenLikeCnt.green_like_cnt}"/>
+                                </c:forEach>
+                                <c:forEach items="${boardLikeBookmarkCnt}" var="boardLikeCnt">
+                                    <c:set var="likeCount" value="${likeCount + boardLikeCnt.board_like_cnt}"/>
                                 </c:forEach>
                                 <p style="color: #0DA446; font-size: 20px; margin-bottom: 5px;">${likeCount}</p>
                                 <p>좋아요</p>
                             </div>
                             <div class="bookmarkpart">
                                 <img src="../../../static/images/littlefilledbookmarkicon.png" alt="북마크이미지">
-                                <c:set var="bookCount" value="${greenLikeBookmarkCnt.green_bookmark_cnt}"/>
+                                <c:set var="bookCount" value="0"/>
+                                <c:forEach items="${greenLikeBookmarkCnt}" var="greenBookCnt">
+                                    <c:set var="bookCount" value="${bookCount + greenBookCnt.green_bookmark_cnt}"/>
+                                </c:forEach>
                                 <c:forEach items="${boardLikeBookmarkCnt}" var="boardBookCnt">
                                     <c:set var="bookCount" value="${bookCount + boardBookCnt.board_bookmark_cnt}"/>
                                 </c:forEach>

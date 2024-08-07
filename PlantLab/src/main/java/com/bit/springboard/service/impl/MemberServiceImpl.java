@@ -120,7 +120,7 @@ public class MemberServiceImpl implements MemberService {
     }
 
     @Override
-    public MemberDto getGreenLikeBookCnt(int memId) {
+    public List<MemberDto> getGreenLikeBookCnt(int memId) {
         return memberDao.getGreenLikeBookCnt(memId);
     }
 

@@ -17,7 +17,7 @@
     <main>
         <div class="join-container">
             <h2 id="join-explain">회원가입을 위해<br>정보를 입력해주세요.</h2>
-            <form id="join-form" action="/member/join.do" method="post"  onsubmit="return joinComplete()">
+            <form id="join-form" action="/member/join.do" method="post" onsubmit="return joinComplete()">
                 <div class="form-group">
                     <div class="custom-input">
                         <input type="text" id="veri_btn" name="login_id" placeholder="아이디" required>

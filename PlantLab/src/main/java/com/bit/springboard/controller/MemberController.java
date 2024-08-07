@@ -118,19 +118,18 @@ public class MemberController {
                 loggedInMember.setMem_pic(modify_pic.getOriginalFilename());
             }
 
-            if(!memberDto.getMem_nickname().equals("")){
-                loggedInMember.setMem_nickname(memberDto.getMem_nickname());
-            }
-
-            if(!memberDto.getPassword().equals("")){
-                loggedInMember.setPassword(memberDto.getPassword());
-            }
-
             try{
                 modify_pic.transferTo(uploadFile);
             } catch (IOException ie) {
                 System.out.println(ie.getMessage());
             }
+        }
+        if(!memberDto.getMem_nickname().isEmpty()){
+            loggedInMember.setMem_nickname(memberDto.getMem_nickname());
+        }
+
+        if(!memberDto.getPassword().isEmpty()){
+            loggedInMember.setPassword(memberDto.getPassword());
         }
         memberService.modify(loggedInMember);
 

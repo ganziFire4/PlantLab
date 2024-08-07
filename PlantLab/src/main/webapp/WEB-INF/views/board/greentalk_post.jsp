@@ -23,41 +23,44 @@
     <p></p>
 </div> -->
 <div class="container">
-    <div class="form-group">
-        <label for="title"></label>
-        <!-- <input type="text" id="title" name="title" placeholder="제목을 입력하세요."
-        onfocus="placeholder=''" onblur="placeholder='제목을 입력하세요.'"
-        > -->
-        <textarea name="content" id="content" placeholder="내용을 입력하세요."
-                  onfocus="placeholder=''" onblur="placeholder='내용을 입력하세요.'" class="textarea"></textarea> <!--폰트 바꿀 것-->
-    </div>
-    <div class="form-group">
-        <label for="tags"></label>
-        <input type="text" id="tags" name="tags" class="tag-input" placeholder="#태그"
-               onfocus="placeholder=''" onblur="placeholder='#태그'"
-        >
-    </div>
-    <div class="warning-group">
-        <p class="warning">※타인을 향한 비난 또는 비방 및 게시판의 목적에 맞지 않는 글은 관리자에 의해 삭제될 수 있습니다.</p>
+    <form action="/board/greentalk-post.do" method="post">
+        <div class="form-group">
+            <label for="title"></label>
+            <!-- <input type="text" id="title" name="title" placeholder="제목을 입력하세요."
+            onfocus="placeholder=''" onblur="placeholder='제목을 입력하세요.'"
+            > -->
+            <textarea name="green_content" id="content" placeholder="내용을 입력하세요."
+                      onfocus="placeholder=''" onblur="placeholder='내용을 입력하세요.'" class="textarea"></textarea> <!--폰트 바꿀 것-->
+        </div>
+        <div class="form-group">
+            <label for="tags"></label>
+            <input type="text" id="tags" name="green_tag" class="tag-input" placeholder="#태그"
+                   onfocus="placeholder=''" onblur="placeholder='#태그'"
+            >
+        </div>
+        <div class="warning-group">
+            <p class="warning">※타인을 향한 비난 또는 비방 및 게시판의 목적에 맞지 않는 글은 관리자에 의해 삭제될 수 있습니다.</p>
 
-    </div>
-    <div class="uploadBox">
-        <div class="uploadIcons">
-            <img src="/static/images/images.png.png" alt="이미지 업로드 아이콘" width="60px" height="60px" id="img">
-            <img src="/static/images/video.png.png" alt="비디오 업로드 아이콘"width="45px" height="50px" class="vid" id="vid">
         </div>
-        <div class="uploadBtn">
-            <input type="file" class="imageBtn" accept="image/*">
-            <input type="file" class="videoBtn" accept="video/*">
+        <div class="uploadBox">
+            <div class="uploadIcons">
+                <img src="/static/images/images.png.png" alt="이미지 업로드 아이콘" width="60px" height="60px" id="img">
+                <img src="/static/images/video.png.png" alt="비디오 업로드 아이콘"width="45px" height="50px" class="vid" id="vid">
+            </div>
+            <div class="uploadBtn">
+                <input type="file" name="green_pic" class="imageBtn" accept="image/*" id="uploadFiles" multiple>
+                <input type="file" name="green_pic" class="videoBtn" accept="video/*" multiple>
+            </div>
         </div>
-    </div>
-    <div class="confirm-group">
-        <button type="submit" class="confirm">글 올리기</button>
-    </div>
+        <div class="confirm-group">
+            <button type="submit" class="confirm">글 올리기</button>
+        </div>
+    </form>
 </div>
     <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
 
 <script>
+    const uploadFiles =[];
     $(() => {
         $("#img").click((e) => {
             $(".imageBtn").trigger("click");
@@ -66,6 +69,38 @@
         $("#vid").click((e) => {
             $(".videoBtn").trigger("click");
         });
+
+        $("#uploadFiles").on("change", (e) => {
+           const files = e.target.files;
+
+           const fileArr = Array.prototype.slice().call(files);
+
+           for(file of fileArr) {
+               imageLoader(file);
+           }
+        });
+
+        const imageLoader = (file) => {
+            uploadFiles.push(file);
+
+            let reader = new FileReader();
+
+            reader.onload = (e) => {
+                let img = document.createElement("img");
+
+                img.classList.add("upload-file");
+
+                if(file.name.toLowerCase().match(/(.*?)\.(jpg|jpeg|png|gif|svg|bmp)$/)) {
+                    img.src = e.target.result;
+                } else {
+                    alert("이미지파일만 가능합니다.");
+                }
+
+                $("#").append(makeDiv(img, file));
+            }
+
+            reader.readAsDataURL(file);
+        }
     });
 </script>
 </body>

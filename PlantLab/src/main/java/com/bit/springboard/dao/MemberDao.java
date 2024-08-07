@@ -46,7 +46,7 @@ public class MemberDao {
         return mybatis.selectList("MemberDao.getBoardLikeBookCnt", memId);
     }
 
-    public MemberDto getGreenLikeBookCnt(int memId) {
-        return mybatis.selectOne("MemberDao.getGreenLikeBookCnt", memId);
+    public List<MemberDto> getGreenLikeBookCnt(int memId) {
+        return mybatis.selectList("MemberDao.getGreenLikeBookCnt", memId);
     }
 }
