@@ -493,7 +493,7 @@
                                     <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">
                                     <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1_2">
                                     <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1_3">
-                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4" style="height: 96.27px;">
+                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4">
                                 </div>
                                 <div class="modalcontentbox">
                                     <div class="modalcontents">
@@ -509,6 +509,9 @@
                                         <div class="modalreport">
                                             <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
                                         </div>
+                                    </div>
+                                    <div class="modalcommentbox">
+                                        <div style="">test</div>
                                     </div>
                                     <div class="modalmaincontent">
                                         <p>\${obj.greentalk.green_content}</p>
