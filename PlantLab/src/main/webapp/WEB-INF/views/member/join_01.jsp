@@ -20,8 +20,8 @@
             <form id="join-form" action="/member/join.do" method="post" onsubmit="return joinComplete()">
                 <div class="form-group">
                     <div class="custom-input">
-                        <input type="text" id="veri_btn" name="login_id" placeholder="아이디" required>
-                        <button type="button" onclick="checkDuplicate()"></button>
+                        <input type="text" id="login_id" name="login_id" placeholder="아이디" required>
+                        <button type="button" id="checkDuplicate"></button>
                     </div>
                     <small id="check-message"></small>
                 </div>
@@ -114,7 +114,6 @@
                 checkMessage.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
                 userId.focus();
             } else {
-                //바로 없어지게 가능한지??
                 checkMessage.textContent = "";
                 id = e.target.value;
                 // checkMessage.textContent ="사용 가능한 아이디입니다.";
@@ -127,49 +126,40 @@
         // 아이디 중복체크
         let userIdCheck = false;
 
-        function checkDuplicate() {
-            const id = userId.value;
+        $("#checkDuplicate").on("click",(e) => {
 
-            if (id === '') {
-                checkMessage.textContent = "아이디를 입력하세요.";
-                checkMessage.style.color = "red";
-                userId.focus();
-                return;
-            }
-            // 로컬스토리지가 비어있는 경우
-            if (localStorage.length === 0) {
-                checkMessage.textContent = "사용 가능한 아이디입니다.";
-                checkMessage.style.color = "#23C961";
-                userIdCheck = true;
-                return;
-            }
+                const id = userId.value;
 
-            //길이확인
-            if (id.length < 8 || id.length > 21) {
-                checkMessage.textContent = "아이디는 8자리이상 20자이하로 지정해주세요.";
-                checkMessage.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
-                userId.focus();
-                return;
-            }
-
-            // 안비어있는 경우(값 중복 체크가 필요함.)
-            for (let i = 1; i <= localStorage.length; i++) {
-                if (JSON.parse(localStorage.getItem(i)).id == id) {
-                    checkMessage.textContent = "중복된 아이디입니다.";
+                if (id === '') {
+                    checkMessage.textContent = "아이디를 입력하세요.";
                     checkMessage.style.color = "red";
                     userId.focus();
                     return;
                 }
-            }
 
-            checkMessage.textContent = "사용 가능한 아이디입니다.";
-            checkMessage.style.color = "#23C961";
-            userIdCheck = true;
-            return;
+                // AJAX 요청을 통해 서버에 아이디 중복 체크 요청
+                $.ajax({
+                    url: '/member/checkDuplicate.do',
+                    type: 'GET',
+                    data: { login_id: id },
+                    success: function (response) {
+                        const result = JSON.parse(response);
+                        if (result.checkDuplicateMsg === "duplicateFail") {
+                            alert("중복된 아이디입니다.");
+                            $("#login_id").focus();
+                        } else {
+                            alert("사용 가능한 아이디입니다.");
+                            $("#login_id").focus();
+                        }
 
+                    },
+                    error: function () {
+                        alert("중복 체크에 실패했습니다.");
+                    }
+                });
 
+        });
 
-        }
 
         // 닉네임 중복체크
         let userNicknameCheck = false;

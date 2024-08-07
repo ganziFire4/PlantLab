@@ -76,4 +76,8 @@ public class GreentalkDao {
     public void filePost(GreentalkDto greentalkDto) {
         mybatis.insert("BoardDao.filePost", greentalkDto);
     }
+
+    public List<GreentalkDto> getPopGreenLists() {
+        return mybatis.selectList("GreentalkDao.getPopGreenLists_main");
+    }
 }

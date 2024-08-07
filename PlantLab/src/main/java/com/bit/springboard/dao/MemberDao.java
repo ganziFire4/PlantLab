@@ -49,4 +49,7 @@ public class MemberDao {
     public List<MemberDto> getGreenLikeBookCnt(int memId) {
         return mybatis.selectList("MemberDao.getGreenLikeBookCnt", memId);
     }
+
+
+
 }

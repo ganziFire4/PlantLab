@@ -17,9 +17,7 @@ public interface MemberService {
     void modify(MemberDto memberDto);
 
     MemberDto login(MemberDto memberDto);
-
-//    MimeMessage createMessage(String email) throws MessagingException, UnsupportedEncodingException;
-
+    
     String createKey();
 
     String sendSimpleMessage(String email) throws Exception;
@@ -27,5 +25,7 @@ public interface MemberService {
     List<MemberDto> getBoardLikeBookCnt(int memId);
 
     List<MemberDto> getGreenLikeBookCnt(int memId);
+
+    String loginIdCheck(String loginId);
 }
 

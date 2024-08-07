@@ -3,6 +3,8 @@ package com.bit.springboard.service.impl;
 import com.bit.springboard.dao.MemberDao;
 import com.bit.springboard.dto.MemberDto;
 import com.bit.springboard.service.MemberService;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import jakarta.mail.MessagingException;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.UnsupportedEncodingException;
 import java.security.SecureRandom;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Random;
@@ -24,8 +27,6 @@ public class MemberServiceImpl implements MemberService {
     private static final Random RANDOM = new SecureRandom(); // 랜덤 객체 초기화
     private MemberDao memberDao;
     private JavaMailSender emailSender;
-    private String ePw; //회원이 메일로 받을 인증번호
-
 
     @Autowired
     public MemberServiceImpl(MemberDao memberDao,JavaMailSender emailSender) {
@@ -62,6 +63,33 @@ public class MemberServiceImpl implements MemberService {
         return loginMember;
     }
 
+    //아이디중복체크
+    @Override
+    public String loginIdCheck(String login_id) {
+        int checkDuplicate = memberDao.loginIdCheck(login_id);
+
+        ObjectMapper objectMapper = new ObjectMapper();
+        Map<String, String> jsonMap = new HashMap<>();
+
+        if(checkDuplicate == 0){
+            jsonMap.put("checkDuplicateMsg", "duplicateOk");
+
+
+        }else {
+            jsonMap.put("checkDuplicateMsg", "duplicateFail");
+        }
+
+        String jsonString = "";
+
+        try{
+            jsonString = objectMapper.writerWithDefaultPrettyPrinter()
+                    .writeValueAsString(jsonMap);
+        } catch (JsonProcessingException je) {
+            System.out.println(je.getMessage());
+        }
+
+        return jsonString;
+    }
 
 
 
@@ -123,6 +151,8 @@ public class MemberServiceImpl implements MemberService {
     public List<MemberDto> getGreenLikeBookCnt(int memId) {
         return memberDao.getGreenLikeBookCnt(memId);
     }
+
+
 
 
 }

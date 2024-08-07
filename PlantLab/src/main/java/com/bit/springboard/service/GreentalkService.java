@@ -24,4 +24,6 @@ public interface GreentalkService {
 
     int writePost(GreentalkDto greentalkDto);
     void filePost(GreentalkDto loggedInMember);
+
+    List<GreentalkDto> getPopGreenLists_main();
 }
