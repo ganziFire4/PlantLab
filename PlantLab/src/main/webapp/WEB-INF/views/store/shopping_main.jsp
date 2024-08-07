@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: bitcampp
-  Date: 24. 8. 1.
-  Time: 오후 12:24
-  To change this template use File | Settings | File Templates.
---%>
 <!DOCTYPE html>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -14,14 +7,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>플랜트랩_쇼핑몰</title>
     <link rel="stylesheet" href="/static/css/store.css">
-    <!--bootstrap-->
 </head>
 <body class="noto-sans-kr">
 <jsp:include page="../../../nav.jsp"/>
 <header>
-    <img src="image/쇼핑몰 헤더 이미지.png" alt="쇼핑몰 헤더">
+    <img src="/static/images/쇼핑몰 헤더 이미지.png" alt="쇼핑몰 헤더">
 </header>
 <main>
+    <div class="product_form">
+        <h2>상품 등록</h2>
+        <form id="productForm" enctype="multipart/form-data">
+            <label for="brand">브랜드:</label>
+            <input type="text" id="brand" name="brand" required><br>
+
+            <label for="product_name">상품명:</label>
+            <input type="text" id="product_name" name="product_name" required><br>
+
+            <label for="price">가격:</label>
+            <input type="number" id="price" name="price" required><br>
+
+            <label for="discount">할인:</label>
+            <input type="number" id="discount" name="discount"><br>
+
+            <label for="rate">평점:</label>
+            <input type="number" step="0.1" id="rate" name="rate"><br>
+
+            <label for="color">색상:</label>
+            <input type="text" id="color" name="color"><br>
+
+            <label for="is_light">채광 유무:</label>
+            <select id="is_light" name="is_light">
+                <option value="true">양지</option>
+                <option value="false">음지</option>
+            </select><br>
+
+            <label for="base_type">기본 형태:</label>
+            <input type="text" id="base_type" name="base_type"><br>
+
+            <label for="size">사이즈:</label>
+            <input type="text" id="size" name="size"><br>
+
+            <label for="tag">태그:</label>
+            <input type="text" id="tag" name="tag"><br>
+
+            <label for="file">파일:</label>
+            <input type="file" id="file" name="file" required><br>
+
+            <button type="submit">등록</button>
+        </form>
+        <img id="previewImage" style="max-width: 200px; display: none;" /> <!-- 이미지 미리보기 추가 -->
+    </div>
+
     <div class="right-panel" id="rightPanel">
         <div class="toggle-button" id="toggleButton">
             <span class="arrow arrow-left"></span>
@@ -30,7 +66,7 @@
             <div class="panel-item">
                 <div class="">
                     <a href="">
-                        <img src="image/카카오톡 상담.png" alt="카카오톡 상담">
+                        <img src="/static/images/카카오톡 상담.png" alt="카카오톡 상담">
                         <br>
                         카카오톡
                         <br>
@@ -40,29 +76,29 @@
             </div>
             <div class="panel-item">
                 <a href="">
-                    <img src="image/마이페이지.png" alt="마이페이지">
+                    <img src="/static/images/마이페이지.png" alt="마이페이지">
                     <br>
                     마이페이지
                 </a>
             </div>
             <div class="panel-item">
                 <a href="">
-                    <img src="image/장바구니.png" alt="장바구니">
+                    <img src="/static/images/장바구니.png" alt="장바구니">
                     <br>
                     장바구니
                 </a>
             </div>
             <div class="panel-item recent-items">
-                <button id="prevBtn" style="border: none; background-color: white;"><img src="image/좌측으로.png" alt="우측패널 좌측으로"></button>
+                <button id="prevBtn" style="border: none; background-color: white;"><img src="/static/images/좌측으로.png" alt="우측패널 좌측으로"></button>
                 <div class="recent-item-viewer" id="recentItemViewer">
                     <img src="" alt="최근 상품" id="recentItemImage">
                 </div>
-                <button id="nextBtn" style="border: none; background-color: white;"><img src="image/우측으로.png" alt="우측패널 우측으로"></button>
+                <button id="nextBtn" style="border: none; background-color: white;"><img src="/static/images/우측으로.png" alt="우측패널 우측으로"></button>
             </div>
             <div class="panel-item">
                 <span id="recentItemsText">최근 열람 품목</span>
             </div>
-            <span><button id="topBtn" style="background-color: white; border: none; margin-left: 66px;"><img src="image/on top.png" alt="페이지 최상단으로"></button></span>
+            <span><button id="topBtn" style="background-color: white; border: none; margin-left: 66px;"><img src="/static/images/on top.png" alt="페이지 최상단으로"></button></span>
         </div>
     </div>
     <div class="overall_container">
@@ -137,7 +173,7 @@
             <c:forEach var="product" items="${products}">
                 <div class="product_row">
                     <div class="product_item">
-                        <a href="/products/purchase.do">
+                        <a href="/purchase.do">
                             <img src="${product.file_name}" alt="물품 이미지">
                             <div class="goods_border">
                                 <p class="product_title">${product.product_name}</p>
@@ -155,25 +191,133 @@
     </div>
 </main>
 <div id="popup-icon1">
-    <img src="image/챗봇아이콘.png" alt="Popup Icon" id="popup-image" style="width: 60px; height: 60px;">
+    <img src="/static/images/챗봇아이콘.png" alt="Popup Icon" id="popup-image" style="width: 60px; height: 60px;">
 </div>
 <div id="popup-content1" class="hidden">
     <p>안녕하세요! 플랜트 봇 입니다!<br>궁금한 것은 모두 플랜트 봇에게 물어보세요!</p>
 </div>
 <div id="popup-icon2">
-    <img src="image/top아이콘.png" alt="Popup Icon" id="popup-image" style="width: 60px; height: 60px;">
+    <img src="/static/images/top아이콘.png" alt="Popup Icon" id="popup-image" style="width: 60px; height: 60px;">
 </div>
 <div class="f_container">
     <div style="margin: auto 50px;">
-        <!-- <img width="150px" height="150px" src="image/round_logo_colorBack.svg" alt="플랜트팜 로고"> -->
-
+        <!-- <img width="150px" height="150px" src="/static/images/round_logo_colorBack.svg" alt="플랜트팜 로고"> -->
     </div>
 </div>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const products = document.querySelectorAll('.product_item');
+        const productForm = document.getElementById('productForm');
+        const previewImage = document.getElementById('previewImage');
         const productContainer = document.getElementById('product-container');
+
+        productForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const formData = new FormData(productForm);
+
+            const productDto = {
+                brand: document.getElementById('brand').value || "", // 기본값으로 빈 문자열 설정
+                product_name: document.getElementById('product_name').value || "",
+                price: document.getElementById('price').value || 0,
+                discount: document.getElementById('discount').value || 0.0,
+                rate: document.getElementById('rate').value || 0.0,
+                color: document.getElementById('color').value || "",
+                is_light: document.getElementById('is_light').value === "true",
+                base_type: document.getElementById('base_type').value || "",
+                size: document.getElementById('size').value || "",
+                tag: document.getElementById('tag').value || "",
+            };
+            formData.append('productDto', new Blob([JSON.stringify(productDto)], { type: 'application/json' }));
+
+            fetch('http://localhost:8090/save', {
+                method: 'POST',
+                body: formData
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data) {
+                        addProductToContainer(data);
+                        productForm.reset();
+                        previewImage.style.display = 'none';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred: ' + error.message); // 에러 알림 추가
+                });
+        });
+
+        const fileInput = document.getElementById('file');
+        fileInput.addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    previewImage.src = e.target.result;
+                    previewImage.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                previewImage.style.display = 'none';
+            }
+        });
+
+        function addProductToContainer(product) {
+            const productItem = document.createElement('div');
+            productItem.classList.add('product_item');
+
+            const productLink = document.createElement('a');
+            productLink.href = '/purchase.do';
+
+            const productImage = document.createElement('img');
+            productImage.src = product.file_name;
+            productImage.alt = '물품 이미지';
+
+            const goodsBorder = document.createElement('div');
+            goodsBorder.classList.add('goods_border');
+
+            const productTitle = document.createElement('p');
+            productTitle.classList.add('product_title');
+            productTitle.textContent = product.product_name;
+
+            const productCompany = document.createElement('p');
+            productCompany.classList.add('product_company');
+            productCompany.textContent = product.brand;
+
+            const productPrice = document.createElement('p');
+            productPrice.classList.add('product_price');
+            productPrice.textContent = product.price + ' 원';
+
+            const productRating = document.createElement('p');
+            productRating.classList.add('product_rating');
+            productRating.textContent = '평점: ' + product.rate;
+
+            goodsBorder.appendChild(productTitle);
+            goodsBorder.appendChild(productCompany);
+            goodsBorder.appendChild(productPrice);
+            goodsBorder.appendChild(productRating);
+
+            productLink.appendChild(productImage);
+            productLink.appendChild(goodsBorder);
+            productItem.appendChild(productLink);
+
+            const lastRow = productContainer.querySelector('.product_row:last-child');
+            if (lastRow && lastRow.children.length < 3) {
+                lastRow.appendChild(productItem);
+            } else {
+                const newRow = document.createElement('div');
+                newRow.classList.add('product_row');
+                newRow.appendChild(productItem);
+                productContainer.appendChild(newRow);
+            }
+        }
+
         const filters = {
             category: null,
             color: null,
@@ -188,7 +332,7 @@
         };
 
         function applyFilters() {
-            let filteredProducts = Array.from(products);
+            let filteredProducts = Array.from(document.querySelectorAll('.product_item'));
 
             if (filters.category) {
                 filteredProducts = filteredProducts.filter(product => product.getAttribute('data-category') === filters.category);
@@ -241,6 +385,7 @@
 
             productContainer.innerHTML = '';
 
+            let currentRow;
             filteredProducts.forEach((product, index) => {
                 if (index % 3 === 0) {
                     currentRow = document.createElement('div');
@@ -249,7 +394,6 @@
                 }
                 currentRow.appendChild(product);
 
-                // 이미지 크기 재설정
                 const img = product.querySelector('img');
                 if (img) {
                     img.style.width = '100%';
@@ -257,7 +401,6 @@
                 }
             });
 
-            // 빈 자리 채우기
             const emptyItemsToAdd = (3 - (filteredProducts.length % 3)) % 3;
             for (let i = 0; i < emptyItemsToAdd; i++) {
                 const emptyItem = document.createElement('div');
@@ -267,7 +410,6 @@
             }
         }
 
-        // 필터 이벤트 리스너 설정
         document.querySelectorAll('.selector .item').forEach(item => {
             item.addEventListener('click', function() {
                 const category = item.textContent.replace('#', '');
@@ -341,11 +483,6 @@
             });
         });
 
-        // document.querySelector('.dropdown1 .dropdown-btn').addEventListener('click', function() {
-        //   const menu = document.querySelector('.dropdown1 .dropdown-menu');
-        //   menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-        // });
-
         document.querySelector('.dropdown1 .dropdown-menu').addEventListener('click', function(event) {
             filters.sort = event.target.getAttribute('data-sort');
             applyFilters();
@@ -354,10 +491,7 @@
         });
 
         applyFilters();
-    });
 
-
-    document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('toggleButton').addEventListener('click', function() {
             var panel = document.getElementById('rightPanel');
             panel.classList.toggle('open');
@@ -398,9 +532,8 @@
             });
         });
 
-        updateRecentItemViewer(); // 초기 업데이트
+        updateRecentItemViewer();
     });
-
 </script>
 </body>
 </html>

@@ -6,7 +6,6 @@
 
     <resultMap id="ProductMap" type="com.bit.springboard.dto.ProductDto">
         <id property="product_id" column="product_id"/>
-        <!-- <result property="pic_id" column="pic_id"/> -->
         <result property="brand" column="brand"/>
         <result property="product_name" column="product_name"/>
         <result property="price" column="price"/>
@@ -23,8 +22,13 @@
         <result property="product_status" column="product_status"/>
         <result property="created_at" column="created_at"/>
         <result property="updated_at" column="updated_at"/>
-        <!-- <result property="file_name" column="file_name"/> -->
-        <!-- <result property="is_main" column="is_main"/> -->
+    </resultMap>
+
+    <resultMap id="PicMap" type="com.bit.springboard.dto.PicDto">
+        <id property="pic_id" column="pic_id"/>
+        <result property="product_id" column="product_id"/>
+        <result property="file_name" column="file_name"/>
+        <result property="is_main" column="is_main"/>
     </resultMap>
 
     <select id="getAllProducts" resultMap="ProductMap">
@@ -35,8 +39,12 @@
     </select>
 
     <insert id="saveProduct" parameterType="com.bit.springboard.dto.ProductDto">
-        INSERT INTO store_product (product_id, brand, product_name, price, discount, rate, color, is_light, base_type, size, tag, view_count, sell_start, sell_end, product_status, created_at, updated_at)
-        VALUES (#{product_id}, #{brand}, #{product_name}, #{price}, #{discount}, #{rate}, #{color}, #{is_light}, #{base_type}, #{size}, #{tag}, #{view_count}, #{sell_start}, #{sell_end}, #{product_status}, #{created_at}, #{updated_at})
+        INSERT INTO store_product (brand, product_name, price, discount, rate, color, is_light, base_type, size, tag, view_count, sell_start, sell_end, product_status, created_at, updated_at)
+        VALUES (#{brand}, #{product_name}, #{price}, #{discount}, #{rate}, #{color}, #{is_light}, #{base_type}, #{size}, #{tag}, #{view_count}, #{sell_start}, #{sell_end}, #{product_status}, #{created_at}, #{updated_at})
     </insert>
 
+    <insert id="savePic" parameterType="com.bit.springboard.dto.PicDto">
+        INSERT INTO store_pic (product_id, file_name, is_main)
+        VALUES (#{product_id}, #{file_name}, #{is_main})
+    </insert>
 </mapper>

@@ -54,7 +54,6 @@ public class FileUtils {
         return greentalkFileDto;
     }
 
-    //김시표 쇼핑몰 파일 업로드
     private static final String uploadDir = "C:/upload/";
 
     public String saveFile(MultipartFile file) throws IOException {
@@ -62,8 +61,10 @@ public class FileUtils {
             throw new IllegalArgumentException("파일이 비어있어요 ㅠㅠ");
         }
 
+        // 파일명 중복 방지를 위해 UUID 추가
         String originalFilename = file.getOriginalFilename();
-        String filePath = uploadDir + originalFilename;
+        String uniqueFilename = UUID.randomUUID().toString() + "_" + originalFilename;
+        String filePath = uploadDir + uniqueFilename;
 
         File dir = new File(uploadDir);
         if (!dir.exists()) {
@@ -73,7 +74,7 @@ public class FileUtils {
         Path path = Paths.get(filePath);
         Files.write(path, file.getBytes());
 
-        return filePath;
+        return uniqueFilename;
     }
 
     public byte[] getFile(String fileName) throws IOException {
