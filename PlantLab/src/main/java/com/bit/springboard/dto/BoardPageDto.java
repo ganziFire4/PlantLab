@@ -59,12 +59,30 @@ public class BoardPageDto {
         this.cri = cri;
     }
 
+    public boolean isPrev() {
+        return prev;
+    }
+
+    public void setPrev(boolean prev) {
+        this.prev = prev;
+    }
+
+    public boolean isNext() {
+        return next;
+    }
+
+    public void setNext(boolean next) {
+        this.next = next;
+    }
+
     @Override
     public String toString() {
         return "BoardPageDto{" +
                 "startPage=" + startPage +
                 ", endPage=" + endPage +
                 ", total=" + total +
+                ", prev=" + prev +
+                ", next=" + next +
                 ", cri=" + cri +
                 '}';
     }
