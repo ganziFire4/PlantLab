@@ -111,7 +111,7 @@
                 </c:forEach>
                     <script>
                         // 메인 그린톡 제목 글자수 노출
-                        $(document).ready(function() {
+                        // $(document).ready(function() {
                             // 메인 그린톡 제목 글자수 노출
                             function truncateText(selector, maxLength) {
                                 const elements = document.querySelectorAll(selector);
@@ -123,65 +123,10 @@
                                     }
                                 });
                             }
-                        })
+                        // })
 
                         // 30 글자로 제한
                         truncateText('#green_title', 25);
-
-
-                        $(() => {
-                            // 날씨 데이터
-                            const now = new Date();
-                            let nowMonth = now.getMonth() + 1;
-                            let zeroMonth = '0' + nowMonth;
-                            let zeroDate = '0' + now.getDate();
-                            let defaultHour = now.getHours();
-
-                            if (defaultHour < 5) {
-                                defaultHour = 2;
-                            } else if (defaultHour < 8) {
-                                defaultHour = 5;
-                            } else if (defaultHour < 11) {
-                                defaultHour = 8;
-                            } else if (defaultHour < 14) {
-                                defaultHour = 11;
-                            } else if (defaultHour < 17) {
-                                defaultHour = 14;
-                            } else if (defaultHour < 20) {
-                                defaultHour = 17;
-                            } else if (defaultHour < 23) {
-                                defaultHour = 20;
-                            } else if (defaultHour < 2) {
-                                defaultHour = 21;
-                            }
-                            let zeroHour = '0' + defaultHour;
-
-                    let year = now.getFullYear();
-                    let month = zeroMonth.slice(-2);
-                    let date = zeroDate.slice(-2);
-                    let hour = zeroHour.slice(-2);
-                    let fulldate = year + month + date;
-                    let url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=gIQrlKBkoGwsDw%2BrhZZZ47LwsVb%2BsbXkagAhe20dhc5nBBIQUxXsw7PB38hiMm8JNRN%2FnVI23Kv6glqRx3C94Q%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=\${fulldate}&base_time=\${hour}00&nx=61&ny=126`;
-                    let temperature;
-                    let quantity;
-                    let percentage;
-                    let tempNum = 0; // 온도
-                    let quantityNum = 9; // 강수량
-                    let percentageNum = 7; // 강수확률
-
-                    $.getJSON(url, function(data) {
-                        temperature = data.response.body.items.item[tempNum].fcstValue;
-                        quantity = data.response.body.items.item[quantityNum].fcstValue;
-                        percentage = data.response.body.items.item[percentageNum].fcstValue;
-                        // console.log(url);
-
-                        document.getElementById('temperature').value = temperature;
-                        document.getElementById('percentage').value = percentage;
-                        document.getElementById('quantity').value = quantity;
-
-                        $("#weather-form").submit();
-                    });
-                })
             </script>
 
 
@@ -228,5 +173,70 @@
 </main>
 <jsp:include page="${pageContext.request.contextPath}/chatbot.jsp"/>
 <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
+<script>
+    $(document).ready(function() {
+        // 날씨 데이터
+        const now = new Date();
+        let nowMonth = now.getMonth() + 1;
+        let zeroMonth = '0' + nowMonth;
+        let zeroDate = '0' + now.getDate();
+        let defaultHour = now.getHours();
+
+        if (defaultHour < 5) {
+            defaultHour = 2;
+        } else if (defaultHour < 8) {
+            defaultHour = 5;
+        } else if (defaultHour < 11) {
+            defaultHour = 8;
+        } else if (defaultHour < 14) {
+            defaultHour = 11;
+        } else if (defaultHour < 17) {
+            defaultHour = 14;
+        } else if (defaultHour < 20) {
+            defaultHour = 17;
+        } else if (defaultHour < 23) {
+            defaultHour = 20;
+        } else if (defaultHour < 2) {
+            defaultHour = 21;
+        }
+        let zeroHour = '0' + defaultHour;
+
+        let year = now.getFullYear();
+        let month = zeroMonth.slice(-2);
+        let date = zeroDate.slice(-2);
+        let hour = zeroHour.slice(-2);
+        let fulldate = year + month + date;
+        let url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=gIQrlKBkoGwsDw%2BrhZZZ47LwsVb%2BsbXkagAhe20dhc5nBBIQUxXsw7PB38hiMm8JNRN%2FnVI23Kv6glqRx3C94Q%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=\${fulldate}&base_time=\${hour}00&nx=61&ny=126`;
+        let temperature;
+        let quantity;
+        let percentage;
+        let tempNum = 0; // 온도
+        let quantityNum = 9; // 강수량
+        let percentageNum = 7; // 강수확률
+
+        $.ajax({
+            url: url, // 요청을 보낼 URL
+            method: 'GET', // 요청 방법
+            dataType: 'json', // 서버로부터 받을 데이터 타입
+            success: function(data) {
+                // 성공적으로 데이터가 받아졌을 때 실행할 콜백 함수
+                temperature = data.response.body.items.item[tempNum].fcstValue;
+                quantity = data.response.body.items.item[quantityNum].fcstValue;
+                percentage = data.response.body.items.item[percentageNum].fcstValue;
+
+                document.getElementById('temperature').value = temperature;
+                document.getElementById('percentage').value = percentage;
+                document.getElementById('quantity').value = quantity;
+
+                $("#weather-form").submit(); // 폼 제출
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                // 오류가 발생했을 때 실행할 콜백 함수
+                console.error("Error fetching data: " + textStatus, errorThrown);
+            }
+        });
+
+    })
+</script>
 </body>
 </html>
