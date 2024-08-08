@@ -61,7 +61,7 @@
                 <c:when test="${loggedInMember eq null}">
                     <div class="member">
                         <ul>
-                            <li><a href="/member/green_login.do">로그인</a></li>
+                            <li><a href="/member/login.do">로그인</a></li>
                             |
                             <li><a href="/member/join.do">회원가입</a></li>
                         </ul>

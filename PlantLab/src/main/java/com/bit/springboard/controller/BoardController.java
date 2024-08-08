@@ -140,7 +140,6 @@ public class BoardController {
 
     @GetMapping("/update-cnt.do")
     public String board_view_cnt (@RequestParam("id") int id){
-        System.out.println("update: " + id);
         boardService.update_view_cnt(id);
         return "redirect:/board/board-detail.do?id=" + id;
     }

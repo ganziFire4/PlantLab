@@ -149,6 +149,7 @@
                             $("#login_id").focus();
                         } else {
                             alert("사용 가능한 아이디입니다.");
+                            userIdCheck = true;
                             $("#login_id").focus();
                         }
 
@@ -281,37 +282,6 @@
         });
 
 
-        // function checkVeri() {
-        //     $("#authCode").click(function () {
-        //     const email = $("#mem_email").val();
-        //     const inputCode = $("#veriNum").val();
-        //
-        //     $.ajax({
-        //         url: '/member/verifyCode',
-        //         data: {
-        //             email: email,
-        //             code: inputCode
-        //         },
-        //         type: 'POST',
-        //         success: function (result) {
-        //             if (result === "success") {
-        //                 checkMessage6.textContent = "인증번호가 일치합니다.";
-        //                 checkMessage6.style.color = "#23C961";
-        //                 $("#veriNum").focus();
-        //             } else {
-        //                 checkMessage6.textContent = "인증번호가 일치하지 않습니다.";
-        //                 checkMessage6.style.color = "red";
-        //                 $("#veriNum").focus();
-        //             }
-        //         },
-        //         error: function (xhr, status, error) {
-        //             checkMessage6.textContent = "인증번호 확인에 실패했습니다.";
-        //             checkMessage6.style.color = "red";
-        //         }
-        //       });
-        //     });
-        // }
-
         $("#authCode").on("click", (e) => {
             if($("#veriNum").val() == verificationCode) {
                 checkMessage6.textContent = "인증번호가 일치합니다.";
@@ -323,12 +293,6 @@
                 $("#veriNum").focus();
             }
         });
-
-
-
-
-
-
 
 
 
@@ -434,10 +398,10 @@
             }
 
 
-            if (userIdCheck && userNicknameCheck && passwordValidation && passwordConfirmValidation) {
-                localStorage.setItem(localStorage.length + 1, JSON.stringify({id, nickname, password}));
-                window.location.href = "_02_join02.html";
-            }
+            // if (userIdCheck && userNicknameCheck && passwordValidation && passwordConfirmValidation) {
+            //     localStorage.setItem(localStorage.length + 1, JSON.stringify({id, nickname, password}));
+            //     window.location.href = "_02_join02.html";
+            // }
         }
 
 

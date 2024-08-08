@@ -30,8 +30,4 @@ public class ProductDao {
     public void savePic(PicDto picDto) {
         sqlSessionTemplate.insert("ProductDao.savePic", picDto);
     }
-
-    public void incrementViewCount(int productId) {
-        sqlSessionTemplate.update("ProductDao.incrementViewCount", productId);
-    }
 }

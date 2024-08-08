@@ -22,7 +22,6 @@
         <result property="product_status" column="product_status"/>
         <result property="created_at" column="created_at"/>
         <result property="updated_at" column="updated_at"/>
-        <collection property="pics" ofType="com.bit.springboard.dto.PicDto" column="product_id" select="getPicsByProductId"/>
     </resultMap>
 
     <resultMap id="PicMap" type="com.bit.springboard.dto.PicDto">
@@ -33,14 +32,10 @@
     </resultMap>
 
     <select id="getAllProducts" resultMap="ProductMap">
-        SELECT p.product_id, p.brand, p.product_name, p.price, p.discount, p.rate, p.color, p.is_light, p.base_type, p.size, p.tag, p.view_count, p.sell_start, p.sell_end, p.product_status, p.created_at, p.updated_at
-        FROM store_product p
-    </select>
-
-    <select id="getPicsByProductId" resultMap="PicMap">
-        SELECT pic_id, product_id, file_name, is_main
-        FROM store_pic
-        WHERE product_id = #{product_id}
+        SELECT product_id, brand, product_name, price, discount, rate, color, is_light,
+               base_type, size, tag, view_count, sell_start, sell_end, product_status,
+            created_at, updated_at
+        FROM store_product
     </select>
 
     <insert id="saveProduct" parameterType="com.bit.springboard.dto.ProductDto">
@@ -53,10 +48,4 @@
         INSERT INTO store_pic (product_id, file_name, is_main)
         VALUES (#{product_id}, #{file_name}, #{is_main})
     </insert>
-
-    <update id="incrementViewCount">
-        UPDATE store_product
-        SET view_count = view_count + 1
-        WHERE product_id = #{product_id}
-    </update>
 </mapper>

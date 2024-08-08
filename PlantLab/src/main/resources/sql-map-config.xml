@@ -20,6 +20,8 @@
                    alias="ProductDto"/>
         <typeAlias type="com.bit.springboard.dto.GreentalkCommentDto"
                    alias="greentalkCommentDto"/>
+        <typeAlias type="com.bit.springboard.dto.WeatherDto"
+                   alias="weather"/>
     </typeAliases>
 
     <!--사용할 Sql Mapper 등록-->
@@ -28,5 +30,6 @@
         <mapper resource="mappings/member-mapper.xml"/>
         <mapper resource="mappings/greentalk-mapper.xml"/>
         <mapper resource="mappings/product-mapper.xml"/>
+        <mapper resource="mappings/weather-mapper.xml"/>
     </mappers>
 </configuration>
