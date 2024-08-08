@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/board-main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/greentalk.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/greentalk.css?v=1.0.1">
 </head>
 <body>
     <jsp:include page="${pageContext.request.contextPath}/green_nav.jsp"/>
@@ -435,17 +435,7 @@
             window.location.href = "/board/board-main.do?tab=3";
         });
 
-        // $.ajax({
-        //     url:'/board/comment-ajax.do',
-        //     type: 'POST',
-        //     data: {"green_id": greenId},
-        //     success: (obj) => {
-        //         console.log(obj);
-        //
-        //         htmlStr +=`
-        //         `
-        //     }
-        // })
+
 
         const openModal = (greenId) => {
             // console.log(greenId);
@@ -574,6 +564,31 @@
                 },
                 error: (err) => {
                     console.log(err);
+                }
+            });
+        }
+
+        function submitComment(event) {
+            event.preventDefault(); // 폼의 기본 제출 동작을 막습니다.
+
+            const form = document.getElementById('comment-form');
+            const formData = new FormData(form);
+
+            $.ajax({
+                url: '/board/green_comment.do',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: (response) => {
+                    // 댓글 추가 성공 후 처리
+                    console.log('댓글이 저장되었습니다:', response);
+
+                    // 모달 내용 갱신 (댓글을 새로 불러오거나 추가할 수 있습니다)
+                    openModal(response.green_id); // 댓글이 저장된 green_id를 사용하여 모달을 다시 열어 최신 상태로 업데이트
+                },
+                error: (err) => {
+                    console.error('댓글 저장 중 오류 발생:', err);
                 }
             });
         }

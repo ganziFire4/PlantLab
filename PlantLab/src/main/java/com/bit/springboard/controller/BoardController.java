@@ -297,17 +297,19 @@ public class BoardController {
         return 0;
     }
 
-//    @PostMapping("/green_comment.do")
-//    public String green_comment_post(GreentalkCommentDto greentalkCommentDto, HttpSession session, HttpServletRequest httpServletRequest) {
-//        MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
-//
-//        if (loggedInMember == null) {
-//            return "redirect:/member/green_login";
-//        }
-//
-//        greentalkCommentDto.setMem_id(loggedInMember.getMem_id());
-//        greentalkService.commentPost(greentalkCommentDto);
-//    }
+    @PostMapping("/green_comment.do")
+    @ResponseBody
+    public GreentalkCommentDto green_comment_post(GreentalkCommentDto greentalkCommentDto, HttpSession session, HttpServletRequest httpServletRequest) {
+        MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
+
+        if (loggedInMember == null) {
+            throw new RuntimeException("로그인이 필요합니다.");
+        }
+        greentalkCommentDto.setMem_id(loggedInMember.getMem_id());
+        greentalkService.commentPost(greentalkCommentDto);
+
+        return greentalkCommentDto;
+    }
 }
 
 
