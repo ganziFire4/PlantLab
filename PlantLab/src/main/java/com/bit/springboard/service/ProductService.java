@@ -8,4 +8,5 @@ import java.util.List;
 public interface ProductService {
     ProductDto saveProduct(ProductDto productDto, MultipartFile file, String attachPath);
     List<ProductDto> getAllProducts();
+    void incrementViewCount(int productId);
 }
