@@ -514,7 +514,7 @@
                                 </div>
 
                                          <%--여쭤보기--%>
-                                         <div class="modalcon" style="margin-top:5px; max-height:450px; overflow-y:scroll; -ms-overflow-style: none;">`;
+                                         <div class="modalcon" style="margin-top:5px; max-height:450px; overflow-y:scroll; -ms-overflow-style: none; scrollbar-width: none;">`;
                                          for(let i = 0; i < obj.greenComment.length; i++) {
                                              console.log(obj.greenComment.length);
                                              const commentFormattedDate = formatDate(obj.greenComment[i].comment_mod);
