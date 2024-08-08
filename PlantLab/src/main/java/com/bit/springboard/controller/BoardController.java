@@ -291,6 +291,20 @@ public class BoardController {
 
         return greentalkCommentDto;
     }
+
+    @PostMapping("/post_comment.do")
+    public String postComment(BoardCommentDto boardCommentDto){
+        String content = boardCommentDto.getComment_content();
+        boardCommentDto.setComment_content(content.replace("\r\n", "<br>"));
+        boardService.postComment(boardCommentDto);
+        return "redirect:/board/board-detail.do?id=" + boardCommentDto.getBoard_id();
+    }
+
+    @GetMapping("/board-delete.do")
+    public String deleteBoard(@RequestParam("id") int id, @RequestParam("tab") int tab){
+        boardService.delete(id);
+        return "redirect:/board/board-main.do?tab=" + tab;
+    }
 }
 
 

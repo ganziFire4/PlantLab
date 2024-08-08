@@ -214,6 +214,7 @@
         let quantityNum = 9; // 강수량
         let percentageNum = 7; // 강수확률
 
+        <%--if(<%=%>)--%>
         $.ajax({
             url: url, // 요청을 보낼 URL
             method: 'GET', // 요청 방법
@@ -235,6 +236,8 @@
                 console.error("Error fetching data: " + textStatus, errorThrown);
             }
         });
+
+        $.ajax()
 
     })
 </script>

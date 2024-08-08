@@ -28,7 +28,7 @@
     </update>
 
     <delete id="delete" parameterType="int">
-        DELETE BOARD WHERE BOARD_ID = #{id}
+        DELETE FROM BOARD WHERE BOARD_ID = #{id}
     </delete>
 
     <select id="view_popular" parameterType="map" resultType="board">
@@ -113,7 +113,8 @@
     </select>
 
     <select id="view_one" parameterType="int" resultType="board">
-        SELECT B.BOARD_TITLE
+        SELECT B.BOARD_ID
+             , B.BOARD_TITLE
              , M.MEM_NICKNAME
              , B.BOARD_REG
              , B.BOARD_MOD
@@ -195,7 +196,7 @@
     </update>
 
     <delete id="deleteLike" parameterType="map">
-        DELETE BOARD_BOOKMARK
+        DELETE FROM BOARD_BOOKMARK
             WHERE BOARD_ID = #{board_id}
               AND MEM_ID = #{mem_id}
     </delete>
@@ -223,7 +224,7 @@
     </update>
 
     <delete id="deleteBookmark" parameterType="map">
-        DELETE BOARD_BOOKMARK
+        DELETE FROM BOARD_BOOKMARK
             WHERE BOARD_ID = #{board_id}
               AND MEM_ID = #{mem_id}
     </delete>

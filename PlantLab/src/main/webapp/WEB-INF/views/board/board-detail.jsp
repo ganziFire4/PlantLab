@@ -103,17 +103,19 @@
                     <!-- Comments will appear here -->
                 </div>
                 <div class="comment-input">
-                    <div class="input-container">
+                    <form class="input-container" action="/board/post_comment.do" method="post">
+                        <input type="hidden" name="board_id" value="${board.board_id}"/>
+                        <input type="hidden" name="mem_id" value="${loggedInMember.mem_id}"/>
                           <c:choose>
                               <c:when test="${loggedInMember == null}">
-                                  <textarea type="text" name="comment-input" placeholder="로그인 후 이용하실 수 있습니다."></textarea>
+                                  <textarea type="text" name="comment-input" placeholder="로그인 후 이용하실 수 있습니다." readonly></textarea>
                               </c:when>
                               <c:otherwise>
-                                  <textarea type="text" name="comment-input" placeholder="댓글을 입력하세요."></textarea>
+                                  <textarea type="text" name="comment_content" placeholder="댓글을 입력하세요."></textarea>
                               </c:otherwise>
                           </c:choose>
                         <button type="submit" id="commentBtn">댓글 쓰기</button>
-                    </div>
+                    </form>
                 </div>
                 <hr>
                 <div id="button_bar">
@@ -123,10 +125,10 @@
                     <c:if test="${board.mem_id == loggedInMember.mem_id}">
                         <div style="display:flex">
                             <div id="modify" class="button">
-                                <a href="/board/board-main.do?tab=${board.board_type}">수정</a>
+                                <a href="/board/board-modify.do?id=${board.board_id}">수정</a>
                             </div>
                             <div id="delete" class="button">
-                                <a href="/board/board-main.do?tab=${board.board_type}">삭제</a>
+                                <a href="/board/board-delete.do?id=${board.board_id}&tab=${board.board_type}">삭제</a>
                             </div>
                         </div>
                     </c:if>
