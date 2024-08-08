@@ -91,6 +91,8 @@ public class BoardController {
 
     @PostMapping("/post.do")
     public String uploadPost(BoardDto boardDto){
+        String content = boardDto.getBoard_content();
+        boardDto.setBoard_content(content.replace("\r\n", "<br>"));
         boardService.post(boardDto);
 //        System.out.println(boardDto);
 //        model.addAttribute("board", boardService.getBoard(boardDto.getBoard_id()));
@@ -134,6 +136,13 @@ public class BoardController {
     public String board(Model model, @RequestParam("id") int id) {
         model.addAttribute("board", boardService.view_one(id));
         return "/WEB-INF/views/board/board-detail";
+    }
+
+    @GetMapping("/update-cnt.do")
+    public String board_view_cnt (@RequestParam("id") int id){
+        System.out.println("update: " + id);
+        boardService.update_view_cnt(id);
+        return "redirect:/board/board-detail.do?id=" + id;
     }
 
     @GetMapping("/greentalk_post")
@@ -198,12 +207,19 @@ public class BoardController {
 
     @PostMapping("/modal-ajax.do")
     @ResponseBody
-    public Map<String, Object> modalAjax(GreentalkDto greentalkDto) {
+    public Map<String, Object> modalAjax(GreentalkDto greentalkDto, Model model) {
 //        System.out.println(greentalkDto);
         Map<String, Object> map = new HashMap<>();
         try {
+
             GreentalkDto greentalk = greentalkService.getGreenOne(greentalkDto.getGreen_id());
             map.put("greentalk", greentalk);
+
+            List<GreentalkCommentDto> greenComment = greentalkService.getComment(greentalkDto.getGreen_id());
+            System.out.println("================================================");
+            System.out.println(greenComment);
+            map.put("greenComment", greenComment);
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -266,6 +282,25 @@ public class BoardController {
         greentalkService.filePost(greentalkDto);
 
         return "redirect:/board/greentalk.do";
+    }
+
+    @PostMapping("/board_like_cnt.do")
+    @ResponseBody
+    public String board_like_control(int num, int board_id, int mem_id){
+        if(num == 1 || num == -1){
+            boardService.changeLike(num, board_id, mem_id);
+        }
+        return null;
+    }
+
+    @PostMapping("/board_bookmark_cnt.do")
+    @ResponseBody
+    public int board_bookmark_control(int num, int board_id, int mem_id){
+        if(num == 1 || num == -1){
+            boardService.changeBookmark(num, board_id, mem_id);
+            return num;
+        }
+        return 0;
     }
 }
 

@@ -435,17 +435,6 @@
             window.location.href = "/board/board-main.do?tab=3";
         });
 
-        // $.ajax({
-        //     url:'/board/comment-ajax.do',
-        //     type: 'POST',
-        //     data: {"green_id": greenId},
-        //     success: (obj) => {
-        //         console.log(obj);
-        //
-        //         htmlStr +=`
-        //         `
-        //     }
-        // })
 
         const openModal = (greenId) => {
             // console.log(greenId);
@@ -493,12 +482,6 @@
                         <div class="modal-body">
                             <img src="/static/images/storage/\${obj.greentalk.green_pic}" alt="" class="modalmain">
                             <div class="modal-right">
-                                <%--<div class="modalthumb">--%>
-                                <%--    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail1.png" alt="" class="modalthumbnail" id="modalthumb1_1">--%>
-                                <%--    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail2.png" alt="" class="modalthumbnail" id="modalthumb1_2">--%>
-                                <%--    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail3.png" alt="" class="modalthumbnail" id="modalthumb1_3">--%>
-                                <%--    <img src="${pageContext.request.contextPath}/static/images/그린톡/thumbnail4.png" alt="" class="modalthumbnail" id="modalthumb1_4">--%>
-                                <%--</div>--%>
                                 <div class="modalcontentbox">
                                     <div class="modalcontents">
                                         <div class="writerpic">
@@ -518,9 +501,31 @@
                                         <p>\${obj.greentalk.green_content}</p>
                                     </div>
                                 </div>
-                                    <div class="modalcommentbox">
-                                        <div>12345</div>
-                                    </div>
+
+                                         <%--여쭤보기--%>
+                                         <div class="modalcon" style="margin-top:5px; max-height:450px; overflow-y:scroll; -ms-overflow-style: none;">`;
+                                         for(let i = 0; i < obj.greenComment.length; i++) {
+                                             console.log(obj.greenComment.length);
+                                             const commentFormattedDate = formatDate(obj.greenComment[i].comment_mod);
+                                             htmlStr += `<div class="modalcommentbox" style="display:flex; text-align:center;">
+                                                <div class="writerpic">
+                                                    <img src="/static/images/storage/\${obj.greenComment[i].mem_pic}" alt="" style="width: 30px; height: 30px; border-radius: 50%; outline: solid 1px #ccc;">
+                                                </div>
+                                                <div class="modalmaincon">
+                                                    \${obj.greenComment[i].mem_nickname}
+                                                </div>
+                                                <div class="modalmaindate">
+                                                    \${commentFormattedDate}
+                                                </div>
+                                                <div class="modalreport">
+                                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
+                                                </div>
+                                            </div>
+                                            <div class="modalmaincontent">
+                                                <p>\${obj.greenComment[i].comment_content}</p>
+                                            </div>`;
+                                         }
+                             htmlStr += `</div>
                             </div>
                             <div class="title">
                                 <p class="titlename"># \${obj.greentalk.green_tag}</p>
@@ -532,7 +537,7 @@
                                 </div>
                             </div>
                             <div class="comment">
-                                <form id="comment-form" onsubmit="submitComment(event)">
+                                <form id="comment-form" action="/postGreenComment" method="post">
                                 <input type="hidden" name="green_id" value="\${obj.greentalk.green_id}">
                                 <input type="hidden" name="mem_id" value="\${obj.greentalk.mem_id}">
                                 <div class="commenttab">

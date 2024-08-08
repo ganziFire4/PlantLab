@@ -24,47 +24,42 @@
 </div> -->
 <div class="container">
     <form action="${pageContext.request.contextPath}/board/greentalk-post.do" method="post" enctype="multipart/form-data">
-        <div class="flex-container">
-            <div class="form-group">
-    <%--            <label for="title"></label>--%>
-                <!-- <input type="text" id="title" name="title" placeholder="제목을 입력하세요."
-                onfocus="placeholder=''" onblur="placeholder='제목을 입력하세요.'"
-                > -->
-                <textarea name="green_content" id="content" placeholder="내용을 입력하세요."
-                          onfocus="placeholder=''" onblur="placeholder='내용을 입력하세요.'" class="textarea"></textarea> <!--폰트 바꿀 것-->
-            </div>
+        <div class="form-group">
+<%--            <label for="title"></label>--%>
+            <!-- <input type="text" id="title" name="title" placeholder="제목을 입력하세요."
+            onfocus="placeholder=''" onblur="placeholder='제목을 입력하세요.'"
+            > -->
+            <textarea name="green_content" id="content" placeholder="내용을 입력하세요."
+                      onfocus="placeholder=''" onblur="placeholder='내용을 입력하세요.'" class="textarea"></textarea> <!--폰트 바꿀 것-->
         </div>
-        <div class="flex-container">
-            <div class="form-group">
-                <label for="tags"></label>
-                <input type="text" id="tags" name="green_tag" class="tag-input" placeholder="#태그"
-                       onfocus="placeholder=''" onblur="placeholder='#태그'">
-            </div>
+        <div class="form-group">
+            <label for="tags"></label>
+            <input type="text" id="tags" name="green_tag" class="tag-input" placeholder="#태그"
+                   onfocus="placeholder=''" onblur="placeholder='#태그'"
+            >
         </div>
         <div class="warning-group">
-            <p class="warning">※ 타인을 향한 비난 또는 비방 및 게시판의 목적에 맞지 않는 글은 관리자에 의해 삭제될 수 있습니다.</p>
+            <p class="warning">※타인을 향한 비난 또는 비방 및 게시판의 목적에 맞지 않는 글은 관리자에 의해 삭제될 수 있습니다.</p>
+
         </div>
-        <div class="flex-div">
-            <div class="uploadBox">
+        <div class="uploadBox">
+            <div class="flex-div">
+                <p>preview</p>
                 <div class="img-preview">
-                    <img id="preview-img" src="" alt="preview">
+                    <img id="preview-img" src="">
                 </div>
             </div>
-            <div id="preview-upload-div">
-                <div class="uploadIcons">
-                    <img src="/static/images/images.png.png" alt="이미지 업로드 아이콘" width="60px" height="60px" id="img">
-                    <img src="/static/images/video.png.png" alt="비디오 업로드 아이콘"width="45px" height="50px" class="vid" id="vid">
-                </div>
-                <div class="uploadBtn">
-                    <input type="file" name="upload_pic" class="imageBtn" accept="image/*" id="upload-file-btn">
-                    <input type="file" class="videoBtn" accept="video/*">
-                </div>
+            <div class="uploadIcons">
+                <img src="/static/images/images.png.png" alt="이미지 업로드 아이콘" width="60px" height="60px" id="img">
+                <img src="/static/images/video.png.png" alt="비디오 업로드 아이콘"width="45px" height="50px" class="vid" id="vid">
+            </div>
+            <div class="uploadBtn">
+                <input type="file" name="upload_pic" class="imageBtn" accept="image/*" id="upload-file-btn">
+                <input type="file" class="videoBtn" accept="video/*">
             </div>
         </div>
-        <div class="flex-container">
-            <div class="confirm-group">
-                <button type="submit" class="confirm">글 올리기</button>
-            </div>
+        <div class="confirm-group">
+            <button type="submit" class="confirm">글 올리기</button>
         </div>
     </form>
 </div>
@@ -87,7 +82,6 @@
                 const reader = new FileReader();
                 reader.onload = function(e) {
                     const imgPreview = document.getElementById('preview-img');
-                    imgPreview.style.display = 'block';
                     imgPreview.src = e.target.result;
                 }
                 reader.readAsDataURL(file);

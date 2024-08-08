@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="javatime" uri="http://sargue.net/jsptags/time" %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <html>
 <head>
     <title>플랜트랩</title>
@@ -72,26 +73,6 @@
                             <td><javatime:format value="${post.board_reg}" pattern="yyyy-MM-dd"/></td>
                         </tr>
                         </c:forEach>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
                     </table>
                 </div>
                 <div class="table2">
@@ -112,40 +93,20 @@
                             <td><javatime:format value="${post.board_reg}" pattern="yyyy-MM-dd"/></td>
                         </tr>
                         </c:forEach>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
                     </table>
                 </div>
             </div>
             <div class="section-title">
                 <h2>인기 친구들</h2>
                 <p>다른 유저들의 반려식물들을 구경하세요.</p>
-                <button type="button" class="morebtn" onclick="window.location.href='board_list.html?tab=4'">더 보기</button>
+                <button type="button" class="morebtn" onclick="window.location.href='board/greentalk.do'">더 보기</button>
             </div>
             <div class="popular-container">
                 <c:forEach items="${greentalkPopLists}" var="pop_green">
                     <div class="popular-post">
-                        <img src="/static/images/mainpage/${pop_green.green_pic}" alt="grid_item">
+                        <img src="/static/images/storage/${pop_green.green_pic}" alt="grid_item" style= "width:355px; height: 200px; border-radius: 10px;">
                         <h5 class="contents" id="green_title">${pop_green.green_content}</h5>
-                        <p><img src="/static/images/${pop_green.mem_pic}" alt="">${pop_green.mem_nickname}  | <javatime:format value="${pop_green.green_reg}" pattern="yyyy.MM.dd"/></p>
+                        <p><img src="/static/images/storage/${pop_green.mem_pic}" alt="mem_pic" style= "outline: 2px solid #23C961; border-radius: 100px; width:30px; height: 30px;">${pop_green.mem_nickname}  | <javatime:format value="${pop_green.green_reg}" pattern="yyyy.MM.dd"/></p>
                     </div>
                 </c:forEach>
                     <script>
@@ -217,31 +178,7 @@
                         })
                     </script>
 
-<%--                <div class="popular-post">--%>
-<%--                    <img src="/static/images/mainpage/02.svg" alt="grid_item">--%>
-<%--                    <h5 class="contents">이쁜 저희 초록이좀 보고 가세요~!!</h5>--%>
-<%--                    <p><img src="/static/images/profile_photo.svg" alt="">Karina  | 2024.06.28</p>--%>
-<%--                </div>--%>
-<%--                <div class="popular-post">--%>
-<%--                    <img src="/static/images/mainpage/03.svg" alt="grid_item" style="width: 356px;" style="height: 196px;">--%>
-<%--                    <h5 class="contents">이쁜 저희 초록이좀 보고 가세요~!!</h5>--%>
-<%--                    <p><img src="/static/images/profile_photo.svg" alt="">Karina  | 2024.06.28</p>--%>
-<%--                </div>--%>
-<%--                <div class="popular-post">--%>
-<%--                    <img src="/static/images/mainpage/04.svg" alt="grid_item">--%>
-<%--                    <h5 class="contents">이쁜 저희 초록이좀 보고 가세요~!!</h5>--%>
-<%--                    <p><img src="/static/images/profile_photo.svg" alt="">Karina  | 2024.06.28</p>--%>
-<%--                </div>--%>
-<%--                <div class="popular-post">--%>
-<%--                    <img src="/static/images/mainpage/05.svg" alt="grid_item">--%>
-<%--                    <h5 class="contents">이쁜 저희 초록이좀 보고 가세요~!!</h5>--%>
-<%--                    <p><img src="/static/images/profile_photo.svg" alt="">Karina  | 2024.06.28</p>--%>
-<%--                </div>--%>
-<%--                <div class="popular-post">--%>
-<%--                    <img src="/static/images/mainpage/06.svg" alt="grid_item">--%>
-<%--                    <h5 class="contents">이쁜 저희 초록이좀 보고 가세요~!!</h5>--%>
-<%--                    <p><img src="/static/images/profile_photo.svg" alt="">Karina  | 2024.06.28</p>--%>
-<%--                </div>--%>
+
             </div>
             <div class="section-title2">
                 <h2>할인전</h2>
