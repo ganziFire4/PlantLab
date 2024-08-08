@@ -18,16 +18,17 @@
     </insert>
 
     <update id="modify" parameterType="board">
-        UPDATE SET BOARD
-              BOARD_TYPE = #{board_type}
-            , BOARD_TITLE = #{board_title}
-            , BOARD_CONTENT = #{board_content}
-            , BOARD_MOD = #{board_mod}
+        UPDATE BOARD
+            SET
+                BOARD_TYPE = #{board_type}
+              , BOARD_TITLE = #{board_title}
+              , BOARD_CONTENT = #{board_content}
+              , BOARD_MOD = #{board_mod}
             WHERE BOARD_ID = #{board_id}
     </update>
 
     <delete id="delete" parameterType="int">
-        DELETE BOARD WHERE BOARD_ID = #{ID}
+        DELETE BOARD WHERE BOARD_ID = #{id}
     </delete>
 
     <select id="view_popular" parameterType="map" resultType="board">
@@ -62,53 +63,53 @@
     </select>
 
     <select id="view_all" parameterType="map" resultType="board">
-SELECT A.*
-    FROM(
-        SELECT ROW_NUMBER() OVER (
-        <choose>
-            <when test="table.rec_condition == null or table.rec_condition == 'rec'">
-                ORDER BY SUB.BOARD_REG DESC
-            </when>
-            <when test="table.rec_condition == 'view'">
-                ORDER BY SUB.BOARD_VIEW_CNT DESC
-            </when>
-            <when test="table.rec_condition == 'like'">
-                ORDER BY SUB.BOARD_LIKE_CNT DESC
-            </when>
-            <otherwise>
-                ORDER BY SUB.BOARD_BOOKMARK_CNT DESC
-            </otherwise>
-        </choose>
-        ) AS ROW_NUM
-        , SUB.*
-        FROM (
-        SELECT B.BOARD_ID
-        , B.BOARD_TITLE
-        , M.MEM_NICKNAME
-        , B.BOARD_REG
-        , B.BOARD_VIEW_CNT
-        , B.BOARD_LIKE_CNT
-        , B.BOARD_BOOKMARK_CNT
-        FROM BOARD B
-        JOIN MEMBER M
-        ON B.MEM_ID = M.MEM_ID
-        WHERE BOARD_TYPE = #{tab}
-        ) SUB
-        WHERE 1 = 1
-        <if test="searchMap.search_keyword != null and searchMap.search_keyword != ''">
-            <if test="searchMap.search_condition == 'all'">
-                AND (SUB.BOARD_TITLE LIKE CONCAT('%', #{searchMap.search_keyword}, '%')
-                OR SUB.MEM_NICKNAME LIKE CONCAT('%', #{searchMap.search_keyword}, '%'))
-            </if>
-            <if test="searchMap.search_condition == 'title'">
-                AND SUB.BOARD_TITLE LIKE CONCAT('%', #{searchMap.search_keyword}, '%'
-            </if>
-            <if test="searchMap.search_condition == 'writer'">
-                AND SUB.MEM_NICKNAME LIKE CONCAT('%', #{searchMap.search_keyword}, '%')
-            </if>
-        </if>
-        )A
-        WHERE A.ROW_NUM &gt;= #{cri.startNum} + 1 AND A.ROW_NUM &lt; #{cri.startNum} + #{cri.amount} + 1
+        SELECT A.*
+            FROM(
+                SELECT ROW_NUMBER() OVER (
+                <choose>
+                    <when test="table.rec_condition == null or table.rec_condition == 'rec'">
+                        ORDER BY SUB.BOARD_REG DESC
+                    </when>
+                    <when test="table.rec_condition == 'view'">
+                        ORDER BY SUB.BOARD_VIEW_CNT DESC
+                    </when>
+                    <when test="table.rec_condition == 'like'">
+                        ORDER BY SUB.BOARD_LIKE_CNT DESC
+                    </when>
+                    <otherwise>
+                        ORDER BY SUB.BOARD_BOOKMARK_CNT DESC
+                    </otherwise>
+                </choose>
+                ) AS ROW_NUM
+                , SUB.*
+                FROM (
+                SELECT B.BOARD_ID
+                , B.BOARD_TITLE
+                , M.MEM_NICKNAME
+                , B.BOARD_REG
+                , B.BOARD_VIEW_CNT
+                , B.BOARD_LIKE_CNT
+                , B.BOARD_BOOKMARK_CNT
+                FROM BOARD B
+                JOIN MEMBER M
+                ON B.MEM_ID = M.MEM_ID
+                WHERE BOARD_TYPE = #{tab}
+                ) SUB
+                WHERE 1 = 1
+                <if test="searchMap.search_keyword != null and searchMap.search_keyword != ''">
+                    <if test="searchMap.search_condition == 'all'">
+                        AND (SUB.BOARD_TITLE LIKE CONCAT('%', #{searchMap.search_keyword}, '%')
+                        OR SUB.MEM_NICKNAME LIKE CONCAT('%', #{searchMap.search_keyword}, '%'))
+                    </if>
+                    <if test="searchMap.search_condition == 'title'">
+                        AND SUB.BOARD_TITLE LIKE CONCAT('%', #{searchMap.search_keyword}, '%'
+                    </if>
+                    <if test="searchMap.search_condition == 'writer'">
+                        AND SUB.MEM_NICKNAME LIKE CONCAT('%', #{searchMap.search_keyword}, '%')
+                    </if>
+                </if>
+                )A
+                WHERE A.ROW_NUM &gt;= #{cri.startNum} + 1 AND A.ROW_NUM &lt; #{cri.startNum} + #{cri.amount} + 1
     </select>
 
     <select id="view_one" parameterType="int" resultType="board">
@@ -120,6 +121,8 @@ SELECT A.*
              , B.BOARD_BOOKMARK_CNT
              , B.BOARD_CONTENT
              , B.BOARD_TYPE
+             , M.MEM_PIC
+             , B.MEM_ID
         FROM BOARD B
         JOIN MEMBER M
           ON B.MEM_ID = M.MEM_ID
@@ -168,4 +171,60 @@ SELECT A.*
             </if>
         </if>
     </select>
+
+    <update id="clickLike" parameterType="int">
+        UPDATE BOARD
+            SET
+                BOARD_LIKE_CNT = BOARD_LIKE_CNT + 1
+        WHERE BOARD_ID = #{board_id}
+    </update>
+
+    <insert id="addLike" parameterType="map">
+        INSERT INTO BOARD_LIKE(
+            BOARD_ID, MEM_ID
+        ) VALUES (
+            #{board_id}, #{mem_id}
+        )
+    </insert>
+
+    <update id="dclickLike" parameterType="int">
+        UPDATE BOARD
+        SET
+            BOARD_LIKE_CNT = BOARD_lIKE_CNT - 1
+        WHERE BOARD_ID = #{board_id}
+    </update>
+
+    <delete id="deleteLike" parameterType="map">
+        DELETE BOARD_BOOKMARK
+            WHERE BOARD_ID = #{board_id}
+              AND MEM_ID = #{mem_id}
+    </delete>
+
+    <update id="clickBookmark" parameterType="int">
+        UPDATE BOARD
+        SET
+            BOARD_BOOKMARK_CNT = BOARD_BOOKMARK_CNT + 1
+        WHERE BOARD_ID = #{board_id}
+    </update>
+
+    <insert id="addBookmark" parameterType="map">
+        INSERT INTO BOARD_BOOKMARK(
+            BOARD_ID, MEM_ID
+        ) VALUES (
+                     #{board_id}, #{mem_id}
+                 )
+    </insert>
+
+    <update id="dclickBookmark" parameterType="int">
+        UPDATE BOARD
+        SET
+            BOARD_BOOKMARK_CNT = BOARD_BOOKMARK_CNT - 1
+        WHERE BOARD_ID = #{board_id}
+    </update>
+
+    <delete id="deleteBookmark" parameterType="map">
+        DELETE BOARD_BOOKMARK
+            WHERE BOARD_ID = #{board_id}
+              AND MEM_ID = #{mem_id}
+    </delete>
 </mapper>

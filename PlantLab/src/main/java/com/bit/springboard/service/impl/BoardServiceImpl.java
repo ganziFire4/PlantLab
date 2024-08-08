@@ -1,19 +1,13 @@
 package com.bit.springboard.service.impl;
 
-import com.bit.springboard.common.FileUtils;
 import com.bit.springboard.dao.BoardDao;
 import com.bit.springboard.dto.BoardDto;
 import com.bit.springboard.dto.Criteria;
-import com.bit.springboard.dto.GreentalkDto;
-import com.bit.springboard.dto.GreentalkFileDto;
 import com.bit.springboard.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -71,6 +65,34 @@ public class BoardServiceImpl implements BoardService {
     @Override
     public int getBoardTotal(int tab, Map<String, String> search) {
         return boardDao.getBoardTotal(tab, search);
+    }
+
+    @Override
+    public void changeLike(int num, int mem_id, int board_id) {
+        Map<String, Integer> paramMap = new HashMap<>();
+
+        paramMap.put("board_id", board_id);
+        paramMap.put("mem_id", mem_id);
+
+        if(num == 1){
+            boardDao.addLike(paramMap);
+        } else {
+            boardDao.deleteLike(paramMap);
+        }
+    }
+
+    @Override
+    public void changeBookmark(int num, int mem_id, int board_id) {
+        Map<String, Integer> paramMap = new HashMap<>();
+
+        paramMap.put("board_id", board_id);
+        paramMap.put("mem_id", mem_id);
+
+        if(num == 1){
+            boardDao.addBookmark(paramMap);
+        } else {
+            boardDao.deleteBookmark(paramMap);
+        }
     }
 
 
