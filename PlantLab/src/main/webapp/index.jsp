@@ -21,11 +21,6 @@
         <img src="/static/images/Header%20with%20image_메인페이지.svg" alt="메인 헤더">
     </header>
     <main>
-        <form id="weather-form" action="/weatherData" method="post">
-            <input type="hidden" id="temperature" name="temperature" value="">
-            <input type="hidden" id="percentage" name="percentage" value="">
-            <input type="hidden" id="quantity" name="quantity" value="">
-        </form>
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -73,6 +68,26 @@
                             <td><javatime:format value="${post.board_reg}" pattern="yyyy-MM-dd"/></td>
                         </tr>
                         </c:forEach>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
                     </table>
                 </div>
                 <div class="table2">
@@ -93,6 +108,26 @@
                             <td><javatime:format value="${post.board_reg}" pattern="yyyy-MM-dd"/></td>
                         </tr>
                         </c:forEach>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
+<%--                        <tr>--%>
+<%--                            <td>Project Name</td>--%>
+<%--                            <td>Name</td>--%>
+<%--                            <td>2022.00.00</td>--%>
+<%--                        </tr>--%>
                     </table>
                 </div>
             </div>
@@ -110,47 +145,48 @@
                     </div>
                 </c:forEach>
                     <script>
+                        // 메인 그린톡 제목 글자수 노출
+                        $(document).ready(function() {
+                            // 메인 그린톡 제목 글자수 노출
+                            function truncateText(selector, maxLength) {
+                                const elements = document.querySelectorAll(selector);
+                                elements.forEach(element => {
+                                    const originalText = element.textContent;
+                                    if (originalText.length > maxLength) {
+                                        const truncatedText = originalText.substring(0, maxLength) + '..';
+                                        element.textContent = truncatedText;
+                                    }
+                                });
+                            }
+                        })
 
-       // $(() => {
-       $(document).ready(function() {
-           // 메인 그린톡 제목 글자수 노출
-           function truncateText(selector, maxLength) {
-               const elements = document.querySelectorAll(selector);
-               elements.forEach(element => {
-                   const originalText = element.textContent;
-                   if (originalText.length > maxLength) {
-                       const truncatedText = originalText.substring(0, maxLength) + '..';
-                       element.textContent = truncatedText;
-                   }
-               });
-           }
-
-           // 30 글자로 제한
-           truncateText('#green_title', 25);
+                        // 30 글자로 제한
+                        truncateText('#green_title', 25);
 
 
+                        $(() => {
                             // 날씨 데이터
                             const now = new Date();
-                            let nowMonth = now.getMonth()+1;
+                            let nowMonth = now.getMonth() + 1;
                             let zeroMonth = '0' + nowMonth;
                             let zeroDate = '0' + now.getDate();
                             let defaultHour = now.getHours();
 
-                            if(defaultHour < 5){
+                            if (defaultHour < 5) {
                                 defaultHour = 2;
-                            } else if(defaultHour < 8) {
+                            } else if (defaultHour < 8) {
                                 defaultHour = 5;
-                            } else if(defaultHour < 11) {
+                            } else if (defaultHour < 11) {
                                 defaultHour = 8;
-                            } else if(defaultHour < 14) {
+                            } else if (defaultHour < 14) {
                                 defaultHour = 11;
-                            } else if(defaultHour < 17) {
+                            } else if (defaultHour < 17) {
                                 defaultHour = 14;
-                            } else if(defaultHour < 20) {
+                            } else if (defaultHour < 20) {
                                 defaultHour = 17;
-                            } else if(defaultHour < 23) {
+                            } else if (defaultHour < 23) {
                                 defaultHour = 20;
-                            } else if(defaultHour < 2) {
+                            } else if (defaultHour < 2) {
                                 defaultHour = 21;
                             }
                             let zeroHour = '0' + defaultHour;
@@ -168,31 +204,19 @@
                             let quantityNum = 9; // 강수량
                             let percentageNum = 7; // 강수확률
 
-                            $.getJSON(url, function(data) {
+                            $.getJSON(url, function (data) {
                                 temperature = data.response.body.items.item[tempNum].fcstValue;
                                 quantity = data.response.body.items.item[quantityNum].fcstValue;
                                 percentage = data.response.body.items.item[percentageNum].fcstValue;
                                 // console.log(url);
-                                if(percentage <= 10) {
-                                    // 맑음
-                                    $('#weatherImg').attr('src', `/static/images/sunny.svg`);
-                                    $('#result').html(`<div>\${temperature} ˚C<br>맑음</div>`);
-                                } else if(percentage <= 60){
-                                    // 흐림
-                                    $('#weatherImg').attr('src', "/static/images/rainny.svg");
-                                    $('#result').html(`<div>\${temperature} ˚C<br>흐림</div>`);
-                                } else {
-                                    // 비
-                                    $('#weatherImg').attr('src', "/static/images/strongRainny.svg");
-                                    $('#result').html(`<div>\${temperature} ˚C<br> 비(\${quantity})</div>`);
-                                }
+
                                 document.getElementById('temperature').value = temperature;
                                 document.getElementById('percentage').value = percentage;
                                 document.getElementById('quantity').value = quantity;
 
+                                $("#weather-form").submit();
                             });
                         })
-
                     </script>
 
 

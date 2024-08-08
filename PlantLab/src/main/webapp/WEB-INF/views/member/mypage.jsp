@@ -708,7 +708,7 @@
                     type: 'POST',
                     data: {"green_id": greenId},
                     success: (obj) => {
-
+                        console.log(obj);
                         const formatDate = (dateString) => {
 
                             let year = `\${dateString[0]}`;

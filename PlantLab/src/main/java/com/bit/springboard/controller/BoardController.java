@@ -41,12 +41,13 @@ public class BoardController {
     }
 
     @RequestMapping("/board-main.do")
-    public String boardList(Model model, @RequestParam("tab") int tab,
+    public String boardList(Model model, HttpSession session,
+                            @RequestParam("tab") int tab,
                             @RequestParam(value = "search_condition", required = false) String search_condition,
                             @RequestParam(value = "search_keyword", required = false) String search_keyword,
                             @RequestParam(value = "pop_condition", required = false) String pop_condition,
                             @RequestParam (value = "rec_condition", required = false) String rec_condition,
-                            @RequestParam(value = "row-num", required = false) String row_num, Criteria cri){
+                            @RequestParam(value = "rowsNum", required = false) String rowsNum, Criteria cri){
 
         Map<String, String> search = new HashMap<>();
         search.put("search_condition", search_condition);
@@ -54,15 +55,12 @@ public class BoardController {
 
         Map<String, String> table = new HashMap<>();
         table.put("rec_condition", rec_condition);
-        table.put("row_num", row_num);
+        table.put("rowsNum", rowsNum);
 
-        if(table.get("row_num") == null) {
-            table.put("row_num", "10");
-        }
-
-//        Criteria cri = new Criteria(1, Integer.parseInt(table.get("row_num")));
-        if(Integer.parseInt(table.get("row_num")) != cri.getAmount()) {
+        if(table.get("row_num") != null) {
             cri.setAmount(Integer.parseInt(table.get("row_num")));
+        } else {
+            cri.setAmount(10);
         }
 
         System.out.println(cri);
@@ -71,8 +69,8 @@ public class BoardController {
         model.addAttribute("popList", boardService.view_popular(tab, pop_condition));
         model.addAttribute("boardList", boardService.view_all(tab, search, table, cri));
         model.addAttribute("search", search);
-        model.addAttribute("pop_condition", pop_condition);
-        model.addAttribute("table", table);
+        session.setAttribute("pop_condition", pop_condition);
+        session.setAttribute("table", table);
 
         int total = boardService.getBoardTotal(tab, search);
         model.addAttribute("total", total);
@@ -86,8 +84,19 @@ public class BoardController {
 
 
     @GetMapping("/post.do")
-    public String post() {
+    public String post(Model model, @RequestParam("tab") int tab) {
+        model.addAttribute("tab", tab);
         return "/WEB-INF/views/board/post";
+    }
+
+    @PostMapping("/post.do")
+    public String uploadPost(BoardDto boardDto){
+        String content = boardDto.getBoard_content();
+        boardDto.setBoard_content(content.replace("\r\n", "<br>"));
+        boardService.post(boardDto);
+//        System.out.println(boardDto);
+//        model.addAttribute("board", boardService.getBoard(boardDto.getBoard_id()));
+        return "redirect:/board/board-main.do?tab=" + boardDto.getBoard_type();
     }
 
 
@@ -129,11 +138,17 @@ public class BoardController {
         return "/WEB-INF/views/board/board-detail";
     }
 
+    @GetMapping("/update-cnt.do")
+    public String board_view_cnt (@RequestParam("id") int id){
+        boardService.update_view_cnt(id);
+        return "redirect:/board/board-detail.do?id=" + id;
+    }
+
     @GetMapping("/greentalk_post")
     public String greentalk_post(HttpSession session) {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
         if(loggedInMember == null) {
-            return "redirect:/member/login.do";
+            return "redirect:/member/greenpost_login.do";
         }
         return "/WEB-INF/views/board/greentalk_post";
     }
@@ -191,17 +206,37 @@ public class BoardController {
 
     @PostMapping("/modal-ajax.do")
     @ResponseBody
-    public Map<String, Object> modalAjax(GreentalkDto greentalkDto) {
+    public Map<String, Object> modalAjax(GreentalkDto greentalkDto, Model model) {
 //        System.out.println(greentalkDto);
         Map<String, Object> map = new HashMap<>();
         try {
+
             GreentalkDto greentalk = greentalkService.getGreenOne(greentalkDto.getGreen_id());
             map.put("greentalk", greentalk);
+
+            List<GreentalkCommentDto> greenComment = greentalkService.getComment(greentalkDto.getGreen_id());
+            System.out.println("================================================");
+            System.out.println(greenComment);
+            map.put("greenComment", greenComment);
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return map;
     }
+
+//    @PostMapping("/comment-ajax.do")
+//    @ResponseBody
+//    public Map<String, Object> commentAjax(GreentalkCommentDto greentalkCommentDto) {
+//        Map<String, Object> map = new HashMap<>();
+//        try {
+//            GreentalkCommentDto greentalkComment = greentalkService.getComment(greentalkCommentDto.getGreen_comment_id());
+//            map.put("greentalkComment", greentalkComment);
+//        } catch (Exception e) {
+//            System.out.println(e.getMessage());
+//        }
+//        return map;
+//    }
 
 
 //    @PostMapping("/board-list.do")
@@ -210,12 +245,6 @@ public class BoardController {
 //        return "/WEB-INF/views/board/board-main";
 //
 //    }
-
-    @GetMapping("/update-cnt.do")
-    public String board_view_cnt ( @RequestParam("id") int id){
-        boardService.update_view_cnt(id);
-        return "redirect:/WEB-INF/views/board/board-detail.do?id=" + id;
-    }
 
     @PostMapping("/greentalk-post.do")
     public String greentalk_post(GreentalkDto greentalkDto, HttpSession session, MultipartFile upload_pic, HttpServletRequest request) {
@@ -246,6 +275,25 @@ public class BoardController {
         greentalkService.filePost(greentalkDto);
 
         return "redirect:/board/greentalk.do";
+    }
+
+    @PostMapping("/board_like_cnt.do")
+    @ResponseBody
+    public String board_like_control(int num, int board_id, int mem_id){
+        if(num == 1 || num == -1){
+            boardService.changeLike(num, board_id, mem_id);
+        }
+        return null;
+    }
+
+    @PostMapping("/board_bookmark_cnt.do")
+    @ResponseBody
+    public int board_bookmark_control(int num, int board_id, int mem_id){
+        if(num == 1 || num == -1){
+            boardService.changeBookmark(num, board_id, mem_id);
+            return num;
+        }
+        return 0;
     }
 }
 
