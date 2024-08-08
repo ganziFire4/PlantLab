@@ -2,9 +2,6 @@ package com.bit.springboard.service;
 
 import com.bit.springboard.dto.BoardDto;
 import com.bit.springboard.dto.Criteria;
-import com.bit.springboard.dto.GreentalkDto;
-import com.bit.springboard.dto.GreentalkFileDto;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 import java.util.Map;
@@ -19,8 +16,8 @@ public interface BoardService {
     List<BoardDto> getBoard(int id);
     void update_view_cnt(int id);
     int getBoardTotal(int tab, Map<String, String> search);
-
-
+    void changeLike(int num, int mem_id, int board_id);
+    void changeBookmark(int num, int mem_id, int board_id);
 }
 
 
