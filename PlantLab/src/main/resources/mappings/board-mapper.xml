@@ -227,4 +227,33 @@
             WHERE BOARD_ID = #{board_id}
               AND MEM_ID = #{mem_id}
     </delete>
+
+    <insert id="postComment" parameterType="boardCommentDto">
+        INSERT INTO BOARD_COMMENT(
+              BOARD_ID
+            , MEM_ID
+            , COMMENT_CONTENT
+        ) VALUSES (
+              #{board_id}
+            , #{mem_id}
+            , #{comment_content}
+        )
+    </insert>
+
+    <delete id="deleteComment" parameterType="int">
+        DELETE BOARD_COMMENT
+            WHERE COMMENT_ID = #{id}
+    </delete>
+
+    <select id="showComment" parameterType="int" resultType="boardCommentDto">
+        SELECT COMMENT_ID
+             , MEM_PIC
+             , MEM_NICKNAME
+             , IS_CHECKED
+             , COMMENT_CONTENT
+            FROM BOARD_COMMENT BC
+            JOIN MEMBER M
+              ON BC.MEM_ID = M.MEM_ID
+            WHERE BOARD_ID = #{board_id}
+    </select>
 </mapper>
