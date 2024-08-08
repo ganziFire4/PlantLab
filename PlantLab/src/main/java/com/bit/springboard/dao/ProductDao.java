@@ -30,4 +30,12 @@ public class ProductDao {
     public void savePic(PicDto picDto) {
         sqlSessionTemplate.insert("ProductDao.savePic", picDto);
     }
+
+    public void incrementViewCount(int productId) {
+        sqlSessionTemplate.update("ProductDao.incrementViewCount", productId);
+    }
+
+    public ProductDto getProductById(int productId) {
+        return sqlSessionTemplate.selectOne("ProductDao.getProductById", productId);
+    }
 }
