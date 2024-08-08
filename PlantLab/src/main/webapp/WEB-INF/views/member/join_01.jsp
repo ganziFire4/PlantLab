@@ -10,7 +10,8 @@
 <head>
     <title>플랜트랩: 회원가입</title>
     <link rel="icon" type="img/png" href="/static/images/round_logo_whiteBack.svg">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/join_01.css">
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/join_01.css">--%>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/join_01.css?v=2.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -252,6 +253,7 @@
 
 
         //인증하기 버튼을 눌렀을 때 동작
+
         $("#emailAuth").click(function () {
             const email = $("#mem_email").val(); //사용자가 입력한 이메일 값 얻어오기
 
