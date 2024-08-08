@@ -85,10 +85,14 @@
                 <p>
                     수정일: <javatime:format value="${board.board_reg}" pattern="yyyy-MM-dd"/>
                 </p>
-                <img src="${pageContext.request.contextPath}/static/images/heart_empty.svg" alt="heart">
-                <p>${board.board_like_cnt}</p>
-                <img src="${pageContext.request.contextPath}/static/images/bookmark_empty.svg" alt="bookmark">
-                <p>${board.board_bookmark_cnt}</p>
+                <button type="button" id="likeBtn">
+                    <img src="${pageContext.request.contextPath}/static/images/heart_empty.svg" alt="heart" id="heart">
+                    <p>${board.board_like_cnt}</p>
+                </button>
+                <button type="button" id="bookmarkBtn">
+                    <img src="${pageContext.request.contextPath}/static/images/bookmark_empty.svg" alt="bookmark" id="bookmark">
+                    <p>${board.board_bookmark_cnt}</p>
+                </button>
             </div>
             <div class="q-contents">
                 <c:out value="${board.board_content}" escapeXml="false"/>
@@ -134,27 +138,20 @@
     <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
     <script>
         // document.addEventListener('DOMContentLoaded', function() {
-            const isLogin = <%=session.getAttribute("loggedInMember") == null%>;
-            const btn = document.querySelectorAll(".userInfo img");
+            const isLogin = <%=session.getAttribute("loggedInMember") != null%>;
 
-            btn[0].addEventListener("click", (heartImg) => {
-                if(isLogin){
+            $("#likeBtn").on("click", (e) => {
+                if(!isLogin){
                     alert("회원만 이용가능합니다.");
                     return;
                 }
 
-                // heartImg가 이미지 요소인지 확인
-                if (!(heartImg instanceof HTMLImageElement)) {
-                    console.error("heartImg is not an image element:", heartImg);
-                    return;
-                }
-
                 // 이미지 경로를 가져옴
-                let src = heartImg.getAttribute('src');
+                // let src = heartImg.getAttribute('src');
                 let num;
 
                 // 이미지 경로에 따라 상태를 토글
-                if (src === '${pageContext.request.contextPath}/static/images/heart_empty.svg') {
+                if ($("#heart").src === '${pageContext.request.contextPath}/static/images/heart_empty.svg') {
                     num = 1;
                 } else {
                     num = -1;
@@ -173,12 +170,12 @@
                         }
 
                         if(obj === 1){
-                            heartImg.src = '${pageContext.request.contextPath}/static/images/heart_green.svg';
+                            $("#heart").src = '${pageContext.request.contextPath}/static/images/heart_green.svg';
                             return;
                         }
 
                         if(obj === -1){
-                            heartImg.src = '${pageContext.request.contextPath}/static/images/heart_empty.svg';
+                            $("#heart").src = '${pageContext.request.contextPath}/static/images/heart_empty.svg';
                             return;
                         }
 
@@ -189,57 +186,57 @@
                 });
             });
 
-            btn[1].addEventListener("click", (bookmarkImg) => {
-                if(isLogin){
-                    alert("회원만 이용가능합니다.");
-                    return;
-                }
+        $("#bookmarkBtn").addEventListener("click", (e) => {
+            if(!isLogin){
+                alert("회원만 이용가능합니다.");
+                return;
+            }
 
-                // bookmarkImg가 이미지 요소인지 확인
-                if (!(bookmarkImg instanceof HTMLImageElement)) {
-                    console.error("bookmarkImg is not an image element:", bookmarkImg);
-                    return;
-                }
+            // // bookmarkImg가 이미지 요소인지 확인
+            // if (!(bookmarkImg instanceof HTMLImageElement)) {
+            //     console.error("bookmarkImg is not an image element:", bookmarkImg);
+            //     return;
+            // }
 
-                // 이미지 경로를 가져옴
-                let src = bookmarkImg.getAttribute('src');
-                let num;
+            // 이미지 경로를 가져옴
+            // let src = bookmarkImg.getAttribute('src');
+            let num;
 
-                // 이미지 경로에 따라 상태를 토글
-                if (src === '${pageContext.request.contextPath}/static/images/bookmark_empty.svg') {
-                    num = 1;
-                } else {
-                    num = -1;
-                }
+            // 이미지 경로에 따라 상태를 토글
+            if ($("#bookmark").src === '${pageContext.request.contextPath}/static/images/bookmark_empty.svg') {
+                num = 1;
+            } else {
+                num = -1;
+            }
 
-                $.ajax({
-                    url: "/board/board_bookmark_cnt.do",
-                    type: "post",
-                    data: {"num": num,
-                        "board_id": "${board.board_id}",
-                        "mem_id": "${loggedInMember.mem_id}"},
-                    success: (obj) => {
-                        if(obj === 0){
-                            alert("버튼 인식이 제대로 되지 않았습니다. 다시 시도해주세요.");
-                            return;
-                        }
-
-                        if(obj === 1){
-                            bookmarkImg.src = '${pageContext.request.contextPath}/static/images/bookmark_green.svg';
-                            return;
-                        }
-
-                        if(obj === -1){
-                            bookmarkImg.src = '${pageContext.request.contextPath}/static/images/bookmark_empty.svg';
-                            return;
-                        }
-
-                    },
-                    error: (err) => {
-                        console.log(err);
+            $.ajax({
+                url: "/board/board_bookmark_cnt.do",
+                type: "post",
+                data: {"num": num,
+                    "board_id": "${board.board_id}",
+                    "mem_id": "${loggedInMember.mem_id}"},
+                success: (obj) => {
+                    if(obj === 0){
+                        alert("버튼 인식이 제대로 되지 않았습니다. 다시 시도해주세요.");
+                        return;
                     }
-                });
+
+                    if(obj === 1){
+                        $("#bookmark").src = '${pageContext.request.contextPath}/static/images/bookmark_green.svg';
+                        return;
+                    }
+
+                    if(obj === -1){
+                        $("#bookmark").src = '${pageContext.request.contextPath}/static/images/bookmark_empty.svg';
+                        return;
+                    }
+
+                },
+                error: (err) => {
+                    console.log(err);
+                }
             });
+        });
         // });
     </script>
 </body>
