@@ -3,8 +3,8 @@ package com.bit.springboard.dto;
 public class PicDto {
     private int pic_id;
     private int product_id;
-    private String file_name = ""; // 기본값 설정
-    private boolean is_main = false; // 기본값 설정
+    private String file_name = "";
+    private boolean is_main = false;
 
     // Getters and setters
     public int getPic_id() {
@@ -24,10 +24,10 @@ public class PicDto {
     }
 
     public String getFile_name() {
-        return null;
+        return file_name;
     }
 
-    public void set(String file_name) {
+    public void setFile_name(String file_name) {
         this.file_name = file_name;
     }
 
@@ -37,8 +37,5 @@ public class PicDto {
 
     public void setIs_main(boolean is_main) {
         this.is_main = is_main;
-    }
-
-    public void setFile_name(String savedFileName) {
     }
 }
