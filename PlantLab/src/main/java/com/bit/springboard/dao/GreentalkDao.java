@@ -83,6 +83,7 @@ public class GreentalkDao {
     }
 
     public List<GreentalkCommentDto> getComment(int commentId) {
+        System.out.println(commentId);
         return mybatis.selectList("GreentalkDao.getComment", commentId);
     }
 }

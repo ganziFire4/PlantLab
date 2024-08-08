@@ -128,7 +128,6 @@ img {
 .card-text {
     padding: 5px;
     margin: 5px;
-    overflow: hidden;
 }
 
 .reportbtn {
@@ -395,12 +394,13 @@ img {
     gap: 10px;
 }
 
-.modal-open {
-    overflow: scroll;
-}
 
 .postbtnbox {
     display: flex;
     justify-content: right;
     width: 1200px;
+}
+
+modalcon {
+    
 }
