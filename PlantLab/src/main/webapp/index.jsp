@@ -214,30 +214,29 @@
         let quantityNum = 9; // 강수량
         let percentageNum = 7; // 강수확률
 
-        <%--if(<%=%>)--%>
-        $.ajax({
-            url: url, // 요청을 보낼 URL
-            method: 'GET', // 요청 방법
-            dataType: 'json', // 서버로부터 받을 데이터 타입
-            success: function(data) {
-                // 성공적으로 데이터가 받아졌을 때 실행할 콜백 함수
-                temperature = data.response.body.items.item[tempNum].fcstValue;
-                quantity = data.response.body.items.item[quantityNum].fcstValue;
-                percentage = data.response.body.items.item[percentageNum].fcstValue;
+        if(<%=session.getAttribute("weather") == null%>){
+            $.ajax({
+                url: url, // 요청을 보낼 URL
+                method: 'GET', // 요청 방법
+                dataType: 'json', // 서버로부터 받을 데이터 타입
+                success: function(data) {
+                    // 성공적으로 데이터가 받아졌을 때 실행할 콜백 함수
+                    temperature = data.response.body.items.item[tempNum].fcstValue;
+                    quantity = data.response.body.items.item[quantityNum].fcstValue;
+                    percentage = data.response.body.items.item[percentageNum].fcstValue;
 
-                document.getElementById('temperature').value = temperature;
-                document.getElementById('percentage').value = percentage;
-                document.getElementById('quantity').value = quantity;
+                    document.getElementById('temperature').value = temperature;
+                    document.getElementById('percentage').value = percentage;
+                    document.getElementById('quantity').value = quantity;
 
-                $("#weather-form").submit(); // 폼 제출
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                // 오류가 발생했을 때 실행할 콜백 함수
-                console.error("Error fetching data: " + textStatus, errorThrown);
-            }
-        });
-
-        $.ajax()
+                    $("#weather-form").submit(); // 폼 제출
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    // 오류가 발생했을 때 실행할 콜백 함수
+                    console.error("Error fetching data: " + textStatus, errorThrown);
+                }
+            });
+        }
 
     })
 </script>
