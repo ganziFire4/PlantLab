@@ -10,6 +10,15 @@ public class GreentalkCommentDto {
     private LocalDateTime comment_mod;
     private String mem_nickname;
     private String mem_pic;
+    private int mem_id;
+
+    public int getMem_id() {
+        return mem_id;
+    }
+
+    public void setMem_id(int mem_id) {
+        this.mem_id = mem_id;
+    }
 
     public int getGreen_id() {
         return green_id;

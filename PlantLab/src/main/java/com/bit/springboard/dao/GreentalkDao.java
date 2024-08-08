@@ -86,4 +86,8 @@ public class GreentalkDao {
 //        System.out.println(commentId);
         return mybatis.selectList("GreentalkDao.getComment", commentId);
     }
+
+    public void commentPost(GreentalkCommentDto greentalkCommentDto) {
+        mybatis.insert("GreentalkDao.commentPost", greentalkCommentDto);
+    }
 }

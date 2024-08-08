@@ -30,4 +30,6 @@ public interface GreentalkService {
     void filePost(GreentalkDto greentalkDto);
 
     List<GreentalkCommentDto> getComment(int id);
+
+//    void commentPost(GreentalkCommentDto greentalkCommentDto);
 }
