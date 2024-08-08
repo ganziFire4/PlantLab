@@ -20,11 +20,18 @@ main {
     padding: 0 1em;
     margin-top: 100px;
 }
+
+#flex-div{
+    display: flex;
+    justify-items: center;
+    justify-content: center;
+}
+
 .form-group {
     margin-bottom: 1em;
 }
 .form-group input, .form-group textarea {
-    width: 100%;
+    width: 40vw;
     padding: 0.5em;
     margin: 0.5em 0;
     border: 1px solid #ccc;
@@ -52,7 +59,7 @@ main {
     background: white;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 100%;
+    width: 40vw;
     height: 400px;
     padding: 0.5em;
     display: flex;
@@ -75,14 +82,15 @@ main {
 }
 
 .img-preview{
-    width: 20vw;
-    height: 40vh;
-    background-color: #0DA446;
+    width: 100%;
+    height: 100%;
+
 }
 
 #preview-img {
     width: 100%;
     height: 100%;
+    display: none;
 }
 
 .vid {
@@ -111,7 +119,8 @@ main {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 16px;
-    padding: 0.5em;
+    padding: 0;
+    text-align: center;
 }
 
 .uploadBtn {
@@ -157,4 +166,9 @@ footer p {
 
 .textarea {
     resize: none;
+}
+
+.flex-div {
+    display: flex;
+    justify-content: center;
 }

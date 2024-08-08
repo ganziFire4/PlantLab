@@ -22,6 +22,7 @@ public class WeatherController {
     public String postWeather(WeatherDto weatherDto, HttpSession session){
         weatherService.updateInfo(weatherDto);
         session.setAttribute("weather", weatherDto);
+        System.out.println(weatherDto);
         return "index";
     }
 }
