@@ -200,8 +200,12 @@
     </insert>
 
     <select id="getComment" parameterType="int" resultType="greentalkCommentDto">
-        SELECT GC.MEM_ID
+        SELECT GC.GREEN_ID
+             , GC.GREEN_COMMENT_ID
+             , GC.MEM_ID
              , GC.COMMENT_CONTENT
+             , GC.COMMENT_REG
+             , GC.COMMENT_MOD
              , M.MEM_PIC
              , M.MEM_NICKNAME
          FROM GREENTALK_COMMENT GC

@@ -486,7 +486,7 @@
                     const formattedDate = formatDate(obj.greentalk.green_mod); // 날짜 변환
 
                     // let htmlStr = "";
-                        htmlStr = `
+                        htmlStr += `
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modalbox">
@@ -514,25 +514,28 @@
                                 </div>
 
                                          <%--여쭤보기--%>
-<%--                                        <c:forEach items="${obj.greenComment}" var="greenComment">--%>
-                                            <div class="modalcommentbox" style="display:flex; text-align:center;">
+                                         <div class="modalcon" style="margin-top:5px;">`;
+                                         for(let i = 0; i < obj.greenComment.length; i++) {
+                                             const commentFormattedDate = formatDate(obj.greenComment[i].comment_mod);
+                                             htmlStr += `<div class="modalcommentbox" style="display:flex; text-align:center;">
                                                 <div class="writerpic">
-                                                    <img src="/static/images/storage/\${obj.greenComment.mem_pic}" alt="" style="width: 30px; height: 30px; border-radius: 50%; outline: solid 1px #ccc;">
+                                                    <img src="/static/images/storage/\${obj.greenComment[i].mem_pic}" alt="" style="width: 30px; height: 30px; border-radius: 50%; outline: solid 1px #ccc;">
                                                 </div>
                                                 <div class="modalmaincon">
-                                                    \${obj.greenComment.mem_nickname}
+                                                    \${obj.greenComment[i].mem_nickname}
                                                 </div>
                                                 <div class="modalmaindate">
-                                                    \${obj.greenComment.comment_mod}
+                                                    \${commentFormattedDate}
                                                 </div>
                                                 <div class="modalreport">
                                                     <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
                                                 </div>
                                             </div>
-                                                <div class="modalmaincontent">
-                                                    <p>\${obj.greentalk.comment_content}</p>
-                                                </div>
-<%--                                        </c:forEach>--%>
+                                            <div class="modalmaincontent">
+                                                <p>\${obj.greenComment[i].comment_content}</p>
+                                            </div>`;
+                                         }
+                             htmlStr += `</div>
                             </div>
                             <div class="title">
                                 <p class="titlename"># \${obj.greentalk.green_tag}</p>

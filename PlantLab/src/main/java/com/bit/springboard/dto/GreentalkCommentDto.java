@@ -8,6 +8,8 @@ public class GreentalkCommentDto {
     private String comment_content;
     private LocalDateTime comment_reg;
     private LocalDateTime comment_mod;
+    private String mem_nickname;
+    private String mem_pic;
 
     public int getGreen_id() {
         return green_id;
@@ -49,6 +51,23 @@ public class GreentalkCommentDto {
         this.comment_mod = comment_mod;
     }
 
+    public String getMem_nickname() {
+        return mem_nickname;
+    }
+
+    public void setMem_nickname(String mem_nickname) {
+        this.mem_nickname = mem_nickname;
+    }
+
+    public String getMem_pic() {
+        return mem_pic;
+    }
+
+    public void setMem_pic(String mem_pic) {
+        this.mem_pic = mem_pic;
+    }
+
+
     @Override
     public String toString() {
         return "GreentalkCommentDto{" +
@@ -57,6 +76,8 @@ public class GreentalkCommentDto {
                 ", comment_content='" + comment_content + '\'' +
                 ", comment_reg=" + comment_reg +
                 ", comment_mod=" + comment_mod +
+                ", mem_nickname='" + mem_nickname + '\'' +
+                ", mem_pic='" + mem_pic + '\'' +
                 '}';
     }
 }

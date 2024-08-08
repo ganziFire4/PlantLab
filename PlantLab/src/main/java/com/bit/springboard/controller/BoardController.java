@@ -207,6 +207,8 @@ public class BoardController {
             map.put("greentalk", greentalk);
 
             List<GreentalkCommentDto> greenComment = greentalkService.getComment(greentalkDto.getGreen_id());
+            System.out.println("================================================");
+            System.out.println(greenComment);
             map.put("greenComment", greenComment);
 
         } catch (Exception e) {
