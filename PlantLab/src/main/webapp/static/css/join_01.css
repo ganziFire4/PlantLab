@@ -93,13 +93,19 @@ form {
     justify-content: space-between;
     width: 410px;
 }
-.custom-input input[type="text"],
+
 .custom-input2 input[type="text"],
-.custom-input3 input[type="text"],
-.custom-input4 input[type="text"] {
-    width: calc(80%); /*입력칸과 버튼 사이 여백을 설정*/
-    /* padding-left: 0; */
-    padding-right: 10px; /* 버튼과 입력칸 간의 여백 설정 */
+.custom-input3 input[type="text"]
+ {
+    /*width: calc(80%) !important;*/
+    padding-right: 10px !important;
+}
+
+.custom-input input[type="text"],
+.custom-input4 input[type="text"]
+{
+    /*width: calc(60%) !important; !*입력칸과 버튼 사이 여백을 설정*!*/
+    padding-right: 10px !important;/* 버튼과 입력칸 간의 여백 설정 */
 }
 
 
@@ -153,6 +159,10 @@ form {
     border: none; /* 버튼 스타일링 */
     cursor: pointer; /* 마우스 커서 스타일 설정 */
 
+}
+
+#login_id{
+    width: 300px;
 }
 
 #mem_email{

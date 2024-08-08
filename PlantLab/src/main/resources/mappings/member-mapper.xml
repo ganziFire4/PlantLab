@@ -66,4 +66,8 @@
               ON M.MEM_ID = G.MEM_ID
             WHERE M.MEM_ID = #{mem_id}
     </select>
+
+    <select id="veri_code" parameterType="int" resultType="int">
+
+    </select>
 </mapper>

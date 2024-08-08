@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.bit.springboard.dto.BoardDto" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: bitcamp
   Date: 2024-07-25

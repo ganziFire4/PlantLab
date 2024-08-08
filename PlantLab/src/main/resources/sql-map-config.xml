@@ -18,10 +18,10 @@
                    alias="greentalk"/>
         <typeAlias type="com.bit.springboard.dto.ProductDto"
                    alias="ProductDto"/>
-        <typeAlias type="com.bit.springboard.dto.GreentalkCommentDto"
-                   alias="greentalkCommentDto"/>
         <typeAlias type="com.bit.springboard.dto.WeatherDto"
                    alias="weather"/>
+        <typeAlias type="com.bit.springboard.dto.GreentalkCommentDto"
+                   alias="greentalkCommentDto"/>
     </typeAliases>
 
     <!--사용할 Sql Mapper 등록-->
