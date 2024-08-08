@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -24,8 +25,9 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public ProductDto saveProduct(ProductDto productDto, MultipartFile file, String attachPath) {
         try {
+            String savedFileName = null;
             if (file != null && !file.isEmpty()) {
-                String savedFileName = fileUtils.saveFile(file, attachPath);
+                savedFileName = fileUtils.saveFile(file, attachPath);
 
                 // 제품 저장
                 ProductDto savedProductDto = productDao.saveProduct(productDto);
@@ -33,13 +35,15 @@ public class ProductServiceImpl implements ProductService {
                 // 파일 정보 저장
                 PicDto picDto = new PicDto();
                 picDto.setProduct_id(savedProductDto.getProduct_id());
-                picDto.setFile_name("static/images/product_img/" + savedFileName); // 웹 경로로 저장
+                picDto.setFile_name(savedFileName); // 웹 경로로 저장
                 picDto.setIs_main(true);
                 productDao.savePic(picDto);
+                savedProductDto.getPics().add(picDto); // 저장된 이미지 정보를 DTO에 추가
+
+                return savedProductDto; // 저장된 제품 DTO 반환
             } else {
-                productDao.saveProduct(productDto);
+                return productDao.saveProduct(productDto);
             }
-            return productDto;
         } catch (IOException e) {
             e.printStackTrace();
             throw new RuntimeException("File save failed", e);
@@ -51,6 +55,25 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductDto> getAllProducts() {
-        return productDao.getAllProducts();
+        List<ProductDto> products = productDao.getAllProducts();
+        LocalDateTime now = LocalDateTime.now();
+
+        // 판매 시간 내의 상품만 필터링, null인 경우는 필터링하지 않음
+        products.removeIf(product ->
+                (product.getSell_start() != null && now.isBefore(product.getSell_start())) ||
+                        (product.getSell_end() != null && now.isAfter(product.getSell_end()))
+        );
+
+        return products;
+    }
+
+    @Override
+    public ProductDto getProductById(int productId) {
+        return productDao.getProductById(productId);
+    }
+
+    @Override
+    public void incrementViewCount(int productId) {
+        productDao.incrementViewCount(productId);
     }
 }

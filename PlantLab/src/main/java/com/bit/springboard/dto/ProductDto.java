@@ -1,27 +1,37 @@
 package com.bit.springboard.dto;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProductDto {
     private int product_id;
-    private String brand = ""; // 기본값 설정
-    private String product_name = ""; // 기본값 설정
-    private int price = 0; // 기본값 설정
-    private double discount = 0.0; // 기본값 설정
-    private double rate = 0.0; // 기본값 설정
-    private String color = ""; // 기본값 설정
-    private boolean is_light = false; // 기본값 설정
-    private String base_type = ""; // 기본값 설정
-    private String size = ""; // 기본값 설정
-    private String tag = ""; // 기본값 설정
-    private int view_count = 0; // 기본값 설정
+    private String brand = "";
+    private String product_name = "";
+    private int price = 0;
+    private double discount = 0.0;
+    private double rate = 0.0;
+    private String color = "";
+    private boolean is_light = false;
+    private String base_type = "";
+    private String size = "";
+    private String tag = "";
+    private int view_count = 0;
     private LocalDateTime sell_start;
     private LocalDateTime sell_end;
-    private boolean product_status = true; // 기본값 설정
-    private LocalDateTime created_at = LocalDateTime.now(); // 기본값 설정
-    private LocalDateTime updated_at = LocalDateTime.now(); // 기본값 설정
+    private boolean product_status = true;
+    private LocalDateTime created_at = LocalDateTime.now();
+    private LocalDateTime updated_at = LocalDateTime.now();
+    private List<PicDto> pics = new ArrayList<>();
+    private boolean is_sold_out = false; // 추가된 필드
+
+    // 기본 생성자
+    public ProductDto() {
+        this.pics = new ArrayList<>();
+    }
 
     // Getters and setters
+
     public int getProduct_id() {
         return product_id;
     }
@@ -158,4 +168,19 @@ public class ProductDto {
         this.updated_at = updated_at;
     }
 
+    public List<PicDto> getPics() {
+        return pics;
+    }
+
+    public void setPics(List<PicDto> pics) {
+        this.pics = pics;
+    }
+
+    public boolean isIs_sold_out() {
+        return is_sold_out;
+    }
+
+    public void setIs_sold_out(boolean is_sold_out) {
+        this.is_sold_out = is_sold_out;
+    }
 }
