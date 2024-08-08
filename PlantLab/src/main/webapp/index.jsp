@@ -17,6 +17,11 @@
 </head>
 <body>
     <jsp:include page="${pageContext.request.contextPath}/nav.jsp"/>
+    <form id="weather-form" action="${pageContext.request.contextPath}/post-weather.do" method="post">
+        <input id="temperature" type="hidden" name="temperature" value="">
+        <input id="percentage" type="hidden" name="percentage" value="">
+        <input id="quantity" type="hidden" name="quantity" value="">
+    </form>
     <header id="header">
         <img src="/static/images/Header%20with%20image_메인페이지.svg" alt="메인 헤더">
     </header>
@@ -68,26 +73,6 @@
                             <td><javatime:format value="${post.board_reg}" pattern="yyyy-MM-dd"/></td>
                         </tr>
                         </c:forEach>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
                     </table>
                 </div>
                 <div class="table2">
@@ -108,26 +93,6 @@
                             <td><javatime:format value="${post.board_reg}" pattern="yyyy-MM-dd"/></td>
                         </tr>
                         </c:forEach>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
                     </table>
                 </div>
             </div>
@@ -163,30 +128,29 @@
                         // 30 글자로 제한
                         truncateText('#green_title', 25);
 
-
                         $(() => {
                             // 날씨 데이터
                             const now = new Date();
-                            let nowMonth = now.getMonth() + 1;
+                            let nowMonth = now.getMonth()+1;
                             let zeroMonth = '0' + nowMonth;
                             let zeroDate = '0' + now.getDate();
                             let defaultHour = now.getHours();
 
-                            if (defaultHour < 5) {
+                            if(defaultHour < 5){
                                 defaultHour = 2;
-                            } else if (defaultHour < 8) {
+                            } else if(defaultHour < 8) {
                                 defaultHour = 5;
-                            } else if (defaultHour < 11) {
+                            } else if(defaultHour < 11) {
                                 defaultHour = 8;
-                            } else if (defaultHour < 14) {
+                            } else if(defaultHour < 14) {
                                 defaultHour = 11;
-                            } else if (defaultHour < 17) {
+                            } else if(defaultHour < 17) {
                                 defaultHour = 14;
-                            } else if (defaultHour < 20) {
+                            } else if(defaultHour < 20) {
                                 defaultHour = 17;
-                            } else if (defaultHour < 23) {
+                            } else if(defaultHour < 23) {
                                 defaultHour = 20;
-                            } else if (defaultHour < 2) {
+                            } else if(defaultHour < 2) {
                                 defaultHour = 21;
                             }
                             let zeroHour = '0' + defaultHour;
@@ -204,7 +168,7 @@
                             let quantityNum = 9; // 강수량
                             let percentageNum = 7; // 강수확률
 
-                            $.getJSON(url, function (data) {
+                            $.getJSON(url, function(data) {
                                 temperature = data.response.body.items.item[tempNum].fcstValue;
                                 quantity = data.response.body.items.item[quantityNum].fcstValue;
                                 percentage = data.response.body.items.item[percentageNum].fcstValue;
