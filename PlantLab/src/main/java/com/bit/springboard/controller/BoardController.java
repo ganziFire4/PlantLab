@@ -91,6 +91,8 @@ public class BoardController {
 
     @PostMapping("/post.do")
     public String uploadPost(BoardDto boardDto){
+        String content = boardDto.getBoard_content();
+        boardDto.setBoard_content(content.replace("\r\n", "<br>"));
         boardService.post(boardDto);
 //        System.out.println(boardDto);
 //        model.addAttribute("board", boardService.getBoard(boardDto.getBoard_id()));
@@ -267,6 +269,25 @@ public class BoardController {
         greentalkService.filePost(greentalkDto);
 
         return "redirect:/board/greentalk.do";
+    }
+
+    @PostMapping("/board_like_cnt.do")
+    @ResponseBody
+    public String board_like_control(int num, int board_id, int mem_id){
+        if(num == 1 || num == -1){
+            boardService.changeLike(num, board_id, mem_id);
+        }
+        return null;
+    }
+
+    @PostMapping("/board_bookmark_cnt.do")
+    @ResponseBody
+    public int board_bookmark_control(int num, int board_id, int mem_id){
+        if(num == 1 || num == -1){
+            boardService.changeBookmark(num, board_id, mem_id);
+            return num;
+        }
+        return 0;
     }
 }
 

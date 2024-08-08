@@ -122,6 +122,7 @@
              , B.BOARD_CONTENT
              , B.BOARD_TYPE
              , M.MEM_PIC
+             , B.MEM_ID
         FROM BOARD B
         JOIN MEMBER M
           ON B.MEM_ID = M.MEM_ID
@@ -175,23 +176,55 @@
         UPDATE BOARD
             SET
                 BOARD_LIKE_CNT = BOARD_LIKE_CNT + 1
+        WHERE BOARD_ID = #{board_id}
     </update>
+
+    <insert id="addLike" parameterType="map">
+        INSERT INTO BOARD_LIKE(
+            BOARD_ID, MEM_ID
+        ) VALUES (
+            #{board_id}, #{mem_id}
+        )
+    </insert>
 
     <update id="dclickLike" parameterType="int">
         UPDATE BOARD
         SET
             BOARD_LIKE_CNT = BOARD_lIKE_CNT - 1
+        WHERE BOARD_ID = #{board_id}
     </update>
+
+    <delete id="deleteLike" parameterType="map">
+        DELETE BOARD_BOOKMARK
+            WHERE BOARD_ID = #{board_id}
+              AND MEM_ID = #{mem_id}
+    </delete>
 
     <update id="clickBookmark" parameterType="int">
         UPDATE BOARD
         SET
             BOARD_BOOKMARK_CNT = BOARD_BOOKMARK_CNT + 1
+        WHERE BOARD_ID = #{board_id}
     </update>
+
+    <insert id="addBookmark" parameterType="map">
+        INSERT INTO BOARD_BOOKMARK(
+            BOARD_ID, MEM_ID
+        ) VALUES (
+                     #{board_id}, #{mem_id}
+                 )
+    </insert>
 
     <update id="dclickBookmark" parameterType="int">
         UPDATE BOARD
         SET
             BOARD_BOOKMARK_CNT = BOARD_BOOKMARK_CNT - 1
+        WHERE BOARD_ID = #{board_id}
     </update>
+
+    <delete id="deleteBookmark" parameterType="map">
+        DELETE BOARD_BOOKMARK
+            WHERE BOARD_ID = #{board_id}
+              AND MEM_ID = #{mem_id}
+    </delete>
 </mapper>

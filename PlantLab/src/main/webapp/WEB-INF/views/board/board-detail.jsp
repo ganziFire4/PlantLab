@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="javatime" uri="http://sargue.net/jsptags/time" %>
+
 <html>
 <head>
     <title>플랜트랩: ${board.board_title}</title>
@@ -84,13 +85,13 @@
                 <p>
                     수정일: <javatime:format value="${board.board_reg}" pattern="yyyy-MM-dd"/>
                 </p>
-                <img src="${pageContext.request.contextPath}/static/images/heart_empty.svg" alt="heart" onclick="toggleHeart(this)">
+                <img src="${pageContext.request.contextPath}/static/images/heart_empty.svg" alt="heart">
                 <p>${board.board_like_cnt}</p>
-                <img src="${pageContext.request.contextPath}/static/images/bookmark_empty.svg" alt="bookmark" onclick="toggleBookmark(this)">
+                <img src="${pageContext.request.contextPath}/static/images/bookmark_empty.svg" alt="bookmark">
                 <p>${board.board_bookmark_cnt}</p>
             </div>
             <div class="q-contents">
-                <p>${board.board_content}</p>
+                <c:out value="${board.board_content}" escapeXml="false"/>
             </div>
             <div class="comments">
                 <h5>댓글</h5>
@@ -107,20 +108,139 @@
                                   <textarea type="text" name="comment-input" placeholder="댓글을 입력하세요."></textarea>
                               </c:otherwise>
                           </c:choose>
-                        <script>
-                            console.log("${loggedInMember}");
-                        </script>
                         <button type="submit" id="commentBtn">댓글 쓰기</button>
                     </div>
                 </div>
                 <hr>
-                <div id="button">
-                    <a href="/board/board-main.do?tab=${board.board_type}">목록</a>
+                <div id="button_bar">
+                    <div id="list" class="button">
+                        <a href="/board/board-main.do?tab=${board.board_type}">목록</a>
+                    </div>
+                    <c:if test="${board.mem_id == loggedInMember.mem_id}">
+                        <div style="display:flex">
+                            <div id="modify" class="button">
+                                <a href="/board/board-main.do?tab=${board.board_type}">수정</a>
+                            </div>
+                            <div id="delete" class="button">
+                                <a href="/board/board-main.do?tab=${board.board_type}">삭제</a>
+                            </div>
+                        </div>
+                    </c:if>
                 </div>
             </div>
         </div>
     </main>
     <jsp:include page="${pageContext.request.contextPath}/chatbot.jsp"/>
     <jsp:include page="${pageContext.request.contextPath}/footer.jsp"/>
+    <script>
+        // document.addEventListener('DOMContentLoaded', function() {
+            const isLogin = <%=session.getAttribute("loggedInMember") == null%>;
+            const btn = document.querySelectorAll(".userInfo img");
+
+            btn[0].addEventListener("click", (heartImg) => {
+                if(isLogin){
+                    alert("회원만 이용가능합니다.");
+                    return;
+                }
+
+                // heartImg가 이미지 요소인지 확인
+                if (!(heartImg instanceof HTMLImageElement)) {
+                    console.error("heartImg is not an image element:", heartImg);
+                    return;
+                }
+
+                // 이미지 경로를 가져옴
+                let src = heartImg.getAttribute('src');
+                let num;
+
+                // 이미지 경로에 따라 상태를 토글
+                if (src === '${pageContext.request.contextPath}/static/images/heart_empty.svg') {
+                    num = 1;
+                } else {
+                    num = -1;
+                }
+
+                $.ajax({
+                    url: "/board/board_like_cnt.do",
+                    type: "post",
+                    data: {"num": num,
+                        "board_id": "${board.board_id}",
+                        "mem_id": "${loggedInMember.mem_id}"},
+                    success: (obj) => {
+                        if(obj === 0){
+                            alert("버튼 인식이 제대로 되지 않았습니다. 다시 시도해주세요.");
+                            return;
+                        }
+
+                        if(obj === 1){
+                            heartImg.src = '${pageContext.request.contextPath}/static/images/heart_green.svg';
+                            return;
+                        }
+
+                        if(obj === -1){
+                            heartImg.src = '${pageContext.request.contextPath}/static/images/heart_empty.svg';
+                            return;
+                        }
+
+                    },
+                    error: (err) => {
+                        console.log(err);
+                    }
+                });
+            });
+
+            btn[1].addEventListener("click", (bookmarkImg) => {
+                if(isLogin){
+                    alert("회원만 이용가능합니다.");
+                    return;
+                }
+
+                // bookmarkImg가 이미지 요소인지 확인
+                if (!(bookmarkImg instanceof HTMLImageElement)) {
+                    console.error("bookmarkImg is not an image element:", bookmarkImg);
+                    return;
+                }
+
+                // 이미지 경로를 가져옴
+                let src = bookmarkImg.getAttribute('src');
+                let num;
+
+                // 이미지 경로에 따라 상태를 토글
+                if (src === '${pageContext.request.contextPath}/static/images/bookmark_empty.svg') {
+                    num = 1;
+                } else {
+                    num = -1;
+                }
+
+                $.ajax({
+                    url: "/board/board_bookmark_cnt.do",
+                    type: "post",
+                    data: {"num": num,
+                        "board_id": "${board.board_id}",
+                        "mem_id": "${loggedInMember.mem_id}"},
+                    success: (obj) => {
+                        if(obj === 0){
+                            alert("버튼 인식이 제대로 되지 않았습니다. 다시 시도해주세요.");
+                            return;
+                        }
+
+                        if(obj === 1){
+                            bookmarkImg.src = '${pageContext.request.contextPath}/static/images/bookmark_green.svg';
+                            return;
+                        }
+
+                        if(obj === -1){
+                            bookmarkImg.src = '${pageContext.request.contextPath}/static/images/bookmark_empty.svg';
+                            return;
+                        }
+
+                    },
+                    error: (err) => {
+                        console.log(err);
+                    }
+                });
+            });
+        // });
+    </script>
 </body>
 </html>

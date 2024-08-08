@@ -71,5 +71,23 @@ public class BoardDao {
         return mybatis.selectOne("BoardDao.getBoardTotal", paramMap);
     }
 
+    public void addLike(Map<String, Integer> paramMap) {
+        mybatis.update("BoardDao.clickLike", paramMap.get("board_id"));
+        mybatis.insert("BoardDao.addLike", paramMap);
+    }
 
+    public void deleteLike(Map<String, Integer> paramMap) {
+        mybatis.update("BoardDao.dclickLike", paramMap.get("board_id"));
+        mybatis.insert("BoardDao.deleteLike", paramMap);
+    }
+
+    public void addBookmark(Map<String, Integer> paramMap) {
+        mybatis.update("BoardDao.clickBookmark", paramMap.get("board_id"));
+        mybatis.insert("BoardDao.addBookmark", paramMap);
+    }
+
+    public void deleteBookmark(Map<String, Integer> paramMap) {
+        mybatis.update("BoardDao.dclickBookmark", paramMap.get("board_id"));
+        mybatis.insert("BoardDao.deleteBookmark", paramMap);
+    }
 }
