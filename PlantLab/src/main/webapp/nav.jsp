@@ -103,9 +103,7 @@
             let navTemperature = document.getElementById('weather-temperature').name;
             let navQuantity = document.getElementById('weather-quantity').name;
             let navPercentage = document.getElementById('weather-percentage').name;
-            console.log(navTemperature);
-            console.log(navQuantity);
-            console.log(navPercentage);
+
             if(navPercentage <= 10) {
                 // 맑음
                 $('#weatherImg').attr('src', `/static/images/sunny.svg`);

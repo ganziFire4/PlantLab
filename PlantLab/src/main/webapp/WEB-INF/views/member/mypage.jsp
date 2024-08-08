@@ -229,27 +229,29 @@
                 </c:choose>
             </div>
             <div class="contentbox-sns" id="content-b" style="display: none;"> <!--클릭시 자랑글 모달 띄우게 가능할까요?-->
-                <div id="grid-div">
-                    <c:choose>
-                        <c:when test="${empty myGreentalk}">
-                            <div>
-                                <button class="grid-item" id="createBragBtn" style="border: none; background-color: #ECECEC;">
-                                    <img src="/static/images/camera_Icon.svg" alt="cameraIcon">
-                                    <p style="margin-top: 10px;">올린 자랑글이 없습니다.</p>
-                                </button>
-                            </div>
-                        </c:when>
-                        <c:otherwise>
-                            <c:forEach items="${myGreentalk}" var="greentalkList">
-                                <div class="grid-div">
-                                    <%--OPEN MODAL--%>
-                                    <button type="button" onclick="openModal(${greentalkList.green_id});">
-                                        <img src="/static/images/storage/${greentalkList.green_pic}" alt="previewImg" class="grid-item">
+                <div class="flex-center">
+                    <div id="grid-div">
+                        <c:choose>
+                            <c:when test="${empty myGreentalk}">
+                                <div>
+                                    <button class="grid-item" id="createBragBtn" style="border: none; background-color: #ECECEC;">
+                                        <img src="/static/images/camera_Icon.svg" alt="cameraIcon">
+                                        <p style="margin-top: 10px;">올린 자랑글이 없습니다.</p>
                                     </button>
                                 </div>
-                            </c:forEach>
-                        </c:otherwise>
-                    </c:choose>
+                            </c:when>
+                            <c:otherwise>
+                                <c:forEach items="${myGreentalk}" var="greentalkList">
+                                    <div class="grid-div">
+                                        <%--OPEN MODAL--%>
+                                        <button type="button" id="modal-open-btn" onclick="openModal(${greentalkList.green_id});">
+                                            <img src="/static/images/storage/${greentalkList.green_pic}" alt="previewImg" class="grid-item">
+                                        </button>
+                                    </div>
+                                </c:forEach>
+                            </c:otherwise>
+                        </c:choose>
+                    </div>
                 </div>
                 <div id="move-green-div">
                     <button id="move-green-btn" onclick="window.location.href='${pageContext.request.contextPath}/board/greentalk.do'">

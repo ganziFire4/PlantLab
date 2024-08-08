@@ -82,13 +82,12 @@
 }
 
 .table-cover-div {
-    font-size: 3vh;
+    font-size: 22px;
     font-weight: 700;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 3vh;
 }
 
 .board-name-div {
@@ -98,13 +97,13 @@
 }
 
 table {
-    font-size: 1.2vh;
+    font-size: 10px;
     width: 90%;
     table-layout: fixed;
 }
 
 td {
-    font-size: 2vh;
+    font-size: 15px;
     height: 1vw;
     text-align: center;
     border-bottom: solid 1px rgba(204, 204, 204, 0.3) !important;
@@ -130,23 +129,37 @@ td {
 }
 
 .contentbox-sns {
+    /*display: flex;*/
+    /*justify-content: center;*/
     width: 831px;
     height: 671px;
     margin-left: 19px;
 }
 
-#grid-div {
+.flex-center{
     width: 100%;
-    height: 90%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
+
+#grid-div {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr) ;
+    align-items: center;
+    justify-items: center;
 }
 
 .grid-item {
-    width: 95%;
-    height: 95%;
-    /*padding: 1vh;*/
+    width: 100%;
+    height: 100%;
+}
+
+#modal-open-btn{
+    padding-top: 10px;
+    width: 220px;
+    height: 200px;
 }
 
 .heartbookmark {
@@ -189,7 +202,7 @@ td {
     height: 640px;
     background: white;
     border-radius: 5px;
-    margin-top: 600px;
+    /*margin-top: 150px;*/
 }
 
 .modal-body {
@@ -453,6 +466,7 @@ button {
 }
 
 #move-green-div{
+    margin-top: 15px;
     display: flex;
     justify-content: center;
 }

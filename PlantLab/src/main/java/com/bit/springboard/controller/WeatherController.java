@@ -19,10 +19,10 @@ public class WeatherController {
     }
 
     @PostMapping("/post-weather.do")
-    public String postWeather(WeatherDto weatherDto, Model model, HttpSession session){
+    public String postWeather(WeatherDto weatherDto, HttpSession session){
         weatherService.updateInfo(weatherDto);
-
         session.setAttribute("weather", weatherDto);
+        System.out.println(weatherDto);
         return "index";
     }
 }
