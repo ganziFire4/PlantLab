@@ -22,27 +22,22 @@ public class ProductServiceImpl implements ProductService {
     private ProductDao productDao;
 
     @Override
-    public ProductDto saveProduct(ProductDto productDto, MultipartFile file) {
+    public ProductDto saveProduct(ProductDto productDto, MultipartFile file, String attachPath) {
         try {
-            // 제품 저장
-            productDao.saveProduct(productDto);
-
             if (file != null && !file.isEmpty()) {
-                String savedFileName = fileUtils.saveFile(file);
+                String savedFileName = fileUtils.saveFile(file, attachPath);
+
+                // 제품 저장
+                ProductDto savedProductDto = productDao.saveProduct(productDto);
 
                 // 파일 정보 저장
                 PicDto picDto = new PicDto();
-                picDto.setProduct_id(productDto.getProduct_id());
-                picDto.setFile_name(savedFileName);
-                picDto.setIs_main(true); // 주 파일로 설정
+                picDto.setProduct_id(savedProductDto.getProduct_id());
+                picDto.setFile_name("static/images/product_img/" + savedFileName); // 웹 경로로 저장
+                picDto.setIs_main(true);
                 productDao.savePic(picDto);
             } else {
-                // 파일 정보가 없을 경우 기본값으로 PicDto 저장
-                PicDto picDto = new PicDto();
-                picDto.setProduct_id(productDto.getProduct_id());
-                picDto.setFile_name(""); // 기본값
-                picDto.setIs_main(false); // 기본값
-                productDao.savePic(picDto);
+                productDao.saveProduct(productDto);
             }
             return productDto;
         } catch (IOException e) {

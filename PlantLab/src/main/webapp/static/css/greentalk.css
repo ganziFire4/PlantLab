@@ -401,6 +401,14 @@ img {
     width: 1200px;
 }
 
-modalcon {
-    
-}
+/*.modalcon {*/
+/*    margin-top: 5px !important;*/
+/*    max-height: 450px !important;*/
+/*    overflow-y: scroll !important;*/
+/*    -ms-overflow-style: none !important;  !* IE 10+ *!*/
+/*    scrollbar-width: none !important;  !* Firefox *!*/
+/*}*/
+
+/*.modalcon::-webkit-scrollbar {*/
+/*    display: none !important;  !* Chrome, Safari, Opera *!*/
+/*}*/

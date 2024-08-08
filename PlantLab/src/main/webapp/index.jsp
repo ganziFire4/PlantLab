@@ -111,15 +111,20 @@
                 </c:forEach>
                     <script>
                         // 메인 그린톡 제목 글자수 노출
-                        function truncateText(selector, maxLength) {
-                            const element = document.querySelector(selector);
-                            const originalText = element.textContent;
-
-                            if (originalText.length > maxLength) {
-                                const truncatedText = originalText.substring(0, maxLength) + '..';
-                                element.textContent = truncatedText;
+                        $(document).ready(function() {
+                            // 메인 그린톡 제목 글자수 노출
+                            function truncateText(selector, maxLength) {
+                                const elements = document.querySelectorAll(selector);
+                                elements.forEach(element => {
+                                    const originalText = element.textContent;
+                                    if (originalText.length > maxLength) {
+                                        const truncatedText = originalText.substring(0, maxLength) + '..';
+                                        element.textContent = truncatedText;
+                                    }
+                                });
                             }
-                        }
+                        })
+
                         // 30 글자로 제한
                         truncateText('#green_title', 25);
 
