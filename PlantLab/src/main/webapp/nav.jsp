@@ -21,7 +21,7 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/nav.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/weather.css">
     <!--외부 js-->
-    <script src="${pageContext.request.contextPath}/static/js/weather.js"></script>
+<%--    <script src="${pageContext.request.contextPath}/static/js/weather.js"></script>--%>
     <!--bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -38,9 +38,12 @@
                 <ul class="nav_menu">
                     <li><a href="/board/board-main.do?tab=1">커뮤니티</a></li>
                     <li><a href="/shopping_main.do">스토어</a></li>
+                    <input id="weather-temperature" type="hidden" name="${weather.temperature}">
+                    <input id="weather-percentage" type="hidden" name="${weather.percentage}">
+                    <input id="weather-quantity" type="hidden" name="${weather.quantity}">
                     <div id="weather">
                         <li id="weatherList">
-                            <img id="weatherImg" scr="" alt="날씨 이미지">
+                            <img id="weatherImg" src="" alt="날씨 이미지">
                             <img id="weatherLine" src="${pageContext.request.contextPath}/static/images/weatherLine.svg" alt="라인 이미지">
                             <p id="result"></p>
                         </li>
@@ -94,5 +97,29 @@
             </c:choose>
         </div>
     </nav>
+
+    <script>
+        $(() => {
+            let navTemperature = document.getElementById('weather-temperature').name;
+            let navQuantity = document.getElementById('weather-quantity').name;
+            let navPercentage = document.getElementById('weather-percentage').name;
+            console.log(navTemperature);
+            console.log(navQuantity);
+            console.log(navPercentage);
+            if(navPercentage <= 10) {
+                // 맑음
+                $('#weatherImg').attr('src', `/static/images/sunny.svg`);
+                $('#result').html(`<div>\${navTemperature} ˚C<br>맑음</div>`);
+            } else if(navPercentage <= 60){
+                // 흐림
+                $('#weatherImg').attr('src', "/static/images/rainny.svg");
+                $('#result').html(`<div>\${navTemperature} ˚C<br>흐림</div>`);
+            } else {
+                // 비
+                $('#weatherImg').attr('src', "/static/images/strongRainny.svg");
+                $('#result').html(`<div>\${navTemperature} ˚C<br> 비(\${navQuantity})</div>`);
+            }
+        });
+    </script>
 </body>
 </html>
