@@ -130,24 +130,24 @@
                     <label><input type="checkbox" name="fruit" value="열매"><span class="filter-text">열매</span></label>
                 </div>
                 <div class="sort_set">
-                    <span style="font-weight: bold; margin-right: 40px;">채광 유무</span>
+                    <span style="font-weight: bold; margin-right: 40px;">채광 유무:</span>
                     <label><input type="checkbox" name="light_mining" value="off"><span class="filter-text">음지(빛없는 실내)</span></label>
                     <label><input type="checkbox" name="light_mining" value="on"><span class="filter-text">양지(빛이 많은곳)</span></label>
                 </div>
                 <div class="sort_set">
-                    <span style="font-weight: bold; margin-right: 40px;">원예 형태</span>
+                    <span style="font-weight: bold; margin-right: 40px;">원예 형태:</span>
                     <label><input type="checkbox" name="horticultural_form" value="화분"><span class="filter-text">화분</span></label>
                     <label><input type="checkbox" name="horticultural_form" value="꽃병"><span class="filter-text">꽃병</span></label>
                     <label><input type="checkbox" name="horticultural_form" value="바구니"><span class="filter-text">바구니</span></label>
                 </div>
                 <div class="sort_set">
-                    <span style="font-weight: bold; margin-right: 40px;">사이즈</span>
+                    <span style="font-weight: bold; margin-right: 40px;">사이즈:</span>
                     <label><input type="checkbox" name="size" value="마당용"><span class="filter-text">마당용</span></label>
                     <label><input type="checkbox" name="size" value="실내용"><span class="filter-text">실내용</span></label>
                     <label><input type="checkbox" name="size" value="탁상용"><span class="filter-text">탁상용(미니)</span></label>
                 </div>
                 <div class="sort_set">
-                    <span style="font-weight: bold; margin-right: 40px;">할인 유무</span>
+                    <span style="font-weight: bold; margin-right: 40px;">할인 유무:</span>
                     <label><input type="checkbox" id="sale" name="sale" value="on"><span class="filter-text">할인적용 상품</span></label>
                 </div>
             </div>
@@ -174,7 +174,9 @@
                 <div class="product_row">
                     <div class="product_item">
                         <a href="/purchase.do">
-                            <img src="${pageContext.request.contextPath}/static/images/product_img/${product.file_name}">
+                            <c:forEach var="pic" items="${product.pics}">
+                                <img src="${pageContext.request.contextPath}/static/images/product_img/${pic.file_name}" alt="Product Image" id="img0807">
+                            </c:forEach>
                             <div class="goods_border">
                                 <p class="product_title">${product.product_name}</p>
                                 <p class="product_company">${product.brand}</p>
@@ -206,6 +208,12 @@
 </div>
 
 <script>
+    let imgTest = "";
+    $(() => {
+        imgTest = document.getElementById('img0807');
+        console.log(imgTest.src);
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
         const productForm = document.getElementById('productForm');
         const productContainer = document.getElementById('product-container');
@@ -241,7 +249,7 @@
                 })
                 .then(data => {
                     if (data) {
-                        addProductToContainer(data);
+                        fetchProducts(); // 등록 후 전체 목록을 다시 불러옴
                         productForm.reset();
                     }
                 })
@@ -251,17 +259,22 @@
                 });
         });
 
-        fetch('/all')
-            .then(response => response.json())
-            .then(data => {
-                data.forEach(product => {
-                    addProductToContainer(product);
+        function fetchProducts() {
+            fetch('/all')
+                .then(response => response.json())
+                .then(data => {
+                    productContainer.innerHTML = ''; // 기존 목록을 초기화
+                    data.forEach(product => {
+                        addProductToContainer(product);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    alert('An error occurred while loading products: ' + error.message);
                 });
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                alert('An error occurred while loading products: ' + error.message);
-            });
+        }
+
+        fetchProducts(); // 페이지 로드 시 전체 목록 불러오기
 
         const fileInput = document.getElementById('file');
         const previewImage = document.getElementById('previewImage');
@@ -288,8 +301,13 @@
             productLink.href = '/purchase.do';
 
             const productImage = document.createElement('img');
-            productImage.src = 'static/images/product_img/' + product.file_name;
+            if (product.pics && product.pics.length > 0) {
+                productImage.src = '/static/images/product_img/' + product.pics[0].file_name;
+            } else {
+                productImage.src = '/static/images/product_img/default.png';
+            }
             productImage.alt = '물품 이미지';
+            productLink.appendChild(productImage);
 
             const goodsBorder = document.createElement('div');
             goodsBorder.classList.add('goods_border');
@@ -299,7 +317,6 @@
             productTitle.textContent = product.product_name;
 
             const productCompany = document.createElement('p');
-            productCompany.classList.add('product_company');
             productCompany.textContent = product.brand;
 
             const productPrice = document.createElement('p');
@@ -315,19 +332,16 @@
             goodsBorder.appendChild(productPrice);
             goodsBorder.appendChild(productRating);
 
-            productLink.appendChild(productImage);
             productLink.appendChild(goodsBorder);
             productItem.appendChild(productLink);
 
-            const lastRow = productContainer.querySelector('.product_row:last-child');
-            if (lastRow && lastRow.children.length < 3) {
-                lastRow.appendChild(productItem);
-            } else {
-                const newRow = document.createElement('div');
-                newRow.classList.add('product_row');
-                newRow.appendChild(productItem);
-                productContainer.appendChild(newRow);
+            let lastRow = productContainer.querySelector('.product_row:last-child');
+            if (!lastRow || lastRow.children.length >= 3) {
+                lastRow = document.createElement('div');
+                lastRow.classList.add('product_row');
+                productContainer.appendChild(lastRow);
             }
+            lastRow.appendChild(productItem);
         }
 
         const filters = {

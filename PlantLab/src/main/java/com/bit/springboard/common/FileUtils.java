@@ -7,8 +7,6 @@ import org.springframework.web.multipart.MultipartFile;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
@@ -23,9 +21,9 @@ public class FileUtils {
 
         String nowDateStr = format.format(nowDate);
 
-        UUID uuid =UUID.randomUUID();
+        UUID uuid = UUID.randomUUID();
 
-        String fileName = uuid.toString() + "_" +nowDateStr + "_" + multipartFile.getOriginalFilename();
+        String fileName = uuid.toString() + "_" + nowDateStr + "_" + multipartFile.getOriginalFilename();
 
         File uploadFile = new File(attachPath + fileName);
         String type = "";
@@ -54,8 +52,6 @@ public class FileUtils {
         return greentalkFileDto;
     }
 
-    private static final String UPLOAD_DIR = "C:\\Users\\bitcampp\\Documents\\2nd_Project\\PlantLab\\src\\main\\webapp\\static\\images\\product_img";
-
     public String saveFile(MultipartFile file, String attachPath) throws IOException {
         if (file.isEmpty()) {
             throw new IOException("Failed to store empty file.");
@@ -78,7 +74,6 @@ public class FileUtils {
             System.out.println(ie.getMessage());
         }
 
-        // 상대 경로를 반환합니다.
-        return "static/images/product_img/" + savedFilename;
+        return savedFilename;
     }
 }
