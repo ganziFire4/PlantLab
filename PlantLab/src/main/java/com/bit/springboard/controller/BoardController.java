@@ -3,6 +3,7 @@ package com.bit.springboard.controller;
 import com.bit.springboard.dto.*;
 import com.bit.springboard.service.BoardService;
 import com.bit.springboard.service.GreentalkService;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -294,6 +295,18 @@ public class BoardController {
             return num;
         }
         return 0;
+    }
+
+    @PostMapping("/green_comment.do")
+    public String green_comment_post(GreentalkCommentDto greentalkCommentDto, HttpSession session, HttpServletRequest httpServletRequest) {
+        MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
+
+        if (loggedInMember == null) {
+            return "redirect:/member/green_login";
+        }
+
+        greentalkCommentDto.setMem_id(loggedInMember.getMem_id());
+        greentalkService.commentPost(greentalkCommentDto);
     }
 }
 

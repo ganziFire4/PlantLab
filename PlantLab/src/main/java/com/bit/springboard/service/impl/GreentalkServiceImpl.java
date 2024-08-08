@@ -131,4 +131,11 @@ public class GreentalkServiceImpl implements GreentalkService {
     public List<GreentalkDto> getPopGreenLists_main() {
         return greentalkDao.getPopGreenLists();
     }
+
+    @Override
+    public int commentPost(GreentalkCommentDto greentalkCommentDto) {
+        greentalkDao.commentPost(greentalkCommentDto);
+        return greentalkCommentDto.getGreen_id();
+
+    }
 }
