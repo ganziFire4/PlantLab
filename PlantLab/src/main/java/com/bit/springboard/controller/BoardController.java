@@ -220,7 +220,7 @@ public class BoardController {
     @PostMapping("/greentalk-post.do")
     public String greentalk_post(GreentalkDto greentalkDto, HttpSession session, MultipartFile upload_pic, HttpServletRequest request) {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
-        greentalkDto.setMem_id(loggedInMember.getMemId());
+        greentalkDto.setMem_id(loggedInMember.getMem_id());
         if(upload_pic != null) {
             String attachPath = request.getServletContext().getRealPath("\\") + "\\static\\images\\storage\\";
 
