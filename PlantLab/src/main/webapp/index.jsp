@@ -16,6 +16,11 @@
 </head>
 <body>
     <jsp:include page="${pageContext.request.contextPath}/nav.jsp"/>
+    <form id="weather-form" action="${pageContext.request.contextPath}/post-weather.do" method="post">
+        <input id="temperature" type="hidden" name="temperature" value="">
+        <input id="percentage" type="hidden" name="percentage" value="">
+        <input id="quantity" type="hidden" name="quantity" value="">
+    </form>
     <header id="header">
         <img src="/static/images/Header%20with%20image_메인페이지.svg" alt="메인 헤더">
     </header>
@@ -156,6 +161,60 @@
                         }
                         // 30 글자로 제한
                         truncateText('#green_title', 25);
+
+                        $(() => {
+                            // 날씨 데이터
+                            const now = new Date();
+                            let nowMonth = now.getMonth()+1;
+                            let zeroMonth = '0' + nowMonth;
+                            let zeroDate = '0' + now.getDate();
+                            let defaultHour = now.getHours();
+
+                            if(defaultHour < 5){
+                                defaultHour = 2;
+                            } else if(defaultHour < 8) {
+                                defaultHour = 5;
+                            } else if(defaultHour < 11) {
+                                defaultHour = 8;
+                            } else if(defaultHour < 14) {
+                                defaultHour = 11;
+                            } else if(defaultHour < 17) {
+                                defaultHour = 14;
+                            } else if(defaultHour < 20) {
+                                defaultHour = 17;
+                            } else if(defaultHour < 23) {
+                                defaultHour = 20;
+                            } else if(defaultHour < 2) {
+                                defaultHour = 21;
+                            }
+                            let zeroHour = '0' + defaultHour;
+
+                            let year = now.getFullYear();
+                            let month = zeroMonth.slice(-2);
+                            let date = zeroDate.slice(-2);
+                            let hour = zeroHour.slice(-2);
+                            let fulldate = year + month + date;
+                            let url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=gIQrlKBkoGwsDw%2BrhZZZ47LwsVb%2BsbXkagAhe20dhc5nBBIQUxXsw7PB38hiMm8JNRN%2FnVI23Kv6glqRx3C94Q%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=\${fulldate}&base_time=\${hour}00&nx=61&ny=126`;
+                            let temperature;
+                            let quantity;
+                            let percentage;
+                            let tempNum = 0; // 온도
+                            let quantityNum = 9; // 강수량
+                            let percentageNum = 7; // 강수확률
+
+                            $.getJSON(url, function(data) {
+                                temperature = data.response.body.items.item[tempNum].fcstValue;
+                                quantity = data.response.body.items.item[quantityNum].fcstValue;
+                                percentage = data.response.body.items.item[percentageNum].fcstValue;
+                                // console.log(url);
+
+                                document.getElementById('temperature').value = temperature;
+                                document.getElementById('percentage').value = percentage;
+                                document.getElementById('quantity').value = quantity;
+
+                                $("#weather-form").submit();
+                            });
+                        })
                     </script>
 
 <%--                <div class="popular-post">--%>
