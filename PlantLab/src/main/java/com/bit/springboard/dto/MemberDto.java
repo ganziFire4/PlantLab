@@ -17,11 +17,11 @@ public class MemberDto {
     private int green_like_cnt;
     private int green_bookmark_cnt;
 
-    public int getMemId() {
+    public int getMem_id() {
         return mem_id;
     }
 
-    public void setMemId(int mem_id) {
+    public void setMem_id(int mem_id) {
         this.mem_id = mem_id;
     }
 

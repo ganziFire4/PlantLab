@@ -140,7 +140,6 @@ public class BoardController {
 
     @GetMapping("/update-cnt.do")
     public String board_view_cnt (@RequestParam("id") int id){
-        System.out.println("update: " + id);
         boardService.update_view_cnt(id);
         return "redirect:/board/board-detail.do?id=" + id;
     }
@@ -207,7 +206,7 @@ public class BoardController {
 
     @PostMapping("/modal-ajax.do")
     @ResponseBody
-    public Map<String, Object> modalAjax(GreentalkDto greentalkDto, Model model) {
+    public Map<String, Object> modalAjax(GreentalkDto greentalkDto) {
 //        System.out.println(greentalkDto);
         Map<String, Object> map = new HashMap<>();
         try {
@@ -220,38 +219,13 @@ public class BoardController {
             System.out.println(greenComment);
             map.put("greenComment", greenComment);
 
+
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
         return map;
     }
 
-    @PostMapping("/comment-ajax.do")
-    @ResponseBody
-    public Map<String, Object> commentAjax(GreentalkCommentDto greentalkCommentDto) {
-        Map<String, Object> map = new HashMap<>();
-        try {
-            GreentalkCommentDto greentalkComment = greentalkService.getComment(greentalkCommentDto.getGreen_comment_id());
-            map.put("greentalkComment", greentalkComment);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return map;
-    }
-
-
-//    @PostMapping("/board-list.do")
-//    public String search_board (@RequestParam Map < String, Object > searchMap){
-//
-//        return "/WEB-INF/views/board/board-main";
-//
-//    }
-
-    @GetMapping("/update-cnt.do")
-    public String board_view_cnt (@RequestParam("id") int id){
-        boardService.update_view_cnt(id);
-        return "redirect:/WEB-INF/views/board/board-detail.do?id=" + id;
-    }
 
     @PostMapping("/greentalk-post.do")
     public String greentalk_post(GreentalkDto greentalkDto, HttpSession session, MultipartFile upload_pic, HttpServletRequest request) {
