@@ -54,31 +54,31 @@ public class FileUtils {
         return greentalkFileDto;
     }
 
-    private static final String UPLOAD_DIR = "C:\\Users\\bitcampp\\Documents\\2nd_Project\\PlantLab\\src\\main\\webapp\\static\\images\\product_img";
+    private static final String uploadDir = "C:/upload/";
 
-    public String saveFile(MultipartFile file, String attachPath) throws IOException {
+    public String saveFile(MultipartFile file) throws IOException {
         if (file.isEmpty()) {
-            throw new IOException("Failed to store empty file.");
+            throw new IllegalArgumentException("파일이 비어있어요 ㅠㅠ");
         }
 
+        // 파일명 중복 방지를 위해 UUID 추가
         String originalFilename = file.getOriginalFilename();
-        String extension = originalFilename.substring(originalFilename.lastIndexOf("."));
-        String savedFilename = UUID.randomUUID().toString() + extension;
+        String uniqueFilename = UUID.randomUUID().toString() + "_" + originalFilename;
+        String filePath = uploadDir + uniqueFilename;
 
-        File directory = new File(attachPath);
-        if (!directory.exists()) {
-            directory.mkdirs(); // 디렉토리가 없으면 생성
+        File dir = new File(uploadDir);
+        if (!dir.exists()) {
+            dir.mkdirs();
         }
 
-        File uploadFile = new File(attachPath + savedFilename);
+        Path path = Paths.get(filePath);
+        Files.write(path, file.getBytes());
 
-        try {
-            file.transferTo(uploadFile);
-        } catch(IOException ie) {
-            System.out.println(ie.getMessage());
-        }
+        return uniqueFilename;
+    }
 
-        // 상대 경로를 반환합니다.
-        return "static/images/product_img/" + savedFilename;
+    public byte[] getFile(String fileName) throws IOException {
+        Path path = Paths.get(uploadDir + fileName);
+        return Files.readAllBytes(path);
     }
 }

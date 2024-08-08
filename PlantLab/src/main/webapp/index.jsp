@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="javatime" uri="http://sargue.net/jsptags/time" %>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <html>
 <head>
     <title>플랜트랩</title>
@@ -20,6 +21,11 @@
         <img src="/static/images/Header%20with%20image_메인페이지.svg" alt="메인 헤더">
     </header>
     <main>
+        <form id="weather-form" action="/weatherData" method="post">
+            <input type="hidden" id="temperature" name="temperature" value="">
+            <input type="hidden" id="percentage" name="percentage" value="">
+            <input type="hidden" id="quantity" name="quantity" value="">
+        </form>
         <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-indicators">
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -67,26 +73,6 @@
                             <td><javatime:format value="${post.board_reg}" pattern="yyyy-MM-dd"/></td>
                         </tr>
                         </c:forEach>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
                     </table>
                 </div>
                 <div class="table2">
@@ -107,82 +93,109 @@
                             <td><javatime:format value="${post.board_reg}" pattern="yyyy-MM-dd"/></td>
                         </tr>
                         </c:forEach>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
-<%--                        <tr>--%>
-<%--                            <td>Project Name</td>--%>
-<%--                            <td>Name</td>--%>
-<%--                            <td>2022.00.00</td>--%>
-<%--                        </tr>--%>
                     </table>
                 </div>
             </div>
             <div class="section-title">
                 <h2>인기 친구들</h2>
                 <p>다른 유저들의 반려식물들을 구경하세요.</p>
-                <button type="button" class="morebtn" onclick="window.location.href='board_list.html?tab=4'">더 보기</button>
+                <button type="button" class="morebtn" onclick="window.location.href='board/greentalk.do'">더 보기</button>
             </div>
             <div class="popular-container">
                 <c:forEach items="${greentalkPopLists}" var="pop_green">
                     <div class="popular-post">
-                        <img src="/static/images/mainpage/${pop_green.green_pic}" alt="grid_item">
+                        <img src="/static/images/storage/${pop_green.green_pic}" alt="grid_item" style= "width:355px; height: 200px; border-radius: 10px;">
                         <h5 class="contents" id="green_title">${pop_green.green_content}</h5>
-                        <p><img src="/static/images/${pop_green.mem_pic}" alt="">${pop_green.mem_nickname}  | <javatime:format value="${pop_green.green_reg}" pattern="yyyy.MM.dd"/></p>
+                        <p><img src="/static/images/storage/${pop_green.mem_pic}" alt="mem_pic" style= "outline: 2px solid #23C961; border-radius: 100px; width:30px; height: 30px;">${pop_green.mem_nickname}  | <javatime:format value="${pop_green.green_reg}" pattern="yyyy.MM.dd"/></p>
                     </div>
                 </c:forEach>
                     <script>
-                        // 메인 그린톡 제목 글자수 노출
-                        function truncateText(selector, maxLength) {
-                            const element = document.querySelector(selector);
-                            const originalText = element.textContent;
 
-                            if (originalText.length > maxLength) {
-                                const truncatedText = originalText.substring(0, maxLength) + '..';
-                                element.textContent = truncatedText;
+       // $(() => {
+       $(document).ready(function() {
+           // 메인 그린톡 제목 글자수 노출
+           function truncateText(selector, maxLength) {
+               const elements = document.querySelectorAll(selector);
+               elements.forEach(element => {
+                   const originalText = element.textContent;
+                   if (originalText.length > maxLength) {
+                       const truncatedText = originalText.substring(0, maxLength) + '..';
+                       element.textContent = truncatedText;
+                   }
+               });
+           }
+
+           // 30 글자로 제한
+           truncateText('#green_title', 25);
+
+
+                            // 날씨 데이터
+                            const now = new Date();
+                            let nowMonth = now.getMonth()+1;
+                            let zeroMonth = '0' + nowMonth;
+                            let zeroDate = '0' + now.getDate();
+                            let defaultHour = now.getHours();
+
+                            if(defaultHour < 5){
+                                defaultHour = 2;
+                            } else if(defaultHour < 8) {
+                                defaultHour = 5;
+                            } else if(defaultHour < 11) {
+                                defaultHour = 8;
+                            } else if(defaultHour < 14) {
+                                defaultHour = 11;
+                            } else if(defaultHour < 17) {
+                                defaultHour = 14;
+                            } else if(defaultHour < 20) {
+                                defaultHour = 17;
+                            } else if(defaultHour < 23) {
+                                defaultHour = 20;
+                            } else if(defaultHour < 2) {
+                                defaultHour = 21;
                             }
-                        }
-                        // 30 글자로 제한
-                        truncateText('#green_title', 25);
+                            let zeroHour = '0' + defaultHour;
+
+                            let year = now.getFullYear();
+                            let month = zeroMonth.slice(-2);
+                            let date = zeroDate.slice(-2);
+                            let hour = zeroHour.slice(-2);
+                            let fulldate = year + month + date;
+                            let url = `https://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getVilageFcst?serviceKey=gIQrlKBkoGwsDw%2BrhZZZ47LwsVb%2BsbXkagAhe20dhc5nBBIQUxXsw7PB38hiMm8JNRN%2FnVI23Kv6glqRx3C94Q%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date=\${fulldate}&base_time=\${hour}00&nx=61&ny=126`;
+                            let temperature;
+                            let quantity;
+                            let percentage;
+                            let tempNum = 0; // 온도
+                            let quantityNum = 9; // 강수량
+                            let percentageNum = 7; // 강수확률
+
+                            $.getJSON(url, function(data) {
+                                temperature = data.response.body.items.item[tempNum].fcstValue;
+                                quantity = data.response.body.items.item[quantityNum].fcstValue;
+                                percentage = data.response.body.items.item[percentageNum].fcstValue;
+                                // console.log(url);
+                                if(percentage <= 10) {
+                                    // 맑음
+                                    $('#weatherImg').attr('src', `/static/images/sunny.svg`);
+                                    $('#result').html(`<div>\${temperature} ˚C<br>맑음</div>`);
+                                } else if(percentage <= 60){
+                                    // 흐림
+                                    $('#weatherImg').attr('src', "/static/images/rainny.svg");
+                                    $('#result').html(`<div>\${temperature} ˚C<br>흐림</div>`);
+                                } else {
+                                    // 비
+                                    $('#weatherImg').attr('src', "/static/images/strongRainny.svg");
+                                    $('#result').html(`<div>\${temperature} ˚C<br> 비(\${quantity})</div>`);
+                                }
+                                document.getElementById('temperature').value = temperature;
+                                document.getElementById('percentage').value = percentage;
+                                document.getElementById('quantity').value = quantity;
+
+                            });
+                        })
+
                     </script>
 
-<%--                <div class="popular-post">--%>
-<%--                    <img src="/static/images/mainpage/02.svg" alt="grid_item">--%>
-<%--                    <h5 class="contents">이쁜 저희 초록이좀 보고 가세요~!!</h5>--%>
-<%--                    <p><img src="/static/images/profile_photo.svg" alt="">Karina  | 2024.06.28</p>--%>
-<%--                </div>--%>
-<%--                <div class="popular-post">--%>
-<%--                    <img src="/static/images/mainpage/03.svg" alt="grid_item" style="width: 356px;" style="height: 196px;">--%>
-<%--                    <h5 class="contents">이쁜 저희 초록이좀 보고 가세요~!!</h5>--%>
-<%--                    <p><img src="/static/images/profile_photo.svg" alt="">Karina  | 2024.06.28</p>--%>
-<%--                </div>--%>
-<%--                <div class="popular-post">--%>
-<%--                    <img src="/static/images/mainpage/04.svg" alt="grid_item">--%>
-<%--                    <h5 class="contents">이쁜 저희 초록이좀 보고 가세요~!!</h5>--%>
-<%--                    <p><img src="/static/images/profile_photo.svg" alt="">Karina  | 2024.06.28</p>--%>
-<%--                </div>--%>
-<%--                <div class="popular-post">--%>
-<%--                    <img src="/static/images/mainpage/05.svg" alt="grid_item">--%>
-<%--                    <h5 class="contents">이쁜 저희 초록이좀 보고 가세요~!!</h5>--%>
-<%--                    <p><img src="/static/images/profile_photo.svg" alt="">Karina  | 2024.06.28</p>--%>
-<%--                </div>--%>
-<%--                <div class="popular-post">--%>
-<%--                    <img src="/static/images/mainpage/06.svg" alt="grid_item">--%>
-<%--                    <h5 class="contents">이쁜 저희 초록이좀 보고 가세요~!!</h5>--%>
-<%--                    <p><img src="/static/images/profile_photo.svg" alt="">Karina  | 2024.06.28</p>--%>
-<%--                </div>--%>
+
             </div>
             <div class="section-title2">
                 <h2>할인전</h2>

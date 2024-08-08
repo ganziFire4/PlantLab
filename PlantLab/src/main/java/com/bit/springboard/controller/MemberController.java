@@ -64,58 +64,6 @@ public class MemberController {
         return "redirect:/";
     }
 
-    @GetMapping("/green_login.do")
-    public String green_loginView(){
-        return "/WEB-INF/views/member/green_login_01";
-    }
-
-    @PostMapping("/green_login.do")
-    public String green_login(MemberDto memberDto, Model model, HttpSession session) {
-        try {
-//            System.out.println("로그인 시도: " + memberDto.getLogin_id());
-
-            MemberDto loggedInMember = memberService.login(memberDto);
-
-//            System.out.println("로그인 성공: " + loggedInMember);
-//            loggedInMember.setPassword("");
-
-            session.setAttribute("loggedInMember", loggedInMember);
-
-            return "redirect:/board/greentalk.do";
-
-        }catch (Exception e) {
-//            System.out.println("로그인 실패: " + e.getMessage());
-            model.addAttribute("loginFailMsg", e.getMessage());
-            return "/WEB-INF/views/member/green_login_01";
-        }
-    }
-
-    @GetMapping("/greenpost_login.do")
-    public String greenpost_loginView(){
-        return "/WEB-INF/views/member/greenpost_login_01";
-    }
-
-    @PostMapping("/greenpost_login.do")
-    public String greenpost_login(MemberDto memberDto, Model model, HttpSession session) {
-        try {
-//            System.out.println("로그인 시도: " + memberDto.getLogin_id());
-
-            MemberDto loggedInMember = memberService.login(memberDto);
-
-//            System.out.println("로그인 성공: " + loggedInMember);
-//            loggedInMember.setPassword("");
-
-            session.setAttribute("loggedInMember", loggedInMember);
-
-            return "redirect:/board/greentalk_post";
-
-        }catch (Exception e) {
-//            System.out.println("로그인 실패: " + e.getMessage());
-            model.addAttribute("loginFailMsg", e.getMessage());
-            return "/WEB-INF/views/member/greenpost_login_01";
-        }
-    }
-
     @GetMapping("/green_logout.do")
     public String green_logout(HttpSession session) {
         session.invalidate();
@@ -131,7 +79,7 @@ public class MemberController {
     @PostMapping("/join.do")
     public String join(MemberDto memberDto) {
         memberService.join(memberDto);
-        return "/WEB-INF/views/member/login_01";
+        return "/WEB-INF/views/member/join_02";
     }
 
     @GetMapping("/checkDuplicate.do")
@@ -165,13 +113,11 @@ public class MemberController {
     }
 
     @PostMapping("/modify.do")
-    public String modify(MemberDto memberDto, HttpSession session, MultipartFile modify_pic, RedirectAttributes redirectAttributes, HttpServletRequest request) {
+    public String modify(MemberDto memberDto, HttpSession session, MultipartFile modify_pic, HttpServletRequest request, RedirectAttributes redirectAttributes) {
         // session과 같은 정보의 Dto 만들기
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
         if(modify_pic != null) {
             String attachPath = request.getServletContext().getRealPath("\\") + "\\static\\images\\storage\\";
-
-            System.out.println(attachPath);
 
             File directory = new File(attachPath);
 
@@ -212,11 +158,11 @@ public class MemberController {
             return "redirect:/member/login.do";
         }
 
-        model.addAttribute("myWrite", boardService.getBoard(loggedInMember.getMem_id()));
+        model.addAttribute("myWrite", boardService.getBoard(loggedInMember.getMemId()));
 //        session.setAttribute("myWrite", boardService.getBoard(memberDto.getMemId()));
-        model.addAttribute("myGreentalk", greentalkService.getMyGreenList(loggedInMember.getMem_id()));
-        model.addAttribute("boardLikeBookmarkCnt", memberService.getBoardLikeBookCnt(loggedInMember.getMem_id()));
-        model.addAttribute("greenLikeBookmarkCnt", memberService.getGreenLikeBookCnt(loggedInMember.getMem_id()));
+        model.addAttribute("myGreentalk", greentalkService.getMyGreenList(loggedInMember.getMemId()));
+        model.addAttribute("boardLikeBookmarkCnt", memberService.getBoardLikeBookCnt(loggedInMember.getMemId()));
+        model.addAttribute("greenLikeBookmarkCnt", memberService.getGreenLikeBookCnt(loggedInMember.getMemId()));
 
         session.setAttribute("loggedInMember", loggedInMember);
         return "/WEB-INF/views/member/mypage";

@@ -39,7 +39,6 @@
     </select>
 
     <insert id="saveProduct" parameterType="com.bit.springboard.dto.ProductDto">
-        <selectKey resultType="int" keyProperty="product_id" order="AFTER">SELECT IFNULL(MAX(PRODUCT_ID), 1) FROM STORE_PRODUCT</selectKey>
         INSERT INTO store_product (brand, product_name, price, discount, rate, color, is_light, base_type, size, tag, view_count, sell_start, sell_end, product_status, created_at, updated_at)
         VALUES (#{brand}, #{product_name}, #{price}, #{discount}, #{rate}, #{color}, #{is_light}, #{base_type}, #{size}, #{tag}, #{view_count}, #{sell_start}, #{sell_end}, #{product_status}, #{created_at}, #{updated_at})
     </insert>

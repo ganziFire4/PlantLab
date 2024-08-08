@@ -186,16 +186,4 @@
                  , #{green_pic}
         )
     </insert>
-
-    <insert id="greenCommentPost" parameterType="greentalk">
-        INSERT INTO GREENTALK_COMMENT (
-                  , GREENT_ID
-                  , MEM_ID
-                  , COMMENT_CONTENT
-        ) VALUES (
-                  #{green_id}
-                , #{mem_id}
-                , #{comment_content}
-                 )
-    </insert>
 </mapper>

@@ -41,13 +41,12 @@ public class BoardController {
     }
 
     @RequestMapping("/board-main.do")
-    public String boardList(Model model, HttpSession session,
-                            @RequestParam("tab") int tab,
+    public String boardList(Model model, @RequestParam("tab") int tab,
                             @RequestParam(value = "search_condition", required = false) String search_condition,
                             @RequestParam(value = "search_keyword", required = false) String search_keyword,
                             @RequestParam(value = "pop_condition", required = false) String pop_condition,
                             @RequestParam (value = "rec_condition", required = false) String rec_condition,
-                            @RequestParam(value = "rowsNum", required = false) String rowsNum, Criteria cri){
+                            @RequestParam(value = "row-num", required = false) String row_num, Criteria cri){
 
         Map<String, String> search = new HashMap<>();
         search.put("search_condition", search_condition);
@@ -55,12 +54,15 @@ public class BoardController {
 
         Map<String, String> table = new HashMap<>();
         table.put("rec_condition", rec_condition);
-        table.put("rowsNum", rowsNum);
+        table.put("row_num", row_num);
 
-        if(table.get("row_num") != null) {
+        if(table.get("row_num") == null) {
+            table.put("row_num", "10");
+        }
+
+//        Criteria cri = new Criteria(1, Integer.parseInt(table.get("row_num")));
+        if(Integer.parseInt(table.get("row_num")) != cri.getAmount()) {
             cri.setAmount(Integer.parseInt(table.get("row_num")));
-        } else {
-            cri.setAmount(10);
         }
 
         System.out.println(cri);
@@ -69,8 +71,8 @@ public class BoardController {
         model.addAttribute("popList", boardService.view_popular(tab, pop_condition));
         model.addAttribute("boardList", boardService.view_all(tab, search, table, cri));
         model.addAttribute("search", search);
-        session.setAttribute("pop_condition", pop_condition);
-        session.setAttribute("table", table);
+        model.addAttribute("pop_condition", pop_condition);
+        model.addAttribute("table", table);
 
         int total = boardService.getBoardTotal(tab, search);
         model.addAttribute("total", total);
@@ -84,17 +86,8 @@ public class BoardController {
 
 
     @GetMapping("/post.do")
-    public String post(Model model, @RequestParam("tab") int tab) {
-        model.addAttribute("tab", tab);
+    public String post() {
         return "/WEB-INF/views/board/post";
-    }
-
-    @PostMapping("/post.do")
-    public String uploadPost(BoardDto boardDto){
-        boardService.post(boardDto);
-//        System.out.println(boardDto);
-//        model.addAttribute("board", boardService.getBoard(boardDto.getBoard_id()));
-        return "redirect:/board/board-main.do?tab=" + boardDto.getBoard_type();
     }
 
 
@@ -140,7 +133,7 @@ public class BoardController {
     public String greentalk_post(HttpSession session) {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
         if(loggedInMember == null) {
-            return "redirect:/member/greenpost_login.do";
+            return "redirect:/member/login.do";
         }
         return "/WEB-INF/views/board/greentalk_post";
     }
@@ -210,19 +203,6 @@ public class BoardController {
         return map;
     }
 
-    @PostMapping("/comment-ajax.do")
-    @ResponseBody
-    public Map<String, Object> commentAjax(GreentalkCommentDto greentalkCommentDto) {
-        Map<String, Object> map = new HashMap<>();
-        try {
-            GreentalkCommentDto greentalkComment = greentalkService.getComment(greentalkCommentDto.getGreen_comment_id());
-            map.put("greentalkComment", greentalkComment);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
-        return map;
-    }
-
 
 //    @PostMapping("/board-list.do")
 //    public String search_board (@RequestParam Map < String, Object > searchMap){
@@ -232,7 +212,7 @@ public class BoardController {
 //    }
 
     @GetMapping("/update-cnt.do")
-    public String board_view_cnt (@RequestParam("id") int id){
+    public String board_view_cnt ( @RequestParam("id") int id){
         boardService.update_view_cnt(id);
         return "redirect:/WEB-INF/views/board/board-detail.do?id=" + id;
     }
@@ -240,7 +220,7 @@ public class BoardController {
     @PostMapping("/greentalk-post.do")
     public String greentalk_post(GreentalkDto greentalkDto, HttpSession session, MultipartFile upload_pic, HttpServletRequest request) {
         MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
-        greentalkDto.setMem_id(loggedInMember.getMem_id());
+        greentalkDto.setMem_id(loggedInMember.getMemId());
         if(upload_pic != null) {
             String attachPath = request.getServletContext().getRealPath("\\") + "\\static\\images\\storage\\";
 

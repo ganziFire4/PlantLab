@@ -1,6 +1,5 @@
 package com.bit.springboard.dao;
 
-import com.bit.springboard.dto.GreentalkCommentDto;
 import com.bit.springboard.dto.GreentalkDto;
 import com.bit.springboard.dto.GreentalkFileDto;
 import org.mybatis.spring.SqlSessionTemplate;
@@ -62,10 +61,6 @@ public class GreentalkDao {
         return mybatis.selectOne("GreentalkDao.getGreenOne", id);
     }
 
-    public GreentalkCommentDto getComment(int id) {
-        return mybatis.selectOne("GreentalkDao.getComment", id);
-    }
-
     public List<GreentalkDto> getGreenFileList(int id) {
         return mybatis.selectList("GreentalkDao.getGreenFileList", id);
     }
@@ -84,9 +79,5 @@ public class GreentalkDao {
 
     public List<GreentalkDto> getPopGreenLists() {
         return mybatis.selectList("GreentalkDao.getPopGreenLists_main");
-    }
-
-    public int getComment(Map<String, String> searchMap) {
-        return mybatis.selectOne("GreentalkDao.getGreenComment", searchMap);
     }
 }
