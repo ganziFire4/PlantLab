@@ -310,6 +310,22 @@ public class BoardController {
 
         return greentalkCommentDto;
     }
+
+    @PostMapping("/modify_comment.do")
+    @ResponseBody
+    public GreentalkCommentDto modifycomment(GreentalkCommentDto greentalkCommentDto, HttpSession session, HttpServletRequest httpServletRequest) {
+        MemberDto loggedInMember = (MemberDto)session.getAttribute("loggedInMember");
+
+        System.out.println("modify");
+
+        if (loggedInMember == null) {
+            throw new RuntimeException("로그인이 필요합니다.");
+        }
+        greentalkCommentDto.setMem_id(loggedInMember.getMem_id());
+        greentalkService.modifyComment(greentalkCommentDto);
+
+        return greentalkCommentDto;
+    }
 }
 
 

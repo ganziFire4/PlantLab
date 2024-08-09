@@ -212,6 +212,14 @@
          JOIN MEMBER M
            ON M.MEM_ID = GC.MEM_ID
         WHERE GC.GREEN_ID = #{green_id}
-        ORDER BY GC.COMMENT_MOD ASC
+        ORDER BY GC.GREEN_COMMENT_ID ASC
     </select>
+
+    <update id="modifyComment" parameterType="greentalkCommentDto">
+        UPDATE GREENTALK_COMMENT
+        SET COMMENT_CONTENT = #{comment_content},
+            COMMENT_MOD = NOW()
+        WHERE GREEN_COMMENT_ID = #{green_comment_id}
+          AND MEM_ID = #{mem_id}
+    </update>
 </mapper>
