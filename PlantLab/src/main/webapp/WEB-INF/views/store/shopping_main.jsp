@@ -173,7 +173,8 @@
             <c:forEach var="product" items="${products}">
                 <div class="product_row">
                     <div class="product_item">
-                        <a href="/product/${product.product_id}">
+                        <a id="a-href-shop" href="/product/${product.product_id}">
+                        <input id="href-shop" type="hidden" name="${product.product_id}">
                             <c:forEach var="pic" items="${product.pics}">
                                 <img src="${pageContext.request.contextPath}/static/images/product_img/${pic.file_name}" alt="Product Image" id="img0807">
                             </c:forEach>
@@ -281,12 +282,16 @@
             }
         });
 
+        let hrefShop = document.getElementById('href-shop').name;
+
+        console.log(hrefShop);
+
         function addProductToContainer(product) {
             const productItem = document.createElement('div');
             productItem.classList.add('product_item');
 
-            const productLink = document.createElement('a');
-            productLink.href = '/purchase.do';
+            const productLink = document.getElementById('a-href-shop');
+            productLink.href = `/purchase.do?${hrefShop}`;
 
             const productImage = document.createElement('img');
             if (product.pics && product.pics.length > 0) {

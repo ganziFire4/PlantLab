@@ -46,6 +46,7 @@ public class ProductController {
     public String shoppingMain(Model model) {
         List<ProductDto> products = productService.getAllProducts();
         model.addAttribute("products", products);
+
         return "/WEB-INF/views/store/shopping_main";
     }
 
