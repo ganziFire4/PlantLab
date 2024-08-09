@@ -90,4 +90,8 @@ public class GreentalkDao {
     public void commentPost(GreentalkCommentDto greentalkCommentDto) {
         mybatis.insert("GreentalkDao.commentPost", greentalkCommentDto);
     }
+
+    public void modifyComment(GreentalkCommentDto greentalkCommentDto) {
+        mybatis.update("GreentalkDao.modifyComment", greentalkCommentDto);
+    }
 }

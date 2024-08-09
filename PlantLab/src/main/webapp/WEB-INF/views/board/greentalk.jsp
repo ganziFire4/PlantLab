@@ -518,13 +518,24 @@
                                                 <div class="modalmaindate">
                                                     \${commentFormattedDate}
                                                 </div>
-                                                <div class="modalreport">
-                                                    <img src="${pageContext.request.contextPath}/static/images/그린톡/menu.png.png" alt="" style="width: 15px;">
+                                                <div class="modalreport" onclick="commentModifyClick(\${obj.greenComment[i].green_comment_id})">
+                                                    <p style="color:gray; font-size: 10px; cursor:pointer; margint-top:5px;" >수정</p>
                                                 </div>
                                             </div>
-                                            <div class="modalmaincontent">
+                                            <div class="modalmaincontent" id="modalmaincontent\${obj.greenComment[i].green_comment_id}">
                                                 <p>\${obj.greenComment[i].comment_content}</p>
-                                            </div>`;
+                                            </div>
+                                                <div class="modifybox" id="modifybox\${obj.greenComment[i].green_comment_id}" style="display:none;">
+                                                    <form onsubmit="modifyComment(event)">
+                                                        <input type="hidden" name="green_id" value="\${obj.greenComment[i].green_id}">
+                                                        <input type="hidden" name="green_comment_id" value="\${obj.greenComment[i].green_comment_id}">
+                                                        <input type="hidden" name="mem_id" value="\${obj.greentalk.mem_id}">
+                                                        <input type="text" name="comment_content" value="\${obj.greenComment[i].comment_content}" style="width: 100%; margin-top:15px;">
+                                                        <div style="text-align: right;">
+                                                            <button type="submit" class="confirmbox" style="border:none;">저장</button>
+                                                        </div>
+                                                    </form>
+                                                </div>`;
                                          }
                              htmlStr += `</div>
                             </div>
@@ -592,6 +603,42 @@
                 }
             });
         }
+
+        function modifyComment(event) {
+            event.preventDefault();
+
+            const form = event.target;
+            const formData = new FormData(form);
+
+            $.ajax({
+                url: '/board/modify_comment.do',
+                type: 'POST',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: (response) => {
+                    console.log('댓글이 수정되었습니다:', response);
+
+                    openModal(response.green_id);
+                },
+                error: (err) => {
+                    console.error('댓글 수정 중 오류 발생:', err);
+                }
+            });
+        }
+
+        function commentModifyClick(commentId) {
+            $("#modifybox" + commentId).show();
+            $("#modalmaincontent" + commentId).hide();
+        }
+
+        // $(document).on('click', '.modalreport', function() {
+        //     const $modalcon = $(this).closest('.modalcon');
+        //     const $modifyBox = $modalcon.find('.modifybox');
+        //
+        //     $modalcon.find('.modalmaincontent').hide(); // 기존 댓글 내용 숨기기
+        //     $modifyBox.show(); // modifybox 표시
+        // });
     </script>
 </body>
 </html>

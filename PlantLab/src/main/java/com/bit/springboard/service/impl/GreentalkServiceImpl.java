@@ -136,4 +136,9 @@ public class GreentalkServiceImpl implements GreentalkService {
     public void commentPost(GreentalkCommentDto greentalkCommentDto) {
         greentalkDao.commentPost(greentalkCommentDto);
     }
+
+    @Override
+    public void modifyComment(GreentalkCommentDto greentalkCommentDto) {
+        greentalkDao.modifyComment(greentalkCommentDto);
+    }
 }

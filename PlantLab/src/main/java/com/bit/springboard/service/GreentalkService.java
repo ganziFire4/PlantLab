@@ -32,4 +32,7 @@ public interface GreentalkService {
     List<GreentalkCommentDto> getComment(int id);
 
     void commentPost(GreentalkCommentDto greentalkCommentDto);
+
+
+    void modifyComment(GreentalkCommentDto existingComment);
 }
