@@ -136,6 +136,7 @@ public class BoardController {
     @GetMapping("/board-detail.do")
     public String board(Model model, @RequestParam("id") int id) {
         model.addAttribute("board", boardService.view_one(id));
+        model.addAttribute("commentList", boardService.showCommentList(id));
         return "/WEB-INF/views/board/board-detail";
     }
 
@@ -306,6 +307,26 @@ public class BoardController {
         greentalkService.modifyComment(greentalkCommentDto);
 
         return greentalkCommentDto;
+    }
+
+    @PostMapping("/post_comment.do")
+    public String postComment(BoardCommentDto boardCommentDto){
+        String content = boardCommentDto.getComment_content();
+        boardCommentDto.setComment_content(content.replace("\r\n", "<br>"));
+        boardService.postComment(boardCommentDto);
+        return "redirect:/board/board-detail.do?id=" + boardCommentDto.getBoard_id();
+    }
+
+    @GetMapping("/delete-comment.do")
+    public String deleteComment(@RequestParam("id") int id, @RequestParam("board_id") int board_id){
+        boardService.deleteComment(id);
+        return "redirect:/board/board-detail.do?id=" + board_id;
+    }
+
+    @GetMapping("/board-delete.do")
+    public String deleteBoard(@RequestParam("id") int id, @RequestParam("tab") int tab){
+        boardService.delete(id);
+        return "redirect:/board/board-main.do?tab=" + tab;
     }
 }
 

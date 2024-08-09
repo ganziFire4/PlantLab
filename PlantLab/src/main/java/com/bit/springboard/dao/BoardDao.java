@@ -1,9 +1,6 @@
 package com.bit.springboard.dao;
 
-import com.bit.springboard.dto.BoardDto;
-import com.bit.springboard.dto.Criteria;
-import com.bit.springboard.dto.GreentalkDto;
-import com.bit.springboard.dto.GreentalkFileDto;
+import com.bit.springboard.dto.*;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -89,5 +86,17 @@ public class BoardDao {
     public void deleteBookmark(Map<String, Integer> paramMap) {
         mybatis.update("BoardDao.dclickBookmark", paramMap.get("board_id"));
         mybatis.insert("BoardDao.deleteBookmark", paramMap);
+    }
+
+    public void postComment(BoardCommentDto boardCommentDto) {
+        mybatis.insert("BoardDao.postComment", boardCommentDto);
+    }
+
+    public void deleteComment(int id) {
+        mybatis.delete("BoardDao.deleteComment", id);
+    }
+
+    public List<BoardCommentDto> showCommentList(int board_id) {
+        return mybatis.selectList("BoardDao.showComment", board_id);
     }
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class WeatherController {
@@ -20,9 +21,9 @@ public class WeatherController {
 
     @PostMapping("/post-weather.do")
     public String postWeather(WeatherDto weatherDto, HttpSession session){
-        weatherService.updateInfo(weatherDto);
+//        weatherService.updateInfo(weatherDto);
         session.setAttribute("weather", weatherDto);
         System.out.println(weatherDto);
-        return "index";
+        return "redirect:/";
     }
 }

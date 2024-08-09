@@ -130,13 +130,13 @@
                                             <c:set var="hasInfo" value="true"/>
                                             <tr class="nextRow">
                                                 <td>
-                                                    <button>${writeList.board_title}</button>
+                                                    <button onclick="window.location.href = `${pageContext.request.contextPath}/board/board-detail.do?id=${writeList.board_id}`">${writeList.board_title}</button>
                                                 </td>
                                                 <td>
-                                                    <button>${writeList.mem_nickname}</button>
+                                                    <button onclick="window.location.href = `${pageContext.request.contextPath}/board/board-detail.do?id=${writeList.board_id}`">${writeList.mem_nickname}</button>
                                                 </td>
                                                 <td>
-                                                    <button>
+                                                    <button onclick="window.location.href = `${pageContext.request.contextPath}/board/board-detail.do?id=${writeList.board_id}`">
                                                         <javatime:format value="${writeList.board_reg}" pattern="yyyy-MM-dd"/>
                                                     </button>
                                                 </td>
@@ -167,13 +167,13 @@
                                             <c:set var="hasInfo" value="true"/>
                                             <tr class="nextRow">
                                                 <td>
-                                                    <button>${writeList.board_title}</button>
+                                                    <button onclick="window.location.href = `${pageContext.request.contextPath}/board/board-detail.do?id=${writeList.board_id}`">${writeList.board_title}</button>
                                                 </td>
                                                 <td>
-                                                    <button>${writeList.mem_nickname}</button>
+                                                    <button onclick="window.location.href = `${pageContext.request.contextPath}/board/board-detail.do?id=${writeList.board_id}`">${writeList.mem_nickname}</button>
                                                 </td>
                                                 <td>
-                                                    <button>
+                                                    <button onclick="window.location.href = `${pageContext.request.contextPath}/board/board-detail.do?id=${writeList.board_id}`">
                                                         <javatime:format value="${writeList.board_reg}" pattern="yyyy-MM-dd"/>
                                                     </button>
                                                 </td>
@@ -204,13 +204,13 @@
                                             <c:set var="hasInfo" value="true"/>
                                             <tr class="nextRow">
                                                 <td>
-                                                    <button>${writeList.board_title}</button>
+                                                    <button onclick="window.location.href = `${pageContext.request.contextPath}/board/board-detail.do?id=${writeList.board_id}`">${writeList.board_title}</button>
                                                 </td>
                                                 <td>
-                                                    <button>${writeList.mem_nickname}</button>
+                                                    <button onclick="window.location.href = `${pageContext.request.contextPath}/board/board-detail.do?id=${writeList.board_id}`">${writeList.mem_nickname}</button>
                                                 </td>
                                                 <td>
-                                                    <button>
+                                                    <button onclick="window.location.href = `${pageContext.request.contextPath}/board/board-detail.do?id=${writeList.board_id}`">
                                                         <javatime:format value="${writeList.board_reg}" pattern="yyyy-MM-dd"/>
                                                     </button>
                                                 </td>

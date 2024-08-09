@@ -1,5 +1,6 @@
 package com.bit.springboard.service;
 
+import com.bit.springboard.dto.BoardCommentDto;
 import com.bit.springboard.dto.BoardDto;
 import com.bit.springboard.dto.Criteria;
 
@@ -18,6 +19,9 @@ public interface BoardService {
     int getBoardTotal(int tab, Map<String, String> search);
     void changeLike(int num, int mem_id, int board_id);
     void changeBookmark(int num, int mem_id, int board_id);
+    void postComment(BoardCommentDto boardCommentDto);
+    void deleteComment(int id);
+    List<BoardCommentDto> showCommentList(int board_id);
 }
 
 

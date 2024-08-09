@@ -28,7 +28,7 @@
     </update>
 
     <delete id="delete" parameterType="int">
-        DELETE BOARD WHERE BOARD_ID = #{id}
+        DELETE FROM BOARD WHERE BOARD_ID = #{id}
     </delete>
 
     <select id="view_popular" parameterType="map" resultType="board">
@@ -113,7 +113,8 @@
     </select>
 
     <select id="view_one" parameterType="int" resultType="board">
-        SELECT B.BOARD_TITLE
+        SELECT B.BOARD_ID
+             , B.BOARD_TITLE
              , M.MEM_NICKNAME
              , B.BOARD_REG
              , B.BOARD_MOD
@@ -132,7 +133,8 @@
     <select id="getBoard" parameterType="int" resultType="board">
         SELECT AA.*
         FROM (
-            SELECT B.BOARD_TITLE
+            SELECT B.BOARD_ID
+                 , B.BOARD_TITLE
                  , B.BOARD_REG
                  , M.MEM_NICKNAME
                  , B.BOARD_TYPE
@@ -195,7 +197,7 @@
     </update>
 
     <delete id="deleteLike" parameterType="map">
-        DELETE BOARD_BOOKMARK
+        DELETE FROM BOARD_BOOKMARK
             WHERE BOARD_ID = #{board_id}
               AND MEM_ID = #{mem_id}
     </delete>
@@ -223,8 +225,41 @@
     </update>
 
     <delete id="deleteBookmark" parameterType="map">
-        DELETE BOARD_BOOKMARK
+        DELETE FROM BOARD_BOOKMARK
             WHERE BOARD_ID = #{board_id}
               AND MEM_ID = #{mem_id}
     </delete>
+
+    <insert id="postComment" parameterType="boardCommentDto">
+        INSERT INTO BOARD_COMMENT(
+              BOARD_ID
+            , MEM_ID
+            , COMMENT_CONTENT
+        ) VALUES (
+              #{board_id}
+            , #{mem_id}
+            , #{comment_content}
+        )
+    </insert>
+
+    <delete id="deleteComment" parameterType="int">
+        DELETE FROM BOARD_COMMENT
+            WHERE COMMENT_ID = #{id}
+    </delete>
+
+    <select id="showComment" parameterType="int" resultType="boardCommentDto">
+        SELECT BC.COMMENT_ID
+             , BC.BOARD_ID
+             , BC.MEM_ID
+             , M.MEM_PIC
+             , M.MEM_NICKNAME
+             , BC.IS_CHECKED
+             , BC.COMMENT_CONTENT
+             , BC.COMMENT_REG
+            FROM BOARD_COMMENT BC
+            JOIN MEMBER M
+              ON BC.MEM_ID = M.MEM_ID
+            WHERE BC.BOARD_ID = #{board_id}
+            ORDER BY BC.IS_CHECKED, BC.COMMENT_REG DESC
+    </select>
 </mapper>

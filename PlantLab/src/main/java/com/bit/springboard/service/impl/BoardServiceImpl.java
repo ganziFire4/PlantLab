@@ -1,6 +1,7 @@
 package com.bit.springboard.service.impl;
 
 import com.bit.springboard.dao.BoardDao;
+import com.bit.springboard.dto.BoardCommentDto;
 import com.bit.springboard.dto.BoardDto;
 import com.bit.springboard.dto.Criteria;
 import com.bit.springboard.service.BoardService;
@@ -94,6 +95,21 @@ public class BoardServiceImpl implements BoardService {
         } else {
             boardDao.deleteBookmark(paramMap);
         }
+    }
+
+    @Override
+    public void postComment(BoardCommentDto boardCommentDto) {
+        boardDao.postComment(boardCommentDto);
+    }
+
+    @Override
+    public void deleteComment(int id) {
+        boardDao.deleteComment(id);
+    }
+
+    @Override
+    public List<BoardCommentDto> showCommentList(int board_id) {
+        return boardDao.showCommentList(board_id);
     }
 
 
