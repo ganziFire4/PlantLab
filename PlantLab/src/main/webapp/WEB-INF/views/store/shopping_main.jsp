@@ -6,7 +6,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>플랜트랩_쇼핑몰</title>
-    <link rel="stylesheet" href="/static/css/store.css">
+    <link rel="stylesheet" href="/static/css/store.css"> <!-- 기존 CSS 파일 유지 -->
+    <style>
+        /* 모달 창 기본 스타일 */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            padding-top: 60px;
+        }
+
+        .modal-content {
+            background-color: #e7f5e7; /* 연한 연두색 배경 */
+            margin: 5% auto;
+            padding: 20px;
+            width: 20%;
+            border: 2px solid #66BB66;
+            border-radius: 20px;
+            width: 30%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 등록 버튼 스타일 */
+        .modal-content button[type="submit"] {
+            background-color: #66BB66; /* 진한 연두색 */
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .modal-content button[type="submit"]:hover {
+            background-color: #55AA55; /* 더 진한 연두색 */
+        }
+
+        .modal-content button[type="submit"]:active {
+            background-color: #449944;
+        }
+
+        /* 연두색 상품 등록 버튼 */
+        .btn-green {
+            background-color: #959595; /* 연두색 */
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .btn-green:active {
+            background-color: #55AA55; /* 클릭 시 더 진한 연두색 */
+        }
+
+        /* 이미지 미리보기 스타일 */
+        #previewImage {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 15px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-content {
+            background-color: #e7f5e7; /* 연한 연두색 배경 */
+            margin: 5% auto;
+            padding: 20px;
+            border: 2px solid #66BB66;
+            border-radius: 20px;
+            width: 20%; /* 너비를 20%로 줄임 */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body class="noto-sans-kr">
 <jsp:include page="../../../nav.jsp"/>
@@ -14,49 +96,78 @@
     <img src="/static/images/쇼핑몰 헤더 이미지.png" alt="쇼핑몰 헤더">
 </header>
 <main>
-    <div class="product_form">
-        <h2>상품 등록</h2>
-        <form id="productForm" action="/save" method="post" enctype="multipart/form-data">
-            <label for="brand">브랜드:</label>
-            <input type="text" id="brand" name="brand" required><br>
+    <!-- 상품 등록 버튼 -->
+    <button id="openModalBtn" class="btn-green">🌱 상품 등록</button>
 
-            <label for="product_name">상품명:</label>
-            <input type="text" id="product_name" name="product_name" required><br>
+    <!-- 상품 등록 모달 -->
+    <div id="productModal" class="modal">
+        <div class="modal-content" style="width: 20%; min-width: 400px; max-width: 500px; background-color: rgba(255, 255, 255, 0.8);">
+            <span class="close">&times;</span>
+            <h2>상품 등록</h2>
+            <form id="productForm" action="/save" method="post" enctype="multipart/form-data">
+                <div style="display: flex; margin-bottom: 10px;">
+                    <label for="brand" style="width: 100px;">브랜드:</label>
+                    <input type="text" id="brand" name="brand" required style="flex: 1; max-width: 200px;">
+                </div>
 
-            <label for="price">가격:</label>
-            <input type="number" id="price" name="price" required><br>
+                <div style="display: flex; margin-bottom: 10px;">
+                    <label for="product_name" style="width: 100px;">상품명:</label>
+                    <input type="text" id="product_name" name="product_name" required style="flex: 1; max-width: 200px;">
+                </div>
 
-            <label for="discount">할인:</label>
-            <input type="number" id="discount" name="discount"><br>
+                <div style="display: flex; margin-bottom: 10px;">
+                    <label for="price" style="width: 100px;">가격:</label>
+                    <input type="number" id="price" name="price" required style="flex: 1; max-width: 200px;">
+                </div>
 
-            <label for="rate">평점:</label>
-            <input type="number" step="0.1" id="rate" name="rate"><br>
+                <div style="display: flex; margin-bottom: 10px;">
+                    <label for="discount" style="width: 100px;">할인:</label>
+                    <input type="number" id="discount" name="discount" style="flex: 1; max-width: 200px;">
+                </div>
 
-            <label for="color">색상:</label>
-            <input type="text" id="color" name="color"><br>
+                <div style="display: flex; margin-bottom: 10px;">
+                    <label for="rate" style="width: 100px;">평점:</label>
+                    <input type="number" step="0.1" id="rate" name="rate" style="flex: 1; max-width: 200px;">
+                </div>
 
-            <label for="is_light">채광 유무:</label>
-            <select id="is_light" name="is_light">
-                <option value="true">양지</option>
-                <option value="false">음지</option>
-            </select><br>
+                <div style="display: flex; margin-bottom: 10px;">
+                    <label for="color" style="width: 100px;">색상:</label>
+                    <input type="text" id="color" name="color" style="flex: 1; max-width: 200px;">
+                </div>
 
-            <label for="base_type">기본 형태:</label>
-            <input type="text" id="base_type" name="base_type"><br>
+                <div style="display: flex; margin-bottom: 10px;">
+                    <label for="is_light" style="width: 100px;">채광 유무:</label>
+                    <select id="is_light" name="is_light" style="flex: 1; max-width: 200px;">
+                        <option value="true">양지</option>
+                        <option value="false">음지</option>
+                    </select>
+                </div>
 
-            <label for="size">사이즈:</label>
-            <input type="text" id="size" name="size"><br>
+                <div style="display: flex; margin-bottom: 10px;">
+                    <label for="base_type" style="width: 100px;">기본 형태:</label>
+                    <input type="text" id="base_type" name="base_type" style="flex: 1; max-width: 200px;">
+                </div>
 
-            <label for="tag">태그:</label>
-            <input type="text" id="tag" name="tag"><br>
+                <div style="display: flex; margin-bottom: 10px;">
+                    <label for="size" style="width: 100px;">사이즈:</label>
+                    <input type="text" id="size" name="size" style="flex: 1; max-width: 200px;">
+                </div>
 
-            <label for="file">파일:</label>
-            <input type="file" id="file" name="file" required><br>
+                <div style="display: flex; margin-bottom: 10px;">
+                    <label for="tag" style="width: 100px;">태그:</label>
+                    <input type="text" id="tag" name="tag" style="flex: 1; max-width: 200px;">
+                </div>
 
-            <button type="submit">등록</button>
-        </form>
-        <img id="previewImage" style="max-width: 200px; display: none;" /> <!-- 이미지 미리보기 추가 -->
+                <div style="display: flex; margin-bottom: 10px;">
+                    <label for="file" style="width: 100px;">파일:</label>
+                    <input type="file" id="file" name="file" required style="flex: 1; max-width: 200px;">
+                </div>
+
+                <button type="submit" style="display: block; margin: 20px auto 0; padding: 10px 20px; background-color: #66BB66; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 14px; width: auto;">등록</button>
+            </form>
+        </div>
     </div>
+
 
     <div class="right-panel" id="rightPanel">
         <div class="toggle-button" id="toggleButton">
@@ -553,6 +664,31 @@
 
         updateRecentItemViewer();
     });
+
+
+
+    // 모달 열기 및 닫기
+    const modal = document.getElementById("productModal");
+    const btn = document.getElementById("openModalBtn");
+    const span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+
+
+
 </script>
 </body>
 </html>
