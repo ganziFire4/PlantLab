@@ -309,6 +309,8 @@ public class BoardController {
         return greentalkCommentDto;
     }
 
+
+
     @PostMapping("/post_comment.do")
     public String postComment(BoardCommentDto boardCommentDto){
         String content = boardCommentDto.getComment_content();
