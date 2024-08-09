@@ -83,10 +83,10 @@ form {
 
 
 /*아이디 중복확인 커스텀인풋*/
-.custom-input,
-.custom-input2,
-.custom-input3,
-.custom-input4
+.check_id,
+.check_email,
+.check_veri,
+.check_add
 {
     position: relative;
     display: flex;
@@ -94,35 +94,35 @@ form {
     width: 410px;
 }
 
-.custom-input2 input[type="text"],
-.custom-input3 input[type="text"]
+.check_email input[type="text"],
+.check_veri input[type="text"]
  {
     /*width: calc(80%) !important;*/
     padding-right: 10px !important;
 }
 
-.custom-input input[type="text"],
-.custom-input4 input[type="text"]
+.check_id input[type="text"],
+.ccheck_add input[type="text"]
 {
     /*width: calc(60%) !important; !*입력칸과 버튼 사이 여백을 설정*!*/
     padding-right: 10px !important;/* 버튼과 입력칸 간의 여백 설정 */
 }
 
 
-.custom-input button {
+.check_id button {
     position: absolute;
     top: 0;
     right: 0;
     width: 100px; /* 버튼의 너비 설정 */
     height: 100%; /* 입력칸의 높이와 동일하게 설정 */
-    background: url('/static/images/doublecheck_btn.svg') center center no-repeat; /* 이미지 설정 */
+    background: url('/static/images/duplication_btn_disabled.svg') center center no-repeat; /* 이미지 설정 */
     background-size: contain; /* 이미지 크기 설정 */
     border: none; /* 버튼 스타일링 */
     cursor: pointer; /* 마우스 커서 스타일 설정 */
 
 }
 
-.custom-input2 button {
+.check_email button {
     position: absolute;
     top: 0;
     right: 0;
@@ -135,7 +135,7 @@ form {
 
 }
 
-.custom-input3 button {
+.check_veri button {
     position: absolute;
     top: 0;
     right: 0;
@@ -148,7 +148,7 @@ form {
 
 }
 
-.custom-input4 button {
+.check_add button {
     position: absolute;
     top: 0;
     right: 0;

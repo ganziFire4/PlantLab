@@ -11,7 +11,7 @@
     <title>플랜트랩: 회원가입</title>
     <link rel="icon" type="img/png" href="/static/images/round_logo_whiteBack.svg">
 <%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/join_01.css">--%>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/join_01.css?v=2.0">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/join_01.css?v=3.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
@@ -20,7 +20,7 @@
             <h2 id="join-explain">회원가입을 위해<br>정보를 입력해주세요.</h2>
             <form id="join-form" action="/member/join.do" method="post" onsubmit="return joinComplete()">
                 <div class="form-group">
-                    <div class="custom-input">
+                    <div class="check_id">
                         <input type="text" id="login_id" name="login_id" placeholder="아이디" required>
                         <button type="button" id="checkDuplicate"></button>
                     </div>
@@ -47,21 +47,21 @@
                     <small id="check-message4"></small>
                 </div>
                 <div class="form-group">
-                    <div class="custom-input2">
+                    <div class="check_email">
                         <input type="email" id="mem_email" name="mem_email" placeholder="이메일" required>
                         <button type="button" id="emailAuth"></button>
                     </div>
                     <small id="check-message5"></small>
                 </div>
                 <div class="form-group">
-                    <div class="custom-input3">
+                    <div class="check_veri">
                         <input type="text" id="veriNum" name="veriNum" placeholder="인증번호" required>
                         <button type="button" id="authCode" disabled></button>
                     </div>
                     <small id="check-message6"></small>
                 </div>
                 <div class="form-group">
-                    <div class="custom-input4">
+                    <div class="check_add">
                         <input type="text" id="zipcode" name="zipcode" placeholder="우편번호" required>
                         <button type="button" onclick="execPostCode();"></button>
                     </div>
@@ -100,6 +100,9 @@
         const confirmPassword = document.querySelector("input[name='confirmPassword']");
         const addr = document.querySelector("input[name='mem_addr']");
         const addr_detail = document.querySelector("input[name='mem_addr_detail']");
+        const checkDuplicateButton = document.querySelector("#checkDuplicate");
+        const veriNumInput = document.getElementById("veriNum");
+        const authCodeButton = document.getElementById("authCode");
 
 
         // 회원정보
@@ -109,18 +112,18 @@
         let verificationCode = '';
 
         //아이디 입력받을 조건
-        userId.addEventListener("change", (e) => {
-            if (e.target.value.length < 8 || e.target.value.length > 21) {
-                checkMessage.textContent = "아이디는 8자리이상 20자이하로 지정해주세요.";
+        userId.addEventListener("input", (e) => {
+            if (e.target.value.length < 2 || e.target.value.length > 21) {
+                checkMessage.textContent = "아이디는 2자리이상 20자이하로 지정해주세요.";
                 checkMessage.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
+                checkDuplicateButton.disabled = true; // 버튼 비활성화
+                checkDuplicateButton.style.backgroundImage = "url('/static/images/duplication_btn_disabled.svg')";
                 userId.focus();
             } else {
                 checkMessage.textContent = "";
                 id = e.target.value;
-                // checkMessage.textContent ="사용 가능한 아이디입니다.";
-                // checkMessage.style.color = "#23C961"; // 텍스트 색상을 초록색으로 설정
-                // userIdValidation = true;
-                // userId.focus();
+                checkDuplicateButton.disabled = false; // 버튼 활성화
+                checkDuplicateButton.style.backgroundImage = "url('/static/images/doublecheck_btn.svg')";
             }
         });
 
@@ -224,7 +227,12 @@
         // 패스워드 입력확인
         let passwordConfirmValidation = false;
         confirmPassword.addEventListener("change", (e) => {
-            if (e.target.value !== password) {
+
+            if (userPassword.value.length === 0) {
+                checkMessage3.textContent = "확인할 비밀번호를 입력하지 않았습니다.";
+                checkMessage3.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
+                userPassword.focus(); // 비밀번호 입력란에 포커스
+            } else if (e.target.value !== password) {
                 checkMessage3.textContent = "입력한 비밀번호와 다릅니다.";
                 checkMessage3.style.color = "red"; // 텍스트 색상을 빨간색으로 설정
                 password.focus();//다시 입력 칸에 포커스
@@ -249,7 +257,7 @@
         });
 
 
-        //휴대폰번호 입력 확인
+
 
 
         //인증하기 버튼을 눌렀을 때 동작
@@ -276,6 +284,10 @@
                     }
 
                     $("#authCode").attr("disabled", false);
+                    $("#authCode").css({
+                        "background": "url('/static/images/veriConfirm_btn_active.svg') no-repeat",
+                        "background-size":  "95%"
+                    });
                 },
                 error: function (xhr, status, error) {
                     alert("인증 코드 전송에 실패했습니다. 다시 시도해주세요.");
@@ -288,6 +300,7 @@
             if($("#veriNum").val() == verificationCode) {
                 checkMessage6.textContent = "인증번호가 일치합니다.";
                 checkMessage6.style.color = "#23C961";
+
                 $("#veriNum").focus();
             } else {
                 checkMessage6.textContent = "인증번호가 일치하지 않습니다.";
@@ -369,41 +382,6 @@
 
         // 가입하기 버튼 클릭
         function joinComplete() {
-            if (!userIdCheck) {
-                alert("아이디를 입력해주세요.");
-                return;
-            }
-
-            if (!userNicknameCheck) {
-                alert("닉네임을 입력해주세요.");
-                return;
-            }
-
-            if (!(passwordValidation && passwordConfirmValidation)) {
-                alert("비밀번호를 입력해주세요.");
-                return;
-            }
-
-            if (userNameInput === '') {
-                alert("이름을 입력해주세요.");
-                return;
-            }
-
-            if (addrInput === '') {
-                alert("주소를 입력해주세요.");
-                return;
-            }
-
-            if (addr_detailInput === '') {
-                alert("상세주소를 입력해주세요.");
-                return;
-            }
-
-
-            // if (userIdCheck && userNicknameCheck && passwordValidation && passwordConfirmValidation) {
-            //     localStorage.setItem(localStorage.length + 1, JSON.stringify({id, nickname, password}));
-            //     window.location.href = "_02_join02.html";
-            // }
         }
 
 
