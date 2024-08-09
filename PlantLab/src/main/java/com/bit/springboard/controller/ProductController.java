@@ -55,7 +55,7 @@ public class ProductController {
         productService.incrementViewCount(productId);
     }
 
-    @GetMapping("/product/{productId}")
+    @GetMapping("/{productId}/detail")
     public String getProductDetail(@PathVariable("productId") int productId, Model model) {
         ProductDto product = productService.getProductById(productId);
         model.addAttribute("product", product);

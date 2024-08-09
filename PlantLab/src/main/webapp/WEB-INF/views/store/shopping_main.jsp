@@ -169,24 +169,23 @@
         </div>
 
         <!-- 상품 목록 시작 -->
-        <div id="product-container" class="product_container">
-            <c:forEach var="product" items="${products}">
-                <div class="product_row">
-                    <div class="product_item">
-                        <a href="/product/${product.product_id}">
-                            <c:forEach var="pic" items="${product.pics}">
-                                <img src="${pageContext.request.contextPath}/static/images/product_img/${pic.file_name}" alt="Product Image" id="img0807">
-                            </c:forEach>
-                            <div class="goods_border">
-                                <p class="product_title">${product.product_name}</p>
-                                <p class="product_company">${product.brand}</p>
-                                <p class="product_price">${product.price} 원</p>
-                                <p class="product_rating">평점: ${product.rate}</p>
-                            </div>
-                        </a>
-                    </div>
+        <c:forEach var="product" items="${products}">
+            <div class="product_row">
+                <div class="product_item">
+                    <a href="${pageContext.request.contextPath}/products/${product.product_id}/detail">
+                        <c:forEach var="pic" items="${product.pics}">
+                            <img src="${pageContext.request.contextPath}/static/images/product_img/${pic.file_name}" alt="Product Image" id="img0807">
+                        </c:forEach>
+                        <div class="goods_border">
+                            <p class="product_title">${product.product_name}</p>
+                            <p class="product_company">${product.brand}</p>
+                            <p class="product_price">${product.price} 원</p>
+                            <p class="product_rating">평점: ${product.rate}</p>
+                        </div>
+                    </a>
                 </div>
-            </c:forEach>
+            </div>
+        </c:forEach>
         </div>
         <!-- 상품 목록 끝 -->
 
