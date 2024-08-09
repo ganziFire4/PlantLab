@@ -101,6 +101,9 @@
                 <h5>댓글</h5>
                 <div class="comment-list" id="comment-list">
                     <!-- Comments will appear here -->
+                    <c:if test="${commentList == null || commentList.isEmpty()}">
+                        <p style="color:grey">댓글이 없습니다.</p>
+                    </c:if>
                     <c:forEach items="${commentList}" var="comment">
                         <div class="comment">
                             <div class="author-date">
@@ -109,7 +112,7 @@
                                 <span class="date">
                                     <javatime:format value="${comment.comment_reg}" pattern="yyyy-MM-dd"/>
                                     <c:if test="${comment.mem_id == loggedInMember.mem_id}">
-                                        <span style="color: #9F9F9F; font-size: small"
+                                        <span style="color: #9F9F9F; font-size: small" id="deleteBtn"
                                               onclick="location.href='/board/delete-comment.do?id=${comment.comment_id}&board_id=${comment.board_id}'">삭제</span>
                                     </c:if>
                                 </span>

@@ -248,14 +248,17 @@
 
     <select id="showComment" parameterType="int" resultType="boardCommentDto">
         SELECT BC.COMMENT_ID
+             , BC.BOARD_ID
              , BC.MEM_ID
              , M.MEM_PIC
              , M.MEM_NICKNAME
              , BC.IS_CHECKED
              , BC.COMMENT_CONTENT
+             , BC.COMMENT_REG
             FROM BOARD_COMMENT BC
             JOIN MEMBER M
               ON BC.MEM_ID = M.MEM_ID
-            WHERE BOARD_ID = #{board_id}
+            WHERE BC.BOARD_ID = #{board_id}
+            ORDER BY BC.COMMENT_REG DESC
     </select>
 </mapper>
