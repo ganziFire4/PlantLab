@@ -23,9 +23,15 @@
         web서버에서 기본적으로 rootpath가 webapp 폴더로 잡혀있다.
     -->
 <!--    <mvc:resources mapping="/resources/**" location="/resources/"></mvc:resources>-->
+<<<<<<< HEAD
     <mvc:resources mapping="/upload/**" location="file:///C:/tmp/upload/"/>
     <mvc:resources mapping="/static/**" location="/static/"></mvc:resources>
 
+=======
+<!--    <mvc:resources mapping="/upload/**" location="file:///C:/tmp/upload/"/>-->
+    <mvc:resources mapping="/static/**" location="/static/"/>
+    <mvc:resources mapping="/favicon.ico" location="favicon.ico"/>
+>>>>>>> submain
 
     <!--DispatcherServlet에서 사용할 ViewResolver 객체 설정-->
     <!--Controller에서 String이나 ModelAndView 객체를 리턴해주면 ViewResolver가 동작하여 리턴된 문자열이나 ModelAndView객체에
@@ -35,7 +41,11 @@
     리턴된 문자열이 board/post => /WEB-INF/views/board/post.jsp 파일을 찾아서 리턴한다.-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!--setter 메소드를 이용한 의존성 주입-->
+<<<<<<< HEAD
         <property name="prefix" value="/WEB-INF/views/"></property>
+=======
+        <property name="prefix" value="/"></property>
+>>>>>>> submain
         <property name="suffix" value=".jsp"></property>
     </bean>
 

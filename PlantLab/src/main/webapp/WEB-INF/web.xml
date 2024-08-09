@@ -75,6 +75,7 @@
         <url-pattern>/*</url-pattern>
     </filter-mapping>
 
+<<<<<<< HEAD
 
 
 
@@ -86,5 +87,11 @@
 
 
 
+=======
+    <mime-mapping>
+        <extension>ico</extension>
+        <mime-type>image/x-icon</mime-type>
+    </mime-mapping>
+>>>>>>> submain
 
 </web-app>

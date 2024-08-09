@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="GreentalkDao">
+    <insert id="green_post" parameterType="greentalk">
+        INSERT INTO GREENTALK (
+              MEM_ID
+            , GREEN_CONTENT
+            , GREEN_REG
+            , GREEN_TAG
+        ) VALUES (
+              #{mem_id}
+            , #{green_content}
+            , #{green_reg}
+            , #{green_tag}
+        )
+    </insert>
+
+    <update id="green_modify" parameterType="greentalk">
+        UPDATE SET GREENTALK
+              GREEN_CONTENT = #{green_content}
+            , GREEN_TAG = #{green_tag}
+            , GREEN_MOD = #{green_mod}
+            WHERE GREEN_ID = #{green_id}
+    </update>
+
+<!--    <insert id="postGreenComment" parameterType="">-->
+<!--        -->
+<!--    </insert>-->
+
+    <delete id="green_delete" parameterType="int">
+        DELETE GREENTALK WHERE GREEN_ID = #{ID}
+    </delete>
+
+    <select id="getGreenList" parameterType="map" resultType="greentalk">
+        SELECT G.GREEN_ID
+             , G.GREEN_CONTENT
+             , M.MEM_ID
+             , G.GREEN_REG
+             , G.GREEN_MOD
+             , G.GREEN_TAG
+             , G.GREEN_LIKE_CNT
+             , G.GREEN_BOOKMARK_CNT
+             , M.MEM_PIC
+             , M.MEM_NICKNAME
+        FROM GREENTALK G
+        JOIN MEMBER M ON G.MEM_ID = M.MEM_ID
+        WHERE 1=1
+        <if test="search.searchKeyword != null and search.searchKeyword != ''">
+            <if test="search.searchCondition == 'all'">
+                AND (G.CONTENT LIKE CONCAT('%', #{search.searchKeyword}, '%')
+                OR M.NICKNAME LIKE CONCAT('%', #{search.searchKeyword}, '%'))
+            </if>
+            <if test="search.searchCondition == 'content'">
+                AND G.CONTENT LIKE CONCAT('%', #{search.searchKeyword}, '%')
+            </if>
+            <if test="search.searchCondition == 'writer'">
+                AND M.NICKNAME LIKE CONCAT('%', #{search.searchKeyword}, '%')
+            </if>
+        </if>
+        ORDER BY G.GREEN_MOD DESC
+        LIMIT #{cri.amount} OFFSET #{cri.startNum}
+    </select>
+
+    <select id="getPopGreenList" resultType="greentalk">
+        SELECT G.GREEN_ID
+             , G.GREEN_CONTENT
+             , M.MEM_ID
+             , G.GREEN_REG
+             , G.GREEN_MOD
+             , G.GREEN_TAG
+             , G.GREEN_LIKE_CNT
+             , G.GREEN_BOOKMARK_CNT
+             , GP.GREEN_PIC
+             , M.MEM_PIC
+             , M.MEM_NICKNAME
+        FROM GREENTALK G
+        JOIN MEMBER M ON G.MEM_ID = M.MEM_ID
+        JOIN GREENTALK_PIC GP ON G.GREEN_ID = GP.GREEN_ID
+        ORDER BY G.GREEN_LIKE_CNT DESC
+        LIMIT 2
+    </select>
+
+    <select id="getTotalCnt" parameterType="map" resultType="int">
+        SELECT COUNT(*)
+            FROM GREENTALK G
+            JOIN MEMBER M
+            ON G.MEM_ID = M.MEM_ID
+            WHERE 1=1
+            <if test="searchKeyword != null and searchKeyword != ''">
+                AND (
+                   G.GREEN_CONTENT LIKE CONCAT('%', #{searchKeyword}, '%')
+                OR M.MEM_NICKNAME LIKE CONCAT('%', #{searchKeyword}, '%')
+                )
+        </if>
+    </select>
+
+    <select id="getNorGreenList" resultType="greentalk">
+        SELECT G.GREEN_ID
+             , GP.GREEN_PIC
+            FROM GREENTALK G
+            JOIN GREENTALK_PIC GP
+              ON G.GREEN_ID = GP.GREEN_ID
+            ORDER BY G.GREEN_REG DESC
+            LIMIT 3
+    </select>
+
+    <select id="getGreenOne" parameterType="int" resultType="greentalk">
+        SELECT G.GREEN_ID
+             , G.GREEN_CONTENT
+             , M.MEM_ID
+             , G.GREEN_REG
+             , G.GREEN_MOD
+             , G.GREEN_TAG
+             , G.GREEN_LIKE_CNT
+             , G.GREEN_BOOKMARK_CNT
+             , GP.GREEN_PIC
+             , M.MEM_PIC
+             , M.MEM_NICKNAME
+        FROM GREENTALK G
+                 JOIN MEMBER M ON G.MEM_ID = M.MEM_ID
+                 JOIN GREENTALK_PIC GP ON G.GREEN_ID = GP.GREEN_ID
+        WHERE G.GREEN_ID = #{green_id}
+    </select>
+
+    <select id="getGreenFileList" parameterType="int" resultType="greentalk">
+        SELECT G.GREEN_ID
+             , GP.GREEN_PIC
+            FROM GREENTALK G
+            JOIN GREENTALK_PIC GP
+              ON G.GREEN_ID = GP.GREEN_ID
+            WHERE GP.GREEN_ID = #{id}
+            ORDER BY G.GREEN_MOD DESC
+    </select>
+
+    <select id="getMyGreenList" parameterType="int" resultType="greentalk">
+        SELECT M.MEM_NICKNAME
+             , GP.GREEN_PIC
+             , G.GREEN_ID
+            FROM GREENTALK G
+            JOIN MEMBER M
+              ON G.MEM_ID = M.MEM_ID
+            JOIN GREENTALK_PIC GP
+              ON G.GREEN_ID = GP.GREEN_ID
+            WHERE M.MEM_ID = #{mem_id}
+            ORDER BY G.GREEN_MOD DESC
+            LIMIT 9
+    </select>
+
+    <select id="getPopGreenLists_main" resultType="greentalk">
+        SELECT G.GREEN_ID
+             ,G.GREEN_CONTENT
+             , G.GREEN_REG
+             , G.GREEN_MOD
+             , G.GREEN_LIKE_CNT
+             , G.GREEN_BOOKMARK_CNT
+             , GP.GREEN_PIC
+             , M.MEM_PIC
+             , M.MEM_NICKNAME
+        FROM GREENTALK G
+                 JOIN MEMBER M ON G.MEM_ID = M.MEM_ID
+                 JOIN GREENTALK_PIC GP ON G.GREEN_ID = GP.GREEN_ID
+        ORDER BY G.GREEN_LIKE_CNT DESC
+            LIMIT 6
+    </select>
+
+    <insert id="writePost" parameterType="greentalk" useGeneratedKeys="true" keyProperty="green_id">
+        INSERT INTO GREENTALK(
+                   MEM_ID
+                 , GREEN_CONTENT
+                 , GREEN_TAG
+        ) VALUES (
+                   #{mem_id}
+                 , #{green_content}
+                 , #{green_tag}
+        )
+    </insert>
+
+    <insert id="filePost" parameterType="greentalk">
+        INSERT INTO GREENTALK_PIC(
+                   GREEN_ID
+                 , GREEN_PIC
+        ) VALUES (
+                   #{green_id}
+                 , #{green_pic}
+        )
+    </insert>
+
+    <insert id="commentPost" parameterType="greentalk">
+        INSERT INTO GREENTALK_COMMENT (
+                  GREEN_ID
+                  , MEM_ID
+                  , COMMENT_CONTENT
+        ) VALUES (
+                  #{green_id}
+                , #{mem_id}
+                , #{comment_content}
+                 )
+    </insert>
+
+    <select id="getComment" parameterType="int" resultType="greentalkCommentDto">
+        SELECT GC.GREEN_ID
+             , GC.GREEN_COMMENT_ID
+             , GC.MEM_ID
+             , GC.COMMENT_CONTENT
+             , GC.COMMENT_REG
+             , GC.COMMENT_MOD
+             , M.MEM_PIC
+             , M.MEM_NICKNAME
+         FROM GREENTALK_COMMENT GC
+         JOIN MEMBER M
+           ON M.MEM_ID = GC.MEM_ID
+        WHERE GC.GREEN_ID = #{green_id}
+        ORDER BY GC.GREEN_COMMENT_ID ASC
+    </select>
+
+    <update id="modifyComment" parameterType="greentalkCommentDto">
+        UPDATE GREENTALK_COMMENT
+        SET COMMENT_CONTENT = #{comment_content},
+            COMMENT_MOD = NOW()
+        WHERE GREEN_COMMENT_ID = #{green_comment_id}
+          AND MEM_ID = #{mem_id}
+    </update>
+</mapper>
