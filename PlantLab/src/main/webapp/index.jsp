@@ -13,7 +13,8 @@
 <head>
     <title>플랜트랩</title>
     <link rel="icon" type="img/png" href="/static/images/round_logo_whiteBack.svg">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/mainpage.css">
+<%--    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/mainpage.css">--%>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/static/css/mainpage.css?v=20240809">
 </head>
 <body>
 <jsp:include page="${pageContext.request.contextPath}/nav.jsp"/>
