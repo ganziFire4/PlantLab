@@ -260,6 +260,6 @@
             JOIN MEMBER M
               ON BC.MEM_ID = M.MEM_ID
             WHERE BC.BOARD_ID = #{board_id}
-            ORDER BY BC.IS_CHECKED DESC, BC.COMMENT_ID ASC
+            ORDER BY BC.IS_CHECKED, BC.COMMENT_REG DESC
     </select>
 </mapper>
