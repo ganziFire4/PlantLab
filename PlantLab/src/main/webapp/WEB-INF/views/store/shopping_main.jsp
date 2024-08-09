@@ -100,7 +100,7 @@
     <button id="openModalBtn" class="btn-green">🌱 상품 등록</button>
 
     <!-- 상품 등록 모달 -->
-    <div id="productModal" class="modal2" style="background-color: transparent;">
+    <div id="productModal" class="modal" style="background-color: transparent;">
         <div class="modal-content" style="width: 20%; min-width: 400px; max-width: 500px; background-color: white; ">
             <span class="close" style="cursor: pointer ">&times;</span>
             <h2>상품 등록</h2>

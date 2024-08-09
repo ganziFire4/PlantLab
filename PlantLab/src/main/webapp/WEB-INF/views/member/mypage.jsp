@@ -378,7 +378,7 @@
                             <div style="display: flex; align-items: center; flex-direction: column; margin-top: 4vh">
                                 <div id="modify-profile-image" style="position: relative; display: inline-block;">
                                     <img src="${pageContext.request.contextPath}/static/images/storage/${loggedInMember.mem_pic}"
-                                         id="profile-img" class="profile" alt="프로필사진"style="width: 20vh; height: 20vh; border-radius: 50%; border: 1px solid #ccccc;">
+                                         id="profile-img" class="profile" alt="프로필사진"style="width: 20vh; height: 20vh; border-radius: 50%; border: 1px solid #CCCCCC;">
                                     <button type="button" id="upload-btn" style="position: absolute; bottom: 0; right: 0;">
                                         <img src="../../../static/images/modify_profile.svg">
                                     </button>
