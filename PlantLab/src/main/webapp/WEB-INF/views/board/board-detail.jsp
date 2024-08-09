@@ -107,12 +107,12 @@
                     <c:forEach items="${commentList}" var="comment">
                         <div class="comment">
                             <div class="author-date">
-                                <img src="/static/images/storage/${comment.mem_pic}" alt="프로필사진" width="15px" height="15px" style="outline: solid 3px #23C961; border-radius: 50%;" class="profile-image">
+                                <img src="/static/images/storage/${comment.mem_pic}" alt="프로필사진" width="20px" height="20px" style="outline: solid 2px #23C961; border-radius: 50%;" class="profile-image">
                                 <span class="author">${comment.mem_nickname}</span>
                                 <span class="date">
                                     <javatime:format value="${comment.comment_reg}" pattern="yyyy-MM-dd"/>
                                     <c:if test="${comment.mem_id == loggedInMember.mem_id}">
-                                        <span style="color: #9F9F9F; font-size: small" id="deleteBtn"
+                                        <span style="color: #9F9F9F; font-size: small; margin-left:3px;" id="deleteBtn"
                                               onclick="location.href='/board/delete-comment.do?id=${comment.comment_id}&board_id=${comment.board_id}'">삭제</span>
                                     </c:if>
                                 </span>

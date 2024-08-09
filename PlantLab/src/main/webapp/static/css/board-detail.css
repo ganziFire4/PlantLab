@@ -199,6 +199,7 @@ div .author-date{
     display: flex;
     align-items: center; /* 이미지와 텍스트를 수직으로 중앙 정렬 */
     justify-content: space-between; /* 좌우로 공간을 나눔 */
+    padding-bottom: 5px;
     border-bottom: 1px solid #D9D9D9;
 }
 
@@ -211,11 +212,7 @@ div .comment{
 }
 
 .profile-image {
-    width: 30px; /* 이미지 크기 조절 */
-    height: 30px;
-    border-radius: 50%; /* 원형으로 만들기 */
     margin-right: 10px; /* 텍스트와 이미지 간의 간격 */
-    margin-bottom: 5px;
 }
 
 
