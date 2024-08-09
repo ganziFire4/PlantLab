@@ -20,6 +20,8 @@ public interface BoardService {
     void changeLike(int num, int mem_id, int board_id);
     void changeBookmark(int num, int mem_id, int board_id);
     void postComment(BoardCommentDto boardCommentDto);
+    void deleteComment(int id);
+    List<BoardCommentDto> showCommentList(int board_id);
 }
 
 
