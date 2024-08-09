@@ -60,8 +60,8 @@
         <div id="details" class="tab-content active">
             <!-- 상세정보 내용 -->
             <div class="purchase_introduce">
-                <img src="/static/images/구매페이지1.png" alt="구매페이지 상세정보">
-                <img src="/static/images/구매페이지2.png" alt="구매페이지 상세정보">
+                <img src="/static/images/" alt="구매페이지 상세정보">
+                <img src="/static/images/product_img/" alt="구매페이지 상세정보">
                 <img src="/static/images/구매페이지3.png" alt="구매페이지 상세정보">
                 <img src="/static/images/구매페이지4.png" alt="구매페이지 상세정보">
                 <img src="/static/images/구매페이지5.png" alt="구매페이지 상세정보">
