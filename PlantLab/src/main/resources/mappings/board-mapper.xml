@@ -133,7 +133,8 @@
     <select id="getBoard" parameterType="int" resultType="board">
         SELECT AA.*
         FROM (
-            SELECT B.BOARD_TITLE
+            SELECT B.BOARD_ID
+                 , B.BOARD_TITLE
                  , B.BOARD_REG
                  , M.MEM_NICKNAME
                  , B.BOARD_TYPE

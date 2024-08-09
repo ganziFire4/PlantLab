@@ -163,23 +163,37 @@
     <script>
         $(document).ready(function() {
             const isLogin = <%=session.getAttribute("loggedInMember") != null%>;
-
+            let clickCheck = false;
             $("#likeBtn").on("click", (e) => {
+                clickCheck = !clickCheck;
                 if(!isLogin){
                     alert("회원만 이용가능합니다.");
                     return;
                 }
 
                 // 이미지 경로를 가져옴
-                // let src = heartImg.getAttribute('src');
+                let src = document.getElementById('heart').src;
                 let num;
 
+                if(!clickCheck){
+                    $("#heart").attr('src', '${pageContext.request.contextPath}/static/images/heart_empty.svg');
+                } else {
+                    $("#heart").attr('src', '${pageContext.request.contextPath}/static/images/heart_green.svg');
+                }
                 // 이미지 경로에 따라 상태를 토글
-                if ($("#heart").attr('src') === '${pageContext.request.contextPath}/static/images/heart_empty.svg') {
+                <%--if ($("#heart").attr('src') === '${pageContext.request.contextPath}/static/images/heart_empty.svg') {--%>
+                <%--    num = 1;--%>
+                <%--} else {--%>
+                <%--    num = -1;--%>
+                <%--}--%>
+                if(src === 'http://localhost:8090/static/images/heart_empty.svg'){
                     num = 1;
+                    console.log(src);
                 } else {
                     num = -1;
+                    console.log(src);
                 }
+                console.log(num);
 
                 $.ajax({
                     url: "/board/board_like_cnt.do",
