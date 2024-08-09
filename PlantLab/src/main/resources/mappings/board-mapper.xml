@@ -124,6 +124,7 @@
              , B.BOARD_TYPE
              , M.MEM_PIC
              , B.MEM_ID
+             , B.BOARD_CHECKED
         FROM BOARD B
         JOIN MEMBER M
           ON B.MEM_ID = M.MEM_ID
@@ -262,4 +263,25 @@
             WHERE BC.BOARD_ID = #{board_id}
             ORDER BY BC.IS_CHECKED DESC, BC.COMMENT_ID ASC
     </select>
+
+    <update id="board_checked" parameterType="int">
+        UPDATE BOARD
+            SET
+                BOARD_CHECKED = 1;
+            WHERE BOARD_ID = #{board_id}
+    </update>
+
+    <update id="comment_checked" parameterType="int">
+        UPDATE BOARD_COMMENT
+            SET
+                IS_CHECKED = 1;
+            WHERE COMMENT_ID = #{id}
+    </update>
+
+    <update id="member_checked" parameterType="int">
+        UPDATE MEMBER
+            SET
+                CHECKED_CNT = CHECKED_CNT + 1
+            WHERE MEM_ID = #{mem_id}
+    </update>
 </mapper>

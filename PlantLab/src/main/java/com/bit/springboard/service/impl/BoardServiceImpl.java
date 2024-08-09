@@ -112,5 +112,10 @@ public class BoardServiceImpl implements BoardService {
         return boardDao.showCommentList(board_id);
     }
 
+    @Override
+    public void comment_checked(int id, int board_id, int mem_id) {
+        boardDao.comment_checked(id, board_id, mem_id);
+    }
+
 
 }

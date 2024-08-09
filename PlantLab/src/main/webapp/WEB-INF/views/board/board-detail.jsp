@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.bit.springboard.dto.MemberDto" %><%--
   Created by IntelliJ IDEA.
   User: bitcamp
   Date: 2024-07-24
@@ -107,8 +107,31 @@
                     <c:forEach items="${commentList}" var="comment">
                         <div class="comment">
                             <div class="author-date">
-                                <img src="/static/images/storage/${comment.mem_pic}" alt="프로필사진" width="20px" height="20px" style="outline: solid 2px #23C961; border-radius: 50%;" class="profile-image">
-                                <span class="author">${comment.mem_nickname}</span>
+                                <div>
+                                    <c:if test="${comment.is_checked == 1}">
+                                        <img src="/static/images/crown%201.png" alt="채택사진" width="20px" height="20px" >
+                                    </c:if>
+                                    <img src="/static/images/storage/${comment.mem_pic}" alt="프로필사진" width="20px" height="20px" style="outline: solid 2px #23C961; border-radius: 50%;" class="profile-image">
+                                    <span class="author">${comment.mem_nickname}</span>
+                                    <c:if test="${board.board_checked == 0 and board.board_type == 3}">
+                                        <div id="checkBtn">
+                                            <a href="" onclick="checked(event, ${board.mem_id})">채택</a>
+                                            <script>
+                                                function checked(event, mem_id){
+                                                    event.preventDefault();
+
+                                                    if("<%=((MemberDto)session.getAttribute("loggedInMember")).getMem_id()%>" == mem_id){
+                                                        location.href="board/board_checked.do?board=${board}&comment=${comment}";
+                                                        return;
+                                                    }
+
+                                                    alert("게시글 작성자만 채택할 수 있습니다.");
+                                                    return;
+                                                }
+                                            </script>
+                                        </div>
+                                    </c:if>
+                                </div>
                                 <span class="date">
                                     <javatime:format value="${comment.comment_reg}" pattern="yyyy-MM-dd"/>
                                     <c:if test="${comment.mem_id == loggedInMember.mem_id}">

@@ -58,8 +58,8 @@ public class BoardController {
         table.put("rec_condition", rec_condition);
         table.put("rowsNum", rowsNum);
 
-        if(table.get("row_num") != null) {
-            cri.setAmount(Integer.parseInt(table.get("row_num")));
+        if(table.get("rowsNum") != null) {
+            cri.setAmount(Integer.parseInt(table.get("rowsNum")));
         } else {
             cri.setAmount(10);
         }
@@ -327,6 +327,14 @@ public class BoardController {
     public String deleteBoard(@RequestParam("id") int id, @RequestParam("tab") int tab){
         boardService.delete(id);
         return "redirect:/board/board-main.do?tab=" + tab;
+    }
+
+    @GetMapping("board_checked.do")
+    public String comment_checked(@RequestParam("board") BoardDto boardDto,
+                                  @RequestParam("comment") BoardCommentDto boardCommentDto){
+        boardService.comment_checked(boardCommentDto.getComment_id(),
+                boardDto.getBoard_id(), boardCommentDto.getMem_id());
+        return "redirect:/board/board-detail.do?id=" + boardDto.getBoard_id();
     }
 }
 

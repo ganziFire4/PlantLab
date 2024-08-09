@@ -22,6 +22,7 @@ public interface BoardService {
     void postComment(BoardCommentDto boardCommentDto);
     void deleteComment(int id);
     List<BoardCommentDto> showCommentList(int board_id);
+    void comment_checked(int id, int board_id, int mem_id);
 }
 
 

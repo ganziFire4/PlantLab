@@ -99,4 +99,10 @@ public class BoardDao {
     public List<BoardCommentDto> showCommentList(int board_id) {
         return mybatis.selectList("BoardDao.showComment", board_id);
     }
+
+    public void comment_checked(int id, int board_id, int mem_id) {
+        mybatis.update("BoardDao.board_checked", board_id);
+        mybatis.update("BoardDao.comment_checked", id);
+        mybatis.update("BoardDao.member_checked", mem_id);
+    }
 }
