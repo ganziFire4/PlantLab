@@ -292,13 +292,7 @@ td {
     padding-left: 10px;
 }
 
-.comment {
-    display: flex;
-    border: 1px #ccc solid;
-    border-radius: 5px;
-    justify-content: space-between;
-    background: #F2F2F2
-}
+
 
 .commentbox {
     border: none;
@@ -477,4 +471,87 @@ button {
     height: 70px;
     background-color: #d1eada;
     border: #B8E2C8 solid 2px;
+}
+
+.modal-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.modalcontents {
+    display:flex;
+    text-align: center;
+}
+
+.modalmaincon {
+    margin: 5px 0 0 5px;
+}
+
+.modalmaindate {
+    margin: 8px 0 0 5px;
+    font-size: 13px;
+    color: #858585;
+}
+
+.modalcontentbox {
+    width:300px;
+    height:max-content;
+    border-bottom: #ccc solid 1px;
+    margin-top: 5px;
+}
+
+.modalmaincontent {
+    font-size: 12px;
+    margin: 0 0 0 49px;
+    padding: 0px;
+}
+
+.writerpic {
+    margin: 5px;
+}
+
+.modal-content {
+    display: flex;
+    width: 10px;
+    height: 10px;
+    align-items: center;
+    color: black;
+    background-color: transparent !important;
+    border:none !important;
+}
+
+.modalbox {
+    width: 1158px;
+    /*height: 640px;*/
+    background: white;
+    border-radius: 5px;
+    margin-top: 150px;
+}
+
+.modalreport {
+    margin-left: auto;
+    margin-top: 5px;
+}
+.confirmbox {
+    text-align: center;
+    color: #23C961;
+    margin-top: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.comment {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px #ccc solid;
+    border-radius: 5px;
+    background: #F2F2F2;
+}
+
+.commenttab {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
