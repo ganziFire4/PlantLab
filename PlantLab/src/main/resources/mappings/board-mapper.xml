@@ -235,7 +235,7 @@
               BOARD_ID
             , MEM_ID
             , COMMENT_CONTENT
-        ) VALUSES (
+        ) VALUES (
               #{board_id}
             , #{mem_id}
             , #{comment_content}
@@ -243,19 +243,23 @@
     </insert>
 
     <delete id="deleteComment" parameterType="int">
-        DELETE BOARD_COMMENT
+        DELETE FROM BOARD_COMMENT
             WHERE COMMENT_ID = #{id}
     </delete>
 
     <select id="showComment" parameterType="int" resultType="boardCommentDto">
-        SELECT COMMENT_ID
-             , MEM_PIC
-             , MEM_NICKNAME
-             , IS_CHECKED
-             , COMMENT_CONTENT
+        SELECT BC.COMMENT_ID
+             , BC.BOARD_ID
+             , BC.MEM_ID
+             , M.MEM_PIC
+             , M.MEM_NICKNAME
+             , BC.IS_CHECKED
+             , BC.COMMENT_CONTENT
+             , BC.COMMENT_REG
             FROM BOARD_COMMENT BC
             JOIN MEMBER M
               ON BC.MEM_ID = M.MEM_ID
-            WHERE BOARD_ID = #{board_id}
+            WHERE BC.BOARD_ID = #{board_id}
+            ORDER BY BC.COMMENT_REG DESC
     </select>
 </mapper>

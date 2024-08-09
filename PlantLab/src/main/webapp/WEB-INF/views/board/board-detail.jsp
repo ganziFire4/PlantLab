@@ -77,7 +77,7 @@
         <div class="page_container">
             <h5>${board.board_title}</h5>
             <div class="userInfo">
-                <img src="/static/images/storage/${board.mem_pic}" alt="프로필사진" style="width:40px;">
+                <img src="/static/images/storage/${board.mem_pic}" alt="프로필사진" width="30px" height="30px" style="outline: solid 3px #23C961; border-radius: 50%;">
                 ${board.mem_nickname}
                 <p>
                     작성일: <javatime:format value="${board.board_reg}" pattern="yyyy-MM-dd"/>
@@ -101,7 +101,29 @@
                 <h5>댓글</h5>
                 <div class="comment-list" id="comment-list">
                     <!-- Comments will appear here -->
+                    <c:if test="${commentList == null || commentList.isEmpty()}">
+                        <p style="color:grey">댓글이 없습니다.</p>
+                    </c:if>
+                    <c:forEach items="${commentList}" var="comment">
+                        <div class="comment">
+                            <div class="author-date">
+                                <img src="/static/images/storage/${comment.mem_pic}" alt="프로필사진" width="15px" height="15px" style="outline: solid 3px #23C961; border-radius: 50%;" class="profile-image">
+                                <span class="author">${comment.mem_nickname}</span>
+                                <span class="date">
+                                    <javatime:format value="${comment.comment_reg}" pattern="yyyy-MM-dd"/>
+                                    <c:if test="${comment.mem_id == loggedInMember.mem_id}">
+                                        <span style="color: #9F9F9F; font-size: small" id="deleteBtn"
+                                              onclick="location.href='/board/delete-comment.do?id=${comment.comment_id}&board_id=${comment.board_id}'">삭제</span>
+                                    </c:if>
+                                </span>
+                            </div>
+                            <div class="comment-content">
+                                <c:out value="${comment.comment_content}" escapeXml="false"/>
+                            </div>
+                        </div>
+                    </c:forEach>
                 </div>
+                <hr>
                 <div class="comment-input">
                     <form class="input-container" action="/board/post_comment.do" method="post">
                         <input type="hidden" name="board_id" value="${board.board_id}"/>

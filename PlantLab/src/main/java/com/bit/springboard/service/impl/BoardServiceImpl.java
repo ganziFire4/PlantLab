@@ -102,5 +102,15 @@ public class BoardServiceImpl implements BoardService {
         boardDao.postComment(boardCommentDto);
     }
 
+    @Override
+    public void deleteComment(int id) {
+        boardDao.deleteComment(id);
+    }
+
+    @Override
+    public List<BoardCommentDto> showCommentList(int board_id) {
+        return boardDao.showCommentList(board_id);
+    }
+
 
 }

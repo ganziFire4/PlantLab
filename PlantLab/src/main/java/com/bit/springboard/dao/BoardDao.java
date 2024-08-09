@@ -91,4 +91,12 @@ public class BoardDao {
     public void postComment(BoardCommentDto boardCommentDto) {
         mybatis.insert("BoardDao.postComment", boardCommentDto);
     }
+
+    public void deleteComment(int id) {
+        mybatis.delete("BoardDao.deleteComment", id);
+    }
+
+    public List<BoardCommentDto> showCommentList(int board_id) {
+        return mybatis.selectList("BoardDao.showComment", board_id);
+    }
 }
