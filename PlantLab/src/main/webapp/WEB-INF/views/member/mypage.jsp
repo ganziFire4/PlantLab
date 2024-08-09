@@ -369,7 +369,7 @@
         <jsp:include page="${pageContext.request.contextPath}/chatbot.jsp"/>
         <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
-                <div class="modal-content" id="modal-modify">
+                <div class="modal-content" id="modal-modify" style="background-color: white !important;">
                     <form id="modify-form" action="${pageContext.request.contextPath}/member/modify.do" method="post" enctype="multipart/form-data">
                         <div id="modal-close-btn">
                             <button type="button" class="btn-close" id="modal-close-btn-detail" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -378,7 +378,7 @@
                             <div style="display: flex; align-items: center; flex-direction: column; margin-top: 4vh">
                                 <div id="modify-profile-image" style="position: relative; display: inline-block;">
                                     <img src="${pageContext.request.contextPath}/static/images/storage/${loggedInMember.mem_pic}"
-                                         id="profile-img" class="profile" alt="프로필사진"style="width: 20vh; height: 20vh; border-radius: 50%;">
+                                         id="profile-img" class="profile" alt="프로필사진"style="width: 20vh; height: 20vh; border-radius: 50%; border: 1px solid #ccccc;">
                                     <button type="button" id="upload-btn" style="position: absolute; bottom: 0; right: 0;">
                                         <img src="../../../static/images/modify_profile.svg">
                                     </button>
