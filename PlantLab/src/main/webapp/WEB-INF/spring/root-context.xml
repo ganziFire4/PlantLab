@@ -131,8 +131,6 @@ xsi:schemaLocation에서 namespace를 사용하기 위한 설정파일인 xsd파
         -->
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
     </aop:config>
-<<<<<<< HEAD
-=======
 
     <!-- 이메일 인증 관련 등록 -->
     <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
@@ -152,6 +150,4 @@ xsi:schemaLocation에서 namespace를 사용하기 위한 설정파일인 xsd파
             </props>
         </property>
     </bean>
-
->>>>>>> submain
 </beans>
