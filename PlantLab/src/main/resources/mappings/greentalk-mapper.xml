@@ -189,7 +189,7 @@
 
     <insert id="commentPost" parameterType="greentalk">
         INSERT INTO GREENTALK_COMMENT (
-                  , GREENT_ID
+                  GREEN_ID
                   , MEM_ID
                   , COMMENT_CONTENT
         ) VALUES (
@@ -212,6 +212,6 @@
          JOIN MEMBER M
            ON M.MEM_ID = GC.MEM_ID
         WHERE GC.GREEN_ID = #{green_id}
-        ORDER BY GC.COMMENT_MOD DESC
+        ORDER BY GC.COMMENT_MOD ASC
     </select>
 </mapper>
