@@ -15,7 +15,7 @@
 
 **Task Flow (Login)** <br>
 -
-로그인인을 했을 시, 안했을 시의 두가지 경우가 접근 가능한 기능들이 달라, 로그인을 중점으로 flow를 흐름으로 정리 하였습니다. <br>
+**로그인인을 했을 시/ 안했을 시**의 두가지 경우가 접근 가능한 기능들이 달라, 로그인을 중점으로 flow를 흐름으로 정리 하였습니다. <br>
 
 ![flow](https://github.com/user-attachments/assets/204a5a94-51ce-4636-ad03-1a16d65fa5f1)
 
