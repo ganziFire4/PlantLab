@@ -1,0 +1,932 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="533174db-4724-4aac-b369-ac01865da1ad" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/2nd_Project.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/PlantLab/conf/catalina.policy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/PlantLab/conf/catalina.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/PlantLab/conf/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/PlantLab/conf/jaspic-providers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/PlantLab/conf/jaspic-providers.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/PlantLab/conf/logging.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/PlantLab/conf/server.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/PlantLab/conf/tomcat-users.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/PlantLab/conf/tomcat-users.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/PlantLab/conf/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/springboard/conf/catalina.policy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/springboard/conf/catalina.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/springboard/conf/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/springboard/conf/jaspic-providers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/springboard/conf/jaspic-providers.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/springboard/conf/logging.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/springboard/conf/server.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/springboard/conf/tomcat-users.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/springboard/conf/tomcat-users.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.smarttomcat/springboard/conf/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/Catalina/localhost/ROOT.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/catalina.policy" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/catalina.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/jaspic-providers.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/jaspic-providers.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/logging.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/server.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/tomcat-users.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/tomcat-users.xsd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/catalina.2024-07-24.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/catalina.2024-07-25.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/catalina.2024-07-26.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/localhost.2024-07-24.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/localhost.2024-07-25.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/localhost.2024-07-26.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/localhost_access_log.2024-07-24.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/localhost_access_log.2024-07-25.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/localhost_access_log.2024-07-26.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/common/FileUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/controller/BoardController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/controller/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/controller/MemberController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/controller/ProductController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/controller/WeatherController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dao/BoardDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dao/GreentalkDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dao/MemberDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dao/ProductDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dao/WeatherDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dto/BoardCommentDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dto/BoardDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dto/BoardPageDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dto/Criteria.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dto/GreentalkCommentDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dto/GreentalkDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dto/GreentalkFileDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dto/GreentalkPageDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dto/MemberDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dto/PicDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dto/ProductDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/dto/WeatherDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/service/BoardService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/service/GreentalkService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/service/MemberService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/service/ProductService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/service/WeatherService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/service/impl/BoardServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/service/impl/GreentalkServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/service/impl/MemberServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/service/impl/ProductServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/bit/springboard/service/impl/weatherServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config/db.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappings/board-mapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappings/greentalk-mapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappings/member-mapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappings/product-mapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mappings/weather-mapper.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/sql-map-config.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/appServlet/servlet-context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/spring/root-context.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/board/board-detail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/board/board-list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/board/board-main.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/board/greentalk.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/board/greentalk_post.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/board/post.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/board/qna-detail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/green_login_01.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/greenpost_login_01.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/join_01.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/join_02.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/login_01.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/member/mypage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store/purchase.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store/shopping_main.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/store/폴더 지킴이.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/chatbot.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/footer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/green_nav.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/nav.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/board-detail.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/board-list.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/board-main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/chatbot.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/greentalk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/greentalk_post.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/join_01.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/join_02.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/login_01.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/mainpage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/mypage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/nav.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/post.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/purchase.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/store.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/css/weather.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/10.카두풀 꽃.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/11.몬스테라.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/12.샤프란.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/2-생화 카네이션 꽃바구니.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/3-tomato.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/4-노란색 구즈마니아.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/5-주황장미.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/6-실내 음지 더피고사리.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/7-취설송 다육이 핑크선인장.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/8-블루 데이지.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/9 - 보라 마당식물 장미칼파눌라(신종보라겹꽃).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/Ellipse 16.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/Header with image_마이페이지.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/Header with image_메인페이지.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/blur.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/bookmark_empty.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/bookmark_green.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/cactus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/camera_Icon.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/checkbox_white_check.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/doublecheck_btn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/duplication_btn_disabled.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/filledgreenheart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/fluent_ios-arrow-24-filled.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/footer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/header_image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/header_그린톡.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/header_글쓰기.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/header_잡담.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/header_정보.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/header_질문.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/heart_empty.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/heart_green.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/heart_red.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/images.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/join_post_search.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/join_veri_confirm.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/join_veri_request.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/littlefilledbookmarkicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/login_google_logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/login_kakao_logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/mainpage/01.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/mainpage/02.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/mainpage/03.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/mainpage/04.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/mainpage/05.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/mainpage/06.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/mainpage/mainpage_sale_img01.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/mainpage/mainpage_sale_img02.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/mainpage/mainpage_sale_img03.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/modify_profile.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/nav_logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/on top.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/001 - [플랜트랩 특별전]식물나라 베이직 키트/베이직 키트.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/001 - [플랜트랩 특별전]식물나라 베이직 키트/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/001 - [플랜트랩 특별전]식물나라 베이직 키트/상세정보/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/001 - [플랜트랩 특별전]식물나라 베이직 키트/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/001 - [플랜트랩 특별전]식물나라 베이직 키트/상세정보/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/001 - [플랜트랩 특별전]식물나라 베이직 키트/상세정보/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/001 - [플랜트랩 특별전]식물나라 베이직 키트/상세정보/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/001 - [플랜트랩 특별전]식물나라 베이직 키트/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/002 - 몬스테라/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/002 - 몬스테라/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/002 - 몬스테라/상세정보/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/002 - 몬스테라/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/002 - 몬스테라/상세정보/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/002 - 몬스테라/상세정보/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/002 - 몬스테라/상세정보/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/002 - 몬스테라/상세정보/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/002 - 몬스테라/상세정보/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/002 - 몬스테라/상세정보/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/002 - 몬스테라/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/003 - 샤프란/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/003 - 샤프란/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/003 - 샤프란/상세정보/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/003 - 샤프란/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/003 - 샤프란/상세정보/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/003 - 샤프란/상세정보/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/003 - 샤프란/상세정보/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/003 - 샤프란/상세정보/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/003 - 샤프란/상세정보/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/003 - 샤프란/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/004 - 카두풀 꽃/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/004 - 카두풀 꽃/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/004 - 카두풀 꽃/상세정보/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/004 - 카두풀 꽃/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/004 - 카두풀 꽃/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/004 - 카두풀 꽃/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/004 - 카두풀 꽃/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/004 - 카두풀 꽃/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/004 - 카두풀 꽃/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/005 - 블루데이지/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/005 - 블루데이지/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/005 - 블루데이지/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/005 - 블루데이지/상세정보/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/005 - 블루데이지/상세정보/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/005 - 블루데이지/상세정보/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/005 - 블루데이지/상세정보/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/005 - 블루데이지/상세정보/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/005 - 블루데이지/상세정보/7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/005 - 블루데이지/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/006 - 틸란드시아 제로그래피카/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/006 - 틸란드시아 제로그래피카/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/006 - 틸란드시아 제로그래피카/상세정보/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/006 - 틸란드시아 제로그래피카/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/006 - 틸란드시아 제로그래피카/상세정보/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/006 - 틸란드시아 제로그래피카/상세정보/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/006 - 틸란드시아 제로그래피카/상세정보/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/006 - 틸란드시아 제로그래피카/상세정보/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/006 - 틸란드시아 제로그래피카/상세정보/6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/006 - 틸란드시아 제로그래피카/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/007 - 구즈마니아/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/007 - 구즈마니아/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/007 - 구즈마니아/상세정보/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/007 - 구즈마니아/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/007 - 구즈마니아/상세정보/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/007 - 구즈마니아/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/007 - 구즈마니아/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/007 - 구즈마니아/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/007 - 구즈마니아/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/007 - 구즈마니아/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/008 - 극락조화/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/008 - 극락조화/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/008 - 극락조화/상세정보/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/008 - 극락조화/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/008 - 극락조화/상세정보/2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/008 - 극락조화/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/008 - 극락조화/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/008 - 극락조화/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/008 - 극락조화/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/008 - 극락조화/상세정보/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/008 - 극락조화/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/009 - 더피고사리/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/009 - 더피고사리/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/009 - 더피고사리/상세정보/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/009 - 더피고사리/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/009 - 더피고사리/상세정보/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/009 - 더피고사리/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/009 - 더피고사리/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/009 - 더피고사리/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/009 - 더피고사리/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/009 - 더피고사리/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/010 - 취설송 다육이 핑크선인장/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/010 - 취설송 다육이 핑크선인장/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/010 - 취설송 다육이 핑크선인장/상세정보/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/010 - 취설송 다육이 핑크선인장/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/010 - 취설송 다육이 핑크선인장/상세정보/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/010 - 취설송 다육이 핑크선인장/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/010 - 취설송 다육이 핑크선인장/상세정보/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/010 - 취설송 다육이 핑크선인장/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/010 - 취설송 다육이 핑크선인장/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/011 - 토마토키우기 세트/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/011 - 토마토키우기 세트/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/011 - 토마토키우기 세트/상세정보/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/011 - 토마토키우기 세트/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/011 - 토마토키우기 세트/상세정보/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/011 - 토마토키우기 세트/상세정보/3-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/011 - 토마토키우기 세트/상세정보/3-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/011 - 토마토키우기 세트/상세정보/3-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/011 - 토마토키우기 세트/상세정보/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/011 - 토마토키우기 세트/상세정보/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/011 - 토마토키우기 세트/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/012 - 신종보라겹꽃/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/012 - 신종보라겹꽃/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/012 - 신종보라겹꽃/상세정보/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/012 - 신종보라겹꽃/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/012 - 신종보라겹꽃/상세정보/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/012 - 신종보라겹꽃/상세정보/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/012 - 신종보라겹꽃/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/012 - 신종보라겹꽃/상세정보/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/012 - 신종보라겹꽃/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/012 - 신종보라겹꽃/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/012 - 신종보라겹꽃/상세정보/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/012 - 신종보라겹꽃/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/013 - 화이트 베인베리/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/013 - 화이트 베인베리/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/013 - 화이트 베인베리/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/013 - 화이트 베인베리/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/013 - 화이트 베인베리/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/013 - 화이트 베인베리/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/013 - 화이트 베인베리/상세정보/5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/013 - 화이트 베인베리/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/013 - 화이트 베인베리/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/013 - 화이트 베인베리/상세정보/baneberries-7420199_1280.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/014 - 불꽃나무꽃/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/014 - 불꽃나무꽃/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/014 - 불꽃나무꽃/상세정보/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/014 - 불꽃나무꽃/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/014 - 불꽃나무꽃/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/014 - 불꽃나무꽃/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/014 - 불꽃나무꽃/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/014 - 불꽃나무꽃/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/014 - 불꽃나무꽃/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/014 - 불꽃나무꽃/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/015 - 수선화/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/015 - 수선화/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/015 - 수선화/상세정보/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/015 - 수선화/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/015 - 수선화/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/015 - 수선화/상세정보/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/015 - 수선화/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/015 - 수선화/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/015 - 수선화/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/015 - 수선화/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/015 - 수선화/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/016 - 심비디움/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/016 - 심비디움/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/016 - 심비디움/상세정보/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/016 - 심비디움/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/016 - 심비디움/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/016 - 심비디움/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/016 - 심비디움/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/016 - 심비디움/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/016 - 심비디움/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/016 - 심비디움/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/017 - 분홍색 플루메리아/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/017 - 분홍색 플루메리아/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/017 - 분홍색 플루메리아/상세정보/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/017 - 분홍색 플루메리아/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/017 - 분홍색 플루메리아/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/017 - 분홍색 플루메리아/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/017 - 분홍색 플루메리아/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/017 - 분홍색 플루메리아/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/017 - 분홍색 플루메리아/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/017 - 분홍색 플루메리아/상세정보/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/017 - 분홍색 플루메리아/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/018 - 클리비아 미니아타/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/018 - 클리비아 미니아타/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/018 - 클리비아 미니아타/상세정보/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/018 - 클리비아 미니아타/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/018 - 클리비아 미니아타/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/018 - 클리비아 미니아타/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/018 - 클리비아 미니아타/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/018 - 클리비아 미니아타/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/018 - 클리비아 미니아타/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/018 - 클리비아 미니아타/상세정보/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/018 - 클리비아 미니아타/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/019 - 히말라야 블루 포피/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/019 - 히말라야 블루 포피/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/019 - 히말라야 블루 포피/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/019 - 히말라야 블루 포피/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/019 - 히말라야 블루 포피/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/019 - 히말라야 블루 포피/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/019 - 히말라야 블루 포피/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/019 - 히말라야 블루 포피/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/019 - 히말라야 블루 포피/상세정보/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/019 - 히말라야 블루 포피/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/020 - 델피니움/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/020 - 델피니움/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/020 - 델피니움/상세정보/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/020 - 델피니움/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/020 - 델피니움/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/020 - 델피니움/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/020 - 델피니움/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/020 - 델피니움/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/020 - 델피니움/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/020 - 델피니움/상세정보/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/020 - 델피니움/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/021 - 화이트 아마릴리스/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/021 - 화이트 아마릴리스/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/021 - 화이트 아마릴리스/상세정보/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/021 - 화이트 아마릴리스/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/021 - 화이트 아마릴리스/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/021 - 화이트 아마릴리스/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/021 - 화이트 아마릴리스/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/021 - 화이트 아마릴리스/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/021 - 화이트 아마릴리스/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/021 - 화이트 아마릴리스/상세정보/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/021 - 화이트 아마릴리스/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/022 - 폭죽꽃/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/022 - 폭죽꽃/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/022 - 폭죽꽃/상세정보/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/022 - 폭죽꽃/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/022 - 폭죽꽃/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/022 - 폭죽꽃/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/022 - 폭죽꽃/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/022 - 폭죽꽃/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/022 - 폭죽꽃/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/023 - 무지개 유칼립투스/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/023 - 무지개 유칼립투스/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/023 - 무지개 유칼립투스/상세정보/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/023 - 무지개 유칼립투스/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/023 - 무지개 유칼립투스/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/023 - 무지개 유칼립투스/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/023 - 무지개 유칼립투스/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/023 - 무지개 유칼립투스/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/023 - 무지개 유칼립투스/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/023 - 무지개 유칼립투스/상세정보/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/023 - 무지개 유칼립투스/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/024 - 리톱스/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/024 - 리톱스/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/024 - 리톱스/상세정보/1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/024 - 리톱스/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/024 - 리톱스/상세정보/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/024 - 리톱스/상세정보/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/024 - 리톱스/상세정보/4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/024 - 리톱스/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/024 - 리톱스/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/024 - 리톱스/상세정보/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/024 - 리톱스/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/025 - 오렌지 프린세스 튤립/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/025 - 오렌지 프린세스 튤립/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/025 - 오렌지 프린세스 튤립/상세정보/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/025 - 오렌지 프린세스 튤립/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/025 - 오렌지 프린세스 튤립/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/025 - 오렌지 프린세스 튤립/상세정보/3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/025 - 오렌지 프린세스 튤립/상세정보/4_.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/025 - 오렌지 프린세스 튤립/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/025 - 오렌지 프린세스 튤립/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/025 - 오렌지 프린세스 튤립/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/026 - 나이트 스카이 페튜니아/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/026 - 나이트 스카이 페튜니아/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/026 - 나이트 스카이 페튜니아/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/026 - 나이트 스카이 페튜니아/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/026 - 나이트 스카이 페튜니아/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/026 - 나이트 스카이 페튜니아/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/026 - 나이트 스카이 페튜니아/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/026 - 나이트 스카이 페튜니아/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/026 - 나이트 스카이 페튜니아/상세정보/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/026 - 나이트 스카이 페튜니아/상세정보/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/026 - 나이트 스카이 페튜니아/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/027 - 골든 샤워 트리/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/027 - 골든 샤워 트리/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/027 - 골든 샤워 트리/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/027 - 골든 샤워 트리/상세정보/2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/027 - 골든 샤워 트리/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/027 - 골든 샤워 트리/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/027 - 골든 샤워 트리/상세정보/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/027 - 골든 샤워 트리/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/027 - 골든 샤워 트리/상세정보/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/027 - 골든 샤워 트리/상세정보/8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/027 - 골든 샤워 트리/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/028 - 네온 포토스/5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/028 - 네온 포토스/상세정보/0_식물구매전 읽어주세요.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/028 - 네온 포토스/상세정보/1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/028 - 네온 포토스/상세정보/10_햇빛조건 완성.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/028 - 네온 포토스/상세정보/2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/028 - 네온 포토스/상세정보/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/028 - 네온 포토스/상세정보/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/028 - 네온 포토스/상세정보/5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/028 - 네온 포토스/상세정보/6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/028 - 네온 포토스/상세정보/7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/028 - 네온 포토스/상세정보/9_식물 쇼핑안내.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/0559d727-e449-4eb3-ab3f-fd8651b7ffd8.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/067bd29d-94d6-4029-bac2-ed00153c092a.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/0be25228-103b-4895-9e0d-8b0bf1a47b07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/0ec80884-688d-4f90-9778-23c72b6c086a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/0edd2fc6-f189-4133-b51e-55da4097d573.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/11215445-4f2c-4479-8af3-1343ab7d3477.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/122bebcc-1235-480b-a4f6-2f2c8a151058.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/126894b9-0303-46b9-9036-3efd4641a567.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/1655b764-394d-46c5-949e-c09e0af2717b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/1715ad17-0b88-43a3-a717-6d26bc167526.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/19f2d35c-c96a-4331-9bfd-04ba56bcf7b0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/1d222a0f-ae0e-45d8-b474-04254eb095ac.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/1df2053d-c620-46ec-8e10-8243864134ec.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/2d18395b-f95b-4948-a80e-ce357b1258d3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/2d2f2cc7-fbb5-41fd-b400-7625ee4b9d10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/2ffc3f2b-bfd9-4509-aeda-1cc4d7305771.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/3245b338-4170-4288-9dc9-50b06caee1de.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/34fe8262-ffe6-4c52-8f56-5e5a027dfe4a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/355716a4-ff64-4736-bd4b-ed8935d70b4b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/38a4d7ca-e008-4d05-a375-34163cc896cb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/38c7abf9-d3c7-47e8-b82d-b7fa8aca054f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/395dd003-aea5-4ba7-875c-ee993418fa8c.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/3adfe877-f86f-4023-b0a8-b1e42f3a659d.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/486efbe8-6b1f-4913-b71e-39b8c4424829.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/49926f94-4b00-414c-9630-af43f0dc57c8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/4e031eef-9c6f-44d3-aa66-716c56b2ee8e.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/52e61347-3497-4edb-9b3d-4e4b57ca79d7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/542fc0a0-a698-42bf-b4a7-84746c781814.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/54f80eb4-ed06-488c-ac9c-8077b40561da.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/5f3071db-0487-44c9-985f-0e86ebe3eb6f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/6775aa93-4a83-4c17-8bb7-7319d31dc787.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/68c671d7-7e84-47e9-b791-e4dcffcebb72.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/6f4a3ad6-56a8-4a04-8ab7-f3975fa432cb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/7119b40b-9fc4-4b37-b279-2bc1e7ffd1d1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/719e5f56-46c9-4062-bc37-19f2d046eedb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/74db077a-09e1-4a31-b534-329edb113f01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/77754784-ea3f-4fed-9e19-c821c319228e.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/7cb0a81b-0fa5-44c3-9975-04110010a4d4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/7ea3faaa-a00c-4709-bfce-0131d7f1f0ab.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/7ef5d6bd-dcdf-459c-8a5a-dc138ca7adb8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/828e71d8-c3ea-432a-8aa7-4b85e79ae6b6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/8718d38e-12a3-43bd-89f2-2ce7da524d22.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/889d086b-40a4-47c8-8183-f7a967be14b0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/89c25ba6-2868-4ca1-8893-0a07c99efa46.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/926b6670-0fc9-455a-802b-93f2758f3826.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/933117f2-386d-453d-84a0-d1470e81ec04.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/96c469bd-1da2-40a7-9add-c7a84c1c4264.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/9752a2d0-d97f-4b05-838c-688572632bba.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/9989fc23-dc20-44bb-bf8c-5ec882a423c0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/9da19568-adad-4dc3-a002-d7619297d03c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/a3329281-93f5-43c9-b4aa-f181642f09e8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/a7fa23e8-7ac0-4932-bbcc-e59ad3f9cec4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/a81db05b-cc1e-4b82-87a4-e1e33052870d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/a98de220-bc91-4ee2-bc39-811497a2debb.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/aae5ac0f-cb9e-49ab-8b57-bd7f3c59f896.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/b5809c50-a800-4eef-aa5e-e8e7188e48c0.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/b685b364-81be-4da5-9862-9569f03c30fa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/b85171a7-1dc2-4fb6-b48b-00e90d2ae44a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/bbb47325-a54f-4e56-8074-f056e7e2a876.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/bda42d48-5b2d-435d-9796-27ea08fb6956.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/c743205f-cc6b-4d79-85e1-05b0eff3d0fc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/c82a6922-685f-409c-8532-23be9f352790.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/ca6785d6-2c99-4dd7-870a-6bdf8a77f61b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/cceaca4c-f3d8-4038-b30d-e9073ab7db90.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/cedf9c87-cda1-4e44-ae6d-b92b99b9e06f.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/d38f2f4b-c5fa-4178-b66e-4a5f0af9cf0c.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/d6a7fa8d-e112-4f14-809a-075e18615064.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/dcbfaa5b-d9c9-41c6-8928-2b7bf3a0fded.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/f4163d76-4ce3-418f-8d9f-fd105b452c59.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/f50feeea-d5de-4081-8008-e108999857e8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/f5a9079e-29d9-477b-ba5b-60040cd757ca.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/fb3f3d3e-c449-4e59-8477-20e95b800364.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/fe1c21e9-3105-4c09-ba2a-2b55c2861f1c.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/product_img/베이직 키트.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/profile.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/profile_default.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/profile_empty.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/profile_photo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/purchaseEX01.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/purchaseEX02.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/rainny.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/round_logo_colorBack.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/round_logo_transparent.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/round_logo_whiteBack.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/shareicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/snowing.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/square_logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/1689313625955-g738el8uunc.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/2023062601001320800064052.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/JNDI.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/bit.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/book.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/cover.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/desktop.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/dot.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/easyspub.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/fantasy.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/galic.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/gugudan-2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/gugudan.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/kids.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/menu-bg.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/muffin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/network_error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/pf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/prod.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/profile_default.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/thumbnail1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/thumbnail10.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/thumbnail2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/thumbnail3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/thumbnail4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/thumbnail5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/thumbnail6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/thumbnail7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/thumbnail8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/thumbnail9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/wall.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/webd.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/그리드 박스.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/그린톡인기글01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/그린톡인기글02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/그린톡인기글03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/그린톡인기글04.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/그린톡인기글05.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/그린톡인기글06.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/그린톡인기글07.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/그린톡인기글08.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/모델2방식.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/박스 모델.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/블록 레벨 태그와 인라인 레벨 태그.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/상추나무.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/선호수호.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/스크린샷 2024-06-24 173305.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/스크린샷 2024-07-25 125654.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/스크린샷 2024-08-01 183431.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/원형 그라데이션 크기.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/프로젝트 설정 02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/프로젝트 설정 08.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/프로젝트 설정 10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/프로젝트 설정 13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage/플렉서블 박스.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/storage4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/strongRainny.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/sunny.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/top아이콘.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/veriConfirm_btn_active.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/veriRequest_btn_disabled.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/video.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/weatherLine.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/구매페이지1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/bookmark_black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/defaultprofile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/emagesample1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/filledbookmarkicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/filledhearticon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/hearticon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/menu.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/rank1main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/ranksample1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/ranksample2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/thumbnail1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/thumbnail2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/thumbnail3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/thumbnail4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/그린톡인기글01.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/그린톡인기글02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/그린톡인기글03.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/그린톡인기글04.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/그린톡인기글05.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/그린톡인기글06.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/그린톡인기글07.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/그린톡인기글08.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/그린톡/카리나.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/내가올린글.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/마이 쇼핑.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/마이페이지.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/새싹레벨.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/쇼핑몰 헤더 이미지.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/수박.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/우측으로.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/인기글 별.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/자랑 사진.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/장바구니.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/좌측으로.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/챗봇아이콘.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/카카오톡 상담.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/캐러셀01.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/캐러셀02.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/캐러셀03.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/images/프로필사진.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/boardRlue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/jquery-3.7.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/static/js/weather.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/weather.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/webapp/static/images/storage4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webappstatic/images/storage4.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/member/join_005f01_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/WEB_002dINF/views/member/join_005f01_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/chatboot_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/chatboot_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/footer_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/footer_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/index_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/index_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/nav_jsp.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/work/Catalina/localhost/ROOT/org/apache/jsp/nav_jsp.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/.vscode/settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/_01_login01.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/_01_자랑글_작성_최종.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/_02_join01.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/_02_join02.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/_03_마이페이지_최종+재형님.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/board_QnA.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/board_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/css/_01_login01.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/css/_02_join01.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/css/_02_join02.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/css/board_QnA.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/css/board_list.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/css/greenTalk.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/css/mainpage01.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/css/mypage.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/css/nav_header_footer.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/css/purchase.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/css/store.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/css/temp.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/css/writing.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/10.카두풀 꽃.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/11.몬스테라.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/12.샤프란.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/2-생화 카네이션 꽃바구니.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/3-tomato.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/4-노란색 구즈마니아.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/5-주황장미.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/6-실내 음지 더피고사리.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/7-취설송 다육이 핑크선인장.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/8-블루 데이지.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/9 - 보라 마당식물 장미칼파눌라(신종보라겹꽃).jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/Ellipse 16.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/Header with image_마이페이지.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/Header with image_메인페이지.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/blur.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/bookmark_empty.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/bookmark_green.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/cactus.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/checkbox_white_check.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/doublecheck_btn.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/filledgreenheart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/fluent_ios-arrow-24-filled.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/footer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/header_image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/header_그린톡.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/header_글쓰기.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/header_잡담.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/header_정보.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/header_질문.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/heart_empty.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/heart_green.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/heart_red.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/images.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/littlefilledbookmarkicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/login_google_logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/login_kakao_logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/mainpage/01.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/mainpage/02.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/mainpage/03.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/mainpage/04.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/mainpage/05.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/mainpage/06.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/mainpage/mainpage_sale_img01.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/mainpage/mainpage_sale_img02.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/mainpage/mainpage_sale_img03.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/nav_logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/on top.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/profile.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/profile_empty.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/profile_photo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/purchaseEX01.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/purchaseEX02.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/rainny.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/round_logo_colorBack.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/round_logo_transparent.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/round_logo_whiteBack.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/shareicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/snowing.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/square_logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/strongRainny.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/sunny.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/top아이콘.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/video.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/weatherLine.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/구매페이지1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/구매페이지2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/구매페이지3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/구매페이지4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/구매페이지5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/구매페이지6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/내가올린글.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/마이 쇼핑.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/마이페이지.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/베이직 키트.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/새싹레벨.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/쇼핑몰 헤더 이미지.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/수박.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/우측으로.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/인기글 별.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑 사진.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/bookmark_black.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/defaultprofile.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/emagesample1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/filledbookmarkicon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/filledhearticon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/hearticon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/menu.png.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/rank1main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/ranksample1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/ranksample2.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/thumbnail1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/thumbnail2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/thumbnail3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/thumbnail4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/자랑글/카리나.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/장바구니.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/좌측으로.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/챗봇아이콘.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/카카오톡 상담.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/캐러셀01.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/캐러셀02.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/캐러셀03.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/image/프로필사진.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/js/boardRlue.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/js/jquery-3.7.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/js/make table.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/js/weather.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/mainpage01.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/purchase.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/shopping_main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/standard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../프론트기간 완료/writing.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2q0xjXLZiy97Y9YYWdJRm0Jmq5n" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.springboard [install].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Smart Tomcat.Tomcat.executor": "Run",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/dechu/OneDrive/바탕 화면/플랜트랩",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Tomcat" type="com.poratu.idea.plugins.tomcat">
+      <predefined_log_file enabled="true" id="Tomcat Localhost Log" />
+      <predefined_log_file enabled="true" id="Tomcat Access Log" />
+      <predefined_log_file id="Tomcat Catalina Log" />
+      <predefined_log_file id="Tomcat Manager Log" />
+      <predefined_log_file id="Tomcat Host Manager Log" />
+      <option name="catalinaBase" value="C:\Users\dechu\.SmartTomcat\PlantLab\springboard" />
+      <option name="contextPath" value="/" />
+      <option name="docBase" value="$PROJECT_DIR$/src/main/webapp" />
+      <option name="envOptions">
+        <map />
+      </option>
+      <option name="extraClassPath" value="" />
+      <option name="port" value="9090" />
+      <option name="tomcatInfo">
+        <TomcatInfo>
+          <option name="name" value="Apache Tomcat/10.1.26" />
+          <option name="path" value="$PROJECT_DIR$/../../../../../../devTool/apache-tomcat-10.1.26" />
+          <option name="version" value="10.1.26.0" />
+        </TomcatInfo>
+      </option>
+      <option name="vmOptions" value="-Dfile.encoding=UTF-8" />
+      <module name="springboard" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.17011.79" />
+        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-IU-241.17011.79" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="533174db-4724-4aac-b369-ac01865da1ad" name="Changes" comment="" />
+      <created>1733813429847</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1733813429847</updated>
+      <workItem from="1733813432284" duration="1027000" />
+      <workItem from="1734490654453" duration="1678000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
