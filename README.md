@@ -15,18 +15,27 @@
 
 **Task Flow (Login)** <br>
 -
-로그인인을 했을 시, 안했을 시의 두가지 경우가 접근 가능한 기능들이 달라, flow를 한눈에 흐름으로 정리 하였습니다. <br>
+로그인인을 했을 시, 안했을 시의 두가지 경우가 접근 가능한 기능들이 달라, 로그인을 중점으로 flow를 흐름으로 정리 하였습니다. <br>
 
 ![flow](https://github.com/user-attachments/assets/204a5a94-51ce-4636-ad03-1a16d65fa5f1)
 
 **IA(Information Architecture)** <br>
 -
-웹 사이트의 전체적인 기능/구조입니다. 
+저희가 구현한 웹 사이트의 전체적인 기능과 구조입니다. 
+
 ![architecture](https://github.com/user-attachments/assets/1f39d4c5-a617-4436-8d46-40800fefa5c9)
 
--
+
 **UI Style Guide** <br>
 -
-작업 전, UI스타일 가이드를 만들어 개발 시, 컴포넌트만 가져다 쓸 수 있도록 문서화 해두었습니다.
+작업 전, UI스타일 가이드를 만들어 개발 시, 반복적인 사용이 가능한 것들을 컴포넌트화 하여 가져다 쓸 수 있도록 문서화 해두었습니다. 
 ![UI Style Guide](https://github.com/user-attachments/assets/6e4e8a5a-15ad-4133-b268-0ed02c8f33b0)
+
+**Members** <br>
+-
+*정다은
+*김화영
+*반재형
+*송주헌
+*김시표
 
