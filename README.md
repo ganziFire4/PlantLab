@@ -1,7 +1,6 @@
 # 🌵 PlantLab (플랜트랩) 🌵  
 **식물 관련 정보 공유 및 구매 웹사이트**  
 
----
 
 ![Header Image](https://github.com/user-attachments/assets/17039e79-59b0-4460-9396-2d2fa160f71c)
 
@@ -10,14 +9,14 @@
 - SNS 형식으로 디테일 정보 공유 및 소통  
 - 상황에 맞는 식물 쇼핑  
 
----
+&nbsp;
 
 ## 💚 **Project Goal**  
 - **기본 기능 구현:** 게시판, 쇼핑몰  
 - **기능 완성도 향상:** 로그인, 게시판, 프로필, 결제, 댓글  
 - 학습한 내용을 복습하며 완성도 높은 웹사이트 제작  
 
----
+&nbsp;
 
 ## **Task Flow (Login)**  
 로그인 여부에 따라 접근 가능한 기능이 다릅니다.  
@@ -25,14 +24,14 @@
 
 ![Task Flow](https://github.com/user-attachments/assets/204a5a94-51ce-4636-ad03-1a16d65fa5f1)
 
----
+&nbsp;
 
 ## **IA (Information Architecture)**  
 PlantLab 웹사이트의 전체적인 기능 및 구조를 아래 다이어그램으로 표현했습니다.  
 
 ![Information Architecture](https://github.com/user-attachments/assets/1f39d4c5-a617-4436-8d46-40800fefa5c9)
 
----
+&nbsp;
 
 ## **UI Style Guide**  
 개발 전, UI 스타일 가이드를 작성하여 반복적으로 사용 가능한 디자인 요소를 컴포넌트화했습니다.  
@@ -40,7 +39,7 @@ PlantLab 웹사이트의 전체적인 기능 및 구조를 아래 다이어그�
 
 ![UI Style Guide](https://github.com/user-attachments/assets/6e4e8a5a-15ad-4133-b268-0ed02c8f33b0)
 
----
+&nbsp;
 
 ## **Members**  
 - 정다은  
@@ -49,7 +48,7 @@ PlantLab 웹사이트의 전체적인 기능 및 구조를 아래 다이어그�
 - 송주헌  
 - 김시표  
 
----
+&nbsp;
 
 ## 개선 및 확인 사항
 1. **이미지 링크**: 첨부된 이미지의 URL이 GitHub 사용자의 개인 저장소에 연결되어 있는 경우, 프로젝트 공개 여부를 확인하세요. 공개 저장소라면 문제가 없지만, 비공개 저장소의 경우 외부에서는 이미지를 볼 수 없습니다.
