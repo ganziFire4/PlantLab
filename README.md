@@ -18,7 +18,7 @@
 
 &nbsp;
 
-## **Task Flow (Login)**  
+## 💚 **Task Flow (Login)**  
 로그인 여부에 따라 접근 가능한 기능이 다릅니다.  
 로그인을 중점으로 한 기능 흐름을 아래와 같이 정리했습니다.  
 
@@ -26,14 +26,14 @@
 
 &nbsp;
 
-## **IA (Information Architecture)**  
+## 💚 **IA (Information Architecture)**  
 PlantLab 웹사이트의 전체적인 기능 및 구조를 아래 다이어그램으로 표현했습니다.  
 
 ![Information Architecture](https://github.com/user-attachments/assets/1f39d4c5-a617-4436-8d46-40800fefa5c9)
 
 &nbsp;
 
-## **UI Style Guide**  
+## 💚 **UI Style Guide**  
 개발 전, UI 스타일 가이드를 작성하여 반복적으로 사용 가능한 디자인 요소를 컴포넌트화했습니다.  
 이를 통해 일관된 디자인과 효율적인 개발이 가능했습니다.  
 
@@ -41,7 +41,7 @@ PlantLab 웹사이트의 전체적인 기능 및 구조를 아래 다이어그�
 
 &nbsp;
 
-## **Members**  
+## 💚 **Members**  
 - 정다은 : 공지게시판, 잡담 게시판, 질문 게시판 
 - 김화영 : 로그인, 메인페이지 , 공통 ui/ux 디자인,기획
 - 반재형 : 마이페이지, 날씨 위젯
@@ -50,14 +50,14 @@ PlantLab 웹사이트의 전체적인 기능 및 구조를 아래 다이어그�
 
 &nbsp;
 
-## **작업 관리**
+## 💚 **작업 관리**
 TODO List를 작성하고, 각 항목의 중요도를 구분하여 효율적으로 작업을 관리할 수 있도록 했습니다.
 
 ![스크린샷 2024-12-27 165558](https://github.com/user-attachments/assets/1b5bd614-1863-4f0c-a943-d0719f086a53)
 
 &nbsp;
 
-## 개선 및 확인 사항
+## 💚 개선 및 확인 사항
 1. **이미지 링크**: 첨부된 이미지의 URL이 GitHub 사용자의 개인 저장소에 연결되어 있는 경우, 프로젝트 공개 여부를 확인하세요. 공개 저장소라면 문제가 없지만, 비공개 저장소의 경우 외부에서는 이미지를 볼 수 없습니다.
 2. **Markdown 형식 개선**:  
    - 텍스트 사이에 빈 줄을 추가하여 가독성을 향상시켰습니다.  
