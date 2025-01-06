@@ -4,6 +4,8 @@
 
 ![Header Image](https://github.com/user-attachments/assets/17039e79-59b0-4460-9396-2d2fa160f71c)
 
+### <div align="center">🛠️ Tech Stacks 🛠️</div>
+
 ## 💚 **Project Concept**  
 내가 키우는 식물의 정보를 공유하고, 원하는 조건에 맞는 식물을 필터링하여 구매할 수 있는 **커뮤니티형 스토어**  
 - SNS 형식으로 디테일 정보 공유 및 소통  
